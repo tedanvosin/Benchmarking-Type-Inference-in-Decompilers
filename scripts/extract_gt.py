@@ -39,6 +39,8 @@ def get_normalized_types(var_data):
 def get_location(die,dwarfinfo):
     expr_parser = DWARFExprParser(dwarfinfo.structs)
     loc_attr = die.attributes.get('DW_AT_location')
+    if not loc_attr:
+        return 0
     ops = expr_parser.parse_expr(loc_attr.value)
     
     offset = 0
@@ -143,8 +145,12 @@ def parse_function_die(die,dwarfinfo):
     func_data = {}
 
     func_name = die.attributes.get('DW_AT_name').value.decode('utf-8', 'replace')
-    address = die.attributes.get('DW_AT_low_pc').value
-    
+    address = 0
+    if 'DW_AT_low_pc' in die.attributes:
+        address = die.attributes.get('DW_AT_low_pc').value
+    else:
+        address = die.attributes.get('DW_AT_entry_pc').value if 'DW_AT_entry_pc' in die.attributes else 0
+
     func_data['address'] = hex(address)
     
     func_data['variables'] = []
@@ -161,6 +167,7 @@ def parse_function_die(die,dwarfinfo):
             
             var_name = child.attributes.get('DW_AT_name').value.decode('utf-8','replace') if 'DW_AT_name' in child.attributes else ''
             var_data['name'] = var_name
+            # print(f'[*DEBUG*] Parsing variable: {var_name} in function {func_name}')
             var_data['RBP offset'] = get_location(child,dwarfinfo)
             parse_type_die(child, var_data, dwarfinfo)
             var_data['type'] = get_normalized_types(var_data['type'])
@@ -215,6 +222,8 @@ def main():
 
     with open(output_file, 'w') as outfile:
         json.dump(funcs, outfile, indent=2)
+
+    print(f"Ground truth extracted to {output_file}")
 
 if __name__ == '__main__':
     main()

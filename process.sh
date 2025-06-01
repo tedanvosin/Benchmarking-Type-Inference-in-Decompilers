@@ -13,7 +13,7 @@ fi
 
 TOOL=$1
 
-THESIS_DIR = $PWD
+THESIS_DIR="$PWD"
 BASE_DIR="$THESIS_DIR/binaries/$2"
 N=$3
 FILE_LIST="$BASE_DIR/file_list.txt"

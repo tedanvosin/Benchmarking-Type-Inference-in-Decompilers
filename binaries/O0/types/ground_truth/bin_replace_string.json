@@ -1,0 +1,808 @@
+{
+  "main": {
+    "address": "0x1375",
+    "variables": [
+      {
+        "name": "argv",
+        "RBP offset": -96,
+        "type": [
+          "char**"
+        ],
+        "size": 8,
+        "is_struct": false,
+        "is_typedef": false,
+        "is_array": false
+      },
+      {
+        "name": "argc",
+        "RBP offset": -84,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_struct": false,
+        "is_typedef": false,
+        "is_array": false
+      },
+      {
+        "name": "outfd",
+        "RBP offset": -68,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_struct": false,
+        "is_typedef": false,
+        "is_array": false
+      },
+      {
+        "name": "use_elf",
+        "RBP offset": -64,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_struct": false,
+        "is_typedef": false,
+        "is_array": false
+      },
+      {
+        "name": "ret",
+        "RBP offset": -60,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_struct": false,
+        "is_typedef": false,
+        "is_array": false
+      },
+      {
+        "name": "opt",
+        "RBP offset": -56,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_struct": false,
+        "is_typedef": false,
+        "is_array": false
+      },
+      {
+        "name": "infd",
+        "RBP offset": -52,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_struct": false,
+        "is_typedef": false,
+        "is_array": false
+      },
+      {
+        "name": "in",
+        "RBP offset": -48,
+        "type": [
+          "FILE*",
+          "_IO_FILE*"
+        ],
+        "size": 8,
+        "is_struct": true,
+        "is_typedef": true,
+        "is_array": false
+      },
+      {
+        "name": "out",
+        "RBP offset": -40,
+        "type": [
+          "FILE*",
+          "_IO_FILE*"
+        ],
+        "size": 8,
+        "is_struct": true,
+        "is_typedef": true,
+        "is_array": false
+      },
+      {
+        "name": "out_filename",
+        "RBP offset": -32,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_struct": false,
+        "is_typedef": false,
+        "is_array": false
+      },
+      {
+        "name": "in_filename",
+        "RBP offset": -24,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_struct": false,
+        "is_typedef": false,
+        "is_array": false
+      },
+      {
+        "name": "string",
+        "RBP offset": -16,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_struct": false,
+        "is_typedef": false,
+        "is_array": false
+      },
+      {
+        "name": "replacement",
+        "RBP offset": -8,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_struct": false,
+        "is_typedef": false,
+        "is_array": false
+      }
+    ]
+  },
+  "bin_replace_string_usage": {
+    "address": "0x18d3",
+    "variables": [
+      {
+        "name": "progname",
+        "RBP offset": -16,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_struct": false,
+        "is_typedef": false,
+        "is_array": false
+      },
+      {
+        "name": "out",
+        "RBP offset": -8,
+        "type": [
+          "FILE*",
+          "_IO_FILE*"
+        ],
+        "size": 8,
+        "is_struct": true,
+        "is_typedef": true,
+        "is_array": false
+      }
+    ]
+  },
+  "copy": {
+    "address": "0x1909",
+    "variables": [
+      {
+        "name": "srcfd",
+        "RBP offset": -8248,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_struct": false,
+        "is_typedef": false,
+        "is_array": false
+      },
+      {
+        "name": "dstfd",
+        "RBP offset": -8244,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_struct": false,
+        "is_typedef": false,
+        "is_array": false
+      },
+      {
+        "name": "out_i",
+        "RBP offset": -8232,
+        "type": [
+          "size_t",
+          "long unsigned int",
+          "long long"
+        ],
+        "size": 8,
+        "is_struct": false,
+        "is_typedef": true,
+        "is_array": false
+      },
+      {
+        "name": "inlen",
+        "RBP offset": -8224,
+        "type": [
+          "ssize_t",
+          "__ssize_t",
+          "long int",
+          "long long"
+        ],
+        "size": 8,
+        "is_struct": false,
+        "is_typedef": true,
+        "is_array": false
+      },
+      {
+        "name": "outlen",
+        "RBP offset": -8216,
+        "type": [
+          "ssize_t",
+          "__ssize_t",
+          "long int",
+          "long long"
+        ],
+        "size": 8,
+        "is_struct": false,
+        "is_typedef": true,
+        "is_array": false
+      },
+      {
+        "name": "buf",
+        "RBP offset": -8208,
+        "type": [
+          "char[8192]"
+        ],
+        "size": 8192,
+        "is_struct": false,
+        "is_typedef": false,
+        "is_array": true
+      }
+    ]
+  },
+  "_bin_replace_string_common": {
+    "address": "0x1a68",
+    "variables": [
+      {
+        "name": "rpl_len",
+        "RBP offset": -32,
+        "type": [
+          "size_t*",
+          "long unsigned int*",
+          "long long*"
+        ],
+        "size": 8,
+        "is_struct": false,
+        "is_typedef": true,
+        "is_array": false
+      },
+      {
+        "name": "rpl",
+        "RBP offset": -24,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_struct": false,
+        "is_typedef": false,
+        "is_array": false
+      },
+      {
+        "name": "str_len",
+        "RBP offset": -16,
+        "type": [
+          "size_t*",
+          "long unsigned int*",
+          "long long*"
+        ],
+        "size": 8,
+        "is_struct": false,
+        "is_typedef": true,
+        "is_array": false
+      },
+      {
+        "name": "str",
+        "RBP offset": -8,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_struct": false,
+        "is_typedef": false,
+        "is_array": false
+      }
+    ]
+  },
+  "elf_replace_string": {
+    "address": "0x1ae7",
+    "variables": [
+      {
+        "name": "rpl",
+        "RBP offset": -168,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_struct": false,
+        "is_typedef": false,
+        "is_array": false
+      },
+      {
+        "name": "str",
+        "RBP offset": -160,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_struct": false,
+        "is_typedef": false,
+        "is_array": false
+      },
+      {
+        "name": "fd",
+        "RBP offset": -148,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_struct": false,
+        "is_typedef": false,
+        "is_array": false
+      },
+      {
+        "name": "dirty",
+        "RBP offset": -136,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_struct": false,
+        "is_typedef": false,
+        "is_array": false
+      },
+      {
+        "name": "is_dirty",
+        "RBP offset": -132,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_struct": false,
+        "is_typedef": false,
+        "is_array": false
+      },
+      {
+        "name": "str_len",
+        "RBP offset": -128,
+        "type": [
+          "size_t",
+          "long unsigned int",
+          "long long"
+        ],
+        "size": 8,
+        "is_struct": false,
+        "is_typedef": true,
+        "is_array": false
+      },
+      {
+        "name": "rpl_len",
+        "RBP offset": -120,
+        "type": [
+          "size_t",
+          "long unsigned int",
+          "long long"
+        ],
+        "size": 8,
+        "is_struct": false,
+        "is_typedef": true,
+        "is_array": false
+      },
+      {
+        "name": "section_stringtable_index",
+        "RBP offset": -112,
+        "type": [
+          "size_t",
+          "long unsigned int",
+          "long long"
+        ],
+        "size": 8,
+        "is_struct": false,
+        "is_typedef": true,
+        "is_array": false
+      },
+      {
+        "name": "elf_data",
+        "RBP offset": -104,
+        "type": [
+          "Elf_Data*"
+        ],
+        "size": 8,
+        "is_struct": true,
+        "is_typedef": true,
+        "is_array": false
+      },
+      {
+        "name": "elf_data_writeback",
+        "RBP offset": -96,
+        "type": [
+          "Elf_Data*"
+        ],
+        "size": 8,
+        "is_struct": true,
+        "is_typedef": true,
+        "is_array": false
+      },
+      {
+        "name": "buf",
+        "RBP offset": -88,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_struct": false,
+        "is_typedef": false,
+        "is_array": false
+      },
+      {
+        "name": "buf_len",
+        "RBP offset": -80,
+        "type": [
+          "size_t",
+          "long unsigned int",
+          "long long"
+        ],
+        "size": 8,
+        "is_struct": false,
+        "is_typedef": true,
+        "is_array": false
+      },
+      {
+        "name": "buf_fill",
+        "RBP offset": -72,
+        "type": [
+          "size_t",
+          "long unsigned int",
+          "long long"
+        ],
+        "size": 8,
+        "is_struct": false,
+        "is_typedef": true,
+        "is_array": false
+      },
+      {
+        "name": "elf_rodata_section_index",
+        "RBP offset": -64,
+        "type": [
+          "size_t",
+          "long unsigned int",
+          "long long"
+        ],
+        "size": 8,
+        "is_struct": false,
+        "is_typedef": true,
+        "is_array": false
+      },
+      {
+        "name": "i",
+        "RBP offset": -56,
+        "type": [
+          "size_t",
+          "long unsigned int",
+          "long long"
+        ],
+        "size": 8,
+        "is_struct": false,
+        "is_typedef": true,
+        "is_array": false
+      },
+      {
+        "name": "eaten_bytes",
+        "RBP offset": -48,
+        "type": [
+          "size_t",
+          "long unsigned int",
+          "long long"
+        ],
+        "size": 8,
+        "is_struct": false,
+        "is_typedef": true,
+        "is_array": false
+      },
+      {
+        "name": "elf_data_writeback_written_bytes",
+        "RBP offset": -40,
+        "type": [
+          "size_t",
+          "long unsigned int",
+          "long long"
+        ],
+        "size": 8,
+        "is_struct": false,
+        "is_typedef": true,
+        "is_array": false
+      },
+      {
+        "name": "elf",
+        "RBP offset": -32,
+        "type": [
+          "Elf*",
+          "Elf*"
+        ],
+        "size": 8,
+        "is_struct": true,
+        "is_typedef": true,
+        "is_array": false
+      },
+      {
+        "name": "elf_section",
+        "RBP offset": -24,
+        "type": [
+          "Elf_Scn*",
+          "Elf_Scn*"
+        ],
+        "size": 8,
+        "is_struct": true,
+        "is_typedef": true,
+        "is_array": false
+      },
+      {
+        "name": "newbuf",
+        "RBP offset": -16,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_struct": false,
+        "is_typedef": false,
+        "is_array": false
+      }
+    ]
+  },
+  "bin_replace_string": {
+    "address": "0x21cf",
+    "variables": [
+      {
+        "name": "rpl",
+        "RBP offset": -112,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_struct": false,
+        "is_typedef": false,
+        "is_array": false
+      },
+      {
+        "name": "str",
+        "RBP offset": -104,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_struct": false,
+        "is_typedef": false,
+        "is_array": false
+      },
+      {
+        "name": "out",
+        "RBP offset": -96,
+        "type": [
+          "FILE*",
+          "_IO_FILE*"
+        ],
+        "size": 8,
+        "is_struct": true,
+        "is_typedef": true,
+        "is_array": false
+      },
+      {
+        "name": "in",
+        "RBP offset": -88,
+        "type": [
+          "FILE*",
+          "_IO_FILE*"
+        ],
+        "size": 8,
+        "is_struct": true,
+        "is_typedef": true,
+        "is_array": false
+      },
+      {
+        "name": "dirty",
+        "RBP offset": -68,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_struct": false,
+        "is_typedef": false,
+        "is_array": false
+      },
+      {
+        "name": "str_len",
+        "RBP offset": -64,
+        "type": [
+          "size_t",
+          "long unsigned int",
+          "long long"
+        ],
+        "size": 8,
+        "is_struct": false,
+        "is_typedef": true,
+        "is_array": false
+      },
+      {
+        "name": "rpl_len",
+        "RBP offset": -56,
+        "type": [
+          "size_t",
+          "long unsigned int",
+          "long long"
+        ],
+        "size": 8,
+        "is_struct": false,
+        "is_typedef": true,
+        "is_array": false
+      },
+      {
+        "name": "buf_len",
+        "RBP offset": -48,
+        "type": [
+          "size_t",
+          "long unsigned int",
+          "long long"
+        ],
+        "size": 8,
+        "is_struct": false,
+        "is_typedef": true,
+        "is_array": false
+      },
+      {
+        "name": "inout",
+        "RBP offset": -40,
+        "type": [
+          "FILE*",
+          "_IO_FILE*"
+        ],
+        "size": 8,
+        "is_struct": true,
+        "is_typedef": true,
+        "is_array": false
+      },
+      {
+        "name": "buf",
+        "RBP offset": -32,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_struct": false,
+        "is_typedef": false,
+        "is_array": false
+      },
+      {
+        "name": "written_bytes",
+        "RBP offset": -24,
+        "type": [
+          "size_t",
+          "long unsigned int",
+          "long long"
+        ],
+        "size": 8,
+        "is_struct": false,
+        "is_typedef": true,
+        "is_array": false
+      },
+      {
+        "name": "eaten_bytes",
+        "RBP offset": -16,
+        "type": [
+          "size_t",
+          "long unsigned int",
+          "long long"
+        ],
+        "size": 8,
+        "is_struct": false,
+        "is_typedef": true,
+        "is_array": false
+      }
+    ]
+  },
+  "bin_replace_string_buf": {
+    "address": "0x24e2",
+    "variables": [
+      {
+        "name": "rpl_len",
+        "RBP offset": -64,
+        "type": [
+          "size_t",
+          "long unsigned int",
+          "long long"
+        ],
+        "size": 8,
+        "is_struct": false,
+        "is_typedef": true,
+        "is_array": false
+      },
+      {
+        "name": "rpl",
+        "RBP offset": -56,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_struct": false,
+        "is_typedef": false,
+        "is_array": false
+      },
+      {
+        "name": "str_len",
+        "RBP offset": -48,
+        "type": [
+          "size_t",
+          "long unsigned int",
+          "long long"
+        ],
+        "size": 8,
+        "is_struct": false,
+        "is_typedef": true,
+        "is_array": false
+      },
+      {
+        "name": "str",
+        "RBP offset": -40,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_struct": false,
+        "is_typedef": false,
+        "is_array": false
+      },
+      {
+        "name": "buf_len",
+        "RBP offset": -32,
+        "type": [
+          "size_t",
+          "long unsigned int",
+          "long long"
+        ],
+        "size": 8,
+        "is_struct": false,
+        "is_typedef": true,
+        "is_array": false
+      },
+      {
+        "name": "buf",
+        "RBP offset": -24,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_struct": false,
+        "is_typedef": false,
+        "is_array": false
+      },
+      {
+        "name": "i",
+        "RBP offset": -8,
+        "type": [
+          "size_t",
+          "long unsigned int",
+          "long long"
+        ],
+        "size": 8,
+        "is_struct": false,
+        "is_typedef": true,
+        "is_array": false
+      },
+      {
+        "name": "dirty",
+        "RBP offset": 16,
+        "type": [
+          "int*"
+        ],
+        "size": 8,
+        "is_struct": false,
+        "is_typedef": false,
+        "is_array": false
+      }
+    ]
+  }
+}
