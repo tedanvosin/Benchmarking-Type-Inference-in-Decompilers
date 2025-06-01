@@ -94,6 +94,8 @@ def parse_type_die(die,var_data,dwarfinfo):
             parse_type_die(type_die, var_data, dwarfinfo)
             
             array_size = get_array_dims(type_die, dwarfinfo)
+            var_data['base_type'] = var_data['type']
+            var_data['base_size'] = var_data['size']
             for i in range(len(var_data['type'])):
                 var_data['type'][i] += f'[{array_size[0]}]' if array_size else '[]'
             
@@ -161,13 +163,13 @@ def parse_function_die(die,dwarfinfo):
             var_data['RBP offset'] = 0
             var_data['type'] = [] #array to take care of typedef chaining
             var_data['size'] = 0
-            var_data['is_struct'] = False
             var_data['is_typedef'] = False
+            var_data['is_struct'] = False
             var_data['is_array'] = False
             
             var_name = child.attributes.get('DW_AT_name').value.decode('utf-8','replace') if 'DW_AT_name' in child.attributes else ''
             var_data['name'] = var_name
-            # print(f'[*DEBUG*] Parsing variable: {var_name} in function {func_name}')
+
             var_data['RBP offset'] = get_location(child,dwarfinfo)
             parse_type_die(child, var_data, dwarfinfo)
             var_data['type'] = get_normalized_types(var_data['type'])
