@@ -54,16 +54,19 @@ def get_location(die,dwarfinfo):
 
 
 def get_array_dims(die, dwarfinfo):
-    dims = []
-    for sub in die.iter_children():
-        if sub.tag == 'DW_TAG_subrange_type':
-            lb_attr = sub.attributes.get('DW_AT_lower_bound')
-            ub_attr = sub.attributes.get('DW_AT_upper_bound')
-            lb = lb_attr.value if lb_attr else 0
-            ub = ub_attr.value if ub_attr else None
-            count = ub - lb + 1 if ub is not None else None
-            dims.append(count)
-    
+    try:
+        dims = []
+        for sub in die.iter_children():
+            if sub.tag == 'DW_TAG_subrange_type':
+                lb_attr = sub.attributes.get('DW_AT_lower_bound')
+                ub_attr = sub.attributes.get('DW_AT_upper_bound')
+                lb = lb_attr.value if lb_attr else 0
+                ub = ub_attr.value if ub_attr else None
+                print(f"Lower bound: {lb}, Upper bound: {ub}")
+                count = ub - lb + 1 if ub is not None else None
+                dims.append(count)
+    except:
+        dims = []    
     return dims
 
 def parse_struct(die, var_data, dwarfinfo):
@@ -84,7 +87,6 @@ def parse_struct(die, var_data, dwarfinfo):
             member_data['is_typedef'] = False
             member_data['is_array'] = False
             member_data['is_struct'] = False
-            
             parse_type_die(child, member_data, dwarfinfo)
             member_data['type'] = get_normalized_types(member_data['type'])
             
@@ -92,92 +94,104 @@ def parse_struct(die, var_data, dwarfinfo):
                 member_data['element_type'] = get_normalized_types(member_data['element_type'])
             
             var_data['elements'].append(member_data)
-
-
+    
+    return
 
 
 def parse_type_die(die,var_data,dwarfinfo):
-    try:
-        type_attr = die.attributes.get('DW_AT_type')
-        type_offset = type_attr.value + die.cu.cu_offset
-        type_die = dwarfinfo.get_DIE_from_refaddr(type_offset)
-
-        tag = type_die.tag
-        
-        # Base types (e.g., int, char)
-        if tag == 'DW_TAG_base_type':
-            if 'DW_AT_name' in type_die.attributes:
-                var_data['type'].append(type_die.attributes['DW_AT_name'].value.decode('utf-8', 'replace'))
-            var_data['size'] = type_die.attributes['DW_AT_byte_size'].value
-            return
-        
-        #follow typedef
-        elif tag == 'DW_TAG_typedef':
-            var_data['is_typedef'] = True
-            if 'DW_AT_name' in type_die.attributes:
-                var_data['type'].append(type_die.attributes['DW_AT_name'].value.decode('utf-8', 'replace'))
-            parse_type_die(type_die, var_data, dwarfinfo)
-            return
-        
-        # Array types
-        elif tag == 'DW_TAG_array_type':
-            var_data['is_array'] = True
-            parse_type_die(type_die, var_data, dwarfinfo)
-            
-            array_size = get_array_dims(type_die, dwarfinfo)
-            
-            var_data['array_length'] = array_size[0] if array_size else 1
-            var_data['element_type'] = var_data['type'][:]
-            var_data['element_size'] = var_data['size']
-            
-            for i in range(len(var_data['type'])):
-                var_data['type'][i] += f'[{array_size[0]}]' if array_size else '[]'
-
-            var_data['size'] *= array_size[0] 
-            return
-        
-        # Pointer types
-        elif tag == 'DW_TAG_pointer_type':
-            var_data['is_pointer'] = True
-            parse_type_die(type_die,var_data, dwarfinfo)
-            
-            if var_data['type'] == []:
-                var_data['type'].append('void')
-            
-            for i in range(len(var_data['type'])):
-                var_data['type'][i] +=  '*'
-
-            var_data['size'] = type_die.attributes.get('DW_AT_byte_size').value
-            return
-        
-        #constant types
-        elif tag == 'DW_TAG_const_type' or tag == 'DW_TAG_volatile_type':
-            parse_type_die(type_die, var_data, dwarfinfo)
-            return
-
-        # Struct/union/class
-        elif tag in ('DW_TAG_structure_type', 'DW_TAG_union_type', 'DW_TAG_class_type'):
-            var_data['is_struct'] = True
-            if 'DW_AT_name' in type_die.attributes:
-                var_data['type'].append(type_die.attributes['DW_AT_name'].value.decode('utf-8', 'replace'))
-            
-            if var_data['type'] == []:
-                var_data['type'].append('struct')
-            var_data['size'] = type_die.attributes.get('DW_AT_byte_size').value if 'DW_AT_byte_size' in type_die.attributes else 8
-            
-            return
-
-        # Enum types
-        elif tag == 'DW_TAG_enumeration_type':
-            if 'DW_AT_name' in type_die.attributes:
-                var_data['type'].append(type_die.attributes['DW_AT_name'].value.decode('utf-8', 'replace'))
-            var_data['type'].append('int')
-            var_data['size'] = type_die.attributes.get('DW_AT_byte_size').value if 'DW_AT_byte_size' in type_die.attributes else 4
-            return
-
-    except:
+    if 'DW_AT_type' not in die.attributes:
         var_data['type'].append('void')
+        return
+    
+    type_attr = die.attributes.get('DW_AT_type')
+    type_offset = type_attr.value + die.cu.cu_offset
+    type_die = dwarfinfo.get_DIE_from_refaddr(type_offset)
 
+    tag = type_die.tag
+    
+    # Base types (e.g., int, char)
+    if tag == 'DW_TAG_base_type':
+        if 'DW_AT_name' in type_die.attributes:
+            var_data['type'].append(type_die.attributes['DW_AT_name'].value.decode('utf-8', 'replace'))
+        var_data['size'] = type_die.attributes['DW_AT_byte_size'].value
+        return
+    
+    #follow typedef
+    elif tag == 'DW_TAG_typedef':
+        var_data['is_typedef'] = True
+        if 'DW_AT_name' in type_die.attributes:
+            var_data['type'].append(type_die.attributes['DW_AT_name'].value.decode('utf-8', 'replace'))
+        parse_type_die(type_die, var_data, dwarfinfo)
+        return
+    
+    # Array types
+    elif tag == 'DW_TAG_array_type':
+        var_data['is_array'] = True
+        parse_type_die(type_die, var_data, dwarfinfo)
+        
+        array_size = get_array_dims(type_die, dwarfinfo)
+        
+        var_data['array_length'] = array_size[0] if array_size else 1
+        var_data['element_type'] = var_data['type'][:]
+        var_data['element_size'] = var_data['size']
+        
+        for i in range(len(var_data['type'])):
+            var_data['type'][i] += f'[{array_size[0]}]' if array_size else '[]'
+
+        if len(array_size):
+            var_data['size'] *= array_size[0] 
+        return
+    
+    # Pointer types
+    elif tag == 'DW_TAG_pointer_type':
+        var_data['is_pointer'] = True
+        parse_type_die(type_die,var_data, dwarfinfo)
+        
+        if var_data['type'] == []:
+            var_data['type'].append('void')
+        
+        for i in range(len(var_data['type'])):
+            var_data['type'][i] +=  '*'
+
+        var_data['size'] = type_die.attributes.get('DW_AT_byte_size').value
+        return
+    
+    #constant types
+    elif tag == 'DW_TAG_const_type' or tag == 'DW_TAG_volatile_type':
+        parse_type_die(type_die, var_data, dwarfinfo)
+        return
+
+    # Struct types
+    elif tag =='DW_TAG_structure_type':
+        var_data['is_struct'] = True
+        if 'DW_AT_name' in type_die.attributes:
+            var_data['type'].append(type_die.attributes['DW_AT_name'].value.decode('utf-8', 'replace'))
+        
+        if var_data['type'] == []:
+            var_data['type'].append('struct')
+        var_data['size'] = type_die.attributes.get('DW_AT_byte_size').value if 'DW_AT_byte_size' in type_die.attributes else 8
+        
+        return
+    
+    #union/class
+    elif tag in ('DW_TAG_union_type', 'DW_TAG_class_type'):
+        var_data['is_union'] = True
+        if 'DW_AT_name' in type_die.attributes:
+            var_data['type'].append(type_die.attributes['DW_AT_name'].value.decode('utf-8', 'replace'))
+        
+        if var_data['type'] == []:
+            var_data['type'].append('struct')
+        var_data['size'] = type_die.attributes.get('DW_AT_byte_size').value if 'DW_AT_byte_size' in type_die.attributes else 8
+        
+        return
+
+    # Enum types
+    elif tag == 'DW_TAG_enumeration_type':
+        if 'DW_AT_name' in type_die.attributes:
+            var_data['type'].append(type_die.attributes['DW_AT_name'].value.decode('utf-8', 'replace'))
+        var_data['type'].append('int')
+        var_data['size'] = type_die.attributes.get('DW_AT_byte_size').value if 'DW_AT_byte_size' in type_die.attributes else 4
+        return
 
 def parse_function_die(die,dwarfinfo):
     func_data = {}
@@ -203,20 +217,24 @@ def parse_function_die(die,dwarfinfo):
             var_data['is_typedef'] = False
             var_data['is_array'] = False
             var_data['is_struct'] = False
+            var_data['is_union'] = False
             
             var_name = child.attributes.get('DW_AT_name').value.decode('utf-8','replace') if 'DW_AT_name' in child.attributes else ''
             var_data['name'] = var_name
 
             var_data['RBP offset'] = get_location(child,dwarfinfo)
-            
+
+            # print(var_data)
             parse_type_die(child, var_data, dwarfinfo)
             var_data['type'] = get_normalized_types(var_data['type'])
             
-            if var_data['is_array']:
+            
+            if not var_data['is_pointer'] and var_data['is_array']:
                 var_data['element_type'] = get_normalized_types(var_data['element_type'])
             
             if not var_data['is_pointer'] and var_data['is_struct']:
                 var_data['elements'] = []
+                # print(f"Parsing struct for {var_name} in function {func_name}")
                 parse_struct(child, var_data, dwarfinfo)
             func_data['variables'].append(var_data)        
     
