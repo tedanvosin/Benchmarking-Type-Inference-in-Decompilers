@@ -31,6 +31,7 @@ def get_normalized_types(var_data):
         norm_type = type
         norm_type = norm_type.replace('unsigned ', '')
         norm_type = norm_type.replace('long int', 'long long')
+        norm_type = norm_type.replace('_Bool', 'bool')
         norm_type = norm_type.strip()
         
         if norm_type != type:
@@ -62,7 +63,6 @@ def get_array_dims(die, dwarfinfo):
                 ub_attr = sub.attributes.get('DW_AT_upper_bound')
                 lb = lb_attr.value if lb_attr else 0
                 ub = ub_attr.value if ub_attr else None
-                print(f"Lower bound: {lb}, Upper bound: {ub}")
                 count = ub - lb + 1 if ub is not None else None
                 dims.append(count)
     except:
@@ -224,7 +224,6 @@ def parse_function_die(die,dwarfinfo):
 
             var_data['RBP offset'] = get_location(child,dwarfinfo)
 
-            # print(var_data)
             parse_type_die(child, var_data, dwarfinfo)
             var_data['type'] = get_normalized_types(var_data['type'])
             
@@ -234,7 +233,6 @@ def parse_function_die(die,dwarfinfo):
             
             if not var_data['is_pointer'] and var_data['is_struct']:
                 var_data['elements'] = []
-                # print(f"Parsing struct for {var_name} in function {func_name}")
                 parse_struct(child, var_data, dwarfinfo)
             func_data['variables'].append(var_data)        
     
