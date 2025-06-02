@@ -7,6 +7,8 @@ from collections import OrderedDict
 import os
 from pathlib import Path
 
+STRUCTS = []
+
 def sort_json(data):
     ordered = OrderedDict(
         sorted(
@@ -64,6 +66,35 @@ def get_array_dims(die, dwarfinfo):
     
     return dims
 
+def parse_struct(die, var_data, dwarfinfo):
+    type_attr = die.attributes.get('DW_AT_type')
+    type_offset = type_attr.value + die.cu.cu_offset
+    type_die = dwarfinfo.get_DIE_from_refaddr(type_offset)
+
+    tag = type_die.tag
+    base_offset = var_data['RBP offset']
+    for child in type_die.iter_children():
+        if child.tag == 'DW_TAG_member':
+            member_data = {}
+            member_data['name'] = var_data['name']+'.'+child.attributes.get('DW_AT_name').value.decode('utf-8', 'replace') if 'DW_AT_name' in child.attributes else ''
+            member_data['RBP offset'] = base_offset + child.attributes.get('DW_AT_data_member_location').value
+            member_data['type'] = []
+            member_data['size'] = 0
+            member_data['is_pointer'] = False
+            member_data['is_typedef'] = False
+            member_data['is_array'] = False
+            member_data['is_struct'] = False
+            
+            parse_type_die(child, member_data, dwarfinfo)
+            member_data['type'] = get_normalized_types(member_data['type'])
+            
+            if member_data['is_array']:
+                member_data['element_type'] = get_normalized_types(member_data['element_type'])
+            
+            var_data['elements'].append(member_data)
+
+
+
 
 def parse_type_die(die,var_data,dwarfinfo):
     try:
@@ -94,16 +125,20 @@ def parse_type_die(die,var_data,dwarfinfo):
             parse_type_die(type_die, var_data, dwarfinfo)
             
             array_size = get_array_dims(type_die, dwarfinfo)
-            var_data['base_type'] = var_data['type']
-            var_data['base_size'] = var_data['size']
+            
+            var_data['array_length'] = array_size[0] if array_size else 1
+            var_data['element_type'] = var_data['type'][:]
+            var_data['element_size'] = var_data['size']
+            
             for i in range(len(var_data['type'])):
                 var_data['type'][i] += f'[{array_size[0]}]' if array_size else '[]'
-            
+
             var_data['size'] *= array_size[0] 
             return
         
         # Pointer types
         elif tag == 'DW_TAG_pointer_type':
+            var_data['is_pointer'] = True
             parse_type_die(type_die,var_data, dwarfinfo)
             
             if var_data['type'] == []:
@@ -116,7 +151,7 @@ def parse_type_die(die,var_data,dwarfinfo):
             return
         
         #constant types
-        elif tag == 'DW_TAG_const_type':
+        elif tag == 'DW_TAG_const_type' or tag == 'DW_TAG_volatile_type':
             parse_type_die(type_die, var_data, dwarfinfo)
             return
 
@@ -129,6 +164,7 @@ def parse_type_die(die,var_data,dwarfinfo):
             if var_data['type'] == []:
                 var_data['type'].append('struct')
             var_data['size'] = type_die.attributes.get('DW_AT_byte_size').value if 'DW_AT_byte_size' in type_die.attributes else 8
+            
             return
 
         # Enum types
@@ -163,19 +199,29 @@ def parse_function_die(die,dwarfinfo):
             var_data['RBP offset'] = 0
             var_data['type'] = [] #array to take care of typedef chaining
             var_data['size'] = 0
+            var_data['is_pointer'] = False
             var_data['is_typedef'] = False
-            var_data['is_struct'] = False
             var_data['is_array'] = False
+            var_data['is_struct'] = False
             
             var_name = child.attributes.get('DW_AT_name').value.decode('utf-8','replace') if 'DW_AT_name' in child.attributes else ''
             var_data['name'] = var_name
 
             var_data['RBP offset'] = get_location(child,dwarfinfo)
+            
             parse_type_die(child, var_data, dwarfinfo)
             var_data['type'] = get_normalized_types(var_data['type'])
+            
+            if var_data['is_array']:
+                var_data['element_type'] = get_normalized_types(var_data['element_type'])
+            
+            if not var_data['is_pointer'] and var_data['is_struct']:
+                var_data['elements'] = []
+                parse_struct(child, var_data, dwarfinfo)
             func_data['variables'].append(var_data)        
     
     return func_name , func_data
+
 
 
 def parse_debug(filename):
@@ -209,6 +255,7 @@ def main():
     
     binary_path = Path(sys.argv[1])
     funcs = parse_debug(binary_path)
+    # funcs['structs'] = parse_structs(STRUCTS)
     funcs = sort_json(funcs)
 
 
@@ -217,7 +264,6 @@ def main():
         output_dir = output_dir.parent
     
     output_dir = output_dir / 'types' / 'ground_truth'
-    # print(f"Output directory: {output_dir}")
     output_dir.mkdir(parents=True, exist_ok=True)
     
     output_file = output_dir / f"{binary_path.stem}.json"

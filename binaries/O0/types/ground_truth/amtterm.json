@@ -9,9 +9,10 @@
           "int"
         ],
         "size": 4,
+        "is_pointer": false,
         "is_typedef": false,
-        "is_struct": false,
-        "is_array": false
+        "is_array": false,
+        "is_struct": false
       },
       {
         "name": "buf",
@@ -21,9 +22,10 @@
           "char*"
         ],
         "size": 8,
+        "is_pointer": true,
         "is_typedef": false,
-        "is_struct": false,
-        "is_array": false
+        "is_array": false,
+        "is_struct": false
       },
       {
         "name": "cb_data",
@@ -32,9 +34,10 @@
           "void*"
         ],
         "size": 8,
+        "is_pointer": true,
         "is_typedef": false,
-        "is_struct": false,
-        "is_array": false
+        "is_array": false,
+        "is_struct": false
       }
     ]
   },
@@ -49,9 +52,10 @@
           "int"
         ],
         "size": 4,
+        "is_pointer": false,
         "is_typedef": false,
-        "is_struct": false,
-        "is_array": false
+        "is_array": false,
+        "is_struct": false
       },
       {
         "name": "old",
@@ -61,9 +65,10 @@
           "int"
         ],
         "size": 4,
+        "is_pointer": false,
         "is_typedef": false,
-        "is_struct": false,
-        "is_array": false
+        "is_array": false,
+        "is_struct": false
       },
       {
         "name": "cb_data",
@@ -72,9 +77,10 @@
           "void*"
         ],
         "size": 8,
+        "is_pointer": true,
         "is_typedef": false,
-        "is_struct": false,
-        "is_array": false
+        "is_array": false,
+        "is_struct": false
       },
       {
         "name": "r",
@@ -83,9 +89,10 @@
           "redir*"
         ],
         "size": 8,
+        "is_pointer": true,
         "is_typedef": false,
-        "is_struct": true,
-        "is_array": false
+        "is_array": false,
+        "is_struct": true
       }
     ]
   },
@@ -99,9 +106,10 @@
           "redir*"
         ],
         "size": 8,
+        "is_pointer": true,
         "is_typedef": false,
-        "is_struct": true,
-        "is_array": false
+        "is_array": false,
+        "is_struct": true
       },
       {
         "name": "i",
@@ -110,9 +118,10 @@
           "int"
         ],
         "size": 4,
+        "is_pointer": false,
         "is_typedef": false,
-        "is_struct": false,
-        "is_array": false
+        "is_array": false,
+        "is_struct": false
       },
       {
         "name": "rc",
@@ -121,9 +130,10 @@
           "int"
         ],
         "size": 4,
+        "is_pointer": false,
         "is_typedef": false,
-        "is_struct": false,
-        "is_array": false
+        "is_array": false,
+        "is_struct": false
       },
       {
         "name": "tv",
@@ -132,9 +142,40 @@
           "timeval"
         ],
         "size": 16,
+        "is_pointer": false,
         "is_typedef": false,
+        "is_array": false,
         "is_struct": true,
-        "is_array": false
+        "elements": [
+          {
+            "name": "tv.tv_sec",
+            "RBP offset": -672,
+            "type": [
+              "__time_t",
+              "long int",
+              "long long"
+            ],
+            "size": 8,
+            "is_pointer": false,
+            "is_typedef": true,
+            "is_array": false,
+            "is_struct": false
+          },
+          {
+            "name": "tv.tv_usec",
+            "RBP offset": -664,
+            "type": [
+              "__suseconds_t",
+              "long int",
+              "long long"
+            ],
+            "size": 8,
+            "is_pointer": false,
+            "is_typedef": true,
+            "is_array": false,
+            "is_struct": false
+          }
+        ]
       },
       {
         "name": "set",
@@ -143,9 +184,11 @@
           "fd_set"
         ],
         "size": 128,
+        "is_pointer": false,
         "is_typedef": true,
+        "is_array": false,
         "is_struct": true,
-        "is_array": false
+        "elements": []
       },
       {
         "name": "buf",
@@ -155,9 +198,16 @@
           "char[513]"
         ],
         "size": 513,
+        "is_pointer": false,
         "is_typedef": false,
+        "is_array": true,
         "is_struct": false,
-        "is_array": true
+        "array_length": 513,
+        "element_type": [
+          "unsigned char",
+          "char"
+        ],
+        "element_size": 1
       }
     ]
   },
@@ -175,9 +225,131 @@
           "termios"
         ],
         "size": 60,
+        "is_pointer": false,
         "is_typedef": false,
+        "is_array": false,
         "is_struct": true,
-        "is_array": false
+        "elements": [
+          {
+            "name": "tattr.c_iflag",
+            "RBP offset": -80,
+            "type": [
+              "tcflag_t",
+              "unsigned int",
+              "int"
+            ],
+            "size": 4,
+            "is_pointer": false,
+            "is_typedef": true,
+            "is_array": false,
+            "is_struct": false
+          },
+          {
+            "name": "tattr.c_oflag",
+            "RBP offset": -76,
+            "type": [
+              "tcflag_t",
+              "unsigned int",
+              "int"
+            ],
+            "size": 4,
+            "is_pointer": false,
+            "is_typedef": true,
+            "is_array": false,
+            "is_struct": false
+          },
+          {
+            "name": "tattr.c_cflag",
+            "RBP offset": -72,
+            "type": [
+              "tcflag_t",
+              "unsigned int",
+              "int"
+            ],
+            "size": 4,
+            "is_pointer": false,
+            "is_typedef": true,
+            "is_array": false,
+            "is_struct": false
+          },
+          {
+            "name": "tattr.c_lflag",
+            "RBP offset": -68,
+            "type": [
+              "tcflag_t",
+              "unsigned int",
+              "int"
+            ],
+            "size": 4,
+            "is_pointer": false,
+            "is_typedef": true,
+            "is_array": false,
+            "is_struct": false
+          },
+          {
+            "name": "tattr.c_line",
+            "RBP offset": -64,
+            "type": [
+              "cc_t",
+              "unsigned char",
+              "char"
+            ],
+            "size": 1,
+            "is_pointer": false,
+            "is_typedef": true,
+            "is_array": false,
+            "is_struct": false
+          },
+          {
+            "name": "tattr.c_cc",
+            "RBP offset": -63,
+            "type": [
+              "cc_t[32]",
+              "unsigned char[32]",
+              "char[32]"
+            ],
+            "size": 32,
+            "is_pointer": false,
+            "is_typedef": true,
+            "is_array": true,
+            "is_struct": false,
+            "array_length": 32,
+            "element_type": [
+              "cc_t",
+              "unsigned char",
+              "char"
+            ],
+            "element_size": 1
+          },
+          {
+            "name": "tattr.c_ispeed",
+            "RBP offset": -28,
+            "type": [
+              "speed_t",
+              "unsigned int",
+              "int"
+            ],
+            "size": 4,
+            "is_pointer": false,
+            "is_typedef": true,
+            "is_array": false,
+            "is_struct": false
+          },
+          {
+            "name": "tattr.c_ospeed",
+            "RBP offset": -24,
+            "type": [
+              "speed_t",
+              "unsigned int",
+              "int"
+            ],
+            "size": 4,
+            "is_pointer": false,
+            "is_typedef": true,
+            "is_array": false,
+            "is_struct": false
+          }
+        ]
       }
     ]
   },
@@ -191,9 +363,131 @@
           "termios"
         ],
         "size": 60,
+        "is_pointer": false,
         "is_typedef": false,
+        "is_array": false,
         "is_struct": true,
-        "is_array": false
+        "elements": [
+          {
+            "name": "tattr.c_iflag",
+            "RBP offset": -80,
+            "type": [
+              "tcflag_t",
+              "unsigned int",
+              "int"
+            ],
+            "size": 4,
+            "is_pointer": false,
+            "is_typedef": true,
+            "is_array": false,
+            "is_struct": false
+          },
+          {
+            "name": "tattr.c_oflag",
+            "RBP offset": -76,
+            "type": [
+              "tcflag_t",
+              "unsigned int",
+              "int"
+            ],
+            "size": 4,
+            "is_pointer": false,
+            "is_typedef": true,
+            "is_array": false,
+            "is_struct": false
+          },
+          {
+            "name": "tattr.c_cflag",
+            "RBP offset": -72,
+            "type": [
+              "tcflag_t",
+              "unsigned int",
+              "int"
+            ],
+            "size": 4,
+            "is_pointer": false,
+            "is_typedef": true,
+            "is_array": false,
+            "is_struct": false
+          },
+          {
+            "name": "tattr.c_lflag",
+            "RBP offset": -68,
+            "type": [
+              "tcflag_t",
+              "unsigned int",
+              "int"
+            ],
+            "size": 4,
+            "is_pointer": false,
+            "is_typedef": true,
+            "is_array": false,
+            "is_struct": false
+          },
+          {
+            "name": "tattr.c_line",
+            "RBP offset": -64,
+            "type": [
+              "cc_t",
+              "unsigned char",
+              "char"
+            ],
+            "size": 1,
+            "is_pointer": false,
+            "is_typedef": true,
+            "is_array": false,
+            "is_struct": false
+          },
+          {
+            "name": "tattr.c_cc",
+            "RBP offset": -63,
+            "type": [
+              "cc_t[32]",
+              "unsigned char[32]",
+              "char[32]"
+            ],
+            "size": 32,
+            "is_pointer": false,
+            "is_typedef": true,
+            "is_array": true,
+            "is_struct": false,
+            "array_length": 32,
+            "element_type": [
+              "cc_t",
+              "unsigned char",
+              "char"
+            ],
+            "element_size": 1
+          },
+          {
+            "name": "tattr.c_ispeed",
+            "RBP offset": -28,
+            "type": [
+              "speed_t",
+              "unsigned int",
+              "int"
+            ],
+            "size": 4,
+            "is_pointer": false,
+            "is_typedef": true,
+            "is_array": false,
+            "is_struct": false
+          },
+          {
+            "name": "tattr.c_ospeed",
+            "RBP offset": -24,
+            "type": [
+              "speed_t",
+              "unsigned int",
+              "int"
+            ],
+            "size": 4,
+            "is_pointer": false,
+            "is_typedef": true,
+            "is_array": false,
+            "is_struct": false
+          }
+        ]
       }
     ]
   },
@@ -212,9 +506,10 @@
           "_IO_FILE*"
         ],
         "size": 8,
+        "is_pointer": true,
         "is_typedef": true,
-        "is_struct": true,
-        "is_array": false
+        "is_array": false,
+        "is_struct": true
       }
     ]
   },
@@ -228,9 +523,10 @@
           "char**"
         ],
         "size": 8,
+        "is_pointer": true,
         "is_typedef": false,
-        "is_struct": false,
-        "is_array": false
+        "is_array": false,
+        "is_struct": false
       },
       {
         "name": "argc",
@@ -239,9 +535,10 @@
           "int"
         ],
         "size": 4,
+        "is_pointer": false,
         "is_typedef": false,
-        "is_struct": false,
-        "is_array": false
+        "is_array": false,
+        "is_struct": false
       },
       {
         "name": "c",
@@ -250,9 +547,10 @@
           "int"
         ],
         "size": 4,
+        "is_pointer": false,
         "is_typedef": false,
-        "is_struct": false,
-        "is_array": false
+        "is_array": false,
+        "is_struct": false
       },
       {
         "name": "h",
@@ -261,9 +559,10 @@
           "char*"
         ],
         "size": 8,
+        "is_pointer": true,
         "is_typedef": false,
-        "is_struct": false,
-        "is_array": false
+        "is_array": false,
+        "is_struct": false
       },
       {
         "name": "r",
@@ -272,9 +571,243 @@
           "redir"
         ],
         "size": 448,
+        "is_pointer": false,
         "is_typedef": false,
+        "is_array": false,
         "is_struct": true,
-        "is_array": false
+        "elements": [
+          {
+            "name": "r.host",
+            "RBP offset": -464,
+            "type": [
+              "unsigned char[64]",
+              "char[64]"
+            ],
+            "size": 64,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": true,
+            "is_struct": false,
+            "array_length": 64,
+            "element_type": [
+              "unsigned char",
+              "char"
+            ],
+            "element_size": 1
+          },
+          {
+            "name": "r.port",
+            "RBP offset": -400,
+            "type": [
+              "unsigned char[16]",
+              "char[16]"
+            ],
+            "size": 16,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": true,
+            "is_struct": false,
+            "array_length": 16,
+            "element_type": [
+              "unsigned char",
+              "char"
+            ],
+            "element_size": 1
+          },
+          {
+            "name": "r.user",
+            "RBP offset": -384,
+            "type": [
+              "unsigned char[64]",
+              "char[64]"
+            ],
+            "size": 64,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": true,
+            "is_struct": false,
+            "array_length": 64,
+            "element_type": [
+              "unsigned char",
+              "char"
+            ],
+            "element_size": 1
+          },
+          {
+            "name": "r.pass",
+            "RBP offset": -320,
+            "type": [
+              "unsigned char[64]",
+              "char[64]"
+            ],
+            "size": 64,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": true,
+            "is_struct": false,
+            "array_length": 64,
+            "element_type": [
+              "unsigned char",
+              "char"
+            ],
+            "element_size": 1
+          },
+          {
+            "name": "r.type",
+            "RBP offset": -256,
+            "type": [
+              "unsigned char[4]",
+              "char[4]"
+            ],
+            "size": 4,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": true,
+            "is_struct": false,
+            "array_length": 4,
+            "element_type": [
+              "unsigned char",
+              "char"
+            ],
+            "element_size": 1
+          },
+          {
+            "name": "r.verbose",
+            "RBP offset": -252,
+            "type": [
+              "int"
+            ],
+            "size": 4,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false
+          },
+          {
+            "name": "r.trace",
+            "RBP offset": -248,
+            "type": [
+              "int"
+            ],
+            "size": 4,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false
+          },
+          {
+            "name": "r.state",
+            "RBP offset": -244,
+            "type": [
+              "redir_state",
+              "int"
+            ],
+            "size": 4,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false
+          },
+          {
+            "name": "r.err",
+            "RBP offset": -240,
+            "type": [
+              "unsigned char[128]",
+              "char[128]"
+            ],
+            "size": 128,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": true,
+            "is_struct": false,
+            "array_length": 128,
+            "element_type": [
+              "unsigned char",
+              "char"
+            ],
+            "element_size": 1
+          },
+          {
+            "name": "r.sock",
+            "RBP offset": -112,
+            "type": [
+              "int"
+            ],
+            "size": 4,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false
+          },
+          {
+            "name": "r.buf",
+            "RBP offset": -108,
+            "type": [
+              "unsigned char[64]",
+              "char[64]"
+            ],
+            "size": 64,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": true,
+            "is_struct": false,
+            "array_length": 64,
+            "element_type": [
+              "unsigned char",
+              "char"
+            ],
+            "element_size": 1
+          },
+          {
+            "name": "r.blen",
+            "RBP offset": -44,
+            "type": [
+              "unsigned int",
+              "int"
+            ],
+            "size": 4,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false
+          },
+          {
+            "name": "r.cb_data",
+            "RBP offset": -40,
+            "type": [
+              "void*"
+            ],
+            "size": 8,
+            "is_pointer": true,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false
+          },
+          {
+            "name": "r.cb_state",
+            "RBP offset": -32,
+            "type": [
+              "void*"
+            ],
+            "size": 8,
+            "is_pointer": true,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false
+          },
+          {
+            "name": "r.cb_recv",
+            "RBP offset": -24,
+            "type": [
+              "void*"
+            ],
+            "size": 8,
+            "is_pointer": true,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false
+          }
+        ]
       }
     ]
   },
@@ -290,9 +823,10 @@
           "long long"
         ],
         "size": 8,
+        "is_pointer": false,
         "is_typedef": true,
-        "is_struct": false,
-        "is_array": false
+        "is_array": false,
+        "is_struct": false
       },
       {
         "name": "data",
@@ -302,9 +836,10 @@
           "char*"
         ],
         "size": 8,
+        "is_pointer": true,
         "is_typedef": false,
-        "is_struct": false,
-        "is_array": false
+        "is_array": false,
+        "is_struct": false
       },
       {
         "name": "prefix",
@@ -313,9 +848,10 @@
           "char*"
         ],
         "size": 8,
+        "is_pointer": true,
         "is_typedef": false,
-        "is_struct": false,
-        "is_array": false
+        "is_array": false,
+        "is_struct": false
       },
       {
         "name": "i",
@@ -324,9 +860,10 @@
           "int"
         ],
         "size": 4,
+        "is_pointer": false,
         "is_typedef": false,
-        "is_struct": false,
-        "is_array": false
+        "is_array": false,
+        "is_struct": false
       },
       {
         "name": "ascii",
@@ -335,9 +872,15 @@
           "char[17]"
         ],
         "size": 17,
+        "is_pointer": false,
         "is_typedef": false,
+        "is_array": true,
         "is_struct": false,
-        "is_array": true
+        "array_length": 17,
+        "element_type": [
+          "char"
+        ],
+        "element_size": 1
       }
     ]
   },
@@ -353,9 +896,10 @@
           "long long"
         ],
         "size": 8,
+        "is_pointer": false,
         "is_typedef": true,
-        "is_struct": false,
-        "is_array": false
+        "is_array": false,
+        "is_struct": false
       },
       {
         "name": "buf",
@@ -364,9 +908,10 @@
           "char*"
         ],
         "size": 8,
+        "is_pointer": true,
         "is_typedef": false,
-        "is_struct": false,
-        "is_array": false
+        "is_array": false,
+        "is_struct": false
       },
       {
         "name": "r",
@@ -375,9 +920,10 @@
           "redir*"
         ],
         "size": 8,
+        "is_pointer": true,
         "is_typedef": false,
-        "is_struct": true,
-        "is_array": false
+        "is_array": false,
+        "is_struct": true
       },
       {
         "name": "rc",
@@ -386,9 +932,10 @@
           "int"
         ],
         "size": 4,
+        "is_pointer": false,
         "is_typedef": false,
-        "is_struct": false,
-        "is_array": false
+        "is_array": false,
+        "is_struct": false
       }
     ]
   },
@@ -403,9 +950,10 @@
           "int"
         ],
         "size": 4,
+        "is_pointer": false,
         "is_typedef": false,
-        "is_struct": false,
-        "is_array": false
+        "is_array": false,
+        "is_struct": false
       },
       {
         "name": "r",
@@ -414,9 +962,10 @@
           "redir*"
         ],
         "size": 8,
+        "is_pointer": true,
         "is_typedef": false,
-        "is_struct": true,
-        "is_array": false
+        "is_array": false,
+        "is_struct": true
       },
       {
         "name": "old",
@@ -426,9 +975,10 @@
           "int"
         ],
         "size": 4,
+        "is_pointer": false,
         "is_typedef": false,
-        "is_struct": false,
-        "is_array": false
+        "is_array": false,
+        "is_struct": false
       }
     ]
   },
@@ -443,9 +993,10 @@
           "int"
         ],
         "size": 4,
+        "is_pointer": false,
         "is_typedef": false,
-        "is_struct": false,
-        "is_array": false
+        "is_array": false,
+        "is_struct": false
       },
       {
         "name": "name",
@@ -454,9 +1005,10 @@
           "char*"
         ],
         "size": 8,
+        "is_pointer": true,
         "is_typedef": false,
-        "is_struct": false,
-        "is_array": false
+        "is_array": false,
+        "is_struct": false
       }
     ]
   },
@@ -471,9 +1023,10 @@
           "int"
         ],
         "size": 4,
+        "is_pointer": false,
         "is_typedef": false,
-        "is_struct": false,
-        "is_array": false
+        "is_array": false,
+        "is_struct": false
       },
       {
         "name": "desc",
@@ -482,9 +1035,10 @@
           "char*"
         ],
         "size": 8,
+        "is_pointer": true,
         "is_typedef": false,
-        "is_struct": false,
-        "is_array": false
+        "is_array": false,
+        "is_struct": false
       }
     ]
   },
@@ -498,9 +1052,10 @@
           "redir*"
         ],
         "size": 8,
+        "is_pointer": true,
         "is_typedef": false,
-        "is_struct": true,
-        "is_array": false
+        "is_array": false,
+        "is_struct": true
       },
       {
         "name": "ai",
@@ -509,9 +1064,111 @@
           "addrinfo"
         ],
         "size": 48,
+        "is_pointer": false,
         "is_typedef": false,
+        "is_array": false,
         "is_struct": true,
-        "is_array": false
+        "elements": [
+          {
+            "name": "ai.ai_flags",
+            "RBP offset": -64,
+            "type": [
+              "int"
+            ],
+            "size": 4,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false
+          },
+          {
+            "name": "ai.ai_family",
+            "RBP offset": -60,
+            "type": [
+              "int"
+            ],
+            "size": 4,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false
+          },
+          {
+            "name": "ai.ai_socktype",
+            "RBP offset": -56,
+            "type": [
+              "int"
+            ],
+            "size": 4,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false
+          },
+          {
+            "name": "ai.ai_protocol",
+            "RBP offset": -52,
+            "type": [
+              "int"
+            ],
+            "size": 4,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false
+          },
+          {
+            "name": "ai.ai_addrlen",
+            "RBP offset": -48,
+            "type": [
+              "socklen_t",
+              "__socklen_t",
+              "unsigned int",
+              "int"
+            ],
+            "size": 4,
+            "is_pointer": false,
+            "is_typedef": true,
+            "is_array": false,
+            "is_struct": false
+          },
+          {
+            "name": "ai.ai_addr",
+            "RBP offset": -40,
+            "type": [
+              "sockaddr*"
+            ],
+            "size": 8,
+            "is_pointer": true,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": true
+          },
+          {
+            "name": "ai.ai_canonname",
+            "RBP offset": -32,
+            "type": [
+              "char*"
+            ],
+            "size": 8,
+            "is_pointer": true,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false
+          },
+          {
+            "name": "ai.ai_next",
+            "RBP offset": -24,
+            "type": [
+              "addrinfo*"
+            ],
+            "size": 8,
+            "is_pointer": true,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": true
+          }
+        ]
       },
       {
         "name": "defport",
@@ -521,9 +1178,10 @@
           "char*"
         ],
         "size": 8,
+        "is_pointer": true,
         "is_typedef": false,
-        "is_struct": false,
-        "is_array": false
+        "is_array": false,
+        "is_struct": false
       }
     ]
   },
@@ -537,9 +1195,10 @@
           "redir*"
         ],
         "size": 8,
+        "is_pointer": true,
         "is_typedef": false,
-        "is_struct": true,
-        "is_array": false
+        "is_array": false,
+        "is_struct": true
       },
       {
         "name": "request",
@@ -549,9 +1208,16 @@
           "char[8]"
         ],
         "size": 8,
+        "is_pointer": false,
         "is_typedef": false,
+        "is_array": true,
         "is_struct": false,
-        "is_array": true
+        "array_length": 8,
+        "element_type": [
+          "unsigned char",
+          "char"
+        ],
+        "element_size": 1
       }
     ]
   },
@@ -565,9 +1231,10 @@
           "redir*"
         ],
         "size": 8,
+        "is_pointer": true,
         "is_typedef": false,
-        "is_struct": true,
-        "is_array": false
+        "is_array": false,
+        "is_struct": true
       },
       {
         "name": "request",
@@ -577,9 +1244,16 @@
           "char[4]"
         ],
         "size": 4,
+        "is_pointer": false,
         "is_typedef": false,
+        "is_array": true,
         "is_struct": false,
-        "is_array": true
+        "array_length": 4,
+        "element_type": [
+          "unsigned char",
+          "char"
+        ],
+        "element_size": 1
       }
     ]
   },
@@ -593,9 +1267,10 @@
           "redir*"
         ],
         "size": 8,
+        "is_pointer": true,
         "is_typedef": false,
-        "is_struct": true,
-        "is_array": false
+        "is_array": false,
+        "is_struct": true
       },
       {
         "name": "ulen",
@@ -604,9 +1279,10 @@
           "int"
         ],
         "size": 4,
+        "is_pointer": false,
         "is_typedef": false,
-        "is_struct": false,
-        "is_array": false
+        "is_array": false,
+        "is_struct": false
       },
       {
         "name": "plen",
@@ -615,9 +1291,10 @@
           "int"
         ],
         "size": 4,
+        "is_pointer": false,
         "is_typedef": false,
-        "is_struct": false,
-        "is_array": false
+        "is_array": false,
+        "is_struct": false
       },
       {
         "name": "len",
@@ -626,9 +1303,10 @@
           "int"
         ],
         "size": 4,
+        "is_pointer": false,
         "is_typedef": false,
-        "is_struct": false,
-        "is_array": false
+        "is_array": false,
+        "is_struct": false
       },
       {
         "name": "rc",
@@ -637,9 +1315,10 @@
           "int"
         ],
         "size": 4,
+        "is_pointer": false,
         "is_typedef": false,
-        "is_struct": false,
-        "is_array": false
+        "is_array": false,
+        "is_struct": false
       },
       {
         "name": "request",
@@ -649,9 +1328,10 @@
           "char*"
         ],
         "size": 8,
+        "is_pointer": true,
         "is_typedef": false,
-        "is_struct": false,
-        "is_array": false
+        "is_array": false,
+        "is_struct": false
       }
     ]
   },
@@ -665,9 +1345,10 @@
           "redir*"
         ],
         "size": 8,
+        "is_pointer": true,
         "is_typedef": false,
-        "is_struct": true,
-        "is_array": false
+        "is_array": false,
+        "is_struct": true
       },
       {
         "name": "request",
@@ -677,9 +1358,16 @@
           "char[24]"
         ],
         "size": 24,
+        "is_pointer": false,
         "is_typedef": false,
+        "is_array": true,
         "is_struct": false,
-        "is_array": true
+        "array_length": 24,
+        "element_type": [
+          "unsigned char",
+          "char"
+        ],
+        "element_size": 1
       }
     ]
   },
@@ -693,9 +1381,10 @@
           "redir*"
         ],
         "size": 8,
+        "is_pointer": true,
         "is_typedef": false,
-        "is_struct": true,
-        "is_array": false
+        "is_array": false,
+        "is_struct": true
       },
       {
         "name": "request",
@@ -705,9 +1394,16 @@
           "char[8]"
         ],
         "size": 8,
+        "is_pointer": false,
         "is_typedef": false,
+        "is_array": true,
         "is_struct": false,
-        "is_array": true
+        "array_length": 8,
+        "element_type": [
+          "unsigned char",
+          "char"
+        ],
+        "element_size": 1
       }
     ]
   },
@@ -721,9 +1417,10 @@
           "int"
         ],
         "size": 4,
+        "is_pointer": false,
         "is_typedef": false,
-        "is_struct": false,
-        "is_array": false
+        "is_array": false,
+        "is_struct": false
       },
       {
         "name": "buf",
@@ -733,9 +1430,10 @@
           "char*"
         ],
         "size": 8,
+        "is_pointer": true,
         "is_typedef": false,
-        "is_struct": false,
-        "is_array": false
+        "is_array": false,
+        "is_struct": false
       },
       {
         "name": "r",
@@ -744,9 +1442,10 @@
           "redir*"
         ],
         "size": 8,
+        "is_pointer": true,
         "is_typedef": false,
-        "is_struct": true,
-        "is_array": false
+        "is_array": false,
+        "is_struct": true
       },
       {
         "name": "len",
@@ -755,9 +1454,10 @@
           "int"
         ],
         "size": 4,
+        "is_pointer": false,
         "is_typedef": false,
-        "is_struct": false,
-        "is_array": false
+        "is_array": false,
+        "is_struct": false
       },
       {
         "name": "rc",
@@ -766,9 +1466,10 @@
           "int"
         ],
         "size": 4,
+        "is_pointer": false,
         "is_typedef": false,
-        "is_struct": false,
-        "is_array": false
+        "is_array": false,
+        "is_struct": false
       },
       {
         "name": "request",
@@ -778,9 +1479,10 @@
           "char*"
         ],
         "size": 8,
+        "is_pointer": true,
         "is_typedef": false,
-        "is_struct": false,
-        "is_array": false
+        "is_array": false,
+        "is_struct": false
       }
     ]
   },
@@ -794,9 +1496,10 @@
           "redir*"
         ],
         "size": 8,
+        "is_pointer": true,
         "is_typedef": false,
-        "is_struct": true,
-        "is_array": false
+        "is_array": false,
+        "is_struct": true
       },
       {
         "name": "count",
@@ -805,9 +1508,10 @@
           "int"
         ],
         "size": 4,
+        "is_pointer": false,
         "is_typedef": false,
-        "is_struct": false,
-        "is_array": false
+        "is_array": false,
+        "is_struct": false
       },
       {
         "name": "len",
@@ -816,9 +1520,10 @@
           "int"
         ],
         "size": 4,
+        "is_pointer": false,
         "is_typedef": false,
-        "is_struct": false,
-        "is_array": false
+        "is_array": false,
+        "is_struct": false
       },
       {
         "name": "bshift",
@@ -827,9 +1532,10 @@
           "int"
         ],
         "size": 4,
+        "is_pointer": false,
         "is_typedef": false,
-        "is_struct": false,
-        "is_array": false
+        "is_array": false,
+        "is_struct": false
       },
       {
         "name": "flags",
@@ -838,9 +1544,10 @@
           "int"
         ],
         "size": 4,
+        "is_pointer": false,
         "is_typedef": false,
-        "is_struct": false,
-        "is_array": false
+        "is_array": false,
+        "is_struct": false
       },
       {
         "name": "msg",
@@ -850,9 +1557,16 @@
           "char[64]"
         ],
         "size": 64,
+        "is_pointer": false,
         "is_typedef": false,
+        "is_array": true,
         "is_struct": false,
-        "is_array": true
+        "array_length": 64,
+        "element_type": [
+          "unsigned char",
+          "char"
+        ],
+        "element_size": 1
       }
     ]
   },
@@ -866,9 +1580,10 @@
           "redir*"
         ],
         "size": 8,
+        "is_pointer": true,
         "is_typedef": false,
-        "is_struct": true,
-        "is_array": false
+        "is_array": false,
+        "is_struct": true
       },
       {
         "name": "bshift",
@@ -877,9 +1592,10 @@
           "int"
         ],
         "size": 4,
+        "is_pointer": false,
         "is_typedef": false,
-        "is_struct": false,
-        "is_array": false
+        "is_array": false,
+        "is_struct": false
       },
       {
         "name": "rc",
@@ -888,9 +1604,10 @@
           "int"
         ],
         "size": 4,
+        "is_pointer": false,
         "is_typedef": false,
-        "is_struct": false,
-        "is_array": false
+        "is_array": false,
+        "is_struct": false
       },
       {
         "name": "__FUNCTION__",
@@ -899,9 +1616,15 @@
           "char[11]"
         ],
         "size": 11,
+        "is_pointer": false,
         "is_typedef": false,
+        "is_array": true,
         "is_struct": false,
-        "is_array": true
+        "array_length": 11,
+        "element_type": [
+          "char"
+        ],
+        "element_size": 1
       }
     ]
   },
@@ -915,9 +1638,10 @@
           "int"
         ],
         "size": 4,
+        "is_pointer": false,
         "is_typedef": false,
-        "is_struct": false,
-        "is_array": false
+        "is_array": false,
+        "is_struct": false
       }
     ]
   },
@@ -931,9 +1655,10 @@
           "char*"
         ],
         "size": 8,
+        "is_pointer": true,
         "is_typedef": false,
-        "is_struct": false,
-        "is_array": false
+        "is_array": false,
+        "is_struct": false
       },
       {
         "name": "host",
@@ -942,9 +1667,10 @@
           "char*"
         ],
         "size": 8,
+        "is_pointer": true,
         "is_typedef": false,
-        "is_struct": false,
-        "is_array": false
+        "is_array": false,
+        "is_struct": false
       },
       {
         "name": "port",
@@ -953,9 +1679,10 @@
           "char*"
         ],
         "size": 8,
+        "is_pointer": true,
         "is_typedef": false,
-        "is_struct": false,
-        "is_array": false
+        "is_array": false,
+        "is_struct": false
       },
       {
         "name": "addr",
@@ -964,9 +1691,10 @@
           "char*"
         ],
         "size": 8,
+        "is_pointer": true,
         "is_typedef": false,
-        "is_struct": false,
-        "is_array": false
+        "is_array": false,
+        "is_struct": false
       },
       {
         "name": "ai",
@@ -975,9 +1703,10 @@
           "addrinfo*"
         ],
         "size": 8,
+        "is_pointer": true,
         "is_typedef": false,
-        "is_struct": true,
-        "is_array": false
+        "is_array": false,
+        "is_struct": true
       },
       {
         "name": "opt",
@@ -986,9 +1715,10 @@
           "int"
         ],
         "size": 4,
+        "is_pointer": false,
         "is_typedef": false,
-        "is_struct": false,
-        "is_array": false
+        "is_array": false,
+        "is_struct": false
       },
       {
         "name": "rc",
@@ -997,9 +1727,10 @@
           "int"
         ],
         "size": 4,
+        "is_pointer": false,
         "is_typedef": false,
-        "is_struct": false,
-        "is_array": false
+        "is_array": false,
+        "is_struct": false
       },
       {
         "name": "sock",
@@ -1008,9 +1739,10 @@
           "int"
         ],
         "size": 4,
+        "is_pointer": false,
         "is_typedef": false,
-        "is_struct": false,
-        "is_array": false
+        "is_array": false,
+        "is_struct": false
       },
       {
         "name": "res",
@@ -1019,9 +1751,10 @@
           "addrinfo*"
         ],
         "size": 8,
+        "is_pointer": true,
         "is_typedef": false,
-        "is_struct": true,
-        "is_array": false
+        "is_array": false,
+        "is_struct": true
       },
       {
         "name": "lres",
@@ -1030,9 +1763,10 @@
           "addrinfo*"
         ],
         "size": 8,
+        "is_pointer": true,
         "is_typedef": false,
-        "is_struct": true,
-        "is_array": false
+        "is_array": false,
+        "is_struct": true
       },
       {
         "name": "e",
@@ -1041,9 +1775,10 @@
           "addrinfo*"
         ],
         "size": 8,
+        "is_pointer": true,
         "is_typedef": false,
-        "is_struct": true,
-        "is_array": false
+        "is_array": false,
+        "is_struct": true
       },
       {
         "name": "ask",
@@ -1052,9 +1787,111 @@
           "addrinfo"
         ],
         "size": 48,
+        "is_pointer": false,
         "is_typedef": false,
+        "is_array": false,
         "is_struct": true,
-        "is_array": false
+        "elements": [
+          {
+            "name": "ask.ai_flags",
+            "RBP offset": -272,
+            "type": [
+              "int"
+            ],
+            "size": 4,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false
+          },
+          {
+            "name": "ask.ai_family",
+            "RBP offset": -268,
+            "type": [
+              "int"
+            ],
+            "size": 4,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false
+          },
+          {
+            "name": "ask.ai_socktype",
+            "RBP offset": -264,
+            "type": [
+              "int"
+            ],
+            "size": 4,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false
+          },
+          {
+            "name": "ask.ai_protocol",
+            "RBP offset": -260,
+            "type": [
+              "int"
+            ],
+            "size": 4,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false
+          },
+          {
+            "name": "ask.ai_addrlen",
+            "RBP offset": -256,
+            "type": [
+              "socklen_t",
+              "__socklen_t",
+              "unsigned int",
+              "int"
+            ],
+            "size": 4,
+            "is_pointer": false,
+            "is_typedef": true,
+            "is_array": false,
+            "is_struct": false
+          },
+          {
+            "name": "ask.ai_addr",
+            "RBP offset": -248,
+            "type": [
+              "sockaddr*"
+            ],
+            "size": 8,
+            "is_pointer": true,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": true
+          },
+          {
+            "name": "ask.ai_canonname",
+            "RBP offset": -240,
+            "type": [
+              "char*"
+            ],
+            "size": 8,
+            "is_pointer": true,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false
+          },
+          {
+            "name": "ask.ai_next",
+            "RBP offset": -232,
+            "type": [
+              "addrinfo*"
+            ],
+            "size": 8,
+            "is_pointer": true,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": true
+          }
+        ]
       },
       {
         "name": "uport",
@@ -1063,9 +1900,15 @@
           "char[33]"
         ],
         "size": 33,
+        "is_pointer": false,
         "is_typedef": false,
+        "is_array": true,
         "is_struct": false,
-        "is_array": true
+        "array_length": 33,
+        "element_type": [
+          "char"
+        ],
+        "element_size": 1
       },
       {
         "name": "userv",
@@ -1074,9 +1917,15 @@
           "char[33]"
         ],
         "size": 33,
+        "is_pointer": false,
         "is_typedef": false,
+        "is_array": true,
         "is_struct": false,
-        "is_array": true
+        "array_length": 33,
+        "element_type": [
+          "char"
+        ],
+        "element_size": 1
       },
       {
         "name": "uaddr",
@@ -1085,9 +1934,15 @@
           "char[47]"
         ],
         "size": 47,
+        "is_pointer": false,
         "is_typedef": false,
+        "is_array": true,
         "is_struct": false,
-        "is_array": true
+        "array_length": 47,
+        "element_type": [
+          "char"
+        ],
+        "element_size": 1
       },
       {
         "name": "uhost",
@@ -1096,9 +1951,15 @@
           "char[47]"
         ],
         "size": 47,
+        "is_pointer": false,
         "is_typedef": false,
+        "is_array": true,
         "is_struct": false,
-        "is_array": true
+        "array_length": 47,
+        "element_type": [
+          "char"
+        ],
+        "element_size": 1
       }
     ]
   },
@@ -1112,9 +1973,10 @@
           "char*"
         ],
         "size": 8,
+        "is_pointer": true,
         "is_typedef": false,
-        "is_struct": false,
-        "is_array": false
+        "is_array": false,
+        "is_struct": false
       },
       {
         "name": "addr",
@@ -1123,9 +1985,10 @@
           "char*"
         ],
         "size": 8,
+        "is_pointer": true,
         "is_typedef": false,
-        "is_struct": false,
-        "is_array": false
+        "is_array": false,
+        "is_struct": false
       },
       {
         "name": "ai",
@@ -1134,9 +1997,10 @@
           "addrinfo*"
         ],
         "size": 8,
+        "is_pointer": true,
         "is_typedef": false,
-        "is_struct": true,
-        "is_array": false
+        "is_array": false,
+        "is_struct": true
       },
       {
         "name": "opt",
@@ -1145,9 +2009,10 @@
           "int"
         ],
         "size": 4,
+        "is_pointer": false,
         "is_typedef": false,
-        "is_struct": false,
-        "is_array": false
+        "is_array": false,
+        "is_struct": false
       },
       {
         "name": "slisten",
@@ -1156,9 +2021,10 @@
           "int"
         ],
         "size": 4,
+        "is_pointer": false,
         "is_typedef": false,
-        "is_struct": false,
-        "is_array": false
+        "is_array": false,
+        "is_struct": false
       },
       {
         "name": "rc",
@@ -1167,9 +2033,10 @@
           "int"
         ],
         "size": 4,
+        "is_pointer": false,
         "is_typedef": false,
-        "is_struct": false,
-        "is_array": false
+        "is_array": false,
+        "is_struct": false
       },
       {
         "name": "res",
@@ -1178,9 +2045,10 @@
           "addrinfo*"
         ],
         "size": 8,
+        "is_pointer": true,
         "is_typedef": false,
-        "is_struct": true,
-        "is_array": false
+        "is_array": false,
+        "is_struct": true
       },
       {
         "name": "e",
@@ -1189,9 +2057,10 @@
           "addrinfo*"
         ],
         "size": 8,
+        "is_pointer": true,
         "is_typedef": false,
-        "is_struct": true,
-        "is_array": false
+        "is_array": false,
+        "is_struct": true
       },
       {
         "name": "uport",
@@ -1200,9 +2069,15 @@
           "char[33]"
         ],
         "size": 33,
+        "is_pointer": false,
         "is_typedef": false,
+        "is_array": true,
         "is_struct": false,
-        "is_array": true
+        "array_length": 33,
+        "element_type": [
+          "char"
+        ],
+        "element_size": 1
       },
       {
         "name": "uaddr",
@@ -1211,9 +2086,15 @@
           "char[47]"
         ],
         "size": 47,
+        "is_pointer": false,
         "is_typedef": false,
+        "is_array": true,
         "is_struct": false,
-        "is_array": true
+        "array_length": 47,
+        "element_type": [
+          "char"
+        ],
+        "element_size": 1
       }
     ]
   }
