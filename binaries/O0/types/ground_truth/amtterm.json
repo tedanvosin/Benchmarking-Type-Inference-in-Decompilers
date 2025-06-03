@@ -133,6 +133,20 @@
         "is_union": false
       },
       {
+        "name": "__i",
+        "RBP offset": -688,
+        "type": [
+          "unsigned int",
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false
+      },
+      {
         "name": "rc",
         "RBP offset": -684,
         "type": [
@@ -143,6 +157,19 @@
         "is_typedef": false,
         "is_array": false,
         "is_struct": false,
+        "is_union": false
+      },
+      {
+        "name": "__arr",
+        "RBP offset": -680,
+        "type": [
+          "fd_set*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": true,
         "is_union": false
       },
       {
@@ -200,7 +227,29 @@
         "is_array": false,
         "is_struct": true,
         "is_union": false,
-        "elements": []
+        "elements": [
+          {
+            "name": "set.__fds_bits",
+            "RBP offset": -656,
+            "type": [
+              "__fd_mask[16]",
+              "long int[16]",
+              "long long[16]"
+            ],
+            "size": 128,
+            "is_pointer": false,
+            "is_typedef": true,
+            "is_array": true,
+            "is_struct": false,
+            "array_length": 16,
+            "element_type": [
+              "__fd_mask",
+              "long int",
+              "long long"
+            ],
+            "element_size": 8
+          }
+        ]
       },
       {
         "name": "buf",
@@ -1676,6 +1725,19 @@
         "is_typedef": false,
         "is_array": false,
         "is_struct": false,
+        "is_union": false
+      },
+      {
+        "name": "msg",
+        "RBP offset": -8,
+        "type": [
+          "controls_from_host_message*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": true,
         "is_union": false
       },
       {

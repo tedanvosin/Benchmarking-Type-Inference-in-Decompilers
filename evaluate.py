@@ -18,13 +18,18 @@ def evaluate(decomp_json, gt_json):
     print(f'Total variables in ground truth: {total_variables_in_gt}')
     print(f'Total variables in Decompilation: {total_variables_in_decomp}\n')
     
-    global_variables_identified = 0
-    global_corret_cnt = 0
-    global_ghost_variables = 0
-    # print('=========================================================================')
     print(f"{'Function Name':<20}{'Variables Identified':<25}{'Correct Offset':<20}{'Correct Type':<15}{'Ghosts':<15}")
 
     for func in gt_json:
+        has_struct = False
+        has_array = False
+        
+        for var in gt_json[func]['variables']:
+            if not var['is_pointer'] and var['is_struct']:
+                has_struct = True
+            if var['is_array']:
+                has_array = True
+        
         variables_identified = 0
         corret_cnt = 0
         ghost_variables = 0
@@ -59,9 +64,7 @@ def evaluate(decomp_json, gt_json):
         global_variables_identified += variables_identified
         global_corret_cnt += corret_cnt
         global_ghost_variables += ghost_variables
-        print(f"{func:<20}{f'{len(decomp_variables_info)}/{len(gt_variables_info)}':<25}{variables_identified:<20}{corret_cnt:<15}{ghost_variables:<15}")
-        # print(f'Function: {func}\nTotal variables identified: {len(decomp_variables)}, Variables identified at correct offset: {variables_identified}, Correct Variables: {corret_cnt}, Ghost Variables: {ghost_variables}\n')
-        
+        print(f"{func:<20}{f'{len(decomp_variables_info)}/{len(gt_variables_info)}':<25}{variables_identified:<20}{corret_cnt:<15}{ghost_variables:<15}")        
     
     print(f'\nTotal variables identified: {global_variables_identified}, Correct Variables: {global_corret_cnt}, Ghost Variables: {global_ghost_variables}')
     
@@ -73,6 +76,7 @@ def evaluate(decomp_json, gt_json):
     return
 
 def main():
+    
     base_dir = f'binaries/{sys.argv[1]}' if len(sys.argv) > 1 else 'binaries/O0'
     base_dir = Path(base_dir)
     
@@ -86,10 +90,8 @@ def main():
         ground_truth = base_dir / 'types' /'ground_truth'/f'{file_name}.json'
         
         if ground_truth.exists():
-            
-            print('=========================================================================')
-            print('Evaluating : ', file_path.stem)
-            
+            print(f'\n----------------Processing {file_name}----------------\n')
+
             gt_json = json.loads(ground_truth.read_text())
             
             print('Number of functions in ground truth:', len(gt_json))
