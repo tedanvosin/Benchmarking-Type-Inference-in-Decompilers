@@ -12,13 +12,14 @@ import binaryninja
 
 TYPE_MAP = {
     "int64_t": "long long",
-    "uint64_t": "unsigned long long",
+    "uint64_t": "long long",
     "int32_t": "int",
-    "uint32_t": "unsigned int",
+    "uint32_t": "int",
     "int16_t": "short",
-    "uint16_t": "unsigned short",
+    "uint16_t": "short",
     "int8_t": "char",
-    "uint8_t": "unsigned char",
+    "uint8_t": "char",
+    "uint": "int"
 }
 
 def correct_array_length(var_type):

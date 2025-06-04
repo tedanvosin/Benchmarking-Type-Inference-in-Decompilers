@@ -23,21 +23,24 @@ TYPE_MAP = {
         "_BOOL1": "bool",
         "_BOOL": "bool",
         "_BYTE": "char",
-        "_WORD": "unsigned short",
-        "_DWORD": "unsigned int",
-        "_QWORD": "unsigned long long",
+        "_WORD": "short",
+        "_DWORD": "int",
+        "_QWORD": "long long",
         "_UNKNOWN": "void"
     }
 
-def normalizetype(type_str):
-    type_str = type_str.replace("const ", "")
-    type_str = type_str.replace("volatile ", "")
-    type_str = type_str.replace("struct ", "")
+def normalizetype(var_type):
+    var_type = var_type.replace("const ", "")
+    var_type = var_type.replace("volatile ", "")
+    var_type = var_type.replace("struct ", "")
+    var_type = var_type.replace("unsigned ", "")
+    var_type = var_type.strip()
+    
     for key, value in TYPE_MAP.items():
-        if key in type_str:
-            type_str = type_str.replace(key, value)
-            return type_str
-    return type_str
+        if key in var_type:
+            var_type = var_type.replace(key, value)
+            return var_type
+    return var_type
 
 def main():
     if not ida_hexrays.init_hexrays_plugin():

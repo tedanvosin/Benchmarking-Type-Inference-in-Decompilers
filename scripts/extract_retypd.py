@@ -1,8 +1,3 @@
-# Ghidra script to run type modification plugin and then extract stack variables
-# @category Analysis
-# @author Claude
-# @menupath Tools.Analysis.TypeModAndExtract
-
 import json
 import os
 from ghidra.app.decompiler import DecompInterface
@@ -11,9 +6,6 @@ from ghidra.program.model.symbol import SourceType
 from ghidra.app.script import GhidraScript
 from collections import OrderedDict
 
-# Import your custom plugin class (replace with your actual class path)
-# For example:
-# from your.package.CustomTypePlugin import CustomTypePlugin
 TYPE_MAP = {
         "undefined *": "void *",
         "undefined8": "long long",
@@ -50,6 +42,10 @@ def normalize_type(var_type):
     if var_type == 'long':
         var_type = 'long long'
     
+    var_type = var_type.replace("const", "")
+    var_type = var_type.replace("volatile", "")
+    var_type = var_type.replace("unsigned", "")
+    var_type = var_type.strip()
     for key, value in TYPE_MAP.items():
         if key in var_type:
             var_type = var_type.replace(key, value)
@@ -61,12 +57,8 @@ def normalize_type(var_type):
 def run_custom_type_plugin():
     """Run your custom plugin to modify types"""
     try:
-        # Option 1: If your plugin is a Ghidra script, run it by name
         runScript("Retypd.java")
         
-        # Option 2: Or instantiate and run your plugin directly
-        # plugin = CustomTypePlugin()
-        # plugin.run(currentProgram, monitor)
         
         print("Custom type modification completed successfully")
     except Exception as e:

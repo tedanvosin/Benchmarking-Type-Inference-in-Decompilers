@@ -23,6 +23,16 @@ def sort_json(data):
         )
     return ordered
 
+def normalize_type(var_type):
+    var_type = var_type.replace("const", "")
+    var_type = var_type.replace("volatile", "")
+    var_type = var_type.replace("unsigned ","")
+    var_type = var_type.strip()
+    if var_type == "long":
+        var_type = "long long"
+
+    return var_type
+
 def analyze_binary(binary_path):
 
     output_dir = binary_path
@@ -61,6 +71,7 @@ def analyze_binary(binary_path):
                     
                     var_name = var.name
                     var_type = code_gen.cfunc.variable_manager.get_variable_type(var).c_repr()
+                    var_type = normalize_type(var_type)
                     var_size = var.size
                     var_location = var.offset+8
                     
