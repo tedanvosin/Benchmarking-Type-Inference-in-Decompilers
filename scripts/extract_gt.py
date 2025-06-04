@@ -90,11 +90,17 @@ def parse_struct(die, var_data, dwarfinfo):
             member_data['is_typedef'] = False
             member_data['is_array'] = False
             member_data['is_struct'] = False
+            member_data['is_union'] = False
+            
             parse_type_die(child, member_data, dwarfinfo)
             member_data['type'] = get_normalized_types(member_data['type'])
             
             if member_data['is_array']:
                 member_data['element_type'] = get_normalized_types(member_data['element_type'])
+            
+            if member_data['is_struct']:
+                member_data['elements'] = []
+                parse_struct(child, member_data, dwarfinfo)
             
             var_data['elements'].append(member_data)
     
@@ -121,15 +127,14 @@ def parse_type_die(die,var_data,dwarfinfo):
     
     #follow typedef
     elif tag == 'DW_TAG_typedef':
-        var_data['is_typedef'] = True
         if 'DW_AT_name' in type_die.attributes:
             var_data['type'].append(type_die.attributes['DW_AT_name'].value.decode('utf-8', 'replace'))
         parse_type_die(type_die, var_data, dwarfinfo)
+        var_data['is_typedef'] = True
         return
     
     # Array types
     elif tag == 'DW_TAG_array_type':
-        var_data['is_array'] = True
         parse_type_die(type_die, var_data, dwarfinfo)
         
         array_size = get_array_dims(type_die, dwarfinfo)
@@ -140,14 +145,15 @@ def parse_type_die(die,var_data,dwarfinfo):
         
         for i in range(len(var_data['type'])):
             var_data['type'][i] += f'[{array_size[0]}]' if array_size else '[]'
-
+        
         if len(array_size):
             var_data['size'] *= array_size[0] 
+        
+        var_data['is_array'] = True
         return
     
     # Pointer types
     elif tag == 'DW_TAG_pointer_type':
-        var_data['is_pointer'] = True
         parse_type_die(type_die,var_data, dwarfinfo)
         
         if var_data['type'] == []:
@@ -157,6 +163,9 @@ def parse_type_die(die,var_data,dwarfinfo):
             var_data['type'][i] +=  '*'
 
         var_data['size'] = type_die.attributes.get('DW_AT_byte_size').value
+        var_data['is_pointer'] = True
+        var_data['is_array'] = False
+        var_data['is_struct'] = False
         return
     
     #constant types
@@ -166,25 +175,26 @@ def parse_type_die(die,var_data,dwarfinfo):
 
     # Struct types
     elif tag =='DW_TAG_structure_type':
-        var_data['is_struct'] = True
         if 'DW_AT_name' in type_die.attributes:
             var_data['type'].append(type_die.attributes['DW_AT_name'].value.decode('utf-8', 'replace'))
         
         if var_data['type'] == []:
             var_data['type'].append('struct')
         var_data['size'] = type_die.attributes.get('DW_AT_byte_size').value if 'DW_AT_byte_size' in type_die.attributes else 8
+        
+        var_data['is_struct'] = True
         
         return
     
     #union/class
     elif tag in ('DW_TAG_union_type', 'DW_TAG_class_type'):
-        var_data['is_union'] = True
         if 'DW_AT_name' in type_die.attributes:
             var_data['type'].append(type_die.attributes['DW_AT_name'].value.decode('utf-8', 'replace'))
         
         if var_data['type'] == []:
             var_data['type'].append('struct')
         var_data['size'] = type_die.attributes.get('DW_AT_byte_size').value if 'DW_AT_byte_size' in type_die.attributes else 8
+        var_data['is_union'] = True
         
         return
 
@@ -220,10 +230,10 @@ def parse_variable_die(child_die, dwarfinfo):
     parse_type_die(child_die, var_data, dwarfinfo)
     var_data['type'] = get_normalized_types(var_data['type'])
 
-    if not var_data['is_pointer'] and var_data['is_array']:
+    if var_data['is_array']:
         var_data['element_type'] = get_normalized_types(var_data['element_type'])
     
-    if not var_data['is_pointer'] and var_data['is_struct']:
+    if var_data['is_struct']:
         var_data['elements'] = []
         parse_struct(child_die, var_data, dwarfinfo)
     
