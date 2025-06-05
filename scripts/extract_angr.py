@@ -27,6 +27,7 @@ def normalize_type(var_type):
     var_type = var_type.replace("const", "")
     var_type = var_type.replace("volatile", "")
     var_type = var_type.replace("unsigned ","")
+    var_type = var_type.replace("signed", "")
     var_type = var_type.strip()
     if var_type == "long":
         var_type = "long long"
@@ -60,6 +61,11 @@ def analyze_binary(binary_path):
             decompilation = project.analyses.Decompiler(func, cfg=CFG)
 
             code_gen = decompilation.codegen
+            
+            #angr could not decompile
+            if not code_gen:
+                continue
+            
             stack_vars = []
             for var in code_gen.cfunc.variable_manager._unified_variables:
                 if hasattr(var, 'offset') and var.offset<0:

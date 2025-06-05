@@ -45,6 +45,7 @@ def normalize_type(var_type):
     var_type = var_type.replace("const", "")
     var_type = var_type.replace("volatile", "")
     var_type = var_type.replace("unsigned", "")
+    var_type = var_type.replace("signed", "")
     var_type = var_type.strip()
     for key, value in TYPE_MAP.items():
         if key in var_type:

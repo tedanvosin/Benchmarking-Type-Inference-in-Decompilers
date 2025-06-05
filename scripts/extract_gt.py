@@ -27,6 +27,7 @@ def get_normalized_types(var_data):
     for type in var_data:
         norm_type = type
         norm_type = norm_type.replace('unsigned ', '')
+        norm_type = norm_type.replace("signed ", "")
         norm_type = norm_type.replace('long long int', 'long long')
         norm_type = norm_type.replace('long int', 'long long')
         norm_type = norm_type.replace('_Bool', 'bool')
@@ -91,7 +92,7 @@ def parse_struct(die, var_data, dwarfinfo):
             member_data['is_array'] = False
             member_data['is_struct'] = False
             member_data['is_union'] = False
-            
+
             parse_type_die(child, member_data, dwarfinfo)
             member_data['type'] = get_normalized_types(member_data['type'])
             
@@ -115,7 +116,6 @@ def parse_type_die(die,var_data,dwarfinfo):
     type_attr = die.attributes.get('DW_AT_type')
     type_offset = type_attr.value + die.cu.cu_offset
     type_die = dwarfinfo.get_DIE_from_refaddr(type_offset)
-
     tag = type_die.tag
     
     # Base types (e.g., int, char)
@@ -139,14 +139,15 @@ def parse_type_die(die,var_data,dwarfinfo):
         
         array_size = get_array_dims(type_die, dwarfinfo)
         
-        var_data['array_length'] = array_size[0] if array_size else 1
+        
+        var_data['array_length'] = array_size[0] if (array_size!=[] and array_size[0]) else 1
         var_data['element_type'] = var_data['type'][:]
         var_data['element_size'] = var_data['size']
         
         for i in range(len(var_data['type'])):
-            var_data['type'][i] += f'[{array_size[0]}]' if array_size else '[]'
+            var_data['type'][i] += f'[{array_size[0]}]' if array_size[0] else '[]'
         
-        if len(array_size):
+        if len(array_size) and array_size[0]:
             var_data['size'] *= array_size[0] 
         
         var_data['is_array'] = True
@@ -162,7 +163,7 @@ def parse_type_die(die,var_data,dwarfinfo):
         for i in range(len(var_data['type'])):
             var_data['type'][i] +=  '*'
 
-        var_data['size'] = type_die.attributes.get('DW_AT_byte_size').value
+        var_data['size'] = type_die.attributes.get('DW_AT_byte_size').value if 'DW_AT_byte_size' in type_die.attributes else 8
         var_data['is_pointer'] = True
         var_data['is_array'] = False
         var_data['is_struct'] = False
@@ -181,9 +182,7 @@ def parse_type_die(die,var_data,dwarfinfo):
         if var_data['type'] == []:
             var_data['type'].append('struct')
         var_data['size'] = type_die.attributes.get('DW_AT_byte_size').value if 'DW_AT_byte_size' in type_die.attributes else 8
-        
         var_data['is_struct'] = True
-        
         return
     
     #union/class
@@ -193,9 +192,8 @@ def parse_type_die(die,var_data,dwarfinfo):
         
         if var_data['type'] == []:
             var_data['type'].append('struct')
-        var_data['size'] = type_die.attributes.get('DW_AT_byte_size').value if 'DW_AT_byte_size' in type_die.attributes else 8
-        var_data['is_union'] = True
-        
+        var_data['size'] = type_die.attributes.get('DW_AT_byte_size').value if 'DW_AT_byte_size' in type_die.attributes else 8        
+        var_data['is_union'] = True   
         return
 
     # Enum types
@@ -203,7 +201,7 @@ def parse_type_die(die,var_data,dwarfinfo):
         if 'DW_AT_name' in type_die.attributes:
             var_data['type'].append(type_die.attributes['DW_AT_name'].value.decode('utf-8', 'replace'))
         var_data['type'].append('int')
-        var_data['size'] = type_die.attributes.get('DW_AT_byte_size').value if 'DW_AT_byte_size' in type_die.attributes else 4
+        var_data['size'] = type_die.attributes.get('DW_AT_byte_size').value if 'DW_AT_byte_size' in type_die.attributes else 4      
         return
     
     else:
@@ -245,8 +243,7 @@ def parse_lexical_block(die, dwarfinfo):
     
     for child in die.iter_children():
         if child.tag == 'DW_TAG_lexical_block':
-            lex_variables = parse_lexical_block(child, dwarfinfo)
-            variables.extend(lex_variables)
+            variables.extend(parse_lexical_block(child, dwarfinfo))
         
         elif child.tag in ('DW_TAG_formal_parameter', 'DW_TAG_variable'):
             var_data = parse_variable_die(child, dwarfinfo)
@@ -273,8 +270,7 @@ def parse_function_die(die,dwarfinfo):
     for child in die.iter_children():
         
         if child.tag == 'DW_TAG_lexical_block':
-            lex_variables = parse_lexical_block(child, dwarfinfo)
-            func_data['variables'].extend(lex_variables)
+            func_data['variables'].extend(parse_lexical_block(child, dwarfinfo))
         
         elif child.tag in ('DW_TAG_formal_parameter', 'DW_TAG_variable'):
             var_data = parse_variable_die(child, dwarfinfo)
