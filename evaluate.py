@@ -3,215 +3,255 @@ import json
 import subprocess
 import sys
 from pathlib import Path
+from pprint import pprint
 from collections import OrderedDict
 
 DECOMPILERS = ['angr','binja','ghidra','ida','retypd']
-DECOMP_JSONS = []
+DECOMPS = {'angr':[],'binja':[],'ghidra':[],'ida':[],'retypd':[]}
+GROUND_TRUTHS = []
 
-def evaluate_structs(decomp_json, gt_json):
-    global_variables_identified = 0
-    global_corret_cnt = 0
-    global_ghost_variables = 0
+def has_array(func):
+    for var in func['variables']:
+        if var['is_array']:
+            return True
+    return False
+
+def has_struct(func):
+    for var in func['variables']:
+        if var['is_struct']:
+            return True
+    return False
+
+def has_pointer(func):
+    for var in func['variables']:
+        if var['is_pointer']:
+            return True
+    return False
+
+def break_struct(var,gt_funcs,depth=1):
+    if depth == 0:
+        gt_funcs[var['RBP offset']] = []
+        for type in var['type']:
+            gt_funcs[var['RBP offset']].append(type.replace(' ',''))
+        return
     
-    for func in gt_json:
-        has_arr_struct = False
+    for mem in var['elements']:
+        if mem['is_struct']:
+            break_struct(mem, gt_funcs,depth-1)
+            return
+        
+        gt_funcs[mem['RBP offset']] = []
+        for type in mem['type']:
+            gt_funcs[mem['RBP offset']].append(type.replace(' ',''))
 
-        for var in gt_json[func]['variables']:
-            if not var['is_pointer'] and var['is_struct']:
-                has_arr_struct = True
-                break
+def var_level_evaluate(var_type_str):
+    print("{:<13}{:<15}{:<8}{:<8}{:<8}{:<8}".format("Decompiler","Decomp/GT Cnt", "TP", "FP", "TN", "FN"))
+    print(f"{'':-<60}")
+    
+    for decompiler in DECOMPILERS:
+        tp = 0
+        tn = 0
+        fp = 0
+        fn = 0
 
-        if not has_arr_struct:
-            continue
-        
-        variables_identified = 0
-        corret_cnt = 0
-        ghost_variables = 0
-        
-        if func not in decomp_json:
-            print(f'Function {func} not found in decomp')
-            continue
-        
-        gt_variables = gt_json[func]['variables']
-        decomp_variables = decomp_json[func]['variables']
-        
-        
-        decomp_variables_types = {}
-        for decomp_var in decomp_variables:
-            decomp_variables_types[decomp_var['RBP offset']] = decomp_var['type'].replace('unsigned ','').replace(' ','')
-        
-        
-        gt_variables_types = {}
-        for gt_var in gt_variables:
-            gt_variables_types[gt_var['RBP offset']] = []
+        for i in range(len(GROUND_TRUTHS)):
+            ground_truth_json = json.load(open(GROUND_TRUTHS[i]))
+            decomp_json = json.load(open(DECOMPS[decompiler][i]))
+    
+            gt_funcs = {}
+            decomp_funcs = {}
             
-            ##Check if varable is a Struct
-            if not gt_var['is_pointer'] and gt_var['is_struct']:
+            for func in ground_truth_json:
                 
-                #If variable is a struct and matched, dont break struct type
-                if gt_var['RBP offset'] in decomp_variables_types and decomp_variables_types[gt_var['RBP offset']] in gt_var['type']:
-                    for var_type in gt_var['type']:
-                        gt_variables_types[gt_var['RBP offset']].append(var_type.replace('unsigned ','').replace(' ',''))
+                gt_funcs[func] = {}
                 
-                #break struct type if not matched
-                else:
-                    for var in gt_var['elements']:
+                if func in decomp_json:
+                    decomp_funcs[func] = {}
+                    for var in decomp_json[func]['variables']:
+                        if var['RBP offset'] not in decomp_funcs[func]:
+                            decomp_funcs[func][var['RBP offset']] = []
+                        decomp_funcs[func][var['RBP offset']].append(var['type'].strip().replace(' ', ''))
+                
+                for var in ground_truth_json[func]['variables']:
+                    gt_funcs[func][var['RBP offset']] = []
+                    for type in var['type']:
+                        gt_funcs[func][var['RBP offset']].append(type.replace(' ',''))  
+
+
+            for func in gt_funcs:
+                if func not in decomp_funcs:
+                    for offset,_type in gt_funcs[func].items():
+                        if var_type_str in _type:
+                            fn += 1
+                    continue
+                
+                for offset,_type in gt_funcs[func].items():
+                    if var_type_str not in _type:
+                        continue
+                    if offset in decomp_funcs[func]:
+                        if var_type_str in decomp_funcs[func][offset]:
+                            tp += 1
+                        else:
+                            fp += 1
+                    else:
+                        fn += 1
+                
+                for offset in decomp_funcs[func]:
+                    if offset not in gt_funcs[func]:
+                        if var_type_str in set(decomp_funcs[func][offset]):
+                            tn += 1
+
+        
+        print("{:<13}{:<15}{:<8}{:<8}{:<8}{:<8}".format(decompiler,f'{tp+fp+tn}/{tp+fp+fn}', tp, fp, tn, fn))
+    print("\n")
+
+def func_level_evaluate(allow_structs=True, allow_arrays=True, primitives=True, break_structs=False,depth=1):
+    
+    print("{:<13}{:<15}{:<8}{:<8}{:<8}{:<8}".format("Decompiler","Decomp/GT Cnt", "TP", "FP", "TN", "FN"))
+    print(f"{'':-<60}")
+    
+    for decompiler in DECOMPILERS:
+        tp = 0
+        tn = 0
+        fp = 0
+        fn = 0
+        var_cnt = 0
+
+        for i in range(len(GROUND_TRUTHS)):
+            ground_truth_json = json.load(open(GROUND_TRUTHS[i]))
+            decomp_json = json.load(open(DECOMPS[decompiler][i]))
+    
+            gt_funcs = {}
+            decomp_funcs = {}
+            
+            for func in ground_truth_json:
+                if not allow_arrays and has_array(ground_truth_json[func]):
+                    continue
+                if not allow_structs and has_struct(ground_truth_json[func]):
+                    continue
+                if not primitives and not (has_array(ground_truth_json[func]) or has_struct(ground_truth_json[func])):
+                    continue
+                
+                gt_funcs[func] = {}
+                
+                if func in decomp_json:
+                    decomp_funcs[func] = {}
+                    for var in decomp_json[func]['variables']:
+                        if var['RBP offset'] not in decomp_funcs[func]:
+                            decomp_funcs[func][var['RBP offset']] = []
+                        decomp_funcs[func][var['RBP offset']].append(var['type'].strip().replace(' ', ''))
+                
+                for var in ground_truth_json[func]['variables']:
+                    if var['is_struct'] and break_structs:
                         
-                        if var['RBP offset'] not in gt_variables_types:
-                            gt_variables_types[var['RBP offset']] = []
+                        if (func in decomp_funcs) and (var['RBP offset'] in decomp_funcs[func]) and (set(var['type']).intersection(set(decomp_funcs[func][var['RBP offset']]))):
+                            #Struct Identified
+                            gt_funcs[func][var['RBP offset']] = []
+                            for type in var['type']:
+                                gt_funcs[func][var['RBP offset']].append(type.replace(' ',''))    
                         
-                        for var_type in var['type']:
-                            gt_variables_types[var['RBP offset']].append(var_type.replace('unsigned ','').replace(' ',''))
+                        else:
+                            #Struct Not Identified
+                            #Breakdown Struct
+                            break_struct(var, gt_funcs[func], depth=depth)
+                            
+                    else:
+                        gt_funcs[func][var['RBP offset']] = []
+                        for type in var['type']:
+                            gt_funcs[func][var['RBP offset']].append(type.replace(' ',''))  
 
-            #If not struct continue as normal
-            else:
-                for var_type in gt_var['type']:
-                    gt_variables_types[gt_var['RBP offset']].append(var_type.replace('unsigned ','').replace(' ',''))
+            for func in gt_funcs:
+                if func not in decomp_funcs:
+                    fn += len(gt_funcs[func])
+                    continue
+                
+                for offset,_type in gt_funcs[func].items():
+                    var_cnt += 1
+                    if offset in decomp_funcs[func]:
+                        if set(gt_funcs[func][offset]).intersection(set(decomp_funcs[func][offset])):
+                            tp += 1
+                        else:
+                            fp += 1
+                    else:
+                        fn += 1
+
+                for offset in decomp_funcs[func]:
+                    if offset not in gt_funcs[func]:
+                        tn += 1
         
-        for offset in decomp_variables_types:
-            if offset in gt_variables_types:
-                variables_identified += 1
-                if decomp_variables_types[offset] in gt_variables_types[offset]:
-                    corret_cnt += 1
-            else:
-                ghost_variables += 1
-          
-        global_variables_identified += variables_identified
-        global_corret_cnt += corret_cnt
-        global_ghost_variables += ghost_variables
-        print(f"{func:<20}{'Yes'if (has_arr_struct) else 'No' :<19}{f'{len(decomp_variables_types)}/{len(gt_variables_types)}':<25}{variables_identified:<20}{corret_cnt:<15}{ghost_variables:<15}")
-    
-    return global_variables_identified, global_corret_cnt, global_ghost_variables
+        print("{:<13}{:<15}{:<8}{:<8}{:<8}{:<8}".format(decompiler,f'{tp+fp+tn}/{tp+fp+fn}', tp, fp, tn, fn))
+    print("\n")
 
-def primitive_evaluation(decomp_json, gt_json):
-
-    for func in gt_json:
-        
-        gt_var_types = {}
-        for var in gt_json[func]['variables']:
-            if var['is_pointer'] or var['is_struct'] or var['is_array'] or var['is_union']:
-                continue
-            for var_type in var['type']:
-                gt_var_types[var['RBP offset']] = var_type.replace('unsigned ','').replace(' ','')
-    
-
-def basic_evaluation(decomp_json, gt_json, arr_struct=False):
-    global_variables_identified = 0
-    global_corret_cnt = 0
-    global_ghost_variables = 0
-    
-    for func in gt_json:
-        has_arr_struct = False
-
-        for var in gt_json[func]['variables']:
-            if not var['is_pointer'] and var['is_struct']:
-                has_arr_struct = True
-                break
-            elif var['is_array']:
-                has_arr_struct = True
-                break
-        
-        if (has_arr_struct and not arr_struct) or (not has_arr_struct and arr_struct):
-            continue
-        
-        variables_identified = 0
-        corret_cnt = 0
-        ghost_variables = 0
-        
-        if func not in decomp_json:
-            print(f'Function {func} not found in decomp')
-            continue
-        
-        gt_variables = gt_json[func]['variables']
-        decomp_variables = decomp_json[func]['variables']
-        
-        gt_variables_info = {}
-
-        for gt_var in gt_variables:
-            gt_variables_info[gt_var['RBP offset']] = []
-            for var_type in gt_var['type']:
-                gt_variables_info[gt_var['RBP offset']].append(var_type.replace('unsigned ','').replace(' ',''))
-        
-        decomp_variables_info = {}
-
-        for decomp_var in decomp_variables:
-            decomp_variables_info[decomp_var['RBP offset']] = decomp_var['type'].replace('unsigned ','').replace(' ','')
-
-        for offset in decomp_variables_info:
-            if offset in gt_variables_info:
-                variables_identified += 1
-                if decomp_variables_info[offset] in gt_variables_info[offset]:
-                    corret_cnt += 1
-            else:
-                ghost_variables += 1
-          
-        global_variables_identified += variables_identified
-        global_corret_cnt += corret_cnt
-        global_ghost_variables += ghost_variables
-        print(f"{func:<20}{'Yes'if (has_arr_struct) else 'No' :<19}{f'{len(decomp_variables_info)}/{len(gt_variables_info)}':<25}{variables_identified:<20}{corret_cnt:<15}{ghost_variables:<15}")
-    
-    return global_variables_identified, global_corret_cnt, global_ghost_variables
-
-
-
-def evaluate(decomp_json, gt_json):
-    total_variables_in_gt = 0
-    total_variables_in_decomp = 0
-    
-    for func in gt_json:
-        total_variables_in_gt += len(gt_json[func]['variables'])
-        if func in decomp_json:
-            total_variables_in_decomp += len(decomp_json[func]['variables'])
-    
-    print(f'Total variables in ground truth: {total_variables_in_gt}')
-    print(f'Total variables in Decompilation: {total_variables_in_decomp}\n')
-    
-
-    print(f"{'Function Name':<20}{'Has array/struct':<19}{'Variables Identified':<25}{'Correct Offset':<20}{'Correct Type':<15}{'Ghosts':<15}")
-
-    global_variables_identified = 0
-    global_corret_cnt = 0
-    global_ghost_variables = 0
-    
-    basic_evaluation(decomp_json, gt_json)
-    print()
-    basic_evaluation(decomp_json, gt_json, arr_struct=True)
-    print()
-    print("Now Breaking Structs into Elements")
-    evaluate_structs(decomp_json, gt_json)
-    
-    # print(f'\nTotal variables identified: {global_variables_identified}, Correct Variables: {global_corret_cnt}, Ghost Variables: {global_ghost_variables}')
-        
-    return
 
 def main():
-    
     base_dir = f'binaries/{sys.argv[1]}' if len(sys.argv) > 1 else 'binaries/O0'
     base_dir = Path(base_dir)
     
     file_list = open(base_dir/'file_list.txt','r').readlines()
-    file_list = [x.strip() for x in file_list]
-        
+    file_list = [file.strip() for file in file_list]
+    
     for file in file_list:
         file_path = base_dir / file
         file_name = file_path.stem
         
         ground_truth = base_dir / 'types' /'ground_truth'/f'{file_name}.json'
+        if not ground_truth.exists():
+            continue
         
-        if ground_truth.exists():
-            print(f'\n----------------Processing {file_name}----------------\n')
+        decomp_files = {}
+        for decomp in DECOMPILERS:
+            decomp_files[decomp] = base_dir / 'types' / f'{decomp}_types' / f'{file_name}.json'
+        
+        if not all(decomp_file.exists() for decompiler, decomp_file in decomp_files.items()):
+            continue        
+        
+        GROUND_TRUTHS.append(ground_truth)
+        for decomp in DECOMPILERS:
+            DECOMPS[decomp].append(decomp_files[decomp])
 
-            gt_json = json.loads(ground_truth.read_text())
-            
-            for decompiler in DECOMPILERS:
-                
-                decomp_json_path = base_dir / 'types' /f'{decompiler}_types'/f'{file_name}.json'
-                
-                if decomp_json_path.exists():
-                    print(f'\n----------------Processing {decompiler}----------------\n')
-                    
-                    decomp_json = json.loads(decomp_json_path.read_text())                    
-                    evaluate(decomp_json, gt_json)
+    print("==========================================================")
+    print("Function Level Evaluations\n")
+    print("Keys:")
+    print("TP (True Positive):        Identified Offset in ground truth and same type")
+    print("FP (False Positive):       Identified Offset in ground truth but wrong type")
+    print("TN (True Negative/Ghosts): Identified Offset not in ground truth")
+    print("FN (False Negative):       Offset in ground truth not identified\n")
+    
+    print(f"Evaluating {len(GROUND_TRUTHS)} files with {sum(len(json.load(open(p))) for p in GROUND_TRUTHS)} functions\n")
+
+    print("[*] Basic Evaluation")
+    print("[*] Includes all functions, and no breakdown of sturctures\n")
+    func_level_evaluate(allow_arrays=True, allow_structs=True)
+
+    print("[*] Primitives and Pointers Evaluation") 
+    print("[*] Includes functions with only primitive types and pointers\n")
+    func_level_evaluate(allow_arrays=False, allow_structs=False)
+
+    print("[*] Struct and Array Evaluation")
+    print("[*] Excludes functions without structs and arrays\n")
+    func_level_evaluate(allow_arrays=True, allow_structs=True, primitives=False)
+
+    print("[*] Evaluation with Struct Breakdown by 1 level")
+    print("[*] Excludes functions without structs and arrays\n")
+    func_level_evaluate(allow_arrays=True, allow_structs=True, primitives=False, break_structs=True,depth=1)
+
+    print("==========================================================")
+    print("Variable Level Evaluations\n")
+    
+    print("Keys:")
+    print("TP (True Positive):        Identified Offset in ground truth and same type")
+    print("FP (False Positive):       Identified Offset in ground truth but wrong type")
+    print("TN (True Negative/Ghosts): Identified Offset not in ground truth")
+    print("FN (False Negative):       Offset in ground truth not identified\n")
+
+    print("[*] Evaluating char\n")
+    var_level_evaluate('char')
+
+    print("[*] Evaluating int\n")
+    var_level_evaluate('int')
+
+    print("[*] Evaluating long long\n")
+    var_level_evaluate('longlong')
 
 
 if __name__ == "__main__":

@@ -61,7 +61,6 @@ def run_custom_type_plugin():
     try:
         runScript("Retypd.java")
         
-        
         print("Custom type modification completed successfully")
     except Exception as e:
         print("Error running custom type plugin: %s" % str(e))

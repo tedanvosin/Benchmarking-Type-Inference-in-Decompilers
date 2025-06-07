@@ -19,7 +19,8 @@ TYPE_MAP = {
     "uint16_t": "short",
     "int8_t": "char",
     "uint8_t": "char",
-    "uint": "int"
+    "uint": "int",
+    "ulong": "long"
 }
 
 def correct_array_length(var_type):
@@ -38,7 +39,11 @@ def normalize_type(var_type):
     var_type = var_type.replace("unsigned", "")
     var_type = var_type.replace("signed", "")
     var_type = var_type.strip()
+    if ')(' in var_type:
+        var_type = "FUNCTION*"
     
+    var_type = var_type.replace(")", "") #binja adds ) sometimes
+    var_type = var_type.replace("(", "") #binja adds ( sometimes
     #Correct binja array length representation(hex->decimal)
     if "[" in var_type and "0x" in var_type:
         var_type = correct_array_length(var_type)
@@ -115,7 +120,6 @@ def standalone_main():
     
     output_file = output_dir / f"{binary_path.stem}.json"
     
-    print(f"Loading binary: {binary_path}")
     try:
         # Try the correct method for Binary Ninja version >= 2.2
         bv = binaryninja.load(binary_path)
@@ -123,7 +127,6 @@ def standalone_main():
         # Fallback for older versions
         bv = binaryninja.BinaryViewType.get_view_of_file(binary_path)
     
-    print("Waiting for analysis to complete...")
     bv.update_analysis_and_wait()
     
     extract_stack_variables(bv, output_file)

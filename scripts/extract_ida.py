@@ -36,6 +36,8 @@ def normalizetype(var_type):
     var_type = var_type.replace("unsigned ", "")
     var_type = var_type.replace("signed ", "")
     var_type = var_type.strip()
+    if 'fastcall' in var_type:
+        var_type = "FUNCTION*"
     
     for key, value in TYPE_MAP.items():
         if key in var_type:

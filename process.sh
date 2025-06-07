@@ -29,27 +29,57 @@ fi
 process_files() {
     local bin_type=$1
     local cmd=$2
-    
-    i=0
-    while IFS= read -r relpath && [ $i -lt $N ]; do
+    local count=0
+
+    while IFS= read -r relpath; do
+        # stop after N files
+        if [ "$count" -ge "$N" ]; then
+            break
+        fi
+
+        # skip empty lines
         [ -z "$relpath" ] && continue
-        
+
         bin_path="$BASE_DIR/$bin_type/$relpath"
+        tmp_proj="tmp_proj_$count"
         if [ ! -f "$bin_path" ]; then
             echo "  → Skipping (not found): $bin_path" >&2
             continue
         fi
+        echo "Processing: $bin_path"
         
-        echo "Running: $cmd"
-        eval "$cmd"
-        ((i++))
+        while (( $(jobs -rp | wc -l) >= 5 )); do
+            wait -n
+        done
+
+        # launch job in background
+        eval "$cmd" &
+
+        ((count++))
+        # # every 10 jobs, wait for this batch to finish
+        # if (( count == 10 )); then
+        #     wait -n
+        #     ((count--))
+        # fi
     done < "$FILE_LIST"
+
+    # wait for any remaining jobs
+    wait
 }
+
 
 run_retypd() {
     conda activate retypd
     GHIDRA="$GHIDRA_INSTALL_DIR/support/analyzeHeadless"
-    process_files "binaries_stripped" "$GHIDRA /tmp tmp_proj -import \$bin_path -overwrite -preScript Retypd.java -postScript extract_retypd.py -scriptPath '$THESIS_DIR/scripts;$THESIS_DIR/Decompilers/retypd/GhidraRetypd/ghidra_scripts'"
+    process_files "binaries_stripped" \
+        "$GHIDRA /tmp \$tmp_proj \
+        -import \$bin_path \
+        -overwrite \
+        -preScript Retypd.java \
+        -postScript extract_retypd.py \
+        -scriptPath '$THESIS_DIR/scripts;$THESIS_DIR/Decompilers/retypd/GhidraRetypd/ghidra_scripts' \
+        -deleteProject \
+        -log /dev/null > /dev/null 2>&1"
     conda deactivate
 }
 
@@ -63,7 +93,14 @@ run_gt() {
 
 run_ghidra() {
     GHIDRA="$GHIDRA_INSTALL_DIR/support/analyzeHeadless"
-    process_files "binaries_stripped" "$GHIDRA /tmp tmp_proj -import \$bin_path -overwrite -postScript extract_ghidra.py -scriptPath $THESIS_DIR/scripts"
+    process_files "binaries_stripped" \
+        "$GHIDRA /tmp \$tmp_proj \
+        -import \$bin_path \
+        -overwrite \
+        -postScript extract_ghidra.py \
+        -scriptPath $THESIS_DIR/scripts \
+        -deleteProject \
+        -log /dev/null > /dev/null 2>&1"
 }
 
 run_binja() {

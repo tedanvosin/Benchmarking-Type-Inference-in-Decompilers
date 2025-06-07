@@ -6,7 +6,8 @@ import sys
 from collections import OrderedDict
 
 # Disable some of the more verbose logging
-logging.getLogger('angr').setLevel(logging.WARNING)
+for name in ('angr', 'cle', 'pyvex'):
+    logging.getLogger(name).setLevel(logging.CRITICAL)
 
 def sort_json(data):
     ordered = OrderedDict(
@@ -99,6 +100,7 @@ def analyze_binary(binary_path):
     # Write the JSON output to file
     with open(output_file, 'w') as outfile:
         json.dump(all_functions, outfile, indent=2)
+    print(f"Analysis complete. Output written to {output_file}")
 
 if __name__ == "__main__":
     binary_path = Path(sys.argv[1])

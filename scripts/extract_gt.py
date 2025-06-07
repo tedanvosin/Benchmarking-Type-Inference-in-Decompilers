@@ -39,19 +39,20 @@ def get_normalized_types(var_data):
     return norm_types
 
 def get_location(die,dwarfinfo):
-    expr_parser = DWARFExprParser(dwarfinfo.structs)
-    loc_attr = die.attributes.get('DW_AT_location')
-    if not loc_attr:
-        return 0
-    ops = expr_parser.parse_expr(loc_attr.value)
-    
-    offset = 0
-    for op in ops:
-        if op.op_name == 'DW_OP_fbreg':
-            offset = op.args[0]+16
-
+    offset = -1
+    try:
+        expr_parser = DWARFExprParser(dwarfinfo.structs)
+        loc_attr = die.attributes.get('DW_AT_location')
+        if not loc_attr:
+            return -1
+        ops = expr_parser.parse_expr(loc_attr.value)
+        
+        for op in ops:
+            if op.op_name == 'DW_OP_fbreg':
+                offset = op.args[0]+16
+    except:
+        return offset
     return offset
-
 
 def get_array_dims(die, dwarfinfo):
     try:
@@ -92,6 +93,7 @@ def parse_struct(die, var_data, dwarfinfo):
             member_data['is_array'] = False
             member_data['is_struct'] = False
             member_data['is_union'] = False
+            member_data['is_enum'] = False
 
             parse_type_die(child, member_data, dwarfinfo)
             member_data['type'] = get_normalized_types(member_data['type'])
@@ -109,7 +111,7 @@ def parse_struct(die, var_data, dwarfinfo):
 
 
 def parse_type_die(die,var_data,dwarfinfo):
-    if 'DW_AT_type' not in die.attributes:
+    if 'DW_AT_type' not in die.attributes:  
         var_data['type'].append('void')
         return
     
@@ -135,8 +137,9 @@ def parse_type_die(die,var_data,dwarfinfo):
     
     # Array types
     elif tag == 'DW_TAG_array_type':
+        prev_type = var_data['type'][:]
+        var_data['type'] = []
         parse_type_die(type_die, var_data, dwarfinfo)
-        
         array_size = get_array_dims(type_die, dwarfinfo)
         
         
@@ -145,8 +148,9 @@ def parse_type_die(die,var_data,dwarfinfo):
         var_data['element_size'] = var_data['size']
         
         for i in range(len(var_data['type'])):
-            var_data['type'][i] += f'[{array_size[0]}]' if array_size[0] else '[]'
+            var_data['type'][i] += f'[{array_size[0]}]' if (len(array_size) and array_size[0]) else '[]'
         
+        var_data['type'] = prev_type + var_data['type']
         if len(array_size) and array_size[0]:
             var_data['size'] *= array_size[0] 
         
@@ -155,6 +159,9 @@ def parse_type_die(die,var_data,dwarfinfo):
     
     # Pointer types
     elif tag == 'DW_TAG_pointer_type':
+        prev_type = var_data['type'][:]
+        var_data['type'] = []
+        
         parse_type_die(type_die,var_data, dwarfinfo)
         
         if var_data['type'] == []:
@@ -163,6 +170,7 @@ def parse_type_die(die,var_data,dwarfinfo):
         for i in range(len(var_data['type'])):
             var_data['type'][i] +=  '*'
 
+        var_data['type'] = prev_type + var_data['type']
         var_data['size'] = type_die.attributes.get('DW_AT_byte_size').value if 'DW_AT_byte_size' in type_die.attributes else 8
         var_data['is_pointer'] = True
         var_data['is_array'] = False
@@ -185,7 +193,7 @@ def parse_type_die(die,var_data,dwarfinfo):
         var_data['is_struct'] = True
         return
     
-    #union/class
+    #union types
     elif tag in ('DW_TAG_union_type', 'DW_TAG_class_type'):
         if 'DW_AT_name' in type_die.attributes:
             var_data['type'].append(type_die.attributes['DW_AT_name'].value.decode('utf-8', 'replace'))
@@ -202,8 +210,14 @@ def parse_type_die(die,var_data,dwarfinfo):
             var_data['type'].append(type_die.attributes['DW_AT_name'].value.decode('utf-8', 'replace'))
         var_data['type'].append('int')
         var_data['size'] = type_die.attributes.get('DW_AT_byte_size').value if 'DW_AT_byte_size' in type_die.attributes else 4      
+        var_data['is_enum'] = True
         return
     
+    #Function Types
+    elif tag == 'DW_TAG_subroutine_type':
+        var_data['type'].append('FUNCTION')
+        return
+
     else:
         return
 
@@ -219,12 +233,17 @@ def parse_variable_die(child_die, dwarfinfo):
     var_data['is_array'] = False
     var_data['is_struct'] = False
     var_data['is_union'] = False
+    var_data['is_enum'] = False
     
     var_name = child_die.attributes.get('DW_AT_name').value.decode('utf-8','replace') if 'DW_AT_name' in child_die.attributes else ''
     var_data['name'] = var_name
 
     var_data['RBP offset'] = get_location(child_die,dwarfinfo)
-
+    
+    #Not a Stack Variable
+    if var_data['RBP offset'] == -1:
+        return None
+    
     parse_type_die(child_die, var_data, dwarfinfo)
     var_data['type'] = get_normalized_types(var_data['type'])
 
@@ -247,7 +266,9 @@ def parse_lexical_block(die, dwarfinfo):
         
         elif child.tag in ('DW_TAG_formal_parameter', 'DW_TAG_variable'):
             var_data = parse_variable_die(child, dwarfinfo)
-            variables.append(var_data)
+            
+            if var_data:
+                variables.append(var_data)
     
     return variables
             
@@ -256,6 +277,9 @@ def parse_lexical_block(die, dwarfinfo):
 def parse_function_die(die,dwarfinfo):
     func_data = {}
 
+    if 'DW_AT_name' not in die.attributes:
+        return None, None
+    
     func_name = die.attributes.get('DW_AT_name').value.decode('utf-8', 'replace')
     address = 0
     
@@ -264,8 +288,10 @@ def parse_function_die(die,dwarfinfo):
     else:
         address = die.attributes.get('DW_AT_entry_pc').value if 'DW_AT_entry_pc' in die.attributes else 0
 
-    func_data['address'] = hex(address)
+    if address == 0:
+        return None, None
     
+    func_data['address'] = hex(address)
     func_data['variables'] = []
     for child in die.iter_children():
         
@@ -274,7 +300,8 @@ def parse_function_die(die,dwarfinfo):
         
         elif child.tag in ('DW_TAG_formal_parameter', 'DW_TAG_variable'):
             var_data = parse_variable_die(child, dwarfinfo)
-            func_data['variables'].append(var_data)
+            if var_data:
+                func_data['variables'].append(var_data)
         
     return func_name , func_data
 
@@ -298,7 +325,8 @@ def parse_debug(filename):
             if DIE.tag != 'DW_TAG_subprogram':
                 continue
             func_name,func_data = parse_function_die(DIE, dwarfinfo)
-            functions[func_name] = func_data
+            if func_name:
+                functions[func_name] = func_data
     
     return functions
 
