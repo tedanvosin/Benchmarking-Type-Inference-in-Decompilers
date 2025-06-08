@@ -48,7 +48,7 @@ process_files() {
         fi
         echo "Processing: $bin_path"
         
-        while (( $(jobs -rp | wc -l) >= 5 )); do
+        while (( $(jobs -rp | wc -l) >= 8 )); do
             wait -n
         done
 
@@ -56,11 +56,7 @@ process_files() {
         eval "$cmd" &
 
         ((count++))
-        # # every 10 jobs, wait for this batch to finish
-        # if (( count == 10 )); then
-        #     wait -n
-        #     ((count--))
-        # fi
+
     done < "$FILE_LIST"
 
     # wait for any remaining jobs
