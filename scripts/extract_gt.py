@@ -31,6 +31,8 @@ def get_normalized_types(var_data):
         norm_type = norm_type.replace('long long int', 'long long')
         norm_type = norm_type.replace('long int', 'long long')
         norm_type = norm_type.replace('_Bool', 'bool')
+        norm_type = norm_type.replace('Bool', 'bool')
+        norm_type = norm_type.replace('boolean', 'bool')
         norm_type = norm_type.strip()
         
         if norm_type != type:
@@ -97,6 +99,8 @@ def parse_struct(die, var_data, dwarfinfo):
 
             parse_type_die(child, member_data, dwarfinfo)
             member_data['type'] = get_normalized_types(member_data['type'])
+            member_data['type'] = set(member_data['type'])  # Remove duplicates
+            member_data['type'] = list(member_data['type'])  # Convert back to list
             
             if member_data['is_array']:
                 member_data['element_type'] = get_normalized_types(member_data['element_type'])
@@ -247,6 +251,9 @@ def parse_variable_die(child_die, dwarfinfo):
     parse_type_die(child_die, var_data, dwarfinfo)
     var_data['type'] = get_normalized_types(var_data['type'])
 
+    var_data['type'] = set(var_data['type'])  # Remove duplicates
+    var_data['type'] = list(var_data['type'])  # Convert back to list
+    
     if var_data['is_array']:
         var_data['element_type'] = get_normalized_types(var_data['element_type'])
     
@@ -254,6 +261,7 @@ def parse_variable_die(child_die, dwarfinfo):
         var_data['elements'] = []
         parse_struct(child_die, var_data, dwarfinfo)
     
+
     return var_data
 
 

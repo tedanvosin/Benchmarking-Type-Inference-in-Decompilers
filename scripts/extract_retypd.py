@@ -22,6 +22,7 @@ TYPE_MAP = {
         "char2": "char[2]",
         "char1": "char",
         "sbyte": "char",
+        "schar": "char",
         "byte": "char",
 }
 

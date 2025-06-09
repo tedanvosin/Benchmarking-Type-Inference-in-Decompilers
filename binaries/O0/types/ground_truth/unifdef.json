@@ -156,9 +156,9 @@
             "name": "st.st_dev",
             "RBP offset": -160,
             "type": [
+              "long long",
               "__dev_t",
-              "long unsigned int",
-              "long long"
+              "long unsigned int"
             ],
             "size": 8,
             "is_pointer": false,
@@ -172,9 +172,9 @@
             "name": "st.st_ino",
             "RBP offset": -152,
             "type": [
+              "long long",
               "__ino_t",
-              "long unsigned int",
-              "long long"
+              "long unsigned int"
             ],
             "size": 8,
             "is_pointer": false,
@@ -188,9 +188,9 @@
             "name": "st.st_nlink",
             "RBP offset": -144,
             "type": [
+              "long long",
               "__nlink_t",
-              "long unsigned int",
-              "long long"
+              "long unsigned int"
             ],
             "size": 8,
             "is_pointer": false,
@@ -204,9 +204,9 @@
             "name": "st.st_mode",
             "RBP offset": -136,
             "type": [
-              "__mode_t",
+              "int",
               "unsigned int",
-              "int"
+              "__mode_t"
             ],
             "size": 4,
             "is_pointer": false,
@@ -220,9 +220,9 @@
             "name": "st.st_uid",
             "RBP offset": -132,
             "type": [
+              "int",
               "__uid_t",
-              "unsigned int",
-              "int"
+              "unsigned int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -236,9 +236,9 @@
             "name": "st.st_gid",
             "RBP offset": -128,
             "type": [
+              "int",
               "__gid_t",
-              "unsigned int",
-              "int"
+              "unsigned int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -266,9 +266,9 @@
             "name": "st.st_rdev",
             "RBP offset": -120,
             "type": [
+              "long long",
               "__dev_t",
-              "long unsigned int",
-              "long long"
+              "long unsigned int"
             ],
             "size": 8,
             "is_pointer": false,
@@ -282,9 +282,9 @@
             "name": "st.st_size",
             "RBP offset": -112,
             "type": [
+              "long long",
               "__off_t",
-              "long int",
-              "long long"
+              "long int"
             ],
             "size": 8,
             "is_pointer": false,
@@ -298,9 +298,9 @@
             "name": "st.st_blksize",
             "RBP offset": -104,
             "type": [
+              "long long",
               "__blksize_t",
-              "long int",
-              "long long"
+              "long int"
             ],
             "size": 8,
             "is_pointer": false,
@@ -315,8 +315,8 @@
             "RBP offset": -96,
             "type": [
               "__blkcnt_t",
-              "long int",
-              "long long"
+              "long long",
+              "long int"
             ],
             "size": 8,
             "is_pointer": false,
@@ -344,9 +344,9 @@
                 "name": "st.st_atim.tv_sec",
                 "RBP offset": -88,
                 "type": [
-                  "__time_t",
+                  "long long",
                   "long int",
-                  "long long"
+                  "__time_t"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -360,9 +360,9 @@
                 "name": "st.st_atim.tv_nsec",
                 "RBP offset": -80,
                 "type": [
+                  "long long",
                   "__syscall_slong_t",
-                  "long int",
-                  "long long"
+                  "long int"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -392,9 +392,9 @@
                 "name": "st.st_mtim.tv_sec",
                 "RBP offset": -72,
                 "type": [
-                  "__time_t",
+                  "long long",
                   "long int",
-                  "long long"
+                  "__time_t"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -408,9 +408,9 @@
                 "name": "st.st_mtim.tv_nsec",
                 "RBP offset": -64,
                 "type": [
+                  "long long",
                   "__syscall_slong_t",
-                  "long int",
-                  "long long"
+                  "long int"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -440,9 +440,9 @@
                 "name": "st.st_ctim.tv_sec",
                 "RBP offset": -56,
                 "type": [
-                  "__time_t",
+                  "long long",
                   "long int",
-                  "long long"
+                  "__time_t"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -456,9 +456,9 @@
                 "name": "st.st_ctim.tv_nsec",
                 "RBP offset": -48,
                 "type": [
+                  "long long",
                   "__syscall_slong_t",
-                  "long int",
-                  "long long"
+                  "long int"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -527,8 +527,8 @@
         "name": "fp",
         "RBP offset": -8,
         "type": [
-          "FILE*",
-          "_IO_FILE*"
+          "_IO_FILE*",
+          "FILE*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -714,8 +714,8 @@
         "name": "is",
         "RBP offset": -4,
         "type": [
-          "Ifstate",
-          "int"
+          "int",
+          "Ifstate"
         ],
         "size": 4,
         "is_pointer": false,
@@ -781,8 +781,8 @@
         "name": "lineval",
         "RBP offset": -4,
         "type": [
-          "Linetype",
-          "int"
+          "int",
+          "Linetype"
         ],
         "size": 4,
         "is_pointer": false,
@@ -801,8 +801,8 @@
         "name": "retval",
         "RBP offset": -52,
         "type": [
-          "Linetype",
-          "int"
+          "int",
+          "Linetype"
         ],
         "size": 4,
         "is_pointer": false,
@@ -816,8 +816,8 @@
         "name": "wascomment",
         "RBP offset": -48,
         "type": [
-          "Comment_state",
-          "int"
+          "int",
+          "Comment_state"
         ],
         "size": 4,
         "is_pointer": false,
@@ -859,8 +859,8 @@
         "name": "len",
         "RBP offset": -32,
         "type": [
-          "long int",
-          "long long"
+          "long long",
+          "long int"
         ],
         "size": 8,
         "is_pointer": false,
@@ -879,8 +879,8 @@
         "name": "bt",
         "RBP offset": -24,
         "type": [
-          "Linetype",
-          "int"
+          "int",
+          "Linetype"
         ],
         "size": 4,
         "is_pointer": false,
@@ -894,8 +894,8 @@
         "name": "at",
         "RBP offset": -20,
         "type": [
-          "Linetype",
-          "int"
+          "int",
+          "Linetype"
         ],
         "size": 4,
         "is_pointer": false,
@@ -909,8 +909,8 @@
         "name": "v",
         "RBP offset": -16,
         "type": [
-          "long int",
-          "long long"
+          "long long",
+          "long int"
         ],
         "size": 8,
         "is_pointer": false,
@@ -944,8 +944,8 @@
         "name": "b",
         "RBP offset": -32,
         "type": [
-          "long int",
-          "long long"
+          "long long",
+          "long int"
         ],
         "size": 8,
         "is_pointer": false,
@@ -959,8 +959,8 @@
         "name": "a",
         "RBP offset": -24,
         "type": [
-          "long int",
-          "long long"
+          "long long",
+          "long int"
         ],
         "size": 8,
         "is_pointer": false,
@@ -974,8 +974,8 @@
         "name": "bt",
         "RBP offset": -16,
         "type": [
-          "Linetype",
-          "int"
+          "int",
+          "Linetype"
         ],
         "size": 4,
         "is_pointer": false,
@@ -989,8 +989,8 @@
         "name": "at",
         "RBP offset": -12,
         "type": [
-          "Linetype",
-          "int"
+          "int",
+          "Linetype"
         ],
         "size": 4,
         "is_pointer": false,
@@ -1024,8 +1024,8 @@
         "name": "b",
         "RBP offset": -32,
         "type": [
-          "long int",
-          "long long"
+          "long long",
+          "long int"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1039,8 +1039,8 @@
         "name": "a",
         "RBP offset": -24,
         "type": [
-          "long int",
-          "long long"
+          "long long",
+          "long int"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1054,8 +1054,8 @@
         "name": "bt",
         "RBP offset": -16,
         "type": [
-          "Linetype",
-          "int"
+          "int",
+          "Linetype"
         ],
         "size": 4,
         "is_pointer": false,
@@ -1069,8 +1069,8 @@
         "name": "at",
         "RBP offset": -12,
         "type": [
-          "Linetype",
-          "int"
+          "int",
+          "Linetype"
         ],
         "size": 4,
         "is_pointer": false,
@@ -1104,8 +1104,8 @@
         "name": "b",
         "RBP offset": -32,
         "type": [
-          "long int",
-          "long long"
+          "long long",
+          "long int"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1119,8 +1119,8 @@
         "name": "a",
         "RBP offset": -24,
         "type": [
-          "long int",
-          "long long"
+          "long long",
+          "long int"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1134,8 +1134,8 @@
         "name": "bt",
         "RBP offset": -16,
         "type": [
-          "Linetype",
-          "int"
+          "int",
+          "Linetype"
         ],
         "size": 4,
         "is_pointer": false,
@@ -1149,8 +1149,8 @@
         "name": "at",
         "RBP offset": -12,
         "type": [
-          "Linetype",
-          "int"
+          "int",
+          "Linetype"
         ],
         "size": 4,
         "is_pointer": false,
@@ -1184,8 +1184,8 @@
         "name": "b",
         "RBP offset": -32,
         "type": [
-          "long int",
-          "long long"
+          "long long",
+          "long int"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1199,8 +1199,8 @@
         "name": "a",
         "RBP offset": -24,
         "type": [
-          "long int",
-          "long long"
+          "long long",
+          "long int"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1214,8 +1214,8 @@
         "name": "bt",
         "RBP offset": -16,
         "type": [
-          "Linetype",
-          "int"
+          "int",
+          "Linetype"
         ],
         "size": 4,
         "is_pointer": false,
@@ -1229,8 +1229,8 @@
         "name": "at",
         "RBP offset": -12,
         "type": [
-          "Linetype",
-          "int"
+          "int",
+          "Linetype"
         ],
         "size": 4,
         "is_pointer": false,
@@ -1264,8 +1264,8 @@
         "name": "b",
         "RBP offset": -32,
         "type": [
-          "long int",
-          "long long"
+          "long long",
+          "long int"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1279,8 +1279,8 @@
         "name": "a",
         "RBP offset": -24,
         "type": [
-          "long int",
-          "long long"
+          "long long",
+          "long int"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1294,8 +1294,8 @@
         "name": "bt",
         "RBP offset": -16,
         "type": [
-          "Linetype",
-          "int"
+          "int",
+          "Linetype"
         ],
         "size": 4,
         "is_pointer": false,
@@ -1309,8 +1309,8 @@
         "name": "at",
         "RBP offset": -12,
         "type": [
-          "Linetype",
-          "int"
+          "int",
+          "Linetype"
         ],
         "size": 4,
         "is_pointer": false,
@@ -1344,8 +1344,8 @@
         "name": "b",
         "RBP offset": -32,
         "type": [
-          "long int",
-          "long long"
+          "long long",
+          "long int"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1359,8 +1359,8 @@
         "name": "a",
         "RBP offset": -24,
         "type": [
-          "long int",
-          "long long"
+          "long long",
+          "long int"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1374,8 +1374,8 @@
         "name": "bt",
         "RBP offset": -16,
         "type": [
-          "Linetype",
-          "int"
+          "int",
+          "Linetype"
         ],
         "size": 4,
         "is_pointer": false,
@@ -1389,8 +1389,8 @@
         "name": "at",
         "RBP offset": -12,
         "type": [
-          "Linetype",
-          "int"
+          "int",
+          "Linetype"
         ],
         "size": 4,
         "is_pointer": false,
@@ -1424,8 +1424,8 @@
         "name": "b",
         "RBP offset": -32,
         "type": [
-          "long int",
-          "long long"
+          "long long",
+          "long int"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1439,8 +1439,8 @@
         "name": "a",
         "RBP offset": -24,
         "type": [
-          "long int",
-          "long long"
+          "long long",
+          "long int"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1454,8 +1454,8 @@
         "name": "bt",
         "RBP offset": -16,
         "type": [
-          "Linetype",
-          "int"
+          "int",
+          "Linetype"
         ],
         "size": 4,
         "is_pointer": false,
@@ -1469,8 +1469,8 @@
         "name": "at",
         "RBP offset": -12,
         "type": [
-          "Linetype",
-          "int"
+          "int",
+          "Linetype"
         ],
         "size": 4,
         "is_pointer": false,
@@ -1504,8 +1504,8 @@
         "name": "b",
         "RBP offset": -32,
         "type": [
-          "long int",
-          "long long"
+          "long long",
+          "long int"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1519,8 +1519,8 @@
         "name": "a",
         "RBP offset": -24,
         "type": [
-          "long int",
-          "long long"
+          "long long",
+          "long int"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1534,8 +1534,8 @@
         "name": "bt",
         "RBP offset": -16,
         "type": [
-          "Linetype",
-          "int"
+          "int",
+          "Linetype"
         ],
         "size": 4,
         "is_pointer": false,
@@ -1549,8 +1549,8 @@
         "name": "at",
         "RBP offset": -12,
         "type": [
-          "Linetype",
-          "int"
+          "int",
+          "Linetype"
         ],
         "size": 4,
         "is_pointer": false,
@@ -1584,8 +1584,8 @@
         "name": "b",
         "RBP offset": -32,
         "type": [
-          "long int",
-          "long long"
+          "long long",
+          "long int"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1599,8 +1599,8 @@
         "name": "a",
         "RBP offset": -24,
         "type": [
-          "long int",
-          "long long"
+          "long long",
+          "long int"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1614,8 +1614,8 @@
         "name": "bt",
         "RBP offset": -16,
         "type": [
-          "Linetype",
-          "int"
+          "int",
+          "Linetype"
         ],
         "size": 4,
         "is_pointer": false,
@@ -1629,8 +1629,8 @@
         "name": "at",
         "RBP offset": -12,
         "type": [
-          "Linetype",
-          "int"
+          "int",
+          "Linetype"
         ],
         "size": 4,
         "is_pointer": false,
@@ -1664,8 +1664,8 @@
         "name": "b",
         "RBP offset": -32,
         "type": [
-          "long int",
-          "long long"
+          "long long",
+          "long int"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1679,8 +1679,8 @@
         "name": "a",
         "RBP offset": -24,
         "type": [
-          "long int",
-          "long long"
+          "long long",
+          "long int"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1694,8 +1694,8 @@
         "name": "bt",
         "RBP offset": -16,
         "type": [
-          "Linetype",
-          "int"
+          "int",
+          "Linetype"
         ],
         "size": 4,
         "is_pointer": false,
@@ -1709,8 +1709,8 @@
         "name": "at",
         "RBP offset": -12,
         "type": [
-          "Linetype",
-          "int"
+          "int",
+          "Linetype"
         ],
         "size": 4,
         "is_pointer": false,
@@ -1744,8 +1744,8 @@
         "name": "b",
         "RBP offset": -32,
         "type": [
-          "long int",
-          "long long"
+          "long long",
+          "long int"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1759,8 +1759,8 @@
         "name": "a",
         "RBP offset": -24,
         "type": [
-          "long int",
-          "long long"
+          "long long",
+          "long int"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1774,8 +1774,8 @@
         "name": "bt",
         "RBP offset": -16,
         "type": [
-          "Linetype",
-          "int"
+          "int",
+          "Linetype"
         ],
         "size": 4,
         "is_pointer": false,
@@ -1789,8 +1789,8 @@
         "name": "at",
         "RBP offset": -12,
         "type": [
-          "Linetype",
-          "int"
+          "int",
+          "Linetype"
         ],
         "size": 4,
         "is_pointer": false,
@@ -1824,8 +1824,8 @@
         "name": "b",
         "RBP offset": -32,
         "type": [
-          "long int",
-          "long long"
+          "long long",
+          "long int"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1839,8 +1839,8 @@
         "name": "a",
         "RBP offset": -24,
         "type": [
-          "long int",
-          "long long"
+          "long long",
+          "long int"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1854,8 +1854,8 @@
         "name": "bt",
         "RBP offset": -16,
         "type": [
-          "Linetype",
-          "int"
+          "int",
+          "Linetype"
         ],
         "size": 4,
         "is_pointer": false,
@@ -1869,8 +1869,8 @@
         "name": "at",
         "RBP offset": -12,
         "type": [
-          "Linetype",
-          "int"
+          "int",
+          "Linetype"
         ],
         "size": 4,
         "is_pointer": false,
@@ -1904,8 +1904,8 @@
         "name": "b",
         "RBP offset": -32,
         "type": [
-          "long int",
-          "long long"
+          "long long",
+          "long int"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1919,8 +1919,8 @@
         "name": "a",
         "RBP offset": -24,
         "type": [
-          "long int",
-          "long long"
+          "long long",
+          "long int"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1934,8 +1934,8 @@
         "name": "bt",
         "RBP offset": -16,
         "type": [
-          "Linetype",
-          "int"
+          "int",
+          "Linetype"
         ],
         "size": 4,
         "is_pointer": false,
@@ -1949,8 +1949,8 @@
         "name": "at",
         "RBP offset": -12,
         "type": [
-          "Linetype",
-          "int"
+          "int",
+          "Linetype"
         ],
         "size": 4,
         "is_pointer": false,
@@ -1984,8 +1984,8 @@
         "name": "b",
         "RBP offset": -32,
         "type": [
-          "long int",
-          "long long"
+          "long long",
+          "long int"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1999,8 +1999,8 @@
         "name": "a",
         "RBP offset": -24,
         "type": [
-          "long int",
-          "long long"
+          "long long",
+          "long int"
         ],
         "size": 8,
         "is_pointer": false,
@@ -2014,8 +2014,8 @@
         "name": "bt",
         "RBP offset": -16,
         "type": [
-          "Linetype",
-          "int"
+          "int",
+          "Linetype"
         ],
         "size": 4,
         "is_pointer": false,
@@ -2029,8 +2029,8 @@
         "name": "at",
         "RBP offset": -12,
         "type": [
-          "Linetype",
-          "int"
+          "int",
+          "Linetype"
         ],
         "size": 4,
         "is_pointer": false,
@@ -2064,8 +2064,8 @@
         "name": "b",
         "RBP offset": -32,
         "type": [
-          "long int",
-          "long long"
+          "long long",
+          "long int"
         ],
         "size": 8,
         "is_pointer": false,
@@ -2079,8 +2079,8 @@
         "name": "a",
         "RBP offset": -24,
         "type": [
-          "long int",
-          "long long"
+          "long long",
+          "long int"
         ],
         "size": 8,
         "is_pointer": false,
@@ -2094,8 +2094,8 @@
         "name": "bt",
         "RBP offset": -16,
         "type": [
-          "Linetype",
-          "int"
+          "int",
+          "Linetype"
         ],
         "size": 4,
         "is_pointer": false,
@@ -2109,8 +2109,8 @@
         "name": "at",
         "RBP offset": -12,
         "type": [
-          "Linetype",
-          "int"
+          "int",
+          "Linetype"
         ],
         "size": 4,
         "is_pointer": false,
@@ -2144,8 +2144,8 @@
         "name": "b",
         "RBP offset": -32,
         "type": [
-          "long int",
-          "long long"
+          "long long",
+          "long int"
         ],
         "size": 8,
         "is_pointer": false,
@@ -2159,8 +2159,8 @@
         "name": "a",
         "RBP offset": -24,
         "type": [
-          "long int",
-          "long long"
+          "long long",
+          "long int"
         ],
         "size": 8,
         "is_pointer": false,
@@ -2174,8 +2174,8 @@
         "name": "bt",
         "RBP offset": -16,
         "type": [
-          "Linetype",
-          "int"
+          "int",
+          "Linetype"
         ],
         "size": 4,
         "is_pointer": false,
@@ -2189,8 +2189,8 @@
         "name": "at",
         "RBP offset": -12,
         "type": [
-          "Linetype",
-          "int"
+          "int",
+          "Linetype"
         ],
         "size": 4,
         "is_pointer": false,
@@ -2224,8 +2224,8 @@
         "name": "b",
         "RBP offset": -32,
         "type": [
-          "long int",
-          "long long"
+          "long long",
+          "long int"
         ],
         "size": 8,
         "is_pointer": false,
@@ -2239,8 +2239,8 @@
         "name": "a",
         "RBP offset": -24,
         "type": [
-          "long int",
-          "long long"
+          "long long",
+          "long int"
         ],
         "size": 8,
         "is_pointer": false,
@@ -2254,8 +2254,8 @@
         "name": "bt",
         "RBP offset": -16,
         "type": [
-          "Linetype",
-          "int"
+          "int",
+          "Linetype"
         ],
         "size": 4,
         "is_pointer": false,
@@ -2269,8 +2269,8 @@
         "name": "at",
         "RBP offset": -12,
         "type": [
-          "Linetype",
-          "int"
+          "int",
+          "Linetype"
         ],
         "size": 4,
         "is_pointer": false,
@@ -2304,8 +2304,8 @@
         "name": "b",
         "RBP offset": -32,
         "type": [
-          "long int",
-          "long long"
+          "long long",
+          "long int"
         ],
         "size": 8,
         "is_pointer": false,
@@ -2319,8 +2319,8 @@
         "name": "a",
         "RBP offset": -24,
         "type": [
-          "long int",
-          "long long"
+          "long long",
+          "long int"
         ],
         "size": 8,
         "is_pointer": false,
@@ -2334,8 +2334,8 @@
         "name": "bt",
         "RBP offset": -16,
         "type": [
-          "Linetype",
-          "int"
+          "int",
+          "Linetype"
         ],
         "size": 4,
         "is_pointer": false,
@@ -2349,8 +2349,8 @@
         "name": "at",
         "RBP offset": -12,
         "type": [
-          "Linetype",
-          "int"
+          "int",
+          "Linetype"
         ],
         "size": 4,
         "is_pointer": false,
@@ -2461,8 +2461,8 @@
         "name": "lt",
         "RBP offset": -48,
         "type": [
-          "Linetype",
-          "int"
+          "int",
+          "Linetype"
         ],
         "size": 4,
         "is_pointer": false,
@@ -2566,8 +2566,8 @@
         "name": "lt",
         "RBP offset": -56,
         "type": [
-          "Linetype",
-          "int"
+          "int",
+          "Linetype"
         ],
         "size": 4,
         "is_pointer": false,
@@ -2581,8 +2581,8 @@
         "name": "rt",
         "RBP offset": -52,
         "type": [
-          "Linetype",
-          "int"
+          "int",
+          "Linetype"
         ],
         "size": 4,
         "is_pointer": false,
@@ -2610,8 +2610,8 @@
         "name": "val",
         "RBP offset": -40,
         "type": [
-          "long int",
-          "long long"
+          "long long",
+          "long int"
         ],
         "size": 8,
         "is_pointer": false,
@@ -2658,8 +2658,8 @@
         "name": "ret",
         "RBP offset": -20,
         "type": [
-          "Linetype",
-          "int"
+          "int",
+          "Linetype"
         ],
         "size": 4,
         "is_pointer": false,
@@ -2673,8 +2673,8 @@
         "name": "val",
         "RBP offset": -16,
         "type": [
-          "long int",
-          "long long"
+          "long long",
+          "long int"
         ],
         "size": 8,
         "is_pointer": false,
@@ -3340,9 +3340,9 @@
         "name": "size",
         "RBP offset": -16,
         "type": [
-          "size_t",
           "long unsigned int",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -3403,9 +3403,9 @@
         "name": "n",
         "RBP offset": -16,
         "type": [
-          "size_t",
           "long unsigned int",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,

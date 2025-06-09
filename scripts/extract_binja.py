@@ -19,8 +19,11 @@ TYPE_MAP = {
     "uint16_t": "short",
     "int8_t": "char",
     "uint8_t": "char",
+    "ulong": "long long",
     "uint": "int",
-    "ulong": "long"
+    "ushort": "short",
+    "uchar": "char",
+    "schar": "char",
 }
 
 def correct_array_length(var_type):

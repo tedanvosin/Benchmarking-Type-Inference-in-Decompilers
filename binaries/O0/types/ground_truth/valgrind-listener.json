@@ -180,9 +180,9 @@
         "name": "ignored",
         "RBP offset": -16,
         "type": [
-          "size_t",
           "long unsigned int",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -281,8 +281,8 @@
             "name": "req.tv_sec",
             "RBP offset": -16,
             "type": [
-              "__time_t",
               "long int",
+              "__time_t",
               "long long"
             ],
             "size": 8,
@@ -297,9 +297,9 @@
             "name": "req.tv_nsec",
             "RBP offset": -8,
             "type": [
-              "__syscall_slong_t",
               "long int",
-              "long long"
+              "long long",
+              "__syscall_slong_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -418,10 +418,10 @@
         "name": "t",
         "RBP offset": -8,
         "type": [
-          "time_t",
-          "__time_t",
           "long int",
-          "long long"
+          "time_t",
+          "long long",
+          "__time_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -563,9 +563,9 @@
             "name": "server_addr.sin_family",
             "RBP offset": -80,
             "type": [
-              "sa_family_t",
               "short unsigned int",
-              "short int"
+              "short int",
+              "sa_family_t"
             ],
             "size": 2,
             "is_pointer": false,
@@ -579,10 +579,10 @@
             "name": "server_addr.sin_port",
             "RBP offset": -78,
             "type": [
+              "short unsigned int",
+              "__uint16_t",
               "in_port_t",
               "uint16_t",
-              "__uint16_t",
-              "short unsigned int",
               "short int"
             ],
             "size": 2,
@@ -612,10 +612,10 @@
                 "RBP offset": -76,
                 "type": [
                   "in_addr_t",
+                  "int",
                   "uint32_t",
                   "__uint32_t",
-                  "unsigned int",
-                  "int"
+                  "unsigned int"
                 ],
                 "size": 4,
                 "is_pointer": false,
@@ -668,9 +668,9 @@
             "name": "client_addr.sin_family",
             "RBP offset": -64,
             "type": [
-              "sa_family_t",
               "short unsigned int",
-              "short int"
+              "short int",
+              "sa_family_t"
             ],
             "size": 2,
             "is_pointer": false,
@@ -684,10 +684,10 @@
             "name": "client_addr.sin_port",
             "RBP offset": -62,
             "type": [
+              "short unsigned int",
+              "__uint16_t",
               "in_port_t",
               "uint16_t",
-              "__uint16_t",
-              "short unsigned int",
               "short int"
             ],
             "size": 2,
@@ -717,10 +717,10 @@
                 "RBP offset": -60,
                 "type": [
                   "in_addr_t",
+                  "int",
                   "uint32_t",
                   "__uint32_t",
-                  "unsigned int",
-                  "int"
+                  "unsigned int"
                 ],
                 "size": 4,
                 "is_pointer": false,
@@ -759,10 +759,10 @@
         "name": "client_len",
         "RBP offset": -40,
         "type": [
+          "int",
           "socklen_t",
           "__socklen_t",
-          "unsigned int",
-          "int"
+          "unsigned int"
         ],
         "size": 4,
         "is_pointer": false,
