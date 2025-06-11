@@ -44,6 +44,79 @@ def break_struct(var,gt_funcs,depth=1):
         for type in mem['type']:
             gt_funcs[mem['RBP offset']].append(type.replace(' ',''))
 
+def eval_structs(l1_break=False):
+    if l1_break:
+        print("{:<13}{:<15}{:<8}{:<8}{:<8}{:<15}".format("Decompiler","Decomp/GT Cnt", "TP", "FP","FN","Structs Broken"))
+    else:
+        print("{:<13}{:<15}{:<8}{:<8}{:<8}".format("Decompiler","Decomp/GT Cnt", "TP", "FP","FN"))
+    print(f"{'':-<52}")
+    
+    for decompiler in DECOMPILERS:
+        tp = 0
+        fp = 0
+        fn = 0
+        br=0
+        for i in range(len(GROUND_TRUTHS)):
+            ground_truth_json = json.load(open(GROUND_TRUTHS[i]))
+            decomp_json = json.load(open(DECOMPS[decompiler][i]))
+    
+            gt_funcs = {}
+            decomp_funcs = {}
+            
+            for func in ground_truth_json:
+                
+                gt_funcs[func] = {}
+                
+                if func in decomp_json:
+                    decomp_funcs[func] = {}
+                    
+                    for var in decomp_json[func]['variables']:
+                        if var['RBP offset'] not in decomp_funcs[func]:
+                            decomp_funcs[func][var['RBP offset']] = []
+                        decomp_funcs[func][var['RBP offset']].append(var['type'].strip().replace(' ', ''))
+
+                for var in ground_truth_json[func]['variables']:
+                    if not var['is_struct']:
+                        continue 
+                    
+                    if l1_break:
+                        if (func in decomp_funcs) and (var['RBP offset'] in decomp_funcs[func]) and (set(var['type']).intersection(set(decomp_funcs[func][var['RBP offset']]))):
+                            #Struct Identified
+                            continue
+                        
+                        else:
+                            #Struct Not Identified
+                            #Breakdown Struct
+                            br+=1
+                            break_struct(var, gt_funcs[func], depth=1)
+                            
+                    else:
+                        gt_funcs[func][var['RBP offset']] = []
+                        for type in var['type']:
+                            gt_funcs[func][var['RBP offset']].append(type.replace(' ',''))
+              
+            for func in gt_funcs:
+                if func not in decomp_funcs:
+                    for offset,_type in gt_funcs[func].items():
+                        fn += 1
+                else:
+                    for offset,_type in gt_funcs[func].items():
+                        if offset in decomp_funcs[func]:
+                            if set(gt_funcs[func][offset]).intersection(set(decomp_funcs[func][offset])):
+                                tp += 1
+                            else:
+                                # print(f"({decompiler})Wrong type GT: {gt_funcs[func][offset]} Decomp: {decomp_funcs[func][offset]}")
+                                fp += 1
+                        else:
+                            fn += 1
+
+        if l1_break:
+            print("{:<13}{:<15}{:<8}{:<8}{:<8}{:<8}".format(decompiler,f'{tp+fp}/{tp+fp+fn}', tp, fp, fn, br))
+        else:
+            print("{:<13}{:<15}{:<8}{:<8}{:<8}".format(decompiler,f'{tp+fp}/{tp+fp+fn}', tp, fp, fn))
+    print("\n")
+    return
+
 def eval_pointers():
     print("{:<13}{:<15}{:<8}{:<8}{:<8}{:<8}{:<8}".format("Decompiler","Decomp/GT Cnt", "TP", "FP","FP_1", "TN", "FN"))
     print(f"{'':-<68}")
@@ -353,9 +426,6 @@ def main():
     print("[*] Evaluating char\n")
     var_level_evaluate('char',1)
 
-    print("[*] Evaluating short\n")
-    var_level_evaluate('short',2)
-
     print("[*] Evaluating int\n")
     var_level_evaluate('int',4)
 
@@ -370,8 +440,19 @@ def main():
     print("FN   (False Negative):       Offset in ground truth not identified\n")
 
 
-    print("[*] Evaluating pointers\n")
+    print("[*] Evaluating Pointers\n")
     eval_pointers()
+
+    print("Keys:")
+    print("TP   (True Positive):        Identified Offset in ground truth and same type of struct")
+    print("FP   (False Positive):       Identified Offset in ground truth but not a struct")
+    print("FN   (False Negative):       Offset in ground truth not identified\n")
+
+
+    print("[*] Evaluating Structs\n")
+    eval_structs()
+
+    eval_structs(l1_break=True)
 
 
 if __name__ == "__main__":

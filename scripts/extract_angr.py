@@ -29,10 +29,13 @@ def normalize_type(var_type):
     var_type = var_type.replace("volatile", "")
     var_type = var_type.replace("unsigned ","")
     var_type = var_type.replace("signed", "")
-    var_type = var_type.replace("int(32bits)", "int")
-    var_type = var_type.replace("int(64bits)", "long long")
-    var_type = var_type.replace("int(16bits)", "short")
-    var_type = var_type.replace("int(8bits)", "char")
+    var_type = var_type.replace("struct ","")
+    var_type = var_type.replace("int (32bits)", "int")
+    var_type = var_type.replace("int (64bits)", "long long")
+    var_type = var_type.replace("long long (64bits)", "long long")
+    var_type = var_type.replace("int (16bits)", "short")
+    var_type = var_type.replace("int (8bits)", "char")
+    var_type = var_type.replace("FILE_t", "FILE")
     var_type = var_type.strip()
     if var_type == "long":
         var_type = "long long"
