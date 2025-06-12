@@ -1,0 +1,91 @@
+void hexdump(undefined4 param_1,ulong param_2,undefined4 param_3,sbyte *param_4,undefined4 param_5,
+            struct_5 *param_6)
+
+{
+  byte bVar1;
+  FILE *pFVar2;
+  undefined *puVar3;
+  ushort **ppuVar4;
+  undefined1 uVar5;
+  undefined *puVar6;
+  undefined4 unaff_00000024;
+  long lVar7;
+  undefined8 unaff_RBP;
+  undefined4 in_register_0000003c;
+  
+  lVar7 = CONCAT44(unaff_00000024,param_3);
+  *(undefined8 *)(lVar7 + -8) = unaff_RBP;
+  *(ulong *)(lVar7 + -0x40) = CONCAT44(in_register_0000003c,param_5);
+  *(sbyte **)(lVar7 + -0x48) = param_4;
+  *(ulong *)(lVar7 + -0x50) = param_2;
+  *(undefined8 *)(lVar7 + -0x10) = param_6->field_0;
+  *(undefined4 *)(lVar7 + -0x2c) = 0;
+  while ((ulong)(long)*(int *)(lVar7 + -0x2c) < *(ulong *)(lVar7 + -0x50)) {
+    if ((*(uint *)(lVar7 + -0x2c) & 0xf) == 0) {
+      if (*(long *)(lVar7 + -0x40) == 0) {
+        puVar6 = &DAT_00105488;
+      }
+      else {
+        puVar6 = &DAT_00105485;
+      }
+      if (*(long *)(lVar7 + -0x40) == 0) {
+        puVar3 = &DAT_00105488;
+      }
+      else {
+        puVar3 = *(undefined **)(lVar7 + -0x40);
+      }
+      pFVar2 = (FILE *)CONCAT44(stderr._4_4_,param_1);
+      *(undefined8 *)(lVar7 + -0x60) = 0x102e9c;
+      fprintf(pFVar2,"%s%s%04x:",puVar3,puVar6,(ulong)*(uint *)(lVar7 + -0x2c));
+      *(undefined8 *)(lVar7 + -0x60) = 0x102eb2;
+      memset((void *)(lVar7 + -0x28),0,0x11);
+    }
+    if ((*(uint *)(lVar7 + -0x2c) & 3) == 0) {
+      pFVar2 = (FILE *)CONCAT44(stderr._4_4_,param_1);
+      *(undefined8 *)(lVar7 + -0x60) = 0x102ed0;
+      fputc(0x20,pFVar2);
+    }
+    bVar1 = *(byte *)(*(long *)(lVar7 + -0x48) + (long)*(int *)(lVar7 + -0x2c));
+    pFVar2 = (FILE *)CONCAT44(stderr._4_4_,param_1);
+    *(undefined8 *)(lVar7 + -0x60) = 0x102efe;
+    fprintf(pFVar2," %02x",(ulong)bVar1);
+    *(undefined8 *)(lVar7 + -0x60) = 0x102f03;
+    ppuVar4 = __ctype_b_loc();
+    if (((*ppuVar4)[*(byte *)(*(long *)(lVar7 + -0x48) + (long)*(int *)(lVar7 + -0x2c))] & 0x4000)
+        == 0) {
+      uVar5 = 0x2e;
+    }
+    else {
+      uVar5 = *(undefined1 *)(*(long *)(lVar7 + -0x48) + (long)*(int *)(lVar7 + -0x2c));
+    }
+    *(undefined1 *)(lVar7 + -0x28 + (long)(*(int *)(lVar7 + -0x2c) % 0x10)) = uVar5;
+    if (*(int *)(lVar7 + -0x2c) % 0x10 == 0xf) {
+      pFVar2 = (FILE *)CONCAT44(stderr._4_4_,param_1);
+      *(undefined8 *)(lVar7 + -0x60) = 0x102f8d;
+      fprintf(pFVar2,"  %s\n",lVar7 + -0x28);
+    }
+    *(int *)(lVar7 + -0x2c) = *(int *)(lVar7 + -0x2c) + 1;
+  }
+  if ((*(uint *)(lVar7 + -0x2c) & 0xf) != 0) {
+    while ((*(uint *)(lVar7 + -0x2c) & 0xf) != 0) {
+      if ((*(uint *)(lVar7 + -0x2c) & 3) == 0) {
+        pFVar2 = (FILE *)CONCAT44(stderr._4_4_,param_1);
+        *(undefined8 *)(lVar7 + -0x60) = 0x102fca;
+        fputc(0x20,pFVar2);
+      }
+      pFVar2 = (FILE *)CONCAT44(stderr._4_4_,param_1);
+      *(undefined8 *)(lVar7 + -0x60) = 0x102fea;
+      fwrite(&DAT_0010549f,1,3,pFVar2);
+      *(int *)(lVar7 + -0x2c) = *(int *)(lVar7 + -0x2c) + 1;
+    }
+    pFVar2 = (FILE *)CONCAT44(stderr._4_4_,param_1);
+    *(undefined8 *)(lVar7 + -0x60) = 0x103017;
+    fprintf(pFVar2," %s\n",lVar7 + -0x28);
+  }
+  if (*(long *)(lVar7 + -0x10) == param_6->field_0) {
+    return;
+  }
+                    /* WARNING: Subroutine does not return */
+  *(undefined8 *)(lVar7 + -0x60) = 0x10302c;
+  __stack_chk_fail();
+}

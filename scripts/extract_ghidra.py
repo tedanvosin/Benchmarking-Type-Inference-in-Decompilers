@@ -16,11 +16,13 @@ TYPE_MAP = {
         "uint": "int",
         "ulong": "long long",
         "ushort": "short",
+        "uchar": "char",
         "char8": "char[8]",
         "char4": "char[4]",
         "char2": "char[2]",
         "char1": "char",
         "sbyte": "char",
+        "schar": "char",
         "byte": "char",
 }
 

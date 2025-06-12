@@ -1,0 +1,49 @@
+unsigned __int64 __fastcall hexdump(const char *a1, __int64 a2, unsigned __int64 a3)
+{
+  const char *v3; // rdx
+  const char *v4; // rax
+  char v5; // cl
+  int i; // [rsp+2Ch] [rbp-24h]
+  char s[24]; // [rsp+30h] [rbp-20h] BYREF
+  unsigned __int64 v10; // [rsp+48h] [rbp-8h]
+
+  v10 = __readfsqword(0x28u);
+  for ( i = 0; a3 > i; ++i )
+  {
+    if ( (i & 0xF) == 0 )
+    {
+      if ( a1 )
+        v3 = ": ";
+      else
+        v3 = (const char *)&unk_5488;
+      if ( a1 )
+        v4 = a1;
+      else
+        v4 = (const char *)&unk_5488;
+      fprintf(stderr, "%s%s%04x:", v4, v3, i);
+      memset(s, 0, 0x11uLL);
+    }
+    if ( (i & 3) == 0 )
+      fputc(32, stderr);
+    fprintf(stderr, " %02x", *(unsigned __int8 *)(i + a2));
+    if ( ((*__ctype_b_loc())[*(unsigned __int8 *)(i + a2)] & 0x4000) != 0 )
+      v5 = *(_BYTE *)(i + a2);
+    else
+      v5 = 46;
+    s[i % 16] = v5;
+    if ( i % 16 == 15 )
+      fprintf(stderr, "  %s\n", s);
+  }
+  if ( (i & 0xF) != 0 )
+  {
+    while ( (i & 0xF) != 0 )
+    {
+      if ( (i & 3) == 0 )
+        fputc(32, stderr);
+      fwrite("   ", 1uLL, 3uLL, stderr);
+      LOBYTE(i) = i + 1;
+    }
+    fprintf(stderr, " %s\n", s);
+  }
+  return v10 - __readfsqword(0x28u);
+}

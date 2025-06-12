@@ -1,0 +1,57 @@
+void hexdump(undefined *param_1,long param_2,ulong param_3)
+
+{
+  undefined *puVar1;
+  ushort **ppuVar2;
+  undefined1 uVar3;
+  undefined *puVar4;
+  long in_FS_OFFSET;
+  uint local_2c;
+  undefined1 local_28 [24];
+  long local_10;
+  
+  local_10 = *(long *)(in_FS_OFFSET + 0x28);
+  for (local_2c = 0; (ulong)(long)(int)local_2c < param_3; local_2c = local_2c + 1) {
+    if ((local_2c & 0xf) == 0) {
+      if (param_1 == (undefined *)0x0) {
+        puVar4 = &DAT_00105488;
+        puVar1 = &DAT_00105488;
+      }
+      else {
+        puVar4 = &DAT_00105485;
+        puVar1 = param_1;
+      }
+      fprintf(stderr,"%s%s%04x:",puVar1,puVar4,(ulong)local_2c);
+      memset(local_28,0,0x11);
+    }
+    if ((local_2c & 3) == 0) {
+      fputc(0x20,stderr);
+    }
+    fprintf(stderr," %02x",(ulong)*(byte *)(param_2 + (int)local_2c));
+    ppuVar2 = __ctype_b_loc();
+    if (((*ppuVar2)[*(byte *)(param_2 + (int)local_2c)] & 0x4000) == 0) {
+      uVar3 = 0x2e;
+    }
+    else {
+      uVar3 = *(undefined1 *)(param_2 + (int)local_2c);
+    }
+    local_28[(int)local_2c % 0x10] = uVar3;
+    if ((int)local_2c % 0x10 == 0xf) {
+      fprintf(stderr,"  %s\n",local_28);
+    }
+  }
+  if ((local_2c & 0xf) != 0) {
+    for (; (local_2c & 0xf) != 0; local_2c = local_2c + 1) {
+      if ((local_2c & 3) == 0) {
+        fputc(0x20,stderr);
+      }
+      fwrite(&DAT_0010549f,1,3,stderr);
+    }
+    fprintf(stderr," %s\n",local_28);
+  }
+  if (local_10 != *(long *)(in_FS_OFFSET + 0x28)) {
+                    /* WARNING: Subroutine does not return */
+    __stack_chk_fail();
+  }
+  return;
+}
