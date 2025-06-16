@@ -438,7 +438,7 @@ def func_level_evaluate(allow_structs=True, allow_arrays=True, primitives=True, 
                     if offset not in gt_funcs[func]:
                         tn += 1
 
-        print("{:<13}{:<15}{:<8}{:<8}{:<8}{:<8}{:<10}".format(decompiler,f'{tp+fp}/{tp+fp+fn}', tp, fp, tn, fn, f'{(tp+fp)/(tp+fp+fn):.2f}'))
+        print("{:<13}{:<15}{:<8}{:<8}{:<8}{:<8}{:<10}".format(decompiler,f'{tp+fp+tn}/{tp+fp+fn}', tp, fp, tn, fn, f'{(tp+fp)/(tp+fp+fn) * 100:.2f}'))
     print("\n")
 
 
@@ -492,7 +492,7 @@ def main():
 
     print("[*] Evaluation with Struct Breakdown by 1 level")
     print("[*] Excludes functions without structs and arrays\n")
-    func_level_evaluate(allow_arrays=True, allow_structs=True, primitives=False, break_structs=True,depth=0)
+    func_level_evaluate(allow_arrays=True, allow_structs=True, primitives=False, break_structs=True,depth=1)
 
     print("==========================================================")
     print("Variable Level Evaluations\n")
