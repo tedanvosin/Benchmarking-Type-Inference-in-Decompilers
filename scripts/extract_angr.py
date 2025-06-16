@@ -30,11 +30,11 @@ def normalize_type(var_type):
     var_type = var_type.replace("unsigned ","")
     var_type = var_type.replace("signed", "")
     var_type = var_type.replace("struct ","")
-    var_type = var_type.replace("int (32bits)", "int")
-    var_type = var_type.replace("int (64bits)", "long long")
-    var_type = var_type.replace("long long (64bits)", "long long")
-    var_type = var_type.replace("int (16bits)", "short")
-    var_type = var_type.replace("int (8bits)", "char")
+    var_type = var_type.replace("int (32 bits)", "int")
+    var_type = var_type.replace("int (64 bits)", "long long")
+    var_type = var_type.replace("long long (64 bits)", "long long")
+    var_type = var_type.replace("short (16 bits)", "short")
+    var_type = var_type.replace("int (8 bits)", "char")
     var_type = var_type.replace("FILE_t", "FILE")
     var_type = var_type.strip()
     if var_type == "long":
@@ -56,7 +56,8 @@ def analyze_binary(binary_path):
     project = angr.Project(binary_path, auto_load_libs=False)
 
     CFG = project.analyses.CFG(normalize=True,data_references=True)
-    project.analyses.CompleteCallingConventions(cfg=CFG,recover_variables=True)
+
+    project.analyses.CompleteCallingConventions(cfg=CFG,recover_variables=True,analyze_callsites=True)
 
     all_functions = {}
 
@@ -84,11 +85,17 @@ def analyze_binary(binary_path):
                     var_data['size'] = 0
                     
                     var_name = var.name
-                    var_type = code_gen.cfunc.variable_manager.get_variable_type(var).c_repr()
+                    var_type_obj = code_gen.cfunc.variable_manager.get_variable_type(var)
+                    var_type = var_type_obj.c_repr()
                     var_type = normalize_type(var_type)
-                    var_size = var.size
-                    var_location = var.offset+8
                     
+                    var_size = 0
+                    if var_type_obj.size:
+                        var_size = var_type_obj.size//8
+                    else:
+                        var_size = var.size
+
+                    var_location = var.offset+8
                     var_data['name'] = var_name
                     var_data['RBP offset'] = var_location
                     var_data['type'] = var_type

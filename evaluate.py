@@ -44,6 +44,92 @@ def break_struct(var,gt_funcs,depth=1):
         for type in mem['type']:
             gt_funcs[mem['RBP offset']].append(type.replace(' ',''))
 
+def get_aray_length(var):
+    if var['is_array']:
+        type_str = var['type']
+        len = type_str[type_str.index('[')+1:type_str.index(']')]
+        len = int(len)
+        return len
+    else:
+        return 0
+    
+def get_base_type(var):
+    base_types = []
+    for type in var:
+        if '[' in type:
+            base_types.append(type[:type.index('[')])
+        else:
+            base_types.append(type)
+    return base_types
+
+def eval_array():
+    print("{:<13}{:<15}{:<8}{:<8}{:<8}{:<8}".format("Decompiler","Decomp/GT off", "TP", "FP","FP_1","FN"))
+    print(f"{'':-<60}")
+    
+    for decompiler in DECOMPILERS:
+        tp = 0
+        fp = 0
+        fp_1 = 0  #correct base type, wrong length
+        fn = 0
+        
+        for i in range(len(GROUND_TRUTHS)):
+            ground_truth_json = json.load(open(GROUND_TRUTHS[i]))
+            decomp_json = json.load(open(DECOMPS[decompiler][i]))
+    
+            gt_funcs = {}
+            decomp_funcs = {}
+            
+            for func in ground_truth_json:
+                
+                gt_funcs[func] = {}
+                
+                if func in decomp_json:
+                    decomp_funcs[func] = {}
+                
+                    for var in decomp_json[func]['variables']:
+                        
+                        if var['RBP offset'] not in decomp_funcs[func]:
+                            decomp_funcs[func][var['RBP offset']] = {}
+                            decomp_funcs[func][var['RBP offset']]['type'] = []
+                        
+                        decomp_funcs[func][var['RBP offset']]['type'].append(var['type'].strip().replace(' ', ''))
+
+                for var in ground_truth_json[func]['variables']:
+                    if not var['is_array']:
+                        continue 
+                    else:
+                        gt_funcs[func][var['RBP offset']] = {}
+                        gt_funcs[func][var['RBP offset']]['type'] = []
+                        gt_funcs[func][var['RBP offset']]['size'] = var['size']
+                        gt_funcs[func][var['RBP offset']]['base'] = var['element_type']
+                        gt_funcs[func][var['RBP offset']]['length'] = var['array_length']
+                        for type in var['type']:
+                            gt_funcs[func][var['RBP offset']]['type'].append(type.replace(' ',''))
+              
+            for func in gt_funcs:
+                if func not in decomp_funcs:
+                    for offset,_type in gt_funcs[func].items():
+                        fn += 1
+                else:
+                    for offset,_type in gt_funcs[func].items():
+                        if offset in decomp_funcs[func]:
+                            if set(gt_funcs[func][offset]['type']).intersection(set(decomp_funcs[func][offset]['type'])):
+                                tp += 1
+                            else:
+                                if set(gt_funcs[func][offset]['base']).intersection(get_base_type(decomp_funcs[func][offset]['type'])):
+                                    #correctbase_wrong_length
+                                    fp += 1
+                                else:
+                                    #wrong base type
+                                    fp_1 +=1 
+                        else:
+                            fn += 1
+
+        else:
+            print("{:<13}{:<15}{:<8}{:<8}{:<8}{:<8}".format(decompiler,f'{tp+fp+fp_1}/{tp+fp+fp_1+fn}', tp, fp, fp_1, fn))
+    print("\n")
+    return
+
 def eval_structs(l1_break=False):
     if l1_break:
         print("{:<13}{:<15}{:<8}{:<8}{:<8}{:<15}".format("Decompiler","Decomp/GT Cnt", "TP", "FP","FN","Structs Broken"))
@@ -184,10 +270,10 @@ def eval_pointers():
                         else:
                             fn += 1
                 
-                    for offset in decomp_funcs[func]:
-                        if offset not in gt_funcs[func]:
-                            if decomp_funcs[func][offset]['is_pointer']:
-                                tn += 1
+                    # for offset in decomp_funcs[func]:
+                    #     if offset not in gt_funcs[func]:
+                    #         if decomp_funcs[func][offset]['is_pointer']:
+                    #             tn += 1
 
         
         print("{:<13}{:<15}{:<8}{:<8}{:<8}{:<8}{:<8}".format(decompiler,f'{tp+fp+tn+fp_1}/{tp+fp+fp_1+fn}', tp, fp, fp_1, tn, fn))
@@ -195,7 +281,7 @@ def eval_pointers():
     return
 
 def var_level_evaluate(var_type_str,exp_size):
-    print("{:<13}{:<15}{:<8}{:<8}{:<8}{:<8}{:<8}{:<8}".format("Decompiler","Decomp/GT Cnt", "TP", "FP", "TN", "FN", "C_SZ", "W_SZ"))
+    print("{:<13}{:<15}{:<8}{:<8}{:<8}{:<8}{:<8}{:<8}".format("Decompiler","Decomp/GT Off", "TP", "FP", "TN", "FN", "C_SZ", "W_SZ"))
     print(f"{'':-<76}")
     
     for decompiler in DECOMPILERS:
@@ -269,10 +355,10 @@ def var_level_evaluate(var_type_str,exp_size):
                     else:
                         fn += 1
                 
-                for offset in decomp_funcs[func]:
-                    if offset not in gt_funcs[func]:
-                        if var_type_str in set(decomp_funcs[func][offset]['type']):
-                            tn += 1
+                # for offset in decomp_funcs[func]:
+                #     if offset not in gt_funcs[func]:
+                #         if var_type_str in set(decomp_funcs[func][offset]['type']):
+                #             tn += 1
 
         
         print("{:<13}{:<15}{:<8}{:<8}{:<8}{:<8}{:<8}{:<8}".format(decompiler,f'{tp+fp+tn}/{tp+fp+fn}', tp, fp, tn, fn,c_sz, w_sz))
@@ -280,8 +366,8 @@ def var_level_evaluate(var_type_str,exp_size):
 
 def func_level_evaluate(allow_structs=True, allow_arrays=True, primitives=True, break_structs=False,depth=1):
     
-    print("{:<13}{:<15}{:<8}{:<8}{:<8}{:<8}".format("Decompiler","Decomp/GT Cnt", "TP", "FP", "TN", "FN"))
-    print(f"{'':-<60}")
+    print("{:<13}{:<15}{:<8}{:<8}{:<8}{:<8}{:<10}".format("Decompiler","Decomp/GT Cnt", "TP", "FP", "TN", "FN", "Coverage"))
+    print(f"{'':-<70}")
     
     for decompiler in DECOMPILERS:
         tp = 0
@@ -351,8 +437,8 @@ def func_level_evaluate(allow_structs=True, allow_arrays=True, primitives=True, 
                 for offset in decomp_funcs[func]:
                     if offset not in gt_funcs[func]:
                         tn += 1
-        
-        print("{:<13}{:<15}{:<8}{:<8}{:<8}{:<8}".format(decompiler,f'{tp+fp+tn}/{tp+fp+fn}', tp, fp, tn, fn))
+
+        print("{:<13}{:<15}{:<8}{:<8}{:<8}{:<8}{:<10}".format(decompiler,f'{tp+fp}/{tp+fp+fn}', tp, fp, tn, fn, f'{(tp+fp)/(tp+fp+fn):.2f}'))
     print("\n")
 
 
@@ -387,7 +473,6 @@ def main():
     print("Keys:")
     print("TP (True Positive):        Identified Offset in ground truth and same type")
     print("FP (False Positive):       Identified Offset in ground truth but wrong type")
-    print("FP (False Positive):       Identified Offset in ground truth but wrong type")
     print("TN (True Negative/Ghosts): Identified Offset not in ground truth")
     print("FN (False Negative):       Offset in ground truth not identified\n")
     
@@ -407,7 +492,7 @@ def main():
 
     print("[*] Evaluation with Struct Breakdown by 1 level")
     print("[*] Excludes functions without structs and arrays\n")
-    func_level_evaluate(allow_arrays=True, allow_structs=True, primitives=False, break_structs=True,depth=1)
+    func_level_evaluate(allow_arrays=True, allow_structs=True, primitives=False, break_structs=True,depth=0)
 
     print("==========================================================")
     print("Variable Level Evaluations\n")
@@ -452,8 +537,15 @@ def main():
     print("[*] Evaluating Structs\n")
     eval_structs()
 
-    eval_structs(l1_break=True)
+    print("Keys:")
+    print("TP   (True Positive):        Correct array base and length")
+    print("FP   (False Positive):       Correcty base, wrong length")
+    print("FP_1 (False Positive):       Correct offset wrong base")
+    print("FN   (False Negative):       Offset in ground truth not identified\n")
 
+
+    print("[*] Evaluating Arrays\n")
+    eval_array()
 
 if __name__ == "__main__":
     main()
