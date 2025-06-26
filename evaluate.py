@@ -52,7 +52,13 @@ def get_aray_length(var):
         return len
     else:
         return 0
-    
+
+def is_array(type):
+    for _type in type:
+        if '[' in _type and ']' in _type:
+            return True
+    return False
+
 def get_base_type(var):
     base_types = []
     for type in var:
@@ -71,7 +77,8 @@ def eval_array():
         fp = 0
         fp_1 = 0  #correct base type, wrong length
         fn = 0
-        
+        wrong_lens = {}
+        corr_lens = {}
         for i in range(len(GROUND_TRUTHS)):
             ground_truth_json = json.load(open(GROUND_TRUTHS[i]))
             decomp_json = json.load(open(DECOMPS[decompiler][i]))
@@ -116,7 +123,7 @@ def eval_array():
                             if set(gt_funcs[func][offset]['type']).intersection(set(decomp_funcs[func][offset]['type'])):
                                 tp += 1
                             else:
-                                if set(gt_funcs[func][offset]['base']).intersection(get_base_type(decomp_funcs[func][offset]['type'])):
+                                if is_array(decomp_funcs[func][offset]['type']) and set(gt_funcs[func][offset]['base']).intersection(get_base_type(decomp_funcs[func][offset]['type'])):
                                     #correctbase_wrong_length
                                     fp += 1
                                 else:
@@ -125,8 +132,8 @@ def eval_array():
                         else:
                             fn += 1
 
-        else:
-            print("{:<13}{:<15}{:<8}{:<8}{:<8}{:<8}".format(decompiler,f'{tp+fp+fp_1}/{tp+fp+fp_1+fn}', tp, fp, fp_1, fn))
+        print("{:<13}{:<15}{:<8}{:<8}{:<8}{:<8}".format(decompiler,f'{tp+fp+fp_1}/{tp+fp+fp_1+fn}', tp, fp, fp_1, fn))
+        print(f"Usual failed lengths:{wrong_lens}")
     print("\n")
     return
 
@@ -142,6 +149,8 @@ def eval_structs(l1_break=False):
         fp = 0
         fn = 0
         br=0
+        sti=0
+        gt=0
         for i in range(len(GROUND_TRUTHS)):
             ground_truth_json = json.load(open(GROUND_TRUTHS[i]))
             decomp_json = json.load(open(DECOMPS[decompiler][i]))
@@ -165,10 +174,16 @@ def eval_structs(l1_break=False):
                     if not var['is_struct']:
                         continue 
                     
+                    ##overlapping struct
+                    if var['RBP offset'] in gt_funcs[func]:
+                        continue
+                    gt_funcs[func][var['RBP offset']] = []    
                     if l1_break:
-                        if (func in decomp_funcs) and (var['RBP offset'] in decomp_funcs[func]) and (set(var['type']).intersection(set(decomp_funcs[func][var['RBP offset']]))):
+                        if (func in decomp_funcs) and (var['RBP offset'] in decomp_funcs[func]) and (set(t.strip().replace(' ', '') for t in var['type']).intersection(set(decomp_funcs[func][var['RBP offset']]))):
                             #Struct Identified
-                            continue
+                            sti += 1
+                            for type in var['type']:
+                                gt_funcs[func][var['RBP offset']].append(type.replace(' ',''))
                         
                         else:
                             #Struct Not Identified
@@ -197,14 +212,14 @@ def eval_structs(l1_break=False):
                             fn += 1
 
         if l1_break:
-            print("{:<13}{:<15}{:<8}{:<8}{:<8}{:<8}".format(decompiler,f'{tp+fp}/{tp+fp+fn}', tp, fp, fn, br))
+            print("{:<13}{:<15}{:<8}{:<8}{:<8}{:<8}{:<8}".format(decompiler,f'{tp+fp}/{tp+fp+fn}', tp, fp, fn, br))
         else:
             print("{:<13}{:<15}{:<8}{:<8}{:<8}".format(decompiler,f'{tp+fp}/{tp+fp+fn}', tp, fp, fn))
     print("\n")
     return
 
 def eval_pointers():
-    print("{:<13}{:<15}{:<8}{:<8}{:<8}{:<8}{:<8}".format("Decompiler","Decomp/GT Cnt", "TP", "FP","FP_1", "TN", "FN"))
+    print("{:<13}{:<15}{:<8}{:<8}{:<8}{:<8}{:<8}{:<8}".format("Decompiler","Decomp/GT Off", "TP", "FP","FP_1", "FN", "C_SZ", "W_SZ"))
     print(f"{'':-<68}")
     
     for decompiler in DECOMPILERS:
@@ -213,6 +228,8 @@ def eval_pointers():
         fp = 0
         fp_1 = 0
         fn = 0
+        c_sz=0
+        w_sz=0
         for i in range(len(GROUND_TRUTHS)):
             ground_truth_json = json.load(open(GROUND_TRUTHS[i]))
             decomp_json = json.load(open(DECOMPS[decompiler][i]))
@@ -232,19 +249,19 @@ def eval_pointers():
                             decomp_funcs[func][var['RBP offset']] = {}
                             decomp_funcs[func][var['RBP offset']]['type'] = []
                             decomp_funcs[func][var['RBP offset']]['is_pointer'] = False
+                            decomp_funcs[func][var['RBP offset']]['size'] = []
                         
                         if '*' in var['type']:
                             decomp_funcs[func][var['RBP offset']]['is_pointer'] = True
                         decomp_funcs[func][var['RBP offset']]['type'].append(var['type'].strip().replace(' ', ''))
-
+                        decomp_funcs[func][var['RBP offset']]['size'].append(var['size'])
+                
                 for var in ground_truth_json[func]['variables']:
+                    if not var['is_pointer']:
+                        continue
                     if var['RBP offset'] not in gt_funcs[func]:
                         gt_funcs[func][var['RBP offset']] = {}
                         gt_funcs[func][var['RBP offset']]['type'] = []
-                        gt_funcs[func][var['RBP offset']]['is_pointer'] = False
-                    
-                    if not gt_funcs[func][var['RBP offset']]['is_pointer']:
-                        gt_funcs[func][var['RBP offset']]['is_pointer'] = var['is_pointer']
                     
                     for type in var['type']:
                         gt_funcs[func][var['RBP offset']]['type'].append(type.replace(' ',''))  
@@ -253,20 +270,25 @@ def eval_pointers():
             for func in gt_funcs:
                 if func not in decomp_funcs:
                     for offset,var_json in gt_funcs[func].items():
-                        if var_json['is_pointer']:
-                            fn += 1
+                        fn += 1
                 else:
                     for offset,var_json in gt_funcs[func].items():
-                        if not var_json['is_pointer']:
-                            continue
                         if offset in decomp_funcs[func]:
                             if decomp_funcs[func][offset]['is_pointer']:
                                 if set(gt_funcs[func][offset]['type']).intersection(set(decomp_funcs[func][offset]['type'])):
                                     tp += 1
+                                    
                                 else:
                                     fp += 1
+                                
                             else:
                                 fp_1 += 1
+                            
+                            if 8 in decomp_funcs[func][offset]['size']:
+                                c_sz+=1
+                            else:
+                                w_sz+=1
+                        
                         else:
                             fn += 1
                 
@@ -276,7 +298,7 @@ def eval_pointers():
                     #             tn += 1
 
         
-        print("{:<13}{:<15}{:<8}{:<8}{:<8}{:<8}{:<8}".format(decompiler,f'{tp+fp+tn+fp_1}/{tp+fp+fp_1+fn}', tp, fp, fp_1, tn, fn))
+        print("{:<13}{:<15}{:<8}{:<8}{:<8}{:<8}{:<8}{:<8}".format(decompiler,f'{tp+fp+tn+fp_1}/{tp+fp+fp_1+fn}', tp, fp, fp_1, fn, c_sz,w_sz))
     print("\n")
     return
 
@@ -402,8 +424,10 @@ def func_level_evaluate(allow_structs=True, allow_arrays=True, primitives=True, 
                 
                 for var in ground_truth_json[func]['variables']:
                     if var['is_struct'] and break_structs:
+                        if var['RBP offset'] in gt_funcs[func]:
+                            continue
                         
-                        if (func in decomp_funcs) and (var['RBP offset'] in decomp_funcs[func]) and (set(var['type']).intersection(set(decomp_funcs[func][var['RBP offset']]))):
+                        if (func in decomp_funcs) and (var['RBP offset'] in decomp_funcs[func]) and (set(t.strip().replace(' ', '') for t in var['type']).intersection(set(decomp_funcs[func][var['RBP offset']]))):
                             #Struct Identified
                             gt_funcs[func][var['RBP offset']] = []
                             for type in var['type']:
@@ -492,7 +516,7 @@ def main():
 
     print("[*] Evaluation with Struct Breakdown by 1 level")
     print("[*] Excludes functions without structs and arrays\n")
-    func_level_evaluate(allow_arrays=True, allow_structs=True, primitives=False, break_structs=True,depth=1)
+    func_level_evaluate(allow_arrays=True, allow_structs=True, primitives=True, break_structs=True,depth=3)
 
     print("==========================================================")
     print("Variable Level Evaluations\n")
@@ -536,6 +560,7 @@ def main():
 
     print("[*] Evaluating Structs\n")
     eval_structs()
+    # eval_structs(l1_break=True)
 
     print("Keys:")
     print("TP   (True Positive):        Correct array base and length")
