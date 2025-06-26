@@ -23,9 +23,9 @@ TYPE_MAP = {
         "_BOOL1": "bool",
         "_BOOL": "bool",
         "_BYTE": "char",
-        "_WORD": "short",
         "_DWORD": "int",
         "_QWORD": "long long",
+        "_WORD": "short",
         "_UNKNOWN": "void"
     }
 

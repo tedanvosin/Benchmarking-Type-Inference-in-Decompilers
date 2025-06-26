@@ -386,7 +386,7 @@ def var_level_evaluate(var_type_str,exp_size):
         print("{:<13}{:<15}{:<8}{:<8}{:<8}{:<8}{:<8}{:<8}".format(decompiler,f'{tp+fp+tn}/{tp+fp+fn}', tp, fp, tn, fn,c_sz, w_sz))
     print("\n")
 
-def func_level_evaluate(allow_structs=True, allow_arrays=True, primitives=True, break_structs=False,depth=1):
+def func_level_evaluate(allow_structs=True, allow_arrays=True, primitives=True):
     
     print("{:<13}{:<15}{:<8}{:<8}{:<8}{:<8}{:<10}".format("Decompiler","Decomp/GT Cnt", "TP", "FP", "TN", "FN", "Coverage"))
     print(f"{'':-<70}")
@@ -423,25 +423,9 @@ def func_level_evaluate(allow_structs=True, allow_arrays=True, primitives=True, 
                         decomp_funcs[func][var['RBP offset']].append(var['type'].strip().replace(' ', ''))
                 
                 for var in ground_truth_json[func]['variables']:
-                    if var['is_struct'] and break_structs:
-                        if var['RBP offset'] in gt_funcs[func]:
-                            continue
-                        
-                        if (func in decomp_funcs) and (var['RBP offset'] in decomp_funcs[func]) and (set(t.strip().replace(' ', '') for t in var['type']).intersection(set(decomp_funcs[func][var['RBP offset']]))):
-                            #Struct Identified
-                            gt_funcs[func][var['RBP offset']] = []
-                            for type in var['type']:
-                                gt_funcs[func][var['RBP offset']].append(type.replace(' ',''))    
-                        
-                        else:
-                            #Struct Not Identified
-                            #Breakdown Struct
-                            break_struct(var, gt_funcs[func], depth=depth)
-                            
-                    else:
-                        gt_funcs[func][var['RBP offset']] = []
-                        for type in var['type']:
-                            gt_funcs[func][var['RBP offset']].append(type.replace(' ',''))  
+                    gt_funcs[func][var['RBP offset']] = []
+                    for type in var['type']:
+                        gt_funcs[func][var['RBP offset']].append(type.replace(' ',''))  
 
             for func in gt_funcs:
                 if func not in decomp_funcs:
@@ -514,10 +498,6 @@ def main():
     print("[*] Excludes functions without structs and arrays\n")
     func_level_evaluate(allow_arrays=True, allow_structs=True, primitives=False)
 
-    print("[*] Evaluation with Struct Breakdown by 1 level")
-    print("[*] Excludes functions without structs and arrays\n")
-    func_level_evaluate(allow_arrays=True, allow_structs=True, primitives=True, break_structs=True,depth=3)
-
     print("==========================================================")
     print("Variable Level Evaluations\n")
     
@@ -560,7 +540,6 @@ def main():
 
     print("[*] Evaluating Structs\n")
     eval_structs()
-    # eval_structs(l1_break=True)
 
     print("Keys:")
     print("TP   (True Positive):        Correct array base and length")

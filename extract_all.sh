@@ -1,13 +1,10 @@
 #!/bin/bash -l
 
-# Note: If conda activate doesn't work, you may need to adjust the conda initialization path
-# or use: source ~/miniconda3/etc/profile.d/conda.sh (adjust path as needed)
-
 if [ $# -ne 3 ]; then
     echo "Usage: $0 <tool> <base_dir> <n>"
     echo "Tools: retypd, ida, gt, ghidra, binja, angr, all"
-    echo "Base Dirs: O0/O1/O2/O3"
-    echo "N: Number of files to process (0 for all)"
+    echo "Base Dirs: O0(To be extended)"
+    echo "N: Number of files to process"
     exit 1
 fi
 

@@ -11,19 +11,20 @@ from pathlib import Path
 import binaryninja
 
 TYPE_MAP = {
-    "int64_t": "long long",
     "uint64_t": "long long",
-    "int32_t": "int",
-    "uint32_t": "int",
-    "int16_t": "short",
     "uint16_t": "short",
-    "int8_t": "char",
+    "uint32_t": "int",
     "uint8_t": "char",
     "ulong": "long long",
     "uint": "int",
     "ushort": "short",
     "uchar": "char",
+    "int64_t": "long long",
+    "int32_t": "int",
+    "int16_t": "short",
+    "int8_t": "char",
     "schar": "char",
+    "sint": "int",
 }
 
 def correct_array_length(var_type):
