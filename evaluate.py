@@ -77,8 +77,6 @@ def eval_array():
         fp = 0
         fp_1 = 0  #correct base type, wrong length
         fn = 0
-        wrong_lens = {}
-        corr_lens = {}
         for i in range(len(GROUND_TRUTHS)):
             ground_truth_json = json.load(open(GROUND_TRUTHS[i]))
             decomp_json = json.load(open(DECOMPS[decompiler][i]))
@@ -133,7 +131,7 @@ def eval_array():
                             fn += 1
 
         print("{:<13}{:<15}{:<8}{:<8}{:<8}{:<8}".format(decompiler,f'{tp+fp+fp_1}/{tp+fp+fp_1+fn}', tp, fp, fp_1, fn))
-        print(f"Usual failed lengths:{wrong_lens}")
+        # print(f"Usual failed lengths:{wrong_lens}")
     print("\n")
     return
 
@@ -292,10 +290,6 @@ def eval_pointers():
                         else:
                             fn += 1
                 
-                    # for offset in decomp_funcs[func]:
-                    #     if offset not in gt_funcs[func]:
-                    #         if decomp_funcs[func][offset]['is_pointer']:
-                    #             tn += 1
 
         
         print("{:<13}{:<15}{:<8}{:<8}{:<8}{:<8}{:<8}{:<8}".format(decompiler,f'{tp+fp+tn+fp_1}/{tp+fp+fp_1+fn}', tp, fp, fp_1, fn, c_sz,w_sz))
@@ -303,7 +297,7 @@ def eval_pointers():
     return
 
 def var_level_evaluate(var_type_str,exp_size):
-    print("{:<13}{:<15}{:<8}{:<8}{:<8}{:<8}{:<8}{:<8}".format("Decompiler","Decomp/GT Off", "TP", "FP", "TN", "FN", "C_SZ", "W_SZ"))
+    print("{:<13}{:<15}{:<8}{:<8}{:<8}{:<8}{:<8}".format("Decompiler","Decomp/GT Off", "TP", "FP", "FN", "C_SZ", "W_SZ"))
     print(f"{'':-<76}")
     
     for decompiler in DECOMPILERS:
@@ -377,13 +371,9 @@ def var_level_evaluate(var_type_str,exp_size):
                     else:
                         fn += 1
                 
-                # for offset in decomp_funcs[func]:
-                #     if offset not in gt_funcs[func]:
-                #         if var_type_str in set(decomp_funcs[func][offset]['type']):
-                #             tn += 1
 
         
-        print("{:<13}{:<15}{:<8}{:<8}{:<8}{:<8}{:<8}{:<8}".format(decompiler,f'{tp+fp+tn}/{tp+fp+fn}', tp, fp, tn, fn,c_sz, w_sz))
+        print("{:<13}{:<15}{:<8}{:<8}{:<8}{:<8}{:<8}".format(decompiler,f'{tp+fp+tn}/{tp+fp+fn}', tp, fp, fn,c_sz, w_sz))
     print("\n")
 
 def func_level_evaluate(allow_structs=True, allow_arrays=True, primitives=True):
