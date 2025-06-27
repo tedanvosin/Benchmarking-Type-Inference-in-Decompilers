@@ -1,9 +1,4 @@
 #!/usr/bin/env python3
-"""
-Binary Ninja script to extract stack variables, offsets, and types.
-Can be run as a standalone script or from within Binary Ninja.
-"""
-
 import json
 import os
 import sys
