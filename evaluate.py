@@ -389,7 +389,7 @@ def func_level_evaluate(allow_complex=True, allow_primitives=True):
         coverage = (tp+fp)/total_gt * 100
         accuracy = (tp)/total_gt * 100
         precision = (tp)/total_decomp * 100
-        fpr = fp/total_decomp * 100
+        fpr = tn/total_decomp * 100
         
         
         print("{:^14}|{:>22}|{:>9}|{:>7}|{:>20}|{:>19}|{:>10}|{:>10}|{:>10}|{:>16}".format(decompiler,f'{tp+fp+tn}/{tp+fp+fn}', tp, fp, tn, fn, f'{coverage:.2f}',f'{accuracy:.2f}',f'{precision:.2f}',f'{fpr:.2f}'))
