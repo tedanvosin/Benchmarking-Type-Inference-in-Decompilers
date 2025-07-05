@@ -108,11 +108,15 @@ def eval_structs():
     print("{:^13}|{:^23}|{:^9}|{:^7}|{:^19}|{:^21}".format(""           ,"Variables in GT"      ,"Type"   ,"Type"  ,"but not in Decomp","Accuracy (%)"))
     print(f"{'':-<97}")
     
+    st_identified = {}
+    st_misidentified = {}
     for decompiler in DECOMPILERS:
         tp = 0
         fp = 0
         fn = 0
         br=0
+        st_identified[decompiler] = set()
+        st_misidentified[decompiler] = {}
         for i in range(len(GROUND_TRUTHS)):
             ground_truth_json = json.load(open(GROUND_TRUTHS[i]))
             decomp_json = json.load(open(DECOMPS[decompiler][i]))
@@ -137,10 +141,9 @@ def eval_structs():
                         continue 
                     
                     ##overlapping struct
-                    if var['RBP offset'] in gt_funcs[func]:
-                        continue
-                    gt_funcs[func][var['RBP offset']] = []    
-                    gt_funcs[func][var['RBP offset']] = []
+                    if var['RBP offset'] not in gt_funcs[func]:
+                        gt_funcs[func][var['RBP offset']] = []    
+                    
                     for type in var['type']:
                         gt_funcs[func][var['RBP offset']].append(type.replace(' ',''))
               
@@ -153,13 +156,25 @@ def eval_structs():
                         if offset in decomp_funcs[func]:
                             if set(gt_funcs[func][offset]).intersection(set(decomp_funcs[func][offset])):
                                 tp += 1
+                                st_identified[decompiler].add(gt_funcs[func][offset][-1])
                             else:
                                 fp += 1
+                                if gt_funcs[func][offset][-1] not in st_misidentified[decompiler]:
+                                    st_misidentified[decompiler][gt_funcs[func][offset][-1]] = set()
+                                st_misidentified[decompiler][gt_funcs[func][offset][-1]].add(decomp_funcs[func][offset][-1])
                         else:
                             fn += 1
 
         sia = tp/(tp+fp+fn) * 100
         print("{:^13}|{:>23}|{:>9}|{:>7}|{:>19}|{:>21}".format(decompiler,f'{tp+fp}/{tp+fp+fn}', tp, fp, fn,f'{sia:.2f}'))
+    
+    for decompiler in DECOMPILERS:
+        print(decompiler)
+        print(f"Structs Identified: {list(st_identified[decompiler])}")
+        
+        # for gt_st,dc_st in st_misidentified[decompiler].items():
+        #     print(f"Struct {gt_st} misidentified as: {dc_st}")
+    
     print("\n")
     return
 
@@ -458,11 +473,12 @@ def main():
     print("[*] Pointers\n")
     eval_pointers()
 
+    print("[*] Arrays\n")
+    eval_array()
+    
     print("[*] Structs\n")
     eval_structs()
     
-    print("[*] Arrays\n")
-    eval_array()
 
 if __name__ == "__main__":
     main()
