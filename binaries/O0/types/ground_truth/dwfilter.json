@@ -1,6 +1,6 @@
 {
   "parseCmdLine": {
-    "address": "0x1305",
+    "address": "0x4012f6",
     "variables": [
       {
         "name": "argv",
@@ -48,8 +48,8 @@
         "name": "discard",
         "RBP offset": -69,
         "type": [
-          "_Bool",
-          "bool"
+          "bool",
+          "_Bool"
         ],
         "size": 1,
         "is_pointer": false,
@@ -60,7 +60,7 @@
         "is_enum": false
       },
       {
-        "name": "optnomore",
+        "name": "noOptionCount",
         "RBP offset": -68,
         "type": [
           "int"
@@ -74,8 +74,23 @@
         "is_enum": false
       },
       {
-        "name": "noOptionCount",
+        "name": "opttype",
         "RBP offset": -64,
+        "type": [
+          "int",
+          "ArgType"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": true
+      },
+      {
+        "name": "optargind",
+        "RBP offset": -60,
         "type": [
           "int"
         ],
@@ -88,22 +103,7 @@
         "is_enum": false
       },
       {
-        "name": "opttype",
-        "RBP offset": -60,
-        "type": [
-          "ArgType",
-          "int"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": true,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": true
-      },
-      {
-        "name": "optargind",
+        "name": "optnomore",
         "RBP offset": -56,
         "type": [
           "int"
@@ -131,30 +131,30 @@
         "is_enum": false
       },
       {
-        "name": "optArg",
+        "name": "optlength",
         "RBP offset": -48,
         "type": [
-          "char*"
+          "size_t",
+          "long long",
+          "long unsigned int"
         ],
         "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
+        "is_pointer": false,
+        "is_typedef": true,
         "is_array": false,
         "is_struct": false,
         "is_union": false,
         "is_enum": false
       },
       {
-        "name": "optlength",
+        "name": "optArg",
         "RBP offset": -40,
         "type": [
-          "long long",
-          "size_t",
-          "long unsigned int"
+          "char*"
         ],
         "size": 8,
-        "is_pointer": false,
-        "is_typedef": true,
+        "is_pointer": true,
+        "is_typedef": false,
         "is_array": false,
         "is_struct": false,
         "is_union": false,
@@ -191,11 +191,11 @@
     ]
   },
   "cleanup": {
-    "address": "0x20bb",
+    "address": "0x40202c",
     "variables": []
   },
   "createTempfile": {
-    "address": "0x20ce",
+    "address": "0x402041",
     "variables": [
       {
         "name": "fd",
@@ -214,7 +214,7 @@
     ]
   },
   "execute": {
-    "address": "0x216c",
+    "address": "0x4020e1",
     "variables": [
       {
         "name": "args",
@@ -263,7 +263,7 @@
     ]
   },
   "main": {
-    "address": "0x225d",
+    "address": "0x4021d4",
     "variables": [
       {
         "name": "argv",
@@ -352,7 +352,7 @@
     ]
   },
   "fatal": {
-    "address": "0x25c9",
+    "address": "0x402528",
     "variables": [
       {
         "name": "fmt",
@@ -372,10 +372,10 @@
         "name": "args",
         "RBP offset": -208,
         "type": [
-          "__va_list_tag[1]",
-          "__builtin_va_list",
           "__gnuc_va_list",
-          "va_list"
+          "va_list",
+          "__va_list_tag[1]",
+          "__builtin_va_list"
         ],
         "size": 24,
         "is_pointer": false,
@@ -394,11 +394,11 @@
     ]
   },
   "outOfMemory": {
-    "address": "0x268b",
+    "address": "0x4025ea",
     "variables": []
   },
   "ASCIItolower": {
-    "address": "0x26af",
+    "address": "0x40260a",
     "variables": [
       {
         "name": "c",
@@ -417,7 +417,7 @@
     ]
   },
   "safe_strdup": {
-    "address": "0x26cf",
+    "address": "0x40262c",
     "variables": [
       {
         "name": "orig",
@@ -450,14 +450,14 @@
     ]
   },
   "safe_malloc": {
-    "address": "0x26fd",
+    "address": "0x40265c",
     "variables": [
       {
         "name": "size",
         "RBP offset": -24,
         "type": [
-          "long long",
           "size_t",
+          "long long",
           "long unsigned int"
         ],
         "size": 8,
@@ -485,14 +485,14 @@
     ]
   },
   "safe_calloc": {
-    "address": "0x272b",
+    "address": "0x40268c",
     "variables": [
       {
         "name": "size",
         "RBP offset": -24,
         "type": [
-          "long long",
           "size_t",
+          "long long",
           "long unsigned int"
         ],
         "size": 8,
@@ -520,14 +520,14 @@
     ]
   },
   "safe_realloc": {
-    "address": "0x275e",
+    "address": "0x4026c3",
     "variables": [
       {
         "name": "size",
         "RBP offset": -16,
         "type": [
-          "long long",
           "size_t",
+          "long long",
           "long unsigned int"
         ],
         "size": 8,

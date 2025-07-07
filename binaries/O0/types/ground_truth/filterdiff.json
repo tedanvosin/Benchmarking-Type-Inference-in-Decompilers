@@ -1,6 +1,6 @@
 {
   "regexecs": {
-    "address": "0x24e5",
+    "address": "0x4024c6",
     "variables": [
       {
         "name": "eflags",
@@ -34,9 +34,9 @@
         "name": "nmatch",
         "RBP offset": -48,
         "type": [
-          "long long",
           "size_t",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -64,9 +64,9 @@
         "name": "num_regex",
         "RBP offset": -32,
         "type": [
-          "long long",
           "size_t",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -80,7 +80,8 @@
         "name": "regex",
         "RBP offset": -24,
         "type": [
-          "regex_t*"
+          "regex_t*",
+          "re_pattern_buffer*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -108,9 +109,9 @@
         "name": "i",
         "RBP offset": -8,
         "type": [
-          "long long",
           "size_t",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -123,7 +124,7 @@
     ]
   },
   "file_exists": {
-    "address": "0x256c",
+    "address": "0x402552",
     "variables": [
       {
         "name": "timestamp",
@@ -157,8 +158,8 @@
         "name": "zone",
         "RBP offset": -80,
         "type": [
-          "long long",
-          "long int"
+          "long int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -172,8 +173,8 @@
         "name": "offset",
         "RBP offset": -72,
         "type": [
-          "long long",
-          "long int"
+          "long int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -327,8 +328,8 @@
             "name": "t.tm_gmtoff",
             "RBP offset": -24,
             "type": [
-              "long long",
-              "long int"
+              "long int",
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -357,68 +358,10 @@
     ]
   },
   "output_header_line": {
-    "address": "0x26e5",
+    "address": "0x4026d3",
     "variables": [
       {
         "name": "line",
-        "RBP offset": -72,
-        "type": [
-          "char*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "h",
-        "RBP offset": -60,
-        "type": [
-          "int"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "args",
-        "RBP offset": -56,
-        "type": [
-          "long long",
-          "size_t",
-          "long unsigned int"
-        ],
-        "size": 8,
-        "is_pointer": false,
-        "is_typedef": true,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "end",
-        "RBP offset": -48,
-        "type": [
-          "char*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "begin",
         "RBP offset": -40,
         "type": [
           "char*"
@@ -432,13 +375,13 @@
         "is_enum": false
       },
       {
-        "name": "ws",
-        "RBP offset": -32,
+        "name": "h",
+        "RBP offset": -28,
         "type": [
-          "char*"
+          "int"
         ],
-        "size": 8,
-        "is_pointer": true,
+        "size": 4,
+        "is_pointer": false,
         "is_typedef": false,
         "is_array": false,
         "is_struct": false,
@@ -462,7 +405,7 @@
     ]
   },
   "file_matches": {
-    "address": "0x2b2e",
+    "address": "0x402857",
     "variables": [
       {
         "name": "f",
@@ -495,7 +438,7 @@
     ]
   },
   "display_filename": {
-    "address": "0x2bf2",
+    "address": "0x40291d",
     "variables": [
       {
         "name": "patchname",
@@ -543,8 +486,8 @@
         "name": "linenum",
         "RBP offset": -8,
         "type": [
-          "long long",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -557,14 +500,14 @@
     ]
   },
   "hunk_matches": {
-    "address": "0x2cf3",
+    "address": "0x402a20",
     "variables": [
       {
         "name": "hunknum",
         "RBP offset": -40,
         "type": [
-          "long long",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -578,8 +521,8 @@
         "name": "orig_count",
         "RBP offset": -32,
         "type": [
-          "long long",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -593,8 +536,8 @@
         "name": "orig_offset",
         "RBP offset": -24,
         "type": [
-          "long long",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -649,7 +592,7 @@
     ]
   },
   "do_unified": {
-    "address": "0x2e94",
+    "address": "0x402bc9",
     "variables": [
       {
         "name": "new_file_exists",
@@ -741,8 +684,8 @@
         "RBP offset": -248,
         "type": [
           "long unsigned int*",
-          "size_t*",
-          "long long*"
+          "long long*",
+          "size_t*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -826,48 +769,6 @@
       },
       {
         "name": "header_displayed",
-        "RBP offset": -208,
-        "type": [
-          "int"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "hunk_match",
-        "RBP offset": -204,
-        "type": [
-          "int"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "displayed_filename",
-        "RBP offset": -200,
-        "type": [
-          "int"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "grepmatch",
         "RBP offset": -196,
         "type": [
           "int"
@@ -881,7 +782,7 @@
         "is_enum": false
       },
       {
-        "name": "ret",
+        "name": "hunk_match",
         "RBP offset": -192,
         "type": [
           "int"
@@ -895,7 +796,7 @@
         "is_enum": false
       },
       {
-        "name": "orig_is_empty",
+        "name": "displayed_filename",
         "RBP offset": -188,
         "type": [
           "int"
@@ -909,7 +810,7 @@
         "is_enum": false
       },
       {
-        "name": "new_is_empty",
+        "name": "grepmatch",
         "RBP offset": -184,
         "type": [
           "int"
@@ -923,8 +824,50 @@
         "is_enum": false
       },
       {
-        "name": "i",
+        "name": "ret",
         "RBP offset": -180,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "orig_is_empty",
+        "RBP offset": -176,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "new_is_empty",
+        "RBP offset": -172,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "i",
+        "RBP offset": -168,
         "type": [
           "unsigned int",
           "int"
@@ -939,7 +882,7 @@
       },
       {
         "name": "i",
-        "RBP offset": -176,
+        "RBP offset": -164,
         "type": [
           "unsigned int",
           "int"
@@ -954,21 +897,7 @@
       },
       {
         "name": "first_hunk",
-        "RBP offset": -172,
-        "type": [
-          "int"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "idx",
-        "RBP offset": -168,
+        "RBP offset": -160,
         "type": [
           "int"
         ],
@@ -982,7 +911,7 @@
       },
       {
         "name": "ch",
-        "RBP offset": -164,
+        "RBP offset": -156,
         "type": [
           "int"
         ],
@@ -996,10 +925,10 @@
       },
       {
         "name": "orig_count",
-        "RBP offset": -152,
+        "RBP offset": -144,
         "type": [
-          "long long",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1011,10 +940,10 @@
       },
       {
         "name": "new_count",
-        "RBP offset": -144,
+        "RBP offset": -136,
         "type": [
-          "long long",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1026,10 +955,10 @@
       },
       {
         "name": "orig_offset",
-        "RBP offset": -136,
+        "RBP offset": -128,
         "type": [
-          "long long",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1041,10 +970,10 @@
       },
       {
         "name": "new_offset",
-        "RBP offset": -128,
+        "RBP offset": -120,
         "type": [
-          "long long",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1056,10 +985,10 @@
       },
       {
         "name": "hunknum",
-        "RBP offset": -120,
+        "RBP offset": -112,
         "type": [
-          "long long",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1071,10 +1000,10 @@
       },
       {
         "name": "track_linenum",
-        "RBP offset": -112,
+        "RBP offset": -104,
         "type": [
-          "long long",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1086,10 +1015,10 @@
       },
       {
         "name": "munge_offset",
-        "RBP offset": -104,
+        "RBP offset": -96,
         "type": [
-          "long long",
-          "long int"
+          "long int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1101,10 +1030,10 @@
       },
       {
         "name": "last_hunkmatch",
-        "RBP offset": -96,
+        "RBP offset": -88,
         "type": [
-          "long long",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1116,10 +1045,10 @@
       },
       {
         "name": "hunk_linenum",
-        "RBP offset": -88,
+        "RBP offset": -80,
         "type": [
-          "long long",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1131,7 +1060,7 @@
       },
       {
         "name": "match_tmpf",
-        "RBP offset": -80,
+        "RBP offset": -72,
         "type": [
           "FILE*",
           "_IO_FILE*"
@@ -1146,10 +1075,10 @@
       },
       {
         "name": "delayed_munge",
-        "RBP offset": -72,
+        "RBP offset": -64,
         "type": [
-          "long long",
-          "long int"
+          "long int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1161,20 +1090,6 @@
       },
       {
         "name": "trailing",
-        "RBP offset": -64,
-        "type": [
-          "char*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "p",
         "RBP offset": -56,
         "type": [
           "char*"
@@ -1188,15 +1103,14 @@
         "is_enum": false
       },
       {
-        "name": "output_to",
+        "name": "p",
         "RBP offset": -48,
         "type": [
-          "FILE*",
-          "_IO_FILE*"
+          "char*"
         ],
         "size": 8,
         "is_pointer": true,
-        "is_typedef": true,
+        "is_typedef": false,
         "is_array": false,
         "is_struct": false,
         "is_union": false,
@@ -1218,14 +1132,15 @@
         "is_enum": false
       },
       {
-        "name": "rest",
+        "name": "output_to",
         "RBP offset": -32,
         "type": [
-          "char*"
+          "FILE*",
+          "_IO_FILE*"
         ],
         "size": 8,
         "is_pointer": true,
-        "is_typedef": false,
+        "is_typedef": true,
         "is_array": false,
         "is_struct": false,
         "is_union": false,
@@ -1235,9 +1150,9 @@
         "name": "got",
         "RBP offset": -24,
         "type": [
+          "long int",
           "long long",
           "__ssize_t",
-          "long int",
           "ssize_t"
         ],
         "size": 8,
@@ -1252,8 +1167,8 @@
         "name": "start_linenum",
         "RBP offset": 24,
         "type": [
-          "long long",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1266,7 +1181,7 @@
     ]
   },
   "do_context": {
-    "address": "0x3aee",
+    "address": "0x40375d",
     "variables": [
       {
         "name": "new_file_exists",
@@ -1358,8 +1273,8 @@
         "RBP offset": -248,
         "type": [
           "long unsigned int*",
-          "size_t*",
-          "long long*"
+          "long long*",
+          "size_t*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -1643,8 +1558,8 @@
         "name": "line_end",
         "RBP offset": -144,
         "type": [
-          "long long",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1658,8 +1573,8 @@
         "name": "line_count",
         "RBP offset": -136,
         "type": [
-          "long long",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1673,8 +1588,8 @@
         "name": "hunknum",
         "RBP offset": -128,
         "type": [
-          "long long",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1688,8 +1603,8 @@
         "name": "track_linenum",
         "RBP offset": -120,
         "type": [
-          "long long",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1703,8 +1618,8 @@
         "name": "munge_offset",
         "RBP offset": -112,
         "type": [
-          "long long",
-          "long int"
+          "long int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1732,8 +1647,8 @@
         "name": "last_hunkmatch",
         "RBP offset": -96,
         "type": [
-          "long long",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1747,8 +1662,8 @@
         "name": "hunk_linenum",
         "RBP offset": -88,
         "type": [
-          "long long",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1777,8 +1692,8 @@
         "name": "unchanged",
         "RBP offset": -72,
         "type": [
-          "long long",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1792,9 +1707,9 @@
         "name": "got",
         "RBP offset": -64,
         "type": [
-          "long long",
           "size_t",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1838,8 +1753,8 @@
         "name": "line_start",
         "RBP offset": -40,
         "type": [
-          "long long",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1874,8 +1789,8 @@
         "name": "start_linenum",
         "RBP offset": 24,
         "type": [
-          "long long",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1888,11 +1803,11 @@
     ]
   },
   "filterdiff": {
-    "address": "0x4a3c",
+    "address": "0x40461b",
     "variables": [
       {
         "name": "patchname",
-        "RBP offset": -224,
+        "RBP offset": -192,
         "type": [
           "char*"
         ],
@@ -1906,7 +1821,7 @@
       },
       {
         "name": "f",
-        "RBP offset": -216,
+        "RBP offset": -184,
         "type": [
           "FILE*",
           "_IO_FILE*"
@@ -1921,7 +1836,7 @@
       },
       {
         "name": "status",
-        "RBP offset": -197,
+        "RBP offset": -165,
         "type": [
           "char"
         ],
@@ -1935,7 +1850,7 @@
       },
       {
         "name": "orig_file_exists",
-        "RBP offset": -196,
+        "RBP offset": -164,
         "type": [
           "int"
         ],
@@ -1949,7 +1864,7 @@
       },
       {
         "name": "new_file_exists",
-        "RBP offset": -192,
+        "RBP offset": -160,
         "type": [
           "int"
         ],
@@ -1963,7 +1878,7 @@
       },
       {
         "name": "num_headers",
-        "RBP offset": -188,
+        "RBP offset": -156,
         "type": [
           "unsigned int",
           "int"
@@ -1978,7 +1893,7 @@
       },
       {
         "name": "match",
-        "RBP offset": -184,
+        "RBP offset": -152,
         "type": [
           "int"
         ],
@@ -1992,7 +1907,7 @@
       },
       {
         "name": "i",
-        "RBP offset": -180,
+        "RBP offset": -148,
         "type": [
           "int"
         ],
@@ -2006,7 +1921,7 @@
       },
       {
         "name": "is_context",
-        "RBP offset": -176,
+        "RBP offset": -144,
         "type": [
           "int"
         ],
@@ -2020,7 +1935,7 @@
       },
       {
         "name": "valid_extended",
-        "RBP offset": -172,
+        "RBP offset": -140,
         "type": [
           "int"
         ],
@@ -2034,7 +1949,7 @@
       },
       {
         "name": "i",
-        "RBP offset": -168,
+        "RBP offset": -136,
         "type": [
           "unsigned int",
           "int"
@@ -2049,7 +1964,7 @@
       },
       {
         "name": "result",
-        "RBP offset": -164,
+        "RBP offset": -132,
         "type": [
           "int"
         ],
@@ -2063,65 +1978,6 @@
       },
       {
         "name": "line",
-        "RBP offset": -160,
-        "type": [
-          "char*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "linelen",
-        "RBP offset": -152,
-        "type": [
-          "long long",
-          "size_t",
-          "long unsigned int"
-        ],
-        "size": 8,
-        "is_pointer": false,
-        "is_typedef": true,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "do_diff",
-        "RBP offset": -144,
-        "type": [
-          "FUNCTION*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "start_linenum",
-        "RBP offset": -136,
-        "type": [
-          "long long",
-          "long unsigned int"
-        ],
-        "size": 8,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "p",
         "RBP offset": -128,
         "type": [
           "char*"
@@ -2135,8 +1991,67 @@
         "is_enum": false
       },
       {
-        "name": "p_stripped",
+        "name": "linelen",
         "RBP offset": -120,
+        "type": [
+          "size_t",
+          "long unsigned int",
+          "long long"
+        ],
+        "size": 8,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "do_diff",
+        "RBP offset": -112,
+        "type": [
+          "FUNCTION*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "start_linenum",
+        "RBP offset": -104,
+        "type": [
+          "long unsigned int",
+          "long long"
+        ],
+        "size": 8,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "p",
+        "RBP offset": -96,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "p_stripped",
+        "RBP offset": -88,
         "type": [
           "char*"
         ],
@@ -2150,7 +2065,7 @@
       },
       {
         "name": "names",
-        "RBP offset": -112,
+        "RBP offset": -80,
         "type": [
           "char*[2]"
         ],
@@ -2169,18 +2084,18 @@
       },
       {
         "name": "header",
-        "RBP offset": -96,
+        "RBP offset": -64,
         "type": [
-          "char*[8]"
+          "char*[5]"
         ],
-        "size": 64,
+        "size": 40,
         "is_pointer": true,
         "is_typedef": false,
         "is_array": true,
         "is_struct": false,
         "is_union": false,
         "is_enum": false,
-        "array_length": 8,
+        "array_length": 5,
         "element_type": [
           "char*"
         ],
@@ -2189,7 +2104,7 @@
     ]
   },
   "syntax": {
-    "address": "0x54b2",
+    "address": "0x404f88",
     "variables": [
       {
         "name": "err",
@@ -2306,7 +2221,7 @@
     ]
   },
   "parse_range": {
-    "address": "0x566b",
+    "address": "0x405139",
     "variables": [
       {
         "name": "rstr",
@@ -2354,8 +2269,8 @@
         "name": "n",
         "RBP offset": -48,
         "type": [
-          "long long",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -2368,23 +2283,19 @@
     ]
   },
   "set_list": {
-    "address": "0x58dd",
+    "address": "0x4053a8",
     "variables": []
   },
   "set_filter": {
-    "address": "0x58fa",
-    "variables": []
-  },
-  "set_view": {
-    "address": "0x5917",
+    "address": "0x4053c5",
     "variables": []
   },
   "set_grep": {
-    "address": "0x5934",
+    "address": "0x4053e2",
     "variables": []
   },
   "determine_mode_from_name": {
-    "address": "0x5951",
+    "address": "0x4053ff",
     "variables": [
       {
         "name": "argv0",
@@ -2417,7 +2328,7 @@
     ]
   },
   "convert_format": {
-    "address": "0x59f0",
+    "address": "0x405483",
     "variables": [
       {
         "name": "format",
@@ -2451,7 +2362,7 @@
     ]
   },
   "read_regex_file": {
-    "address": "0x5a52",
+    "address": "0x4054e7",
     "variables": [
       {
         "name": "file",
@@ -2499,9 +2410,9 @@
         "name": "linelen",
         "RBP offset": -360,
         "type": [
-          "long long",
           "size_t",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -2530,9 +2441,9 @@
         "name": "got",
         "RBP offset": -344,
         "type": [
+          "long int",
           "long long",
           "__ssize_t",
-          "long int",
           "ssize_t"
         ],
         "size": 8,
@@ -2565,11 +2476,11 @@
     ]
   },
   "main": {
-    "address": "0x5cc5",
+    "address": "0x40573d",
     "variables": [
       {
         "name": "argv",
-        "RBP offset": -496,
+        "RBP offset": -480,
         "type": [
           "char**"
         ],
@@ -2583,34 +2494,6 @@
       },
       {
         "name": "argc",
-        "RBP offset": -484,
-        "type": [
-          "int"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "format",
-        "RBP offset": -469,
-        "type": [
-          "char"
-        ],
-        "size": 1,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "i",
         "RBP offset": -468,
         "type": [
           "int"
@@ -2624,8 +2507,22 @@
         "is_enum": false
       },
       {
-        "name": "regex_file_specified",
-        "RBP offset": -464,
+        "name": "format",
+        "RBP offset": -449,
+        "type": [
+          "char"
+        ],
+        "size": 1,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "i",
+        "RBP offset": -448,
         "type": [
           "int"
         ],
@@ -2638,8 +2535,8 @@
         "is_enum": false
       },
       {
-        "name": "have_switches",
-        "RBP offset": -460,
+        "name": "regex_file_specified",
+        "RBP offset": -444,
         "type": [
           "int"
         ],
@@ -2653,7 +2550,7 @@
       },
       {
         "name": "c",
-        "RBP offset": -456,
+        "RBP offset": -440,
         "type": [
           "int"
         ],
@@ -2667,7 +2564,7 @@
       },
       {
         "name": "err",
-        "RBP offset": -452,
+        "RBP offset": -436,
         "type": [
           "int"
         ],
@@ -2681,7 +2578,7 @@
       },
       {
         "name": "end",
-        "RBP offset": -392,
+        "RBP offset": -384,
         "type": [
           "char*"
         ],
@@ -2695,7 +2592,7 @@
       },
       {
         "name": "f",
-        "RBP offset": -384,
+        "RBP offset": -376,
         "type": [
           "FILE*",
           "_IO_FILE*"
@@ -2730,15 +2627,15 @@
     ]
   },
   "xmalloc": {
-    "address": "0x6ab7",
+    "address": "0x4062df",
     "variables": [
       {
         "name": "size",
         "RBP offset": -40,
         "type": [
-          "long long",
           "size_t",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -2765,15 +2662,15 @@
     ]
   },
   "xrealloc": {
-    "address": "0x6b15",
+    "address": "0x406342",
     "variables": [
       {
         "name": "size",
         "RBP offset": -48,
         "type": [
-          "long long",
           "size_t",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -2814,7 +2711,7 @@
     ]
   },
   "xstrdup": {
-    "address": "0x6b7e",
+    "address": "0x4063b0",
     "variables": [
       {
         "name": "s",
@@ -2834,9 +2731,9 @@
         "name": "len",
         "RBP offset": -16,
         "type": [
-          "long long",
           "size_t",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -2863,15 +2760,15 @@
     ]
   },
   "xstrndup": {
-    "address": "0x6bcb",
+    "address": "0x406405",
     "variables": [
       {
         "name": "n",
         "RBP offset": -32,
         "type": [
-          "long long",
           "size_t",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -2912,7 +2809,7 @@
     ]
   },
   "xmkstemp": {
-    "address": "0x6c1a",
+    "address": "0x40645c",
     "variables": [
       {
         "name": "pattern",
@@ -2945,7 +2842,7 @@
     ]
   },
   "xtmpfile": {
-    "address": "0x6c77",
+    "address": "0x4064be",
     "variables": [
       {
         "name": "fd",
@@ -2979,9 +2876,9 @@
         "name": "tmpdirlen",
         "RBP offset": -32,
         "type": [
-          "long long",
           "size_t",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -3023,7 +2920,7 @@
     ]
   },
   "patlist_add": {
-    "address": "0x6d84",
+    "address": "0x4065ca",
     "variables": [
       {
         "name": "s",
@@ -3070,7 +2967,7 @@
     ]
   },
   "patlist_add_file": {
-    "address": "0x6dd2",
+    "address": "0x406620",
     "variables": [
       {
         "name": "fn",
@@ -3118,9 +3015,9 @@
         "name": "linelen",
         "RBP offset": -32,
         "type": [
-          "long long",
           "size_t",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -3149,9 +3046,9 @@
         "name": "len",
         "RBP offset": -16,
         "type": [
-          "long long",
           "size_t",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -3164,7 +3061,7 @@
     ]
   },
   "patlist_match": {
-    "address": "0x6eb5",
+    "address": "0x406711",
     "variables": [
       {
         "name": "s",
@@ -3197,7 +3094,7 @@
     ]
   },
   "patlist_free": {
-    "address": "0x6f07",
+    "address": "0x40676b",
     "variables": [
       {
         "name": "list",
@@ -3244,7 +3141,7 @@
     ]
   },
   "xopen": {
-    "address": "0x6f64",
+    "address": "0x4067cc",
     "variables": [
       {
         "name": "mode",
@@ -3292,7 +3189,7 @@
     ]
   },
   "xopen_seekable": {
-    "address": "0x6fae",
+    "address": "0x40681c",
     "variables": [
       {
         "name": "mode",
@@ -3341,9 +3238,9 @@
         "name": "buflen",
         "RBP offset": -32,
         "type": [
-          "long long",
           "size_t",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -3386,9 +3283,9 @@
         "name": "count",
         "RBP offset": -8,
         "type": [
-          "long long",
           "size_t",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -3401,7 +3298,7 @@
     ]
   },
   "xopen_unzip": {
-    "address": "0x70a5",
+    "address": "0x40691b",
     "variables": [
       {
         "name": "mode",
@@ -3493,9 +3390,9 @@
         "name": "buflen",
         "RBP offset": -64,
         "type": [
-          "long long",
           "size_t",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -3567,9 +3464,9 @@
         "name": "count",
         "RBP offset": -24,
         "type": [
-          "long long",
           "size_t",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -3582,7 +3479,7 @@
     ]
   },
   "xpipe": {
-    "address": "0x72fe",
+    "address": "0x406b72",
     "variables": [
       {
         "name": "mode",
@@ -3602,9 +3499,9 @@
         "name": "pid",
         "RBP offset": -1360,
         "type": [
+          "pid_t*",
           "int*",
-          "__pid_t*",
-          "pid_t*"
+          "__pid_t*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -3708,10 +3605,10 @@
         "name": "ap",
         "RBP offset": -1240,
         "type": [
-          "va_list",
           "__va_list_tag[1]",
           "__builtin_va_list",
-          "__gnuc_va_list"
+          "__gnuc_va_list",
+          "va_list"
         ],
         "size": 24,
         "is_pointer": false,
@@ -3749,7 +3646,7 @@
     ]
   },
   "set_progname": {
-    "address": "0x76f4",
+    "address": "0x406f64",
     "variables": [
       {
         "name": "s",
@@ -3768,7 +3665,7 @@
     ]
   },
   "num_pathname_components": {
-    "address": "0x7716",
+    "address": "0x406f8a",
     "variables": [
       {
         "name": "x",
@@ -3801,7 +3698,7 @@
     ]
   },
   "best_name": {
-    "address": "0x7760",
+    "address": "0x406fd8",
     "variables": [
       {
         "name": "names",
@@ -3974,7 +3871,7 @@
     ]
   },
   "stripped": {
-    "address": "0x7ab8",
+    "address": "0x407338",
     "variables": [
       {
         "name": "num_components",
@@ -4035,7 +3932,7 @@
     ]
   },
   "calculate_num_lines": {
-    "address": "0x7b63",
+    "address": "0x4073e5",
     "variables": [
       {
         "name": "which",
@@ -4082,7 +3979,7 @@
     ]
   },
   "orig_num_lines": {
-    "address": "0x7bf7",
+    "address": "0x40747f",
     "variables": [
       {
         "name": "atatline",
@@ -4101,7 +3998,7 @@
     ]
   },
   "new_num_lines": {
-    "address": "0x7c16",
+    "address": "0x4074a2",
     "variables": [
       {
         "name": "atatline",
@@ -4120,7 +4017,7 @@
     ]
   },
   "read_atatline": {
-    "address": "0x7c35",
+    "address": "0x4074c5",
     "variables": [
       {
         "name": "new_count",
@@ -4228,8 +4125,8 @@
         "name": "res",
         "RBP offset": -16,
         "type": [
-          "long long",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -4242,7 +4139,7 @@
     ]
   },
   "copy_context_hunks": {
-    "address": "0x7d83",
+    "address": "0x40761e",
     "variables": [
       {
         "name": "linenum",
@@ -4263,10 +4160,10 @@
         "name": "got",
         "RBP offset": -88,
         "type": [
-          "__ssize_t*",
           "long int*",
+          "long long*",
           "ssize_t*",
-          "long long*"
+          "__ssize_t*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -4281,8 +4178,8 @@
         "RBP offset": -80,
         "type": [
           "long unsigned int*",
-          "size_t*",
-          "long long*"
+          "long long*",
+          "size_t*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -4352,8 +4249,8 @@
         "name": "unchanged",
         "RBP offset": -48,
         "type": [
-          "long long",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -4367,8 +4264,8 @@
         "name": "line_count",
         "RBP offset": -40,
         "type": [
-          "long long",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -4396,8 +4293,8 @@
         "name": "line_start",
         "RBP offset": -24,
         "type": [
-          "long long",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -4411,8 +4308,8 @@
         "name": "line_end",
         "RBP offset": -16,
         "type": [
-          "long long",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -4425,11 +4322,11 @@
     ]
   },
   "convert_unified_hunks_to_context": {
-    "address": "0x8071",
+    "address": "0x407910",
     "variables": [
       {
         "name": "linenum",
-        "RBP offset": -320,
+        "RBP offset": -312,
         "type": [
           "long unsigned int*",
           "long long*"
@@ -4443,29 +4340,12 @@
         "is_enum": false
       },
       {
-        "name": "got",
-        "RBP offset": -312,
-        "type": [
-          "__ssize_t*",
-          "long int*",
-          "ssize_t*",
-          "long long*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": true,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
         "name": "linelen",
         "RBP offset": -304,
         "type": [
           "long unsigned int*",
-          "size_t*",
-          "long long*"
+          "long long*",
+          "size_t*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -4564,8 +4444,8 @@
         "name": "orig_offset",
         "RBP offset": -216,
         "type": [
-          "long long",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -4579,8 +4459,8 @@
         "name": "orig_count",
         "RBP offset": -208,
         "type": [
-          "long long",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -4594,8 +4474,8 @@
         "name": "new_offset",
         "RBP offset": -200,
         "type": [
-          "long long",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -4609,8 +4489,8 @@
         "name": "new_count",
         "RBP offset": -192,
         "type": [
-          "long long",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -4694,8 +4574,8 @@
         "name": "orig_linenum",
         "RBP offset": -144,
         "type": [
-          "long long",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -4709,8 +4589,8 @@
         "name": "new_linenum",
         "RBP offset": -136,
         "type": [
-          "long long",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -4780,8 +4660,8 @@
         "name": "i",
         "RBP offset": -96,
         "type": [
-          "long long",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -4836,7 +4716,7 @@
     ]
   },
   "do_convert_to_context": {
-    "address": "0x8cf2",
+    "address": "0x408543",
     "variables": [
       {
         "name": "is_context",
@@ -4870,9 +4750,9 @@
         "name": "linelen",
         "RBP offset": -32,
         "type": [
-          "long long",
           "size_t",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -4886,8 +4766,8 @@
         "name": "linenum",
         "RBP offset": -24,
         "type": [
-          "long long",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -4901,9 +4781,9 @@
         "name": "got",
         "RBP offset": -16,
         "type": [
+          "long int",
           "long long",
           "__ssize_t",
-          "long int",
           "ssize_t"
         ],
         "size": 8,
@@ -4917,7 +4797,7 @@
     ]
   },
   "copy_unified_hunks": {
-    "address": "0x907e",
+    "address": "0x4088c8",
     "variables": [
       {
         "name": "linenum",
@@ -4938,10 +4818,10 @@
         "name": "got",
         "RBP offset": -88,
         "type": [
-          "__ssize_t*",
           "long int*",
+          "long long*",
           "ssize_t*",
-          "long long*"
+          "__ssize_t*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -4956,8 +4836,8 @@
         "RBP offset": -80,
         "type": [
           "long unsigned int*",
-          "size_t*",
-          "long long*"
+          "long long*",
+          "size_t*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -4985,8 +4865,8 @@
         "name": "orig_count",
         "RBP offset": -48,
         "type": [
-          "long long",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -5000,8 +4880,8 @@
         "name": "new_count",
         "RBP offset": -40,
         "type": [
-          "long long",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -5015,8 +4895,8 @@
         "name": "orig_offset",
         "RBP offset": -32,
         "type": [
-          "long long",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -5030,8 +4910,8 @@
         "name": "new_offset",
         "RBP offset": -24,
         "type": [
-          "long long",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -5044,11 +4924,11 @@
     ]
   },
   "convert_context_hunks_to_unified": {
-    "address": "0x9280",
+    "address": "0x408ad2",
     "variables": [
       {
         "name": "linenum",
-        "RBP offset": -272,
+        "RBP offset": -264,
         "type": [
           "long unsigned int*",
           "long long*"
@@ -5062,29 +4942,12 @@
         "is_enum": false
       },
       {
-        "name": "got",
-        "RBP offset": -264,
-        "type": [
-          "__ssize_t*",
-          "long int*",
-          "ssize_t*",
-          "long long*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": true,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
         "name": "linelen",
         "RBP offset": -256,
         "type": [
           "long unsigned int*",
-          "size_t*",
-          "long long*"
+          "long long*",
+          "size_t*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -5110,7 +4973,7 @@
       },
       {
         "name": "happy",
-        "RBP offset": -232,
+        "RBP offset": -240,
         "type": [
           "int"
         ],
@@ -5124,7 +4987,7 @@
       },
       {
         "name": "first",
-        "RBP offset": -228,
+        "RBP offset": -236,
         "type": [
           "int"
         ],
@@ -5138,7 +5001,7 @@
       },
       {
         "name": "end",
-        "RBP offset": -224,
+        "RBP offset": -232,
         "type": [
           "char*"
         ],
@@ -5152,11 +5015,11 @@
       },
       {
         "name": "i",
-        "RBP offset": -216,
+        "RBP offset": -224,
         "type": [
-          "long long",
           "size_t",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -5168,7 +5031,7 @@
       },
       {
         "name": "misc",
-        "RBP offset": -208,
+        "RBP offset": -216,
         "type": [
           "char*"
         ],
@@ -5182,10 +5045,10 @@
       },
       {
         "name": "unchanged",
-        "RBP offset": -200,
+        "RBP offset": -208,
         "type": [
-          "long long",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -5197,7 +5060,7 @@
       },
       {
         "name": "n",
-        "RBP offset": -192,
+        "RBP offset": -200,
         "type": [
           "char*"
         ],
@@ -5211,10 +5074,10 @@
       },
       {
         "name": "lnum",
-        "RBP offset": -184,
+        "RBP offset": -192,
         "type": [
-          "long long",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -5226,7 +5089,7 @@
       },
       {
         "name": "m",
-        "RBP offset": -176,
+        "RBP offset": -184,
         "type": [
           "char*"
         ],
@@ -5240,14 +5103,31 @@
       },
       {
         "name": "line_end",
-        "RBP offset": -168,
+        "RBP offset": -176,
         "type": [
-          "long long",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
         "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "got",
+        "RBP offset": -168,
+        "type": [
+          "long int",
+          "long long",
+          "__ssize_t",
+          "ssize_t"
+        ],
+        "size": 8,
+        "is_pointer": false,
+        "is_typedef": true,
         "is_array": false,
         "is_struct": false,
         "is_union": false,
@@ -5318,9 +5198,9 @@
         "name": "linelengths",
         "RBP offset": -112,
         "type": [
+          "size_t*[2]",
           "long unsigned int*[2]",
-          "long long*[2]",
-          "size_t*[2]"
+          "long long*[2]"
         ],
         "size": 16,
         "is_pointer": true,
@@ -5341,8 +5221,8 @@
         "name": "n_lines",
         "RBP offset": -96,
         "type": [
-          "size_t[2]",
           "long long[2]",
+          "size_t[2]",
           "long unsigned int[2]"
         ],
         "size": 16,
@@ -5364,8 +5244,8 @@
         "name": "at",
         "RBP offset": -80,
         "type": [
-          "size_t[2]",
           "long long[2]",
+          "size_t[2]",
           "long unsigned int[2]"
         ],
         "size": 16,
@@ -5406,8 +5286,8 @@
         "name": "llen",
         "RBP offset": -48,
         "type": [
-          "size_t[2]",
           "long long[2]",
+          "size_t[2]",
           "long unsigned int[2]"
         ],
         "size": 16,
@@ -5428,7 +5308,7 @@
     ]
   },
   "do_convert_to_unified": {
-    "address": "0x9f71",
+    "address": "0x409770",
     "variables": [
       {
         "name": "is_context",
@@ -5462,9 +5342,9 @@
         "name": "linelen",
         "RBP offset": -32,
         "type": [
-          "long long",
           "size_t",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -5478,8 +5358,8 @@
         "name": "linenum",
         "RBP offset": -24,
         "type": [
-          "long long",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -5493,9 +5373,9 @@
         "name": "got",
         "RBP offset": -16,
         "type": [
+          "long int",
           "long long",
           "__ssize_t",
-          "long int",
           "ssize_t"
         ],
         "size": 8,
@@ -5509,7 +5389,7 @@
     ]
   },
   "do_convert": {
-    "address": "0xa26a",
+    "address": "0x409a66",
     "variables": [
       {
         "name": "fn",
@@ -5648,7 +5528,7 @@
     ]
   },
   "convert_to_context": {
-    "address": "0xa644",
+    "address": "0x409e39",
     "variables": [
       {
         "name": "seekable",
@@ -5696,7 +5576,7 @@
     ]
   },
   "convert_to_unified": {
-    "address": "0xa673",
+    "address": "0x409e6e",
     "variables": [
       {
         "name": "seekable",
@@ -5744,7 +5624,7 @@
     ]
   },
   "read_timezone": {
-    "address": "0xa6a2",
+    "address": "0x409ea3",
     "variables": [
       {
         "name": "tz",
@@ -5791,14 +5671,14 @@
     ]
   },
   "read_timestamp": {
-    "address": "0xa720",
+    "address": "0x409f27",
     "variables": [
       {
         "name": "zone",
         "RBP offset": -104,
         "type": [
-          "long int*",
-          "long long*"
+          "long long*",
+          "long int*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -5840,8 +5720,8 @@
         "name": "zone_t",
         "RBP offset": -80,
         "type": [
-          "long long",
-          "long int"
+          "long int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -6009,8 +5889,8 @@
             "name": "tm_t.tm_gmtoff",
             "RBP offset": -24,
             "type": [
-              "long long",
-              "long int"
+              "long int",
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -6039,7 +5919,7 @@
     ]
   },
   "filename_from_header": {
-    "address": "0xa86f",
+    "address": "0x40a072",
     "variables": [
       {
         "name": "header",

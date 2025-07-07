@@ -1,10 +1,10 @@
 {
   "dfu_edit_action_new": {
-    "address": "0x67e5",
+    "address": "0x403806",
     "variables": [
       {
         "name": "action_value",
-        "RBP offset": -40,
+        "RBP offset": -56,
         "type": [
           "char*"
         ],
@@ -18,7 +18,7 @@
       },
       {
         "name": "key",
-        "RBP offset": -32,
+        "RBP offset": -48,
         "type": [
           "char*"
         ],
@@ -32,10 +32,10 @@
       },
       {
         "name": "type",
-        "RBP offset": -20,
+        "RBP offset": -36,
         "type": [
-          "int",
-          "DfuEditActionType"
+          "DfuEditActionType",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -47,7 +47,7 @@
       },
       {
         "name": "action",
-        "RBP offset": -8,
+        "RBP offset": -24,
         "type": [
           "DfuEditAction*"
         ],
@@ -62,7 +62,7 @@
     ]
   },
   "dfu_edit_action_free": {
-    "address": "0x6843",
+    "address": "0x40387a",
     "variables": [
       {
         "name": "action",
@@ -81,7 +81,7 @@
     ]
   },
   "files_are_the_same": {
-    "address": "0x68ae",
+    "address": "0x4038ed",
     "variables": [
       {
         "name": "second",
@@ -129,9 +129,9 @@
             "name": "first_sb.st_dev",
             "RBP offset": -320,
             "type": [
+              "long unsigned int",
               "__dev_t",
-              "long long",
-              "long unsigned int"
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -146,8 +146,8 @@
             "RBP offset": -312,
             "type": [
               "long unsigned int",
-              "long long",
-              "__ino_t"
+              "__ino_t",
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -177,9 +177,9 @@
             "name": "first_sb.st_mode",
             "RBP offset": -296,
             "type": [
+              "__mode_t",
               "unsigned int",
-              "int",
-              "__mode_t"
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -210,8 +210,8 @@
             "RBP offset": -288,
             "type": [
               "unsigned int",
-              "int",
-              "__gid_t"
+              "__gid_t",
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -239,9 +239,9 @@
             "name": "first_sb.st_rdev",
             "RBP offset": -280,
             "type": [
+              "long unsigned int",
               "__dev_t",
-              "long long",
-              "long unsigned int"
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -255,9 +255,9 @@
             "name": "first_sb.st_size",
             "RBP offset": -272,
             "type": [
+              "long long",
               "__off_t",
-              "long int",
-              "long long"
+              "long int"
             ],
             "size": 8,
             "is_pointer": false,
@@ -271,9 +271,9 @@
             "name": "first_sb.st_blksize",
             "RBP offset": -264,
             "type": [
-              "long int",
               "__blksize_t",
-              "long long"
+              "long long",
+              "long int"
             ],
             "size": 8,
             "is_pointer": false,
@@ -317,9 +317,9 @@
                 "name": "first_sb.st_atim.tv_sec",
                 "RBP offset": -248,
                 "type": [
+                  "long long",
                   "__time_t",
-                  "long int",
-                  "long long"
+                  "long int"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -333,9 +333,9 @@
                 "name": "first_sb.st_atim.tv_nsec",
                 "RBP offset": -240,
                 "type": [
+                  "long long",
                   "long int",
-                  "__syscall_slong_t",
-                  "long long"
+                  "__syscall_slong_t"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -365,9 +365,9 @@
                 "name": "first_sb.st_mtim.tv_sec",
                 "RBP offset": -232,
                 "type": [
+                  "long long",
                   "__time_t",
-                  "long int",
-                  "long long"
+                  "long int"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -381,9 +381,9 @@
                 "name": "first_sb.st_mtim.tv_nsec",
                 "RBP offset": -224,
                 "type": [
+                  "long long",
                   "long int",
-                  "__syscall_slong_t",
-                  "long long"
+                  "__syscall_slong_t"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -413,9 +413,9 @@
                 "name": "first_sb.st_ctim.tv_sec",
                 "RBP offset": -216,
                 "type": [
+                  "long long",
                   "__time_t",
-                  "long int",
-                  "long long"
+                  "long int"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -429,9 +429,9 @@
                 "name": "first_sb.st_ctim.tv_nsec",
                 "RBP offset": -208,
                 "type": [
+                  "long long",
                   "long int",
-                  "__syscall_slong_t",
-                  "long long"
+                  "__syscall_slong_t"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -486,9 +486,9 @@
             "name": "second_sb.st_dev",
             "RBP offset": -176,
             "type": [
+              "long unsigned int",
               "__dev_t",
-              "long long",
-              "long unsigned int"
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -503,8 +503,8 @@
             "RBP offset": -168,
             "type": [
               "long unsigned int",
-              "long long",
-              "__ino_t"
+              "__ino_t",
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -534,9 +534,9 @@
             "name": "second_sb.st_mode",
             "RBP offset": -152,
             "type": [
+              "__mode_t",
               "unsigned int",
-              "int",
-              "__mode_t"
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -567,8 +567,8 @@
             "RBP offset": -144,
             "type": [
               "unsigned int",
-              "int",
-              "__gid_t"
+              "__gid_t",
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -596,9 +596,9 @@
             "name": "second_sb.st_rdev",
             "RBP offset": -136,
             "type": [
+              "long unsigned int",
               "__dev_t",
-              "long long",
-              "long unsigned int"
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -612,9 +612,9 @@
             "name": "second_sb.st_size",
             "RBP offset": -128,
             "type": [
+              "long long",
               "__off_t",
-              "long int",
-              "long long"
+              "long int"
             ],
             "size": 8,
             "is_pointer": false,
@@ -628,9 +628,9 @@
             "name": "second_sb.st_blksize",
             "RBP offset": -120,
             "type": [
-              "long int",
               "__blksize_t",
-              "long long"
+              "long long",
+              "long int"
             ],
             "size": 8,
             "is_pointer": false,
@@ -674,9 +674,9 @@
                 "name": "second_sb.st_atim.tv_sec",
                 "RBP offset": -104,
                 "type": [
+                  "long long",
                   "__time_t",
-                  "long int",
-                  "long long"
+                  "long int"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -690,9 +690,9 @@
                 "name": "second_sb.st_atim.tv_nsec",
                 "RBP offset": -96,
                 "type": [
+                  "long long",
                   "long int",
-                  "__syscall_slong_t",
-                  "long long"
+                  "__syscall_slong_t"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -722,9 +722,9 @@
                 "name": "second_sb.st_mtim.tv_sec",
                 "RBP offset": -88,
                 "type": [
+                  "long long",
                   "__time_t",
-                  "long int",
-                  "long long"
+                  "long int"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -738,9 +738,9 @@
                 "name": "second_sb.st_mtim.tv_nsec",
                 "RBP offset": -80,
                 "type": [
+                  "long long",
                   "long int",
-                  "__syscall_slong_t",
-                  "long long"
+                  "__syscall_slong_t"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -770,9 +770,9 @@
                 "name": "second_sb.st_ctim.tv_sec",
                 "RBP offset": -72,
                 "type": [
+                  "long long",
                   "__time_t",
-                  "long int",
-                  "long long"
+                  "long int"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -786,9 +786,9 @@
                 "name": "second_sb.st_ctim.tv_nsec",
                 "RBP offset": -64,
                 "type": [
+                  "long long",
                   "long int",
-                  "__syscall_slong_t",
-                  "long long"
+                  "__syscall_slong_t"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -828,14 +828,14 @@
     ]
   },
   "rebuild_cache": {
-    "address": "0x6a02",
+    "address": "0x403a45",
     "variables": [
       {
         "name": "err",
         "RBP offset": -80,
         "type": [
-          "GError**",
-          "_GError**"
+          "_GError**",
+          "GError**"
         ],
         "size": 8,
         "is_pointer": true,
@@ -877,10 +877,10 @@
         "name": "retval",
         "RBP offset": -60,
         "type": [
-          "int",
-          "gbool",
+          "gint",
           "gboolean",
-          "gint"
+          "gbool",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -894,8 +894,8 @@
         "name": "spawn_error",
         "RBP offset": -56,
         "type": [
-          "GError*",
-          "_GError*"
+          "_GError*",
+          "GError*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -927,14 +927,14 @@
     ]
   },
   "process_one_file": {
-    "address": "0x6add",
+    "address": "0x403b28",
     "variables": [
       {
         "name": "err",
-        "RBP offset": -112,
+        "RBP offset": -128,
         "type": [
-          "GError**",
-          "_GError**"
+          "_GError**",
+          "GError**"
         ],
         "size": 8,
         "is_pointer": true,
@@ -946,7 +946,7 @@
       },
       {
         "name": "filename",
-        "RBP offset": -104,
+        "RBP offset": -120,
         "type": [
           "char*"
         ],
@@ -960,10 +960,10 @@
       },
       {
         "name": "rebuild_error",
-        "RBP offset": -96,
+        "RBP offset": -104,
         "type": [
-          "GError*",
-          "_GError*"
+          "_GError*",
+          "GError*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -975,7 +975,7 @@
       },
       {
         "name": "new_filename",
-        "RBP offset": -88,
+        "RBP offset": -96,
         "type": [
           "char*"
         ],
@@ -989,10 +989,10 @@
       },
       {
         "name": "tmp",
-        "RBP offset": -80,
+        "RBP offset": -88,
         "type": [
-          "GSList*",
-          "_GSList*"
+          "_GSList*",
+          "GSList*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -1004,7 +1004,7 @@
       },
       {
         "name": "kf",
-        "RBP offset": -72,
+        "RBP offset": -80,
         "type": [
           "GKeyFile*",
           "_GKeyFile*"
@@ -1019,7 +1019,7 @@
       },
       {
         "name": "basename",
-        "RBP offset": -64,
+        "RBP offset": -72,
         "type": [
           "char*"
         ],
@@ -1033,7 +1033,7 @@
       },
       {
         "name": "new_base",
-        "RBP offset": -56,
+        "RBP offset": -64,
         "type": [
           "char*"
         ],
@@ -1047,7 +1047,7 @@
       },
       {
         "name": "action",
-        "RBP offset": -48,
+        "RBP offset": -56,
         "type": [
           "DfuEditAction*"
         ],
@@ -1062,14 +1062,14 @@
     ]
   },
   "parse_install_options_callback": {
-    "address": "0x7084",
+    "address": "0x4040ad",
     "variables": [
       {
         "name": "error",
-        "RBP offset": -80,
+        "RBP offset": -96,
         "type": [
-          "GError**",
-          "_GError**"
+          "_GError**",
+          "GError**"
         ],
         "size": 8,
         "is_pointer": true,
@@ -1081,7 +1081,7 @@
       },
       {
         "name": "data",
-        "RBP offset": -72,
+        "RBP offset": -88,
         "type": [
           "gpointer",
           "void*"
@@ -1096,10 +1096,10 @@
       },
       {
         "name": "value",
-        "RBP offset": -64,
+        "RBP offset": -80,
         "type": [
-          "gchar*",
-          "char*"
+          "char*",
+          "gchar*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -1111,10 +1111,10 @@
       },
       {
         "name": "option_name",
-        "RBP offset": -56,
+        "RBP offset": -72,
         "type": [
-          "gchar*",
-          "char*"
+          "char*",
+          "gchar*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -1126,7 +1126,7 @@
       },
       {
         "name": "end",
-        "RBP offset": -40,
+        "RBP offset": -56,
         "type": [
           "char*"
         ],
@@ -1140,10 +1140,10 @@
       },
       {
         "name": "ul",
-        "RBP offset": -32,
+        "RBP offset": -48,
         "type": [
-          "long long",
-          "long unsigned int"
+          "long unsigned int",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1156,14 +1156,14 @@
     ]
   },
   "parse_edit_options_callback": {
-    "address": "0x72c3",
+    "address": "0x4042f7",
     "variables": [
       {
         "name": "error",
         "RBP offset": -80,
         "type": [
-          "GError**",
-          "_GError**"
+          "_GError**",
+          "GError**"
         ],
         "size": 8,
         "is_pointer": true,
@@ -1192,8 +1192,8 @@
         "name": "value",
         "RBP offset": -64,
         "type": [
-          "gchar*",
-          "char*"
+          "char*",
+          "gchar*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -1207,8 +1207,8 @@
         "name": "option_name",
         "RBP offset": -56,
         "type": [
-          "gchar*",
-          "char*"
+          "char*",
+          "gchar*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -1220,7 +1220,7 @@
       },
       {
         "name": "i",
-        "RBP offset": -40,
+        "RBP offset": -48,
         "type": [
           "int"
         ],
@@ -1234,12 +1234,12 @@
       },
       {
         "name": "handled",
-        "RBP offset": -36,
+        "RBP offset": -44,
         "type": [
-          "int",
-          "gbool",
+          "gint",
           "gboolean",
-          "gint"
+          "gbool",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -1251,7 +1251,7 @@
       },
       {
         "name": "action",
-        "RBP offset": -32,
+        "RBP offset": -40,
         "type": [
           "DfuEditAction*"
         ],
@@ -1265,7 +1265,7 @@
       },
       {
         "name": "list",
-        "RBP offset": -24,
+        "RBP offset": -32,
         "type": [
           "char**"
         ],
@@ -1280,14 +1280,14 @@
     ]
   },
   "check_no_building_in_edit_actions": {
-    "address": "0x7d49",
+    "address": "0x404d23",
     "variables": [
       {
         "name": "error",
         "RBP offset": -40,
         "type": [
-          "GError**",
-          "_GError**"
+          "_GError**",
+          "GError**"
         ],
         "size": 8,
         "is_pointer": true,
@@ -1301,8 +1301,8 @@
         "name": "tmp",
         "RBP offset": -32,
         "type": [
-          "GSList*",
-          "_GSList*"
+          "_GSList*",
+          "GSList*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -1329,14 +1329,14 @@
     ]
   },
   "post_parse_edit_options_callback": {
-    "address": "0x7dda",
+    "address": "0x404dbe",
     "variables": [
       {
         "name": "error",
         "RBP offset": -32,
         "type": [
-          "GError**",
-          "_GError**"
+          "_GError**",
+          "GError**"
         ],
         "size": 8,
         "is_pointer": true,
@@ -1380,8 +1380,8 @@
         "name": "context",
         "RBP offset": -8,
         "type": [
-          "GOptionContext*",
-          "_GOptionContext*"
+          "_GOptionContext*",
+          "GOptionContext*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -1394,11 +1394,11 @@
     ]
   },
   "main": {
-    "address": "0x7e26",
+    "address": "0x404e12",
     "variables": [
       {
         "name": "argv",
-        "RBP offset": -96,
+        "RBP offset": -112,
         "type": [
           "char**"
         ],
@@ -1412,7 +1412,7 @@
       },
       {
         "name": "argc",
-        "RBP offset": -84,
+        "RBP offset": -100,
         "type": [
           "int"
         ],
@@ -1426,7 +1426,7 @@
       },
       {
         "name": "i",
-        "RBP offset": -68,
+        "RBP offset": -84,
         "type": [
           "int"
         ],
@@ -1440,7 +1440,7 @@
       },
       {
         "name": "args_len",
-        "RBP offset": -64,
+        "RBP offset": -80,
         "type": [
           "int"
         ],
@@ -1454,12 +1454,12 @@
       },
       {
         "name": "dir_permissions",
-        "RBP offset": -60,
+        "RBP offset": -76,
         "type": [
+          "__mode_t",
           "unsigned int",
           "int",
-          "mode_t",
-          "__mode_t"
+          "mode_t"
         ],
         "size": 4,
         "is_pointer": false,
@@ -1471,10 +1471,10 @@
       },
       {
         "name": "err",
-        "RBP offset": -56,
+        "RBP offset": -72,
         "type": [
-          "GError*",
-          "_GError*"
+          "_GError*",
+          "GError*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -1486,7 +1486,7 @@
       },
       {
         "name": "basename",
-        "RBP offset": -48,
+        "RBP offset": -64,
         "type": [
           "char*"
         ],
@@ -1500,10 +1500,10 @@
       },
       {
         "name": "context",
-        "RBP offset": -40,
+        "RBP offset": -56,
         "type": [
-          "GOptionContext*",
-          "_GOptionContext*"
+          "_GOptionContext*",
+          "GOptionContext*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -1515,7 +1515,7 @@
       },
       {
         "name": "group",
-        "RBP offset": -32,
+        "RBP offset": -48,
         "type": [
           "GOptionGroup*",
           "_GOptionGroup*"
@@ -1531,7 +1531,7 @@
     ]
   },
   "dfu_key_file_rename_group": {
-    "address": "0x836e",
+    "address": "0x405356",
     "variables": [
       {
         "name": "newgroup",
@@ -1622,7 +1622,7 @@
     ]
   },
   "dfu_key_file_drop_locale_strings": {
-    "address": "0x8569",
+    "address": "0x405562",
     "variables": [
       {
         "name": "key",
@@ -1671,9 +1671,9 @@
         "name": "len",
         "RBP offset": -40,
         "type": [
+          "long unsigned int",
           "gsize",
-          "long long",
-          "long unsigned int"
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1687,9 +1687,9 @@
         "name": "i",
         "RBP offset": -32,
         "type": [
+          "long unsigned int",
           "gsize",
-          "long long",
-          "long unsigned int"
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1730,7 +1730,7 @@
     ]
   },
   "_dfu_key_file_copy_key_helper": {
-    "address": "0x8661",
+    "address": "0x405667",
     "variables": [
       {
         "name": "tokey",
@@ -1820,7 +1820,7 @@
     ]
   },
   "dfu_key_file_copy_key": {
-    "address": "0x86f1",
+    "address": "0x405702",
     "variables": [
       {
         "name": "tokey",
@@ -1897,9 +1897,9 @@
         "name": "len",
         "RBP offset": -72,
         "type": [
+          "long unsigned int",
           "gsize",
-          "long long",
-          "long unsigned int"
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1913,9 +1913,9 @@
         "name": "i",
         "RBP offset": -64,
         "type": [
+          "long unsigned int",
           "gsize",
-          "long long",
-          "long unsigned int"
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1984,7 +1984,7 @@
     ]
   },
   "dfu_key_file_merge_list": {
-    "address": "0x89a7",
+    "address": "0x4059e7",
     "variables": [
       {
         "name": "to_merge",
@@ -2104,8 +2104,8 @@
         "RBP offset": -8,
         "type": [
           "long unsigned int",
-          "long long",
-          "size_t"
+          "size_t",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -2118,7 +2118,7 @@
     ]
   },
   "dfu_key_file_remove_list": {
-    "address": "0x8b7b",
+    "address": "0x405bd1",
     "variables": [
       {
         "name": "to_remove",
@@ -2181,10 +2181,10 @@
         "name": "found",
         "RBP offset": -24,
         "type": [
-          "int",
-          "gbool",
+          "gint",
           "gboolean",
-          "gint"
+          "gbool",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -2240,14 +2240,14 @@
     ]
   },
   "dfu_key_file_to_path": {
-    "address": "0x8d13",
+    "address": "0x405d82",
     "variables": [
       {
         "name": "error",
         "RBP offset": -72,
         "type": [
-          "GError**",
-          "_GError**"
+          "_GError**",
+          "GError**"
         ],
         "size": 8,
         "is_pointer": true,
@@ -2290,10 +2290,10 @@
         "name": "res",
         "RBP offset": -44,
         "type": [
-          "int",
-          "gbool",
+          "gint",
           "gboolean",
-          "gint"
+          "gbool",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -2307,8 +2307,8 @@
         "name": "write_error",
         "RBP offset": -40,
         "type": [
-          "GError*",
-          "_GError*"
+          "_GError*",
+          "GError*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -2322,9 +2322,9 @@
         "name": "length",
         "RBP offset": -32,
         "type": [
+          "long unsigned int",
           "gsize",
-          "long long",
-          "long unsigned int"
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -2364,43 +2364,8 @@
       }
     ]
   },
-  "g_string_append_c_inline": {
-    "address": "0x8eac",
-    "variables": [
-      {
-        "name": "c",
-        "RBP offset": -12,
-        "type": [
-          "gchar",
-          "char"
-        ],
-        "size": 1,
-        "is_pointer": false,
-        "is_typedef": true,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "gstring",
-        "RBP offset": -8,
-        "type": [
-          "_GString*",
-          "GString*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": true,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      }
-    ]
-  },
   "print_fatal": {
-    "address": "0x8f2f",
+    "address": "0x405f32",
     "variables": [
       {
         "name": "format",
@@ -2420,8 +2385,8 @@
         "name": "kf",
         "RBP offset": -232,
         "type": [
-          "_kf_validator*",
-          "kf_validator*"
+          "kf_validator*",
+          "_kf_validator*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -2435,8 +2400,8 @@
         "name": "str",
         "RBP offset": -216,
         "type": [
-          "gchar*",
-          "char*"
+          "char*",
+          "gchar*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -2450,10 +2415,10 @@
         "name": "args",
         "RBP offset": -208,
         "type": [
-          "va_list",
-          "__builtin_va_list",
           "__gnuc_va_list",
-          "__va_list_tag[1]"
+          "__builtin_va_list",
+          "__va_list_tag[1]",
+          "va_list"
         ],
         "size": 24,
         "is_pointer": false,
@@ -2472,7 +2437,7 @@
     ]
   },
   "print_future_fatal": {
-    "address": "0x910d",
+    "address": "0x406129",
     "variables": [
       {
         "name": "format",
@@ -2492,8 +2457,8 @@
         "name": "kf",
         "RBP offset": -232,
         "type": [
-          "_kf_validator*",
-          "kf_validator*"
+          "kf_validator*",
+          "_kf_validator*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -2507,8 +2472,8 @@
         "name": "str",
         "RBP offset": -216,
         "type": [
-          "gchar*",
-          "char*"
+          "char*",
+          "gchar*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -2522,10 +2487,10 @@
         "name": "args",
         "RBP offset": -208,
         "type": [
-          "va_list",
-          "__builtin_va_list",
           "__gnuc_va_list",
-          "__va_list_tag[1]"
+          "__builtin_va_list",
+          "__va_list_tag[1]",
+          "va_list"
         ],
         "size": 24,
         "is_pointer": false,
@@ -2544,7 +2509,7 @@
     ]
   },
   "print_warning": {
-    "address": "0x92da",
+    "address": "0x40630f",
     "variables": [
       {
         "name": "format",
@@ -2564,8 +2529,8 @@
         "name": "kf",
         "RBP offset": -232,
         "type": [
-          "_kf_validator*",
-          "kf_validator*"
+          "kf_validator*",
+          "_kf_validator*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -2579,8 +2544,8 @@
         "name": "str",
         "RBP offset": -216,
         "type": [
-          "gchar*",
-          "char*"
+          "char*",
+          "gchar*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -2594,10 +2559,10 @@
         "name": "args",
         "RBP offset": -208,
         "type": [
-          "va_list",
-          "__builtin_va_list",
           "__gnuc_va_list",
-          "__va_list_tag[1]"
+          "__builtin_va_list",
+          "__va_list_tag[1]",
+          "va_list"
         ],
         "size": 24,
         "is_pointer": false,
@@ -2616,7 +2581,7 @@
     ]
   },
   "print_hint": {
-    "address": "0x94a7",
+    "address": "0x4064f5",
     "variables": [
       {
         "name": "format",
@@ -2636,8 +2601,8 @@
         "name": "kf",
         "RBP offset": -232,
         "type": [
-          "_kf_validator*",
-          "kf_validator*"
+          "kf_validator*",
+          "_kf_validator*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -2651,8 +2616,8 @@
         "name": "str",
         "RBP offset": -216,
         "type": [
-          "gchar*",
-          "char*"
+          "char*",
+          "gchar*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -2666,10 +2631,10 @@
         "name": "args",
         "RBP offset": -208,
         "type": [
-          "va_list",
-          "__builtin_va_list",
           "__gnuc_va_list",
-          "__va_list_tag[1]"
+          "__builtin_va_list",
+          "__va_list_tag[1]",
+          "va_list"
         ],
         "size": 24,
         "is_pointer": false,
@@ -2688,7 +2653,7 @@
     ]
   },
   "key_is_valid": {
-    "address": "0x9689",
+    "address": "0x4066f0",
     "variables": [
       {
         "name": "len",
@@ -2749,7 +2714,7 @@
     ]
   },
   "validate_string_key": {
-    "address": "0x96f4",
+    "address": "0x406761",
     "variables": [
       {
         "name": "value",
@@ -2797,8 +2762,8 @@
         "name": "kf",
         "RBP offset": -24,
         "type": [
-          "_kf_validator*",
-          "kf_validator*"
+          "kf_validator*",
+          "_kf_validator*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -2826,10 +2791,10 @@
         "name": "error",
         "RBP offset": -4,
         "type": [
-          "int",
-          "gbool",
+          "gint",
           "gboolean",
-          "gint"
+          "gbool",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -2842,7 +2807,7 @@
     ]
   },
   "validate_localestring_key": {
-    "address": "0x97ac",
+    "address": "0x406824",
     "variables": [
       {
         "name": "value",
@@ -2890,8 +2855,8 @@
         "name": "kf",
         "RBP offset": -24,
         "type": [
-          "_kf_validator*",
-          "kf_validator*"
+          "kf_validator*",
+          "_kf_validator*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -2918,7 +2883,7 @@
     ]
   },
   "validate_boolean_key": {
-    "address": "0x98d0",
+    "address": "0x406959",
     "variables": [
       {
         "name": "value",
@@ -2966,8 +2931,8 @@
         "name": "kf",
         "RBP offset": -8,
         "type": [
-          "_kf_validator*",
-          "kf_validator*"
+          "kf_validator*",
+          "_kf_validator*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -2980,7 +2945,7 @@
     ]
   },
   "validate_numeric_key": {
-    "address": "0x99e1",
+    "address": "0x406a8b",
     "variables": [
       {
         "name": "value",
@@ -3028,8 +2993,8 @@
         "name": "kf",
         "RBP offset": -24,
         "type": [
-          "_kf_validator*",
-          "kf_validator*"
+          "kf_validator*",
+          "_kf_validator*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -3070,7 +3035,7 @@
     ]
   },
   "validate_string_regexp_list_key": {
-    "address": "0x9a7a",
+    "address": "0x406b32",
     "variables": [
       {
         "name": "type",
@@ -3132,8 +3097,8 @@
         "name": "kf",
         "RBP offset": -24,
         "type": [
-          "_kf_validator*",
-          "kf_validator*"
+          "kf_validator*",
+          "_kf_validator*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -3161,10 +3126,10 @@
         "name": "error",
         "RBP offset": -4,
         "type": [
-          "int",
-          "gbool",
+          "gint",
           "gboolean",
-          "gint"
+          "gbool",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -3177,7 +3142,7 @@
     ]
   },
   "validate_string_list_key": {
-    "address": "0x9b58",
+    "address": "0x406c1e",
     "variables": [
       {
         "name": "value",
@@ -3225,8 +3190,8 @@
         "name": "kf",
         "RBP offset": -8,
         "type": [
-          "_kf_validator*",
-          "kf_validator*"
+          "kf_validator*",
+          "_kf_validator*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -3239,7 +3204,7 @@
     ]
   },
   "validate_regexp_list_key": {
-    "address": "0x9b91",
+    "address": "0x406c62",
     "variables": [
       {
         "name": "value",
@@ -3287,8 +3252,8 @@
         "name": "kf",
         "RBP offset": -8,
         "type": [
-          "_kf_validator*",
-          "kf_validator*"
+          "kf_validator*",
+          "_kf_validator*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -3301,7 +3266,7 @@
     ]
   },
   "validate_localestring_list_key": {
-    "address": "0x9bca",
+    "address": "0x406ca6",
     "variables": [
       {
         "name": "value",
@@ -3349,8 +3314,8 @@
         "name": "kf",
         "RBP offset": -24,
         "type": [
-          "_kf_validator*",
-          "kf_validator*"
+          "kf_validator*",
+          "_kf_validator*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -3377,7 +3342,7 @@
     ]
   },
   "handle_type_key": {
-    "address": "0x9cee",
+    "address": "0x406ddb",
     "variables": [
       {
         "name": "value",
@@ -3411,8 +3376,8 @@
         "name": "kf",
         "RBP offset": -24,
         "type": [
-          "_kf_validator*",
-          "kf_validator*"
+          "kf_validator*",
+          "_kf_validator*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -3440,7 +3405,7 @@
     ]
   },
   "handle_version_key": {
-    "address": "0x9e8e",
+    "address": "0x406f86",
     "variables": [
       {
         "name": "value",
@@ -3474,8 +3439,8 @@
         "name": "kf",
         "RBP offset": -24,
         "type": [
-          "_kf_validator*",
-          "kf_validator*"
+          "kf_validator*",
+          "_kf_validator*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -3488,7 +3453,7 @@
     ]
   },
   "handle_comment_key": {
-    "address": "0x9fe0",
+    "address": "0x4070fb",
     "variables": [
       {
         "name": "value",
@@ -3522,8 +3487,8 @@
         "name": "kf",
         "RBP offset": -24,
         "type": [
-          "_kf_validator*",
-          "kf_validator*"
+          "kf_validator*",
+          "_kf_validator*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -3565,11 +3530,11 @@
     ]
   },
   "handle_icon_key": {
-    "address": "0xa148",
+    "address": "0x407277",
     "variables": [
       {
         "name": "value",
-        "RBP offset": -24,
+        "RBP offset": -168,
         "type": [
           "char*"
         ],
@@ -3583,7 +3548,7 @@
       },
       {
         "name": "locale_key",
-        "RBP offset": -16,
+        "RBP offset": -160,
         "type": [
           "char*"
         ],
@@ -3597,13 +3562,321 @@
       },
       {
         "name": "kf",
-        "RBP offset": -8,
+        "RBP offset": -152,
         "type": [
-          "_kf_validator*",
-          "kf_validator*"
+          "kf_validator*",
+          "_kf_validator*"
         ],
         "size": 8,
         "is_pointer": true,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__result",
+        "RBP offset": -144,
+        "type": [
+          "gint",
+          "gboolean",
+          "gbool",
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__result",
+        "RBP offset": -140,
+        "type": [
+          "gint",
+          "gboolean",
+          "gbool",
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__result",
+        "RBP offset": -136,
+        "type": [
+          "gint",
+          "gboolean",
+          "gbool",
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__result",
+        "RBP offset": -132,
+        "type": [
+          "gint",
+          "gboolean",
+          "gbool",
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__str",
+        "RBP offset": -128,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__suffix",
+        "RBP offset": -120,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__str_len",
+        "RBP offset": -112,
+        "type": [
+          "long unsigned int",
+          "size_t",
+          "long long"
+        ],
+        "size": 8,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__suffix_len",
+        "RBP offset": -104,
+        "type": [
+          "long unsigned int",
+          "size_t",
+          "long long"
+        ],
+        "size": 8,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__str",
+        "RBP offset": -96,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__suffix",
+        "RBP offset": -88,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__str_len",
+        "RBP offset": -80,
+        "type": [
+          "long unsigned int",
+          "size_t",
+          "long long"
+        ],
+        "size": 8,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__suffix_len",
+        "RBP offset": -72,
+        "type": [
+          "long unsigned int",
+          "size_t",
+          "long long"
+        ],
+        "size": 8,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__str",
+        "RBP offset": -64,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__suffix",
+        "RBP offset": -56,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__str_len",
+        "RBP offset": -48,
+        "type": [
+          "long unsigned int",
+          "size_t",
+          "long long"
+        ],
+        "size": 8,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__suffix_len",
+        "RBP offset": -40,
+        "type": [
+          "long unsigned int",
+          "size_t",
+          "long long"
+        ],
+        "size": 8,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__str",
+        "RBP offset": -32,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__suffix",
+        "RBP offset": -24,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__str_len",
+        "RBP offset": -16,
+        "type": [
+          "long unsigned int",
+          "size_t",
+          "long long"
+        ],
+        "size": 8,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__suffix_len",
+        "RBP offset": -8,
+        "type": [
+          "long unsigned int",
+          "size_t",
+          "long long"
+        ],
+        "size": 8,
+        "is_pointer": false,
         "is_typedef": true,
         "is_array": false,
         "is_struct": false,
@@ -3613,7 +3886,7 @@
     ]
   },
   "handle_show_in_key": {
-    "address": "0xa28f",
+    "address": "0x40772e",
     "variables": [
       {
         "name": "value",
@@ -3647,8 +3920,8 @@
         "name": "kf",
         "RBP offset": -40,
         "type": [
-          "_kf_validator*",
-          "kf_validator*"
+          "kf_validator*",
+          "_kf_validator*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -3662,10 +3935,10 @@
         "name": "retval",
         "RBP offset": -28,
         "type": [
-          "int",
-          "gbool",
+          "gint",
           "gboolean",
-          "gint"
+          "gbool",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -3736,7 +4009,7 @@
     ]
   },
   "handle_exec_key": {
-    "address": "0xa548",
+    "address": "0x4079fd",
     "variables": [
       {
         "name": "value",
@@ -3770,8 +4043,8 @@
         "name": "kf",
         "RBP offset": -40,
         "type": [
-          "_kf_validator*",
-          "kf_validator*"
+          "kf_validator*",
+          "_kf_validator*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -3785,10 +4058,10 @@
         "name": "retval",
         "RBP offset": -28,
         "type": [
-          "int",
-          "gbool",
+          "gint",
           "gboolean",
-          "gint"
+          "gbool",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -3802,10 +4075,10 @@
         "name": "file_uri",
         "RBP offset": -24,
         "type": [
-          "int",
-          "gbool",
+          "gint",
           "gboolean",
-          "gint"
+          "gbool",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -3819,10 +4092,10 @@
         "name": "in_quote",
         "RBP offset": -20,
         "type": [
-          "int",
-          "gbool",
+          "gint",
           "gboolean",
-          "gint"
+          "gbool",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -3836,10 +4109,10 @@
         "name": "escaped",
         "RBP offset": -16,
         "type": [
-          "int",
-          "gbool",
+          "gint",
           "gboolean",
-          "gint"
+          "gbool",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -3853,10 +4126,10 @@
         "name": "flag",
         "RBP offset": -12,
         "type": [
-          "int",
-          "gbool",
+          "gint",
           "gboolean",
-          "gint"
+          "gbool",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -3883,7 +4156,7 @@
     ]
   },
   "handle_desktop_exec_key": {
-    "address": "0xaaf7",
+    "address": "0x408086",
     "variables": [
       {
         "name": "value",
@@ -3917,8 +4190,8 @@
         "name": "kf",
         "RBP offset": -8,
         "type": [
-          "_kf_validator*",
-          "kf_validator*"
+          "kf_validator*",
+          "_kf_validator*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -3931,7 +4204,7 @@
     ]
   },
   "handle_path_key": {
-    "address": "0xab3b",
+    "address": "0x4080d2",
     "variables": [
       {
         "name": "value",
@@ -3965,8 +4238,8 @@
         "name": "kf",
         "RBP offset": -8,
         "type": [
-          "_kf_validator*",
-          "kf_validator*"
+          "kf_validator*",
+          "_kf_validator*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -3979,7 +4252,7 @@
     ]
   },
   "handle_mime_key": {
-    "address": "0xaba8",
+    "address": "0x40814a",
     "variables": [
       {
         "name": "value",
@@ -4013,8 +4286,8 @@
         "name": "kf",
         "RBP offset": -56,
         "type": [
-          "_kf_validator*",
-          "kf_validator*"
+          "kf_validator*",
+          "_kf_validator*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -4028,10 +4301,10 @@
         "name": "retval",
         "RBP offset": -44,
         "type": [
-          "int",
-          "gbool",
+          "gint",
           "gboolean",
-          "gint"
+          "gbool",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -4116,7 +4389,7 @@
     ]
   },
   "handle_categories_key": {
-    "address": "0xaec3",
+    "address": "0x40847b",
     "variables": [
       {
         "name": "value",
@@ -4150,8 +4423,8 @@
         "name": "kf",
         "RBP offset": -104,
         "type": [
-          "_kf_validator*",
-          "kf_validator*"
+          "kf_validator*",
+          "_kf_validator*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -4165,10 +4438,10 @@
         "name": "retval",
         "RBP offset": -96,
         "type": [
-          "int",
-          "gbool",
+          "gint",
           "gboolean",
-          "gint"
+          "gbool",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -4240,10 +4513,10 @@
         "name": "required_main_category_present",
         "RBP offset": -76,
         "type": [
-          "int",
-          "gbool",
+          "gint",
           "gboolean",
-          "gint"
+          "gbool",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -4414,7 +4687,7 @@
     ]
   },
   "handle_actions_key": {
-    "address": "0xba14",
+    "address": "0x408ff5",
     "variables": [
       {
         "name": "value",
@@ -4448,8 +4721,8 @@
         "name": "kf",
         "RBP offset": -40,
         "type": [
-          "_kf_validator*",
-          "kf_validator*"
+          "kf_validator*",
+          "_kf_validator*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -4461,7 +4734,7 @@
       },
       {
         "name": "i",
-        "RBP offset": -24,
+        "RBP offset": -32,
         "type": [
           "int"
         ],
@@ -4475,12 +4748,12 @@
       },
       {
         "name": "retval",
-        "RBP offset": -20,
+        "RBP offset": -28,
         "type": [
-          "int",
-          "gbool",
+          "gint",
           "gboolean",
-          "gint"
+          "gbool",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -4492,7 +4765,7 @@
       },
       {
         "name": "actions",
-        "RBP offset": -16,
+        "RBP offset": -24,
         "type": [
           "char**"
         ],
@@ -4506,7 +4779,114 @@
       },
       {
         "name": "action",
-        "RBP offset": -8,
+        "RBP offset": -16,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      }
+    ]
+  },
+  "handle_implements_key": {
+    "address": "0x409269",
+    "variables": [
+      {
+        "name": "value",
+        "RBP offset": -56,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "locale_key",
+        "RBP offset": -48,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "kf",
+        "RBP offset": -40,
+        "type": [
+          "kf_validator*",
+          "_kf_validator*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "i",
+        "RBP offset": -32,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "retval",
+        "RBP offset": -28,
+        "type": [
+          "gint",
+          "gboolean",
+          "gbool",
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "interfaces",
+        "RBP offset": -24,
+        "type": [
+          "char**"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "interface",
+        "RBP offset": -16,
         "type": [
           "char*"
         ],
@@ -4521,7 +4901,7 @@
     ]
   },
   "handle_dbus_activatable_key": {
-    "address": "0xbc70",
+    "address": "0x409428",
     "variables": [
       {
         "name": "value",
@@ -4555,8 +4935,8 @@
         "name": "kf",
         "RBP offset": -40,
         "type": [
-          "_kf_validator*",
-          "kf_validator*"
+          "kf_validator*",
+          "_kf_validator*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -4570,10 +4950,10 @@
         "name": "retval",
         "RBP offset": -28,
         "type": [
-          "int",
-          "gbool",
+          "gint",
           "gboolean",
-          "gint"
+          "gbool",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -4587,8 +4967,8 @@
         "name": "p",
         "RBP offset": -24,
         "type": [
-          "gchar*",
-          "char*"
+          "char*",
+          "gchar*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -4602,8 +4982,8 @@
         "name": "basename",
         "RBP offset": -16,
         "type": [
-          "gchar*",
-          "char*"
+          "char*",
+          "gchar*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -4617,8 +4997,8 @@
         "name": "basename_utf8",
         "RBP offset": -8,
         "type": [
-          "gchar*",
-          "char*"
+          "char*",
+          "gchar*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -4631,7 +5011,7 @@
     ]
   },
   "handle_dev_key": {
-    "address": "0xbd98",
+    "address": "0x409564",
     "variables": [
       {
         "name": "value",
@@ -4665,8 +5045,8 @@
         "name": "kf",
         "RBP offset": -8,
         "type": [
-          "_kf_validator*",
-          "kf_validator*"
+          "kf_validator*",
+          "_kf_validator*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -4679,7 +5059,7 @@
     ]
   },
   "handle_mountpoint_key": {
-    "address": "0xbe05",
+    "address": "0x4095dc",
     "variables": [
       {
         "name": "value",
@@ -4713,8 +5093,8 @@
         "name": "kf",
         "RBP offset": -8,
         "type": [
-          "_kf_validator*",
-          "kf_validator*"
+          "kf_validator*",
+          "_kf_validator*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -4727,7 +5107,7 @@
     ]
   },
   "handle_encoding_key": {
-    "address": "0xbe72",
+    "address": "0x409654",
     "variables": [
       {
         "name": "value",
@@ -4761,8 +5141,8 @@
         "name": "kf",
         "RBP offset": -8,
         "type": [
-          "_kf_validator*",
-          "kf_validator*"
+          "kf_validator*",
+          "_kf_validator*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -4775,7 +5155,7 @@
     ]
   },
   "handle_autostart_condition_key": {
-    "address": "0xbeed",
+    "address": "0x4096e0",
     "variables": [
       {
         "name": "value",
@@ -4809,8 +5189,8 @@
         "name": "kf",
         "RBP offset": -72,
         "type": [
-          "_kf_validator*",
-          "kf_validator*"
+          "kf_validator*",
+          "_kf_validator*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -4822,12 +5202,12 @@
       },
       {
         "name": "retval",
-        "RBP offset": -56,
+        "RBP offset": -64,
         "type": [
-          "int",
-          "gbool",
+          "gint",
           "gboolean",
-          "gint"
+          "gbool",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -4839,7 +5219,7 @@
       },
       {
         "name": "i",
-        "RBP offset": -52,
+        "RBP offset": -60,
         "type": [
           "unsigned int",
           "int"
@@ -4854,7 +5234,7 @@
       },
       {
         "name": "j",
-        "RBP offset": -48,
+        "RBP offset": -56,
         "type": [
           "unsigned int",
           "int"
@@ -4869,7 +5249,7 @@
       },
       {
         "name": "argc_diff",
-        "RBP offset": -44,
+        "RBP offset": -52,
         "type": [
           "int"
         ],
@@ -4883,7 +5263,7 @@
       },
       {
         "name": "argument",
-        "RBP offset": -40,
+        "RBP offset": -48,
         "type": [
           "char*"
         ],
@@ -4897,7 +5277,7 @@
       },
       {
         "name": "condition",
-        "RBP offset": -32,
+        "RBP offset": -40,
         "type": [
           "char*"
         ],
@@ -4911,7 +5291,7 @@
       },
       {
         "name": "first",
-        "RBP offset": -24,
+        "RBP offset": -32,
         "type": [
           "char*"
         ],
@@ -4925,7 +5305,7 @@
       },
       {
         "name": "after_first",
-        "RBP offset": -16,
+        "RBP offset": -24,
         "type": [
           "char*"
         ],
@@ -4939,7 +5319,7 @@
       },
       {
         "name": "output",
-        "RBP offset": -8,
+        "RBP offset": -16,
         "type": [
           "_GString*",
           "GString*"
@@ -4955,11 +5335,11 @@
     ]
   },
   "handle_key_for_application": {
-    "address": "0xc66e",
+    "address": "0x409e83",
     "variables": [
       {
         "name": "value",
-        "RBP offset": -24,
+        "RBP offset": -40,
         "type": [
           "char*"
         ],
@@ -4973,7 +5353,7 @@
       },
       {
         "name": "locale_key",
-        "RBP offset": -16,
+        "RBP offset": -32,
         "type": [
           "char*"
         ],
@@ -4987,10 +5367,10 @@
       },
       {
         "name": "kf",
-        "RBP offset": -8,
+        "RBP offset": -24,
         "type": [
-          "_kf_validator*",
-          "kf_validator*"
+          "kf_validator*",
+          "_kf_validator*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -5003,11 +5383,11 @@
     ]
   },
   "handle_key_for_link": {
-    "address": "0xc6b3",
+    "address": "0x409ed6",
     "variables": [
       {
         "name": "value",
-        "RBP offset": -24,
+        "RBP offset": -40,
         "type": [
           "char*"
         ],
@@ -5021,7 +5401,7 @@
       },
       {
         "name": "locale_key",
-        "RBP offset": -16,
+        "RBP offset": -32,
         "type": [
           "char*"
         ],
@@ -5035,10 +5415,10 @@
       },
       {
         "name": "kf",
-        "RBP offset": -8,
+        "RBP offset": -24,
         "type": [
-          "_kf_validator*",
-          "kf_validator*"
+          "kf_validator*",
+          "_kf_validator*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -5051,11 +5431,11 @@
     ]
   },
   "handle_key_for_fsdevice": {
-    "address": "0xc6f8",
+    "address": "0x409f29",
     "variables": [
       {
         "name": "value",
-        "RBP offset": -24,
+        "RBP offset": -40,
         "type": [
           "char*"
         ],
@@ -5069,7 +5449,7 @@
       },
       {
         "name": "locale_key",
-        "RBP offset": -16,
+        "RBP offset": -32,
         "type": [
           "char*"
         ],
@@ -5083,10 +5463,10 @@
       },
       {
         "name": "kf",
-        "RBP offset": -8,
+        "RBP offset": -24,
         "type": [
-          "_kf_validator*",
-          "kf_validator*"
+          "kf_validator*",
+          "_kf_validator*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -5099,11 +5479,11 @@
     ]
   },
   "handle_key_for_mimetype": {
-    "address": "0xc73d",
+    "address": "0x409f7c",
     "variables": [
       {
         "name": "value",
-        "RBP offset": -24,
+        "RBP offset": -40,
         "type": [
           "char*"
         ],
@@ -5117,7 +5497,7 @@
       },
       {
         "name": "locale_key",
-        "RBP offset": -16,
+        "RBP offset": -32,
         "type": [
           "char*"
         ],
@@ -5131,10 +5511,10 @@
       },
       {
         "name": "kf",
-        "RBP offset": -8,
+        "RBP offset": -24,
         "type": [
-          "_kf_validator*",
-          "kf_validator*"
+          "kf_validator*",
+          "_kf_validator*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -5147,7 +5527,7 @@
     ]
   },
   "key_extract_locale": {
-    "address": "0xc782",
+    "address": "0x409fcf",
     "variables": [
       {
         "name": "locale",
@@ -5193,7 +5573,7 @@
       },
       {
         "name": "c",
-        "RBP offset": -17,
+        "RBP offset": -25,
         "type": [
           "char"
         ],
@@ -5207,7 +5587,7 @@
       },
       {
         "name": "len",
-        "RBP offset": -16,
+        "RBP offset": -24,
         "type": [
           "int"
         ],
@@ -5221,7 +5601,7 @@
       },
       {
         "name": "i",
-        "RBP offset": -12,
+        "RBP offset": -20,
         "type": [
           "int"
         ],
@@ -5235,7 +5615,7 @@
       },
       {
         "name": "start_locale",
-        "RBP offset": -8,
+        "RBP offset": -16,
         "type": [
           "char*"
         ],
@@ -5250,7 +5630,7 @@
     ]
   },
   "validate_known_key": {
-    "address": "0xc962",
+    "address": "0x40a1bf",
     "variables": [
       {
         "name": "keys",
@@ -5326,8 +5706,8 @@
         "name": "kf",
         "RBP offset": -24,
         "type": [
-          "_kf_validator*",
-          "kf_validator*"
+          "kf_validator*",
+          "_kf_validator*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -5385,7 +5765,7 @@
     ]
   },
   "validate_desktop_key": {
-    "address": "0xccb1",
+    "address": "0x40a52b",
     "variables": [
       {
         "name": "value",
@@ -5447,8 +5827,8 @@
         "name": "kf",
         "RBP offset": -8,
         "type": [
-          "_kf_validator*",
-          "kf_validator*"
+          "kf_validator*",
+          "_kf_validator*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -5461,7 +5841,7 @@
     ]
   },
   "validate_action_key": {
-    "address": "0xccff",
+    "address": "0x40a587",
     "variables": [
       {
         "name": "value",
@@ -5523,8 +5903,8 @@
         "name": "kf",
         "RBP offset": -8,
         "type": [
-          "_kf_validator*",
-          "kf_validator*"
+          "kf_validator*",
+          "_kf_validator*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -5537,14 +5917,14 @@
     ]
   },
   "validate_keys_for_current_group": {
-    "address": "0xcd4d",
+    "address": "0x40a5e3",
     "variables": [
       {
         "name": "kf",
         "RBP offset": -104,
         "type": [
-          "_kf_validator*",
-          "kf_validator*"
+          "kf_validator*",
+          "_kf_validator*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -5556,12 +5936,12 @@
       },
       {
         "name": "retval",
-        "RBP offset": -88,
+        "RBP offset": -96,
         "type": [
-          "int",
-          "gbool",
+          "gint",
           "gboolean",
-          "gint"
+          "gbool",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -5573,12 +5953,12 @@
       },
       {
         "name": "skip_desktop_check",
-        "RBP offset": -84,
+        "RBP offset": -92,
         "type": [
-          "int",
-          "gbool",
+          "gint",
           "gboolean",
-          "gint"
+          "gbool",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -5590,12 +5970,12 @@
       },
       {
         "name": "desktop_group",
-        "RBP offset": -80,
+        "RBP offset": -88,
         "type": [
-          "int",
-          "gbool",
+          "gint",
           "gboolean",
-          "gint"
+          "gbool",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -5607,12 +5987,12 @@
       },
       {
         "name": "action_group",
-        "RBP offset": -76,
+        "RBP offset": -84,
         "type": [
-          "int",
-          "gbool",
+          "gint",
           "gboolean",
-          "gint"
+          "gbool",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -5624,6 +6004,20 @@
       },
       {
         "name": "key",
+        "RBP offset": -80,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "locale",
         "RBP offset": -72,
         "type": [
           "char*"
@@ -5637,25 +6031,11 @@
         "is_enum": false
       },
       {
-        "name": "locale",
+        "name": "sl",
         "RBP offset": -64,
         "type": [
-          "char*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "sl",
-        "RBP offset": -56,
-        "type": [
-          "GSList*",
-          "_GSList*"
+          "_GSList*",
+          "GSList*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -5667,10 +6047,10 @@
       },
       {
         "name": "keys",
-        "RBP offset": -48,
+        "RBP offset": -56,
         "type": [
-          "GSList*",
-          "_GSList*"
+          "_GSList*",
+          "GSList*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -5682,7 +6062,7 @@
       },
       {
         "name": "duplicated_keys_hash",
-        "RBP offset": -40,
+        "RBP offset": -48,
         "type": [
           "_GHashTable*",
           "GHashTable*"
@@ -5697,7 +6077,7 @@
       },
       {
         "name": "keyvalue",
-        "RBP offset": -32,
+        "RBP offset": -40,
         "type": [
           "kf_keyvalue*",
           "_kf_keyvalue*"
@@ -5712,7 +6092,7 @@
       },
       {
         "name": "hashvalue",
-        "RBP offset": -24,
+        "RBP offset": -32,
         "type": [
           "gpointer",
           "void*"
@@ -5727,7 +6107,7 @@
       },
       {
         "name": "keyvalue",
-        "RBP offset": -16,
+        "RBP offset": -24,
         "type": [
           "kf_keyvalue*",
           "_kf_keyvalue*"
@@ -5743,11 +6123,11 @@
     ]
   },
   "validate_group_name": {
-    "address": "0xd13d",
+    "address": "0x40a9f5",
     "variables": [
       {
         "name": "group",
-        "RBP offset": -32,
+        "RBP offset": -48,
         "type": [
           "char*"
         ],
@@ -5761,10 +6141,10 @@
       },
       {
         "name": "kf",
-        "RBP offset": -24,
+        "RBP offset": -40,
         "type": [
-          "_kf_validator*",
-          "kf_validator*"
+          "kf_validator*",
+          "_kf_validator*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -5776,7 +6156,7 @@
       },
       {
         "name": "c",
-        "RBP offset": -13,
+        "RBP offset": -21,
         "type": [
           "char"
         ],
@@ -5790,7 +6170,7 @@
       },
       {
         "name": "i",
-        "RBP offset": -12,
+        "RBP offset": -20,
         "type": [
           "int"
         ],
@@ -5804,7 +6184,7 @@
       },
       {
         "name": "action",
-        "RBP offset": -8,
+        "RBP offset": -16,
         "type": [
           "char*"
         ],
@@ -5819,7 +6199,7 @@
     ]
   },
   "validate_required_keys": {
-    "address": "0xd43a",
+    "address": "0x40ad4c",
     "variables": [
       {
         "name": "n_keys",
@@ -5868,8 +6248,8 @@
         "name": "kf",
         "RBP offset": -56,
         "type": [
-          "_kf_validator*",
-          "kf_validator*"
+          "kf_validator*",
+          "_kf_validator*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -5883,10 +6263,10 @@
         "name": "retval",
         "RBP offset": -40,
         "type": [
-          "int",
-          "gbool",
+          "gint",
           "gboolean",
-          "gint"
+          "gbool",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -5915,8 +6295,8 @@
         "name": "sl",
         "RBP offset": -32,
         "type": [
-          "GSList*",
-          "_GSList*"
+          "_GSList*",
+          "GSList*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -5945,8 +6325,8 @@
         "name": "keys",
         "RBP offset": -16,
         "type": [
-          "GSList*",
-          "_GSList*"
+          "_GSList*",
+          "GSList*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -5974,14 +6354,14 @@
     ]
   },
   "validate_required_desktop_keys": {
-    "address": "0xd5a3",
+    "address": "0x40aebd",
     "variables": [
       {
         "name": "kf",
         "RBP offset": -8,
         "type": [
-          "_kf_validator*",
-          "kf_validator*"
+          "kf_validator*",
+          "_kf_validator*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -5994,14 +6374,14 @@
     ]
   },
   "print_error_foreach_application_key": {
-    "address": "0xd5d1",
+    "address": "0x40aef3",
     "variables": [
       {
         "name": "kf",
         "RBP offset": -16,
         "type": [
-          "_kf_validator*",
-          "kf_validator*"
+          "kf_validator*",
+          "_kf_validator*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -6028,14 +6408,14 @@
     ]
   },
   "print_error_foreach_link_key": {
-    "address": "0xd61a",
+    "address": "0x40af4b",
     "variables": [
       {
         "name": "kf",
         "RBP offset": -16,
         "type": [
-          "_kf_validator*",
-          "kf_validator*"
+          "kf_validator*",
+          "_kf_validator*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -6062,14 +6442,14 @@
     ]
   },
   "print_error_foreach_fsdevice_key": {
-    "address": "0xd663",
+    "address": "0x40afa3",
     "variables": [
       {
         "name": "kf",
         "RBP offset": -16,
         "type": [
-          "_kf_validator*",
-          "kf_validator*"
+          "kf_validator*",
+          "_kf_validator*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -6096,14 +6476,14 @@
     ]
   },
   "print_error_foreach_mimetype_key": {
-    "address": "0xd6ac",
+    "address": "0x40affb",
     "variables": [
       {
         "name": "kf",
         "RBP offset": -16,
         "type": [
-          "_kf_validator*",
-          "kf_validator*"
+          "kf_validator*",
+          "_kf_validator*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -6130,14 +6510,14 @@
     ]
   },
   "validate_type_keys": {
-    "address": "0xd6f5",
+    "address": "0x40b053",
     "variables": [
       {
         "name": "kf",
         "RBP offset": -40,
         "type": [
-          "_kf_validator*",
-          "kf_validator*"
+          "kf_validator*",
+          "_kf_validator*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -6151,10 +6531,10 @@
         "name": "retval",
         "RBP offset": -20,
         "type": [
-          "int",
-          "gbool",
+          "gint",
           "gboolean",
-          "gint"
+          "gbool",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -6167,14 +6547,14 @@
     ]
   },
   "lookup_group_foreach_action": {
-    "address": "0xda85",
+    "address": "0x40b424",
     "variables": [
       {
         "name": "kf",
         "RBP offset": -40,
         "type": [
-          "_kf_validator*",
-          "kf_validator*"
+          "kf_validator*",
+          "_kf_validator*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -6216,8 +6596,8 @@
         "name": "group_name",
         "RBP offset": -8,
         "type": [
-          "gchar*",
-          "char*"
+          "char*",
+          "gchar*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -6230,14 +6610,14 @@
     ]
   },
   "print_error_foreach_action": {
-    "address": "0xdb29",
+    "address": "0x40b4d3",
     "variables": [
       {
         "name": "kf",
         "RBP offset": -24,
         "type": [
-          "_kf_validator*",
-          "kf_validator*"
+          "kf_validator*",
+          "_kf_validator*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -6278,14 +6658,14 @@
     ]
   },
   "print_error_foreach_group": {
-    "address": "0xdb6a",
+    "address": "0x40b521",
     "variables": [
       {
         "name": "kf",
         "RBP offset": -24,
         "type": [
-          "_kf_validator*",
-          "kf_validator*"
+          "kf_validator*",
+          "_kf_validator*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -6326,14 +6706,14 @@
     ]
   },
   "validate_actions": {
-    "address": "0xdbae",
+    "address": "0x40b572",
     "variables": [
       {
         "name": "kf",
         "RBP offset": -24,
         "type": [
-          "_kf_validator*",
-          "kf_validator*"
+          "kf_validator*",
+          "_kf_validator*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -6346,17 +6726,248 @@
     ]
   },
   "validate_filename": {
-    "address": "0xdc4d",
+    "address": "0x40b622",
     "variables": [
       {
         "name": "kf",
-        "RBP offset": -8,
+        "RBP offset": -120,
         "type": [
-          "_kf_validator*",
-          "kf_validator*"
+          "kf_validator*",
+          "_kf_validator*"
         ],
         "size": 8,
         "is_pointer": true,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__result",
+        "RBP offset": -108,
+        "type": [
+          "gint",
+          "gboolean",
+          "gbool",
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__result",
+        "RBP offset": -104,
+        "type": [
+          "gint",
+          "gboolean",
+          "gbool",
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__result",
+        "RBP offset": -100,
+        "type": [
+          "gint",
+          "gboolean",
+          "gbool",
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__str",
+        "RBP offset": -96,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__suffix",
+        "RBP offset": -88,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__str_len",
+        "RBP offset": -80,
+        "type": [
+          "long unsigned int",
+          "size_t",
+          "long long"
+        ],
+        "size": 8,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__suffix_len",
+        "RBP offset": -72,
+        "type": [
+          "long unsigned int",
+          "size_t",
+          "long long"
+        ],
+        "size": 8,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__str",
+        "RBP offset": -64,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__suffix",
+        "RBP offset": -56,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__str_len",
+        "RBP offset": -48,
+        "type": [
+          "long unsigned int",
+          "size_t",
+          "long long"
+        ],
+        "size": 8,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__suffix_len",
+        "RBP offset": -40,
+        "type": [
+          "long unsigned int",
+          "size_t",
+          "long long"
+        ],
+        "size": 8,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__str",
+        "RBP offset": -32,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__suffix",
+        "RBP offset": -24,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__str_len",
+        "RBP offset": -16,
+        "type": [
+          "long unsigned int",
+          "size_t",
+          "long long"
+        ],
+        "size": 8,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__suffix_len",
+        "RBP offset": -8,
+        "type": [
+          "long unsigned int",
+          "size_t",
+          "long long"
+        ],
+        "size": 8,
+        "is_pointer": false,
         "is_typedef": true,
         "is_array": false,
         "is_struct": false,
@@ -6366,7 +6977,7 @@
     ]
   },
   "validate_line_is_comment": {
-    "address": "0xdd3a",
+    "address": "0x40b952",
     "variables": [
       {
         "name": "line",
@@ -6386,8 +6997,8 @@
         "name": "kf",
         "RBP offset": -8,
         "type": [
-          "_kf_validator*",
-          "kf_validator*"
+          "kf_validator*",
+          "_kf_validator*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -6400,11 +7011,11 @@
     ]
   },
   "validate_line_looks_like_group": {
-    "address": "0xdd6a",
+    "address": "0x40b986",
     "variables": [
       {
         "name": "group",
-        "RBP offset": -40,
+        "RBP offset": -56,
         "type": [
           "char**"
         ],
@@ -6418,7 +7029,7 @@
       },
       {
         "name": "line",
-        "RBP offset": -32,
+        "RBP offset": -48,
         "type": [
           "char*"
         ],
@@ -6432,10 +7043,10 @@
       },
       {
         "name": "kf",
-        "RBP offset": -24,
+        "RBP offset": -40,
         "type": [
-          "_kf_validator*",
-          "kf_validator*"
+          "kf_validator*",
+          "_kf_validator*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -6447,12 +7058,12 @@
       },
       {
         "name": "result",
-        "RBP offset": -12,
+        "RBP offset": -20,
         "type": [
-          "int",
-          "gbool",
+          "gint",
           "gboolean",
-          "gint"
+          "gbool",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -6464,7 +7075,7 @@
       },
       {
         "name": "chomped",
-        "RBP offset": -8,
+        "RBP offset": -16,
         "type": [
           "char*"
         ],
@@ -6479,7 +7090,7 @@
     ]
   },
   "validate_line_looks_like_entry": {
-    "address": "0xde56",
+    "address": "0x40ba85",
     "variables": [
       {
         "name": "value",
@@ -6527,8 +7138,8 @@
         "name": "kf",
         "RBP offset": -24,
         "type": [
-          "_kf_validator*",
-          "kf_validator*"
+          "kf_validator*",
+          "_kf_validator*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -6540,7 +7151,7 @@
       },
       {
         "name": "p",
-        "RBP offset": -8,
+        "RBP offset": -16,
         "type": [
           "char*"
         ],
@@ -6555,14 +7166,14 @@
     ]
   },
   "validate_parse_line": {
-    "address": "0xdf25",
+    "address": "0x40bb64",
     "variables": [
       {
         "name": "kf",
-        "RBP offset": -72,
+        "RBP offset": -88,
         "type": [
-          "_kf_validator*",
-          "kf_validator*"
+          "kf_validator*",
+          "_kf_validator*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -6574,7 +7185,7 @@
       },
       {
         "name": "len",
-        "RBP offset": -60,
+        "RBP offset": -76,
         "type": [
           "int"
         ],
@@ -6588,7 +7199,7 @@
       },
       {
         "name": "group",
-        "RBP offset": -56,
+        "RBP offset": -72,
         "type": [
           "char*"
         ],
@@ -6602,7 +7213,7 @@
       },
       {
         "name": "key",
-        "RBP offset": -48,
+        "RBP offset": -64,
         "type": [
           "char*"
         ],
@@ -6616,7 +7227,7 @@
       },
       {
         "name": "value",
-        "RBP offset": -40,
+        "RBP offset": -56,
         "type": [
           "char*"
         ],
@@ -6630,7 +7241,7 @@
       },
       {
         "name": "line",
-        "RBP offset": -32,
+        "RBP offset": -48,
         "type": [
           "char*"
         ],
@@ -6644,7 +7255,7 @@
       },
       {
         "name": "keyvalue",
-        "RBP offset": -24,
+        "RBP offset": -40,
         "type": [
           "kf_keyvalue*",
           "_kf_keyvalue*"
@@ -6659,10 +7270,10 @@
       },
       {
         "name": "keys",
-        "RBP offset": -16,
+        "RBP offset": -32,
         "type": [
-          "GSList*",
-          "_GSList*"
+          "_GSList*",
+          "GSList*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -6675,7 +7286,7 @@
     ]
   },
   "validate_parse_data": {
-    "address": "0xe2d5",
+    "address": "0x40bf46",
     "variables": [
       {
         "name": "length",
@@ -6709,8 +7320,8 @@
         "name": "kf",
         "RBP offset": -24,
         "type": [
-          "_kf_validator*",
-          "kf_validator*"
+          "kf_validator*",
+          "_kf_validator*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -6722,7 +7333,7 @@
       },
       {
         "name": "i",
-        "RBP offset": -4,
+        "RBP offset": -12,
         "type": [
           "int"
         ],
@@ -6737,14 +7348,14 @@
     ]
   },
   "validate_flush_parse_buffer": {
-    "address": "0xe46b",
+    "address": "0x40c160",
     "variables": [
       {
         "name": "kf",
         "RBP offset": -8,
         "type": [
-          "_kf_validator*",
-          "kf_validator*"
+          "kf_validator*",
+          "_kf_validator*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -6757,7 +7368,7 @@
     ]
   },
   "validate_parse_from_fd": {
-    "address": "0xe4cc",
+    "address": "0x40c1c9",
     "variables": [
       {
         "name": "fd",
@@ -6777,8 +7388,8 @@
         "name": "kf",
         "RBP offset": -4280,
         "type": [
-          "_kf_validator*",
-          "kf_validator*"
+          "kf_validator*",
+          "_kf_validator*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -6820,9 +7431,9 @@
             "name": "stat_buf.st_dev",
             "RBP offset": -4256,
             "type": [
+              "long unsigned int",
               "__dev_t",
-              "long long",
-              "long unsigned int"
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -6837,8 +7448,8 @@
             "RBP offset": -4248,
             "type": [
               "long unsigned int",
-              "long long",
-              "__ino_t"
+              "__ino_t",
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -6868,9 +7479,9 @@
             "name": "stat_buf.st_mode",
             "RBP offset": -4232,
             "type": [
+              "__mode_t",
               "unsigned int",
-              "int",
-              "__mode_t"
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -6901,8 +7512,8 @@
             "RBP offset": -4224,
             "type": [
               "unsigned int",
-              "int",
-              "__gid_t"
+              "__gid_t",
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -6930,9 +7541,9 @@
             "name": "stat_buf.st_rdev",
             "RBP offset": -4216,
             "type": [
+              "long unsigned int",
               "__dev_t",
-              "long long",
-              "long unsigned int"
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -6946,9 +7557,9 @@
             "name": "stat_buf.st_size",
             "RBP offset": -4208,
             "type": [
+              "long long",
               "__off_t",
-              "long int",
-              "long long"
+              "long int"
             ],
             "size": 8,
             "is_pointer": false,
@@ -6962,9 +7573,9 @@
             "name": "stat_buf.st_blksize",
             "RBP offset": -4200,
             "type": [
-              "long int",
               "__blksize_t",
-              "long long"
+              "long long",
+              "long int"
             ],
             "size": 8,
             "is_pointer": false,
@@ -7008,9 +7619,9 @@
                 "name": "stat_buf.st_atim.tv_sec",
                 "RBP offset": -4184,
                 "type": [
+                  "long long",
                   "__time_t",
-                  "long int",
-                  "long long"
+                  "long int"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -7024,9 +7635,9 @@
                 "name": "stat_buf.st_atim.tv_nsec",
                 "RBP offset": -4176,
                 "type": [
+                  "long long",
                   "long int",
-                  "__syscall_slong_t",
-                  "long long"
+                  "__syscall_slong_t"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -7056,9 +7667,9 @@
                 "name": "stat_buf.st_mtim.tv_sec",
                 "RBP offset": -4168,
                 "type": [
+                  "long long",
                   "__time_t",
-                  "long int",
-                  "long long"
+                  "long int"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -7072,9 +7683,9 @@
                 "name": "stat_buf.st_mtim.tv_nsec",
                 "RBP offset": -4160,
                 "type": [
+                  "long long",
                   "long int",
-                  "__syscall_slong_t",
-                  "long long"
+                  "__syscall_slong_t"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -7104,9 +7715,9 @@
                 "name": "stat_buf.st_ctim.tv_sec",
                 "RBP offset": -4152,
                 "type": [
+                  "long long",
                   "__time_t",
-                  "long int",
-                  "long long"
+                  "long int"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -7120,9 +7731,9 @@
                 "name": "stat_buf.st_ctim.tv_nsec",
                 "RBP offset": -4144,
                 "type": [
+                  "long long",
                   "long int",
-                  "__syscall_slong_t",
-                  "long long"
+                  "__syscall_slong_t"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -7181,14 +7792,14 @@
     ]
   },
   "validate_load_and_parse": {
-    "address": "0xe69d",
+    "address": "0x40c3ba",
     "variables": [
       {
         "name": "kf",
         "RBP offset": -24,
         "type": [
-          "_kf_validator*",
-          "kf_validator*"
+          "kf_validator*",
+          "_kf_validator*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -7216,10 +7827,10 @@
         "name": "ret",
         "RBP offset": -4,
         "type": [
-          "int",
-          "gbool",
+          "gint",
           "gboolean",
-          "gint"
+          "gbool",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -7232,7 +7843,7 @@
     ]
   },
   "groups_hashtable_free": {
-    "address": "0xe723",
+    "address": "0x40c44b",
     "variables": [
       {
         "name": "data",
@@ -7283,8 +7894,8 @@
         "name": "sl",
         "RBP offset": -24,
         "type": [
-          "GSList*",
-          "_GSList*"
+          "_GSList*",
+          "GSList*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -7298,8 +7909,8 @@
         "name": "list",
         "RBP offset": -16,
         "type": [
-          "GSList*",
-          "_GSList*"
+          "_GSList*",
+          "GSList*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -7327,16 +7938,16 @@
     ]
   },
   "desktop_file_validate": {
-    "address": "0xe7aa",
+    "address": "0x40c4d8",
     "variables": [
       {
         "name": "no_hints",
-        "RBP offset": -180,
+        "RBP offset": -196,
         "type": [
-          "int",
-          "gbool",
+          "gint",
           "gboolean",
-          "gint"
+          "gbool",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -7348,12 +7959,12 @@
       },
       {
         "name": "no_warn_deprecated",
-        "RBP offset": -176,
+        "RBP offset": -192,
         "type": [
-          "int",
-          "gbool",
+          "gint",
           "gboolean",
-          "gint"
+          "gbool",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -7365,12 +7976,12 @@
       },
       {
         "name": "warn_kde",
-        "RBP offset": -172,
+        "RBP offset": -188,
         "type": [
-          "int",
-          "gbool",
+          "gint",
           "gboolean",
-          "gint"
+          "gbool",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -7382,7 +7993,7 @@
       },
       {
         "name": "filename",
-        "RBP offset": -168,
+        "RBP offset": -184,
         "type": [
           "char*"
         ],
@@ -7396,12 +8007,12 @@
       },
       {
         "name": "kf",
-        "RBP offset": -160,
+        "RBP offset": -176,
         "type": [
           "_kf_validator",
           "kf_validator"
         ],
-        "size": 152,
+        "size": 160,
         "is_pointer": false,
         "is_typedef": true,
         "is_array": false,
@@ -7411,7 +8022,7 @@
         "elements": [
           {
             "name": "kf.filename",
-            "RBP offset": -160,
+            "RBP offset": -176,
             "type": [
               "char*"
             ],
@@ -7425,7 +8036,7 @@
           },
           {
             "name": "kf.parse_buffer",
-            "RBP offset": -152,
+            "RBP offset": -168,
             "type": [
               "_GString*",
               "GString*"
@@ -7440,12 +8051,12 @@
           },
           {
             "name": "kf.utf8_warning",
-            "RBP offset": -144,
+            "RBP offset": -160,
             "type": [
-              "int",
-              "gbool",
+              "gint",
               "gboolean",
-              "gint"
+              "gbool",
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -7457,12 +8068,12 @@
           },
           {
             "name": "kf.cr_error",
-            "RBP offset": -140,
+            "RBP offset": -156,
             "type": [
-              "int",
-              "gbool",
+              "gint",
               "gboolean",
-              "gint"
+              "gbool",
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -7474,7 +8085,7 @@
           },
           {
             "name": "kf.current_group",
-            "RBP offset": -136,
+            "RBP offset": -152,
             "type": [
               "char*"
             ],
@@ -7488,7 +8099,7 @@
           },
           {
             "name": "kf.groups",
-            "RBP offset": -128,
+            "RBP offset": -144,
             "type": [
               "_GHashTable*",
               "GHashTable*"
@@ -7503,7 +8114,7 @@
           },
           {
             "name": "kf.current_keys",
-            "RBP offset": -120,
+            "RBP offset": -136,
             "type": [
               "_GHashTable*",
               "GHashTable*"
@@ -7518,12 +8129,12 @@
           },
           {
             "name": "kf.kde_reserved_warnings",
-            "RBP offset": -112,
+            "RBP offset": -128,
             "type": [
-              "int",
-              "gbool",
+              "gint",
               "gboolean",
-              "gint"
+              "gbool",
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -7535,12 +8146,12 @@
           },
           {
             "name": "kf.no_deprecated_warnings",
-            "RBP offset": -108,
+            "RBP offset": -124,
             "type": [
-              "int",
-              "gbool",
+              "gint",
               "gboolean",
-              "gint"
+              "gbool",
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -7552,12 +8163,12 @@
           },
           {
             "name": "kf.no_hints",
-            "RBP offset": -104,
+            "RBP offset": -120,
             "type": [
-              "int",
-              "gbool",
+              "gint",
               "gboolean",
-              "gint"
+              "gbool",
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -7569,7 +8180,7 @@
           },
           {
             "name": "kf.main_group",
-            "RBP offset": -96,
+            "RBP offset": -112,
             "type": [
               "char*"
             ],
@@ -7583,10 +8194,10 @@
           },
           {
             "name": "kf.type",
-            "RBP offset": -88,
+            "RBP offset": -104,
             "type": [
-              "DesktopType",
-              "int"
+              "int",
+              "DesktopType"
             ],
             "size": 4,
             "is_pointer": false,
@@ -7598,7 +8209,7 @@
           },
           {
             "name": "kf.type_string",
-            "RBP offset": -80,
+            "RBP offset": -96,
             "type": [
               "char*"
             ],
@@ -7612,12 +8223,12 @@
           },
           {
             "name": "kf.show_in",
-            "RBP offset": -72,
+            "RBP offset": -88,
             "type": [
-              "int",
-              "gbool",
+              "gint",
               "gboolean",
-              "gint"
+              "gbool",
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -7629,10 +8240,10 @@
           },
           {
             "name": "kf.application_keys",
-            "RBP offset": -64,
+            "RBP offset": -80,
             "type": [
-              "GList*",
-              "_GList*"
+              "_GList*",
+              "GList*"
             ],
             "size": 8,
             "is_pointer": true,
@@ -7644,10 +8255,10 @@
           },
           {
             "name": "kf.link_keys",
-            "RBP offset": -56,
+            "RBP offset": -72,
             "type": [
-              "GList*",
-              "_GList*"
+              "_GList*",
+              "GList*"
             ],
             "size": 8,
             "is_pointer": true,
@@ -7659,10 +8270,10 @@
           },
           {
             "name": "kf.fsdevice_keys",
-            "RBP offset": -48,
+            "RBP offset": -64,
             "type": [
-              "GList*",
-              "_GList*"
+              "_GList*",
+              "GList*"
             ],
             "size": 8,
             "is_pointer": true,
@@ -7674,10 +8285,25 @@
           },
           {
             "name": "kf.mimetype_keys",
-            "RBP offset": -40,
+            "RBP offset": -56,
             "type": [
-              "GList*",
-              "_GList*"
+              "_GList*",
+              "GList*"
+            ],
+            "size": 8,
+            "is_pointer": true,
+            "is_typedef": true,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "kf.interfaces",
+            "RBP offset": -48,
+            "type": [
+              "_GHashTable*",
+              "GHashTable*"
             ],
             "size": 8,
             "is_pointer": true,
@@ -7689,7 +8315,7 @@
           },
           {
             "name": "kf.action_values",
-            "RBP offset": -32,
+            "RBP offset": -40,
             "type": [
               "_GHashTable*",
               "GHashTable*"
@@ -7704,7 +8330,7 @@
           },
           {
             "name": "kf.action_groups",
-            "RBP offset": -24,
+            "RBP offset": -32,
             "type": [
               "_GHashTable*",
               "GHashTable*"
@@ -7719,12 +8345,12 @@
           },
           {
             "name": "kf.fatal_error",
-            "RBP offset": -16,
+            "RBP offset": -24,
             "type": [
-              "int",
-              "gbool",
+              "gint",
               "gboolean",
-              "gint"
+              "gbool",
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -7736,12 +8362,12 @@
           },
           {
             "name": "kf.use_colors",
-            "RBP offset": -12,
+            "RBP offset": -20,
             "type": [
-              "int",
-              "gbool",
+              "gint",
               "gboolean",
-              "gint"
+              "gbool",
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -7756,7 +8382,7 @@
     ]
   },
   "desktop_file_fixup": {
-    "address": "0xeac2",
+    "address": "0x40c84e",
     "variables": [
       {
         "name": "filename",
@@ -7790,15 +8416,15 @@
     ]
   },
   "is_valid_mime_type_char": {
-    "address": "0xeb30",
+    "address": "0x40c8d0",
     "variables": [
       {
         "name": "c",
         "RBP offset": -36,
         "type": [
-          "unsigned char",
+          "guchar",
           "char",
-          "guchar"
+          "unsigned char"
         ],
         "size": 1,
         "is_pointer": false,
@@ -7830,7 +8456,7 @@
     ]
   },
   "is_valid_media_type": {
-    "address": "0xebb9",
+    "address": "0x40c961",
     "variables": [
       {
         "name": "error",
@@ -7878,7 +8504,7 @@
     ]
   },
   "mu_mime_type_is_valid": {
-    "address": "0xeebb",
+    "address": "0x40cc71",
     "variables": [
       {
         "name": "error",
@@ -7910,7 +8536,7 @@
       },
       {
         "name": "i",
-        "RBP offset": -24,
+        "RBP offset": -32,
         "type": [
           "unsigned int",
           "int"
@@ -7925,7 +8551,7 @@
       },
       {
         "name": "media_type_validity",
-        "RBP offset": -20,
+        "RBP offset": -28,
         "type": [
           "MimeUtilsValidity",
           "int"
@@ -7940,7 +8566,7 @@
       },
       {
         "name": "subtype",
-        "RBP offset": -16,
+        "RBP offset": -24,
         "type": [
           "char*"
         ],
@@ -7954,7 +8580,7 @@
       },
       {
         "name": "media_type",
-        "RBP offset": -8,
+        "RBP offset": -16,
         "type": [
           "char*"
         ],

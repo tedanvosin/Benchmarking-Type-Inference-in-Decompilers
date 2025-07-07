@@ -1,41 +1,17 @@
 {
   "main": {
-    "address": "0x1130",
-    "variables": []
-  },
-  "getmemorysize": {
-    "address": "0x1300",
-    "variables": []
-  },
-  "modifyheaders": {
-    "address": "0x1390",
-    "variables": []
-  },
-  "readcmdline": {
-    "address": "0x1430",
-    "variables": []
-  },
-  "err": {
-    "address": "0x1510",
-    "variables": []
-  },
-  "readelfheader": {
-    "address": "0x1550",
-    "variables": []
-  },
-  "readphdrtable": {
-    "address": "0x15e0",
+    "address": "0x401120",
     "variables": []
   },
   "truncatezeros": {
-    "address": "0x16b0",
+    "address": "0x401710",
     "variables": [
       {
         "name": "contents",
         "RBP offset": -1056,
         "type": [
-          "char[1024]",
-          "unsigned char[1024]"
+          "unsigned char[1024]",
+          "char[1024]"
         ],
         "size": 1024,
         "is_pointer": false,
@@ -53,20 +29,12 @@
       }
     ]
   },
-  "commitchanges": {
-    "address": "0x1830",
-    "variables": []
-  },
-  "revinplc2": {
-    "address": "0x1a10",
-    "variables": []
-  },
   "elfrw_read_Ehdr": {
-    "address": "0x1a40",
+    "address": "0x4018b0",
     "variables": [
       {
         "name": "in32",
-        "RBP offset": -112,
+        "RBP offset": -80,
         "type": [
           "Elf32_Ehdr"
         ],
@@ -80,10 +48,10 @@
         "elements": [
           {
             "name": "in32.e_ident",
-            "RBP offset": -112,
+            "RBP offset": -80,
             "type": [
-              "char[16]",
-              "unsigned char[16]"
+              "unsigned char[16]",
+              "char[16]"
             ],
             "size": 16,
             "is_pointer": false,
@@ -101,13 +69,13 @@
           },
           {
             "name": "in32.e_type",
-            "RBP offset": -96,
+            "RBP offset": -64,
             "type": [
               "Elf32_Half",
               "short int",
-              "uint16_t",
+              "__uint16_t",
               "short unsigned int",
-              "__uint16_t"
+              "uint16_t"
             ],
             "size": 2,
             "is_pointer": false,
@@ -119,13 +87,13 @@
           },
           {
             "name": "in32.e_machine",
-            "RBP offset": -94,
+            "RBP offset": -62,
             "type": [
               "Elf32_Half",
               "short int",
-              "uint16_t",
+              "__uint16_t",
               "short unsigned int",
-              "__uint16_t"
+              "uint16_t"
             ],
             "size": 2,
             "is_pointer": false,
@@ -137,13 +105,13 @@
           },
           {
             "name": "in32.e_version",
-            "RBP offset": -92,
+            "RBP offset": -60,
             "type": [
-              "int",
-              "uint32_t",
-              "unsigned int",
               "__uint32_t",
-              "Elf32_Word"
+              "Elf32_Word",
+              "unsigned int",
+              "int",
+              "uint32_t"
             ],
             "size": 4,
             "is_pointer": false,
@@ -155,13 +123,13 @@
           },
           {
             "name": "in32.e_entry",
-            "RBP offset": -88,
+            "RBP offset": -56,
             "type": [
-              "int",
-              "uint32_t",
               "Elf32_Addr",
+              "__uint32_t",
               "unsigned int",
-              "__uint32_t"
+              "int",
+              "uint32_t"
             ],
             "size": 4,
             "is_pointer": false,
@@ -173,13 +141,13 @@
           },
           {
             "name": "in32.e_phoff",
-            "RBP offset": -84,
+            "RBP offset": -52,
             "type": [
-              "int",
-              "uint32_t",
-              "unsigned int",
+              "Elf32_Off",
               "__uint32_t",
-              "Elf32_Off"
+              "unsigned int",
+              "int",
+              "uint32_t"
             ],
             "size": 4,
             "is_pointer": false,
@@ -191,13 +159,13 @@
           },
           {
             "name": "in32.e_shoff",
-            "RBP offset": -80,
+            "RBP offset": -48,
             "type": [
-              "int",
-              "uint32_t",
-              "unsigned int",
+              "Elf32_Off",
               "__uint32_t",
-              "Elf32_Off"
+              "unsigned int",
+              "int",
+              "uint32_t"
             ],
             "size": 4,
             "is_pointer": false,
@@ -209,13 +177,13 @@
           },
           {
             "name": "in32.e_flags",
-            "RBP offset": -76,
+            "RBP offset": -44,
             "type": [
-              "int",
-              "uint32_t",
-              "unsigned int",
               "__uint32_t",
-              "Elf32_Word"
+              "Elf32_Word",
+              "unsigned int",
+              "int",
+              "uint32_t"
             ],
             "size": 4,
             "is_pointer": false,
@@ -227,13 +195,13 @@
           },
           {
             "name": "in32.e_ehsize",
-            "RBP offset": -72,
+            "RBP offset": -40,
             "type": [
               "Elf32_Half",
               "short int",
-              "uint16_t",
+              "__uint16_t",
               "short unsigned int",
-              "__uint16_t"
+              "uint16_t"
             ],
             "size": 2,
             "is_pointer": false,
@@ -245,13 +213,13 @@
           },
           {
             "name": "in32.e_phentsize",
-            "RBP offset": -70,
+            "RBP offset": -38,
             "type": [
               "Elf32_Half",
               "short int",
-              "uint16_t",
+              "__uint16_t",
               "short unsigned int",
-              "__uint16_t"
+              "uint16_t"
             ],
             "size": 2,
             "is_pointer": false,
@@ -263,13 +231,13 @@
           },
           {
             "name": "in32.e_phnum",
-            "RBP offset": -68,
+            "RBP offset": -36,
             "type": [
               "Elf32_Half",
               "short int",
-              "uint16_t",
+              "__uint16_t",
               "short unsigned int",
-              "__uint16_t"
+              "uint16_t"
             ],
             "size": 2,
             "is_pointer": false,
@@ -281,13 +249,13 @@
           },
           {
             "name": "in32.e_shentsize",
-            "RBP offset": -66,
+            "RBP offset": -34,
             "type": [
               "Elf32_Half",
               "short int",
-              "uint16_t",
+              "__uint16_t",
               "short unsigned int",
-              "__uint16_t"
+              "uint16_t"
             ],
             "size": 2,
             "is_pointer": false,
@@ -299,13 +267,13 @@
           },
           {
             "name": "in32.e_shnum",
-            "RBP offset": -64,
+            "RBP offset": -32,
             "type": [
               "Elf32_Half",
               "short int",
-              "uint16_t",
+              "__uint16_t",
               "short unsigned int",
-              "__uint16_t"
+              "uint16_t"
             ],
             "size": 2,
             "is_pointer": false,
@@ -317,13 +285,13 @@
           },
           {
             "name": "in32.e_shstrndx",
-            "RBP offset": -62,
+            "RBP offset": -30,
             "type": [
               "Elf32_Half",
               "short int",
-              "uint16_t",
+              "__uint16_t",
               "short unsigned int",
-              "__uint16_t"
+              "uint16_t"
             ],
             "size": 2,
             "is_pointer": false,
@@ -338,11 +306,11 @@
     ]
   },
   "elfrw_write_Ehdr": {
-    "address": "0x1d00",
+    "address": "0x401b20",
     "variables": [
       {
         "name": "outrev",
-        "RBP offset": -128,
+        "RBP offset": -96,
         "type": [
           "Elf64_Ehdr"
         ],
@@ -356,10 +324,10 @@
         "elements": [
           {
             "name": "outrev.e_ident",
-            "RBP offset": -128,
+            "RBP offset": -96,
             "type": [
-              "char[16]",
-              "unsigned char[16]"
+              "unsigned char[16]",
+              "char[16]"
             ],
             "size": 16,
             "is_pointer": false,
@@ -377,13 +345,13 @@
           },
           {
             "name": "outrev.e_type",
-            "RBP offset": -112,
+            "RBP offset": -80,
             "type": [
-              "short int",
-              "uint16_t",
               "Elf64_Half",
+              "short int",
+              "__uint16_t",
               "short unsigned int",
-              "__uint16_t"
+              "uint16_t"
             ],
             "size": 2,
             "is_pointer": false,
@@ -395,13 +363,13 @@
           },
           {
             "name": "outrev.e_machine",
-            "RBP offset": -110,
+            "RBP offset": -78,
             "type": [
-              "short int",
-              "uint16_t",
               "Elf64_Half",
+              "short int",
+              "__uint16_t",
               "short unsigned int",
-              "__uint16_t"
+              "uint16_t"
             ],
             "size": 2,
             "is_pointer": false,
@@ -413,13 +381,13 @@
           },
           {
             "name": "outrev.e_version",
-            "RBP offset": -108,
+            "RBP offset": -76,
             "type": [
+              "__uint32_t",
+              "unsigned int",
               "int",
               "uint32_t",
-              "Elf64_Word",
-              "unsigned int",
-              "__uint32_t"
+              "Elf64_Word"
             ],
             "size": 4,
             "is_pointer": false,
@@ -431,13 +399,13 @@
           },
           {
             "name": "outrev.e_entry",
-            "RBP offset": -104,
+            "RBP offset": -72,
             "type": [
+              "uint64_t",
               "__uint64_t",
-              "Elf64_Addr",
-              "long long",
               "long unsigned int",
-              "uint64_t"
+              "Elf64_Addr",
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -449,13 +417,13 @@
           },
           {
             "name": "outrev.e_phoff",
-            "RBP offset": -96,
+            "RBP offset": -64,
             "type": [
+              "uint64_t",
               "__uint64_t",
-              "Elf64_Off",
-              "long long",
               "long unsigned int",
-              "uint64_t"
+              "long long",
+              "Elf64_Off"
             ],
             "size": 8,
             "is_pointer": false,
@@ -467,13 +435,13 @@
           },
           {
             "name": "outrev.e_shoff",
-            "RBP offset": -88,
+            "RBP offset": -56,
             "type": [
+              "uint64_t",
               "__uint64_t",
-              "Elf64_Off",
-              "long long",
               "long unsigned int",
-              "uint64_t"
+              "long long",
+              "Elf64_Off"
             ],
             "size": 8,
             "is_pointer": false,
@@ -485,13 +453,13 @@
           },
           {
             "name": "outrev.e_flags",
-            "RBP offset": -80,
+            "RBP offset": -48,
             "type": [
+              "__uint32_t",
+              "unsigned int",
               "int",
               "uint32_t",
-              "Elf64_Word",
-              "unsigned int",
-              "__uint32_t"
+              "Elf64_Word"
             ],
             "size": 4,
             "is_pointer": false,
@@ -503,13 +471,13 @@
           },
           {
             "name": "outrev.e_ehsize",
-            "RBP offset": -76,
+            "RBP offset": -44,
             "type": [
-              "short int",
-              "uint16_t",
               "Elf64_Half",
+              "short int",
+              "__uint16_t",
               "short unsigned int",
-              "__uint16_t"
+              "uint16_t"
             ],
             "size": 2,
             "is_pointer": false,
@@ -521,13 +489,13 @@
           },
           {
             "name": "outrev.e_phentsize",
-            "RBP offset": -74,
+            "RBP offset": -42,
             "type": [
-              "short int",
-              "uint16_t",
               "Elf64_Half",
+              "short int",
+              "__uint16_t",
               "short unsigned int",
-              "__uint16_t"
+              "uint16_t"
             ],
             "size": 2,
             "is_pointer": false,
@@ -539,13 +507,13 @@
           },
           {
             "name": "outrev.e_phnum",
-            "RBP offset": -72,
+            "RBP offset": -40,
             "type": [
-              "short int",
-              "uint16_t",
               "Elf64_Half",
+              "short int",
+              "__uint16_t",
               "short unsigned int",
-              "__uint16_t"
+              "uint16_t"
             ],
             "size": 2,
             "is_pointer": false,
@@ -557,13 +525,13 @@
           },
           {
             "name": "outrev.e_shentsize",
-            "RBP offset": -70,
+            "RBP offset": -38,
             "type": [
-              "short int",
-              "uint16_t",
               "Elf64_Half",
+              "short int",
+              "__uint16_t",
               "short unsigned int",
-              "__uint16_t"
+              "uint16_t"
             ],
             "size": 2,
             "is_pointer": false,
@@ -575,13 +543,13 @@
           },
           {
             "name": "outrev.e_shnum",
-            "RBP offset": -68,
+            "RBP offset": -36,
             "type": [
-              "short int",
-              "uint16_t",
               "Elf64_Half",
+              "short int",
+              "__uint16_t",
               "short unsigned int",
-              "__uint16_t"
+              "uint16_t"
             ],
             "size": 2,
             "is_pointer": false,
@@ -593,13 +561,13 @@
           },
           {
             "name": "outrev.e_shstrndx",
-            "RBP offset": -66,
+            "RBP offset": -34,
             "type": [
-              "short int",
-              "uint16_t",
               "Elf64_Half",
+              "short int",
+              "__uint16_t",
               "short unsigned int",
-              "__uint16_t"
+              "uint16_t"
             ],
             "size": 2,
             "is_pointer": false,
@@ -613,7 +581,7 @@
       },
       {
         "name": "out32",
-        "RBP offset": -128,
+        "RBP offset": -96,
         "type": [
           "Elf32_Ehdr"
         ],
@@ -627,10 +595,10 @@
         "elements": [
           {
             "name": "out32.e_ident",
-            "RBP offset": -128,
+            "RBP offset": -96,
             "type": [
-              "char[16]",
-              "unsigned char[16]"
+              "unsigned char[16]",
+              "char[16]"
             ],
             "size": 16,
             "is_pointer": false,
@@ -648,13 +616,13 @@
           },
           {
             "name": "out32.e_type",
-            "RBP offset": -112,
+            "RBP offset": -80,
             "type": [
               "Elf32_Half",
               "short int",
-              "uint16_t",
+              "__uint16_t",
               "short unsigned int",
-              "__uint16_t"
+              "uint16_t"
             ],
             "size": 2,
             "is_pointer": false,
@@ -666,13 +634,13 @@
           },
           {
             "name": "out32.e_machine",
-            "RBP offset": -110,
+            "RBP offset": -78,
             "type": [
               "Elf32_Half",
               "short int",
-              "uint16_t",
+              "__uint16_t",
               "short unsigned int",
-              "__uint16_t"
+              "uint16_t"
             ],
             "size": 2,
             "is_pointer": false,
@@ -684,13 +652,13 @@
           },
           {
             "name": "out32.e_version",
-            "RBP offset": -108,
+            "RBP offset": -76,
             "type": [
-              "int",
-              "uint32_t",
-              "unsigned int",
               "__uint32_t",
-              "Elf32_Word"
+              "Elf32_Word",
+              "unsigned int",
+              "int",
+              "uint32_t"
             ],
             "size": 4,
             "is_pointer": false,
@@ -702,13 +670,13 @@
           },
           {
             "name": "out32.e_entry",
-            "RBP offset": -104,
+            "RBP offset": -72,
             "type": [
-              "int",
-              "uint32_t",
               "Elf32_Addr",
+              "__uint32_t",
               "unsigned int",
-              "__uint32_t"
+              "int",
+              "uint32_t"
             ],
             "size": 4,
             "is_pointer": false,
@@ -720,13 +688,13 @@
           },
           {
             "name": "out32.e_phoff",
-            "RBP offset": -100,
+            "RBP offset": -68,
             "type": [
-              "int",
-              "uint32_t",
-              "unsigned int",
+              "Elf32_Off",
               "__uint32_t",
-              "Elf32_Off"
+              "unsigned int",
+              "int",
+              "uint32_t"
             ],
             "size": 4,
             "is_pointer": false,
@@ -738,13 +706,13 @@
           },
           {
             "name": "out32.e_shoff",
-            "RBP offset": -96,
+            "RBP offset": -64,
             "type": [
-              "int",
-              "uint32_t",
-              "unsigned int",
+              "Elf32_Off",
               "__uint32_t",
-              "Elf32_Off"
+              "unsigned int",
+              "int",
+              "uint32_t"
             ],
             "size": 4,
             "is_pointer": false,
@@ -756,13 +724,13 @@
           },
           {
             "name": "out32.e_flags",
-            "RBP offset": -92,
+            "RBP offset": -60,
             "type": [
-              "int",
-              "uint32_t",
-              "unsigned int",
               "__uint32_t",
-              "Elf32_Word"
+              "Elf32_Word",
+              "unsigned int",
+              "int",
+              "uint32_t"
             ],
             "size": 4,
             "is_pointer": false,
@@ -774,13 +742,13 @@
           },
           {
             "name": "out32.e_ehsize",
-            "RBP offset": -88,
+            "RBP offset": -56,
             "type": [
               "Elf32_Half",
               "short int",
-              "uint16_t",
+              "__uint16_t",
               "short unsigned int",
-              "__uint16_t"
+              "uint16_t"
             ],
             "size": 2,
             "is_pointer": false,
@@ -792,13 +760,13 @@
           },
           {
             "name": "out32.e_phentsize",
-            "RBP offset": -86,
+            "RBP offset": -54,
             "type": [
               "Elf32_Half",
               "short int",
-              "uint16_t",
+              "__uint16_t",
               "short unsigned int",
-              "__uint16_t"
+              "uint16_t"
             ],
             "size": 2,
             "is_pointer": false,
@@ -810,13 +778,13 @@
           },
           {
             "name": "out32.e_phnum",
-            "RBP offset": -84,
+            "RBP offset": -52,
             "type": [
               "Elf32_Half",
               "short int",
-              "uint16_t",
+              "__uint16_t",
               "short unsigned int",
-              "__uint16_t"
+              "uint16_t"
             ],
             "size": 2,
             "is_pointer": false,
@@ -828,13 +796,13 @@
           },
           {
             "name": "out32.e_shentsize",
-            "RBP offset": -82,
+            "RBP offset": -50,
             "type": [
               "Elf32_Half",
               "short int",
-              "uint16_t",
+              "__uint16_t",
               "short unsigned int",
-              "__uint16_t"
+              "uint16_t"
             ],
             "size": 2,
             "is_pointer": false,
@@ -846,13 +814,13 @@
           },
           {
             "name": "out32.e_shnum",
-            "RBP offset": -80,
+            "RBP offset": -48,
             "type": [
               "Elf32_Half",
               "short int",
-              "uint16_t",
+              "__uint16_t",
               "short unsigned int",
-              "__uint16_t"
+              "uint16_t"
             ],
             "size": 2,
             "is_pointer": false,
@@ -864,13 +832,13 @@
           },
           {
             "name": "out32.e_shstrndx",
-            "RBP offset": -78,
+            "RBP offset": -46,
             "type": [
               "Elf32_Half",
               "short int",
-              "uint16_t",
+              "__uint16_t",
               "short unsigned int",
-              "__uint16_t"
+              "uint16_t"
             ],
             "size": 2,
             "is_pointer": false,
@@ -884,20 +852,12 @@
       }
     ]
   },
-  "revinplc4": {
-    "address": "0x2000",
-    "variables": []
-  },
-  "revinplc8": {
-    "address": "0x2010",
-    "variables": []
-  },
   "elfrw_read_Phdr": {
-    "address": "0x2020",
+    "address": "0x401d40",
     "variables": [
       {
         "name": "in32",
-        "RBP offset": -80,
+        "RBP offset": -48,
         "type": [
           "Elf32_Phdr"
         ],
@@ -911,13 +871,13 @@
         "elements": [
           {
             "name": "in32.p_type",
-            "RBP offset": -80,
+            "RBP offset": -48,
             "type": [
-              "int",
-              "uint32_t",
-              "unsigned int",
               "__uint32_t",
-              "Elf32_Word"
+              "Elf32_Word",
+              "unsigned int",
+              "int",
+              "uint32_t"
             ],
             "size": 4,
             "is_pointer": false,
@@ -929,13 +889,13 @@
           },
           {
             "name": "in32.p_offset",
-            "RBP offset": -76,
+            "RBP offset": -44,
             "type": [
-              "int",
-              "uint32_t",
-              "unsigned int",
+              "Elf32_Off",
               "__uint32_t",
-              "Elf32_Off"
+              "unsigned int",
+              "int",
+              "uint32_t"
             ],
             "size": 4,
             "is_pointer": false,
@@ -947,13 +907,13 @@
           },
           {
             "name": "in32.p_vaddr",
-            "RBP offset": -72,
+            "RBP offset": -40,
             "type": [
-              "int",
-              "uint32_t",
               "Elf32_Addr",
+              "__uint32_t",
               "unsigned int",
-              "__uint32_t"
+              "int",
+              "uint32_t"
             ],
             "size": 4,
             "is_pointer": false,
@@ -965,13 +925,13 @@
           },
           {
             "name": "in32.p_paddr",
-            "RBP offset": -68,
+            "RBP offset": -36,
             "type": [
-              "int",
-              "uint32_t",
               "Elf32_Addr",
+              "__uint32_t",
               "unsigned int",
-              "__uint32_t"
+              "int",
+              "uint32_t"
             ],
             "size": 4,
             "is_pointer": false,
@@ -983,13 +943,13 @@
           },
           {
             "name": "in32.p_filesz",
-            "RBP offset": -64,
+            "RBP offset": -32,
             "type": [
-              "int",
-              "uint32_t",
-              "unsigned int",
               "__uint32_t",
-              "Elf32_Word"
+              "Elf32_Word",
+              "unsigned int",
+              "int",
+              "uint32_t"
             ],
             "size": 4,
             "is_pointer": false,
@@ -1001,13 +961,13 @@
           },
           {
             "name": "in32.p_memsz",
-            "RBP offset": -60,
+            "RBP offset": -28,
             "type": [
-              "int",
-              "uint32_t",
-              "unsigned int",
               "__uint32_t",
-              "Elf32_Word"
+              "Elf32_Word",
+              "unsigned int",
+              "int",
+              "uint32_t"
             ],
             "size": 4,
             "is_pointer": false,
@@ -1019,13 +979,13 @@
           },
           {
             "name": "in32.p_flags",
-            "RBP offset": -56,
+            "RBP offset": -24,
             "type": [
-              "int",
-              "uint32_t",
-              "unsigned int",
               "__uint32_t",
-              "Elf32_Word"
+              "Elf32_Word",
+              "unsigned int",
+              "int",
+              "uint32_t"
             ],
             "size": 4,
             "is_pointer": false,
@@ -1037,13 +997,13 @@
           },
           {
             "name": "in32.p_align",
-            "RBP offset": -52,
+            "RBP offset": -20,
             "type": [
-              "int",
-              "uint32_t",
-              "unsigned int",
               "__uint32_t",
-              "Elf32_Word"
+              "Elf32_Word",
+              "unsigned int",
+              "int",
+              "uint32_t"
             ],
             "size": 4,
             "is_pointer": false,
@@ -1058,15 +1018,15 @@
     ]
   },
   "elfrw_read_Phdrs": {
-    "address": "0x21f0",
+    "address": "0x401f10",
     "variables": []
   },
   "elfrw_write_Phdr": {
-    "address": "0x2240",
+    "address": "0x401f70",
     "variables": [
       {
         "name": "outrev",
-        "RBP offset": -80,
+        "RBP offset": -64,
         "type": [
           "Elf64_Phdr"
         ],
@@ -1080,13 +1040,13 @@
         "elements": [
           {
             "name": "outrev.p_type",
-            "RBP offset": -80,
+            "RBP offset": -64,
             "type": [
+              "__uint32_t",
+              "unsigned int",
               "int",
               "uint32_t",
-              "Elf64_Word",
-              "unsigned int",
-              "__uint32_t"
+              "Elf64_Word"
             ],
             "size": 4,
             "is_pointer": false,
@@ -1098,13 +1058,13 @@
           },
           {
             "name": "outrev.p_flags",
-            "RBP offset": -76,
+            "RBP offset": -60,
             "type": [
+              "__uint32_t",
+              "unsigned int",
               "int",
               "uint32_t",
-              "Elf64_Word",
-              "unsigned int",
-              "__uint32_t"
+              "Elf64_Word"
             ],
             "size": 4,
             "is_pointer": false,
@@ -1116,13 +1076,13 @@
           },
           {
             "name": "outrev.p_offset",
-            "RBP offset": -72,
+            "RBP offset": -56,
             "type": [
+              "uint64_t",
               "__uint64_t",
-              "Elf64_Off",
-              "long long",
               "long unsigned int",
-              "uint64_t"
+              "long long",
+              "Elf64_Off"
             ],
             "size": 8,
             "is_pointer": false,
@@ -1134,13 +1094,13 @@
           },
           {
             "name": "outrev.p_vaddr",
-            "RBP offset": -64,
+            "RBP offset": -48,
             "type": [
+              "uint64_t",
               "__uint64_t",
-              "Elf64_Addr",
-              "long long",
               "long unsigned int",
-              "uint64_t"
+              "Elf64_Addr",
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -1152,13 +1112,13 @@
           },
           {
             "name": "outrev.p_paddr",
-            "RBP offset": -56,
+            "RBP offset": -40,
             "type": [
+              "uint64_t",
               "__uint64_t",
-              "Elf64_Addr",
-              "long long",
               "long unsigned int",
-              "uint64_t"
+              "Elf64_Addr",
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -1170,13 +1130,13 @@
           },
           {
             "name": "outrev.p_filesz",
-            "RBP offset": -48,
+            "RBP offset": -32,
             "type": [
               "Elf64_Xword",
-              "__uint64_t",
-              "long long",
+              "uint64_t",
               "long unsigned int",
-              "uint64_t"
+              "__uint64_t",
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -1188,13 +1148,13 @@
           },
           {
             "name": "outrev.p_memsz",
-            "RBP offset": -40,
+            "RBP offset": -24,
             "type": [
               "Elf64_Xword",
-              "__uint64_t",
-              "long long",
+              "uint64_t",
               "long unsigned int",
-              "uint64_t"
+              "__uint64_t",
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -1206,13 +1166,13 @@
           },
           {
             "name": "outrev.p_align",
-            "RBP offset": -32,
+            "RBP offset": -16,
             "type": [
               "Elf64_Xword",
-              "__uint64_t",
-              "long long",
+              "uint64_t",
               "long unsigned int",
-              "uint64_t"
+              "__uint64_t",
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -1226,7 +1186,7 @@
       },
       {
         "name": "out32",
-        "RBP offset": -80,
+        "RBP offset": -64,
         "type": [
           "Elf32_Phdr"
         ],
@@ -1240,13 +1200,13 @@
         "elements": [
           {
             "name": "out32.p_type",
-            "RBP offset": -80,
+            "RBP offset": -64,
             "type": [
-              "int",
-              "uint32_t",
-              "unsigned int",
               "__uint32_t",
-              "Elf32_Word"
+              "Elf32_Word",
+              "unsigned int",
+              "int",
+              "uint32_t"
             ],
             "size": 4,
             "is_pointer": false,
@@ -1258,13 +1218,13 @@
           },
           {
             "name": "out32.p_offset",
-            "RBP offset": -76,
+            "RBP offset": -60,
             "type": [
-              "int",
-              "uint32_t",
-              "unsigned int",
+              "Elf32_Off",
               "__uint32_t",
-              "Elf32_Off"
+              "unsigned int",
+              "int",
+              "uint32_t"
             ],
             "size": 4,
             "is_pointer": false,
@@ -1276,13 +1236,13 @@
           },
           {
             "name": "out32.p_vaddr",
-            "RBP offset": -72,
+            "RBP offset": -56,
             "type": [
-              "int",
-              "uint32_t",
               "Elf32_Addr",
+              "__uint32_t",
               "unsigned int",
-              "__uint32_t"
+              "int",
+              "uint32_t"
             ],
             "size": 4,
             "is_pointer": false,
@@ -1294,13 +1254,13 @@
           },
           {
             "name": "out32.p_paddr",
-            "RBP offset": -68,
+            "RBP offset": -52,
             "type": [
-              "int",
-              "uint32_t",
               "Elf32_Addr",
+              "__uint32_t",
               "unsigned int",
-              "__uint32_t"
+              "int",
+              "uint32_t"
             ],
             "size": 4,
             "is_pointer": false,
@@ -1312,13 +1272,13 @@
           },
           {
             "name": "out32.p_filesz",
-            "RBP offset": -64,
+            "RBP offset": -48,
             "type": [
-              "int",
-              "uint32_t",
-              "unsigned int",
               "__uint32_t",
-              "Elf32_Word"
+              "Elf32_Word",
+              "unsigned int",
+              "int",
+              "uint32_t"
             ],
             "size": 4,
             "is_pointer": false,
@@ -1330,13 +1290,13 @@
           },
           {
             "name": "out32.p_memsz",
-            "RBP offset": -60,
+            "RBP offset": -44,
             "type": [
-              "int",
-              "uint32_t",
-              "unsigned int",
               "__uint32_t",
-              "Elf32_Word"
+              "Elf32_Word",
+              "unsigned int",
+              "int",
+              "uint32_t"
             ],
             "size": 4,
             "is_pointer": false,
@@ -1348,13 +1308,13 @@
           },
           {
             "name": "out32.p_flags",
-            "RBP offset": -56,
+            "RBP offset": -40,
             "type": [
-              "int",
-              "uint32_t",
-              "unsigned int",
               "__uint32_t",
-              "Elf32_Word"
+              "Elf32_Word",
+              "unsigned int",
+              "int",
+              "uint32_t"
             ],
             "size": 4,
             "is_pointer": false,
@@ -1366,13 +1326,13 @@
           },
           {
             "name": "out32.p_align",
-            "RBP offset": -52,
+            "RBP offset": -36,
             "type": [
-              "int",
-              "uint32_t",
-              "unsigned int",
               "__uint32_t",
-              "Elf32_Word"
+              "Elf32_Word",
+              "unsigned int",
+              "int",
+              "uint32_t"
             ],
             "size": 4,
             "is_pointer": false,
@@ -1387,190 +1347,47 @@
     ]
   },
   "elfrw_write_Phdrs": {
-    "address": "0x2400",
-    "variables": []
-  },
-  "rev2": {
-    "address": "0x2450",
-    "variables": []
-  },
-  "rev4": {
-    "address": "0x2460",
-    "variables": []
-  },
-  "rev8": {
-    "address": "0x2470",
-    "variables": []
-  },
-  "elfrw_initialize_direct": {
-    "address": "0x2480",
+    "address": "0x402100",
     "variables": []
   },
   "elfrw_initialize_ident": {
-    "address": "0x2510",
+    "address": "0x4021d0",
     "variables": []
   },
   "elfrw_getsettings": {
-    "address": "0x2550",
+    "address": "0x402280",
     "variables": []
-  },
-  "elfrw_read_Half": {
-    "address": "0x2580",
-    "variables": []
-  },
-  "elfrw_read_Word": {
-    "address": "0x25d0",
-    "variables": []
-  },
-  "elfrw_read_Xword": {
-    "address": "0x2620",
-    "variables": []
-  },
-  "elfrw_read_Addr": {
-    "address": "0x2670",
-    "variables": [
-      {
-        "name": "word",
-        "RBP offset": -12,
-        "type": [
-          "int",
-          "uint32_t",
-          "unsigned int",
-          "__uint32_t",
-          "Elf32_Word"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": true,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      }
-    ]
   },
   "elfrw_read_Sword": {
-    "address": "0x26e0",
+    "address": "0x4024a0",
     "variables": []
   },
   "elfrw_read_Sxword": {
-    "address": "0x26f0",
+    "address": "0x402500",
     "variables": []
   },
   "elfrw_read_Off": {
-    "address": "0x2700",
+    "address": "0x402560",
     "variables": []
   },
   "elfrw_read_Versym": {
-    "address": "0x2710",
+    "address": "0x402630",
     "variables": []
   },
-  "elfrw_write_Half": {
-    "address": "0x2720",
-    "variables": [
-      {
-        "name": "outrev",
-        "RBP offset": -10,
-        "type": [
-          "short int",
-          "uint16_t",
-          "Elf64_Half",
-          "short unsigned int",
-          "__uint16_t"
-        ],
-        "size": 2,
-        "is_pointer": false,
-        "is_typedef": true,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      }
-    ]
-  },
-  "elfrw_write_Word": {
-    "address": "0x2790",
-    "variables": [
-      {
-        "name": "outrev",
-        "RBP offset": -12,
-        "type": [
-          "int",
-          "uint32_t",
-          "Elf64_Word",
-          "unsigned int",
-          "__uint32_t"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": true,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      }
-    ]
-  },
-  "elfrw_write_Xword": {
-    "address": "0x2800",
-    "variables": [
-      {
-        "name": "outrev",
-        "RBP offset": -16,
-        "type": [
-          "Elf64_Xword",
-          "__uint64_t",
-          "long long",
-          "long unsigned int",
-          "uint64_t"
-        ],
-        "size": 8,
-        "is_pointer": false,
-        "is_typedef": true,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      }
-    ]
-  },
-  "elfrw_write_Addr": {
-    "address": "0x2870",
-    "variables": [
-      {
-        "name": "word",
-        "RBP offset": -12,
-        "type": [
-          "int",
-          "uint32_t",
-          "unsigned int",
-          "__uint32_t",
-          "Elf32_Word"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": true,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      }
-    ]
-  },
   "elfrw_write_Sword": {
-    "address": "0x28e0",
+    "address": "0x402870",
     "variables": []
   },
   "elfrw_write_Sxword": {
-    "address": "0x28f0",
+    "address": "0x4028e0",
     "variables": []
   },
   "elfrw_write_Off": {
-    "address": "0x2900",
+    "address": "0x402950",
     "variables": []
   },
   "elfrw_write_Versym": {
-    "address": "0x2910",
+    "address": "0x4029f0",
     "variables": []
   }
 }

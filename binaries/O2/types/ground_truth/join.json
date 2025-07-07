@@ -1,37 +1,21 @@
 {
-  "main": {
-    "address": "0x1130",
-    "variables": []
-  },
-  "runecmp": {
-    "address": "0x1240",
-    "variables": []
-  },
-  "runetostr": {
-    "address": "0x1280",
-    "variables": []
-  },
-  "strtorune": {
-    "address": "0x12e0",
-    "variables": []
-  },
-  "input": {
-    "address": "0x1340",
+  "print_errno_message": {
+    "address": "0x402400",
     "variables": [
       {
-        "name": "line",
-        "RBP offset": -8240,
+        "name": "errbuf",
+        "RBP offset": -1032,
         "type": [
-          "char[8192]"
+          "char[1024]"
         ],
-        "size": 8192,
+        "size": 1024,
         "is_pointer": false,
         "is_typedef": false,
         "is_array": true,
         "is_struct": false,
         "is_union": false,
         "is_enum": false,
-        "array_length": 8192,
+        "array_length": 1024,
         "element_type": [
           "char"
         ],
@@ -39,175 +23,267 @@
       }
     ]
   },
-  "output": {
-    "address": "0x14a0",
-    "variables": [
-      {
-        "name": "buf",
-        "RBP offset": -8256,
-        "type": [
-          "char[8192]"
-        ],
-        "size": 8192,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": true,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false,
-        "array_length": 8192,
-        "element_type": [
-          "char"
-        ],
-        "element_size": 1
-      }
-    ]
-  },
-  "seek2": {
-    "address": "0x17c0",
+  "error_tail": {
+    "address": "0x402485",
     "variables": []
   },
-  "seek1": {
-    "address": "0x1a10",
+  "verror": {
+    "address": "0x40252e",
     "variables": []
   },
   "error": {
-    "address": "0x1c40",
-    "variables": []
-  },
-  "getoptarg": {
-    "address": "0x1cb0",
-    "variables": []
-  },
-  "oparse": {
-    "address": "0x1d20",
-    "variables": []
-  },
-  "p9main": {
-    "address": "0x1e00",
-    "variables": []
-  },
-  "p9atexit": {
-    "address": "0x23d0",
-    "variables": []
-  },
-  "p9atexitdont": {
-    "address": "0x2470",
-    "variables": []
-  },
-  "exits": {
-    "address": "0x24d0",
-    "variables": []
-  },
-  "p9atoi": {
-    "address": "0x2550",
-    "variables": []
-  },
-  "exitcode": {
-    "address": "0x2560",
-    "variables": []
-  },
-  "lock": {
-    "address": "0x2570",
-    "variables": []
-  },
-  "canlock": {
-    "address": "0x25a0",
-    "variables": []
-  },
-  "unlock": {
-    "address": "0x25e0",
-    "variables": []
-  },
-  "qlock": {
-    "address": "0x2610",
-    "variables": []
-  },
-  "canqlock": {
-    "address": "0x2640",
-    "variables": []
-  },
-  "qunlock": {
-    "address": "0x2680",
-    "variables": []
-  },
-  "rlock": {
-    "address": "0x26b0",
-    "variables": []
-  },
-  "canrlock": {
-    "address": "0x26e0",
-    "variables": []
-  },
-  "runlock": {
-    "address": "0x2720",
-    "variables": []
-  },
-  "wlock": {
-    "address": "0x2750",
-    "variables": []
-  },
-  "canwlock": {
-    "address": "0x2780",
-    "variables": []
-  },
-  "wunlock": {
-    "address": "0x27d0",
-    "variables": []
-  },
-  "rsleep": {
-    "address": "0x2800",
-    "variables": []
-  },
-  "rwakeup": {
-    "address": "0x2830",
-    "variables": []
-  },
-  "rwakeupall": {
-    "address": "0x2860",
-    "variables": []
-  },
-  "chartorune": {
-    "address": "0x2890",
-    "variables": []
-  },
-  "runetochar": {
-    "address": "0x2980",
-    "variables": []
-  },
-  "runelen": {
-    "address": "0x2a50",
+    "address": "0x40258b",
     "variables": [
       {
-        "name": "rune",
-        "RBP offset": -24,
+        "name": "ap",
+        "RBP offset": -208,
         "type": [
-          "int",
-          "unsigned int",
-          "Rune"
+          "va_list",
+          "__va_list_tag[1]",
+          "__builtin_va_list",
+          "__gnuc_va_list"
+        ],
+        "size": 24,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": true,
+        "is_struct": true,
+        "is_union": false,
+        "is_enum": false,
+        "array_length": 1,
+        "element_type": [
+          "__va_list_tag"
+        ],
+        "element_size": 24,
+        "elements": []
+      }
+    ]
+  },
+  "verror_at_line": {
+    "address": "0x402647",
+    "variables": []
+  },
+  "error_at_line": {
+    "address": "0x402745",
+    "variables": [
+      {
+        "name": "ap",
+        "RBP offset": -208,
+        "type": [
+          "va_list",
+          "__va_list_tag[1]",
+          "__builtin_va_list",
+          "__gnuc_va_list"
+        ],
+        "size": 24,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": true,
+        "is_struct": true,
+        "is_union": false,
+        "is_enum": false,
+        "array_length": 1,
+        "element_type": [
+          "__va_list_tag"
+        ],
+        "element_size": 24,
+        "elements": []
+      }
+    ]
+  },
+  "main": {
+    "address": "0x402840",
+    "variables": [
+      {
+        "name": "optc_status",
+        "RBP offset": -148,
+        "type": [
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
-        "is_typedef": true,
+        "is_typedef": false,
         "is_array": false,
         "is_struct": false,
         "is_union": false,
         "is_enum": false
       },
       {
-        "name": "str",
-        "RBP offset": -18,
+        "name": "prev_optc_status",
+        "RBP offset": -144,
         "type": [
-          "char[10]"
+          "int"
         ],
-        "size": 10,
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "nfiles",
+        "RBP offset": -140,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "val",
+        "RBP offset": -96,
+        "type": [
+          "long long",
+          "long int"
+        ],
+        "size": 8,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "joption_count",
+        "RBP offset": -72,
+        "type": [
+          "int[2]"
+        ],
+        "size": 8,
         "is_pointer": false,
         "is_typedef": false,
         "is_array": true,
         "is_struct": false,
         "is_union": false,
         "is_enum": false,
-        "array_length": 10,
+        "array_length": 2,
+        "element_type": [
+          "int"
+        ],
+        "element_size": 4
+      },
+      {
+        "name": "operand_status",
+        "RBP offset": -64,
+        "type": [
+          "int[2]"
+        ],
+        "size": 8,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": true,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false,
+        "array_length": 2,
+        "element_type": [
+          "int"
+        ],
+        "element_size": 4
+      }
+    ]
+  },
+  "keycmp": {
+    "address": "0x4036c0",
+    "variables": []
+  },
+  "prfields": {
+    "address": "0x403960",
+    "variables": []
+  },
+  "prjoin": {
+    "address": "0x403a20",
+    "variables": []
+  },
+  "delseq": {
+    "address": "0x403bd0",
+    "variables": []
+  },
+  "free_spareline": {
+    "address": "0x403c40",
+    "variables": []
+  },
+  "get_line": {
+    "address": "0x403ca0",
+    "variables": []
+  },
+  "getseq": {
+    "address": "0x404260",
+    "variables": []
+  },
+  "add_field_list": {
+    "address": "0x404320",
+    "variables": []
+  },
+  "usage": {
+    "address": "0x404540",
+    "variables": []
+  },
+  "close_stdout_set_file_name": {
+    "address": "0x404af0",
+    "variables": []
+  },
+  "close_stdout_set_ignore_EPIPE": {
+    "address": "0x404b00",
+    "variables": []
+  },
+  "close_stdout": {
+    "address": "0x404b10",
+    "variables": []
+  },
+  "fadvise": {
+    "address": "0x404be0",
+    "variables": []
+  },
+  "rpl_fclose": {
+    "address": "0x404c10",
+    "variables": []
+  },
+  "rpl_fflush": {
+    "address": "0x404ca0",
+    "variables": []
+  },
+  "fopen_safer": {
+    "address": "0x404ce0",
+    "variables": []
+  },
+  "fpurge": {
+    "address": "0x404d80",
+    "variables": []
+  },
+  "rpl_fseeko": {
+    "address": "0x404da0",
+    "variables": []
+  },
+  "getprogname": {
+    "address": "0x404e10",
+    "variables": []
+  },
+  "hard_locale": {
+    "address": "0x404e20",
+    "variables": [
+      {
+        "name": "locale",
+        "RBP offset": -272,
+        "type": [
+          "char[257]"
+        ],
+        "size": 257,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": true,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false,
+        "array_length": 257,
         "element_type": [
           "char"
         ],
@@ -215,12 +291,338 @@
       }
     ]
   },
-  "runenlen": {
-    "address": "0x2a90",
+  "initbuffer": {
+    "address": "0x404ea0",
     "variables": []
   },
-  "fullrune": {
-    "address": "0x2af0",
+  "readlinebuffer_delim": {
+    "address": "0x404ec0",
+    "variables": []
+  },
+  "readlinebuffer": {
+    "address": "0x405050",
+    "variables": []
+  },
+  "freebuffer": {
+    "address": "0x405060",
+    "variables": []
+  },
+  "mcel_tocmp": {
+    "address": "0x4050d0",
+    "variables": []
+  },
+  "mcel_scanz": {
+    "address": "0x4052d0",
+    "variables": []
+  },
+  "memcasecmp": {
+    "address": "0x4053a0",
+    "variables": []
+  },
+  "set_program_name": {
+    "address": "0x405410",
+    "variables": []
+  },
+  "proper_name_lite": {
+    "address": "0x4054d0",
+    "variables": []
+  },
+  "clone_quoting_options": {
+    "address": "0x4070f0",
+    "variables": []
+  },
+  "get_quoting_style": {
+    "address": "0x407130",
+    "variables": []
+  },
+  "set_quoting_style": {
+    "address": "0x407150",
+    "variables": []
+  },
+  "set_quoting_flags": {
+    "address": "0x4071b0",
+    "variables": []
+  },
+  "quotearg_buffer": {
+    "address": "0x407210",
+    "variables": []
+  },
+  "quotearg_alloc_mem": {
+    "address": "0x407290",
+    "variables": []
+  },
+  "quotearg_alloc": {
+    "address": "0x407390",
+    "variables": []
+  },
+  "quotearg_free": {
+    "address": "0x4073a0",
+    "variables": []
+  },
+  "quotearg": {
+    "address": "0x407470",
+    "variables": []
+  },
+  "quotearg_mem": {
+    "address": "0x407490",
+    "variables": []
+  },
+  "quotearg_colon": {
+    "address": "0x4077e0",
+    "variables": []
+  },
+  "quotearg_colon_mem": {
+    "address": "0x407870",
+    "variables": []
+  },
+  "quote_mem": {
+    "address": "0x407c20",
+    "variables": []
+  },
+  "quote": {
+    "address": "0x407c60",
+    "variables": []
+  },
+  "setlocale_null_r": {
+    "address": "0x407c80",
+    "variables": []
+  },
+  "setlocale_null": {
+    "address": "0x407c90",
+    "variables": []
+  },
+  "setlocale_null_r_unlocked": {
+    "address": "0x407cb0",
+    "variables": []
+  },
+  "dup_safer": {
+    "address": "0x407d40",
+    "variables": []
+  },
+  "version_etc_arn": {
+    "address": "0x407d60",
+    "variables": []
+  },
+  "version_etc_ar": {
+    "address": "0x408210",
+    "variables": []
+  },
+  "version_etc": {
+    "address": "0x4082e0",
+    "variables": [
+      {
+        "name": "authors",
+        "RBP offset": -168,
+        "type": [
+          "va_list",
+          "__va_list_tag[1]",
+          "__builtin_va_list",
+          "__gnuc_va_list"
+        ],
+        "size": 24,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": true,
+        "is_struct": true,
+        "is_union": false,
+        "is_enum": false,
+        "array_length": 1,
+        "element_type": [
+          "__va_list_tag"
+        ],
+        "element_size": 24,
+        "elements": []
+      }
+    ]
+  },
+  "emit_bug_reporting_address": {
+    "address": "0x4083f0",
+    "variables": []
+  },
+  "xnrealloc": {
+    "address": "0x408490",
+    "variables": []
+  },
+  "xcharalloc": {
+    "address": "0x4084f0",
+    "variables": []
+  },
+  "xirealloc": {
+    "address": "0x408540",
+    "variables": []
+  },
+  "xnmalloc": {
+    "address": "0x4085b0",
+    "variables": []
+  },
+  "xinmalloc": {
+    "address": "0x4085e0",
+    "variables": []
+  },
+  "x2realloc": {
+    "address": "0x408610",
+    "variables": []
+  },
+  "xpalloc": {
+    "address": "0x4086f0",
+    "variables": []
+  },
+  "xzalloc": {
+    "address": "0x4087f0",
+    "variables": []
+  },
+  "xizalloc": {
+    "address": "0x408820",
+    "variables": []
+  },
+  "ximemdup": {
+    "address": "0x4088d0",
+    "variables": []
+  },
+  "ximemdup0": {
+    "address": "0x408910",
+    "variables": []
+  },
+  "xstrdup": {
+    "address": "0x408950",
+    "variables": []
+  },
+  "xalloc_die": {
+    "address": "0x408990",
+    "variables": []
+  },
+  "collate_error": {
+    "address": "0x4089d0",
+    "variables": []
+  },
+  "xmemcoll": {
+    "address": "0x408aa0",
+    "variables": []
+  },
+  "xmemcoll0": {
+    "address": "0x408b10",
+    "variables": []
+  },
+  "xstrtoimax": {
+    "address": "0x408b80",
+    "variables": [
+      {
+        "name": "t_ptr",
+        "RBP offset": -64,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      }
+    ]
+  },
+  "xstrtol": {
+    "address": "0x409100",
+    "variables": [
+      {
+        "name": "t_ptr",
+        "RBP offset": -64,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      }
+    ]
+  },
+  "rpl_fopen": {
+    "address": "0x409670",
+    "variables": [
+      {
+        "name": "fdopen_mode_buf",
+        "RBP offset": -144,
+        "type": [
+          "char[81]"
+        ],
+        "size": 81,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": true,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false,
+        "array_length": 81,
+        "element_type": [
+          "char"
+        ],
+        "element_size": 1
+      }
+    ]
+  },
+  "c_strcasecmp": {
+    "address": "0x4098d0",
+    "variables": []
+  },
+  "close_stream": {
+    "address": "0x409950",
+    "variables": []
+  },
+  "rpl_fcntl": {
+    "address": "0x4099b0",
+    "variables": [
+      {
+        "name": "arg",
+        "RBP offset": -96,
+        "type": [
+          "va_list",
+          "__va_list_tag[1]",
+          "__builtin_va_list",
+          "__gnuc_va_list"
+        ],
+        "size": 24,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": true,
+        "is_struct": true,
+        "is_union": false,
+        "is_enum": false,
+        "array_length": 1,
+        "element_type": [
+          "__va_list_tag"
+        ],
+        "element_size": 24,
+        "elements": []
+      }
+    ]
+  },
+  "locale_charset": {
+    "address": "0x409c20",
+    "variables": []
+  },
+  "strcoll_loop": {
+    "address": "0x409d40",
+    "variables": []
+  },
+  "memcoll": {
+    "address": "0x409e00",
+    "variables": []
+  },
+  "memcoll0": {
+    "address": "0x409ec0",
+    "variables": []
+  },
+  "rpl_nl_langinfo": {
+    "address": "0x409f30",
+    "variables": []
+  },
+  "rpl_reallocarray": {
+    "address": "0x409f40",
     "variables": []
   }
 }

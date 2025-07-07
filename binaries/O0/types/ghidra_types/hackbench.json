@@ -1,66 +1,7 @@
 {
   "_init": {
     "variables": [], 
-    "address": "0x101000"
-  }, 
-  "main": {
-    "variables": [
-      {
-        "name": "local_5d", 
-        "RBP offset": -85, 
-        "type": "char", 
-        "size": 1
-      }, 
-      {
-        "name": "local_5c", 
-        "RBP offset": -84, 
-        "type": "sched_param", 
-        "size": 4
-      }, 
-      {
-        "name": "local_58", 
-        "RBP offset": -80, 
-        "type": "timeval", 
-        "size": 16
-      }, 
-      {
-        "name": "local_48", 
-        "RBP offset": -64, 
-        "type": "timeval", 
-        "size": 16
-      }, 
-      {
-        "name": "local_30", 
-        "RBP offset": -40, 
-        "type": "int", 
-        "size": 4
-      }, 
-      {
-        "name": "local_2c", 
-        "RBP offset": -36, 
-        "type": "int", 
-        "size": 4
-      }, 
-      {
-        "name": "local_28", 
-        "RBP offset": -32, 
-        "type": "int", 
-        "size": 4
-      }, 
-      {
-        "name": "local_24", 
-        "RBP offset": -28, 
-        "type": "int", 
-        "size": 4
-      }, 
-      {
-        "name": "local_20", 
-        "RBP offset": -24, 
-        "type": "long long", 
-        "size": 8
-      }
-    ], 
-    "address": "0x101260"
+    "address": "0x402000"
   }, 
   "_start": {
     "variables": [
@@ -77,34 +18,46 @@
         "size": 8
       }
     ], 
-    "address": "0x101610"
+    "address": "0x4022d0"
   }, 
-  "_FINI_0": {
+  "_dl_relocate_static_pie": {
     "variables": [], 
-    "address": "0x1016b0"
+    "address": "0x402300"
   }, 
-  "reset_worker_signals": {
+  "deregister_tm_clones": {
     "variables": [], 
-    "address": "0x101700"
+    "address": "0x402310"
+  }, 
+  "register_tm_clones": {
+    "variables": [], 
+    "address": "0x402340"
   }, 
   "sneeze": {
     "variables": [], 
-    "address": "0x101720"
-  }, 
-  "sigcatcher": {
-    "variables": [], 
-    "address": "0x101770"
-  }, 
-  "print_usage_exit": {
-    "variables": [], 
-    "address": "0x1017c0"
+    "address": "0x4023b6"
   }, 
   "barf": {
     "variables": [], 
-    "address": "0x101800"
+    "address": "0x402407"
   }, 
-  "process_options": {
+  "print_usage_exit": {
+    "variables": [], 
+    "address": "0x402429"
+  }, 
+  "inet_socketpair": {
     "variables": [
+      {
+        "name": "local_3c", 
+        "RBP offset": -52, 
+        "type": "socklen_t", 
+        "size": 4
+      }, 
+      {
+        "name": "local_38", 
+        "RBP offset": -48, 
+        "type": "int", 
+        "size": 4
+      }, 
       {
         "name": "local_34", 
         "RBP offset": -44, 
@@ -116,13 +69,25 @@
         "RBP offset": -40, 
         "type": "long long", 
         "size": 8
+      }, 
+      {
+        "name": "local_28", 
+        "RBP offset": -32, 
+        "type": "sockaddr", 
+        "size": 16
+      }, 
+      {
+        "name": "local_10", 
+        "RBP offset": -8, 
+        "type": "long long", 
+        "size": 8
       }
     ], 
-    "address": "0x101820"
+    "address": "0x402463"
   }, 
   "fdpair": {
     "variables": [], 
-    "address": "0x101a00"
+    "address": "0x40267d"
   }, 
   "ready": {
     "variables": [
@@ -145,16 +110,14 @@
         "size": 8
       }
     ], 
-    "address": "0x101a50"
+    "address": "0x4026f9"
+  }, 
+  "reset_worker_signals": {
+    "variables": [], 
+    "address": "0x40279a"
   }, 
   "sender": {
     "variables": [
-      {
-        "name": "uStack_60", 
-        "RBP offset": -88, 
-        "type": "long long", 
-        "size": 8
-      }, 
       {
         "name": "auStack_58", 
         "RBP offset": -80, 
@@ -164,51 +127,11 @@
       {
         "name": "local_50", 
         "RBP offset": -72, 
-        "type": "int", 
-        "size": 4
-      }, 
-      {
-        "name": "local_4c", 
-        "RBP offset": -68, 
-        "type": "int", 
-        "size": 4
-      }, 
-      {
-        "name": "local_40", 
-        "RBP offset": -56, 
-        "type": "long long", 
+        "type": "int *", 
         "size": 8
-      }
-    ], 
-    "address": "0x101ae0"
-  }, 
-  "create_worker": {
-    "variables": [
-      {
-        "name": "local_68", 
-        "RBP offset": -96, 
-        "type": "pthread_attr_t", 
-        "size": 56
       }, 
       {
-        "name": "local_30", 
-        "RBP offset": -40, 
-        "type": "long long", 
-        "size": 8
-      }
-    ], 
-    "address": "0x101be0"
-  }, 
-  "group": {
-    "variables": [
-      {
-        "name": "local_48", 
-        "RBP offset": -64, 
-        "type": "int", 
-        "size": 4
-      }, 
-      {
-        "name": "uStack_44", 
+        "name": "local_44", 
         "RBP offset": -60, 
         "type": "int", 
         "size": 4
@@ -216,41 +139,9 @@
       {
         "name": "local_40", 
         "RBP offset": -56, 
-        "type": "long long", 
-        "size": 8
-      }
-    ], 
-    "address": "0x101d10"
-  }, 
-  "receiver": {
-    "variables": [
-      {
-        "name": "uStack_50", 
-        "RBP offset": -72, 
-        "type": "long long", 
-        "size": 8
+        "type": "int", 
+        "size": 4
       }, 
-      {
-        "name": "auStack_48", 
-        "RBP offset": -64, 
-        "type": "char[8]", 
-        "size": 8
-      }, 
-      {
-        "name": "local_40", 
-        "RBP offset": -56, 
-        "type": "long long", 
-        "size": 8
-      }
-    ], 
-    "address": "0x101f40"
-  }, 
-  "signal_workers": {
-    "variables": [], 
-    "address": "0x102030"
-  }, 
-  "reap_workers": {
-    "variables": [
       {
         "name": "local_3c", 
         "RBP offset": -52, 
@@ -260,7 +151,7 @@
       {
         "name": "local_38", 
         "RBP offset": -48, 
-        "type": "void *", 
+        "type": "long long", 
         "size": 8
       }, 
       {
@@ -268,12 +159,278 @@
         "RBP offset": -40, 
         "type": "long long", 
         "size": 8
+      }, 
+      {
+        "name": "local_28", 
+        "RBP offset": -32, 
+        "type": "char *", 
+        "size": 8
+      }, 
+      {
+        "name": "local_20", 
+        "RBP offset": -24, 
+        "type": "long long", 
+        "size": 8
       }
     ], 
-    "address": "0x102080"
+    "address": "0x4027c5"
+  }, 
+  "receiver": {
+    "variables": [
+      {
+        "name": "auStack_58", 
+        "RBP offset": -80, 
+        "type": "char[8]", 
+        "size": 8
+      }, 
+      {
+        "name": "local_50", 
+        "RBP offset": -72, 
+        "type": "int *", 
+        "size": 8
+      }, 
+      {
+        "name": "local_40", 
+        "RBP offset": -56, 
+        "type": "int", 
+        "size": 4
+      }, 
+      {
+        "name": "local_3c", 
+        "RBP offset": -52, 
+        "type": "int", 
+        "size": 4
+      }, 
+      {
+        "name": "local_38", 
+        "RBP offset": -48, 
+        "type": "long long", 
+        "size": 8
+      }, 
+      {
+        "name": "local_30", 
+        "RBP offset": -40, 
+        "type": "long long", 
+        "size": 8
+      }, 
+      {
+        "name": "local_28", 
+        "RBP offset": -32, 
+        "type": "char *", 
+        "size": 8
+      }, 
+      {
+        "name": "local_20", 
+        "RBP offset": -24, 
+        "type": "long long", 
+        "size": 8
+      }
+    ], 
+    "address": "0x402959"
+  }, 
+  "create_worker": {
+    "variables": [
+      {
+        "name": "local_48", 
+        "RBP offset": -64, 
+        "type": "pthread_attr_t", 
+        "size": 56
+      }, 
+      {
+        "name": "local_10", 
+        "RBP offset": -8, 
+        "type": "long long", 
+        "size": 8
+      }
+    ], 
+    "address": "0x402af2"
+  }, 
+  "signal_workers": {
+    "variables": [
+      {
+        "name": "local_c", 
+        "RBP offset": -4, 
+        "type": "int", 
+        "size": 4
+      }
+    ], 
+    "address": "0x402c1c"
+  }, 
+  "reap_workers": {
+    "variables": [
+      {
+        "name": "local_2c", 
+        "RBP offset": -36, 
+        "type": "int", 
+        "size": 4
+      }, 
+      {
+        "name": "local_28", 
+        "RBP offset": -32, 
+        "type": "int", 
+        "size": 4
+      }, 
+      {
+        "name": "local_24", 
+        "RBP offset": -28, 
+        "type": "int", 
+        "size": 4
+      }, 
+      {
+        "name": "local_20", 
+        "RBP offset": -24, 
+        "type": "__pid_t", 
+        "size": 4
+      }, 
+      {
+        "name": "local_1c", 
+        "RBP offset": -20, 
+        "type": "int", 
+        "size": 4
+      }, 
+      {
+        "name": "local_18", 
+        "RBP offset": -16, 
+        "type": "void *", 
+        "size": 8
+      }, 
+      {
+        "name": "local_10", 
+        "RBP offset": -8, 
+        "type": "long long", 
+        "size": 8
+      }
+    ], 
+    "address": "0x402c80"
+  }, 
+  "group": {
+    "variables": [
+      {
+        "name": "local_30", 
+        "RBP offset": -40, 
+        "type": "int", 
+        "size": 4
+      }, 
+      {
+        "name": "local_18", 
+        "RBP offset": -16, 
+        "type": "int", 
+        "size": 4
+      }, 
+      {
+        "name": "local_14", 
+        "RBP offset": -12, 
+        "type": "int", 
+        "size": 4
+      }, 
+      {
+        "name": "local_10", 
+        "RBP offset": -8, 
+        "type": "long long", 
+        "size": 8
+      }
+    ], 
+    "address": "0x402dc0"
+  }, 
+  "process_options": {
+    "variables": [], 
+    "address": "0x402ffe"
+  }, 
+  "sigcatcher": {
+    "variables": [], 
+    "address": "0x403282"
+  }, 
+  "main": {
+    "variables": [
+      {
+        "name": "local_69", 
+        "RBP offset": -97, 
+        "type": "char", 
+        "size": 1
+      }, 
+      {
+        "name": "local_68", 
+        "RBP offset": -96, 
+        "type": "int", 
+        "size": 4
+      }, 
+      {
+        "name": "local_64", 
+        "RBP offset": -92, 
+        "type": "sched_param", 
+        "size": 4
+      }, 
+      {
+        "name": "local_60", 
+        "RBP offset": -88, 
+        "type": "int", 
+        "size": 4
+      }, 
+      {
+        "name": "local_5c", 
+        "RBP offset": -84, 
+        "type": "int", 
+        "size": 4
+      }, 
+      {
+        "name": "local_58", 
+        "RBP offset": -80, 
+        "type": "timeval", 
+        "size": 16
+      }, 
+      {
+        "name": "local_48", 
+        "RBP offset": -64, 
+        "type": "timeval", 
+        "size": 16
+      }, 
+      {
+        "name": "local_38", 
+        "RBP offset": -48, 
+        "type": "long long", 
+        "size": 8
+      }, 
+      {
+        "name": "local_30", 
+        "RBP offset": -40, 
+        "type": "long long", 
+        "size": 8
+      }, 
+      {
+        "name": "local_20", 
+        "RBP offset": -24, 
+        "type": "int", 
+        "size": 4
+      }, 
+      {
+        "name": "local_1c", 
+        "RBP offset": -20, 
+        "type": "int", 
+        "size": 4
+      }, 
+      {
+        "name": "local_18", 
+        "RBP offset": -16, 
+        "type": "int", 
+        "size": 4
+      }, 
+      {
+        "name": "local_14", 
+        "RBP offset": -12, 
+        "type": "int", 
+        "size": 4
+      }, 
+      {
+        "name": "local_10", 
+        "RBP offset": -8, 
+        "type": "long long", 
+        "size": 8
+      }
+    ], 
+    "address": "0x4032d1"
   }, 
   "_fini": {
     "variables": [], 
-    "address": "0x1021b8"
+    "address": "0x4036dc"
   }
 }

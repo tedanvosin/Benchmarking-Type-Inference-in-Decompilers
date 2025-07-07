@@ -1,0 +1,271 @@
+{
+  "main": {
+    "address": "0x4022d0",
+    "variables": [
+      {
+        "name": "dummy",
+        "RBP offset": -121,
+        "type": [
+          "char"
+        ],
+        "size": 1,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "timer_started",
+        "RBP offset": -120,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "sp",
+        "RBP offset": -116,
+        "type": [
+          "sched_param"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": true,
+        "is_union": false,
+        "is_enum": false,
+        "elements": [
+          {
+            "name": "sp.sched_priority",
+            "RBP offset": -116,
+            "type": [
+              "int"
+            ],
+            "size": 4,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          }
+        ]
+      },
+      {
+        "name": "start",
+        "RBP offset": -112,
+        "type": [
+          "timeval"
+        ],
+        "size": 16,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": true,
+        "is_union": false,
+        "is_enum": false,
+        "elements": [
+          {
+            "name": "start.tv_sec",
+            "RBP offset": -112,
+            "type": [
+              "__time_t",
+              "long long",
+              "long int"
+            ],
+            "size": 8,
+            "is_pointer": false,
+            "is_typedef": true,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "start.tv_usec",
+            "RBP offset": -104,
+            "type": [
+              "long long",
+              "long int",
+              "__suseconds_t"
+            ],
+            "size": 8,
+            "is_pointer": false,
+            "is_typedef": true,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          }
+        ]
+      },
+      {
+        "name": "stop",
+        "RBP offset": -96,
+        "type": [
+          "timeval"
+        ],
+        "size": 16,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": true,
+        "is_union": false,
+        "is_enum": false,
+        "elements": [
+          {
+            "name": "stop.tv_sec",
+            "RBP offset": -96,
+            "type": [
+              "__time_t",
+              "long long",
+              "long int"
+            ],
+            "size": 8,
+            "is_pointer": false,
+            "is_typedef": true,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "stop.tv_usec",
+            "RBP offset": -88,
+            "type": [
+              "long long",
+              "long int",
+              "__suseconds_t"
+            ],
+            "size": 8,
+            "is_pointer": false,
+            "is_typedef": true,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          }
+        ]
+      },
+      {
+        "name": "readyfds",
+        "RBP offset": -80,
+        "type": [
+          "int[2]"
+        ],
+        "size": 8,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": true,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false,
+        "array_length": 2,
+        "element_type": [
+          "int"
+        ],
+        "element_size": 4
+      },
+      {
+        "name": "wakefds",
+        "RBP offset": -72,
+        "type": [
+          "int[2]"
+        ],
+        "size": 8,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": true,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false,
+        "array_length": 2,
+        "element_type": [
+          "int"
+        ],
+        "element_size": 4
+      }
+    ]
+  },
+  "sigcatcher": {
+    "address": "0x402b40",
+    "variables": []
+  },
+  "print_usage_exit": {
+    "address": "0x402b80",
+    "variables": []
+  },
+  "barf": {
+    "address": "0x402be0",
+    "variables": []
+  },
+  "receiver": {
+    "address": "0x402ca0",
+    "variables": []
+  },
+  "sender": {
+    "address": "0x403040",
+    "variables": []
+  },
+  "create_worker": {
+    "address": "0x4031a0",
+    "variables": [
+      {
+        "name": "attr",
+        "RBP offset": -96,
+        "type": [
+          "pthread_attr_t"
+        ],
+        "size": 56,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": true,
+        "is_enum": false
+      }
+    ]
+  },
+  "reap_workers": {
+    "address": "0x4033c0",
+    "variables": [
+      {
+        "name": "status",
+        "RBP offset": -52,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "thr_status",
+        "RBP offset": -48,
+        "type": [
+          "void*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      }
+    ]
+  }
+}

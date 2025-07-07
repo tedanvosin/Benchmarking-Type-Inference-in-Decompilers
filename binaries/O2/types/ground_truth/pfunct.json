@@ -1,10 +1,10 @@
 {
   "main": {
-    "address": "0x2320",
+    "address": "0x402360",
     "variables": [
       {
         "name": "remaining",
-        "RBP offset": -52,
+        "RBP offset": -68,
         "type": [
           "int"
         ],
@@ -18,7 +18,7 @@
       },
       {
         "name": "cu",
-        "RBP offset": -48,
+        "RBP offset": -64,
         "type": [
           "cu*"
         ],
@@ -32,73 +32,45 @@
       }
     ]
   },
-  "INIT_LIST_HEAD": {
-    "address": "0x2740",
-    "variables": []
-  },
-  "__list_del": {
-    "address": "0x2750",
-    "variables": []
-  },
-  "list_del_init": {
-    "address": "0x2760",
-    "variables": []
-  },
-  "tag__ftype": {
-    "address": "0x2780",
-    "variables": []
-  },
-  "print_fn_stats": {
-    "address": "0x2790",
-    "variables": []
-  },
-  "print_total_inline_stats": {
-    "address": "0x27d0",
-    "variables": []
-  },
   "fn_stats_name_len_fmtr": {
-    "address": "0x2820",
+    "address": "0x402880",
     "variables": []
   },
   "fn_stats_inline_exps_fmtr": {
-    "address": "0x2860",
+    "address": "0x4028b0",
     "variables": []
   },
   "fn_stats_labels_fmtr": {
-    "address": "0x28c0",
+    "address": "0x402910",
     "variables": []
   },
   "fn_stats_nr_parms_fmtr": {
-    "address": "0x2910",
+    "address": "0x402950",
     "variables": []
   },
   "fn_stats_variables_fmtr": {
-    "address": "0x2950",
+    "address": "0x402970",
     "variables": []
   },
-  "fn_stats_inline_stats_fmtr": {
-    "address": "0x29a0",
+  "fn_stats_size_fmtr": {
+    "address": "0x4029b0",
     "variables": []
   },
   "fn_stats_fmtr": {
-    "address": "0x2a10",
-    "variables": []
-  },
-  "fn_stats__find": {
-    "address": "0x2ad0",
+    "address": "0x4029f0",
     "variables": []
   },
   "fn_stats__dupmsg": {
-    "address": "0x2b40",
+    "address": "0x402ab0",
     "variables": [
       {
         "name": "args",
         "RBP offset": -240,
         "type": [
           "__builtin_va_list",
-          "__va_list_tag[1]",
+          "va_list",
           "__gnuc_va_list",
-          "va_list"
+          "__va_list_tag[1]"
         ],
         "size": 24,
         "is_pointer": false,
@@ -116,98 +88,35 @@
       }
     ]
   },
-  "fn_stats__new": {
-    "address": "0x2c40",
+  "cu__filter": {
+    "address": "0x402bb0",
     "variables": []
   },
   "pfunct__options_parser": {
-    "address": "0x2ca0",
-    "variables": []
-  },
-  "fn_stats__delete": {
-    "address": "0x2f50",
-    "variables": []
-  },
-  "fn_stats__delete_list": {
-    "address": "0x2f60",
-    "variables": []
-  },
-  "fn_stats__add": {
-    "address": "0x2fe0",
-    "variables": []
-  },
-  "elf_sym__is_local_function": {
-    "address": "0x3140",
-    "variables": []
-  },
-  "type__name": {
-    "address": "0x31a0",
-    "variables": []
-  },
-  "class__name": {
-    "address": "0x31b0",
-    "variables": []
-  },
-  "fn_stats__chkdupdef": {
-    "address": "0x31d0",
-    "variables": [
-      {
-        "name": "hdr",
-        "RBP offset": -41,
-        "type": [
-          "char"
-        ],
-        "size": 1,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      }
-    ]
-  },
-  "function__filter": {
-    "address": "0x32c0",
-    "variables": []
-  },
-  "cu_unique_iterator": {
-    "address": "0x33f0",
-    "variables": []
-  },
-  "fn_stats_size_fmtr": {
-    "address": "0x3470",
-    "variables": []
-  },
-  "tag__is_modifier": {
-    "address": "0x3500",
-    "variables": []
-  },
-  "tag__is_type": {
-    "address": "0x3590",
-    "variables": []
-  },
-  "function__show": {
-    "address": "0x37d0",
+    "address": "0x402bf0",
     "variables": []
   },
   "cu_function_iterator": {
-    "address": "0x3a10",
+    "address": "0x403420",
     "variables": []
   },
   "pfunct_stealer": {
-    "address": "0x3ab0",
+    "address": "0x403490",
+    "variables": []
+  },
+  "cu_unique_iterator": {
+    "address": "0x403640",
     "variables": []
   },
   "elf_symtab__show": {
-    "address": "0x3b10",
+    "address": "0x403920",
     "variables": [
       {
         "name": "sym",
         "RBP offset": -160,
         "type": [
-          "GElf_Sym",
-          "Elf64_Sym"
+          "Elf64_Sym",
+          "GElf_Sym"
         ],
         "size": 24,
         "is_pointer": false,
@@ -221,11 +130,11 @@
             "name": "sym.st_name",
             "RBP offset": -160,
             "type": [
-              "uint32_t",
-              "unsigned int",
               "__uint32_t",
-              "int",
-              "Elf64_Word"
+              "unsigned int",
+              "Elf64_Word",
+              "uint32_t",
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -269,11 +178,11 @@
             "name": "sym.st_shndx",
             "RBP offset": -154,
             "type": [
+              "__uint16_t",
               "uint16_t",
               "short unsigned int",
-              "Elf64_Section",
-              "__uint16_t",
-              "short int"
+              "short int",
+              "Elf64_Section"
             ],
             "size": 2,
             "is_pointer": false,
@@ -287,11 +196,11 @@
             "name": "sym.st_value",
             "RBP offset": -152,
             "type": [
-              "Elf64_Addr",
-              "long unsigned int",
               "uint64_t",
+              "long unsigned int",
               "__uint64_t",
-              "long long"
+              "long long",
+              "Elf64_Addr"
             ],
             "size": 8,
             "is_pointer": false,
@@ -305,11 +214,11 @@
             "name": "sym.st_size",
             "RBP offset": -144,
             "type": [
-              "long unsigned int",
               "uint64_t",
+              "Elf64_Xword",
+              "long unsigned int",
               "__uint64_t",
-              "long long",
-              "Elf64_Xword"
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -325,8 +234,8 @@
         "name": "ehdr",
         "RBP offset": -128,
         "type": [
-          "GElf_Ehdr",
-          "Elf64_Ehdr"
+          "Elf64_Ehdr",
+          "GElf_Ehdr"
         ],
         "size": 64,
         "is_pointer": false,
@@ -361,10 +270,10 @@
             "name": "ehdr.e_type",
             "RBP offset": -112,
             "type": [
+              "__uint16_t",
+              "Elf64_Half",
               "uint16_t",
               "short unsigned int",
-              "Elf64_Half",
-              "__uint16_t",
               "short int"
             ],
             "size": 2,
@@ -379,10 +288,10 @@
             "name": "ehdr.e_machine",
             "RBP offset": -110,
             "type": [
+              "__uint16_t",
+              "Elf64_Half",
               "uint16_t",
               "short unsigned int",
-              "Elf64_Half",
-              "__uint16_t",
               "short int"
             ],
             "size": 2,
@@ -397,11 +306,11 @@
             "name": "ehdr.e_version",
             "RBP offset": -108,
             "type": [
-              "uint32_t",
-              "unsigned int",
               "__uint32_t",
-              "int",
-              "Elf64_Word"
+              "unsigned int",
+              "Elf64_Word",
+              "uint32_t",
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -415,11 +324,11 @@
             "name": "ehdr.e_entry",
             "RBP offset": -104,
             "type": [
-              "Elf64_Addr",
-              "long unsigned int",
               "uint64_t",
+              "long unsigned int",
               "__uint64_t",
-              "long long"
+              "long long",
+              "Elf64_Addr"
             ],
             "size": 8,
             "is_pointer": false,
@@ -433,11 +342,11 @@
             "name": "ehdr.e_phoff",
             "RBP offset": -96,
             "type": [
-              "long unsigned int",
               "uint64_t",
-              "Elf64_Off",
+              "long unsigned int",
               "__uint64_t",
-              "long long"
+              "long long",
+              "Elf64_Off"
             ],
             "size": 8,
             "is_pointer": false,
@@ -451,11 +360,11 @@
             "name": "ehdr.e_shoff",
             "RBP offset": -88,
             "type": [
-              "long unsigned int",
               "uint64_t",
-              "Elf64_Off",
+              "long unsigned int",
               "__uint64_t",
-              "long long"
+              "long long",
+              "Elf64_Off"
             ],
             "size": 8,
             "is_pointer": false,
@@ -469,11 +378,11 @@
             "name": "ehdr.e_flags",
             "RBP offset": -80,
             "type": [
-              "uint32_t",
-              "unsigned int",
               "__uint32_t",
-              "int",
-              "Elf64_Word"
+              "unsigned int",
+              "Elf64_Word",
+              "uint32_t",
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -487,10 +396,10 @@
             "name": "ehdr.e_ehsize",
             "RBP offset": -76,
             "type": [
+              "__uint16_t",
+              "Elf64_Half",
               "uint16_t",
               "short unsigned int",
-              "Elf64_Half",
-              "__uint16_t",
               "short int"
             ],
             "size": 2,
@@ -505,10 +414,10 @@
             "name": "ehdr.e_phentsize",
             "RBP offset": -74,
             "type": [
+              "__uint16_t",
+              "Elf64_Half",
               "uint16_t",
               "short unsigned int",
-              "Elf64_Half",
-              "__uint16_t",
               "short int"
             ],
             "size": 2,
@@ -523,10 +432,10 @@
             "name": "ehdr.e_phnum",
             "RBP offset": -72,
             "type": [
+              "__uint16_t",
+              "Elf64_Half",
               "uint16_t",
               "short unsigned int",
-              "Elf64_Half",
-              "__uint16_t",
               "short int"
             ],
             "size": 2,
@@ -541,10 +450,10 @@
             "name": "ehdr.e_shentsize",
             "RBP offset": -70,
             "type": [
+              "__uint16_t",
+              "Elf64_Half",
               "uint16_t",
               "short unsigned int",
-              "Elf64_Half",
-              "__uint16_t",
               "short int"
             ],
             "size": 2,
@@ -559,10 +468,10 @@
             "name": "ehdr.e_shnum",
             "RBP offset": -68,
             "type": [
+              "__uint16_t",
+              "Elf64_Half",
               "uint16_t",
               "short unsigned int",
-              "Elf64_Half",
-              "__uint16_t",
               "short int"
             ],
             "size": 2,
@@ -577,10 +486,10 @@
             "name": "ehdr.e_shstrndx",
             "RBP offset": -66,
             "type": [
+              "__uint16_t",
+              "Elf64_Half",
               "uint16_t",
               "short unsigned int",
-              "Elf64_Half",
-              "__uint16_t",
               "short int"
             ],
             "size": 2,
@@ -596,7 +505,7 @@
     ]
   },
   "elf_symtabs__show": {
-    "address": "0x3dd0",
+    "address": "0x403bf0",
     "variables": []
   }
 }

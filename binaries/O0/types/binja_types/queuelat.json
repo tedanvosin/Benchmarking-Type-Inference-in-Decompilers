@@ -23,24 +23,28 @@
     "address": "0x401070",
     "variables": []
   },
-  "alarm": {
+  "printf": {
     "address": "0x401080",
     "variables": []
   },
-  "calloc": {
+  "memset": {
     "address": "0x401090",
     "variables": []
   },
-  "signal": {
+  "alarm": {
     "address": "0x4010a0",
     "variables": []
   },
-  "memcpy": {
+  "signal": {
     "address": "0x4010b0",
     "variables": []
   },
   "malloc": {
     "address": "0x4010c0",
+    "variables": []
+  },
+  "memmove": {
+    "address": "0x4010d0",
     "variables": []
   },
   "open": {
@@ -55,72 +59,118 @@
     "address": "0x401100",
     "variables": []
   },
-  "exit": {
+  "sprintf": {
     "address": "0x401110",
     "variables": []
   },
-  "main": {
-    "address": "0x401140",
+  "exit": {
+    "address": "0x401120",
+    "variables": []
+  },
+  "_start": {
+    "address": "0x401130",
+    "variables": []
+  },
+  "_dl_relocate_static_pie": {
+    "address": "0x401160",
+    "variables": []
+  },
+  "deregister_tm_clones": {
+    "address": "0x401170",
+    "variables": []
+  },
+  "register_tm_clones": {
+    "address": "0x4011a0",
+    "variables": []
+  },
+  "frame_dummy": {
+    "address": "0x401210",
+    "variables": []
+  },
+  "val_to_bucket": {
+    "address": "0x401216",
+    "variables": []
+  },
+  "account": {
+    "address": "0x401256",
+    "variables": []
+  },
+  "total_samples": {
+    "address": "0x4012aa",
     "variables": [
       {
-        "name": "var_58",
-        "RBP offset": -80,
-        "type": "void",
-        "size": 0
+        "name": "i",
+        "RBP offset": -12,
+        "type": "int",
+        "size": 4
       },
       {
-        "name": "var_50",
-        "RBP offset": -72,
+        "name": "result",
+        "RBP offset": -8,
         "type": "long long",
         "size": 8
+      }
+    ]
+  },
+  "print_all_buckets": {
+    "address": "0x4012e3",
+    "variables": [
+      {
+        "name": "i",
+        "RBP offset": -24,
+        "type": "int",
+        "size": 4
       },
       {
-        "name": "nptr_6",
-        "RBP offset": -72,
-        "type": "long long*",
-        "size": 8
+        "name": "var_1c",
+        "RBP offset": -20,
+        "type": "int",
+        "size": 4
+      }
+    ]
+  },
+  "print_max_bucketsec": {
+    "address": "0x4013f9",
+    "variables": [
+      {
+        "name": "i",
+        "RBP offset": -24,
+        "type": "int",
+        "size": 4
       },
       {
-        "name": "var_50_1",
-        "RBP offset": -72,
-        "type": "double",
-        "size": 8
-      },
-      {
-        "name": "var_50_2",
-        "RBP offset": -72,
-        "type": "double",
-        "size": 8
-      },
-      {
-        "name": "var_48",
-        "RBP offset": -64,
+        "name": "var_18",
+        "RBP offset": -16,
         "type": "long long",
         "size": 8
+      }
+    ]
+  },
+  "print_min_bucketsec": {
+    "address": "0x4014a1",
+    "variables": [
+      {
+        "name": "i",
+        "RBP offset": -24,
+        "type": "int",
+        "size": 4
       },
       {
-        "name": "nptr",
-        "RBP offset": -64,
-        "type": "long long*",
-        "size": 8
-      },
-      {
-        "name": "var_40",
-        "RBP offset": -56,
+        "name": "var_18",
+        "RBP offset": -16,
         "type": "long long",
         "size": 8
-      },
+      }
+    ]
+  },
+  "print_avg_bucketsec": {
+    "address": "0x40154b",
+    "variables": [
       {
-        "name": "nptr_1",
-        "RBP offset": -56,
-        "type": "long long*",
-        "size": 8
-      },
-      {
-        "name": "var_30",
+        "name": "i",
         "RBP offset": -40,
-        "type": "long long",
-        "size": 8
+        "type": "int",
+        "size": 4
       },
       {
         "name": "var_28",
@@ -133,175 +183,79 @@
         "RBP offset": -24,
         "type": "long long",
         "size": 8
-      },
-      {
-        "name": "var_18",
-        "RBP offset": -16,
-        "type": "long long",
-        "size": 8
-      },
-      {
-        "name": "var_10",
-        "RBP offset": -8,
-        "type": "long long",
-        "size": 8
       }
     ]
-  },
-  "_start": {
-    "address": "0x401350",
-    "variables": [
-      {
-        "name": "var_10",
-        "RBP offset": -8,
-        "type": "void*",
-        "size": 8
-      }
-    ]
-  },
-  "_FINI_0": {
-    "address": "0x4013f0",
-    "variables": []
-  },
-  "_INIT_0": {
-    "address": "0x401430",
-    "variables": []
-  },
-  "val_to_bucket": {
-    "address": "0x401440",
-    "variables": []
-  },
-  "account": {
-    "address": "0x401470",
-    "variables": []
-  },
-  "total_samples": {
-    "address": "0x401490",
-    "variables": []
-  },
-  "init_buckets": {
-    "address": "0x4014d0",
-    "variables": []
-  },
-  "find_highest_count_bucket": {
-    "address": "0x4014f0",
-    "variables": []
-  },
-  "trace_open": {
-    "address": "0x401520",
-    "variables": []
-  },
-  "print_all_buckets": {
-    "address": "0x401560",
-    "variables": [
-      {
-        "name": "__saved_rbx",
-        "RBP offset": -16,
-        "type": "long long",
-        "size": 8
-      },
-      {
-        "name": "__saved_rbp",
-        "RBP offset": -8,
-        "type": "long long",
-        "size": 8
-      }
-    ]
-  },
-  "print_max_bucketsec": {
-    "address": "0x401640",
-    "variables": []
-  },
-  "print_min_bucketsec": {
-    "address": "0x4016a0",
-    "variables": []
-  },
-  "print_avg_bucketsec": {
-    "address": "0x401700",
-    "variables": []
   },
   "print_all_buckets_drainlength": {
-    "address": "0x401770",
+    "address": "0x4015f1",
     "variables": [
       {
-        "name": "var_38",
+        "name": "i",
         "RBP offset": -48,
-        "type": "long long",
-        "size": 8
+        "type": "int",
+        "size": 4
       },
       {
-        "name": "var_38_1",
-        "RBP offset": -48,
-        "type": "long long",
-        "size": 8
-      },
+        "name": "var_34",
+        "RBP offset": -44,
+        "type": "int",
+        "size": 4
+      }
+    ]
+  },
+  "init_buckets": {
+    "address": "0x401801",
+    "variables": [
       {
-        "name": "var_30",
-        "RBP offset": -40,
-        "type": "long long",
-        "size": 8
-      },
+        "name": "i",
+        "RBP offset": -4,
+        "type": "int",
+        "size": 4
+      }
+    ]
+  },
+  "find_highest_count_bucket": {
+    "address": "0x40183c",
+    "variables": [
       {
-        "name": "__saved_rbx",
-        "RBP offset": -32,
-        "type": "long long",
-        "size": 8
-      },
-      {
-        "name": "__saved_rbp",
-        "RBP offset": -24,
-        "type": "long long",
-        "size": 8
-      },
-      {
-        "name": "__saved_r12",
+        "name": "i",
         "RBP offset": -16,
-        "type": "long long",
-        "size": 8
+        "type": "int",
+        "size": 4
       },
       {
-        "name": "__saved_r13",
+        "name": "i_1",
+        "RBP offset": -12,
+        "type": "int",
+        "size": 4
+      },
+      {
+        "name": "var_10",
         "RBP offset": -8,
         "type": "long long",
         "size": 8
       }
     ]
   },
-  "convert_to_ghz": {
-    "address": "0x4018c0",
-    "variables": []
-  },
-  "print_exit_info": {
-    "address": "0x401900",
-    "variables": []
-  },
-  "sig_handler": {
-    "address": "0x401930",
-    "variables": []
-  },
-  "print_help": {
-    "address": "0x401940",
+  "trace_open": {
+    "address": "0x401894",
     "variables": []
   },
   "trace_write": {
-    "address": "0x401980",
-    "variables": []
-  },
-  "install_signals": {
-    "address": "0x4019c0",
+    "address": "0x4018df",
     "variables": []
   },
   "run_n": {
-    "address": "0x4019f0",
+    "address": "0x401932",
     "variables": [
       {
-        "name": "__saved_rbp",
-        "RBP offset": -16,
-        "type": "long long",
-        "size": 8
+        "name": "i",
+        "RBP offset": -48,
+        "type": "int",
+        "size": 4
       },
       {
-        "name": "__saved_r12",
+        "name": "var_10_1",
         "RBP offset": -8,
         "type": "long long",
         "size": 8
@@ -309,71 +263,57 @@
     ]
   },
   "measure_n": {
-    "address": "0x401b00",
+    "address": "0x401ad9",
+    "variables": [
+      {
+        "name": "var_18",
+        "RBP offset": -16,
+        "type": "int",
+        "size": 4
+      },
+      {
+        "name": "i_1",
+        "RBP offset": -12,
+        "type": "int",
+        "size": 4
+      }
+    ]
+  },
+  "convert_to_ghz": {
+    "address": "0x401b55",
+    "variables": [
+      {
+        "name": "var_c",
+        "RBP offset": -4,
+        "type": "float",
+        "size": 4
+      }
+    ]
+  },
+  "print_exit_info": {
+    "address": "0x401bca",
     "variables": []
   },
   "main_loop": {
-    "address": "0x401b70",
+    "address": "0x401bf3",
     "variables": [
       {
-        "name": "var_248",
-        "RBP offset": -576,
-        "type": "long long",
-        "size": 8
+        "name": "var_23c",
+        "RBP offset": -564,
+        "type": "int",
+        "size": 4
       },
       {
-        "name": "var_248_1",
-        "RBP offset": -576,
-        "type": "long long",
-        "size": 8
-      },
-      {
-        "name": "var_240",
-        "RBP offset": -568,
-        "type": "long long",
-        "size": 8
-      },
-      {
-        "name": "var_240_1",
-        "RBP offset": -568,
+        "name": "var_210_1",
+        "RBP offset": -520,
         "type": "long long",
         "size": 8
       },
       {
         "name": "s",
-        "RBP offset": -560,
+        "RBP offset": -512,
         "type": "char[504]",
         "size": 504
-      },
-      {
-        "name": "var_40",
-        "RBP offset": -56,
-        "type": "long long",
-        "size": 8
-      },
-      {
-        "name": "var_30",
-        "RBP offset": -40,
-        "type": "long long",
-        "size": 8
-      },
-      {
-        "name": "var_28",
-        "RBP offset": -32,
-        "type": "long long",
-        "size": 8
-      },
-      {
-        "name": "var_20",
-        "RBP offset": -24,
-        "type": "long long",
-        "size": 8
-      },
-      {
-        "name": "var_18",
-        "RBP offset": -16,
-        "type": "long long",
-        "size": 8
       },
       {
         "name": "var_10",
@@ -383,12 +323,85 @@
       }
     ]
   },
-  "calculate_nr_packets_drain_per_block": {
-    "address": "0x401db0",
+  "sig_handler": {
+    "address": "0x401f34",
+    "variables": [
+      {
+        "name": "var_c",
+        "RBP offset": -4,
+        "type": "int",
+        "size": 4
+      }
+    ]
+  },
+  "install_signals": {
+    "address": "0x401f4e",
     "variables": []
   },
+  "calculate_nr_packets_drain_per_block": {
+    "address": "0x401f79",
+    "variables": [
+      {
+        "name": "i",
+        "RBP offset": -24,
+        "type": "int",
+        "size": 4
+      },
+      {
+        "name": "var_1c",
+        "RBP offset": -20,
+        "type": "int",
+        "size": 4
+      }
+    ]
+  },
+  "print_help": {
+    "address": "0x402049",
+    "variables": []
+  },
+  "main": {
+    "address": "0x402083",
+    "variables": [
+      {
+        "name": "nptr",
+        "RBP offset": -56,
+        "type": "long long*",
+        "size": 8
+      },
+      {
+        "name": "nptr_1",
+        "RBP offset": -48,
+        "type": "long long*",
+        "size": 8
+      },
+      {
+        "name": "nptr_2",
+        "RBP offset": -40,
+        "type": "long long*",
+        "size": 8
+      },
+      {
+        "name": "nptr_3",
+        "RBP offset": -32,
+        "type": "long long*",
+        "size": 8
+      },
+      {
+        "name": "nptr_4",
+        "RBP offset": -24,
+        "type": "long long*",
+        "size": 8
+      },
+      {
+        "name": "nptr_5",
+        "RBP offset": -16,
+        "type": "long long*",
+        "size": 8
+      }
+    ]
+  },
   "_fini": {
-    "address": "0x401e5c",
+    "address": "0x4022e4",
     "variables": []
   }
 }

@@ -1,6 +1,6 @@
 {
   "panic": {
-    "address": "0x12b5",
+    "address": "0x4012a6",
     "variables": [
       {
         "name": "str",
@@ -19,7 +19,7 @@
     ]
   },
   "my_assert_fail": {
-    "address": "0x130a",
+    "address": "0x4012f7",
     "variables": [
       {
         "name": "fn",
@@ -80,7 +80,7 @@
     ]
   },
   "set_nonblocking": {
-    "address": "0x137f",
+    "address": "0x401368",
     "variables": [
       {
         "name": "sd",
@@ -113,7 +113,7 @@
     ]
   },
   "set_blocking": {
-    "address": "0x13e7",
+    "address": "0x4013d4",
     "variables": [
       {
         "name": "sd",
@@ -146,7 +146,7 @@
     ]
   },
   "copyout": {
-    "address": "0x144f",
+    "address": "0x401440",
     "variables": [
       {
         "name": "nbuf",
@@ -180,9 +180,9 @@
         "name": "ignored",
         "RBP offset": -16,
         "type": [
-          "long unsigned int",
           "long long",
-          "size_t"
+          "size_t",
+          "long unsigned int"
         ],
         "size": 8,
         "is_pointer": false,
@@ -209,7 +209,7 @@
     ]
   },
   "read_from_sd": {
-    "address": "0x14f1",
+    "address": "0x4014ea",
     "variables": [
       {
         "name": "sd",
@@ -261,7 +261,7 @@
     ]
   },
   "snooze": {
-    "address": "0x1596",
+    "address": "0x401597",
     "variables": [
       {
         "name": "req",
@@ -282,8 +282,8 @@
             "RBP offset": -16,
             "type": [
               "long int",
-              "__time_t",
-              "long long"
+              "long long",
+              "__time_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -297,9 +297,9 @@
             "name": "req.tv_nsec",
             "RBP offset": -8,
             "type": [
-              "long int",
+              "__syscall_slong_t",
               "long long",
-              "__syscall_slong_t"
+              "long int"
             ],
             "size": 8,
             "is_pointer": false,
@@ -314,7 +314,7 @@
     ]
   },
   "atoi_with_bound": {
-    "address": "0x15c1",
+    "address": "0x4015c8",
     "variables": [
       {
         "name": "bound",
@@ -361,7 +361,7 @@
     ]
   },
   "atoi_portno": {
-    "address": "0x163b",
+    "address": "0x401654",
     "variables": [
       {
         "name": "str",
@@ -394,11 +394,11 @@
     ]
   },
   "usage": {
-    "address": "0x1672",
+    "address": "0x40168f",
     "variables": []
   },
   "banner": {
-    "address": "0x16ab",
+    "address": "0x4016c6",
     "variables": [
       {
         "name": "str",
@@ -419,9 +419,9 @@
         "RBP offset": -8,
         "type": [
           "long int",
-          "time_t",
           "long long",
-          "__time_t"
+          "__time_t",
+          "time_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -434,11 +434,11 @@
     ]
   },
   "exit_routine": {
-    "address": "0x1701",
+    "address": "0x401722",
     "variables": []
   },
   "sigint_handler": {
-    "address": "0x171b",
+    "address": "0x40173a",
     "variables": [
       {
         "name": "signo",
@@ -457,7 +457,7 @@
     ]
   },
   "main": {
-    "address": "0x172e",
+    "address": "0x40174f",
     "variables": [
       {
         "name": "argv",
@@ -579,10 +579,10 @@
             "name": "server_addr.sin_port",
             "RBP offset": -78,
             "type": [
+              "uint16_t",
+              "in_port_t",
               "short unsigned int",
               "__uint16_t",
-              "in_port_t",
-              "uint16_t",
               "short int"
             ],
             "size": 2,
@@ -611,11 +611,11 @@
                 "name": "server_addr.sin_addr.s_addr",
                 "RBP offset": -76,
                 "type": [
-                  "in_addr_t",
-                  "int",
-                  "uint32_t",
                   "__uint32_t",
-                  "unsigned int"
+                  "uint32_t",
+                  "in_addr_t",
+                  "unsigned int",
+                  "int"
                 ],
                 "size": 4,
                 "is_pointer": false,
@@ -631,8 +631,8 @@
             "name": "server_addr.sin_zero",
             "RBP offset": -72,
             "type": [
-              "unsigned char[8]",
-              "char[8]"
+              "char[8]",
+              "unsigned char[8]"
             ],
             "size": 8,
             "is_pointer": false,
@@ -684,10 +684,10 @@
             "name": "client_addr.sin_port",
             "RBP offset": -62,
             "type": [
+              "uint16_t",
+              "in_port_t",
               "short unsigned int",
               "__uint16_t",
-              "in_port_t",
-              "uint16_t",
               "short int"
             ],
             "size": 2,
@@ -716,11 +716,11 @@
                 "name": "client_addr.sin_addr.s_addr",
                 "RBP offset": -60,
                 "type": [
-                  "in_addr_t",
-                  "int",
-                  "uint32_t",
                   "__uint32_t",
-                  "unsigned int"
+                  "uint32_t",
+                  "in_addr_t",
+                  "unsigned int",
+                  "int"
                 ],
                 "size": 4,
                 "is_pointer": false,
@@ -736,8 +736,8 @@
             "name": "client_addr.sin_zero",
             "RBP offset": -56,
             "type": [
-              "unsigned char[8]",
-              "char[8]"
+              "char[8]",
+              "unsigned char[8]"
             ],
             "size": 8,
             "is_pointer": false,
@@ -759,10 +759,10 @@
         "name": "client_len",
         "RBP offset": -40,
         "type": [
-          "int",
-          "socklen_t",
+          "unsigned int",
           "__socklen_t",
-          "unsigned int"
+          "int",
+          "socklen_t"
         ],
         "size": 4,
         "is_pointer": false,

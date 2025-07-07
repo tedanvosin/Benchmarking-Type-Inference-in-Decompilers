@@ -1,6 +1,6 @@
 {
   "should_copy_scn": {
-    "address": "0x2385",
+    "address": "0x402376",
     "variables": [
       {
         "name": "scns",
@@ -20,8 +20,8 @@
         "name": "shdr",
         "RBP offset": -48,
         "type": [
-          "Elf64_Shdr*",
-          "GElf_Shdr*"
+          "GElf_Shdr*",
+          "Elf64_Shdr*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -50,8 +50,8 @@
         "RBP offset": -24,
         "type": [
           "long long",
-          "size_t",
-          "long unsigned int"
+          "long unsigned int",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -78,7 +78,7 @@
     ]
   },
   "main": {
-    "address": "0x242c",
+    "address": "0x402425",
     "variables": [
       {
         "name": "argv",
@@ -239,8 +239,8 @@
         "name": "shdr",
         "RBP offset": -88,
         "type": [
-          "Elf64_Shdr*",
-          "GElf_Shdr*"
+          "GElf_Shdr*",
+          "Elf64_Shdr*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -270,10 +270,10 @@
             "RBP offset": -80,
             "type": [
               "__uint32_t",
-              "uint32_t",
+              "unsigned int",
               "int",
-              "Elf64_Word",
-              "unsigned int"
+              "uint32_t",
+              "Elf64_Word"
             ],
             "size": 4,
             "is_pointer": false,
@@ -288,10 +288,10 @@
             "RBP offset": -76,
             "type": [
               "__uint32_t",
-              "uint32_t",
+              "unsigned int",
               "int",
-              "Elf64_Word",
-              "unsigned int"
+              "uint32_t",
+              "Elf64_Word"
             ],
             "size": 4,
             "is_pointer": false,
@@ -305,11 +305,11 @@
             "name": "shdr_mem.sh_flags",
             "RBP offset": -72,
             "type": [
+              "uint64_t",
               "Elf64_Xword",
               "long long",
-              "__uint64_t",
               "long unsigned int",
-              "uint64_t"
+              "__uint64_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -323,11 +323,11 @@
             "name": "shdr_mem.sh_addr",
             "RBP offset": -64,
             "type": [
-              "Elf64_Addr",
+              "uint64_t",
               "long long",
-              "__uint64_t",
               "long unsigned int",
-              "uint64_t"
+              "__uint64_t",
+              "Elf64_Addr"
             ],
             "size": 8,
             "is_pointer": false,
@@ -341,11 +341,11 @@
             "name": "shdr_mem.sh_offset",
             "RBP offset": -56,
             "type": [
-              "long long",
-              "__uint64_t",
+              "uint64_t",
               "Elf64_Off",
+              "long long",
               "long unsigned int",
-              "uint64_t"
+              "__uint64_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -359,11 +359,11 @@
             "name": "shdr_mem.sh_size",
             "RBP offset": -48,
             "type": [
+              "uint64_t",
               "Elf64_Xword",
               "long long",
-              "__uint64_t",
               "long unsigned int",
-              "uint64_t"
+              "__uint64_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -378,10 +378,10 @@
             "RBP offset": -40,
             "type": [
               "__uint32_t",
-              "uint32_t",
+              "unsigned int",
               "int",
-              "Elf64_Word",
-              "unsigned int"
+              "uint32_t",
+              "Elf64_Word"
             ],
             "size": 4,
             "is_pointer": false,
@@ -396,10 +396,10 @@
             "RBP offset": -36,
             "type": [
               "__uint32_t",
-              "uint32_t",
+              "unsigned int",
               "int",
-              "Elf64_Word",
-              "unsigned int"
+              "uint32_t",
+              "Elf64_Word"
             ],
             "size": 4,
             "is_pointer": false,
@@ -413,11 +413,11 @@
             "name": "shdr_mem.sh_addralign",
             "RBP offset": -32,
             "type": [
+              "uint64_t",
               "Elf64_Xword",
               "long long",
-              "__uint64_t",
               "long unsigned int",
-              "uint64_t"
+              "__uint64_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -431,11 +431,11 @@
             "name": "shdr_mem.sh_entsize",
             "RBP offset": -24,
             "type": [
+              "uint64_t",
               "Elf64_Xword",
               "long long",
-              "__uint64_t",
               "long unsigned int",
-              "uint64_t"
+              "__uint64_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -450,7 +450,7 @@
     ]
   },
   "clear": {
-    "address": "0x2968",
+    "address": "0x402943",
     "variables": [
       {
         "name": "do_unlink",
@@ -484,7 +484,7 @@
     ]
   },
   "elfcreator_begin": {
-    "address": "0x2a34",
+    "address": "0x402a17",
     "variables": [
       {
         "name": "elf",
@@ -533,8 +533,8 @@
         "name": "ehdr",
         "RBP offset": -88,
         "type": [
-          "GElf_Ehdr*",
-          "Elf64_Ehdr*"
+          "Elf64_Ehdr*",
+          "GElf_Ehdr*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -563,8 +563,8 @@
             "name": "ehdr_mem.e_ident",
             "RBP offset": -80,
             "type": [
-              "unsigned char[16]",
-              "char[16]"
+              "char[16]",
+              "unsigned char[16]"
             ],
             "size": 16,
             "is_pointer": false,
@@ -584,11 +584,11 @@
             "name": "ehdr_mem.e_type",
             "RBP offset": -64,
             "type": [
-              "__uint16_t",
+              "short unsigned int",
+              "uint16_t",
               "Elf64_Half",
               "short int",
-              "short unsigned int",
-              "uint16_t"
+              "__uint16_t"
             ],
             "size": 2,
             "is_pointer": false,
@@ -602,11 +602,11 @@
             "name": "ehdr_mem.e_machine",
             "RBP offset": -62,
             "type": [
-              "__uint16_t",
+              "short unsigned int",
+              "uint16_t",
               "Elf64_Half",
               "short int",
-              "short unsigned int",
-              "uint16_t"
+              "__uint16_t"
             ],
             "size": 2,
             "is_pointer": false,
@@ -621,10 +621,10 @@
             "RBP offset": -60,
             "type": [
               "__uint32_t",
-              "uint32_t",
+              "unsigned int",
               "int",
-              "Elf64_Word",
-              "unsigned int"
+              "uint32_t",
+              "Elf64_Word"
             ],
             "size": 4,
             "is_pointer": false,
@@ -638,11 +638,11 @@
             "name": "ehdr_mem.e_entry",
             "RBP offset": -56,
             "type": [
-              "Elf64_Addr",
+              "uint64_t",
               "long long",
-              "__uint64_t",
               "long unsigned int",
-              "uint64_t"
+              "__uint64_t",
+              "Elf64_Addr"
             ],
             "size": 8,
             "is_pointer": false,
@@ -656,11 +656,11 @@
             "name": "ehdr_mem.e_phoff",
             "RBP offset": -48,
             "type": [
-              "long long",
-              "__uint64_t",
+              "uint64_t",
               "Elf64_Off",
+              "long long",
               "long unsigned int",
-              "uint64_t"
+              "__uint64_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -674,11 +674,11 @@
             "name": "ehdr_mem.e_shoff",
             "RBP offset": -40,
             "type": [
-              "long long",
-              "__uint64_t",
+              "uint64_t",
               "Elf64_Off",
+              "long long",
               "long unsigned int",
-              "uint64_t"
+              "__uint64_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -693,10 +693,10 @@
             "RBP offset": -32,
             "type": [
               "__uint32_t",
-              "uint32_t",
+              "unsigned int",
               "int",
-              "Elf64_Word",
-              "unsigned int"
+              "uint32_t",
+              "Elf64_Word"
             ],
             "size": 4,
             "is_pointer": false,
@@ -710,11 +710,11 @@
             "name": "ehdr_mem.e_ehsize",
             "RBP offset": -28,
             "type": [
-              "__uint16_t",
+              "short unsigned int",
+              "uint16_t",
               "Elf64_Half",
               "short int",
-              "short unsigned int",
-              "uint16_t"
+              "__uint16_t"
             ],
             "size": 2,
             "is_pointer": false,
@@ -728,11 +728,11 @@
             "name": "ehdr_mem.e_phentsize",
             "RBP offset": -26,
             "type": [
-              "__uint16_t",
+              "short unsigned int",
+              "uint16_t",
               "Elf64_Half",
               "short int",
-              "short unsigned int",
-              "uint16_t"
+              "__uint16_t"
             ],
             "size": 2,
             "is_pointer": false,
@@ -746,11 +746,11 @@
             "name": "ehdr_mem.e_phnum",
             "RBP offset": -24,
             "type": [
-              "__uint16_t",
+              "short unsigned int",
+              "uint16_t",
               "Elf64_Half",
               "short int",
-              "short unsigned int",
-              "uint16_t"
+              "__uint16_t"
             ],
             "size": 2,
             "is_pointer": false,
@@ -764,11 +764,11 @@
             "name": "ehdr_mem.e_shentsize",
             "RBP offset": -22,
             "type": [
-              "__uint16_t",
+              "short unsigned int",
+              "uint16_t",
               "Elf64_Half",
               "short int",
-              "short unsigned int",
-              "uint16_t"
+              "__uint16_t"
             ],
             "size": 2,
             "is_pointer": false,
@@ -782,11 +782,11 @@
             "name": "ehdr_mem.e_shnum",
             "RBP offset": -20,
             "type": [
-              "__uint16_t",
+              "short unsigned int",
+              "uint16_t",
               "Elf64_Half",
               "short int",
-              "short unsigned int",
-              "uint16_t"
+              "__uint16_t"
             ],
             "size": 2,
             "is_pointer": false,
@@ -800,11 +800,11 @@
             "name": "ehdr_mem.e_shstrndx",
             "RBP offset": -18,
             "type": [
-              "__uint16_t",
+              "short unsigned int",
+              "uint16_t",
               "Elf64_Half",
               "short int",
-              "short unsigned int",
-              "uint16_t"
+              "__uint16_t"
             ],
             "size": 2,
             "is_pointer": false,
@@ -819,17 +819,17 @@
     ]
   },
   "get_scn_by_type": {
-    "address": "0x2bca",
+    "address": "0x402bb3",
     "variables": [
       {
         "name": "sh_type",
         "RBP offset": -108,
         "type": [
           "__uint32_t",
-          "uint32_t",
+          "unsigned int",
           "int",
-          "Elf64_Word",
-          "unsigned int"
+          "uint32_t",
+          "Elf64_Word"
         ],
         "size": 4,
         "is_pointer": false,
@@ -872,8 +872,8 @@
         "name": "shdr",
         "RBP offset": -88,
         "type": [
-          "Elf64_Shdr*",
-          "GElf_Shdr*"
+          "GElf_Shdr*",
+          "Elf64_Shdr*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -903,10 +903,10 @@
             "RBP offset": -80,
             "type": [
               "__uint32_t",
-              "uint32_t",
+              "unsigned int",
               "int",
-              "Elf64_Word",
-              "unsigned int"
+              "uint32_t",
+              "Elf64_Word"
             ],
             "size": 4,
             "is_pointer": false,
@@ -921,10 +921,10 @@
             "RBP offset": -76,
             "type": [
               "__uint32_t",
-              "uint32_t",
+              "unsigned int",
               "int",
-              "Elf64_Word",
-              "unsigned int"
+              "uint32_t",
+              "Elf64_Word"
             ],
             "size": 4,
             "is_pointer": false,
@@ -938,11 +938,11 @@
             "name": "shdr_mem.sh_flags",
             "RBP offset": -72,
             "type": [
+              "uint64_t",
               "Elf64_Xword",
               "long long",
-              "__uint64_t",
               "long unsigned int",
-              "uint64_t"
+              "__uint64_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -956,11 +956,11 @@
             "name": "shdr_mem.sh_addr",
             "RBP offset": -64,
             "type": [
-              "Elf64_Addr",
+              "uint64_t",
               "long long",
-              "__uint64_t",
               "long unsigned int",
-              "uint64_t"
+              "__uint64_t",
+              "Elf64_Addr"
             ],
             "size": 8,
             "is_pointer": false,
@@ -974,11 +974,11 @@
             "name": "shdr_mem.sh_offset",
             "RBP offset": -56,
             "type": [
-              "long long",
-              "__uint64_t",
+              "uint64_t",
               "Elf64_Off",
+              "long long",
               "long unsigned int",
-              "uint64_t"
+              "__uint64_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -992,11 +992,11 @@
             "name": "shdr_mem.sh_size",
             "RBP offset": -48,
             "type": [
+              "uint64_t",
               "Elf64_Xword",
               "long long",
-              "__uint64_t",
               "long unsigned int",
-              "uint64_t"
+              "__uint64_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -1011,10 +1011,10 @@
             "RBP offset": -40,
             "type": [
               "__uint32_t",
-              "uint32_t",
+              "unsigned int",
               "int",
-              "Elf64_Word",
-              "unsigned int"
+              "uint32_t",
+              "Elf64_Word"
             ],
             "size": 4,
             "is_pointer": false,
@@ -1029,10 +1029,10 @@
             "RBP offset": -36,
             "type": [
               "__uint32_t",
-              "uint32_t",
+              "unsigned int",
               "int",
-              "Elf64_Word",
-              "unsigned int"
+              "uint32_t",
+              "Elf64_Word"
             ],
             "size": 4,
             "is_pointer": false,
@@ -1046,11 +1046,11 @@
             "name": "shdr_mem.sh_addralign",
             "RBP offset": -32,
             "type": [
+              "uint64_t",
               "Elf64_Xword",
               "long long",
-              "__uint64_t",
               "long unsigned int",
-              "uint64_t"
+              "__uint64_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -1064,11 +1064,11 @@
             "name": "shdr_mem.sh_entsize",
             "RBP offset": -24,
             "type": [
+              "uint64_t",
               "Elf64_Xword",
               "long long",
-              "__uint64_t",
               "long unsigned int",
-              "uint64_t"
+              "__uint64_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -1083,7 +1083,7 @@
     ]
   },
   "update_dyn_cache": {
-    "address": "0x2c58",
+    "address": "0x402c47",
     "variables": [
       {
         "name": "ctor",
@@ -1103,7 +1103,7 @@
     ]
   },
   "elfcreator_copy_scn": {
-    "address": "0x2cd2",
+    "address": "0x402cc9",
     "variables": [
       {
         "name": "scn",
@@ -1166,8 +1166,8 @@
         "name": "newshdr",
         "RBP offset": -184,
         "type": [
-          "Elf64_Shdr*",
-          "GElf_Shdr*"
+          "GElf_Shdr*",
+          "Elf64_Shdr*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -1181,8 +1181,8 @@
         "name": "oldshdr",
         "RBP offset": -176,
         "type": [
-          "Elf64_Shdr*",
-          "GElf_Shdr*"
+          "GElf_Shdr*",
+          "Elf64_Shdr*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -1226,10 +1226,10 @@
             "RBP offset": -160,
             "type": [
               "__uint32_t",
-              "uint32_t",
+              "unsigned int",
               "int",
-              "Elf64_Word",
-              "unsigned int"
+              "uint32_t",
+              "Elf64_Word"
             ],
             "size": 4,
             "is_pointer": false,
@@ -1244,10 +1244,10 @@
             "RBP offset": -156,
             "type": [
               "__uint32_t",
-              "uint32_t",
+              "unsigned int",
               "int",
-              "Elf64_Word",
-              "unsigned int"
+              "uint32_t",
+              "Elf64_Word"
             ],
             "size": 4,
             "is_pointer": false,
@@ -1261,11 +1261,11 @@
             "name": "oldshdr_mem.sh_flags",
             "RBP offset": -152,
             "type": [
+              "uint64_t",
               "Elf64_Xword",
               "long long",
-              "__uint64_t",
               "long unsigned int",
-              "uint64_t"
+              "__uint64_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -1279,11 +1279,11 @@
             "name": "oldshdr_mem.sh_addr",
             "RBP offset": -144,
             "type": [
-              "Elf64_Addr",
+              "uint64_t",
               "long long",
-              "__uint64_t",
               "long unsigned int",
-              "uint64_t"
+              "__uint64_t",
+              "Elf64_Addr"
             ],
             "size": 8,
             "is_pointer": false,
@@ -1297,11 +1297,11 @@
             "name": "oldshdr_mem.sh_offset",
             "RBP offset": -136,
             "type": [
-              "long long",
-              "__uint64_t",
+              "uint64_t",
               "Elf64_Off",
+              "long long",
               "long unsigned int",
-              "uint64_t"
+              "__uint64_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -1315,11 +1315,11 @@
             "name": "oldshdr_mem.sh_size",
             "RBP offset": -128,
             "type": [
+              "uint64_t",
               "Elf64_Xword",
               "long long",
-              "__uint64_t",
               "long unsigned int",
-              "uint64_t"
+              "__uint64_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -1334,10 +1334,10 @@
             "RBP offset": -120,
             "type": [
               "__uint32_t",
-              "uint32_t",
+              "unsigned int",
               "int",
-              "Elf64_Word",
-              "unsigned int"
+              "uint32_t",
+              "Elf64_Word"
             ],
             "size": 4,
             "is_pointer": false,
@@ -1352,10 +1352,10 @@
             "RBP offset": -116,
             "type": [
               "__uint32_t",
-              "uint32_t",
+              "unsigned int",
               "int",
-              "Elf64_Word",
-              "unsigned int"
+              "uint32_t",
+              "Elf64_Word"
             ],
             "size": 4,
             "is_pointer": false,
@@ -1369,11 +1369,11 @@
             "name": "oldshdr_mem.sh_addralign",
             "RBP offset": -112,
             "type": [
+              "uint64_t",
               "Elf64_Xword",
               "long long",
-              "__uint64_t",
               "long unsigned int",
-              "uint64_t"
+              "__uint64_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -1387,11 +1387,11 @@
             "name": "oldshdr_mem.sh_entsize",
             "RBP offset": -104,
             "type": [
+              "uint64_t",
               "Elf64_Xword",
               "long long",
-              "__uint64_t",
               "long unsigned int",
-              "uint64_t"
+              "__uint64_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -1423,10 +1423,10 @@
             "RBP offset": -96,
             "type": [
               "__uint32_t",
-              "uint32_t",
+              "unsigned int",
               "int",
-              "Elf64_Word",
-              "unsigned int"
+              "uint32_t",
+              "Elf64_Word"
             ],
             "size": 4,
             "is_pointer": false,
@@ -1441,10 +1441,10 @@
             "RBP offset": -92,
             "type": [
               "__uint32_t",
-              "uint32_t",
+              "unsigned int",
               "int",
-              "Elf64_Word",
-              "unsigned int"
+              "uint32_t",
+              "Elf64_Word"
             ],
             "size": 4,
             "is_pointer": false,
@@ -1458,11 +1458,11 @@
             "name": "newshdr_mem.sh_flags",
             "RBP offset": -88,
             "type": [
+              "uint64_t",
               "Elf64_Xword",
               "long long",
-              "__uint64_t",
               "long unsigned int",
-              "uint64_t"
+              "__uint64_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -1476,11 +1476,11 @@
             "name": "newshdr_mem.sh_addr",
             "RBP offset": -80,
             "type": [
-              "Elf64_Addr",
+              "uint64_t",
               "long long",
-              "__uint64_t",
               "long unsigned int",
-              "uint64_t"
+              "__uint64_t",
+              "Elf64_Addr"
             ],
             "size": 8,
             "is_pointer": false,
@@ -1494,11 +1494,11 @@
             "name": "newshdr_mem.sh_offset",
             "RBP offset": -72,
             "type": [
-              "long long",
-              "__uint64_t",
+              "uint64_t",
               "Elf64_Off",
+              "long long",
               "long unsigned int",
-              "uint64_t"
+              "__uint64_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -1512,11 +1512,11 @@
             "name": "newshdr_mem.sh_size",
             "RBP offset": -64,
             "type": [
+              "uint64_t",
               "Elf64_Xword",
               "long long",
-              "__uint64_t",
               "long unsigned int",
-              "uint64_t"
+              "__uint64_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -1531,10 +1531,10 @@
             "RBP offset": -56,
             "type": [
               "__uint32_t",
-              "uint32_t",
+              "unsigned int",
               "int",
-              "Elf64_Word",
-              "unsigned int"
+              "uint32_t",
+              "Elf64_Word"
             ],
             "size": 4,
             "is_pointer": false,
@@ -1549,10 +1549,10 @@
             "RBP offset": -52,
             "type": [
               "__uint32_t",
-              "uint32_t",
+              "unsigned int",
               "int",
-              "Elf64_Word",
-              "unsigned int"
+              "uint32_t",
+              "Elf64_Word"
             ],
             "size": 4,
             "is_pointer": false,
@@ -1566,11 +1566,11 @@
             "name": "newshdr_mem.sh_addralign",
             "RBP offset": -48,
             "type": [
+              "uint64_t",
               "Elf64_Xword",
               "long long",
-              "__uint64_t",
               "long unsigned int",
-              "uint64_t"
+              "__uint64_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -1584,11 +1584,11 @@
             "name": "newshdr_mem.sh_entsize",
             "RBP offset": -40,
             "type": [
+              "uint64_t",
               "Elf64_Xword",
               "long long",
-              "__uint64_t",
               "long unsigned int",
-              "uint64_t"
+              "__uint64_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -1603,14 +1603,14 @@
     ]
   },
   "get_dyn_by_tag": {
-    "address": "0x2e43",
+    "address": "0x402e44",
     "variables": [
       {
         "name": "idx",
         "RBP offset": -48,
         "type": [
-          "size_t*",
           "long long*",
+          "size_t*",
           "long unsigned int*"
         ],
         "size": 8,
@@ -1625,8 +1625,8 @@
         "name": "mem",
         "RBP offset": -40,
         "type": [
-          "Elf64_Dyn*",
-          "GElf_Dyn*"
+          "GElf_Dyn*",
+          "Elf64_Dyn*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -1640,11 +1640,11 @@
         "name": "d_tag",
         "RBP offset": -32,
         "type": [
-          "Elf64_Sxword",
-          "int64_t",
+          "__int64_t",
           "long long",
           "long int",
-          "__int64_t"
+          "Elf64_Sxword",
+          "int64_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1674,8 +1674,8 @@
         "RBP offset": -16,
         "type": [
           "long long",
-          "size_t",
-          "long unsigned int"
+          "long unsigned int",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1689,8 +1689,8 @@
         "name": "dyn",
         "RBP offset": -8,
         "type": [
-          "Elf64_Dyn*",
-          "GElf_Dyn*"
+          "GElf_Dyn*",
+          "Elf64_Dyn*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -1703,15 +1703,15 @@
     ]
   },
   "remove_dyn": {
-    "address": "0x2efc",
+    "address": "0x402f05",
     "variables": [
       {
         "name": "idx",
         "RBP offset": -64,
         "type": [
           "long long",
-          "size_t",
-          "long unsigned int"
+          "long unsigned int",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1741,8 +1741,8 @@
         "RBP offset": -48,
         "type": [
           "long long",
-          "size_t",
-          "long unsigned int"
+          "long unsigned int",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1756,8 +1756,8 @@
         "name": "dyn",
         "RBP offset": -40,
         "type": [
-          "Elf64_Dyn*",
-          "GElf_Dyn*"
+          "GElf_Dyn*",
+          "Elf64_Dyn*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -1771,8 +1771,8 @@
         "name": "dyn_mem",
         "RBP offset": -32,
         "type": [
-          "GElf_Dyn",
-          "Elf64_Dyn"
+          "Elf64_Dyn",
+          "GElf_Dyn"
         ],
         "size": 16,
         "is_pointer": false,
@@ -1786,11 +1786,11 @@
             "name": "dyn_mem.d_tag",
             "RBP offset": -32,
             "type": [
-              "Elf64_Sxword",
-              "int64_t",
+              "__int64_t",
               "long long",
               "long int",
-              "__int64_t"
+              "Elf64_Sxword",
+              "int64_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -1819,7 +1819,7 @@
     ]
   },
   "generic_dyn_fixup_fn": {
-    "address": "0x3052",
+    "address": "0x403065",
     "variables": [
       {
         "name": "scn",
@@ -1839,11 +1839,11 @@
         "name": "d_tag",
         "RBP offset": -144,
         "type": [
-          "Elf64_Sxword",
-          "int64_t",
+          "__int64_t",
           "long long",
           "long int",
-          "__int64_t"
+          "Elf64_Sxword",
+          "int64_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1873,8 +1873,8 @@
         "RBP offset": -120,
         "type": [
           "long long",
-          "size_t",
-          "long unsigned int"
+          "long unsigned int",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1888,8 +1888,8 @@
         "name": "dyn",
         "RBP offset": -112,
         "type": [
-          "Elf64_Dyn*",
-          "GElf_Dyn*"
+          "GElf_Dyn*",
+          "Elf64_Dyn*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -1903,8 +1903,8 @@
         "name": "shdr",
         "RBP offset": -104,
         "type": [
-          "Elf64_Shdr*",
-          "GElf_Shdr*"
+          "GElf_Shdr*",
+          "Elf64_Shdr*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -1918,8 +1918,8 @@
         "name": "dyn_mem",
         "RBP offset": -96,
         "type": [
-          "GElf_Dyn",
-          "Elf64_Dyn"
+          "Elf64_Dyn",
+          "GElf_Dyn"
         ],
         "size": 16,
         "is_pointer": false,
@@ -1933,11 +1933,11 @@
             "name": "dyn_mem.d_tag",
             "RBP offset": -96,
             "type": [
-              "Elf64_Sxword",
-              "int64_t",
+              "__int64_t",
               "long long",
               "long int",
-              "__int64_t"
+              "Elf64_Sxword",
+              "int64_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -1983,10 +1983,10 @@
             "RBP offset": -80,
             "type": [
               "__uint32_t",
-              "uint32_t",
+              "unsigned int",
               "int",
-              "Elf64_Word",
-              "unsigned int"
+              "uint32_t",
+              "Elf64_Word"
             ],
             "size": 4,
             "is_pointer": false,
@@ -2001,10 +2001,10 @@
             "RBP offset": -76,
             "type": [
               "__uint32_t",
-              "uint32_t",
+              "unsigned int",
               "int",
-              "Elf64_Word",
-              "unsigned int"
+              "uint32_t",
+              "Elf64_Word"
             ],
             "size": 4,
             "is_pointer": false,
@@ -2018,11 +2018,11 @@
             "name": "shdr_mem.sh_flags",
             "RBP offset": -72,
             "type": [
+              "uint64_t",
               "Elf64_Xword",
               "long long",
-              "__uint64_t",
               "long unsigned int",
-              "uint64_t"
+              "__uint64_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -2036,11 +2036,11 @@
             "name": "shdr_mem.sh_addr",
             "RBP offset": -64,
             "type": [
-              "Elf64_Addr",
+              "uint64_t",
               "long long",
-              "__uint64_t",
               "long unsigned int",
-              "uint64_t"
+              "__uint64_t",
+              "Elf64_Addr"
             ],
             "size": 8,
             "is_pointer": false,
@@ -2054,11 +2054,11 @@
             "name": "shdr_mem.sh_offset",
             "RBP offset": -56,
             "type": [
-              "long long",
-              "__uint64_t",
+              "uint64_t",
               "Elf64_Off",
+              "long long",
               "long unsigned int",
-              "uint64_t"
+              "__uint64_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -2072,11 +2072,11 @@
             "name": "shdr_mem.sh_size",
             "RBP offset": -48,
             "type": [
+              "uint64_t",
               "Elf64_Xword",
               "long long",
-              "__uint64_t",
               "long unsigned int",
-              "uint64_t"
+              "__uint64_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -2091,10 +2091,10 @@
             "RBP offset": -40,
             "type": [
               "__uint32_t",
-              "uint32_t",
+              "unsigned int",
               "int",
-              "Elf64_Word",
-              "unsigned int"
+              "uint32_t",
+              "Elf64_Word"
             ],
             "size": 4,
             "is_pointer": false,
@@ -2109,10 +2109,10 @@
             "RBP offset": -36,
             "type": [
               "__uint32_t",
-              "uint32_t",
+              "unsigned int",
               "int",
-              "Elf64_Word",
-              "unsigned int"
+              "uint32_t",
+              "Elf64_Word"
             ],
             "size": 4,
             "is_pointer": false,
@@ -2126,11 +2126,11 @@
             "name": "shdr_mem.sh_addralign",
             "RBP offset": -32,
             "type": [
+              "uint64_t",
               "Elf64_Xword",
               "long long",
-              "__uint64_t",
               "long unsigned int",
-              "uint64_t"
+              "__uint64_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -2144,11 +2144,11 @@
             "name": "shdr_mem.sh_entsize",
             "RBP offset": -24,
             "type": [
+              "uint64_t",
               "Elf64_Xword",
               "long long",
-              "__uint64_t",
               "long unsigned int",
-              "uint64_t"
+              "__uint64_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -2163,7 +2163,7 @@
     ]
   },
   "rela_dyn_fixup_fn": {
-    "address": "0x312d",
+    "address": "0x40314a",
     "variables": [
       {
         "name": "scn",
@@ -2183,11 +2183,11 @@
         "name": "d_tag",
         "RBP offset": -144,
         "type": [
-          "Elf64_Sxword",
-          "int64_t",
+          "__int64_t",
           "long long",
           "long int",
-          "__int64_t"
+          "Elf64_Sxword",
+          "int64_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -2217,8 +2217,8 @@
         "RBP offset": -120,
         "type": [
           "long long",
-          "size_t",
-          "long unsigned int"
+          "long unsigned int",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -2232,8 +2232,8 @@
         "name": "dyn",
         "RBP offset": -112,
         "type": [
-          "Elf64_Dyn*",
-          "GElf_Dyn*"
+          "GElf_Dyn*",
+          "Elf64_Dyn*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -2247,8 +2247,8 @@
         "name": "shdr",
         "RBP offset": -104,
         "type": [
-          "Elf64_Shdr*",
-          "GElf_Shdr*"
+          "GElf_Shdr*",
+          "Elf64_Shdr*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -2262,8 +2262,8 @@
         "name": "dyn_mem",
         "RBP offset": -96,
         "type": [
-          "GElf_Dyn",
-          "Elf64_Dyn"
+          "Elf64_Dyn",
+          "GElf_Dyn"
         ],
         "size": 16,
         "is_pointer": false,
@@ -2277,11 +2277,11 @@
             "name": "dyn_mem.d_tag",
             "RBP offset": -96,
             "type": [
-              "Elf64_Sxword",
-              "int64_t",
+              "__int64_t",
               "long long",
               "long int",
-              "__int64_t"
+              "Elf64_Sxword",
+              "int64_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -2327,10 +2327,10 @@
             "RBP offset": -80,
             "type": [
               "__uint32_t",
-              "uint32_t",
+              "unsigned int",
               "int",
-              "Elf64_Word",
-              "unsigned int"
+              "uint32_t",
+              "Elf64_Word"
             ],
             "size": 4,
             "is_pointer": false,
@@ -2345,10 +2345,10 @@
             "RBP offset": -76,
             "type": [
               "__uint32_t",
-              "uint32_t",
+              "unsigned int",
               "int",
-              "Elf64_Word",
-              "unsigned int"
+              "uint32_t",
+              "Elf64_Word"
             ],
             "size": 4,
             "is_pointer": false,
@@ -2362,11 +2362,11 @@
             "name": "shdr_mem.sh_flags",
             "RBP offset": -72,
             "type": [
+              "uint64_t",
               "Elf64_Xword",
               "long long",
-              "__uint64_t",
               "long unsigned int",
-              "uint64_t"
+              "__uint64_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -2380,11 +2380,11 @@
             "name": "shdr_mem.sh_addr",
             "RBP offset": -64,
             "type": [
-              "Elf64_Addr",
+              "uint64_t",
               "long long",
-              "__uint64_t",
               "long unsigned int",
-              "uint64_t"
+              "__uint64_t",
+              "Elf64_Addr"
             ],
             "size": 8,
             "is_pointer": false,
@@ -2398,11 +2398,11 @@
             "name": "shdr_mem.sh_offset",
             "RBP offset": -56,
             "type": [
-              "long long",
-              "__uint64_t",
+              "uint64_t",
               "Elf64_Off",
+              "long long",
               "long unsigned int",
-              "uint64_t"
+              "__uint64_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -2416,11 +2416,11 @@
             "name": "shdr_mem.sh_size",
             "RBP offset": -48,
             "type": [
+              "uint64_t",
               "Elf64_Xword",
               "long long",
-              "__uint64_t",
               "long unsigned int",
-              "uint64_t"
+              "__uint64_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -2435,10 +2435,10 @@
             "RBP offset": -40,
             "type": [
               "__uint32_t",
-              "uint32_t",
+              "unsigned int",
               "int",
-              "Elf64_Word",
-              "unsigned int"
+              "uint32_t",
+              "Elf64_Word"
             ],
             "size": 4,
             "is_pointer": false,
@@ -2453,10 +2453,10 @@
             "RBP offset": -36,
             "type": [
               "__uint32_t",
-              "uint32_t",
+              "unsigned int",
               "int",
-              "Elf64_Word",
-              "unsigned int"
+              "uint32_t",
+              "Elf64_Word"
             ],
             "size": 4,
             "is_pointer": false,
@@ -2470,11 +2470,11 @@
             "name": "shdr_mem.sh_addralign",
             "RBP offset": -32,
             "type": [
+              "uint64_t",
               "Elf64_Xword",
               "long long",
-              "__uint64_t",
               "long unsigned int",
-              "uint64_t"
+              "__uint64_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -2488,11 +2488,11 @@
             "name": "shdr_mem.sh_entsize",
             "RBP offset": -24,
             "type": [
+              "uint64_t",
               "Elf64_Xword",
               "long long",
-              "__uint64_t",
               "long unsigned int",
-              "uint64_t"
+              "__uint64_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -2507,7 +2507,7 @@
     ]
   },
   "rel_dyn_fixup_fn": {
-    "address": "0x325d",
+    "address": "0x403284",
     "variables": [
       {
         "name": "scn",
@@ -2527,11 +2527,11 @@
         "name": "d_tag",
         "RBP offset": -144,
         "type": [
-          "Elf64_Sxword",
-          "int64_t",
+          "__int64_t",
           "long long",
           "long int",
-          "__int64_t"
+          "Elf64_Sxword",
+          "int64_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -2561,8 +2561,8 @@
         "RBP offset": -120,
         "type": [
           "long long",
-          "size_t",
-          "long unsigned int"
+          "long unsigned int",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -2576,8 +2576,8 @@
         "name": "dyn",
         "RBP offset": -112,
         "type": [
-          "Elf64_Dyn*",
-          "GElf_Dyn*"
+          "GElf_Dyn*",
+          "Elf64_Dyn*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -2591,8 +2591,8 @@
         "name": "shdr",
         "RBP offset": -104,
         "type": [
-          "Elf64_Shdr*",
-          "GElf_Shdr*"
+          "GElf_Shdr*",
+          "Elf64_Shdr*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -2606,8 +2606,8 @@
         "name": "dyn_mem",
         "RBP offset": -96,
         "type": [
-          "GElf_Dyn",
-          "Elf64_Dyn"
+          "Elf64_Dyn",
+          "GElf_Dyn"
         ],
         "size": 16,
         "is_pointer": false,
@@ -2621,11 +2621,11 @@
             "name": "dyn_mem.d_tag",
             "RBP offset": -96,
             "type": [
-              "Elf64_Sxword",
-              "int64_t",
+              "__int64_t",
               "long long",
               "long int",
-              "__int64_t"
+              "Elf64_Sxword",
+              "int64_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -2671,10 +2671,10 @@
             "RBP offset": -80,
             "type": [
               "__uint32_t",
-              "uint32_t",
+              "unsigned int",
               "int",
-              "Elf64_Word",
-              "unsigned int"
+              "uint32_t",
+              "Elf64_Word"
             ],
             "size": 4,
             "is_pointer": false,
@@ -2689,10 +2689,10 @@
             "RBP offset": -76,
             "type": [
               "__uint32_t",
-              "uint32_t",
+              "unsigned int",
               "int",
-              "Elf64_Word",
-              "unsigned int"
+              "uint32_t",
+              "Elf64_Word"
             ],
             "size": 4,
             "is_pointer": false,
@@ -2706,11 +2706,11 @@
             "name": "shdr_mem.sh_flags",
             "RBP offset": -72,
             "type": [
+              "uint64_t",
               "Elf64_Xword",
               "long long",
-              "__uint64_t",
               "long unsigned int",
-              "uint64_t"
+              "__uint64_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -2724,11 +2724,11 @@
             "name": "shdr_mem.sh_addr",
             "RBP offset": -64,
             "type": [
-              "Elf64_Addr",
+              "uint64_t",
               "long long",
-              "__uint64_t",
               "long unsigned int",
-              "uint64_t"
+              "__uint64_t",
+              "Elf64_Addr"
             ],
             "size": 8,
             "is_pointer": false,
@@ -2742,11 +2742,11 @@
             "name": "shdr_mem.sh_offset",
             "RBP offset": -56,
             "type": [
-              "long long",
-              "__uint64_t",
+              "uint64_t",
               "Elf64_Off",
+              "long long",
               "long unsigned int",
-              "uint64_t"
+              "__uint64_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -2760,11 +2760,11 @@
             "name": "shdr_mem.sh_size",
             "RBP offset": -48,
             "type": [
+              "uint64_t",
               "Elf64_Xword",
               "long long",
-              "__uint64_t",
               "long unsigned int",
-              "uint64_t"
+              "__uint64_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -2779,10 +2779,10 @@
             "RBP offset": -40,
             "type": [
               "__uint32_t",
-              "uint32_t",
+              "unsigned int",
               "int",
-              "Elf64_Word",
-              "unsigned int"
+              "uint32_t",
+              "Elf64_Word"
             ],
             "size": 4,
             "is_pointer": false,
@@ -2797,10 +2797,10 @@
             "RBP offset": -36,
             "type": [
               "__uint32_t",
-              "uint32_t",
+              "unsigned int",
               "int",
-              "Elf64_Word",
-              "unsigned int"
+              "uint32_t",
+              "Elf64_Word"
             ],
             "size": 4,
             "is_pointer": false,
@@ -2814,11 +2814,11 @@
             "name": "shdr_mem.sh_addralign",
             "RBP offset": -32,
             "type": [
+              "uint64_t",
               "Elf64_Xword",
               "long long",
-              "__uint64_t",
               "long unsigned int",
-              "uint64_t"
+              "__uint64_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -2832,11 +2832,11 @@
             "name": "shdr_mem.sh_entsize",
             "RBP offset": -24,
             "type": [
+              "uint64_t",
               "Elf64_Xword",
               "long long",
-              "__uint64_t",
               "long unsigned int",
-              "uint64_t"
+              "__uint64_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -2851,7 +2851,7 @@
     ]
   },
   "fixup_dynamic": {
-    "address": "0x338d",
+    "address": "0x4033be",
     "variables": [
       {
         "name": "ctor",
@@ -2919,7 +2919,7 @@
     ]
   },
   "elfcreator_end": {
-    "address": "0x35b7",
+    "address": "0x4035ef",
     "variables": [
       {
         "name": "ctor",
@@ -2968,8 +2968,8 @@
         "name": "phdr",
         "RBP offset": -72,
         "type": [
-          "GElf_Phdr*",
-          "Elf64_Phdr*"
+          "Elf64_Phdr*",
+          "GElf_Phdr*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -2999,10 +2999,10 @@
             "RBP offset": -64,
             "type": [
               "__uint32_t",
-              "uint32_t",
+              "unsigned int",
               "int",
-              "Elf64_Word",
-              "unsigned int"
+              "uint32_t",
+              "Elf64_Word"
             ],
             "size": 4,
             "is_pointer": false,
@@ -3017,10 +3017,10 @@
             "RBP offset": -60,
             "type": [
               "__uint32_t",
-              "uint32_t",
+              "unsigned int",
               "int",
-              "Elf64_Word",
-              "unsigned int"
+              "uint32_t",
+              "Elf64_Word"
             ],
             "size": 4,
             "is_pointer": false,
@@ -3034,11 +3034,11 @@
             "name": "phdr_mem.p_offset",
             "RBP offset": -56,
             "type": [
-              "long long",
-              "__uint64_t",
+              "uint64_t",
               "Elf64_Off",
+              "long long",
               "long unsigned int",
-              "uint64_t"
+              "__uint64_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -3052,11 +3052,11 @@
             "name": "phdr_mem.p_vaddr",
             "RBP offset": -48,
             "type": [
-              "Elf64_Addr",
+              "uint64_t",
               "long long",
-              "__uint64_t",
               "long unsigned int",
-              "uint64_t"
+              "__uint64_t",
+              "Elf64_Addr"
             ],
             "size": 8,
             "is_pointer": false,
@@ -3070,11 +3070,11 @@
             "name": "phdr_mem.p_paddr",
             "RBP offset": -40,
             "type": [
-              "Elf64_Addr",
+              "uint64_t",
               "long long",
-              "__uint64_t",
               "long unsigned int",
-              "uint64_t"
+              "__uint64_t",
+              "Elf64_Addr"
             ],
             "size": 8,
             "is_pointer": false,
@@ -3088,11 +3088,11 @@
             "name": "phdr_mem.p_filesz",
             "RBP offset": -32,
             "type": [
+              "uint64_t",
               "Elf64_Xword",
               "long long",
-              "__uint64_t",
               "long unsigned int",
-              "uint64_t"
+              "__uint64_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -3106,11 +3106,11 @@
             "name": "phdr_mem.p_memsz",
             "RBP offset": -24,
             "type": [
+              "uint64_t",
               "Elf64_Xword",
               "long long",
-              "__uint64_t",
               "long unsigned int",
-              "uint64_t"
+              "__uint64_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -3124,11 +3124,11 @@
             "name": "phdr_mem.p_align",
             "RBP offset": -16,
             "type": [
+              "uint64_t",
               "Elf64_Xword",
               "long long",
-              "__uint64_t",
               "long unsigned int",
-              "uint64_t"
+              "__uint64_t"
             ],
             "size": 8,
             "is_pointer": false,

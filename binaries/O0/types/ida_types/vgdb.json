@@ -1,14 +1,14 @@
 {
   ".init_proc": {
-    "address": "0x2000",
+    "address": "0x402000",
     "variables": []
   },
-  "sub_2020": {
-    "address": "0x2020",
+  "sub_402020": {
+    "address": "0x402020",
     "variables": []
   },
   "_start": {
-    "address": "0x2420",
+    "address": "0x4024d0",
     "variables": [
       {
         "name": "v5",
@@ -24,20 +24,28 @@
       }
     ]
   },
-  "sub_2450": {
-    "address": "0x2450",
+  "_dl_relocate_static_pie": {
+    "address": "0x402500",
     "variables": []
   },
-  "sub_2480": {
-    "address": "0x2480",
+  "deregister_tm_clones": {
+    "address": "0x402510",
     "variables": []
   },
-  "sub_24C0": {
-    "address": "0x24c0",
+  "register_tm_clones": {
+    "address": "0x402540",
+    "variables": []
+  },
+  "__do_global_dtors_aux": {
+    "address": "0x402580",
+    "variables": []
+  },
+  "frame_dummy": {
+    "address": "0x4025b0",
     "variables": []
   },
   "timestamp_str": {
-    "address": "0x2505",
+    "address": "0x4025b6",
     "variables": [
       {
         "name": "tv",
@@ -60,7 +68,7 @@
     ]
   },
   "vmalloc": {
-    "address": "0x259c",
+    "address": "0x402649",
     "variables": [
       {
         "name": "v3",
@@ -71,7 +79,7 @@
     ]
   },
   "vrealloc": {
-    "address": "0x2643",
+    "address": "0x4026f0",
     "variables": [
       {
         "name": "v4",
@@ -82,7 +90,7 @@
     ]
   },
   "vgdb_tmpdir": {
-    "address": "0x26f5",
+    "address": "0x4027a2",
     "variables": [
       {
         "name": "v1",
@@ -93,7 +101,7 @@
     ]
   },
   "vgdb_prefix_default": {
-    "address": "0x2754",
+    "address": "0x4027fb",
     "variables": [
       {
         "name": "s",
@@ -104,11 +112,11 @@
     ]
   },
   "add_written": {
-    "address": "0x27db",
+    "address": "0x402884",
     "variables": []
   },
   "map_vgdbshared": {
-    "address": "0x2853",
+    "address": "0x402900",
     "variables": [
       {
         "name": "buf",
@@ -117,7 +125,19 @@
         "size": 144
       },
       {
-        "name": "v8",
+        "name": "v11",
+        "RBP offset": -24,
+        "type": "int",
+        "size": 4
+      },
+      {
+        "name": "v12",
+        "RBP offset": -20,
+        "type": "int",
+        "size": 4
+      },
+      {
+        "name": "v13",
         "RBP offset": -16,
         "type": "long long *",
         "size": 8
@@ -125,7 +145,7 @@
     ]
   },
   "invoke_gdbserver_in_valgrind": {
-    "address": "0x2b1e",
+    "address": "0x402ca6",
     "variables": [
       {
         "name": "env",
@@ -148,7 +168,7 @@
     ]
   },
   "open_fifo": {
-    "address": "0x32ab",
+    "address": "0x40341b",
     "variables": [
       {
         "name": "",
@@ -165,7 +185,7 @@
     ]
   },
   "acquire_lock": {
-    "address": "0x3444",
+    "address": "0x4035b4",
     "variables": [
       {
         "name": "v8",
@@ -188,7 +208,7 @@
     ]
   },
   "read_buf": {
-    "address": "0x3629",
+    "address": "0x403791",
     "variables": [
       {
         "name": "",
@@ -198,20 +218,20 @@
       },
       {
         "name": "v8",
-        "RBP offset": -12,
-        "type": "int",
-        "size": 4
+        "RBP offset": -16,
+        "type": "ssize_t",
+        "size": 8
       }
     ]
   },
   "write_buf": {
-    "address": "0x37be",
+    "address": "0x403943",
     "variables": [
       {
         "name": "",
-        "RBP offset": -52,
-        "type": "char",
-        "size": 1
+        "RBP offset": -56,
+        "type": "long long",
+        "size": 8
       },
       {
         "name": "",
@@ -222,52 +242,82 @@
       {
         "name": "",
         "RBP offset": -32,
-        "type": "int",
-        "size": 4
+        "type": "char",
+        "size": 1
       },
       {
         "name": "v11",
-        "RBP offset": -16,
-        "type": "int",
-        "size": 4
+        "RBP offset": -24,
+        "type": "ssize_t",
+        "size": 8
       },
       {
         "name": "v12",
-        "RBP offset": -12,
-        "type": "int",
-        "size": 4
+        "RBP offset": -16,
+        "type": "long long",
+        "size": 8
       }
     ]
   },
   "ppConnectionKind": {
-    "address": "0x394c",
+    "address": "0x403b04",
     "variables": []
   },
   "read_from_gdb_write_to_pid": {
-    "address": "0x39a4",
+    "address": "0x403b5c",
     "variables": [
       {
         "name": "v4",
         "RBP offset": -16408,
-        "type": "char[16396]",
-        "size": 16396
+        "type": "char[24]",
+        "size": 24
+      },
+      {
+        "name": "v5",
+        "RBP offset": -16384,
+        "type": "char",
+        "size": 1
+      },
+      {
+        "name": "v6",
+        "RBP offset": -12288,
+        "type": "long long",
+        "size": 8
+      },
+      {
+        "name": "v7",
+        "RBP offset": -17,
+        "type": "char",
+        "size": 1
       },
       {
         "name": "buf",
-        "RBP offset": -12,
-        "type": "int",
-        "size": 4
+        "RBP offset": -16,
+        "type": "long long",
+        "size": 8
       }
     ]
   },
   "read_from_pid_write_to_gdb": {
-    "address": "0x3aef",
+    "address": "0x403cfe",
     "variables": [
       {
         "name": "v4",
         "RBP offset": -16408,
-        "type": "char[16396]",
-        "size": 16396
+        "type": "char[24]",
+        "size": 24
+      },
+      {
+        "name": "v5",
+        "RBP offset": -16384,
+        "type": "char",
+        "size": 1
+      },
+      {
+        "name": "v6",
+        "RBP offset": -12288,
+        "type": "long long",
+        "size": 8
       },
       {
         "name": "buf",
@@ -278,8 +328,14 @@
     ]
   },
   "wait_for_gdb_connect": {
-    "address": "0x3c38",
+    "address": "0x403e62",
     "variables": [
+      {
+        "name": "optval",
+        "RBP offset": -44,
+        "type": "int",
+        "size": 4
+      },
       {
         "name": "s",
         "RBP offset": -40,
@@ -287,7 +343,7 @@
         "size": 16
       },
       {
-        "name": "v8",
+        "name": "v10",
         "RBP offset": -16,
         "type": "int",
         "size": 4
@@ -301,16 +357,16 @@
     ]
   },
   "prepare_fifos_and_shared_mem": {
-    "address": "0x3f7e",
+    "address": "0x404242",
     "variables": [
       {
-        "name": "v5",
+        "name": "v6",
         "RBP offset": -28,
         "type": "int",
         "size": 4
       },
       {
-        "name": "v6",
+        "name": "v7",
         "RBP offset": -24,
         "type": "char *",
         "size": 8
@@ -323,58 +379,68 @@
       }
     ]
   },
+  "cleanup_fifos_and_shared_mem": {
+    "address": "0x4044a4",
+    "variables": []
+  },
   "fromhex": {
-    "address": "0x41e4",
+    "address": "0x4044ec",
     "variables": []
   },
   "readchar": {
-    "address": "0x4286",
+    "address": "0x404590",
     "variables": []
   },
   "getpkt": {
-    "address": "0x4409",
+    "address": "0x404708",
     "variables": [
       {
         "name": "",
-        "RBP offset": -56,
+        "RBP offset": -72,
         "type": "int",
         "size": 4
       },
       {
         "name": "v13",
-        "RBP offset": -38,
+        "RBP offset": -46,
         "type": "char",
         "size": 1
       },
       {
         "name": "v14",
-        "RBP offset": -37,
+        "RBP offset": -45,
         "type": "char",
         "size": 1
       },
       {
         "name": "v15",
-        "RBP offset": -36,
+        "RBP offset": -44,
         "type": "int",
         "size": 4
       },
       {
         "name": "v16",
-        "RBP offset": -32,
+        "RBP offset": -40,
         "type": "char",
         "size": 1
       },
       {
         "name": "v17",
-        "RBP offset": -28,
+        "RBP offset": -36,
         "type": "int",
         "size": 4
       },
       {
         "name": "v18",
-        "RBP offset": -28,
+        "RBP offset": -36,
         "type": "int",
         "size": 4
+      },
+      {
+        "name": "v19",
+        "RBP offset": -32,
+        "type": "ssize_t",
+        "size": 8
       },
       {
         "name": "i",
@@ -383,13 +449,13 @@
         "size": 4
       },
       {
-        "name": "v20",
+        "name": "v21",
         "RBP offset": -17,
         "type": "char",
         "size": 1
       },
       {
-        "name": "v21",
+        "name": "v22",
         "RBP offset": -16,
         "type": "char *",
         "size": 8
@@ -397,7 +463,7 @@
     ]
   },
   "received_signal": {
-    "address": "0x4733",
+    "address": "0x404a9e",
     "variables": [
       {
         "name": "v4",
@@ -408,7 +474,7 @@
     ]
   },
   "install_handlers": {
-    "address": "0x48ed",
+    "address": "0x404c5b",
     "variables": [
       {
         "name": "v7",
@@ -425,122 +491,601 @@
     ]
   },
   "close_connection": {
-    "address": "0x4cb5",
+    "address": "0x405004",
     "variables": []
   },
-  "gdb_relay": {
-    "address": "0x4f55",
+  "decode_hexstring": {
+    "address": "0x40529a",
     "variables": [
       {
-        "name": "v25",
-        "RBP offset": -112,
-        "type": "int[2]",
+        "name": "v6",
+        "RBP offset": -24,
+        "type": "char *",
         "size": 8
-      },
-      {
-        "name": "v26",
-        "RBP offset": -104,
-        "type": "long long",
-        "size": 8
-      },
-      {
-        "name": "v27",
-        "RBP offset": -96,
-        "type": "int",
-        "size": 4
-      },
-      {
-        "name": "v28",
-        "RBP offset": -92,
-        "type": "short",
-        "size": 2
-      },
-      {
-        "name": "v29",
-        "RBP offset": -90,
-        "type": "short",
-        "size": 2
-      },
-      {
-        "name": "v30",
-        "RBP offset": -88,
-        "type": "int",
-        "size": 4
-      },
-      {
-        "name": "arg",
-        "RBP offset": -84,
-        "type": "int[4]",
-        "size": 16
-      },
-      {
-        "name": "v32",
-        "RBP offset": -68,
-        "type": "int",
-        "size": 4
-      },
-      {
-        "name": "fds",
-        "RBP offset": -64,
-        "type": "pollfd *",
-        "size": 8
-      },
-      {
-        "name": "v34",
-        "RBP offset": -56,
-        "type": "long long",
-        "size": 8
-      },
-      {
-        "name": "v35",
-        "RBP offset": -48,
-        "type": "int",
-        "size": 4
-      },
-      {
-        "name": "v36",
-        "RBP offset": -44,
-        "type": "int",
-        "size": 4
-      },
-      {
-        "name": "v37",
-        "RBP offset": -40,
-        "type": "int",
-        "size": 4
       },
       {
         "name": "i",
-        "RBP offset": -36,
+        "RBP offset": -16,
+        "type": "int",
+        "size": 4
+      },
+      {
+        "name": "v8",
+        "RBP offset": -12,
         "type": "int",
         "size": 4
       }
     ]
   },
-  "packet_len_for_command": {
-    "address": "0x5593",
-    "variables": []
-  },
-  "standalone_send_commands": {
-    "address": "0x55b7",
+  "write_to_gdb": {
+    "address": "0x405412",
     "variables": [
       {
-        "name": "v25",
-        "RBP offset": -16512,
-        "type": "long long[2]",
-        "size": 16
+        "name": "v3",
+        "RBP offset": -24,
+        "type": "ssize_t",
+        "size": 8
       },
       {
-        "name": "v26",
-        "RBP offset": -16496,
+        "name": "v4",
+        "RBP offset": -16,
+        "type": "long long",
+        "size": 8
+      }
+    ]
+  },
+  "write_checksum": {
+    "address": "0x4054b3",
+    "variables": [
+      {
+        "name": "v3",
+        "RBP offset": -18,
+        "type": "char[2]",
+        "size": 2
+      },
+      {
+        "name": "v4",
+        "RBP offset": -16,
+        "type": "int",
+        "size": 4
+      },
+      {
+        "name": "v5",
+        "RBP offset": -9,
+        "type": "char",
+        "size": 1
+      }
+    ]
+  },
+  "write_reply": {
+    "address": "0x40554e",
+    "variables": []
+  },
+  "create_packet": {
+    "address": "0x4055ad",
+    "variables": [
+      {
+        "name": "v6",
+        "RBP offset": -24,
+        "type": "char *",
+        "size": 8
+      },
+      {
+        "name": "v7",
+        "RBP offset": -16,
+        "type": "int",
+        "size": 4
+      },
+      {
+        "name": "v8",
+        "RBP offset": -16,
+        "type": "int",
+        "size": 4
+      },
+      {
+        "name": "v9",
+        "RBP offset": -9,
+        "type": "char",
+        "size": 1
+      }
+    ]
+  },
+  "read_one_char": {
+    "address": "0x4056d7",
+    "variables": [
+      {
+        "name": "v2",
+        "RBP offset": -16,
+        "type": "ssize_t",
+        "size": 8
+      }
+    ]
+  },
+  "send_packet": {
+    "address": "0x405731",
+    "variables": [
+      {
+        "name": "v4",
+        "RBP offset": -17,
+        "type": "char",
+        "size": 1
+      },
+      {
+        "name": "v5",
+        "RBP offset": -16,
+        "type": "ssize_t",
+        "size": 8
+      }
+    ]
+  },
+  "receive_packet": {
+    "address": "0x405809",
+    "variables": [
+      {
+        "name": "v4",
+        "RBP offset": -28,
+        "type": "char",
+        "size": 1
+      },
+      {
+        "name": "v5",
+        "RBP offset": -27,
+        "type": "char",
+        "size": 1
+      },
+      {
+        "name": "v6",
+        "RBP offset": -26,
+        "type": "char",
+        "size": 1
+      },
+      {
+        "name": "i",
+        "RBP offset": -25,
+        "type": "char",
+        "size": 1
+      },
+      {
+        "name": "v8",
+        "RBP offset": -24,
+        "type": "ssize_t",
+        "size": 8
+      },
+      {
+        "name": "v9",
+        "RBP offset": -16,
+        "type": "long long",
+        "size": 8
+      }
+    ]
+  },
+  "next_delim_string": {
+    "address": "0x405a57",
+    "variables": [
+      {
+        "name": "",
+        "RBP offset": -8,
+        "type": "long long",
+        "size": 8
+      }
+    ]
+  },
+  "split_hexdecode": {
+    "address": "0x405a96",
+    "variables": [
+      {
+        "name": "",
+        "RBP offset": -56,
         "type": "long long",
         "size": 8
       },
       {
-        "name": "v27",
-        "RBP offset": -16488,
+        "name": "delim_string",
+        "RBP offset": -16,
+        "type": "char *",
+        "size": 8
+      }
+    ]
+  },
+  "count_delims": {
+    "address": "0x405bcd",
+    "variables": [
+      {
+        "name": "",
+        "RBP offset": -16,
+        "type": "long long",
+        "size": 8
+      },
+      {
+        "name": "v5",
+        "RBP offset": -8,
+        "type": "long long",
+        "size": 8
+      }
+    ]
+  },
+  "count_len": {
+    "address": "0x405c27",
+    "variables": [
+      {
+        "name": "",
+        "RBP offset": -16,
+        "type": "long long",
+        "size": 8
+      },
+      {
+        "name": "v6",
+        "RBP offset": -4,
         "type": "int",
         "size": 4
+      }
+    ]
+  },
+  "early_exit": {
+    "address": "0x405cf7",
+    "variables": [
+      {
+        "name": "v7",
+        "RBP offset": -16384,
+        "type": "char",
+        "size": 1
+      },
+      {
+        "name": "v8",
+        "RBP offset": -4280,
+        "type": "char *",
+        "size": 8
+      },
+      {
+        "name": "status",
+        "RBP offset": -4268,
+        "type": "int",
+        "size": 4
+      },
+      {
+        "name": "buf",
+        "RBP offset": -4264,
+        "type": "stat",
+        "size": 144
+      },
+      {
+        "name": "s",
+        "RBP offset": -4120,
+        "type": "char[24]",
+        "size": 24
+      },
+      {
+        "name": "v12",
+        "RBP offset": -4096,
+        "type": "long long",
+        "size": 8
+      }
+    ]
+  },
+  "fork_and_exec_valgrind": {
+    "address": "0x405fe3",
+    "variables": [
+      {
+        "name": "",
+        "RBP offset": -136,
+        "type": "long long",
+        "size": 8
+      },
+      {
+        "name": "",
+        "RBP offset": -128,
+        "type": "char *",
+        "size": 8
+      },
+      {
+        "name": "",
+        "RBP offset": -112,
+        "type": "int",
+        "size": 4
+      },
+      {
+        "name": "pipedes",
+        "RBP offset": -92,
+        "type": "int[2]",
+        "size": 8
+      },
+      {
+        "name": "v14",
+        "RBP offset": -84,
+        "type": "int",
+        "size": 4
+      },
+      {
+        "name": "v15",
+        "RBP offset": -80,
+        "type": "ssize_t",
+        "size": 8
+      },
+      {
+        "name": "v16",
+        "RBP offset": -72,
+        "type": "long long",
+        "size": 8
+      },
+      {
+        "name": "v17",
+        "RBP offset": -64,
+        "type": "ssize_t",
+        "size": 8
+      },
+      {
+        "name": "argv",
+        "RBP offset": -56,
+        "type": "char **",
+        "size": 8
+      },
+      {
+        "name": "v19",
+        "RBP offset": -48,
+        "type": "int",
+        "size": 4
+      },
+      {
+        "name": "v20",
+        "RBP offset": -44,
+        "type": "int",
+        "size": 4
+      },
+      {
+        "name": "v21",
+        "RBP offset": -40,
+        "type": "int",
+        "size": 4
+      },
+      {
+        "name": "v22",
+        "RBP offset": -36,
+        "type": "__pid_t",
+        "size": 4
+      },
+      {
+        "name": "v23",
+        "RBP offset": -32,
+        "type": "long long",
+        "size": 8
+      },
+      {
+        "name": "j",
+        "RBP offset": -24,
+        "type": "int",
+        "size": 4
+      },
+      {
+        "name": "i",
+        "RBP offset": -20,
+        "type": "int",
+        "size": 4
+      },
+      {
+        "name": "v26",
+        "RBP offset": -16,
+        "type": "long long",
+        "size": 8
+      }
+    ]
+  },
+  "do_multi_mode": {
+    "address": "0x40646b",
+    "variables": [
+      {
+        "name": "v55",
+        "RBP offset": -256,
+        "type": "char[8]",
+        "size": 8
+      },
+      {
+        "name": "v56",
+        "RBP offset": -248,
+        "type": "int",
+        "size": 4
+      },
+      {
+        "name": "v57",
+        "RBP offset": -244,
+        "type": "int",
+        "size": 4
+      },
+      {
+        "name": "stringp",
+        "RBP offset": -240,
+        "type": "char *",
+        "size": 8
+      },
+      {
+        "name": "stat_loc",
+        "RBP offset": -232,
+        "type": "int",
+        "size": 4
+      },
+      {
+        "name": "pid",
+        "RBP offset": -228,
+        "type": "__pid_t",
+        "size": 4
+      },
+      {
+        "name": "ptr",
+        "RBP offset": -224,
+        "type": "char *",
+        "size": 8
+      },
+      {
+        "name": "v62",
+        "RBP offset": -216,
+        "type": "void *",
+        "size": 8
+      },
+      {
+        "name": "v63",
+        "RBP offset": -208,
+        "type": "void *",
+        "size": 8
+      },
+      {
+        "name": "v64",
+        "RBP offset": -200,
+        "type": "void *",
+        "size": 8
+      },
+      {
+        "name": "v65",
+        "RBP offset": -192,
+        "type": "char *",
+        "size": 8
+      },
+      {
+        "name": "v66",
+        "RBP offset": -184,
+        "type": "long long",
+        "size": 8
+      },
+      {
+        "name": "v67",
+        "RBP offset": -172,
+        "type": "int",
+        "size": 4
+      },
+      {
+        "name": "v68",
+        "RBP offset": -168,
+        "type": "__pid_t",
+        "size": 4
+      },
+      {
+        "name": "errnum",
+        "RBP offset": -164,
+        "type": "int",
+        "size": 4
+      },
+      {
+        "name": "v70",
+        "RBP offset": -160,
+        "type": "void *",
+        "size": 8
+      },
+      {
+        "name": "v71",
+        "RBP offset": -152,
+        "type": "char *",
+        "size": 8
+      },
+      {
+        "name": "v72",
+        "RBP offset": -144,
+        "type": "void *",
+        "size": 8
+      },
+      {
+        "name": "v73",
+        "RBP offset": -136,
+        "type": "size_t",
+        "size": 8
+      },
+      {
+        "name": "v74",
+        "RBP offset": -128,
+        "type": "void *",
+        "size": 8
+      },
+      {
+        "name": "v75",
+        "RBP offset": -120,
+        "type": "char *",
+        "size": 8
+      },
+      {
+        "name": "v76",
+        "RBP offset": -112,
+        "type": "void *",
+        "size": 8
+      },
+      {
+        "name": "v77",
+        "RBP offset": -104,
+        "type": "long long",
+        "size": 8
+      },
+      {
+        "name": "delim",
+        "RBP offset": -96,
+        "type": "char *",
+        "size": 8
+      },
+      {
+        "name": "v79",
+        "RBP offset": -88,
+        "type": "long long",
+        "size": 8
+      },
+      {
+        "name": "dest",
+        "RBP offset": -80,
+        "type": "char *",
+        "size": 8
+      },
+      {
+        "name": "s2",
+        "RBP offset": -72,
+        "type": "char *",
+        "size": 8
+      },
+      {
+        "name": "k",
+        "RBP offset": -64,
+        "type": "size_t",
+        "size": 8
+      },
+      {
+        "name": "m",
+        "RBP offset": -56,
+        "type": "size_t",
+        "size": 8
+      },
+      {
+        "name": "j",
+        "RBP offset": -48,
+        "type": "size_t",
+        "size": 8
+      },
+      {
+        "name": "i",
+        "RBP offset": -40,
+        "type": "size_t",
+        "size": 8
+      },
+      {
+        "name": "delim_string",
+        "RBP offset": -32,
+        "type": "char *",
+        "size": 8
+      },
+      {
+        "name": "v87",
+        "RBP offset": -24,
+        "type": "int",
+        "size": 4
+      },
+      {
+        "name": "v88",
+        "RBP offset": -20,
+        "type": "int",
+        "size": 4
+      }
+    ]
+  },
+  "gdb_relay": {
+    "address": "0x407b38",
+    "variables": [
+      {
+        "name": "",
+        "RBP offset": -16496,
+        "type": "long long",
+        "size": 8
       },
       {
         "name": "arg",
@@ -551,8 +1096,209 @@
       {
         "name": "s1",
         "RBP offset": -16480,
-        "type": "char[16389]",
-        "size": 16389
+        "type": "char[80]",
+        "size": 80
+      },
+      {
+        "name": "v36",
+        "RBP offset": -16400,
+        "type": "char",
+        "size": 1
+      },
+      {
+        "name": "v37",
+        "RBP offset": -4208,
+        "type": "int",
+        "size": 4
+      },
+      {
+        "name": "v38",
+        "RBP offset": -4204,
+        "type": "short",
+        "size": 2
+      },
+      {
+        "name": "v39",
+        "RBP offset": -4202,
+        "type": "short",
+        "size": 2
+      },
+      {
+        "name": "v40",
+        "RBP offset": -4200,
+        "type": "int",
+        "size": 4
+      },
+      {
+        "name": "v41",
+        "RBP offset": -4196,
+        "type": "short",
+        "size": 2
+      },
+      {
+        "name": "v42",
+        "RBP offset": -4194,
+        "type": "short",
+        "size": 2
+      },
+      {
+        "name": "v43",
+        "RBP offset": -4192,
+        "type": "int",
+        "size": 4
+      },
+      {
+        "name": "v44",
+        "RBP offset": -4188,
+        "type": "short",
+        "size": 2
+      },
+      {
+        "name": "v45",
+        "RBP offset": -4186,
+        "type": "short",
+        "size": 2
+      },
+      {
+        "name": "v46",
+        "RBP offset": -4184,
+        "type": "int",
+        "size": 4
+      },
+      {
+        "name": "v47",
+        "RBP offset": -4180,
+        "type": "short",
+        "size": 2
+      },
+      {
+        "name": "v48",
+        "RBP offset": -4178,
+        "type": "short",
+        "size": 2
+      },
+      {
+        "name": "v49",
+        "RBP offset": -4112,
+        "type": "long long",
+        "size": 8
+      },
+      {
+        "name": "s",
+        "RBP offset": -88,
+        "type": "char *",
+        "size": 8
+      },
+      {
+        "name": "v51",
+        "RBP offset": -80,
+        "type": "size_t",
+        "size": 8
+      },
+      {
+        "name": "v52",
+        "RBP offset": -72,
+        "type": "size_t",
+        "size": 8
+      },
+      {
+        "name": "v53",
+        "RBP offset": -60,
+        "type": "int",
+        "size": 4
+      },
+      {
+        "name": "fds",
+        "RBP offset": -56,
+        "type": "pollfd *",
+        "size": 8
+      },
+      {
+        "name": "v55",
+        "RBP offset": -48,
+        "type": "long long",
+        "size": 8
+      },
+      {
+        "name": "v56",
+        "RBP offset": -36,
+        "type": "int",
+        "size": 4
+      },
+      {
+        "name": "v57",
+        "RBP offset": -32,
+        "type": "int",
+        "size": 4
+      },
+      {
+        "name": "i",
+        "RBP offset": -28,
+        "type": "int",
+        "size": 4
+      },
+      {
+        "name": "v59",
+        "RBP offset": -22,
+        "type": "char",
+        "size": 1
+      },
+      {
+        "name": "v60",
+        "RBP offset": -21,
+        "type": "char",
+        "size": 1
+      },
+      {
+        "name": "v61",
+        "RBP offset": -20,
+        "type": "int",
+        "size": 4
+      }
+    ]
+  },
+  "packet_len_for_command": {
+    "address": "0x40846b",
+    "variables": []
+  },
+  "standalone_send_commands": {
+    "address": "0x40848d",
+    "variables": [
+      {
+        "name": "",
+        "RBP offset": -16496,
+        "type": "long long",
+        "size": 8
+      },
+      {
+        "name": "arg",
+        "RBP offset": -16484,
+        "type": "int",
+        "size": 4
+      },
+      {
+        "name": "s1",
+        "RBP offset": -16480,
+        "type": "char[80]",
+        "size": 80
+      },
+      {
+        "name": "v29",
+        "RBP offset": -16400,
+        "type": "char",
+        "size": 1
+      },
+      {
+        "name": "v30",
+        "RBP offset": -4208,
+        "type": "char[96]",
+        "size": 96
+      },
+      {
+        "name": "v31",
+        "RBP offset": -4112,
+        "type": "long long",
+        "size": 8
       },
       {
         "name": "s",
@@ -561,13 +1307,13 @@
         "size": 3
       },
       {
-        "name": "v31",
+        "name": "v33",
         "RBP offset": -88,
         "type": "char *",
         "size": 8
       },
       {
-        "name": "v32",
+        "name": "v34",
         "RBP offset": -80,
         "type": "long long",
         "size": 8
@@ -579,212 +1325,224 @@
         "size": 8
       },
       {
-        "name": "v34",
+        "name": "v36",
         "RBP offset": -60,
         "type": "int",
         "size": 4
       },
       {
-        "name": "v35",
+        "name": "v37",
         "RBP offset": -56,
         "type": "int",
         "size": 4
       },
       {
-        "name": "v36",
+        "name": "v38",
         "RBP offset": -52,
         "type": "int",
         "size": 4
       },
       {
-        "name": "i",
-        "RBP offset": -48,
-        "type": "int",
-        "size": 4
-      },
-      {
         "name": "j",
-        "RBP offset": -44,
-        "type": "int",
-        "size": 4
-      },
-      {
-        "name": "k",
-        "RBP offset": -40,
-        "type": "int",
-        "size": 4
-      },
-      {
-        "name": "v40",
-        "RBP offset": -33,
-        "type": "char",
-        "size": 1
-      }
-    ]
-  },
-  "report_pid": {
-    "address": "0x5f50",
-    "variables": [
-      {
-        "name": "buf",
-        "RBP offset": -216,
-        "type": "char[112]",
-        "size": 112
-      },
-      {
-        "name": "s",
-        "RBP offset": -104,
-        "type": "char[64]",
-        "size": 64
-      },
-      {
-        "name": "v13",
-        "RBP offset": -40,
-        "type": "ssize_t",
-        "size": 8
-      },
-      {
-        "name": "fd",
-        "RBP offset": -28,
-        "type": "int",
-        "size": 4
-      },
-      {
-        "name": "stream",
-        "RBP offset": -24,
-        "type": "FILE *",
-        "size": 8
-      },
-      {
-        "name": "i",
-        "RBP offset": -12,
-        "type": "int",
-        "size": 4
-      }
-    ]
-  },
-  "usage": {
-    "address": "0x6256",
-    "variables": []
-  },
-  "search_arg_pid": {
-    "address": "0x6288",
-    "variables": [
-      {
-        "name": "v24",
-        "RBP offset": -304,
-        "type": "long long[2]",
-        "size": 16
-      },
-      {
-        "name": "v25",
-        "RBP offset": -284,
-        "type": "char",
-        "size": 1
-      },
-      {
-        "name": "v26",
-        "RBP offset": -280,
-        "type": "int",
-        "size": 4
-      },
-      {
-        "name": "v27",
-        "RBP offset": -276,
-        "type": "int",
-        "size": 4
-      },
-      {
-        "name": "buf",
-        "RBP offset": -272,
-        "type": "stat",
-        "size": 144
-      },
-      {
-        "name": "endptr",
-        "RBP offset": -120,
-        "type": "char *",
-        "size": 8
-      },
-      {
-        "name": "pid",
-        "RBP offset": -108,
-        "type": "__pid_t",
-        "size": 4
-      },
-      {
-        "name": "file",
-        "RBP offset": -104,
-        "type": "char *",
-        "size": 8
-      },
-      {
-        "name": "v32",
-        "RBP offset": -96,
+        "RBP offset": -48,
         "type": "size_t",
         "size": 8
       },
       {
-        "name": "v33",
-        "RBP offset": -88,
-        "type": "dirent *",
-        "size": 8
-      },
-      {
-        "name": "dirp",
-        "RBP offset": -80,
-        "type": "DIR *",
-        "size": 8
-      },
-      {
-        "name": "dest",
-        "RBP offset": -72,
-        "type": "char *",
-        "size": 8
-      },
-      {
-        "name": "s",
-        "RBP offset": -64,
-        "type": "char *",
-        "size": 8
-      },
-      {
-        "name": "name",
-        "RBP offset": -56,
-        "type": "char *",
-        "size": 8
-      },
-      {
-        "name": "v38",
-        "RBP offset": -48,
-        "type": "int",
-        "size": 4
-      },
-      {
         "name": "i",
-        "RBP offset": -44,
-        "type": "int",
-        "size": 4
-      },
-      {
-        "name": "j",
         "RBP offset": -40,
         "type": "int",
         "size": 4
       },
       {
         "name": "v41",
+        "RBP offset": -33,
+        "type": "char",
+        "size": 1
+      },
+      {
+        "name": "k",
+        "RBP offset": -32,
+        "type": "long long",
+        "size": 8
+      },
+      {
+        "name": "m",
+        "RBP offset": -20,
+        "type": "int",
+        "size": 4
+      }
+    ]
+  },
+  "report_pid": {
+    "address": "0x408e20",
+    "variables": [
+      {
+        "name": "buf",
+        "RBP offset": -4200,
+        "type": "char[104]",
+        "size": 104
+      },
+      {
+        "name": "s",
+        "RBP offset": -104,
+        "type": "char[56]",
+        "size": 56
+      },
+      {
+        "name": "v13",
+        "RBP offset": -48,
+        "type": "ssize_t",
+        "size": 8
+      },
+      {
+        "name": "fd",
         "RBP offset": -36,
+        "type": "int",
+        "size": 4
+      },
+      {
+        "name": "stream",
+        "RBP offset": -32,
+        "type": "FILE *",
+        "size": 8
+      },
+      {
+        "name": "v16",
+        "RBP offset": -24,
+        "type": "long long",
+        "size": 8
+      },
+      {
+        "name": "i",
+        "RBP offset": -16,
+        "type": "long long",
+        "size": 8
+      }
+    ]
+  },
+  "usage": {
+    "address": "0x4091a4",
+    "variables": []
+  },
+  "search_arg_pid": {
+    "address": "0x4091e3",
+    "variables": [
+      {
+        "name": "v25",
+        "RBP offset": -272,
+        "type": "char[4]",
+        "size": 4
+      },
+      {
+        "name": "v26",
+        "RBP offset": -268,
+        "type": "char",
+        "size": 1
+      },
+      {
+        "name": "v27",
+        "RBP offset": -264,
+        "type": "int",
+        "size": 4
+      },
+      {
+        "name": "v28",
+        "RBP offset": -260,
+        "type": "int",
+        "size": 4
+      },
+      {
+        "name": "buf",
+        "RBP offset": -256,
+        "type": "stat",
+        "size": 144
+      },
+      {
+        "name": "v30",
+        "RBP offset": -104,
+        "type": "char *",
+        "size": 8
+      },
+      {
+        "name": "pid",
+        "RBP offset": -92,
+        "type": "__pid_t",
+        "size": 4
+      },
+      {
+        "name": "file",
+        "RBP offset": -88,
+        "type": "char *",
+        "size": 8
+      },
+      {
+        "name": "v33",
+        "RBP offset": -80,
+        "type": "size_t",
+        "size": 8
+      },
+      {
+        "name": "v34",
+        "RBP offset": -72,
+        "type": "dirent *",
+        "size": 8
+      },
+      {
+        "name": "dirp",
+        "RBP offset": -64,
+        "type": "DIR *",
+        "size": 8
+      },
+      {
+        "name": "dest",
+        "RBP offset": -56,
+        "type": "char *",
+        "size": 8
+      },
+      {
+        "name": "s",
+        "RBP offset": -48,
+        "type": "char *",
+        "size": 8
+      },
+      {
+        "name": "name",
+        "RBP offset": -40,
+        "type": "char *",
+        "size": 8
+      },
+      {
+        "name": "v39",
+        "RBP offset": -32,
+        "type": "int",
+        "size": 4
+      },
+      {
+        "name": "i",
+        "RBP offset": -28,
+        "type": "int",
+        "size": 4
+      },
+      {
+        "name": "v41",
+        "RBP offset": -24,
+        "type": "int",
+        "size": 4
+      },
+      {
+        "name": "j",
+        "RBP offset": -20,
         "type": "int",
         "size": 4
       }
     ]
   },
   "numeric_val": {
-    "address": "0x6b78",
+    "address": "0x409aff",
     "variables": [
       {
-        "name": "endptr",
+        "name": "v3",
         "RBP offset": -32,
         "type": "char *",
         "size": 8
@@ -804,7 +1562,7 @@
     ]
   },
   "is_opt": {
-    "address": "0x6c13",
+    "address": "0x409ba2",
     "variables": [
       {
         "name": "v3",
@@ -815,7 +1573,7 @@
     ]
   },
   "parse_options": {
-    "address": "0x6c88",
+    "address": "0x409c1f",
     "variables": [
       {
         "name": "a7",
@@ -832,7 +1590,25 @@
       {
         "name": "a9",
         "RBP offset": 24,
+        "type": "int *",
+        "size": 8
+      },
+      {
+        "name": "a10",
+        "RBP offset": 32,
         "type": "void **",
+        "size": 8
+      },
+      {
+        "name": "",
+        "RBP offset": -120,
+        "type": "long long",
+        "size": 8
+      },
+      {
+        "name": "",
+        "RBP offset": -112,
+        "type": "long long",
         "size": 8
       },
       {
@@ -848,43 +1624,43 @@
         "size": 8
       },
       {
-        "name": "",
-        "RBP offset": -88,
-        "type": "long long",
-        "size": 8
-      },
-      {
-        "name": "",
-        "RBP offset": -80,
-        "type": "long long",
-        "size": 8
-      },
-      {
-        "name": "v32",
-        "RBP offset": -44,
+        "name": "v38",
+        "RBP offset": -60,
         "type": "int",
         "size": 4
       },
       {
-        "name": "v33",
-        "RBP offset": -40,
+        "name": "v39",
+        "RBP offset": -56,
         "type": "int",
         "size": 4
       },
       {
-        "name": "v34",
+        "name": "v40",
+        "RBP offset": -52,
+        "type": "int",
+        "size": 4
+      },
+      {
+        "name": "name",
+        "RBP offset": -48,
+        "type": "char *",
+        "size": 8
+      },
+      {
+        "name": "v42",
         "RBP offset": -36,
         "type": "int",
         "size": 4
       },
       {
-        "name": "v35",
+        "name": "v43",
         "RBP offset": -32,
         "type": "int",
         "size": 4
       },
       {
-        "name": "v36",
+        "name": "v44",
         "RBP offset": -28,
         "type": "int",
         "size": 4
@@ -896,25 +1672,31 @@
         "size": 4
       },
       {
-        "name": "v38",
+        "name": "v46",
         "RBP offset": -20,
         "type": "int",
         "size": 4
       },
       {
-        "name": "v39",
+        "name": "v47",
         "RBP offset": -16,
         "type": "int",
         "size": 4
       },
       {
-        "name": "v40",
+        "name": "v48",
+        "RBP offset": -11,
+        "type": "char",
+        "size": 1
+      },
+      {
+        "name": "v49",
         "RBP offset": -10,
         "type": "char",
         "size": 1
       },
       {
-        "name": "v41",
+        "name": "v50",
         "RBP offset": -9,
         "type": "char",
         "size": 1
@@ -922,23 +1704,17 @@
     ]
   },
   "main": {
-    "address": "0x79b7",
+    "address": "0x40ac04",
     "variables": [
       {
-        "name": "v11",
+        "name": "v12",
         "RBP offset": -80,
         "type": "char **",
         "size": 8
       },
       {
-        "name": "v12",
-        "RBP offset": -68,
-        "type": "int",
-        "size": 4
-      },
-      {
         "name": "v13",
-        "RBP offset": -64,
+        "RBP offset": -68,
         "type": "int",
         "size": 4
       },
@@ -962,33 +1738,45 @@
       },
       {
         "name": "v17",
-        "RBP offset": -46,
-        "type": "char",
-        "size": 1
+        "RBP offset": -48,
+        "type": "int",
+        "size": 4
       },
       {
         "name": "v18",
-        "RBP offset": -45,
+        "RBP offset": -43,
         "type": "char",
         "size": 1
       },
       {
         "name": "v19",
-        "RBP offset": -44,
-        "type": "int",
-        "size": 4
+        "RBP offset": -42,
+        "type": "char",
+        "size": 1
       },
       {
         "name": "v20",
+        "RBP offset": -41,
+        "type": "char",
+        "size": 1
+      },
+      {
+        "name": "v21",
         "RBP offset": -40,
         "type": "char ***",
         "size": 8
       },
       {
-        "name": "v21",
+        "name": "v22",
         "RBP offset": -32,
         "type": "long long",
         "size": 8
+      },
+      {
+        "name": "v23",
+        "RBP offset": -24,
+        "type": "int",
+        "size": 4
       },
       {
         "name": "i",
@@ -998,8 +1786,41 @@
       }
     ]
   },
+  "tohex": {
+    "address": "0x40af46",
+    "variables": []
+  },
+  "hexify": {
+    "address": "0x40af65",
+    "variables": [
+      {
+        "name": "v7",
+        "RBP offset": -44,
+        "type": "int",
+        "size": 4
+      },
+      {
+        "name": "s",
+        "RBP offset": -40,
+        "type": "char *",
+        "size": 8
+      },
+      {
+        "name": "",
+        "RBP offset": -32,
+        "type": "long long",
+        "size": 8
+      },
+      {
+        "name": "i",
+        "RBP offset": -12,
+        "type": "int",
+        "size": 4
+      }
+    ]
+  },
   "ptrace_read_memory": {
-    "address": "0x7c8e",
+    "address": "0x40b01f",
     "variables": [
       {
         "name": "n",
@@ -1014,13 +1835,13 @@
         "size": 8
       },
       {
-        "name": "v13",
+        "name": "v14",
         "RBP offset": -48,
         "type": "long long",
         "size": 8
       },
       {
-        "name": "v14",
+        "name": "v15",
         "RBP offset": -36,
         "type": "int",
         "size": 4
@@ -1028,7 +1849,7 @@
     ]
   },
   "ptrace_write_memory": {
-    "address": "0x7d98",
+    "address": "0x40b185",
     "variables": [
       {
         "name": "n",
@@ -1043,13 +1864,13 @@
         "size": 8
       },
       {
-        "name": "v13",
+        "name": "v14",
         "RBP offset": -48,
         "type": "void *",
         "size": 8
       },
       {
-        "name": "v14",
+        "name": "v15",
         "RBP offset": -36,
         "type": "int",
         "size": 4
@@ -1057,11 +1878,11 @@
     ]
   },
   "name_of_ThreadStatus": {
-    "address": "0x7ffb",
+    "address": "0x40b438",
     "variables": []
   },
   "status_image": {
-    "address": "0x8062",
+    "address": "0x40b489",
     "variables": [
       {
         "name": "v2",
@@ -1072,7 +1893,7 @@
     ]
   },
   "waitstopped": {
-    "address": "0x81f7",
+    "address": "0x40b604",
     "variables": [
       {
         "name": "",
@@ -1113,7 +1934,7 @@
     ]
   },
   "stop": {
-    "address": "0x8768",
+    "address": "0x40bb53",
     "variables": [
       {
         "name": "v6",
@@ -1124,7 +1945,7 @@
     ]
   },
   "attach": {
-    "address": "0x889b",
+    "address": "0x40bc87",
     "variables": [
       {
         "name": "v5",
@@ -1135,7 +1956,7 @@
     ]
   },
   "acquire_and_suspend_threads": {
-    "address": "0x8a14",
+    "address": "0x40be01",
     "variables": [
       {
         "name": "v15",
@@ -1182,14 +2003,8 @@
     ]
   },
   "detach_from_all_threads": {
-    "address": "0x90b7",
+    "address": "0x40c48b",
     "variables": [
-      {
-        "name": "v9",
-        "RBP offset": -24,
-        "type": "long long",
-        "size": 8
-      },
       {
         "name": "v10",
         "RBP offset": -24,
@@ -1198,6 +2013,12 @@
       },
       {
         "name": "v11",
+        "RBP offset": -24,
+        "type": "long long",
+        "size": 8
+      },
+      {
+        "name": "v12",
         "RBP offset": -13,
         "type": "char",
         "size": 1
@@ -1211,7 +2032,7 @@
     ]
   },
   "getregs": {
-    "address": "0x94f4",
+    "address": "0x40c8c5",
     "variables": [
       {
         "name": "",
@@ -1240,7 +2061,7 @@
     ]
   },
   "setregs": {
-    "address": "0x9d8d",
+    "address": "0x40d0fe",
     "variables": [
       {
         "name": "",
@@ -1293,7 +2114,7 @@
     ]
   },
   "restore_and_detach": {
-    "address": "0xa27c",
+    "address": "0x40d5bf",
     "variables": [
       {
         "name": "i",
@@ -1304,7 +2125,7 @@
     ]
   },
   "invoker_invoke_gdbserver": {
-    "address": "0xa75d",
+    "address": "0x40da7f",
     "variables": [
       {
         "name": "v13",
@@ -1369,19 +2190,19 @@
     ]
   },
   "invoker_cleanup_restore_and_detach": {
-    "address": "0xb037",
+    "address": "0x40e301",
     "variables": []
   },
   "invoker_restrictions_msg": {
-    "address": "0xb0c5",
+    "address": "0x40e393",
     "variables": []
   },
   "invoker_valgrind_dying": {
-    "address": "0xb0c7",
+    "address": "0x40e395",
     "variables": []
   },
   ".term_proc": {
-    "address": "0xb0d8",
+    "address": "0x40e3a8",
     "variables": []
   }
 }
