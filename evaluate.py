@@ -415,6 +415,7 @@ def load_list(base_dir):
     file_list = open(base_dir/'file_list.txt','r').readlines()
     file_list = [file.strip() for file in file_list]
     
+    files_evaluated = []
     for file in file_list:
         file_path = base_dir / file
         file_name = file_path.stem
@@ -433,6 +434,12 @@ def load_list(base_dir):
         GROUND_TRUTHS.append(ground_truth)
         for decomp in DECOMPILERS:
             DECOMPS[decomp].append(decomp_files[decomp])
+        
+        files_evaluated.append(file)
+    
+    with open(f"{base_dir.stem}_file_list","w") as f:
+        for file in files_evaluated:
+            f.write(file+"\n")
 
     return
 

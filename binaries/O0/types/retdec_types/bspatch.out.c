@@ -1,9 +1,0 @@
-int64_t data; // bp-56, 0x1328
-int64_t v4; // bp-48, 0x1328
-int64_t v6; // bp-40, 0x1328
-int64_t v8; // bp-32, 0x1328
-int64_t v10; // bp-240, 0x1328
-int64_t v12; // bp-236, 0x1328
-int64_t v15; // bp-232, 0x1328
-int64_t v24; // bp-64, 0x1328
-int64_t v26; // bp-8, 0x1328
