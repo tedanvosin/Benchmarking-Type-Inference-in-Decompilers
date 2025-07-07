@@ -69,6 +69,8 @@ def extract_stack_variables(bv=None,output_file=None):
         
         for var in function.vars:
             if var.source_type == binaryninja.VariableSourceType.StackVariableSourceType:
+                if not function.get_hlil_var_refs(var):
+                    continue
                 var_data = {}
                 var_data['name'] = ''
                 var_data['RBP offset'] = 0
