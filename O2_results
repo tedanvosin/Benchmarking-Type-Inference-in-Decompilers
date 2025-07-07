@@ -1,0 +1,138 @@
+Evaluating 173 files with 7295 functions.
+
+=======================================================================================================================================
+Function Level Evaluations
+
+[*] All Functions
+
+ Decompilers  |Variables Identified/ | Correct | Wrong | Variable in Decomp |  Variable in GT   | Coverage | Accuracy |Precision | False Positive 
+              |   Variables in GT    |  Type   | Type  |   but not in GT    | but not in Decomp |   (%)    |   (%)    |   (%)    |    Rate(%)     
+--------------------------------------------------------------------------------------------------------------------------------------------------
+     angr     |            14044/2939|      618|   2066|               11360|                255|     91.32|     21.03|      4.40|           80.89
+    binja     |            26298/2939|      816|   1573|               23909|                550|     81.29|     27.76|      3.10|           90.92
+    ghidra    |             9745/2939|     1367|   1123|                7255|                449|     84.72|     46.51|     14.03|           74.45
+     ida      |            10042/2939|      783|   1010|                8249|               1146|     61.01|     26.64|      7.80|           82.14
+    retypd    |            41084/2939|      829|    625|               39630|               1485|     49.47|     28.21|      2.02|           96.46
+
+
+[*] Functions with only Primitive Types and Pointers
+
+ Decompilers  |Variables Identified/ | Correct | Wrong | Variable in Decomp |  Variable in GT   | Coverage | Accuracy |Precision | False Positive 
+              |   Variables in GT    |  Type   | Type  |   but not in GT    | but not in Decomp |   (%)    |   (%)    |   (%)    |    Rate(%)     
+--------------------------------------------------------------------------------------------------------------------------------------------------
+     angr     |              3755/699|      282|    350|                3123|                 67|     90.41|     40.34|      7.51|           83.17
+    binja     |             12536/699|      387|    163|               11986|                149|     78.68|     55.36|      3.09|           95.61
+    ghidra    |              1964/699|      463|    135|                1366|                101|     85.55|     66.24|     23.57|           69.55
+     ida      |              3384/699|      303|    129|                2952|                267|     61.80|     43.35|      8.95|           87.23
+    retypd    |             21974/699|      312|    101|               21561|                286|     59.08|     44.64|      1.42|           98.12
+
+
+[*] Functions with structs and arrays
+
+ Decompilers  |Variables Identified/ | Correct | Wrong | Variable in Decomp |  Variable in GT   | Coverage | Accuracy |Precision | False Positive 
+              |   Variables in GT    |  Type   | Type  |   but not in GT    | but not in Decomp |   (%)    |   (%)    |   (%)    |    Rate(%)     
+--------------------------------------------------------------------------------------------------------------------------------------------------
+     angr     |            10289/2240|      336|   1716|                8237|                188|     91.61|     15.00|      3.27|           80.06
+    binja     |            13762/2240|      429|   1410|               11923|                401|     82.10|     19.15|      3.12|           86.64
+    ghidra    |             7781/2240|      904|    988|                5889|                348|     84.46|     40.36|     11.62|           75.68
+     ida      |             6658/2240|      480|    881|                5297|                879|     60.76|     21.43|      7.21|           79.56
+    retypd    |            19110/2240|      517|    524|               18069|               1199|     46.47|     23.08|      2.71|           94.55
+
+
+=======================================================================================================================================
+Type Level Evaluations
+
+[*] Bool
+
+ Decompilers | Variables Identified/ | Correct | Wrong |  Variable in GT   | Correct |  Wrong  | Type Inference |Size Inference
+             |    Variables in GT    |  Type   | Type  | but not in Decomp |  Size   |  Size   |  Accuracy(%)   | Accuracy(%)  
+-------------------------------------------------------------------------------------------------------------------------------
+    angr     |                    5/5|        0|      5|                  0|        5|        0|            0.00|        100.00
+    binja    |                    5/5|        0|      5|                  0|        5|        0|            0.00|        100.00
+   ghidra    |                    5/5|        0|      5|                  0|        5|        0|            0.00|        100.00
+     ida     |                    0/5|        0|      0|                  5|        0|        0|            0.00|          0.00
+   retypd    |                    5/5|        0|      5|                  0|        1|        4|            0.00|         20.00
+
+
+[*] Char
+
+ Decompilers | Variables Identified/ | Correct | Wrong |  Variable in GT   | Correct |  Wrong  | Type Inference |Size Inference
+             |    Variables in GT    |  Type   | Type  | but not in Decomp |  Size   |  Size   |  Accuracy(%)   | Accuracy(%)  
+-------------------------------------------------------------------------------------------------------------------------------
+    angr     |                  10/16|       10|      0|                  6|       10|        0|           62.50|        100.00
+    binja    |                  10/16|        9|      1|                  6|        9|        1|           56.25|         90.00
+   ghidra    |                  13/16|       12|      1|                  3|       12|        1|           75.00|         92.31
+     ida     |                   2/16|        0|      2|                 14|        0|        2|            0.00|          0.00
+   retypd    |                  10/16|        1|      9|                  6|        5|        5|            6.25|         50.00
+
+
+[*] Int
+
+ Decompilers | Variables Identified/ | Correct | Wrong |  Variable in GT   | Correct |  Wrong  | Type Inference |Size Inference
+             |    Variables in GT    |  Type   | Type  | but not in Decomp |  Size   |  Size   |  Accuracy(%)   | Accuracy(%)  
+-------------------------------------------------------------------------------------------------------------------------------
+    angr     |                584/688|      420|    164|                104|      481|      103|           61.05|         82.36
+    binja    |                451/688|      378|     73|                237|      384|       67|           54.94|         85.14
+   ghidra    |                475/688|      385|     90|                213|      464|       11|           55.96|         97.68
+     ida     |                538/688|      480|     58|                150|      498|       40|           69.77|         92.57
+   retypd    |                298/688|      261|     37|                390|      295|        3|           37.94|         98.99
+
+
+[*] Long Long
+
+ Decompilers | Variables Identified/ | Correct | Wrong |  Variable in GT   | Correct |  Wrong  | Type Inference |Size Inference
+             |    Variables in GT    |  Type   | Type  | but not in Decomp |  Size   |  Size   |  Accuracy(%)   | Accuracy(%)  
+-------------------------------------------------------------------------------------------------------------------------------
+    angr     |                252/256|       82|    170|                  4|      172|       80|           32.03|         68.25
+    binja    |                254/256|      176|     78|                  2|      242|       12|           68.75|         95.28
+   ghidra    |                255/256|      133|    122|                  1|      254|        1|           51.95|         99.61
+     ida     |                183/256|      104|     79|                 73|      135|       48|           40.62|         73.77
+   retypd    |                168/256|       55|    113|                 88|      134|       34|           21.48|         79.76
+
+
+[*] Pointers
+
+ Decompilers | Variables Identified/ | Correct | Wrong |  Not a  |  Variable in GT   | Correct |  Wrong  | Pointer Identification |Target Resolution |Size Inference
+             |    Variables in GT    | Target  |Target | Pointer | but not in Decomp |  Size   |  Size   |      Accuracy(%)       |   Accuracy(%)    | Accuracy(%)  
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    angr     |                277/320|       36|     80|      161|                 43|      204|       73|                   36.25|             11.25|         73.65
+    binja    |                255/320|      151|     53|       51|                 65|      233|       22|                   63.75|             47.19|         91.37
+   ghidra    |                293/320|      176|     46|       71|                 27|      271|       22|                   69.38|             55.00|         92.49
+     ida     |                213/320|       35|     71|      107|                107|      134|       79|                   33.12|             10.94|         62.91
+   retypd    |                195/320|       82|     36|       77|                125|      154|       41|                   36.88|             25.62|         78.97
+
+
+[*] Arrays
+
+ Decompilers | Variables Identified/ | Correct | Correct Base | Wrong |  Variable in GT   |     % of Arrays     |  % of Arrays identified with  
+             |    Variables in GT    |  Type   | Wrong Length | Type  | but not in Decomp |Correctly Identified | correct base but wrong length 
+------------------------------------------------------------------------------------------------------------------------------------------------
+    angr     |              1072/1147|       31|            94|    947|                 75|                 2.70|                           8.20
+    binja    |               949/1147|       22|           210|    717|                198|                 1.92|                          18.31
+   ghidra    |               957/1147|      374|           275|    308|                190|                32.61|                          23.98
+     ida     |               621/1147|      124|           157|    340|                526|                10.81|                          13.69
+   retypd    |               452/1147|      241|            28|    183|                695|                21.01|                           2.44
+
+
+[*] Structs
+
+ Decompilers | Variables Identified/ | Correct | Wrong |  Variable in GT   |Struct Identification
+             |    Variables in GT    |  Type   | Type  | but not in Decomp |    Accuracy (%)     
+-------------------------------------------------------------------------------------------------
+    angr     |                774/796|       39|    735|                 22|                 4.90
+    binja    |                754/796|       64|    690|                 42|                 8.04
+   ghidra    |                762/796|      293|    469|                 34|                36.81
+     ida     |                342/796|       21|    321|                454|                 2.64
+   retypd    |                465/796|      227|    238|                331|                28.52
+angr
+Structs Identified: ['rusage', 'termios', 'stat']
+binja
+Structs Identified: ['icdl_info_ret', 'sigaction', 'addrinfo', 'timeval', 'info_loc', '__fpos_t', 'stat', 'termios', 'TESTINSTANCE', 'KOCSUM', 'glob_t', '__sigset_t', 'rusage', 'fd_set', 'DEPGLOBALS', 'KDEPIDBGLOBALS', 'clinfo_device_topology_pci', 'KMKBUILTINCTX', 'mbstate_t', 'tm', '_strbuf', 'statvfs']
+ghidra
+Structs Identified: ['utsname', 'icdl_info_ret', 'sigaction', 'timeval', 'LNINSTANCE', '__gnuc_va_list', 'va_list', 'info_loc', 'RMINSTANCE', '__fpos_t', 'REDIRECTORDERS[32]', 'stat', 'MD5Context', 'INSTALLINSTANCE', '__builtin_va_list', 'posix_spawn_file_actions_t', 'sigset_t', 'termios', 're_registers', 'CPINSTANCE', 'CATINSTANCE', 'TESTINSTANCE', 'KOCSUM', 'regmatch_t', 'RMDIRINSTANCE', 'MVINSTANCE', 'unpacked_cl_version', 'regex_t', 'itimerval', 'glob_t', 'timeval[2]', '__sigset_t', 'rusage', 'KDEPOBJGLOBALS', 'getopt_state_r', 'utimbuf', 'PRINTFINSTANCE', 'DEPGLOBALS', '__va_list_tag[1]', 'rlimit', 'fd_set', 'platform_info_ret', 'platform_list', 'opt_out', 'KDEPIDBGLOBALS', 'clinfo_device_topology_pci', 'KMKBUILTINCTX', 'mbstate_t', 'tm', '_strbuf', 'statvfs', 'EXPRINSTANCE']
+ida
+Structs Identified: ['itimerval', 'sigaction', 'XWindowAttributes', 'XClassHint', 'timeval', 'rusage', 'stat', 'XWindowChanges']
+retypd
+Structs Identified: ['utsname', 'icdl_info_ret', 'sigaction', 'timeval', 'LNINSTANCE', '__gnuc_va_list', 'va_list', 'info_loc', 'RMINSTANCE', '__fpos_t', 'REDIRECTORDERS[32]', 'stat', 'MD5Context', 'INSTALLINSTANCE', '__builtin_va_list', 'posix_spawn_file_actions_t', 'sigset_t', 'termios', 're_registers', 'CPINSTANCE', 'CATINSTANCE', 'TESTINSTANCE', 'KOCSUM', 'RMDIRINSTANCE', 'MVINSTANCE', 'unpacked_cl_version', 'regex_t', 'timeval[2]', 'KDEPOBJGLOBALS', 'getopt_state_r', 'utimbuf', 'PRINTFINSTANCE', 'DEPGLOBALS', '__va_list_tag[1]', 'platform_info_ret', 'platform_list', 'opt_out', 'KDEPIDBGLOBALS', 'clinfo_device_topology_pci', 'KMKBUILTINCTX', '_strbuf', 'EXPRINSTANCE']
+
+

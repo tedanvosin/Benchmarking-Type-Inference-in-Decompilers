@@ -336,8 +336,9 @@ def var_level_evaluate(var_type_str,exp_size):
                     else:
                         fn += 1
         
-        type_inf_acc = tp/(tp+fp+fn) * 100
-        size_inf_acc = c_sz/(c_sz+w_sz) * 100
+
+        type_inf_acc = tp/max(tp+fp+fn,1) * 100
+        size_inf_acc = c_sz/max(c_sz+w_sz,1) * 100
         print("{:^13}|{:>23}|{:>9}|{:>7}|{:>19}|{:>9}|{:>9}|{:>16}|{:>14}".format(decompiler,f'{tp+fp+tn}/{tp+fp+fn}', tp, fp, fn, c_sz, w_sz, f'{type_inf_acc:.2f}',f'{size_inf_acc:.2f}'))
     print("\n")
     
@@ -432,6 +433,7 @@ def load_list(base_dir):
         GROUND_TRUTHS.append(ground_truth)
         for decomp in DECOMPILERS:
             DECOMPS[decomp].append(decomp_files[decomp])
+
     return
 
 def main():
