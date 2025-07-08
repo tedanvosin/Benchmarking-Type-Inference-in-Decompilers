@@ -86,11 +86,13 @@ def analyze_binary(binary_path):
                     
                     var_name = var.name
                     var_type_obj = code_gen.cfunc.variable_manager.get_variable_type(var)
-                    var_type = var_type_obj.c_repr()
-                    var_type = normalize_type(var_type)
+                    var_type = ""
+                    if var_type_obj is not None:
+                        var_type = var_type_obj.c_repr()
+                        var_type = normalize_type(var_type)
                     
                     var_size = 0
-                    if var_type_obj.size:
+                    if var_type_obj is not None and var_type_obj.size:
                         var_size = var_type_obj.size//8
                     else:
                         var_size = var.size
