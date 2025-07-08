@@ -6,8 +6,8 @@
         "name": "_ptr",
         "RBP offset": -8,
         "type": [
-          "GError*",
-          "_GError*"
+          "_GError*",
+          "GError*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -112,9 +112,9 @@
         "name": "size",
         "RBP offset": -40,
         "type": [
-          "long long",
           "long unsigned int",
-          "size_t"
+          "size_t",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -205,9 +205,9 @@
         "RBP offset": -224,
         "type": [
           "long int",
-          "long long",
           "off_t",
-          "__off64_t"
+          "__off64_t",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -321,9 +321,9 @@
             "name": "st.st_dev",
             "RBP offset": -160,
             "type": [
-              "long long",
               "__dev_t",
-              "long unsigned int"
+              "long unsigned int",
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -337,9 +337,9 @@
             "name": "st.st_ino",
             "RBP offset": -152,
             "type": [
-              "__ino_t",
+              "long unsigned int",
               "long long",
-              "long unsigned int"
+              "__ino_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -353,9 +353,9 @@
             "name": "st.st_nlink",
             "RBP offset": -144,
             "type": [
+              "long unsigned int",
               "long long",
-              "__nlink_t",
-              "long unsigned int"
+              "__nlink_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -369,8 +369,8 @@
             "name": "st.st_mode",
             "RBP offset": -136,
             "type": [
-              "int",
               "unsigned int",
+              "int",
               "__mode_t"
             ],
             "size": 4,
@@ -385,9 +385,9 @@
             "name": "st.st_uid",
             "RBP offset": -132,
             "type": [
+              "unsigned int",
               "int",
-              "__uid_t",
-              "unsigned int"
+              "__uid_t"
             ],
             "size": 4,
             "is_pointer": false,
@@ -401,9 +401,9 @@
             "name": "st.st_gid",
             "RBP offset": -128,
             "type": [
-              "int",
+              "unsigned int",
               "__gid_t",
-              "unsigned int"
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -431,9 +431,9 @@
             "name": "st.st_rdev",
             "RBP offset": -120,
             "type": [
-              "long long",
               "__dev_t",
-              "long unsigned int"
+              "long unsigned int",
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -464,8 +464,8 @@
             "RBP offset": -104,
             "type": [
               "long int",
-              "long long",
-              "__blksize_t"
+              "__blksize_t",
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -479,9 +479,9 @@
             "name": "st.st_blocks",
             "RBP offset": -96,
             "type": [
-              "__blkcnt_t",
               "long int",
-              "long long"
+              "long long",
+              "__blkcnt_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -525,9 +525,9 @@
                 "name": "st.st_atim.tv_nsec",
                 "RBP offset": -80,
                 "type": [
+                  "__syscall_slong_t",
                   "long int",
-                  "long long",
-                  "__syscall_slong_t"
+                  "long long"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -573,9 +573,9 @@
                 "name": "st.st_mtim.tv_nsec",
                 "RBP offset": -64,
                 "type": [
+                  "__syscall_slong_t",
                   "long int",
-                  "long long",
-                  "__syscall_slong_t"
+                  "long long"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -621,9 +621,9 @@
                 "name": "st.st_ctim.tv_nsec",
                 "RBP offset": -48,
                 "type": [
+                  "__syscall_slong_t",
                   "long int",
-                  "long long",
-                  "__syscall_slong_t"
+                  "long long"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -640,8 +640,8 @@
             "RBP offset": -40,
             "type": [
               "__syscall_slong_t[3]",
-              "long long[3]",
-              "long int[3]"
+              "long int[3]",
+              "long long[3]"
             ],
             "size": 24,
             "is_pointer": false,
@@ -669,10 +669,10 @@
         "name": "rdev",
         "RBP offset": -24,
         "type": [
-          "dev_t",
-          "long long",
           "__dev_t",
-          "long unsigned int"
+          "long unsigned int",
+          "dev_t",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -686,10 +686,10 @@
         "name": "mode",
         "RBP offset": -12,
         "type": [
-          "int",
           "unsigned int",
-          "__mode_t",
-          "mode_t"
+          "mode_t",
+          "int",
+          "__mode_t"
         ],
         "size": 4,
         "is_pointer": false,
@@ -722,10 +722,10 @@
         "name": "mode",
         "RBP offset": -12,
         "type": [
-          "int",
           "unsigned int",
-          "__mode_t",
-          "mode_t"
+          "mode_t",
+          "int",
+          "__mode_t"
         ],
         "size": 4,
         "is_pointer": false,
@@ -838,9 +838,9 @@
             "name": "stbuf.st_dev",
             "RBP offset": -160,
             "type": [
-              "long long",
               "__dev_t",
-              "long unsigned int"
+              "long unsigned int",
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -854,9 +854,9 @@
             "name": "stbuf.st_ino",
             "RBP offset": -152,
             "type": [
-              "__ino_t",
+              "long unsigned int",
               "long long",
-              "long unsigned int"
+              "__ino_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -870,9 +870,9 @@
             "name": "stbuf.st_nlink",
             "RBP offset": -144,
             "type": [
+              "long unsigned int",
               "long long",
-              "__nlink_t",
-              "long unsigned int"
+              "__nlink_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -886,8 +886,8 @@
             "name": "stbuf.st_mode",
             "RBP offset": -136,
             "type": [
-              "int",
               "unsigned int",
+              "int",
               "__mode_t"
             ],
             "size": 4,
@@ -902,9 +902,9 @@
             "name": "stbuf.st_uid",
             "RBP offset": -132,
             "type": [
+              "unsigned int",
               "int",
-              "__uid_t",
-              "unsigned int"
+              "__uid_t"
             ],
             "size": 4,
             "is_pointer": false,
@@ -918,9 +918,9 @@
             "name": "stbuf.st_gid",
             "RBP offset": -128,
             "type": [
-              "int",
+              "unsigned int",
               "__gid_t",
-              "unsigned int"
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -948,9 +948,9 @@
             "name": "stbuf.st_rdev",
             "RBP offset": -120,
             "type": [
-              "long long",
               "__dev_t",
-              "long unsigned int"
+              "long unsigned int",
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -981,8 +981,8 @@
             "RBP offset": -104,
             "type": [
               "long int",
-              "long long",
-              "__blksize_t"
+              "__blksize_t",
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -996,9 +996,9 @@
             "name": "stbuf.st_blocks",
             "RBP offset": -96,
             "type": [
-              "__blkcnt_t",
               "long int",
-              "long long"
+              "long long",
+              "__blkcnt_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -1042,9 +1042,9 @@
                 "name": "stbuf.st_atim.tv_nsec",
                 "RBP offset": -80,
                 "type": [
+                  "__syscall_slong_t",
                   "long int",
-                  "long long",
-                  "__syscall_slong_t"
+                  "long long"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -1090,9 +1090,9 @@
                 "name": "stbuf.st_mtim.tv_nsec",
                 "RBP offset": -64,
                 "type": [
+                  "__syscall_slong_t",
                   "long int",
-                  "long long",
-                  "__syscall_slong_t"
+                  "long long"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -1138,9 +1138,9 @@
                 "name": "stbuf.st_ctim.tv_nsec",
                 "RBP offset": -48,
                 "type": [
+                  "__syscall_slong_t",
                   "long int",
-                  "long long",
-                  "__syscall_slong_t"
+                  "long long"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -1157,8 +1157,8 @@
             "RBP offset": -40,
             "type": [
               "__syscall_slong_t[3]",
-              "long long[3]",
-              "long int[3]"
+              "long int[3]",
+              "long long[3]"
             ],
             "size": 24,
             "is_pointer": false,
@@ -1186,8 +1186,8 @@
         "name": "flags",
         "RBP offset": -20,
         "type": [
-          "int",
-          "unsigned int"
+          "unsigned int",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -1286,8 +1286,8 @@
         "name": "e",
         "RBP offset": -4,
         "type": [
-          "int",
-          "GIOErrorEnum"
+          "GIOErrorEnum",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -1410,9 +1410,9 @@
             "name": "stbuf.st_dev",
             "RBP offset": -160,
             "type": [
-              "long long",
               "__dev_t",
-              "long unsigned int"
+              "long unsigned int",
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -1426,9 +1426,9 @@
             "name": "stbuf.st_ino",
             "RBP offset": -152,
             "type": [
-              "__ino_t",
+              "long unsigned int",
               "long long",
-              "long unsigned int"
+              "__ino_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -1442,9 +1442,9 @@
             "name": "stbuf.st_nlink",
             "RBP offset": -144,
             "type": [
+              "long unsigned int",
               "long long",
-              "__nlink_t",
-              "long unsigned int"
+              "__nlink_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -1458,8 +1458,8 @@
             "name": "stbuf.st_mode",
             "RBP offset": -136,
             "type": [
-              "int",
               "unsigned int",
+              "int",
               "__mode_t"
             ],
             "size": 4,
@@ -1474,9 +1474,9 @@
             "name": "stbuf.st_uid",
             "RBP offset": -132,
             "type": [
+              "unsigned int",
               "int",
-              "__uid_t",
-              "unsigned int"
+              "__uid_t"
             ],
             "size": 4,
             "is_pointer": false,
@@ -1490,9 +1490,9 @@
             "name": "stbuf.st_gid",
             "RBP offset": -128,
             "type": [
-              "int",
+              "unsigned int",
               "__gid_t",
-              "unsigned int"
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -1520,9 +1520,9 @@
             "name": "stbuf.st_rdev",
             "RBP offset": -120,
             "type": [
-              "long long",
               "__dev_t",
-              "long unsigned int"
+              "long unsigned int",
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -1553,8 +1553,8 @@
             "RBP offset": -104,
             "type": [
               "long int",
-              "long long",
-              "__blksize_t"
+              "__blksize_t",
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -1568,9 +1568,9 @@
             "name": "stbuf.st_blocks",
             "RBP offset": -96,
             "type": [
-              "__blkcnt_t",
               "long int",
-              "long long"
+              "long long",
+              "__blkcnt_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -1614,9 +1614,9 @@
                 "name": "stbuf.st_atim.tv_nsec",
                 "RBP offset": -80,
                 "type": [
+                  "__syscall_slong_t",
                   "long int",
-                  "long long",
-                  "__syscall_slong_t"
+                  "long long"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -1662,9 +1662,9 @@
                 "name": "stbuf.st_mtim.tv_nsec",
                 "RBP offset": -64,
                 "type": [
+                  "__syscall_slong_t",
                   "long int",
-                  "long long",
-                  "__syscall_slong_t"
+                  "long long"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -1710,9 +1710,9 @@
                 "name": "stbuf.st_ctim.tv_nsec",
                 "RBP offset": -48,
                 "type": [
+                  "__syscall_slong_t",
                   "long int",
-                  "long long",
-                  "__syscall_slong_t"
+                  "long long"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -1729,8 +1729,8 @@
             "RBP offset": -40,
             "type": [
               "__syscall_slong_t[3]",
-              "long long[3]",
-              "long int[3]"
+              "long int[3]",
+              "long long[3]"
             ],
             "size": 24,
             "is_pointer": false,
@@ -1786,8 +1786,8 @@
         "name": "tmp_error",
         "RBP offset": -296,
         "type": [
-          "GError*",
           "GError_autoptr",
+          "GError*",
           "_GError*"
         ],
         "size": 8,
@@ -1816,9 +1816,9 @@
             "name": "stbuf_local.stx_mask",
             "RBP offset": -288,
             "type": [
-              "int",
               "__u32",
-              "unsigned int"
+              "unsigned int",
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -1832,9 +1832,9 @@
             "name": "stbuf_local.stx_blksize",
             "RBP offset": -284,
             "type": [
-              "int",
               "__u32",
-              "unsigned int"
+              "unsigned int",
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -1864,9 +1864,9 @@
             "name": "stbuf_local.stx_nlink",
             "RBP offset": -272,
             "type": [
-              "int",
               "__u32",
-              "unsigned int"
+              "unsigned int",
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -1880,9 +1880,9 @@
             "name": "stbuf_local.stx_uid",
             "RBP offset": -268,
             "type": [
-              "int",
               "__u32",
-              "unsigned int"
+              "unsigned int",
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -1896,9 +1896,9 @@
             "name": "stbuf_local.stx_gid",
             "RBP offset": -264,
             "type": [
-              "int",
               "__u32",
-              "unsigned int"
+              "unsigned int",
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -1912,8 +1912,8 @@
             "name": "stbuf_local.stx_mode",
             "RBP offset": -260,
             "type": [
-              "__u16",
               "short int",
+              "__u16",
               "short unsigned int"
             ],
             "size": 2,
@@ -1928,9 +1928,9 @@
             "name": "stbuf_local.__spare0",
             "RBP offset": -258,
             "type": [
-              "short int[1]",
+              "__u16[1]",
               "short unsigned int[1]",
-              "__u16[1]"
+              "short int[1]"
             ],
             "size": 2,
             "is_pointer": false,
@@ -2029,9 +2029,9 @@
                 "name": "stbuf_local.stx_atime.tv_sec",
                 "RBP offset": -224,
                 "type": [
+                  "__s64",
                   "long long int",
-                  "long long",
-                  "__s64"
+                  "long long"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -2045,9 +2045,9 @@
                 "name": "stbuf_local.stx_atime.tv_nsec",
                 "RBP offset": -216,
                 "type": [
-                  "int",
                   "__u32",
-                  "unsigned int"
+                  "unsigned int",
+                  "int"
                 ],
                 "size": 4,
                 "is_pointer": false,
@@ -2061,8 +2061,8 @@
                 "name": "stbuf_local.stx_atime.__reserved",
                 "RBP offset": -212,
                 "type": [
-                  "int",
-                  "__s32"
+                  "__s32",
+                  "int"
                 ],
                 "size": 4,
                 "is_pointer": false,
@@ -2092,9 +2092,9 @@
                 "name": "stbuf_local.stx_btime.tv_sec",
                 "RBP offset": -208,
                 "type": [
+                  "__s64",
                   "long long int",
-                  "long long",
-                  "__s64"
+                  "long long"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -2108,9 +2108,9 @@
                 "name": "stbuf_local.stx_btime.tv_nsec",
                 "RBP offset": -200,
                 "type": [
-                  "int",
                   "__u32",
-                  "unsigned int"
+                  "unsigned int",
+                  "int"
                 ],
                 "size": 4,
                 "is_pointer": false,
@@ -2124,8 +2124,8 @@
                 "name": "stbuf_local.stx_btime.__reserved",
                 "RBP offset": -196,
                 "type": [
-                  "int",
-                  "__s32"
+                  "__s32",
+                  "int"
                 ],
                 "size": 4,
                 "is_pointer": false,
@@ -2155,9 +2155,9 @@
                 "name": "stbuf_local.stx_ctime.tv_sec",
                 "RBP offset": -192,
                 "type": [
+                  "__s64",
                   "long long int",
-                  "long long",
-                  "__s64"
+                  "long long"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -2171,9 +2171,9 @@
                 "name": "stbuf_local.stx_ctime.tv_nsec",
                 "RBP offset": -184,
                 "type": [
-                  "int",
                   "__u32",
-                  "unsigned int"
+                  "unsigned int",
+                  "int"
                 ],
                 "size": 4,
                 "is_pointer": false,
@@ -2187,8 +2187,8 @@
                 "name": "stbuf_local.stx_ctime.__reserved",
                 "RBP offset": -180,
                 "type": [
-                  "int",
-                  "__s32"
+                  "__s32",
+                  "int"
                 ],
                 "size": 4,
                 "is_pointer": false,
@@ -2218,9 +2218,9 @@
                 "name": "stbuf_local.stx_mtime.tv_sec",
                 "RBP offset": -176,
                 "type": [
+                  "__s64",
                   "long long int",
-                  "long long",
-                  "__s64"
+                  "long long"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -2234,9 +2234,9 @@
                 "name": "stbuf_local.stx_mtime.tv_nsec",
                 "RBP offset": -168,
                 "type": [
-                  "int",
                   "__u32",
-                  "unsigned int"
+                  "unsigned int",
+                  "int"
                 ],
                 "size": 4,
                 "is_pointer": false,
@@ -2250,8 +2250,8 @@
                 "name": "stbuf_local.stx_mtime.__reserved",
                 "RBP offset": -164,
                 "type": [
-                  "int",
-                  "__s32"
+                  "__s32",
+                  "int"
                 ],
                 "size": 4,
                 "is_pointer": false,
@@ -2267,9 +2267,9 @@
             "name": "stbuf_local.stx_rdev_major",
             "RBP offset": -160,
             "type": [
-              "int",
               "__u32",
-              "unsigned int"
+              "unsigned int",
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -2283,9 +2283,9 @@
             "name": "stbuf_local.stx_rdev_minor",
             "RBP offset": -156,
             "type": [
-              "int",
               "__u32",
-              "unsigned int"
+              "unsigned int",
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -2299,9 +2299,9 @@
             "name": "stbuf_local.stx_dev_major",
             "RBP offset": -152,
             "type": [
-              "int",
               "__u32",
-              "unsigned int"
+              "unsigned int",
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -2315,9 +2315,9 @@
             "name": "stbuf_local.stx_dev_minor",
             "RBP offset": -148,
             "type": [
-              "int",
               "__u32",
-              "unsigned int"
+              "unsigned int",
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -2347,9 +2347,9 @@
             "name": "stbuf_local.stx_dio_mem_align",
             "RBP offset": -136,
             "type": [
-              "int",
               "__u32",
-              "unsigned int"
+              "unsigned int",
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -2363,9 +2363,9 @@
             "name": "stbuf_local.stx_dio_offset_align",
             "RBP offset": -132,
             "type": [
-              "int",
               "__u32",
-              "unsigned int"
+              "unsigned int",
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -2395,9 +2395,9 @@
             "name": "stbuf_local.stx_atomic_write_unit_min",
             "RBP offset": -120,
             "type": [
-              "int",
               "__u32",
-              "unsigned int"
+              "unsigned int",
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -2411,9 +2411,9 @@
             "name": "stbuf_local.stx_atomic_write_unit_max",
             "RBP offset": -116,
             "type": [
-              "int",
               "__u32",
-              "unsigned int"
+              "unsigned int",
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -2427,9 +2427,9 @@
             "name": "stbuf_local.stx_atomic_write_segments_max",
             "RBP offset": -112,
             "type": [
-              "int",
               "__u32",
-              "unsigned int"
+              "unsigned int",
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -2466,9 +2466,9 @@
             "name": "stbuf_local.__spare3",
             "RBP offset": -104,
             "type": [
-              "__u64[9]",
               "long long[9]",
-              "long long unsigned int[9]"
+              "long long unsigned int[9]",
+              "__u64[9]"
             ],
             "size": 72,
             "is_pointer": false,
@@ -2510,10 +2510,10 @@
         "name": "mode",
         "RBP offset": -28,
         "type": [
-          "int",
           "unsigned int",
-          "__mode_t",
-          "mode_t"
+          "mode_t",
+          "int",
+          "__mode_t"
         ],
         "size": 4,
         "is_pointer": false,
@@ -2574,10 +2574,10 @@
         "name": "gid",
         "RBP offset": -32,
         "type": [
-          "gid_t",
-          "__gid_t",
           "unsigned int",
-          "int"
+          "__gid_t",
+          "int",
+          "gid_t"
         ],
         "size": 4,
         "is_pointer": false,
@@ -2592,9 +2592,9 @@
         "RBP offset": -28,
         "type": [
           "uid_t",
-          "__uid_t",
           "unsigned int",
-          "int"
+          "int",
+          "__uid_t"
         ],
         "size": 4,
         "is_pointer": false,
@@ -2656,9 +2656,9 @@
         "RBP offset": -48,
         "type": [
           "long int",
-          "long long",
           "off_t",
-          "__off64_t"
+          "__off64_t",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -2780,10 +2780,10 @@
         "name": "mode",
         "RBP offset": -300,
         "type": [
-          "int",
           "unsigned int",
-          "__mode_t",
-          "mode_t"
+          "mode_t",
+          "int",
+          "__mode_t"
         ],
         "size": 4,
         "is_pointer": false,
@@ -2853,9 +2853,9 @@
             "name": "stbuf.stx_mask",
             "RBP offset": -272,
             "type": [
-              "int",
               "__u32",
-              "unsigned int"
+              "unsigned int",
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -2869,9 +2869,9 @@
             "name": "stbuf.stx_blksize",
             "RBP offset": -268,
             "type": [
-              "int",
               "__u32",
-              "unsigned int"
+              "unsigned int",
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -2901,9 +2901,9 @@
             "name": "stbuf.stx_nlink",
             "RBP offset": -256,
             "type": [
-              "int",
               "__u32",
-              "unsigned int"
+              "unsigned int",
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -2917,9 +2917,9 @@
             "name": "stbuf.stx_uid",
             "RBP offset": -252,
             "type": [
-              "int",
               "__u32",
-              "unsigned int"
+              "unsigned int",
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -2933,9 +2933,9 @@
             "name": "stbuf.stx_gid",
             "RBP offset": -248,
             "type": [
-              "int",
               "__u32",
-              "unsigned int"
+              "unsigned int",
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -2949,8 +2949,8 @@
             "name": "stbuf.stx_mode",
             "RBP offset": -244,
             "type": [
-              "__u16",
               "short int",
+              "__u16",
               "short unsigned int"
             ],
             "size": 2,
@@ -2965,9 +2965,9 @@
             "name": "stbuf.__spare0",
             "RBP offset": -242,
             "type": [
-              "short int[1]",
+              "__u16[1]",
               "short unsigned int[1]",
-              "__u16[1]"
+              "short int[1]"
             ],
             "size": 2,
             "is_pointer": false,
@@ -3066,9 +3066,9 @@
                 "name": "stbuf.stx_atime.tv_sec",
                 "RBP offset": -208,
                 "type": [
+                  "__s64",
                   "long long int",
-                  "long long",
-                  "__s64"
+                  "long long"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -3082,9 +3082,9 @@
                 "name": "stbuf.stx_atime.tv_nsec",
                 "RBP offset": -200,
                 "type": [
-                  "int",
                   "__u32",
-                  "unsigned int"
+                  "unsigned int",
+                  "int"
                 ],
                 "size": 4,
                 "is_pointer": false,
@@ -3098,8 +3098,8 @@
                 "name": "stbuf.stx_atime.__reserved",
                 "RBP offset": -196,
                 "type": [
-                  "int",
-                  "__s32"
+                  "__s32",
+                  "int"
                 ],
                 "size": 4,
                 "is_pointer": false,
@@ -3129,9 +3129,9 @@
                 "name": "stbuf.stx_btime.tv_sec",
                 "RBP offset": -192,
                 "type": [
+                  "__s64",
                   "long long int",
-                  "long long",
-                  "__s64"
+                  "long long"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -3145,9 +3145,9 @@
                 "name": "stbuf.stx_btime.tv_nsec",
                 "RBP offset": -184,
                 "type": [
-                  "int",
                   "__u32",
-                  "unsigned int"
+                  "unsigned int",
+                  "int"
                 ],
                 "size": 4,
                 "is_pointer": false,
@@ -3161,8 +3161,8 @@
                 "name": "stbuf.stx_btime.__reserved",
                 "RBP offset": -180,
                 "type": [
-                  "int",
-                  "__s32"
+                  "__s32",
+                  "int"
                 ],
                 "size": 4,
                 "is_pointer": false,
@@ -3192,9 +3192,9 @@
                 "name": "stbuf.stx_ctime.tv_sec",
                 "RBP offset": -176,
                 "type": [
+                  "__s64",
                   "long long int",
-                  "long long",
-                  "__s64"
+                  "long long"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -3208,9 +3208,9 @@
                 "name": "stbuf.stx_ctime.tv_nsec",
                 "RBP offset": -168,
                 "type": [
-                  "int",
                   "__u32",
-                  "unsigned int"
+                  "unsigned int",
+                  "int"
                 ],
                 "size": 4,
                 "is_pointer": false,
@@ -3224,8 +3224,8 @@
                 "name": "stbuf.stx_ctime.__reserved",
                 "RBP offset": -164,
                 "type": [
-                  "int",
-                  "__s32"
+                  "__s32",
+                  "int"
                 ],
                 "size": 4,
                 "is_pointer": false,
@@ -3255,9 +3255,9 @@
                 "name": "stbuf.stx_mtime.tv_sec",
                 "RBP offset": -160,
                 "type": [
+                  "__s64",
                   "long long int",
-                  "long long",
-                  "__s64"
+                  "long long"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -3271,9 +3271,9 @@
                 "name": "stbuf.stx_mtime.tv_nsec",
                 "RBP offset": -152,
                 "type": [
-                  "int",
                   "__u32",
-                  "unsigned int"
+                  "unsigned int",
+                  "int"
                 ],
                 "size": 4,
                 "is_pointer": false,
@@ -3287,8 +3287,8 @@
                 "name": "stbuf.stx_mtime.__reserved",
                 "RBP offset": -148,
                 "type": [
-                  "int",
-                  "__s32"
+                  "__s32",
+                  "int"
                 ],
                 "size": 4,
                 "is_pointer": false,
@@ -3304,9 +3304,9 @@
             "name": "stbuf.stx_rdev_major",
             "RBP offset": -144,
             "type": [
-              "int",
               "__u32",
-              "unsigned int"
+              "unsigned int",
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -3320,9 +3320,9 @@
             "name": "stbuf.stx_rdev_minor",
             "RBP offset": -140,
             "type": [
-              "int",
               "__u32",
-              "unsigned int"
+              "unsigned int",
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -3336,9 +3336,9 @@
             "name": "stbuf.stx_dev_major",
             "RBP offset": -136,
             "type": [
-              "int",
               "__u32",
-              "unsigned int"
+              "unsigned int",
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -3352,9 +3352,9 @@
             "name": "stbuf.stx_dev_minor",
             "RBP offset": -132,
             "type": [
-              "int",
               "__u32",
-              "unsigned int"
+              "unsigned int",
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -3384,9 +3384,9 @@
             "name": "stbuf.stx_dio_mem_align",
             "RBP offset": -120,
             "type": [
-              "int",
               "__u32",
-              "unsigned int"
+              "unsigned int",
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -3400,9 +3400,9 @@
             "name": "stbuf.stx_dio_offset_align",
             "RBP offset": -116,
             "type": [
-              "int",
               "__u32",
-              "unsigned int"
+              "unsigned int",
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -3432,9 +3432,9 @@
             "name": "stbuf.stx_atomic_write_unit_min",
             "RBP offset": -104,
             "type": [
-              "int",
               "__u32",
-              "unsigned int"
+              "unsigned int",
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -3448,9 +3448,9 @@
             "name": "stbuf.stx_atomic_write_unit_max",
             "RBP offset": -100,
             "type": [
-              "int",
               "__u32",
-              "unsigned int"
+              "unsigned int",
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -3464,9 +3464,9 @@
             "name": "stbuf.stx_atomic_write_segments_max",
             "RBP offset": -96,
             "type": [
-              "int",
               "__u32",
-              "unsigned int"
+              "unsigned int",
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -3503,9 +3503,9 @@
             "name": "stbuf.__spare3",
             "RBP offset": -88,
             "type": [
-              "__u64[9]",
               "long long[9]",
-              "long long unsigned int[9]"
+              "long long unsigned int[9]",
+              "__u64[9]"
             ],
             "size": 72,
             "is_pointer": false,
@@ -3580,10 +3580,10 @@
         "name": "mode",
         "RBP offset": -12,
         "type": [
-          "int",
           "unsigned int",
-          "__mode_t",
-          "mode_t"
+          "mode_t",
+          "int",
+          "__mode_t"
         ],
         "size": 4,
         "is_pointer": false,
@@ -3631,9 +3631,9 @@
         "RBP offset": -128,
         "type": [
           "long int",
-          "long long",
           "off_t",
-          "__off64_t"
+          "__off64_t",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -3647,9 +3647,9 @@
         "name": "size",
         "RBP offset": -120,
         "type": [
-          "long long",
           "long unsigned int",
-          "size_t"
+          "size_t",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -3725,9 +3725,9 @@
         "RBP offset": -48,
         "type": [
           "long int",
-          "long long",
           "off_t",
-          "__off64_t"
+          "__off64_t",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -3741,9 +3741,9 @@
         "name": "size",
         "RBP offset": -40,
         "type": [
-          "long long",
           "long unsigned int",
-          "size_t"
+          "size_t",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -3819,9 +3819,9 @@
         "RBP offset": -104,
         "type": [
           "long int",
-          "long long",
           "off_t",
-          "__off64_t"
+          "__off64_t",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -3877,9 +3877,9 @@
             "name": "dst.count",
             "RBP offset": -80,
             "type": [
-              "long long",
               "long unsigned int",
-              "size_t"
+              "size_t",
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -3893,9 +3893,9 @@
             "name": "dst.idx",
             "RBP offset": -72,
             "type": [
-              "long long",
               "long unsigned int",
-              "size_t"
+              "size_t",
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -3909,9 +3909,9 @@
             "name": "dst.off",
             "RBP offset": -64,
             "type": [
-              "long long",
               "long unsigned int",
-              "size_t"
+              "size_t",
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -3967,9 +3967,9 @@
         "RBP offset": -48,
         "type": [
           "long int",
-          "long long",
           "off_t",
-          "__off64_t"
+          "__off64_t",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -3983,9 +3983,9 @@
         "name": "size",
         "RBP offset": -40,
         "type": [
-          "long long",
           "long unsigned int",
-          "size_t"
+          "size_t",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -4206,9 +4206,9 @@
         "name": "size",
         "RBP offset": -4160,
         "type": [
-          "long long",
           "long unsigned int",
-          "size_t"
+          "size_t",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -4302,9 +4302,9 @@
         "name": "size",
         "RBP offset": -4160,
         "type": [
-          "long long",
           "long unsigned int",
-          "size_t"
+          "size_t",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -4360,10 +4360,10 @@
         "name": "n",
         "RBP offset": -4120,
         "type": [
-          "ssize_t",
-          "long long",
           "long int",
-          "__ssize_t"
+          "__ssize_t",
+          "long long",
+          "ssize_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -4401,9 +4401,9 @@
         "name": "size",
         "RBP offset": -4152,
         "type": [
-          "long long",
           "long unsigned int",
-          "size_t"
+          "size_t",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -4445,10 +4445,10 @@
         "name": "n",
         "RBP offset": -4120,
         "type": [
-          "ssize_t",
-          "long long",
           "long int",
-          "__ssize_t"
+          "__ssize_t",
+          "long long",
+          "ssize_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -4792,8 +4792,8 @@
         "RBP offset": -56,
         "type": [
           "long int",
-          "__off_t",
           "off_t",
+          "__off_t",
           "long long"
         ],
         "size": 8,
@@ -4809,8 +4809,8 @@
         "RBP offset": -48,
         "type": [
           "long int",
-          "__off_t",
           "off_t",
+          "__off_t",
           "long long"
         ],
         "size": 8,
@@ -4839,10 +4839,10 @@
         "name": "_g_inset_found",
         "RBP offset": -20,
         "type": [
-          "int",
           "gboolean",
           "gbool",
-          "gint"
+          "gint",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -5024,9 +5024,9 @@
             "name": "unused_stbuf.st_dev",
             "RBP offset": -160,
             "type": [
-              "long long",
               "__dev_t",
-              "long unsigned int"
+              "long unsigned int",
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -5040,9 +5040,9 @@
             "name": "unused_stbuf.st_ino",
             "RBP offset": -152,
             "type": [
-              "__ino_t",
+              "long unsigned int",
               "long long",
-              "long unsigned int"
+              "__ino_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -5056,9 +5056,9 @@
             "name": "unused_stbuf.st_nlink",
             "RBP offset": -144,
             "type": [
+              "long unsigned int",
               "long long",
-              "__nlink_t",
-              "long unsigned int"
+              "__nlink_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -5072,8 +5072,8 @@
             "name": "unused_stbuf.st_mode",
             "RBP offset": -136,
             "type": [
-              "int",
               "unsigned int",
+              "int",
               "__mode_t"
             ],
             "size": 4,
@@ -5088,9 +5088,9 @@
             "name": "unused_stbuf.st_uid",
             "RBP offset": -132,
             "type": [
+              "unsigned int",
               "int",
-              "__uid_t",
-              "unsigned int"
+              "__uid_t"
             ],
             "size": 4,
             "is_pointer": false,
@@ -5104,9 +5104,9 @@
             "name": "unused_stbuf.st_gid",
             "RBP offset": -128,
             "type": [
-              "int",
+              "unsigned int",
               "__gid_t",
-              "unsigned int"
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -5134,9 +5134,9 @@
             "name": "unused_stbuf.st_rdev",
             "RBP offset": -120,
             "type": [
-              "long long",
               "__dev_t",
-              "long unsigned int"
+              "long unsigned int",
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -5167,8 +5167,8 @@
             "RBP offset": -104,
             "type": [
               "long int",
-              "long long",
-              "__blksize_t"
+              "__blksize_t",
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -5182,9 +5182,9 @@
             "name": "unused_stbuf.st_blocks",
             "RBP offset": -96,
             "type": [
-              "__blkcnt_t",
               "long int",
-              "long long"
+              "long long",
+              "__blkcnt_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -5228,9 +5228,9 @@
                 "name": "unused_stbuf.st_atim.tv_nsec",
                 "RBP offset": -80,
                 "type": [
+                  "__syscall_slong_t",
                   "long int",
-                  "long long",
-                  "__syscall_slong_t"
+                  "long long"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -5276,9 +5276,9 @@
                 "name": "unused_stbuf.st_mtim.tv_nsec",
                 "RBP offset": -64,
                 "type": [
+                  "__syscall_slong_t",
                   "long int",
-                  "long long",
-                  "__syscall_slong_t"
+                  "long long"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -5324,9 +5324,9 @@
                 "name": "unused_stbuf.st_ctim.tv_nsec",
                 "RBP offset": -48,
                 "type": [
+                  "__syscall_slong_t",
                   "long int",
-                  "long long",
-                  "__syscall_slong_t"
+                  "long long"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -5343,8 +5343,8 @@
             "RBP offset": -40,
             "type": [
               "__syscall_slong_t[3]",
-              "long long[3]",
-              "long int[3]"
+              "long int[3]",
+              "long long[3]"
             ],
             "size": 24,
             "is_pointer": false,
@@ -5387,8 +5387,8 @@
         "name": "dest_path",
         "RBP offset": -40,
         "type": [
-          "gchar*",
-          "char*"
+          "char*",
+          "gchar*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -5402,8 +5402,8 @@
         "name": "src_path",
         "RBP offset": -32,
         "type": [
-          "gchar*",
-          "char*"
+          "char*",
+          "gchar*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -5480,8 +5480,8 @@
         "name": "f",
         "RBP offset": -8,
         "type": [
-          "_IO_FILE*",
-          "FILE*"
+          "FILE*",
+          "_IO_FILE*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -5556,10 +5556,10 @@
         "name": "_g_inset_found",
         "RBP offset": -20,
         "type": [
-          "int",
           "gboolean",
           "gbool",
-          "gint"
+          "gint",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -5593,10 +5593,10 @@
         "name": "ignore_eexist",
         "RBP offset": -28,
         "type": [
-          "int",
           "gboolean",
           "gbool",
-          "gint"
+          "gint",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -5727,10 +5727,10 @@
         "name": "_g_inset_found",
         "RBP offset": -80,
         "type": [
-          "int",
           "gboolean",
           "gbool",
-          "gint"
+          "gint",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -5744,8 +5744,8 @@
         "name": "_i_",
         "RBP offset": -76,
         "type": [
-          "int",
-          "unsigned int"
+          "unsigned int",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -5773,9 +5773,9 @@
         "name": "_len_",
         "RBP offset": -64,
         "type": [
-          "long long",
           "long unsigned int",
-          "size_t"
+          "size_t",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -5959,10 +5959,10 @@
         "name": "_g_inset_found",
         "RBP offset": -64,
         "type": [
-          "int",
           "gboolean",
           "gbool",
-          "gint"
+          "gint",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -5976,9 +5976,9 @@
         "name": "count",
         "RBP offset": -60,
         "type": [
-          "int",
+          "guint",
           "unsigned int",
-          "guint"
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -5992,9 +5992,9 @@
         "name": "mode",
         "RBP offset": -56,
         "type": [
-          "int",
+          "guint",
           "unsigned int",
-          "guint"
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -6008,9 +6008,9 @@
         "name": "count_max",
         "RBP offset": -52,
         "type": [
-          "int",
+          "guint",
           "unsigned int",
-          "guint"
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -6314,8 +6314,8 @@
         "name": "mode",
         "RBP offset": -172,
         "type": [
-          "int",
-          "GLnxLinkTmpfileReplaceMode"
+          "GLnxLinkTmpfileReplaceMode",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -6343,8 +6343,8 @@
         "name": "_i_",
         "RBP offset": -156,
         "type": [
-          "int",
-          "unsigned int"
+          "unsigned int",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -6358,9 +6358,9 @@
         "name": "count",
         "RBP offset": -152,
         "type": [
-          "int",
+          "guint",
           "unsigned int",
-          "guint"
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -6374,10 +6374,10 @@
         "name": "replace",
         "RBP offset": -148,
         "type": [
-          "int",
           "gboolean",
           "gbool",
-          "gint"
+          "gint",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -6391,10 +6391,10 @@
         "name": "ignore_eexist",
         "RBP offset": -144,
         "type": [
-          "int",
           "gboolean",
           "gbool",
-          "gint"
+          "gint",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -6408,9 +6408,9 @@
         "name": "count_max",
         "RBP offset": -140,
         "type": [
-          "int",
+          "guint",
           "unsigned int",
-          "guint"
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -6438,9 +6438,9 @@
         "name": "_len_",
         "RBP offset": -128,
         "type": [
-          "long long",
           "long unsigned int",
-          "size_t"
+          "size_t",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -6487,9 +6487,9 @@
         "name": "__len",
         "RBP offset": -96,
         "type": [
-          "long long",
           "long unsigned int",
-          "size_t"
+          "size_t",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -6735,10 +6735,10 @@
         "name": "follow",
         "RBP offset": -24,
         "type": [
-          "int",
           "gboolean",
           "gbool",
-          "gint"
+          "gint",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -6829,8 +6829,8 @@
         "name": "cancellable",
         "RBP offset": -248,
         "type": [
-          "_GCancellable*",
-          "GCancellable*"
+          "GCancellable*",
+          "_GCancellable*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -6844,9 +6844,9 @@
         "name": "out_len",
         "RBP offset": -240,
         "type": [
-          "long unsigned int*",
+          "long long*",
           "gsize*",
-          "long long*"
+          "long unsigned int*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -6860,10 +6860,10 @@
         "name": "nul_terminate",
         "RBP offset": -232,
         "type": [
-          "int",
           "gboolean",
           "gbool",
-          "gint"
+          "gint",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -6891,9 +6891,9 @@
         "name": "maxreadlen",
         "RBP offset": -220,
         "type": [
-          "int",
+          "guint",
           "unsigned int",
-          "guint"
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -6923,9 +6923,9 @@
         "name": "buf_allocated",
         "RBP offset": -208,
         "type": [
-          "gsize",
+          "long unsigned int",
           "long long",
-          "long unsigned int"
+          "gsize"
         ],
         "size": 8,
         "is_pointer": false,
@@ -6939,9 +6939,9 @@
         "name": "buf_size",
         "RBP offset": -200,
         "type": [
-          "gsize",
+          "long unsigned int",
           "long long",
-          "long unsigned int"
+          "gsize"
         ],
         "size": 8,
         "is_pointer": false,
@@ -6955,9 +6955,9 @@
         "name": "readlen",
         "RBP offset": -192,
         "type": [
-          "gsize",
+          "long unsigned int",
           "long long",
-          "long unsigned int"
+          "gsize"
         ],
         "size": 8,
         "is_pointer": false,
@@ -6972,8 +6972,8 @@
         "RBP offset": -184,
         "type": [
           "long int",
-          "long long",
-          "gssize"
+          "gssize",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -7001,9 +7001,9 @@
             "name": "stbuf.st_dev",
             "RBP offset": -176,
             "type": [
-              "long long",
               "__dev_t",
-              "long unsigned int"
+              "long unsigned int",
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -7017,9 +7017,9 @@
             "name": "stbuf.st_ino",
             "RBP offset": -168,
             "type": [
-              "__ino_t",
+              "long unsigned int",
               "long long",
-              "long unsigned int"
+              "__ino_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -7033,9 +7033,9 @@
             "name": "stbuf.st_nlink",
             "RBP offset": -160,
             "type": [
+              "long unsigned int",
               "long long",
-              "__nlink_t",
-              "long unsigned int"
+              "__nlink_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -7049,8 +7049,8 @@
             "name": "stbuf.st_mode",
             "RBP offset": -152,
             "type": [
-              "int",
               "unsigned int",
+              "int",
               "__mode_t"
             ],
             "size": 4,
@@ -7065,9 +7065,9 @@
             "name": "stbuf.st_uid",
             "RBP offset": -148,
             "type": [
+              "unsigned int",
               "int",
-              "__uid_t",
-              "unsigned int"
+              "__uid_t"
             ],
             "size": 4,
             "is_pointer": false,
@@ -7081,9 +7081,9 @@
             "name": "stbuf.st_gid",
             "RBP offset": -144,
             "type": [
-              "int",
+              "unsigned int",
               "__gid_t",
-              "unsigned int"
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -7111,9 +7111,9 @@
             "name": "stbuf.st_rdev",
             "RBP offset": -136,
             "type": [
-              "long long",
               "__dev_t",
-              "long unsigned int"
+              "long unsigned int",
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -7144,8 +7144,8 @@
             "RBP offset": -120,
             "type": [
               "long int",
-              "long long",
-              "__blksize_t"
+              "__blksize_t",
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -7159,9 +7159,9 @@
             "name": "stbuf.st_blocks",
             "RBP offset": -112,
             "type": [
-              "__blkcnt_t",
               "long int",
-              "long long"
+              "long long",
+              "__blkcnt_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -7205,9 +7205,9 @@
                 "name": "stbuf.st_atim.tv_nsec",
                 "RBP offset": -96,
                 "type": [
+                  "__syscall_slong_t",
                   "long int",
-                  "long long",
-                  "__syscall_slong_t"
+                  "long long"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -7253,9 +7253,9 @@
                 "name": "stbuf.st_mtim.tv_nsec",
                 "RBP offset": -80,
                 "type": [
+                  "__syscall_slong_t",
                   "long int",
-                  "long long",
-                  "__syscall_slong_t"
+                  "long long"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -7301,9 +7301,9 @@
                 "name": "stbuf.st_ctim.tv_nsec",
                 "RBP offset": -64,
                 "type": [
+                  "__syscall_slong_t",
                   "long int",
-                  "long long",
-                  "__syscall_slong_t"
+                  "long long"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -7320,8 +7320,8 @@
             "RBP offset": -56,
             "type": [
               "__syscall_slong_t[3]",
-              "long long[3]",
-              "long int[3]"
+              "long int[3]",
+              "long long[3]"
             ],
             "size": 24,
             "is_pointer": false,
@@ -7364,8 +7364,8 @@
         "name": "cancellable",
         "RBP offset": -48,
         "type": [
-          "_GCancellable*",
-          "GCancellable*"
+          "GCancellable*",
+          "_GCancellable*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -7393,9 +7393,9 @@
         "name": "len",
         "RBP offset": -24,
         "type": [
-          "gsize",
+          "long unsigned int",
           "long long",
-          "long unsigned int"
+          "gsize"
         ],
         "size": 8,
         "is_pointer": false,
@@ -7445,8 +7445,8 @@
         "name": "cancellable",
         "RBP offset": -72,
         "type": [
-          "_GCancellable*",
-          "GCancellable*"
+          "GCancellable*",
+          "_GCancellable*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -7460,9 +7460,9 @@
         "name": "out_len",
         "RBP offset": -64,
         "type": [
-          "long unsigned int*",
+          "long long*",
           "gsize*",
-          "long long*"
+          "long unsigned int*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -7490,9 +7490,9 @@
         "name": "len",
         "RBP offset": -40,
         "type": [
-          "gsize",
+          "long unsigned int",
           "long long",
-          "long unsigned int"
+          "gsize"
         ],
         "size": 8,
         "is_pointer": false,
@@ -7542,8 +7542,8 @@
         "name": "cancellable",
         "RBP offset": -80,
         "type": [
-          "_GCancellable*",
-          "GCancellable*"
+          "GCancellable*",
+          "_GCancellable*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -7557,9 +7557,9 @@
         "name": "out_len",
         "RBP offset": -72,
         "type": [
-          "long unsigned int*",
+          "long long*",
           "gsize*",
-          "long long*"
+          "long unsigned int*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -7615,9 +7615,9 @@
         "name": "len",
         "RBP offset": -40,
         "type": [
-          "gsize",
+          "long unsigned int",
           "long long",
-          "long unsigned int"
+          "gsize"
         ],
         "size": 8,
         "is_pointer": false,
@@ -7665,8 +7665,8 @@
         "name": "cancellable",
         "RBP offset": -88,
         "type": [
-          "_GCancellable*",
-          "GCancellable*"
+          "GCancellable*",
+          "_GCancellable*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -7722,9 +7722,9 @@
         "name": "l",
         "RBP offset": -48,
         "type": [
-          "long long",
           "long unsigned int",
-          "size_t"
+          "size_t",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -7753,10 +7753,10 @@
         "name": "n",
         "RBP offset": -32,
         "type": [
-          "ssize_t",
-          "long long",
           "long int",
-          "__ssize_t"
+          "__ssize_t",
+          "long long",
+          "ssize_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -7790,8 +7790,8 @@
         "name": "cancellable",
         "RBP offset": -112,
         "type": [
-          "_GCancellable*",
-          "GCancellable*"
+          "GCancellable*",
+          "_GCancellable*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -7905,8 +7905,8 @@
         "RBP offset": -48,
         "type": [
           "_GVariant*",
-          "GVariant*",
-          "GVariant_autoptr"
+          "GVariant_autoptr",
+          "GVariant*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -7955,9 +7955,9 @@
         "name": "nbytes",
         "RBP offset": -40,
         "type": [
-          "long long",
           "long unsigned int",
-          "size_t"
+          "size_t",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -7999,10 +7999,10 @@
         "name": "p",
         "RBP offset": -16,
         "type": [
-          "__uint8_t*",
-          "unsigned char*",
+          "uint8_t*",
           "char*",
-          "uint8_t*"
+          "unsigned char*",
+          "__uint8_t*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -8016,10 +8016,10 @@
         "name": "k",
         "RBP offset": -8,
         "type": [
-          "ssize_t",
-          "long long",
           "long int",
-          "__ssize_t"
+          "__ssize_t",
+          "long long",
+          "ssize_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -8039,8 +8039,8 @@
         "RBP offset": -272,
         "type": [
           "long int",
-          "__off_t",
           "off_t",
+          "__off_t",
           "long long"
         ],
         "size": 8,
@@ -8083,8 +8083,8 @@
         "name": "try_cfr",
         "RBP offset": -242,
         "type": [
-          "bool",
-          "_Bool"
+          "_Bool",
+          "bool"
         ],
         "size": 1,
         "is_pointer": false,
@@ -8098,8 +8098,8 @@
         "name": "try_sendfile",
         "RBP offset": -241,
         "type": [
-          "bool",
-          "_Bool"
+          "_Bool",
+          "bool"
         ],
         "size": 1,
         "is_pointer": false,
@@ -8113,10 +8113,10 @@
         "name": "_g_inset_found",
         "RBP offset": -240,
         "type": [
-          "int",
           "gboolean",
           "gbool",
-          "gint"
+          "gint",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -8130,10 +8130,10 @@
         "name": "_g_inset_found",
         "RBP offset": -236,
         "type": [
-          "int",
           "gboolean",
           "gbool",
-          "gint"
+          "gint",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -8147,10 +8147,10 @@
         "name": "n",
         "RBP offset": -232,
         "type": [
-          "ssize_t",
-          "long long",
           "long int",
-          "__ssize_t"
+          "__ssize_t",
+          "long long",
+          "ssize_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -8164,9 +8164,9 @@
         "name": "m",
         "RBP offset": -224,
         "type": [
-          "long long",
           "long unsigned int",
-          "size_t"
+          "size_t",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -8215,8 +8215,8 @@
         "RBP offset": -192,
         "type": [
           "long int",
-          "long long",
-          "gint64"
+          "gint64",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -8231,8 +8231,8 @@
         "RBP offset": -184,
         "type": [
           "long int",
-          "long long",
-          "gint64"
+          "gint64",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -8260,9 +8260,9 @@
             "name": "stbuf.st_dev",
             "RBP offset": -176,
             "type": [
-              "long long",
               "__dev_t",
-              "long unsigned int"
+              "long unsigned int",
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -8276,9 +8276,9 @@
             "name": "stbuf.st_ino",
             "RBP offset": -168,
             "type": [
-              "__ino_t",
+              "long unsigned int",
               "long long",
-              "long unsigned int"
+              "__ino_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -8292,9 +8292,9 @@
             "name": "stbuf.st_nlink",
             "RBP offset": -160,
             "type": [
+              "long unsigned int",
               "long long",
-              "__nlink_t",
-              "long unsigned int"
+              "__nlink_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -8308,8 +8308,8 @@
             "name": "stbuf.st_mode",
             "RBP offset": -152,
             "type": [
-              "int",
               "unsigned int",
+              "int",
               "__mode_t"
             ],
             "size": 4,
@@ -8324,9 +8324,9 @@
             "name": "stbuf.st_uid",
             "RBP offset": -148,
             "type": [
+              "unsigned int",
               "int",
-              "__uid_t",
-              "unsigned int"
+              "__uid_t"
             ],
             "size": 4,
             "is_pointer": false,
@@ -8340,9 +8340,9 @@
             "name": "stbuf.st_gid",
             "RBP offset": -144,
             "type": [
-              "int",
+              "unsigned int",
               "__gid_t",
-              "unsigned int"
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -8370,9 +8370,9 @@
             "name": "stbuf.st_rdev",
             "RBP offset": -136,
             "type": [
-              "long long",
               "__dev_t",
-              "long unsigned int"
+              "long unsigned int",
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -8403,8 +8403,8 @@
             "RBP offset": -120,
             "type": [
               "long int",
-              "long long",
-              "__blksize_t"
+              "__blksize_t",
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -8418,9 +8418,9 @@
             "name": "stbuf.st_blocks",
             "RBP offset": -112,
             "type": [
-              "__blkcnt_t",
               "long int",
-              "long long"
+              "long long",
+              "__blkcnt_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -8464,9 +8464,9 @@
                 "name": "stbuf.st_atim.tv_nsec",
                 "RBP offset": -96,
                 "type": [
+                  "__syscall_slong_t",
                   "long int",
-                  "long long",
-                  "__syscall_slong_t"
+                  "long long"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -8512,9 +8512,9 @@
                 "name": "stbuf.st_mtim.tv_nsec",
                 "RBP offset": -80,
                 "type": [
+                  "__syscall_slong_t",
                   "long int",
-                  "long long",
-                  "__syscall_slong_t"
+                  "long long"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -8560,9 +8560,9 @@
                 "name": "stbuf.st_ctim.tv_nsec",
                 "RBP offset": -64,
                 "type": [
+                  "__syscall_slong_t",
                   "long int",
-                  "long long",
-                  "__syscall_slong_t"
+                  "long long"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -8579,8 +8579,8 @@
             "RBP offset": -56,
             "type": [
               "__syscall_slong_t[3]",
-              "long long[3]",
-              "long int[3]"
+              "long int[3]",
+              "long long[3]"
             ],
             "size": 24,
             "is_pointer": false,
@@ -8623,8 +8623,8 @@
         "name": "cancellable",
         "RBP offset": -352,
         "type": [
-          "_GCancellable*",
-          "GCancellable*"
+          "GCancellable*",
+          "_GCancellable*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -8737,8 +8737,8 @@
         "name": "replacemode",
         "RBP offset": -292,
         "type": [
-          "int",
-          "GLnxLinkTmpfileReplaceMode"
+          "GLnxLinkTmpfileReplaceMode",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -8753,8 +8753,8 @@
         "RBP offset": -288,
         "type": [
           "_GVariant*",
-          "GVariant*",
-          "GVariant_autoptr"
+          "GVariant_autoptr",
+          "GVariant*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -8782,9 +8782,9 @@
         "name": "__len",
         "RBP offset": -272,
         "type": [
-          "long long",
           "long unsigned int",
-          "size_t"
+          "size_t",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -8854,10 +8854,10 @@
             "name": "tmp_dest.initialized",
             "RBP offset": -240,
             "type": [
-              "int",
               "gboolean",
               "gbool",
-              "gint"
+              "gint",
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -8871,10 +8871,10 @@
             "name": "tmp_dest.anonymous",
             "RBP offset": -236,
             "type": [
-              "int",
               "gboolean",
               "gbool",
-              "gint"
+              "gint",
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -8966,9 +8966,9 @@
             "name": "local_stbuf.st_dev",
             "RBP offset": -176,
             "type": [
-              "long long",
               "__dev_t",
-              "long unsigned int"
+              "long unsigned int",
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -8982,9 +8982,9 @@
             "name": "local_stbuf.st_ino",
             "RBP offset": -168,
             "type": [
-              "__ino_t",
+              "long unsigned int",
               "long long",
-              "long unsigned int"
+              "__ino_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -8998,9 +8998,9 @@
             "name": "local_stbuf.st_nlink",
             "RBP offset": -160,
             "type": [
+              "long unsigned int",
               "long long",
-              "__nlink_t",
-              "long unsigned int"
+              "__nlink_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -9014,8 +9014,8 @@
             "name": "local_stbuf.st_mode",
             "RBP offset": -152,
             "type": [
-              "int",
               "unsigned int",
+              "int",
               "__mode_t"
             ],
             "size": 4,
@@ -9030,9 +9030,9 @@
             "name": "local_stbuf.st_uid",
             "RBP offset": -148,
             "type": [
+              "unsigned int",
               "int",
-              "__uid_t",
-              "unsigned int"
+              "__uid_t"
             ],
             "size": 4,
             "is_pointer": false,
@@ -9046,9 +9046,9 @@
             "name": "local_stbuf.st_gid",
             "RBP offset": -144,
             "type": [
-              "int",
+              "unsigned int",
               "__gid_t",
-              "unsigned int"
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -9076,9 +9076,9 @@
             "name": "local_stbuf.st_rdev",
             "RBP offset": -136,
             "type": [
-              "long long",
               "__dev_t",
-              "long unsigned int"
+              "long unsigned int",
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -9109,8 +9109,8 @@
             "RBP offset": -120,
             "type": [
               "long int",
-              "long long",
-              "__blksize_t"
+              "__blksize_t",
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -9124,9 +9124,9 @@
             "name": "local_stbuf.st_blocks",
             "RBP offset": -112,
             "type": [
-              "__blkcnt_t",
               "long int",
-              "long long"
+              "long long",
+              "__blkcnt_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -9170,9 +9170,9 @@
                 "name": "local_stbuf.st_atim.tv_nsec",
                 "RBP offset": -96,
                 "type": [
+                  "__syscall_slong_t",
                   "long int",
-                  "long long",
-                  "__syscall_slong_t"
+                  "long long"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -9218,9 +9218,9 @@
                 "name": "local_stbuf.st_mtim.tv_nsec",
                 "RBP offset": -80,
                 "type": [
+                  "__syscall_slong_t",
                   "long int",
-                  "long long",
-                  "__syscall_slong_t"
+                  "long long"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -9266,9 +9266,9 @@
                 "name": "local_stbuf.st_ctim.tv_nsec",
                 "RBP offset": -64,
                 "type": [
+                  "__syscall_slong_t",
                   "long int",
-                  "long long",
-                  "__syscall_slong_t"
+                  "long long"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -9285,8 +9285,8 @@
             "RBP offset": -56,
             "type": [
               "__syscall_slong_t[3]",
-              "long long[3]",
-              "long int[3]"
+              "long int[3]",
+              "long long[3]"
             ],
             "size": 24,
             "is_pointer": false,
@@ -9314,8 +9314,8 @@
         "name": "cancellable",
         "RBP offset": -40,
         "type": [
-          "_GCancellable*",
-          "GCancellable*"
+          "GCancellable*",
+          "_GCancellable*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -9329,9 +9329,9 @@
         "name": "len",
         "RBP offset": -32,
         "type": [
-          "gsize",
+          "long unsigned int",
           "long long",
-          "long unsigned int"
+          "gsize"
         ],
         "size": 8,
         "is_pointer": false,
@@ -9375,8 +9375,8 @@
         "name": "flags",
         "RBP offset": -8,
         "type": [
-          "int",
-          "GLnxFileReplaceFlags"
+          "GLnxFileReplaceFlags",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -9439,8 +9439,8 @@
         "name": "cancellable",
         "RBP offset": -528,
         "type": [
-          "_GCancellable*",
-          "GCancellable*"
+          "GCancellable*",
+          "_GCancellable*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -9455,9 +9455,9 @@
         "RBP offset": -516,
         "type": [
           "uid_t",
-          "__uid_t",
           "unsigned int",
-          "int"
+          "int",
+          "__uid_t"
         ],
         "size": 4,
         "is_pointer": false,
@@ -9471,9 +9471,9 @@
         "name": "len",
         "RBP offset": -512,
         "type": [
-          "gsize",
+          "long unsigned int",
           "long long",
-          "long unsigned int"
+          "gsize"
         ],
         "size": 8,
         "is_pointer": false,
@@ -9517,10 +9517,10 @@
         "name": "mode",
         "RBP offset": -488,
         "type": [
-          "int",
           "unsigned int",
-          "__mode_t",
-          "mode_t"
+          "mode_t",
+          "int",
+          "__mode_t"
         ],
         "size": 4,
         "is_pointer": false,
@@ -9548,10 +9548,10 @@
         "name": "has_stbuf",
         "RBP offset": -476,
         "type": [
-          "int",
           "gboolean",
           "gbool",
-          "gint"
+          "gint",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -9565,10 +9565,10 @@
         "name": "do_sync",
         "RBP offset": -472,
         "type": [
-          "int",
           "gboolean",
           "gbool",
-          "gint"
+          "gint",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -9582,10 +9582,10 @@
         "name": "increasing_mtime",
         "RBP offset": -468,
         "type": [
-          "int",
           "gboolean",
           "gbool",
-          "gint"
+          "gint",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -9599,10 +9599,10 @@
         "name": "nodatasync",
         "RBP offset": -464,
         "type": [
-          "int",
           "gboolean",
           "gbool",
-          "gint"
+          "gint",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -9616,10 +9616,10 @@
         "name": "datasync_new",
         "RBP offset": -460,
         "type": [
-          "int",
           "gboolean",
           "gbool",
-          "gint"
+          "gint",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -9647,9 +9647,9 @@
         "name": "__len",
         "RBP offset": -448,
         "type": [
-          "long long",
           "long unsigned int",
-          "size_t"
+          "size_t",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -9779,10 +9779,10 @@
             "name": "tmpf.initialized",
             "RBP offset": -384,
             "type": [
-              "int",
               "gboolean",
               "gbool",
-              "gint"
+              "gint",
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -9796,10 +9796,10 @@
             "name": "tmpf.anonymous",
             "RBP offset": -380,
             "type": [
-              "int",
               "gboolean",
               "gbool",
-              "gint"
+              "gint",
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -9891,9 +9891,9 @@
             "name": "stbuf.st_dev",
             "RBP offset": -320,
             "type": [
-              "long long",
               "__dev_t",
-              "long unsigned int"
+              "long unsigned int",
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -9907,9 +9907,9 @@
             "name": "stbuf.st_ino",
             "RBP offset": -312,
             "type": [
-              "__ino_t",
+              "long unsigned int",
               "long long",
-              "long unsigned int"
+              "__ino_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -9923,9 +9923,9 @@
             "name": "stbuf.st_nlink",
             "RBP offset": -304,
             "type": [
+              "long unsigned int",
               "long long",
-              "__nlink_t",
-              "long unsigned int"
+              "__nlink_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -9939,8 +9939,8 @@
             "name": "stbuf.st_mode",
             "RBP offset": -296,
             "type": [
-              "int",
               "unsigned int",
+              "int",
               "__mode_t"
             ],
             "size": 4,
@@ -9955,9 +9955,9 @@
             "name": "stbuf.st_uid",
             "RBP offset": -292,
             "type": [
+              "unsigned int",
               "int",
-              "__uid_t",
-              "unsigned int"
+              "__uid_t"
             ],
             "size": 4,
             "is_pointer": false,
@@ -9971,9 +9971,9 @@
             "name": "stbuf.st_gid",
             "RBP offset": -288,
             "type": [
-              "int",
+              "unsigned int",
               "__gid_t",
-              "unsigned int"
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -10001,9 +10001,9 @@
             "name": "stbuf.st_rdev",
             "RBP offset": -280,
             "type": [
-              "long long",
               "__dev_t",
-              "long unsigned int"
+              "long unsigned int",
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -10034,8 +10034,8 @@
             "RBP offset": -264,
             "type": [
               "long int",
-              "long long",
-              "__blksize_t"
+              "__blksize_t",
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -10049,9 +10049,9 @@
             "name": "stbuf.st_blocks",
             "RBP offset": -256,
             "type": [
-              "__blkcnt_t",
               "long int",
-              "long long"
+              "long long",
+              "__blkcnt_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -10095,9 +10095,9 @@
                 "name": "stbuf.st_atim.tv_nsec",
                 "RBP offset": -240,
                 "type": [
+                  "__syscall_slong_t",
                   "long int",
-                  "long long",
-                  "__syscall_slong_t"
+                  "long long"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -10143,9 +10143,9 @@
                 "name": "stbuf.st_mtim.tv_nsec",
                 "RBP offset": -224,
                 "type": [
+                  "__syscall_slong_t",
                   "long int",
-                  "long long",
-                  "__syscall_slong_t"
+                  "long long"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -10191,9 +10191,9 @@
                 "name": "stbuf.st_ctim.tv_nsec",
                 "RBP offset": -208,
                 "type": [
+                  "__syscall_slong_t",
                   "long int",
-                  "long long",
-                  "__syscall_slong_t"
+                  "long long"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -10210,8 +10210,8 @@
             "RBP offset": -200,
             "type": [
               "__syscall_slong_t[3]",
-              "long long[3]",
-              "long int[3]"
+              "long int[3]",
+              "long long[3]"
             ],
             "size": 24,
             "is_pointer": false,
@@ -10248,9 +10248,9 @@
             "name": "fd_stbuf.st_dev",
             "RBP offset": -176,
             "type": [
-              "long long",
               "__dev_t",
-              "long unsigned int"
+              "long unsigned int",
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -10264,9 +10264,9 @@
             "name": "fd_stbuf.st_ino",
             "RBP offset": -168,
             "type": [
-              "__ino_t",
+              "long unsigned int",
               "long long",
-              "long unsigned int"
+              "__ino_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -10280,9 +10280,9 @@
             "name": "fd_stbuf.st_nlink",
             "RBP offset": -160,
             "type": [
+              "long unsigned int",
               "long long",
-              "__nlink_t",
-              "long unsigned int"
+              "__nlink_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -10296,8 +10296,8 @@
             "name": "fd_stbuf.st_mode",
             "RBP offset": -152,
             "type": [
-              "int",
               "unsigned int",
+              "int",
               "__mode_t"
             ],
             "size": 4,
@@ -10312,9 +10312,9 @@
             "name": "fd_stbuf.st_uid",
             "RBP offset": -148,
             "type": [
+              "unsigned int",
               "int",
-              "__uid_t",
-              "unsigned int"
+              "__uid_t"
             ],
             "size": 4,
             "is_pointer": false,
@@ -10328,9 +10328,9 @@
             "name": "fd_stbuf.st_gid",
             "RBP offset": -144,
             "type": [
-              "int",
+              "unsigned int",
               "__gid_t",
-              "unsigned int"
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -10358,9 +10358,9 @@
             "name": "fd_stbuf.st_rdev",
             "RBP offset": -136,
             "type": [
-              "long long",
               "__dev_t",
-              "long unsigned int"
+              "long unsigned int",
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -10391,8 +10391,8 @@
             "RBP offset": -120,
             "type": [
               "long int",
-              "long long",
-              "__blksize_t"
+              "__blksize_t",
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -10406,9 +10406,9 @@
             "name": "fd_stbuf.st_blocks",
             "RBP offset": -112,
             "type": [
-              "__blkcnt_t",
               "long int",
-              "long long"
+              "long long",
+              "__blkcnt_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -10452,9 +10452,9 @@
                 "name": "fd_stbuf.st_atim.tv_nsec",
                 "RBP offset": -96,
                 "type": [
+                  "__syscall_slong_t",
                   "long int",
-                  "long long",
-                  "__syscall_slong_t"
+                  "long long"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -10500,9 +10500,9 @@
                 "name": "fd_stbuf.st_mtim.tv_nsec",
                 "RBP offset": -80,
                 "type": [
+                  "__syscall_slong_t",
                   "long int",
-                  "long long",
-                  "__syscall_slong_t"
+                  "long long"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -10548,9 +10548,9 @@
                 "name": "fd_stbuf.st_ctim.tv_nsec",
                 "RBP offset": -64,
                 "type": [
+                  "__syscall_slong_t",
                   "long int",
-                  "long long",
-                  "__syscall_slong_t"
+                  "long long"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -10567,8 +10567,8 @@
             "RBP offset": -56,
             "type": [
               "__syscall_slong_t[3]",
-              "long long[3]",
-              "long int[3]"
+              "long int[3]",
+              "long long[3]"
             ],
             "size": 24,
             "is_pointer": false,
@@ -10591,10 +10591,10 @@
         "name": "gid",
         "RBP offset": 16,
         "type": [
-          "gid_t",
-          "__gid_t",
           "unsigned int",
-          "int"
+          "__gid_t",
+          "int",
+          "gid_t"
         ],
         "size": 4,
         "is_pointer": false,
@@ -10608,8 +10608,8 @@
         "name": "flags",
         "RBP offset": 24,
         "type": [
-          "int",
-          "GLnxFileReplaceFlags"
+          "GLnxFileReplaceFlags",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -10628,8 +10628,8 @@
         "name": "_ptr",
         "RBP offset": -8,
         "type": [
-          "GBytes*",
-          "_GBytes*"
+          "_GBytes*",
+          "GBytes*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -10708,8 +10708,8 @@
         "name": "bytes",
         "RBP offset": -56,
         "type": [
-          "GBytes*",
-          "_GBytes*"
+          "_GBytes*",
+          "GBytes*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -10723,9 +10723,9 @@
         "name": "size",
         "RBP offset": -40,
         "type": [
-          "gsize",
+          "long unsigned int",
           "long long",
-          "long unsigned int"
+          "gsize"
         ],
         "size": 8,
         "is_pointer": false,
@@ -10739,8 +10739,8 @@
         "name": "data",
         "RBP offset": -32,
         "type": [
-          "void*",
-          "gconstpointer"
+          "gconstpointer",
+          "void*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -10759,9 +10759,9 @@
         "name": "len",
         "RBP offset": -112,
         "type": [
-          "long long",
           "long unsigned int",
-          "size_t"
+          "size_t",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -10786,6 +10786,21 @@
         "is_enum": false
       },
       {
+        "name": "c",
+        "RBP offset": -81,
+        "type": [
+          "gchar",
+          "char"
+        ],
+        "size": 1,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
         "name": "p",
         "RBP offset": -80,
         "type": [
@@ -10803,8 +10818,8 @@
         "name": "xattrs",
         "RBP offset": -72,
         "type": [
-          "_GSList*",
-          "GSList*"
+          "GSList*",
+          "_GSList*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -10818,8 +10833,8 @@
         "name": "iter",
         "RBP offset": -64,
         "type": [
-          "_GSList*",
-          "GSList*"
+          "GSList*",
+          "_GSList*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -10839,6 +10854,96 @@
         "size": 8,
         "is_pointer": true,
         "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "gstring",
+        "RBP offset": -48,
+        "type": [
+          "GString*",
+          "_GString*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "gstring",
+        "RBP offset": -40,
+        "type": [
+          "GString*",
+          "_GString*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "val",
+        "RBP offset": -32,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "len",
+        "RBP offset": -24,
+        "type": [
+          "long int",
+          "gssize",
+          "long long"
+        ],
+        "size": 8,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "len_unsigned",
+        "RBP offset": -16,
+        "type": [
+          "long unsigned int",
+          "long long",
+          "gsize"
+        ],
+        "size": 8,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "end",
+        "RBP offset": -8,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
         "is_array": false,
         "is_struct": false,
         "is_union": false,
@@ -10883,9 +10988,9 @@
         "name": "len",
         "RBP offset": -112,
         "type": [
-          "long long",
           "long unsigned int",
-          "size_t"
+          "size_t",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -10941,10 +11046,10 @@
         "name": "ret",
         "RBP offset": -72,
         "type": [
-          "int",
           "gboolean",
           "gbool",
-          "gint"
+          "gint",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -10986,9 +11091,9 @@
         "name": "bytes",
         "RBP offset": -56,
         "type": [
-          "GBytes*",
           "GBytes_autoptr",
-          "_GBytes*"
+          "_GBytes*",
+          "GBytes*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -11016,10 +11121,10 @@
         "name": "bytes_read",
         "RBP offset": -40,
         "type": [
-          "ssize_t",
-          "long long",
           "long int",
-          "__ssize_t"
+          "__ssize_t",
+          "long long",
+          "ssize_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -11067,8 +11172,8 @@
         "name": "cancellable",
         "RBP offset": -240,
         "type": [
-          "_GCancellable*",
-          "GCancellable*"
+          "GCancellable*",
+          "_GCancellable*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -11125,10 +11230,10 @@
         "name": "ret",
         "RBP offset": -208,
         "type": [
-          "int",
           "gboolean",
           "gbool",
-          "gint"
+          "gint",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -11142,10 +11247,10 @@
         "name": "builder_initialized",
         "RBP offset": -204,
         "type": [
-          "int",
           "gboolean",
           "gbool",
-          "gint"
+          "gint",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -11188,8 +11293,8 @@
         "RBP offset": -184,
         "type": [
           "_GVariant*",
-          "GVariant*",
-          "GVariant_autoptr"
+          "GVariant_autoptr",
+          "GVariant*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -11203,10 +11308,10 @@
         "name": "bytes_read",
         "RBP offset": -176,
         "type": [
-          "ssize_t",
-          "long long",
           "long int",
-          "__ssize_t"
+          "__ssize_t",
+          "long long",
+          "ssize_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -11220,10 +11325,10 @@
         "name": "real_size",
         "RBP offset": -168,
         "type": [
-          "ssize_t",
-          "long long",
           "long int",
-          "__ssize_t"
+          "__ssize_t",
+          "long long",
+          "ssize_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -11288,8 +11393,8 @@
         "name": "cancellable",
         "RBP offset": -24,
         "type": [
-          "_GCancellable*",
-          "GCancellable*"
+          "GCancellable*",
+          "_GCancellable*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -11352,8 +11457,8 @@
         "name": "cancellable",
         "RBP offset": -4160,
         "type": [
-          "_GCancellable*",
-          "GCancellable*"
+          "GCancellable*",
+          "_GCancellable*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -11410,10 +11515,10 @@
         "name": "_g_inset_found",
         "RBP offset": -4124,
         "type": [
-          "int",
           "gboolean",
           "gbool",
-          "gint"
+          "gint",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -11466,8 +11571,8 @@
         "name": "cancellable",
         "RBP offset": -88,
         "type": [
-          "_GCancellable*",
-          "GCancellable*"
+          "GCancellable*",
+          "_GCancellable*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -11510,9 +11615,9 @@
         "name": "i",
         "RBP offset": -64,
         "type": [
-          "int",
+          "guint",
           "unsigned int",
-          "guint"
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -11526,9 +11631,9 @@
         "name": "n",
         "RBP offset": -60,
         "type": [
-          "int",
+          "guint",
           "unsigned int",
-          "guint"
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -11559,8 +11664,8 @@
         "RBP offset": -48,
         "type": [
           "_GVariant*",
-          "GVariant*",
-          "GVariant_autoptr"
+          "GVariant_autoptr",
+          "GVariant*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -11574,9 +11679,9 @@
         "name": "value_len",
         "RBP offset": -40,
         "type": [
-          "gsize",
+          "long unsigned int",
           "long long",
-          "long unsigned int"
+          "gsize"
         ],
         "size": 8,
         "is_pointer": false,
@@ -11626,8 +11731,8 @@
         "name": "cancellable",
         "RBP offset": -4160,
         "type": [
-          "_GCancellable*",
-          "GCancellable*"
+          "GCancellable*",
+          "_GCancellable*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -11684,10 +11789,10 @@
         "name": "_g_inset_found",
         "RBP offset": -4124,
         "type": [
-          "int",
           "gboolean",
           "gbool",
-          "gint"
+          "gint",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -11740,8 +11845,8 @@
         "name": "cancellable",
         "RBP offset": -104,
         "type": [
-          "_GCancellable*",
-          "GCancellable*"
+          "GCancellable*",
+          "_GCancellable*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -11784,9 +11889,9 @@
         "name": "i",
         "RBP offset": -72,
         "type": [
-          "int",
+          "guint",
           "unsigned int",
-          "guint"
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -11800,9 +11905,9 @@
         "name": "n",
         "RBP offset": -68,
         "type": [
-          "int",
+          "guint",
           "unsigned int",
-          "guint"
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -11833,8 +11938,8 @@
         "RBP offset": -56,
         "type": [
           "_GVariant*",
-          "GVariant*",
-          "GVariant_autoptr"
+          "GVariant_autoptr",
+          "GVariant*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -11848,9 +11953,9 @@
         "name": "value_len",
         "RBP offset": -48,
         "type": [
-          "gsize",
+          "long unsigned int",
           "long long",
-          "long unsigned int"
+          "gsize"
         ],
         "size": 8,
         "is_pointer": false,
@@ -11973,10 +12078,10 @@
         "name": "bytes_read",
         "RBP offset": -4160,
         "type": [
-          "ssize_t",
-          "long long",
           "long int",
-          "__ssize_t"
+          "__ssize_t",
+          "long long",
+          "ssize_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -12005,10 +12110,10 @@
         "name": "real_size",
         "RBP offset": -4144,
         "type": [
-          "ssize_t",
-          "long long",
           "long int",
-          "__ssize_t"
+          "__ssize_t",
+          "long long",
+          "ssize_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -12120,10 +12225,10 @@
         "name": "bytes_read",
         "RBP offset": -56,
         "type": [
-          "ssize_t",
-          "long long",
           "long int",
-          "__ssize_t"
+          "__ssize_t",
+          "long long",
+          "ssize_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -12152,10 +12257,10 @@
         "name": "real_size",
         "RBP offset": -40,
         "type": [
-          "ssize_t",
-          "long long",
           "long int",
-          "__ssize_t"
+          "__ssize_t",
+          "long long",
+          "ssize_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -12204,9 +12309,9 @@
         "name": "len",
         "RBP offset": -4168,
         "type": [
-          "gsize",
+          "long unsigned int",
           "long long",
-          "long unsigned int"
+          "gsize"
         ],
         "size": 8,
         "is_pointer": false,
@@ -12420,8 +12525,8 @@
         "name": "new",
         "RBP offset": -216,
         "type": [
-          "GError*",
-          "_GError*"
+          "_GError*",
+          "GError*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -12435,10 +12540,10 @@
         "name": "args",
         "RBP offset": -208,
         "type": [
-          "__va_list_tag[1]",
           "va_list",
           "__gnuc_va_list",
-          "__builtin_va_list"
+          "__builtin_va_list",
+          "__va_list_tag[1]"
         ],
         "size": 24,
         "is_pointer": false,
@@ -12491,8 +12596,8 @@
         "name": "error",
         "RBP offset": -120,
         "type": [
-          "GError*",
-          "_GError*"
+          "_GError*",
+          "GError*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -12545,6 +12650,81 @@
         "is_struct": false,
         "is_union": false,
         "is_enum": false
+      },
+      {
+        "name": "gstring",
+        "RBP offset": -88,
+        "type": [
+          "GString*",
+          "_GString*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "val",
+        "RBP offset": -80,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "len",
+        "RBP offset": -72,
+        "type": [
+          "long int",
+          "gssize",
+          "long long"
+        ],
+        "size": 8,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "len_unsigned",
+        "RBP offset": -64,
+        "type": [
+          "long unsigned int",
+          "long long",
+          "gsize"
+        ],
+        "size": 8,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "end",
+        "RBP offset": -56,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
       }
     ]
   },
@@ -12584,10 +12764,10 @@
         "name": "args",
         "RBP offset": -208,
         "type": [
-          "__va_list_tag[1]",
           "va_list",
           "__gnuc_va_list",
-          "__builtin_va_list"
+          "__builtin_va_list",
+          "__va_list_tag[1]"
         ],
         "size": 24,
         "is_pointer": false,
@@ -12640,8 +12820,8 @@
         "name": "errsv",
         "RBP offset": -28,
         "type": [
-          "int",
-          "gint"
+          "gint",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -12718,10 +12898,10 @@
         "name": "args",
         "RBP offset": -208,
         "type": [
-          "__va_list_tag[1]",
           "va_list",
           "__gnuc_va_list",
-          "__builtin_va_list"
+          "__builtin_va_list",
+          "__va_list_tag[1]"
         ],
         "size": 24,
         "is_pointer": false,
@@ -12858,8 +13038,8 @@
         "name": "path",
         "RBP offset": -32,
         "type": [
-          "gchar*",
-          "char*"
+          "char*",
+          "gchar*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -12935,10 +13115,10 @@
         "name": "follow",
         "RBP offset": -24,
         "type": [
-          "int",
           "gboolean",
           "gbool",
-          "gint"
+          "gint",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -13028,10 +13208,10 @@
         "name": "follow",
         "RBP offset": -24,
         "type": [
-          "int",
           "gboolean",
           "gbool",
-          "gint"
+          "gint",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -13121,10 +13301,10 @@
         "name": "follow",
         "RBP offset": -40,
         "type": [
-          "int",
           "gboolean",
           "gbool",
-          "gint"
+          "gint",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -13263,8 +13443,8 @@
         "name": "cancellable",
         "RBP offset": -40,
         "type": [
-          "_GCancellable*",
-          "GCancellable*"
+          "GCancellable*",
+          "_GCancellable*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -13373,8 +13553,8 @@
         "name": "cancellable",
         "RBP offset": -200,
         "type": [
-          "_GCancellable*",
-          "GCancellable*"
+          "GCancellable*",
+          "_GCancellable*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -13444,9 +13624,9 @@
             "name": "stbuf.st_dev",
             "RBP offset": -160,
             "type": [
-              "long long",
               "__dev_t",
-              "long unsigned int"
+              "long unsigned int",
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -13460,9 +13640,9 @@
             "name": "stbuf.st_ino",
             "RBP offset": -152,
             "type": [
-              "__ino_t",
+              "long unsigned int",
               "long long",
-              "long unsigned int"
+              "__ino_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -13476,9 +13656,9 @@
             "name": "stbuf.st_nlink",
             "RBP offset": -144,
             "type": [
+              "long unsigned int",
               "long long",
-              "__nlink_t",
-              "long unsigned int"
+              "__nlink_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -13492,8 +13672,8 @@
             "name": "stbuf.st_mode",
             "RBP offset": -136,
             "type": [
-              "int",
               "unsigned int",
+              "int",
               "__mode_t"
             ],
             "size": 4,
@@ -13508,9 +13688,9 @@
             "name": "stbuf.st_uid",
             "RBP offset": -132,
             "type": [
+              "unsigned int",
               "int",
-              "__uid_t",
-              "unsigned int"
+              "__uid_t"
             ],
             "size": 4,
             "is_pointer": false,
@@ -13524,9 +13704,9 @@
             "name": "stbuf.st_gid",
             "RBP offset": -128,
             "type": [
-              "int",
+              "unsigned int",
               "__gid_t",
-              "unsigned int"
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -13554,9 +13734,9 @@
             "name": "stbuf.st_rdev",
             "RBP offset": -120,
             "type": [
-              "long long",
               "__dev_t",
-              "long unsigned int"
+              "long unsigned int",
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -13587,8 +13767,8 @@
             "RBP offset": -104,
             "type": [
               "long int",
-              "long long",
-              "__blksize_t"
+              "__blksize_t",
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -13602,9 +13782,9 @@
             "name": "stbuf.st_blocks",
             "RBP offset": -96,
             "type": [
-              "__blkcnt_t",
               "long int",
-              "long long"
+              "long long",
+              "__blkcnt_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -13648,9 +13828,9 @@
                 "name": "stbuf.st_atim.tv_nsec",
                 "RBP offset": -80,
                 "type": [
+                  "__syscall_slong_t",
                   "long int",
-                  "long long",
-                  "__syscall_slong_t"
+                  "long long"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -13696,9 +13876,9 @@
                 "name": "stbuf.st_mtim.tv_nsec",
                 "RBP offset": -64,
                 "type": [
+                  "__syscall_slong_t",
                   "long int",
-                  "long long",
-                  "__syscall_slong_t"
+                  "long long"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -13744,9 +13924,9 @@
                 "name": "stbuf.st_ctim.tv_nsec",
                 "RBP offset": -48,
                 "type": [
+                  "__syscall_slong_t",
                   "long int",
-                  "long long",
-                  "__syscall_slong_t"
+                  "long long"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -13763,8 +13943,8 @@
             "RBP offset": -40,
             "type": [
               "__syscall_slong_t[3]",
-              "long long[3]",
-              "long int[3]"
+              "long int[3]",
+              "long long[3]"
             ],
             "size": 24,
             "is_pointer": false,
@@ -13848,6 +14028,20 @@
         "is_struct": false,
         "is_union": false,
         "is_enum": false
+      },
+      {
+        "name": "str",
+        "RBP offset": -8,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
       }
     ]
   },
@@ -13858,8 +14052,8 @@
         "name": "tmpl",
         "RBP offset": -40,
         "type": [
-          "gchar*",
-          "char*"
+          "char*",
+          "gchar*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -13887,9 +14081,9 @@
         "name": "len",
         "RBP offset": -16,
         "type": [
-          "long long",
           "long unsigned int",
-          "size_t"
+          "size_t",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -14030,6 +14224,20 @@
         "is_struct": false,
         "is_union": false,
         "is_enum": false
+      },
+      {
+        "name": "str",
+        "RBP offset": -32,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
       }
     ]
   },
@@ -14083,8 +14291,8 @@
         "name": "tmpl",
         "RBP offset": -40,
         "type": [
-          "gchar*",
-          "char*"
+          "char*",
+          "gchar*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -14132,8 +14340,8 @@
         "name": "cancellable",
         "RBP offset": -88,
         "type": [
-          "_GCancellable*",
-          "GCancellable*"
+          "GCancellable*",
+          "_GCancellable*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -14147,10 +14355,10 @@
         "name": "delete_dir",
         "RBP offset": -76,
         "type": [
-          "int",
           "gboolean",
           "gbool",
-          "gint"
+          "gint",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -14193,8 +14401,8 @@
         "RBP offset": -56,
         "type": [
           "long int",
-          "long long",
-          "gint64"
+          "gint64",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -14209,8 +14417,8 @@
         "RBP offset": -48,
         "type": [
           "long int",
-          "long long",
-          "gint64"
+          "gint64",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -14225,8 +14433,8 @@
         "RBP offset": -40,
         "type": [
           "long int",
-          "long long",
-          "gint64"
+          "gint64",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -14241,8 +14449,8 @@
         "RBP offset": -32,
         "type": [
           "long int",
-          "long long",
-          "gint64"
+          "gint64",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -14276,8 +14484,8 @@
         "name": "cancellable",
         "RBP offset": -16,
         "type": [
-          "_GCancellable*",
-          "GCancellable*"
+          "GCancellable*",
+          "_GCancellable*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -14415,8 +14623,8 @@
         "name": "path",
         "RBP offset": -32,
         "type": [
-          "gchar*",
-          "char*"
+          "char*",
+          "gchar*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -14602,8 +14810,8 @@
         "name": "cancellable",
         "RBP offset": -96,
         "type": [
-          "_GCancellable*",
-          "GCancellable*"
+          "GCancellable*",
+          "_GCancellable*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -14659,10 +14867,10 @@
             "name": "child_dfd_iter.initialized",
             "RBP offset": -64,
             "type": [
-              "int",
               "gboolean",
               "gbool",
-              "gint"
+              "gint",
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -14690,8 +14898,8 @@
             "name": "child_dfd_iter.padding_data",
             "RBP offset": -56,
             "type": [
-              "gpointer[4]",
-              "void*[4]"
+              "void*[4]",
+              "gpointer[4]"
             ],
             "size": 32,
             "is_pointer": true,
@@ -14733,8 +14941,8 @@
         "name": "cancellable",
         "RBP offset": -104,
         "type": [
-          "_GCancellable*",
-          "GCancellable*"
+          "GCancellable*",
+          "_GCancellable*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -14818,10 +15026,10 @@
             "name": "dfd_iter.initialized",
             "RBP offset": -64,
             "type": [
-              "int",
               "gboolean",
               "gbool",
-              "gint"
+              "gint",
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -14849,8 +15057,8 @@
             "name": "dfd_iter.padding_data",
             "RBP offset": -56,
             "type": [
-              "gpointer[4]",
-              "void*[4]"
+              "void*[4]",
+              "gpointer[4]"
             ],
             "size": 32,
             "is_pointer": true,
@@ -14892,8 +15100,8 @@
         "name": "cancellable",
         "RBP offset": -40,
         "type": [
-          "_GCancellable*",
-          "GCancellable*"
+          "GCancellable*",
+          "_GCancellable*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -14949,10 +15157,10 @@
         "name": "did_recurse",
         "RBP offset": -12,
         "type": [
-          "int",
           "gboolean",
           "gbool",
-          "gint"
+          "gint",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -15000,8 +15208,8 @@
         "name": "cancellable",
         "RBP offset": -216,
         "type": [
-          "_GCancellable*",
-          "GCancellable*"
+          "GCancellable*",
+          "_GCancellable*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -15071,9 +15279,9 @@
         "name": "__len",
         "RBP offset": -184,
         "type": [
-          "long long",
           "long unsigned int",
-          "size_t"
+          "size_t",
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -15129,9 +15337,9 @@
             "name": "stbuf.st_dev",
             "RBP offset": -160,
             "type": [
-              "long long",
               "__dev_t",
-              "long unsigned int"
+              "long unsigned int",
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -15145,9 +15353,9 @@
             "name": "stbuf.st_ino",
             "RBP offset": -152,
             "type": [
-              "__ino_t",
+              "long unsigned int",
               "long long",
-              "long unsigned int"
+              "__ino_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -15161,9 +15369,9 @@
             "name": "stbuf.st_nlink",
             "RBP offset": -144,
             "type": [
+              "long unsigned int",
               "long long",
-              "__nlink_t",
-              "long unsigned int"
+              "__nlink_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -15177,8 +15385,8 @@
             "name": "stbuf.st_mode",
             "RBP offset": -136,
             "type": [
-              "int",
               "unsigned int",
+              "int",
               "__mode_t"
             ],
             "size": 4,
@@ -15193,9 +15401,9 @@
             "name": "stbuf.st_uid",
             "RBP offset": -132,
             "type": [
+              "unsigned int",
               "int",
-              "__uid_t",
-              "unsigned int"
+              "__uid_t"
             ],
             "size": 4,
             "is_pointer": false,
@@ -15209,9 +15417,9 @@
             "name": "stbuf.st_gid",
             "RBP offset": -128,
             "type": [
-              "int",
+              "unsigned int",
               "__gid_t",
-              "unsigned int"
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -15239,9 +15447,9 @@
             "name": "stbuf.st_rdev",
             "RBP offset": -120,
             "type": [
-              "long long",
               "__dev_t",
-              "long unsigned int"
+              "long unsigned int",
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -15272,8 +15480,8 @@
             "RBP offset": -104,
             "type": [
               "long int",
-              "long long",
-              "__blksize_t"
+              "__blksize_t",
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -15287,9 +15495,9 @@
             "name": "stbuf.st_blocks",
             "RBP offset": -96,
             "type": [
-              "__blkcnt_t",
               "long int",
-              "long long"
+              "long long",
+              "__blkcnt_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -15333,9 +15541,9 @@
                 "name": "stbuf.st_atim.tv_nsec",
                 "RBP offset": -80,
                 "type": [
+                  "__syscall_slong_t",
                   "long int",
-                  "long long",
-                  "__syscall_slong_t"
+                  "long long"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -15381,9 +15589,9 @@
                 "name": "stbuf.st_mtim.tv_nsec",
                 "RBP offset": -64,
                 "type": [
+                  "__syscall_slong_t",
                   "long int",
-                  "long long",
-                  "__syscall_slong_t"
+                  "long long"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -15429,9 +15637,9 @@
                 "name": "stbuf.st_ctim.tv_nsec",
                 "RBP offset": -48,
                 "type": [
+                  "__syscall_slong_t",
                   "long int",
-                  "long long",
-                  "__syscall_slong_t"
+                  "long long"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -15448,8 +15656,8 @@
             "RBP offset": -40,
             "type": [
               "__syscall_slong_t[3]",
-              "long long[3]",
-              "long int[3]"
+              "long int[3]",
+              "long long[3]"
             ],
             "size": 24,
             "is_pointer": false,
@@ -15492,8 +15700,8 @@
         "name": "cancellable",
         "RBP offset": -32,
         "type": [
-          "_GCancellable*",
-          "GCancellable*"
+          "GCancellable*",
+          "_GCancellable*"
         ],
         "size": 8,
         "is_pointer": true,

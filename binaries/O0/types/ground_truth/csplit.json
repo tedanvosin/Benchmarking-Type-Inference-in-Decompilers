@@ -147,7 +147,50 @@
   },
   "xalloc_die": {
     "address": "0x4028ac",
-    "variables": []
+    "variables": [
+      {
+        "name": "__status",
+        "RBP offset": -16,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__errnum",
+        "RBP offset": -12,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__format",
+        "RBP offset": -8,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      }
+    ]
   },
   "interrupt_handler": {
     "address": "0x4028f3",
@@ -175,9 +218,9 @@
         "name": "num",
         "RBP offset": -16,
         "type": [
-          "long int",
           "long long",
           "ptrdiff_t",
+          "long int",
           "idx_t"
         ],
         "size": 8,
@@ -211,9 +254,9 @@
         "name": "max_n_bytes",
         "RBP offset": -64,
         "type": [
-          "long int",
           "long long",
           "ptrdiff_t",
+          "long int",
           "idx_t"
         ],
         "size": 8,
@@ -239,16 +282,58 @@
         "is_enum": false
       },
       {
+        "name": "__status",
+        "RBP offset": -40,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__errnum",
+        "RBP offset": -36,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
         "name": "bytes_read",
         "RBP offset": -32,
         "type": [
-          "long int",
+          "long long",
           "ptrdiff_t",
-          "long long"
+          "long int"
         ],
         "size": 8,
         "is_pointer": false,
         "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__format",
+        "RBP offset": -24,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
         "is_array": false,
         "is_struct": false,
         "is_union": false,
@@ -301,9 +386,9 @@
         "name": "line_len",
         "RBP offset": -56,
         "type": [
-          "long int",
           "long long",
           "ptrdiff_t",
+          "long int",
           "idx_t"
         ],
         "size": 8,
@@ -393,9 +478,9 @@
         "name": "lines",
         "RBP offset": -40,
         "type": [
-          "long int",
           "long long",
           "ptrdiff_t",
+          "long int",
           "idx_t"
         ],
         "size": 8,
@@ -438,9 +523,9 @@
         "name": "line_length",
         "RBP offset": -16,
         "type": [
-          "long int",
           "long long",
           "ptrdiff_t",
+          "long int",
           "idx_t"
         ],
         "size": 8,
@@ -455,9 +540,9 @@
         "name": "bytes_left",
         "RBP offset": -8,
         "type": [
-          "long int",
           "long long",
           "ptrdiff_t",
+          "long int",
           "idx_t"
         ],
         "size": 8,
@@ -524,9 +609,9 @@
         "name": "min_size",
         "RBP offset": -24,
         "type": [
-          "long int",
           "long long",
           "ptrdiff_t",
+          "long int",
           "idx_t"
         ],
         "size": 8,
@@ -593,9 +678,9 @@
         "name": "bytes_wanted",
         "RBP offset": -48,
         "type": [
-          "long int",
           "long long",
           "ptrdiff_t",
+          "long int",
           "idx_t"
         ],
         "size": 8,
@@ -610,9 +695,9 @@
         "name": "bytes_avail",
         "RBP offset": -40,
         "type": [
-          "long int",
           "long long",
           "ptrdiff_t",
+          "long int",
           "idx_t"
         ],
         "size": 8,
@@ -655,9 +740,9 @@
         "name": "bytes_alloc",
         "RBP offset": -16,
         "type": [
-          "long int",
           "long long",
           "ptrdiff_t",
+          "long int",
           "idx_t"
         ],
         "size": 8,
@@ -714,10 +799,10 @@
         "name": "linenum",
         "RBP offset": -40,
         "type": [
-          "long int",
+          "long long",
           "intmax_t",
-          "__intmax_t",
-          "long long"
+          "long int",
+          "__intmax_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -759,9 +844,9 @@
         "name": "offset",
         "RBP offset": -8,
         "type": [
-          "long int",
           "long long",
           "ptrdiff_t",
+          "long int",
           "idx_t"
         ],
         "size": 8,
@@ -784,6 +869,48 @@
       {
         "name": "name",
         "RBP offset": -40,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__status",
+        "RBP offset": -32,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__errnum",
+        "RBP offset": -28,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__format",
+        "RBP offset": -24,
         "type": [
           "char*"
         ],
@@ -818,8 +945,8 @@
         "name": "ignore",
         "RBP offset": -92,
         "type": [
-          "bool",
-          "_Bool"
+          "_Bool",
+          "bool"
         ],
         "size": 1,
         "is_pointer": false,
@@ -833,10 +960,10 @@
         "name": "last_line",
         "RBP offset": -88,
         "type": [
-          "long int",
+          "long long",
           "intmax_t",
-          "__intmax_t",
-          "long long"
+          "long int",
+          "__intmax_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -847,13 +974,69 @@
         "is_enum": false
       },
       {
+        "name": "__status",
+        "RBP offset": -80,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__errnum",
+        "RBP offset": -76,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__status",
+        "RBP offset": -72,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__errnum",
+        "RBP offset": -68,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
         "name": "i",
         "RBP offset": -64,
         "type": [
-          "long int",
+          "long long",
           "intmax_t",
-          "__intmax_t",
-          "long long"
+          "long int",
+          "__intmax_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -867,10 +1050,10 @@
         "name": "first_line",
         "RBP offset": -56,
         "type": [
-          "long int",
+          "long long",
           "intmax_t",
-          "__intmax_t",
-          "long long"
+          "long int",
+          "__intmax_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -884,10 +1067,10 @@
         "name": "lines",
         "RBP offset": -48,
         "type": [
-          "long int",
+          "long long",
           "intmax_t",
-          "__intmax_t",
-          "long long"
+          "long int",
+          "__intmax_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -902,6 +1085,34 @@
         "RBP offset": -40,
         "type": [
           "cstring*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__format",
+        "RBP offset": -32,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__format",
+        "RBP offset": -24,
+        "type": [
+          "char*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -939,10 +1150,10 @@
         "name": "repetition",
         "RBP offset": -64,
         "type": [
-          "long int",
+          "long long",
           "intmax_t",
-          "__intmax_t",
-          "long long"
+          "long int",
+          "__intmax_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -994,10 +1205,10 @@
         "name": "repetition",
         "RBP offset": -48,
         "type": [
-          "long int",
+          "long long",
           "intmax_t",
-          "__intmax_t",
-          "long long"
+          "long int",
+          "__intmax_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1025,10 +1236,10 @@
         "name": "linenum",
         "RBP offset": -24,
         "type": [
-          "long int",
+          "long long",
           "intmax_t",
-          "__intmax_t",
-          "long long"
+          "long int",
+          "__intmax_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1042,10 +1253,10 @@
         "name": "last_line_to_save",
         "RBP offset": -16,
         "type": [
-          "long int",
+          "long long",
           "intmax_t",
-          "__intmax_t",
-          "long long"
+          "long int",
+          "__intmax_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1078,8 +1289,8 @@
         "name": "ignore",
         "RBP offset": -36,
         "type": [
-          "bool",
-          "_Bool"
+          "_Bool",
+          "bool"
         ],
         "size": 1,
         "is_pointer": false,
@@ -1093,10 +1304,10 @@
         "name": "repetition",
         "RBP offset": -32,
         "type": [
-          "long int",
+          "long long",
           "intmax_t",
-          "__intmax_t",
-          "long long"
+          "long int",
+          "__intmax_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1129,10 +1340,10 @@
         "name": "repetition",
         "RBP offset": -80,
         "type": [
-          "long int",
+          "long long",
           "intmax_t",
-          "__intmax_t",
-          "long long"
+          "long int",
+          "__intmax_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1160,8 +1371,8 @@
         "name": "ignore",
         "RBP offset": -61,
         "type": [
-          "bool",
-          "_Bool"
+          "_Bool",
+          "bool"
         ],
         "size": 1,
         "is_pointer": false,
@@ -1187,12 +1398,68 @@
         "is_enum": false
       },
       {
+        "name": "__status",
+        "RBP offset": -56,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__errnum",
+        "RBP offset": -52,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__status",
+        "RBP offset": -48,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__errnum",
+        "RBP offset": -44,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
         "name": "line_len",
         "RBP offset": -40,
         "type": [
-          "long int",
           "long long",
           "ptrdiff_t",
+          "long int",
           "idx_t"
         ],
         "size": 8,
@@ -1221,14 +1488,42 @@
         "name": "break_line",
         "RBP offset": -24,
         "type": [
-          "long int",
+          "long long",
           "intmax_t",
-          "__intmax_t",
-          "long long"
+          "long int",
+          "__intmax_t"
         ],
         "size": 8,
         "is_pointer": false,
         "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__format",
+        "RBP offset": -16,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__format",
+        "RBP offset": -8,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
         "is_array": false,
         "is_struct": false,
         "is_union": false,
@@ -1243,9 +1538,9 @@
         "name": "i",
         "RBP offset": -16,
         "type": [
-          "long int",
           "long long",
           "ptrdiff_t",
+          "long int",
           "idx_t"
         ],
         "size": 8,
@@ -1260,10 +1555,10 @@
         "name": "j",
         "RBP offset": -8,
         "type": [
-          "long int",
+          "long long",
           "intmax_t",
-          "__intmax_t",
-          "long long"
+          "long int",
+          "__intmax_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1301,8 +1596,8 @@
         "name": "fopen_ok",
         "RBP offset": -169,
         "type": [
-          "bool",
-          "_Bool"
+          "_Bool",
+          "bool"
         ],
         "size": 1,
         "is_pointer": false,
@@ -1334,6 +1629,48 @@
         ],
         "size": 4,
         "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__status",
+        "RBP offset": -160,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__errnum",
+        "RBP offset": -156,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__format",
+        "RBP offset": -152,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
         "is_typedef": false,
         "is_array": false,
         "is_struct": false,
@@ -1387,8 +1724,8 @@
         "name": "in_signal_handler",
         "RBP offset": -52,
         "type": [
-          "bool",
-          "_Bool"
+          "_Bool",
+          "bool"
         ],
         "size": 1,
         "is_pointer": false,
@@ -1435,8 +1772,8 @@
         "name": "unlink_ok",
         "RBP offset": -213,
         "type": [
-          "bool",
-          "_Bool"
+          "_Bool",
+          "bool"
         ],
         "size": 1,
         "is_pointer": false,
@@ -1454,6 +1791,90 @@
         ],
         "size": 4,
         "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__status",
+        "RBP offset": -208,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__errnum",
+        "RBP offset": -204,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__status",
+        "RBP offset": -200,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__errnum",
+        "RBP offset": -196,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__format",
+        "RBP offset": -184,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__format",
+        "RBP offset": -176,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
         "is_typedef": false,
         "is_array": false,
         "is_struct": false,
@@ -1518,17 +1939,59 @@
         "is_enum": false
       },
       {
+        "name": "__status",
+        "RBP offset": -40,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__errnum",
+        "RBP offset": -36,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
         "name": "l",
         "RBP offset": -32,
         "type": [
-          "long int",
           "long long",
           "ptrdiff_t",
+          "long int",
           "idx_t"
         ],
         "size": 8,
         "is_pointer": false,
         "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__format",
+        "RBP offset": -24,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
         "is_array": false,
         "is_struct": false,
         "is_union": false,
@@ -1599,6 +2062,48 @@
         "is_struct": false,
         "is_union": false,
         "is_enum": false
+      },
+      {
+        "name": "__status",
+        "RBP offset": -32,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__errnum",
+        "RBP offset": -28,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__format",
+        "RBP offset": -24,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
       }
     ]
   },
@@ -1648,12 +2153,40 @@
         "is_enum": false
       },
       {
+        "name": "__status",
+        "RBP offset": -72,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__errnum",
+        "RBP offset": -68,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
         "name": "val",
         "RBP offset": -56,
         "type": [
-          "__uintmax_t",
           "long long",
           "long unsigned int",
+          "__uintmax_t",
           "uintmax_t"
         ],
         "size": 8,
@@ -1667,6 +2200,20 @@
       {
         "name": "end",
         "RBP offset": -48,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__format",
+        "RBP offset": -40,
         "type": [
           "char*"
         ],
@@ -1701,8 +2248,8 @@
         "name": "ignore",
         "RBP offset": -104,
         "type": [
-          "bool",
-          "_Bool"
+          "_Bool",
+          "bool"
         ],
         "size": 1,
         "is_pointer": false,
@@ -1741,6 +2288,62 @@
         "is_enum": false
       },
       {
+        "name": "__status",
+        "RBP offset": -80,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__errnum",
+        "RBP offset": -76,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__status",
+        "RBP offset": -72,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__errnum",
+        "RBP offset": -68,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
         "name": "closing_delim",
         "RBP offset": -64,
         "type": [
@@ -1758,9 +2361,9 @@
         "name": "len",
         "RBP offset": -56,
         "type": [
-          "long int",
           "long long",
           "ptrdiff_t",
+          "long int",
           "idx_t"
         ],
         "size": 8,
@@ -1788,6 +2391,34 @@
       {
         "name": "err",
         "RBP offset": -40,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__format",
+        "RBP offset": -32,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__format",
+        "RBP offset": -24,
         "type": [
           "char*"
         ],
@@ -1864,9 +2495,9 @@
         "name": "val",
         "RBP offset": -72,
         "type": [
-          "__uintmax_t",
           "long long",
           "long unsigned int",
+          "__uintmax_t",
           "uintmax_t"
         ],
         "size": 8,
@@ -1942,9 +2573,9 @@
         "name": "count",
         "RBP offset": -8,
         "type": [
-          "long int",
           "long long",
           "ptrdiff_t",
+          "long int",
           "idx_t"
         ],
         "size": 8,
@@ -1992,8 +2623,8 @@
         "name": "ch",
         "RBP offset": -85,
         "type": [
-          "unsigned char",
-          "char"
+          "char",
+          "unsigned char"
         ],
         "size": 1,
         "is_pointer": false,
@@ -2011,6 +2642,174 @@
         ],
         "size": 4,
         "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__status",
+        "RBP offset": -80,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__errnum",
+        "RBP offset": -76,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__status",
+        "RBP offset": -72,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__errnum",
+        "RBP offset": -68,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__status",
+        "RBP offset": -64,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__errnum",
+        "RBP offset": -60,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__status",
+        "RBP offset": -56,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__errnum",
+        "RBP offset": -52,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__format",
+        "RBP offset": -48,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__format",
+        "RBP offset": -40,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__format",
+        "RBP offset": -32,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__format",
+        "RBP offset": -24,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
         "is_typedef": false,
         "is_array": false,
         "is_struct": false,
@@ -2040,8 +2839,8 @@
         "name": "percent",
         "RBP offset": -57,
         "type": [
-          "bool",
-          "_Bool"
+          "_Bool",
+          "bool"
         ],
         "size": 1,
         "is_pointer": false,
@@ -2080,8 +2879,50 @@
         "is_enum": false
       },
       {
+        "name": "__status",
+        "RBP offset": -40,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__errnum",
+        "RBP offset": -36,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
         "name": "f",
         "RBP offset": -32,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__format",
+        "RBP offset": -16,
         "type": [
           "char*"
         ],
@@ -2155,12 +2996,96 @@
         "is_enum": false
       },
       {
+        "name": "__status",
+        "RBP offset": -248,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__errnum",
+        "RBP offset": -244,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__status",
+        "RBP offset": -240,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__errnum",
+        "RBP offset": -236,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__status",
+        "RBP offset": -232,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__errnum",
+        "RBP offset": -228,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
         "name": "filename_size",
         "RBP offset": -224,
         "type": [
-          "long int",
           "long long",
           "ptrdiff_t",
+          "long int",
           "idx_t"
         ],
         "size": 8,
@@ -2175,9 +3100,9 @@
         "name": "prefix_len",
         "RBP offset": -216,
         "type": [
-          "long int",
           "long long",
           "ptrdiff_t",
+          "long int",
           "idx_t"
         ],
         "size": 8,
@@ -2192,14 +3117,56 @@
         "name": "max_digit_string_len",
         "RBP offset": -208,
         "type": [
-          "long int",
           "long long",
           "ptrdiff_t",
+          "long int",
           "idx_t"
         ],
         "size": 8,
         "is_pointer": false,
         "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__format",
+        "RBP offset": -200,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__format",
+        "RBP offset": -192,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__format",
+        "RBP offset": -184,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
         "is_array": false,
         "is_struct": false,
         "is_union": false,
@@ -2632,8 +3599,8 @@
         "name": "ignore",
         "RBP offset": -4,
         "type": [
-          "bool",
-          "_Bool"
+          "_Bool",
+          "bool"
         ],
         "size": 1,
         "is_pointer": false,
@@ -2755,8 +3722,8 @@
         "name": "line_number",
         "RBP offset": -228,
         "type": [
-          "unsigned int",
-          "int"
+          "int",
+          "unsigned int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -3080,8 +4047,8 @@
         "name": "line_number",
         "RBP offset": -20,
         "type": [
-          "unsigned int",
-          "int"
+          "int",
+          "unsigned int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -3142,8 +4109,8 @@
         "name": "fp",
         "RBP offset": -24,
         "type": [
-          "FILE*",
-          "_IO_FILE*"
+          "_IO_FILE*",
+          "FILE*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -3204,10 +4171,10 @@
         "name": "mode",
         "RBP offset": -36,
         "type": [
+          "int",
           "__mode_t",
           "mode_t",
-          "unsigned int",
-          "int"
+          "unsigned int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -3310,8 +4277,8 @@
         "name": "fp",
         "RBP offset": -8,
         "type": [
-          "FILE*",
-          "_IO_FILE*"
+          "_IO_FILE*",
+          "FILE*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -3330,8 +4297,8 @@
         "name": "stream",
         "RBP offset": -8,
         "type": [
-          "FILE*",
-          "_IO_FILE*"
+          "_IO_FILE*",
+          "FILE*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -3434,8 +4401,8 @@
         "name": "fp",
         "RBP offset": -8,
         "type": [
-          "FILE*",
-          "_IO_FILE*"
+          "_IO_FILE*",
+          "FILE*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -3468,10 +4435,10 @@
         "name": "offset",
         "RBP offset": -32,
         "type": [
-          "long int",
+          "long long",
           "off_t",
-          "__off_t",
-          "long long"
+          "long int",
+          "__off_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -3485,8 +4452,8 @@
         "name": "fp",
         "RBP offset": -24,
         "type": [
-          "FILE*",
-          "_IO_FILE*"
+          "_IO_FILE*",
+          "FILE*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -3500,10 +4467,10 @@
         "name": "pos",
         "RBP offset": -8,
         "type": [
-          "long int",
+          "long long",
           "off_t",
-          "__off_t",
-          "long long"
+          "long int",
+          "__off_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -3540,10 +4507,10 @@
         "name": "i",
         "RBP offset": -24,
         "type": [
-          "long int",
+          "long long",
           "intmax_t",
-          "__intmax_t",
-          "long long"
+          "long int",
+          "__intmax_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -3736,8 +4703,8 @@
         "name": "s",
         "RBP offset": -12,
         "type": [
-          "quoting_style",
-          "int"
+          "int",
+          "quoting_style"
         ],
         "size": 4,
         "is_pointer": false,
@@ -3812,8 +4779,8 @@
         "name": "uc",
         "RBP offset": -17,
         "type": [
-          "unsigned char",
-          "char"
+          "char",
+          "unsigned char"
         ],
         "size": 1,
         "is_pointer": false,
@@ -3841,8 +4808,8 @@
         "name": "r",
         "RBP offset": -12,
         "type": [
-          "unsigned int",
-          "int"
+          "int",
+          "unsigned int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -3970,8 +4937,8 @@
         "name": "style",
         "RBP offset": -92,
         "type": [
-          "quoting_style",
-          "int"
+          "int",
+          "quoting_style"
         ],
         "size": 4,
         "is_pointer": false,
@@ -3999,8 +4966,8 @@
             "name": "o.style",
             "RBP offset": -80,
             "type": [
-              "quoting_style",
-              "int"
+              "int",
+              "quoting_style"
             ],
             "size": 4,
             "is_pointer": false,
@@ -4028,8 +4995,8 @@
             "name": "o.quote_these_too",
             "RBP offset": -72,
             "type": [
-              "unsigned int[8]",
-              "int[8]"
+              "int[8]",
+              "unsigned int[8]"
             ],
             "size": 32,
             "is_pointer": false,
@@ -4084,8 +5051,8 @@
         "name": "s",
         "RBP offset": -28,
         "type": [
-          "quoting_style",
-          "int"
+          "int",
+          "quoting_style"
         ],
         "size": 4,
         "is_pointer": false,
@@ -4203,8 +5170,8 @@
         "name": "quoting_style",
         "RBP offset": -164,
         "type": [
-          "quoting_style",
-          "int"
+          "int",
+          "quoting_style"
         ],
         "size": 4,
         "is_pointer": false,
@@ -4219,8 +5186,8 @@
         "RBP offset": -160,
         "type": [
           "long unsigned int",
-          "size_t",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -4249,8 +5216,8 @@
         "RBP offset": -144,
         "type": [
           "long unsigned int",
-          "size_t",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -4278,8 +5245,8 @@
         "name": "backslash_escapes",
         "RBP offset": -120,
         "type": [
-          "bool",
-          "_Bool"
+          "_Bool",
+          "bool"
         ],
         "size": 1,
         "is_pointer": false,
@@ -4293,8 +5260,8 @@
         "name": "elide_outer_quotes",
         "RBP offset": -119,
         "type": [
-          "bool",
-          "_Bool"
+          "_Bool",
+          "bool"
         ],
         "size": 1,
         "is_pointer": false,
@@ -4308,8 +5275,8 @@
         "name": "encountered_single_quote",
         "RBP offset": -118,
         "type": [
-          "bool",
-          "_Bool"
+          "_Bool",
+          "bool"
         ],
         "size": 1,
         "is_pointer": false,
@@ -4323,8 +5290,8 @@
         "name": "all_c_and_shell_quote_compat",
         "RBP offset": -117,
         "type": [
-          "bool",
-          "_Bool"
+          "_Bool",
+          "bool"
         ],
         "size": 1,
         "is_pointer": false,
@@ -4338,8 +5305,8 @@
         "name": "pending_shell_escape_end",
         "RBP offset": -116,
         "type": [
-          "bool",
-          "_Bool"
+          "_Bool",
+          "bool"
         ],
         "size": 1,
         "is_pointer": false,
@@ -4353,8 +5320,8 @@
         "name": "c",
         "RBP offset": -115,
         "type": [
-          "unsigned char",
-          "char"
+          "char",
+          "unsigned char"
         ],
         "size": 1,
         "is_pointer": false,
@@ -4368,8 +5335,8 @@
         "name": "esc",
         "RBP offset": -114,
         "type": [
-          "unsigned char",
-          "char"
+          "char",
+          "unsigned char"
         ],
         "size": 1,
         "is_pointer": false,
@@ -4383,8 +5350,8 @@
         "name": "is_right_quote",
         "RBP offset": -113,
         "type": [
-          "bool",
-          "_Bool"
+          "_Bool",
+          "bool"
         ],
         "size": 1,
         "is_pointer": false,
@@ -4398,8 +5365,8 @@
         "name": "escaping",
         "RBP offset": -112,
         "type": [
-          "bool",
-          "_Bool"
+          "_Bool",
+          "bool"
         ],
         "size": 1,
         "is_pointer": false,
@@ -4413,8 +5380,8 @@
         "name": "c_and_shell_quote_compat",
         "RBP offset": -111,
         "type": [
-          "bool",
-          "_Bool"
+          "_Bool",
+          "bool"
         ],
         "size": 1,
         "is_pointer": false,
@@ -4428,8 +5395,8 @@
         "name": "printable",
         "RBP offset": -110,
         "type": [
-          "bool",
-          "_Bool"
+          "_Bool",
+          "bool"
         ],
         "size": 1,
         "is_pointer": false,
@@ -4443,8 +5410,8 @@
         "name": "unibyte_locale",
         "RBP offset": -109,
         "type": [
-          "bool",
-          "_Bool"
+          "_Bool",
+          "bool"
         ],
         "size": 1,
         "is_pointer": false,
@@ -4458,11 +5425,11 @@
         "name": "w",
         "RBP offset": -108,
         "type": [
-          "__uint_least32_t",
           "char32_t",
-          "unsigned int",
           "int",
-          "__uint32_t"
+          "__uint_least32_t",
+          "__uint32_t",
+          "unsigned int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -4477,8 +5444,8 @@
         "RBP offset": -104,
         "type": [
           "long unsigned int",
-          "size_t",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -4493,8 +5460,8 @@
         "RBP offset": -96,
         "type": [
           "long unsigned int",
-          "size_t",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -4509,8 +5476,8 @@
         "RBP offset": -88,
         "type": [
           "long unsigned int",
-          "size_t",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -4539,8 +5506,8 @@
         "RBP offset": -72,
         "type": [
           "long unsigned int",
-          "size_t",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -4555,8 +5522,8 @@
         "RBP offset": -64,
         "type": [
           "long unsigned int",
-          "size_t",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -4571,8 +5538,8 @@
         "RBP offset": -56,
         "type": [
           "long unsigned int",
-          "size_t",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -4587,8 +5554,8 @@
         "RBP offset": -48,
         "type": [
           "long unsigned int",
-          "size_t",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -4603,8 +5570,8 @@
         "RBP offset": -40,
         "type": [
           "long unsigned int",
-          "size_t",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -4618,8 +5585,8 @@
         "name": "mbstate",
         "RBP offset": -32,
         "type": [
-          "__mbstate_t",
-          "mbstate_t"
+          "mbstate_t",
+          "__mbstate_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -4683,8 +5650,8 @@
         "RBP offset": -64,
         "type": [
           "long unsigned int",
-          "size_t",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -4713,8 +5680,8 @@
         "RBP offset": -48,
         "type": [
           "long unsigned int",
-          "size_t",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -4771,8 +5738,8 @@
         "RBP offset": -8,
         "type": [
           "long unsigned int",
-          "size_t",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -4806,8 +5773,8 @@
         "RBP offset": -16,
         "type": [
           "long unsigned int",
-          "size_t",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -4854,9 +5821,9 @@
         "name": "size",
         "RBP offset": -56,
         "type": [
-          "long unsigned int*",
+          "long long*",
           "size_t*",
-          "long long*"
+          "long unsigned int*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -4871,8 +5838,8 @@
         "RBP offset": -48,
         "type": [
           "long unsigned int",
-          "size_t",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -4943,8 +5910,8 @@
         "RBP offset": -16,
         "type": [
           "long unsigned int",
-          "size_t",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -5025,8 +5992,8 @@
         "RBP offset": -88,
         "type": [
           "long unsigned int",
-          "size_t",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -5068,8 +6035,8 @@
         "name": "preallocated",
         "RBP offset": -61,
         "type": [
-          "bool",
-          "_Bool"
+          "_Bool",
+          "bool"
         ],
         "size": 1,
         "is_pointer": false,
@@ -5125,9 +6092,9 @@
         "name": "new_nslots",
         "RBP offset": -48,
         "type": [
-          "long int",
           "long long",
           "ptrdiff_t",
+          "long int",
           "idx_t"
         ],
         "size": 8,
@@ -5171,8 +6138,8 @@
         "RBP offset": -24,
         "type": [
           "long unsigned int",
-          "size_t",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -5187,8 +6154,8 @@
         "RBP offset": -16,
         "type": [
           "long unsigned int",
-          "size_t",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -5241,8 +6208,8 @@
         "RBP offset": -24,
         "type": [
           "long unsigned int",
-          "size_t",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -5309,8 +6276,8 @@
         "RBP offset": -16,
         "type": [
           "long unsigned int",
-          "size_t",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -5357,8 +6324,8 @@
         "name": "s",
         "RBP offset": -72,
         "type": [
-          "quoting_style",
-          "int"
+          "int",
+          "quoting_style"
         ],
         "size": 4,
         "is_pointer": false,
@@ -5407,8 +6374,8 @@
         "RBP offset": -88,
         "type": [
           "long unsigned int",
-          "size_t",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -5436,8 +6403,8 @@
         "name": "s",
         "RBP offset": -72,
         "type": [
-          "quoting_style",
-          "int"
+          "int",
+          "quoting_style"
         ],
         "size": 4,
         "is_pointer": false,
@@ -5499,8 +6466,8 @@
         "name": "s",
         "RBP offset": -4,
         "type": [
-          "quoting_style",
-          "int"
+          "int",
+          "quoting_style"
         ],
         "size": 4,
         "is_pointer": false,
@@ -5520,8 +6487,8 @@
         "RBP offset": -24,
         "type": [
           "long unsigned int",
-          "size_t",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -5549,8 +6516,8 @@
         "name": "s",
         "RBP offset": -4,
         "type": [
-          "quoting_style",
-          "int"
+          "int",
+          "quoting_style"
         ],
         "size": 4,
         "is_pointer": false,
@@ -5584,8 +6551,8 @@
         "RBP offset": -80,
         "type": [
           "long unsigned int",
-          "size_t",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -5627,8 +6594,8 @@
             "name": "options.style",
             "RBP offset": -64,
             "type": [
-              "quoting_style",
-              "int"
+              "int",
+              "quoting_style"
             ],
             "size": 4,
             "is_pointer": false,
@@ -5656,8 +6623,8 @@
             "name": "options.quote_these_too",
             "RBP offset": -56,
             "type": [
-              "unsigned int[8]",
-              "int[8]"
+              "int[8]",
+              "unsigned int[8]"
             ],
             "size": 32,
             "is_pointer": false,
@@ -5765,8 +6732,8 @@
         "RBP offset": -16,
         "type": [
           "long unsigned int",
-          "size_t",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -5813,8 +6780,8 @@
         "name": "s",
         "RBP offset": -72,
         "type": [
-          "quoting_style",
-          "int"
+          "int",
+          "quoting_style"
         ],
         "size": 4,
         "is_pointer": false,
@@ -5856,8 +6823,8 @@
             "name": "options.style",
             "RBP offset": -64,
             "type": [
-              "quoting_style",
-              "int"
+              "int",
+              "quoting_style"
             ],
             "size": 4,
             "is_pointer": false,
@@ -5885,8 +6852,8 @@
             "name": "options.quote_these_too",
             "RBP offset": -56,
             "type": [
-              "unsigned int[8]",
-              "int[8]"
+              "int[8]",
+              "unsigned int[8]"
             ],
             "size": 32,
             "is_pointer": false,
@@ -6003,8 +6970,8 @@
         "RBP offset": -104,
         "type": [
           "long unsigned int",
-          "size_t",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -6088,8 +7055,8 @@
             "name": "o.style",
             "RBP offset": -64,
             "type": [
-              "quoting_style",
-              "int"
+              "int",
+              "quoting_style"
             ],
             "size": 4,
             "is_pointer": false,
@@ -6117,8 +7084,8 @@
             "name": "o.quote_these_too",
             "RBP offset": -56,
             "type": [
-              "unsigned int[8]",
-              "int[8]"
+              "int[8]",
+              "unsigned int[8]"
             ],
             "size": 32,
             "is_pointer": false,
@@ -6221,8 +7188,8 @@
         "RBP offset": -32,
         "type": [
           "long unsigned int",
-          "size_t",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -6284,8 +7251,8 @@
         "RBP offset": -24,
         "type": [
           "long unsigned int",
-          "size_t",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -6333,8 +7300,8 @@
         "RBP offset": -16,
         "type": [
           "long unsigned int",
-          "size_t",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -6419,9 +7386,9 @@
         "name": "count",
         "RBP offset": -40,
         "type": [
-          "long int",
           "long long",
           "ptrdiff_t",
+          "long int",
           "idx_t"
         ],
         "size": 8,
@@ -6436,8 +7403,8 @@
         "name": "buf",
         "RBP offset": -32,
         "type": [
-          "void*",
-          "bufptr"
+          "bufptr",
+          "void*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -6465,10 +7432,10 @@
         "name": "result",
         "RBP offset": -8,
         "type": [
-          "ssize_t",
-          "__ssize_t",
           "long long",
-          "long int"
+          "long int",
+          "ssize_t",
+          "__ssize_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -6507,8 +7474,8 @@
         "RBP offset": -96,
         "type": [
           "long unsigned int",
-          "size_t",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -6578,8 +7545,8 @@
         "name": "stream",
         "RBP offset": -56,
         "type": [
-          "FILE*",
-          "_IO_FILE*"
+          "_IO_FILE*",
+          "FILE*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -6654,8 +7621,8 @@
         "name": "stream",
         "RBP offset": -24,
         "type": [
-          "FILE*",
-          "_IO_FILE*"
+          "_IO_FILE*",
+          "FILE*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -6670,8 +7637,8 @@
         "RBP offset": -8,
         "type": [
           "long unsigned int",
-          "size_t",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -6746,8 +7713,8 @@
         "name": "stream",
         "RBP offset": -120,
         "type": [
-          "FILE*",
-          "_IO_FILE*"
+          "_IO_FILE*",
+          "FILE*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -6762,8 +7729,8 @@
         "RBP offset": -104,
         "type": [
           "long unsigned int",
-          "size_t",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -6843,8 +7810,8 @@
         "name": "stream",
         "RBP offset": -216,
         "type": [
-          "FILE*",
-          "_IO_FILE*"
+          "_IO_FILE*",
+          "FILE*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -6891,8 +7858,8 @@
         "RBP offset": -24,
         "type": [
           "long unsigned int",
-          "size_t",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -6907,8 +7874,8 @@
         "RBP offset": -16,
         "type": [
           "long unsigned int",
-          "size_t",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -6961,8 +7928,8 @@
         "RBP offset": -8,
         "type": [
           "long unsigned int",
-          "size_t",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -6981,9 +7948,9 @@
         "name": "s",
         "RBP offset": -8,
         "type": [
-          "long int",
           "long long",
           "ptrdiff_t",
+          "long int",
           "idx_t"
         ],
         "size": 8,
@@ -7004,8 +7971,8 @@
         "RBP offset": -8,
         "type": [
           "long unsigned int",
-          "size_t",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -7025,8 +7992,8 @@
         "RBP offset": -32,
         "type": [
           "long unsigned int",
-          "size_t",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -7073,9 +8040,9 @@
         "name": "s",
         "RBP offset": -16,
         "type": [
-          "long int",
           "long long",
           "ptrdiff_t",
+          "long int",
           "idx_t"
         ],
         "size": 8,
@@ -7110,8 +8077,8 @@
         "RBP offset": -40,
         "type": [
           "long unsigned int",
-          "size_t",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -7126,8 +8093,8 @@
         "RBP offset": -32,
         "type": [
           "long unsigned int",
-          "size_t",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -7174,9 +8141,9 @@
         "name": "s",
         "RBP offset": -24,
         "type": [
-          "long int",
           "long long",
           "ptrdiff_t",
+          "long int",
           "idx_t"
         ],
         "size": 8,
@@ -7191,9 +8158,9 @@
         "name": "n",
         "RBP offset": -16,
         "type": [
-          "long int",
           "long long",
           "ptrdiff_t",
+          "long int",
           "idx_t"
         ],
         "size": 8,
@@ -7228,8 +8195,8 @@
         "RBP offset": -16,
         "type": [
           "long unsigned int",
-          "size_t",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -7244,8 +8211,8 @@
         "RBP offset": -8,
         "type": [
           "long unsigned int",
-          "size_t",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -7264,9 +8231,9 @@
         "name": "s",
         "RBP offset": -16,
         "type": [
-          "long int",
           "long long",
           "ptrdiff_t",
+          "long int",
           "idx_t"
         ],
         "size": 8,
@@ -7281,9 +8248,9 @@
         "name": "n",
         "RBP offset": -8,
         "type": [
-          "long int",
           "long long",
           "ptrdiff_t",
+          "long int",
           "idx_t"
         ],
         "size": 8,
@@ -7303,9 +8270,9 @@
         "name": "ps",
         "RBP offset": -16,
         "type": [
-          "long unsigned int*",
+          "long long*",
           "size_t*",
-          "long long*"
+          "long unsigned int*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -7339,8 +8306,8 @@
         "RBP offset": -40,
         "type": [
           "long unsigned int",
-          "size_t",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -7354,9 +8321,9 @@
         "name": "pn",
         "RBP offset": -32,
         "type": [
-          "long unsigned int*",
+          "long long*",
           "size_t*",
-          "long long*"
+          "long unsigned int*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -7385,8 +8352,8 @@
         "RBP offset": -16,
         "type": [
           "long unsigned int",
-          "size_t",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -7405,9 +8372,9 @@
         "name": "s",
         "RBP offset": -88,
         "type": [
-          "long int",
           "long long",
           "ptrdiff_t",
+          "long int",
           "idx_t"
         ],
         "size": 8,
@@ -7422,9 +8389,9 @@
         "name": "n_max",
         "RBP offset": -80,
         "type": [
-          "long int",
+          "long long",
           "ptrdiff_t",
-          "long long"
+          "long int"
         ],
         "size": 8,
         "is_pointer": false,
@@ -7438,9 +8405,9 @@
         "name": "n_incr_min",
         "RBP offset": -72,
         "type": [
-          "long int",
           "long long",
           "ptrdiff_t",
+          "long int",
           "idx_t"
         ],
         "size": 8,
@@ -7456,9 +8423,9 @@
         "RBP offset": -64,
         "type": [
           "long long*",
-          "ptrdiff_t*",
+          "long int*",
           "idx_t*",
-          "long int*"
+          "ptrdiff_t*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -7486,9 +8453,9 @@
         "name": "n",
         "RBP offset": -40,
         "type": [
-          "long int",
           "long long",
           "ptrdiff_t",
+          "long int",
           "idx_t"
         ],
         "size": 8,
@@ -7503,9 +8470,9 @@
         "name": "nbytes",
         "RBP offset": -32,
         "type": [
-          "long int",
           "long long",
           "ptrdiff_t",
+          "long int",
           "idx_t"
         ],
         "size": 8,
@@ -7520,9 +8487,9 @@
         "name": "n0",
         "RBP offset": -24,
         "type": [
-          "long int",
           "long long",
           "ptrdiff_t",
+          "long int",
           "idx_t"
         ],
         "size": 8,
@@ -7537,9 +8504,9 @@
         "name": "adjusted_nbytes",
         "RBP offset": -16,
         "type": [
-          "long int",
           "long long",
           "ptrdiff_t",
+          "long int",
           "idx_t"
         ],
         "size": 8,
@@ -7560,8 +8527,8 @@
         "RBP offset": -8,
         "type": [
           "long unsigned int",
-          "size_t",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -7580,9 +8547,9 @@
         "name": "s",
         "RBP offset": -8,
         "type": [
-          "long int",
           "long long",
           "ptrdiff_t",
+          "long int",
           "idx_t"
         ],
         "size": 8,
@@ -7603,8 +8570,8 @@
         "RBP offset": -16,
         "type": [
           "long unsigned int",
-          "size_t",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -7619,8 +8586,8 @@
         "RBP offset": -8,
         "type": [
           "long unsigned int",
-          "size_t",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -7639,9 +8606,9 @@
         "name": "s",
         "RBP offset": -16,
         "type": [
-          "long int",
           "long long",
           "ptrdiff_t",
+          "long int",
           "idx_t"
         ],
         "size": 8,
@@ -7656,9 +8623,9 @@
         "name": "n",
         "RBP offset": -8,
         "type": [
-          "long int",
           "long long",
           "ptrdiff_t",
+          "long int",
           "idx_t"
         ],
         "size": 8,
@@ -7679,8 +8646,8 @@
         "RBP offset": -16,
         "type": [
           "long unsigned int",
-          "size_t",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -7713,9 +8680,9 @@
         "name": "s",
         "RBP offset": -32,
         "type": [
-          "long int",
           "long long",
           "ptrdiff_t",
+          "long int",
           "idx_t"
         ],
         "size": 8,
@@ -7749,9 +8716,9 @@
         "name": "s",
         "RBP offset": -32,
         "type": [
-          "long int",
           "long long",
           "ptrdiff_t",
+          "long int",
           "idx_t"
         ],
         "size": 8,
@@ -7846,10 +8813,10 @@
         "name": "max",
         "RBP offset": -96,
         "type": [
-          "long int",
+          "long long",
           "intmax_t",
-          "__intmax_t",
-          "long long"
+          "long int",
+          "__intmax_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -7863,10 +8830,10 @@
         "name": "min",
         "RBP offset": -88,
         "type": [
-          "long int",
+          "long long",
           "intmax_t",
-          "__intmax_t",
-          "long long"
+          "long int",
+          "__intmax_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -7965,10 +8932,10 @@
         "name": "tnum",
         "RBP offset": -32,
         "type": [
-          "long int",
+          "long long",
           "intmax_t",
-          "__intmax_t",
-          "long long"
+          "long int",
+          "__intmax_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -7982,10 +8949,10 @@
         "name": "r",
         "RBP offset": -24,
         "type": [
-          "long int",
+          "long long",
           "intmax_t",
-          "__intmax_t",
-          "long long"
+          "long int",
+          "__intmax_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -8074,10 +9041,10 @@
         "name": "max",
         "RBP offset": -24,
         "type": [
-          "long int",
+          "long long",
           "intmax_t",
-          "__intmax_t",
-          "long long"
+          "long int",
+          "__intmax_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -8091,10 +9058,10 @@
         "name": "min",
         "RBP offset": -16,
         "type": [
-          "long int",
+          "long long",
           "intmax_t",
-          "__intmax_t",
-          "long long"
+          "long int",
+          "__intmax_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -8141,10 +9108,10 @@
         "name": "val",
         "RBP offset": -80,
         "type": [
-          "long long*",
+          "__intmax_t*",
           "long int*",
           "intmax_t*",
-          "__intmax_t*"
+          "long long*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -8272,10 +9239,10 @@
         "name": "tmp",
         "RBP offset": -24,
         "type": [
-          "long int",
+          "long long",
           "intmax_t",
-          "__intmax_t",
-          "long long"
+          "long int",
+          "__intmax_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -8322,10 +9289,10 @@
         "name": "x",
         "RBP offset": -24,
         "type": [
-          "__uintmax_t*",
-          "uintmax_t*",
           "long long*",
-          "long unsigned int*"
+          "__uintmax_t*",
+          "long unsigned int*",
+          "uintmax_t*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -8339,9 +9306,9 @@
         "name": "scaled",
         "RBP offset": -16,
         "type": [
-          "__uintmax_t",
           "long long",
           "long unsigned int",
+          "__uintmax_t",
           "uintmax_t"
         ],
         "size": 8,
@@ -8389,10 +9356,10 @@
         "name": "x",
         "RBP offset": -24,
         "type": [
-          "__uintmax_t*",
-          "uintmax_t*",
           "long long*",
-          "long unsigned int*"
+          "__uintmax_t*",
+          "long unsigned int*",
+          "uintmax_t*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -8440,10 +9407,10 @@
         "name": "val",
         "RBP offset": -96,
         "type": [
-          "__uintmax_t*",
-          "uintmax_t*",
           "long long*",
-          "long unsigned int*"
+          "__uintmax_t*",
+          "long unsigned int*",
+          "uintmax_t*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -8499,8 +9466,8 @@
         "name": "ch",
         "RBP offset": -57,
         "type": [
-          "unsigned char",
-          "char"
+          "char",
+          "unsigned char"
         ],
         "size": 1,
         "is_pointer": false,
@@ -8586,9 +9553,9 @@
         "name": "tmp",
         "RBP offset": -32,
         "type": [
-          "__uintmax_t",
           "long long",
           "long unsigned int",
+          "__uintmax_t",
           "uintmax_t"
         ],
         "size": 8,
@@ -8697,8 +9664,8 @@
         "name": "open_flags_gnu",
         "RBP offset": -145,
         "type": [
-          "bool",
-          "_Bool"
+          "_Bool",
+          "bool"
         ],
         "size": 1,
         "is_pointer": false,
@@ -8797,8 +9764,8 @@
         "RBP offset": -112,
         "type": [
           "long unsigned int",
-          "size_t",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -8812,8 +9779,8 @@
         "name": "fp",
         "RBP offset": -104,
         "type": [
-          "FILE*",
-          "_IO_FILE*"
+          "_IO_FILE*",
+          "FILE*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -8879,8 +9846,8 @@
         "name": "c1",
         "RBP offset": -18,
         "type": [
-          "unsigned char",
-          "char"
+          "char",
+          "unsigned char"
         ],
         "size": 1,
         "is_pointer": false,
@@ -8894,8 +9861,8 @@
         "name": "c2",
         "RBP offset": -17,
         "type": [
-          "unsigned char",
-          "char"
+          "char",
+          "unsigned char"
         ],
         "size": 1,
         "is_pointer": false,
@@ -8915,8 +9882,8 @@
         "RBP offset": -4,
         "type": [
           "wint_t",
-          "unsigned int",
-          "int"
+          "int",
+          "unsigned int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -8935,8 +9902,8 @@
         "name": "stream",
         "RBP offset": -24,
         "type": [
-          "FILE*",
-          "_IO_FILE*"
+          "_IO_FILE*",
+          "FILE*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -8950,8 +9917,8 @@
         "name": "some_pending",
         "RBP offset": -3,
         "type": [
-          "bool",
-          "_Bool"
+          "_Bool",
+          "bool"
         ],
         "size": 1,
         "is_pointer": false,
@@ -8965,8 +9932,8 @@
         "name": "prev_fail",
         "RBP offset": -2,
         "type": [
-          "bool",
-          "_Bool"
+          "_Bool",
+          "bool"
         ],
         "size": 1,
         "is_pointer": false,
@@ -9237,9 +10204,9 @@
         "name": "s",
         "RBP offset": -8,
         "type": [
-          "long int",
           "long long",
           "ptrdiff_t",
+          "long int",
           "idx_t"
         ],
         "size": 8,
@@ -9259,9 +10226,9 @@
         "name": "s",
         "RBP offset": -16,
         "type": [
-          "long int",
           "long long",
           "ptrdiff_t",
+          "long int",
           "idx_t"
         ],
         "size": 8,
@@ -9295,9 +10262,9 @@
         "name": "s",
         "RBP offset": -16,
         "type": [
-          "long int",
           "long long",
           "ptrdiff_t",
+          "long int",
           "idx_t"
         ],
         "size": 8,
@@ -9312,9 +10279,9 @@
         "name": "n",
         "RBP offset": -8,
         "type": [
-          "long int",
           "long long",
           "ptrdiff_t",
+          "long int",
           "idx_t"
         ],
         "size": 8,
@@ -9334,9 +10301,9 @@
         "name": "s",
         "RBP offset": -24,
         "type": [
-          "long int",
           "long long",
           "ptrdiff_t",
+          "long int",
           "idx_t"
         ],
         "size": 8,
@@ -9351,9 +10318,9 @@
         "name": "n",
         "RBP offset": -16,
         "type": [
-          "long int",
           "long long",
           "ptrdiff_t",
+          "long int",
           "idx_t"
         ],
         "size": 8,
@@ -9422,8 +10389,8 @@
         "RBP offset": -40,
         "type": [
           "long unsigned int",
-          "size_t",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -9451,11 +10418,11 @@
         "name": "pwc",
         "RBP offset": -24,
         "type": [
-          "__uint_least32_t*",
-          "unsigned int*",
+          "char32_t*",
           "int*",
           "__uint32_t*",
-          "char32_t*"
+          "unsigned int*",
+          "__uint_least32_t*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -9470,8 +10437,8 @@
         "RBP offset": -8,
         "type": [
           "long unsigned int",
-          "size_t",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -9531,8 +10498,8 @@
         "RBP offset": -16,
         "type": [
           "long unsigned int",
-          "size_t",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -9566,8 +10533,8 @@
         "RBP offset": -40,
         "type": [
           "long unsigned int",
-          "size_t",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -9582,8 +10549,8 @@
         "RBP offset": -32,
         "type": [
           "long unsigned int",
-          "size_t",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -9612,8 +10579,8 @@
         "RBP offset": -16,
         "type": [
           "long unsigned int",
-          "size_t",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -9671,8 +10638,8 @@
         "RBP offset": -24,
         "type": [
           "long unsigned int",
-          "size_t",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -9772,8 +10739,8 @@
         "RBP offset": -40,
         "type": [
           "long unsigned int",
-          "size_t",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -9830,8 +10797,8 @@
         "RBP offset": -8,
         "type": [
           "long unsigned int",
-          "size_t",
-          "long long"
+          "long long",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
