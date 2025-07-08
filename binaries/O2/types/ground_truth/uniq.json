@@ -38,9 +38,9 @@
         "name": "ap",
         "RBP offset": -208,
         "type": [
+          "va_list",
           "__builtin_va_list",
           "__va_list_tag[1]",
-          "va_list",
           "__gnuc_va_list"
         ],
         "size": 24,
@@ -70,9 +70,9 @@
         "name": "ap",
         "RBP offset": -208,
         "type": [
+          "va_list",
           "__builtin_va_list",
           "__va_list_tag[1]",
-          "va_list",
           "__gnuc_va_list"
         ],
         "size": 24,
@@ -95,11 +95,126 @@
     "address": "0x402840",
     "variables": [
       {
+        "name": "prevlen",
+        "RBP offset": -160,
+        "type": [
+          "long int",
+          "long long",
+          "idx_t",
+          "ptrdiff_t"
+        ],
+        "size": 8,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "thislen",
+        "RBP offset": -152,
+        "type": [
+          "long int",
+          "long long",
+          "idx_t",
+          "ptrdiff_t"
+        ],
+        "size": 8,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "thislen",
+        "RBP offset": -152,
+        "type": [
+          "long int",
+          "long long",
+          "idx_t",
+          "ptrdiff_t"
+        ],
+        "size": 8,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "lb1",
+        "RBP offset": -144,
+        "type": [
+          "linebuffer"
+        ],
+        "size": 24,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": true,
+        "is_union": false,
+        "is_enum": false,
+        "elements": [
+          {
+            "name": "lb1.size",
+            "RBP offset": -144,
+            "type": [
+              "long int",
+              "long long",
+              "idx_t",
+              "ptrdiff_t"
+            ],
+            "size": 8,
+            "is_pointer": false,
+            "is_typedef": true,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "lb1.length",
+            "RBP offset": -136,
+            "type": [
+              "long int",
+              "long long",
+              "idx_t",
+              "ptrdiff_t"
+            ],
+            "size": 8,
+            "is_pointer": false,
+            "is_typedef": true,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "lb1.buffer",
+            "RBP offset": -128,
+            "type": [
+              "char*"
+            ],
+            "size": 8,
+            "is_pointer": true,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          }
+        ]
+      },
+      {
         "name": "size",
         "RBP offset": -112,
         "type": [
-          "long long",
           "long int",
+          "long long",
           "intmax_t",
           "__intmax_t"
         ],
@@ -110,6 +225,70 @@
         "is_struct": false,
         "is_union": false,
         "is_enum": false
+      },
+      {
+        "name": "lb2",
+        "RBP offset": -112,
+        "type": [
+          "linebuffer"
+        ],
+        "size": 24,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": true,
+        "is_union": false,
+        "is_enum": false,
+        "elements": [
+          {
+            "name": "lb2.size",
+            "RBP offset": -112,
+            "type": [
+              "long int",
+              "long long",
+              "idx_t",
+              "ptrdiff_t"
+            ],
+            "size": 8,
+            "is_pointer": false,
+            "is_typedef": true,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "lb2.length",
+            "RBP offset": -104,
+            "type": [
+              "long int",
+              "long long",
+              "idx_t",
+              "ptrdiff_t"
+            ],
+            "size": 8,
+            "is_pointer": false,
+            "is_typedef": true,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "lb2.buffer",
+            "RBP offset": -96,
+            "type": [
+              "char*"
+            ],
+            "size": 8,
+            "is_pointer": true,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          }
+        ]
       },
       {
         "name": "file",
@@ -138,7 +317,28 @@
   },
   "usage": {
     "address": "0x4037d0",
-    "variables": []
+    "variables": [
+      {
+        "name": "infomap",
+        "RBP offset": -144,
+        "type": [
+          "infomap[7]"
+        ],
+        "size": 112,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": true,
+        "is_struct": true,
+        "is_union": false,
+        "is_enum": false,
+        "array_length": 7,
+        "element_type": [
+          "infomap"
+        ],
+        "element_size": 16,
+        "elements": []
+      }
+    ]
   },
   "__argmatch_die": {
     "address": "0x403c20",
@@ -163,8 +363,8 @@
         "name": "allow_abbreviation",
         "RBP offset": 16,
         "type": [
-          "_Bool",
-          "bool"
+          "bool",
+          "_Bool"
         ],
         "size": 1,
         "is_pointer": false,
@@ -338,9 +538,9 @@
         "name": "authors",
         "RBP offset": -168,
         "type": [
+          "va_list",
           "__builtin_va_list",
           "__va_list_tag[1]",
-          "va_list",
           "__gnuc_va_list"
         ],
         "size": 24,
@@ -356,6 +556,25 @@
         ],
         "element_size": 24,
         "elements": []
+      },
+      {
+        "name": "authtab",
+        "RBP offset": -144,
+        "type": [
+          "char*[10]"
+        ],
+        "size": 80,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": true,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false,
+        "array_length": 10,
+        "element_type": [
+          "char*"
+        ],
+        "element_size": 8
       }
     ]
   },

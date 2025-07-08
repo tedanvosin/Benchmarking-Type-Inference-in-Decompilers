@@ -38,10 +38,10 @@
         "name": "ap",
         "RBP offset": -208,
         "type": [
-          "__va_list_tag[1]",
+          "__builtin_va_list",
           "va_list",
           "__gnuc_va_list",
-          "__builtin_va_list"
+          "__va_list_tag[1]"
         ],
         "size": 24,
         "is_pointer": false,
@@ -70,10 +70,10 @@
         "name": "ap",
         "RBP offset": -208,
         "type": [
-          "__va_list_tag[1]",
+          "__builtin_va_list",
           "va_list",
           "__gnuc_va_list",
-          "__builtin_va_list"
+          "__va_list_tag[1]"
         ],
         "size": 24,
         "is_pointer": false,
@@ -113,10 +113,10 @@
         "name": "length",
         "RBP offset": -248,
         "type": [
-          "uintmax_t",
-          "long unsigned int",
           "long long",
-          "__uintmax_t"
+          "uintmax_t",
+          "__uintmax_t",
+          "long unsigned int"
         ],
         "size": 8,
         "is_pointer": false,
@@ -230,10 +230,10 @@
         "name": "length",
         "RBP offset": 24,
         "type": [
-          "uintmax_t",
-          "long unsigned int",
           "long long",
-          "__uintmax_t"
+          "uintmax_t",
+          "__uintmax_t",
+          "long unsigned int"
         ],
         "size": 8,
         "is_pointer": false,
@@ -247,7 +247,28 @@
   },
   "usage": {
     "address": "0x405850",
-    "variables": []
+    "variables": [
+      {
+        "name": "infomap",
+        "RBP offset": -144,
+        "type": [
+          "infomap[7]"
+        ],
+        "size": 112,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": true,
+        "is_struct": true,
+        "is_union": false,
+        "is_enum": false,
+        "array_length": 7,
+        "element_type": [
+          "infomap"
+        ],
+        "element_size": 16,
+        "elements": []
+      }
+    ]
   },
   "blake2b_compress": {
     "address": "0x405d40",
@@ -257,9 +278,9 @@
         "RBP offset": -320,
         "type": [
           "long unsigned int[16]",
+          "long long[16]",
           "__uint64_t[16]",
-          "uint64_t[16]",
-          "long long[16]"
+          "uint64_t[16]"
         ],
         "size": 128,
         "is_pointer": false,
@@ -282,9 +303,9 @@
         "RBP offset": -192,
         "type": [
           "long unsigned int[16]",
+          "long long[16]",
           "__uint64_t[16]",
-          "uint64_t[16]",
-          "long long[16]"
+          "uint64_t[16]"
         ],
         "size": 128,
         "is_pointer": false,
@@ -315,8 +336,8 @@
         "name": "P",
         "RBP offset": -80,
         "type": [
-          "blake2b_param[1]",
-          "blake2b_param__[1]"
+          "blake2b_param__[1]",
+          "blake2b_param[1]"
         ],
         "size": 64,
         "is_pointer": false,
@@ -342,8 +363,8 @@
         "name": "P",
         "RBP offset": -224,
         "type": [
-          "blake2b_param[1]",
-          "blake2b_param__[1]"
+          "blake2b_param__[1]",
+          "blake2b_param[1]"
         ],
         "size": 64,
         "is_pointer": false,
@@ -364,10 +385,10 @@
         "name": "block",
         "RBP offset": -160,
         "type": [
-          "unsigned char[128]",
           "uint8_t[128]",
-          "__uint8_t[128]",
-          "char[128]"
+          "unsigned char[128]",
+          "char[128]",
+          "__uint8_t[128]"
         ],
         "size": 128,
         "is_pointer": false,
@@ -394,10 +415,10 @@
         "name": "buffer",
         "RBP offset": -96,
         "type": [
-          "char[64]",
-          "uint8_t[64]",
           "__uint8_t[64]",
-          "unsigned char[64]"
+          "unsigned char[64]",
+          "char[64]",
+          "uint8_t[64]"
         ],
         "size": 64,
         "is_pointer": false,
@@ -424,8 +445,8 @@
         "name": "S",
         "RBP offset": -288,
         "type": [
-          "blake2b_state__[1]",
-          "blake2b_state[1]"
+          "blake2b_state[1]",
+          "blake2b_state__[1]"
         ],
         "size": 248,
         "is_pointer": false,
@@ -455,8 +476,8 @@
         "name": "S",
         "RBP offset": -304,
         "type": [
-          "blake2b_state__[1]",
-          "blake2b_state[1]"
+          "blake2b_state[1]",
+          "blake2b_state__[1]"
         ],
         "size": 248,
         "is_pointer": false,
@@ -490,10 +511,10 @@
         "name": "out_int",
         "RBP offset": -706,
         "type": [
-          "__uint16_t",
           "short unsigned int",
+          "short int",
           "uint16_t",
-          "short int"
+          "__uint16_t"
         ],
         "size": 2,
         "is_pointer": false,
@@ -541,10 +562,10 @@
         "name": "length",
         "RBP offset": 24,
         "type": [
-          "uintmax_t",
-          "long unsigned int",
           "long long",
-          "__uintmax_t"
+          "uintmax_t",
+          "__uintmax_t",
+          "long unsigned int"
         ],
         "size": 8,
         "is_pointer": false,
@@ -563,10 +584,10 @@
         "name": "out_int",
         "RBP offset": -706,
         "type": [
-          "__uint16_t",
           "short unsigned int",
+          "short int",
           "uint16_t",
-          "short int"
+          "__uint16_t"
         ],
         "size": 2,
         "is_pointer": false,
@@ -614,10 +635,10 @@
         "name": "length",
         "RBP offset": 24,
         "type": [
-          "uintmax_t",
-          "long unsigned int",
           "long long",
-          "__uintmax_t"
+          "uintmax_t",
+          "__uintmax_t",
+          "long unsigned int"
         ],
         "size": 8,
         "is_pointer": false,
@@ -636,10 +657,10 @@
         "name": "buf",
         "RBP offset": -65600,
         "type": [
-          "__uint32_t[16384]",
+          "int[16384]",
           "unsigned int[16384]",
-          "uint32_t[16384]",
-          "int[16384]"
+          "__uint32_t[16384]",
+          "uint32_t[16384]"
         ],
         "size": 65536,
         "is_pointer": false,
@@ -670,10 +691,10 @@
         "name": "total_bytes",
         "RBP offset": -40,
         "type": [
-          "uintmax_t",
-          "long unsigned int",
           "long long",
-          "__uintmax_t"
+          "uintmax_t",
+          "__uintmax_t",
+          "long unsigned int"
         ],
         "size": 8,
         "is_pointer": false,
@@ -687,9 +708,9 @@
         "name": "crc",
         "RBP offset": -32,
         "type": [
-          "long unsigned int",
+          "long long",
           "uint_fast32_t",
-          "long long"
+          "long unsigned int"
         ],
         "size": 8,
         "is_pointer": false,
@@ -708,10 +729,10 @@
         "name": "buf",
         "RBP offset": -65600,
         "type": [
-          "__uint32_t[16384]",
+          "int[16384]",
           "unsigned int[16384]",
-          "uint32_t[16384]",
-          "int[16384]"
+          "__uint32_t[16384]",
+          "uint32_t[16384]"
         ],
         "size": 65536,
         "is_pointer": false,
@@ -739,8 +760,8 @@
         "RBP offset": -28,
         "type": [
           "unsigned int",
-          "uint32_t",
           "int",
+          "uint32_t",
           "__uint32_t"
         ],
         "size": 4,
@@ -770,10 +791,10 @@
         "name": "length",
         "RBP offset": 24,
         "type": [
-          "uintmax_t",
-          "long unsigned int",
           "long long",
-          "__uintmax_t"
+          "uintmax_t",
+          "__uintmax_t",
+          "long unsigned int"
         ],
         "size": 8,
         "is_pointer": false,
@@ -848,9 +869,9 @@
         "name": "outleft",
         "RBP offset": -64,
         "type": [
-          "idx_t",
           "long int",
           "long long",
+          "idx_t",
           "ptrdiff_t"
         ],
         "size": 8,
@@ -870,9 +891,9 @@
         "name": "needlen",
         "RBP offset": -48,
         "type": [
-          "idx_t",
           "long int",
           "long long",
+          "idx_t",
           "ptrdiff_t"
         ],
         "size": 8,
@@ -899,7 +920,25 @@
   },
   "crc32_update_no_xor": {
     "address": "0x4099c0",
-    "variables": []
+    "variables": [
+      {
+        "name": "local_buf",
+        "RBP offset": -32,
+        "type": [
+          "long long",
+          "__uint64_t",
+          "long unsigned int",
+          "uint64_t"
+        ],
+        "size": 8,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      }
+    ]
   },
   "crc32_no_xor": {
     "address": "0x409ba0",
@@ -935,8 +974,8 @@
             "RBP offset": -224,
             "type": [
               "unsigned int",
-              "uint32_t",
               "int",
+              "uint32_t",
               "__uint32_t"
             ],
             "size": 4,
@@ -952,8 +991,8 @@
             "RBP offset": -220,
             "type": [
               "unsigned int",
-              "uint32_t",
               "int",
+              "uint32_t",
               "__uint32_t"
             ],
             "size": 4,
@@ -969,8 +1008,8 @@
             "RBP offset": -216,
             "type": [
               "unsigned int",
-              "uint32_t",
               "int",
+              "uint32_t",
               "__uint32_t"
             ],
             "size": 4,
@@ -986,8 +1025,8 @@
             "RBP offset": -212,
             "type": [
               "unsigned int",
-              "uint32_t",
               "int",
+              "uint32_t",
               "__uint32_t"
             ],
             "size": 4,
@@ -1003,9 +1042,9 @@
             "RBP offset": -208,
             "type": [
               "uint32_t[2]",
-              "int[2]",
+              "__uint32_t[2]",
               "unsigned int[2]",
-              "__uint32_t[2]"
+              "int[2]"
             ],
             "size": 8,
             "is_pointer": false,
@@ -1028,8 +1067,8 @@
             "RBP offset": -200,
             "type": [
               "unsigned int",
-              "uint32_t",
               "int",
+              "uint32_t",
               "__uint32_t"
             ],
             "size": 4,
@@ -1044,10 +1083,10 @@
             "name": "ctx.buffer",
             "RBP offset": -196,
             "type": [
+              "unsigned int[32]",
               "int[32]",
-              "uint32_t[32]",
               "__uint32_t[32]",
-              "unsigned int[32]"
+              "uint32_t[32]"
             ],
             "size": 128,
             "is_pointer": false,
@@ -1103,8 +1142,8 @@
             "RBP offset": -192,
             "type": [
               "unsigned int",
-              "uint32_t",
               "int",
+              "uint32_t",
               "__uint32_t"
             ],
             "size": 4,
@@ -1120,8 +1159,8 @@
             "RBP offset": -188,
             "type": [
               "unsigned int",
-              "uint32_t",
               "int",
+              "uint32_t",
               "__uint32_t"
             ],
             "size": 4,
@@ -1137,8 +1176,8 @@
             "RBP offset": -184,
             "type": [
               "unsigned int",
-              "uint32_t",
               "int",
+              "uint32_t",
               "__uint32_t"
             ],
             "size": 4,
@@ -1154,8 +1193,8 @@
             "RBP offset": -180,
             "type": [
               "unsigned int",
-              "uint32_t",
               "int",
+              "uint32_t",
               "__uint32_t"
             ],
             "size": 4,
@@ -1171,9 +1210,9 @@
             "RBP offset": -176,
             "type": [
               "uint32_t[2]",
-              "int[2]",
+              "__uint32_t[2]",
               "unsigned int[2]",
-              "__uint32_t[2]"
+              "int[2]"
             ],
             "size": 8,
             "is_pointer": false,
@@ -1196,8 +1235,8 @@
             "RBP offset": -168,
             "type": [
               "unsigned int",
-              "uint32_t",
               "int",
+              "uint32_t",
               "__uint32_t"
             ],
             "size": 4,
@@ -1212,10 +1251,10 @@
             "name": "ctx.buffer",
             "RBP offset": -164,
             "type": [
+              "unsigned int[32]",
               "int[32]",
-              "uint32_t[32]",
               "__uint32_t[32]",
-              "unsigned int[32]"
+              "uint32_t[32]"
             ],
             "size": 128,
             "is_pointer": false,
@@ -1259,8 +1298,8 @@
             "RBP offset": -224,
             "type": [
               "unsigned int",
-              "uint32_t",
               "int",
+              "uint32_t",
               "__uint32_t"
             ],
             "size": 4,
@@ -1276,8 +1315,8 @@
             "RBP offset": -220,
             "type": [
               "unsigned int",
-              "uint32_t",
               "int",
+              "uint32_t",
               "__uint32_t"
             ],
             "size": 4,
@@ -1293,8 +1332,8 @@
             "RBP offset": -216,
             "type": [
               "unsigned int",
-              "uint32_t",
               "int",
+              "uint32_t",
               "__uint32_t"
             ],
             "size": 4,
@@ -1310,8 +1349,8 @@
             "RBP offset": -212,
             "type": [
               "unsigned int",
-              "uint32_t",
               "int",
+              "uint32_t",
               "__uint32_t"
             ],
             "size": 4,
@@ -1327,8 +1366,8 @@
             "RBP offset": -208,
             "type": [
               "unsigned int",
-              "uint32_t",
               "int",
+              "uint32_t",
               "__uint32_t"
             ],
             "size": 4,
@@ -1344,9 +1383,9 @@
             "RBP offset": -204,
             "type": [
               "uint32_t[2]",
-              "int[2]",
+              "__uint32_t[2]",
               "unsigned int[2]",
-              "__uint32_t[2]"
+              "int[2]"
             ],
             "size": 8,
             "is_pointer": false,
@@ -1369,8 +1408,8 @@
             "RBP offset": -196,
             "type": [
               "unsigned int",
-              "uint32_t",
               "int",
+              "uint32_t",
               "__uint32_t"
             ],
             "size": 4,
@@ -1385,10 +1424,10 @@
             "name": "ctx.buffer",
             "RBP offset": -192,
             "type": [
+              "unsigned int[32]",
               "int[32]",
-              "uint32_t[32]",
               "__uint32_t[32]",
-              "unsigned int[32]"
+              "uint32_t[32]"
             ],
             "size": 128,
             "is_pointer": false,
@@ -1421,9 +1460,9 @@
         "name": "x",
         "RBP offset": -128,
         "type": [
+          "int[16]",
           "uint32_t[16]",
           "unsigned int[16]",
-          "int[16]",
           "__uint32_t[16]"
         ],
         "size": 64,
@@ -1470,8 +1509,8 @@
             "RBP offset": -192,
             "type": [
               "unsigned int",
-              "uint32_t",
               "int",
+              "uint32_t",
               "__uint32_t"
             ],
             "size": 4,
@@ -1487,8 +1526,8 @@
             "RBP offset": -188,
             "type": [
               "unsigned int",
-              "uint32_t",
               "int",
+              "uint32_t",
               "__uint32_t"
             ],
             "size": 4,
@@ -1504,8 +1543,8 @@
             "RBP offset": -184,
             "type": [
               "unsigned int",
-              "uint32_t",
               "int",
+              "uint32_t",
               "__uint32_t"
             ],
             "size": 4,
@@ -1521,8 +1560,8 @@
             "RBP offset": -180,
             "type": [
               "unsigned int",
-              "uint32_t",
               "int",
+              "uint32_t",
               "__uint32_t"
             ],
             "size": 4,
@@ -1538,8 +1577,8 @@
             "RBP offset": -176,
             "type": [
               "unsigned int",
-              "uint32_t",
               "int",
+              "uint32_t",
               "__uint32_t"
             ],
             "size": 4,
@@ -1555,9 +1594,9 @@
             "RBP offset": -172,
             "type": [
               "uint32_t[2]",
-              "int[2]",
+              "__uint32_t[2]",
               "unsigned int[2]",
-              "__uint32_t[2]"
+              "int[2]"
             ],
             "size": 8,
             "is_pointer": false,
@@ -1580,8 +1619,8 @@
             "RBP offset": -164,
             "type": [
               "unsigned int",
-              "uint32_t",
               "int",
+              "uint32_t",
               "__uint32_t"
             ],
             "size": 4,
@@ -1596,10 +1635,10 @@
             "name": "ctx.buffer",
             "RBP offset": -160,
             "type": [
+              "unsigned int[32]",
               "int[32]",
-              "uint32_t[32]",
               "__uint32_t[32]",
-              "unsigned int[32]"
+              "uint32_t[32]"
             ],
             "size": 128,
             "is_pointer": false,
@@ -1636,9 +1675,9 @@
         "name": "x",
         "RBP offset": -128,
         "type": [
+          "int[16]",
           "uint32_t[16]",
           "unsigned int[16]",
-          "int[16]",
           "__uint32_t[16]"
         ],
         "size": 64,
@@ -1688,10 +1727,10 @@
             "name": "ctx.state",
             "RBP offset": -208,
             "type": [
-              "unsigned int[8]",
-              "uint32_t[8]",
               "__uint32_t[8]",
-              "int[8]"
+              "int[8]",
+              "unsigned int[8]",
+              "uint32_t[8]"
             ],
             "size": 32,
             "is_pointer": false,
@@ -1714,9 +1753,9 @@
             "RBP offset": -176,
             "type": [
               "uint32_t[2]",
-              "int[2]",
+              "__uint32_t[2]",
               "unsigned int[2]",
-              "__uint32_t[2]"
+              "int[2]"
             ],
             "size": 8,
             "is_pointer": false,
@@ -1738,9 +1777,9 @@
             "name": "ctx.buflen",
             "RBP offset": -168,
             "type": [
-              "long unsigned int",
+              "long long",
               "size_t",
-              "long long"
+              "long unsigned int"
             ],
             "size": 8,
             "is_pointer": false,
@@ -1754,10 +1793,10 @@
             "name": "ctx.buffer",
             "RBP offset": -160,
             "type": [
+              "unsigned int[32]",
               "int[32]",
-              "uint32_t[32]",
               "__uint32_t[32]",
-              "unsigned int[32]"
+              "uint32_t[32]"
             ],
             "size": 128,
             "is_pointer": false,
@@ -1800,10 +1839,10 @@
             "name": "ctx.state",
             "RBP offset": -208,
             "type": [
-              "unsigned int[8]",
-              "uint32_t[8]",
               "__uint32_t[8]",
-              "int[8]"
+              "int[8]",
+              "unsigned int[8]",
+              "uint32_t[8]"
             ],
             "size": 32,
             "is_pointer": false,
@@ -1826,9 +1865,9 @@
             "RBP offset": -176,
             "type": [
               "uint32_t[2]",
-              "int[2]",
+              "__uint32_t[2]",
               "unsigned int[2]",
-              "__uint32_t[2]"
+              "int[2]"
             ],
             "size": 8,
             "is_pointer": false,
@@ -1850,9 +1889,9 @@
             "name": "ctx.buflen",
             "RBP offset": -168,
             "type": [
-              "long unsigned int",
+              "long long",
               "size_t",
-              "long long"
+              "long unsigned int"
             ],
             "size": 8,
             "is_pointer": false,
@@ -1866,10 +1905,10 @@
             "name": "ctx.buffer",
             "RBP offset": -160,
             "type": [
+              "unsigned int[32]",
               "int[32]",
-              "uint32_t[32]",
               "__uint32_t[32]",
-              "unsigned int[32]"
+              "uint32_t[32]"
             ],
             "size": 128,
             "is_pointer": false,
@@ -1906,11 +1945,11 @@
         "name": "x",
         "RBP offset": -192,
         "type": [
-          "long long[16]",
+          "long unsigned int[16]",
           "__uint64_t[16]",
-          "uint64_t[16]",
           "u64[16]",
-          "long unsigned int[16]"
+          "long long[16]",
+          "uint64_t[16]"
         ],
         "size": 128,
         "is_pointer": false,
@@ -1960,10 +1999,10 @@
             "name": "ctx.state",
             "RBP offset": -368,
             "type": [
-              "__uint64_t[8]",
-              "long long[8]",
               "u64[8]",
               "long unsigned int[8]",
+              "long long[8]",
+              "__uint64_t[8]",
               "uint64_t[8]"
             ],
             "size": 64,
@@ -1987,11 +2026,11 @@
             "name": "ctx.total",
             "RBP offset": -304,
             "type": [
+              "u64[2]",
               "long long[2]",
-              "__uint64_t[2]",
-              "long unsigned int[2]",
               "uint64_t[2]",
-              "u64[2]"
+              "long unsigned int[2]",
+              "__uint64_t[2]"
             ],
             "size": 16,
             "is_pointer": false,
@@ -2014,9 +2053,9 @@
             "name": "ctx.buflen",
             "RBP offset": -288,
             "type": [
-              "long unsigned int",
+              "long long",
               "size_t",
-              "long long"
+              "long unsigned int"
             ],
             "size": 8,
             "is_pointer": false,
@@ -2030,11 +2069,11 @@
             "name": "ctx.buffer",
             "RBP offset": -280,
             "type": [
-              "long unsigned int[32]",
+              "long long[32]",
               "__uint64_t[32]",
               "u64[32]",
               "uint64_t[32]",
-              "long long[32]"
+              "long unsigned int[32]"
             ],
             "size": 256,
             "is_pointer": false,
@@ -2078,10 +2117,10 @@
             "name": "ctx.state",
             "RBP offset": -368,
             "type": [
-              "__uint64_t[8]",
-              "long long[8]",
               "u64[8]",
               "long unsigned int[8]",
+              "long long[8]",
+              "__uint64_t[8]",
               "uint64_t[8]"
             ],
             "size": 64,
@@ -2105,11 +2144,11 @@
             "name": "ctx.total",
             "RBP offset": -304,
             "type": [
+              "u64[2]",
               "long long[2]",
-              "__uint64_t[2]",
-              "long unsigned int[2]",
               "uint64_t[2]",
-              "u64[2]"
+              "long unsigned int[2]",
+              "__uint64_t[2]"
             ],
             "size": 16,
             "is_pointer": false,
@@ -2132,9 +2171,9 @@
             "name": "ctx.buflen",
             "RBP offset": -288,
             "type": [
-              "long unsigned int",
+              "long long",
               "size_t",
-              "long long"
+              "long unsigned int"
             ],
             "size": 8,
             "is_pointer": false,
@@ -2148,11 +2187,11 @@
             "name": "ctx.buffer",
             "RBP offset": -280,
             "type": [
-              "long unsigned int[32]",
+              "long long[32]",
               "__uint64_t[32]",
               "u64[32]",
               "uint64_t[32]",
-              "long long[32]"
+              "long unsigned int[32]"
             ],
             "size": 256,
             "is_pointer": false,
@@ -2196,10 +2235,10 @@
             "name": "ctx.state",
             "RBP offset": -240,
             "type": [
-              "unsigned int[8]",
-              "uint32_t[8]",
               "__uint32_t[8]",
-              "int[8]"
+              "int[8]",
+              "unsigned int[8]",
+              "uint32_t[8]"
             ],
             "size": 32,
             "is_pointer": false,
@@ -2222,9 +2261,9 @@
             "RBP offset": -208,
             "type": [
               "uint32_t[2]",
-              "int[2]",
+              "__uint32_t[2]",
               "unsigned int[2]",
-              "__uint32_t[2]"
+              "int[2]"
             ],
             "size": 8,
             "is_pointer": false,
@@ -2246,9 +2285,9 @@
             "name": "ctx.buflen",
             "RBP offset": -200,
             "type": [
-              "long unsigned int",
+              "long long",
               "size_t",
-              "long long"
+              "long unsigned int"
             ],
             "size": 8,
             "is_pointer": false,
@@ -2262,10 +2301,10 @@
             "name": "ctx.buffer",
             "RBP offset": -192,
             "type": [
+              "unsigned int[32]",
               "int[32]",
-              "uint32_t[32]",
               "__uint32_t[32]",
-              "unsigned int[32]"
+              "uint32_t[32]"
             ],
             "size": 128,
             "is_pointer": false,
@@ -2294,9 +2333,9 @@
         "name": "x",
         "RBP offset": -128,
         "type": [
+          "int[16]",
           "uint32_t[16]",
           "unsigned int[16]",
-          "int[16]",
           "__uint32_t[16]"
         ],
         "size": 64,
@@ -2346,10 +2385,10 @@
             "name": "ctx.state",
             "RBP offset": -208,
             "type": [
-              "unsigned int[8]",
-              "uint32_t[8]",
               "__uint32_t[8]",
-              "int[8]"
+              "int[8]",
+              "unsigned int[8]",
+              "uint32_t[8]"
             ],
             "size": 32,
             "is_pointer": false,
@@ -2372,9 +2411,9 @@
             "RBP offset": -176,
             "type": [
               "uint32_t[2]",
-              "int[2]",
+              "__uint32_t[2]",
               "unsigned int[2]",
-              "__uint32_t[2]"
+              "int[2]"
             ],
             "size": 8,
             "is_pointer": false,
@@ -2396,9 +2435,9 @@
             "name": "ctx.buflen",
             "RBP offset": -168,
             "type": [
-              "long unsigned int",
+              "long long",
               "size_t",
-              "long long"
+              "long unsigned int"
             ],
             "size": 8,
             "is_pointer": false,
@@ -2412,10 +2451,10 @@
             "name": "ctx.buffer",
             "RBP offset": -160,
             "type": [
+              "unsigned int[32]",
               "int[32]",
-              "uint32_t[32]",
               "__uint32_t[32]",
-              "unsigned int[32]"
+              "uint32_t[32]"
             ],
             "size": 128,
             "is_pointer": false,
@@ -2463,11 +2502,46 @@
   },
   "human_readable": {
     "address": "0x417500",
-    "variables": []
+    "variables": [
+      {
+        "name": "buf",
+        "RBP offset": -112,
+        "type": [
+          "char[41]"
+        ],
+        "size": 41,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": true,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false,
+        "array_length": 41,
+        "element_type": [
+          "char"
+        ],
+        "element_size": 1
+      }
+    ]
   },
   "human_options": {
     "address": "0x4181f0",
-    "variables": []
+    "variables": [
+      {
+        "name": "ptr",
+        "RBP offset": -48,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      }
+    ]
   },
   "set_program_name": {
     "address": "0x4183c0",
@@ -2552,10 +2626,10 @@
         "name": "authors",
         "RBP offset": -168,
         "type": [
-          "__va_list_tag[1]",
+          "__builtin_va_list",
           "va_list",
           "__gnuc_va_list",
-          "__builtin_va_list"
+          "__va_list_tag[1]"
         ],
         "size": 24,
         "is_pointer": false,
@@ -2570,6 +2644,25 @@
         ],
         "element_size": 24,
         "elements": []
+      },
+      {
+        "name": "authtab",
+        "RBP offset": -144,
+        "type": [
+          "char*[10]"
+        ],
+        "size": 80,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": true,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false,
+        "array_length": 10,
+        "element_type": [
+          "char*"
+        ],
+        "element_size": 8
       }
     ]
   },
@@ -2636,10 +2729,10 @@
         "name": "tnum",
         "RBP offset": -64,
         "type": [
-          "uintmax_t",
-          "long unsigned int",
           "long long",
-          "__uintmax_t"
+          "uintmax_t",
+          "__uintmax_t",
+          "long unsigned int"
         ],
         "size": 8,
         "is_pointer": false,
@@ -2741,10 +2834,10 @@
         "name": "arg",
         "RBP offset": -96,
         "type": [
-          "__va_list_tag[1]",
+          "__builtin_va_list",
           "va_list",
           "__gnuc_va_list",
-          "__builtin_va_list"
+          "__va_list_tag[1]"
         ],
         "size": 24,
         "is_pointer": false,

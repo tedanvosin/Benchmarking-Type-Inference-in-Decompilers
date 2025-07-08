@@ -38,10 +38,10 @@
         "name": "ap",
         "RBP offset": -208,
         "type": [
-          "__builtin_va_list",
           "__gnuc_va_list",
           "va_list",
-          "__va_list_tag[1]"
+          "__va_list_tag[1]",
+          "__builtin_va_list"
         ],
         "size": 24,
         "is_pointer": false,
@@ -70,10 +70,10 @@
         "name": "ap",
         "RBP offset": -208,
         "type": [
-          "__builtin_va_list",
           "__gnuc_va_list",
           "va_list",
-          "__va_list_tag[1]"
+          "__va_list_tag[1]",
+          "__builtin_va_list"
         ],
         "size": 24,
         "is_pointer": false,
@@ -98,8 +98,8 @@
         "name": "missing",
         "RBP offset": -136,
         "type": [
-          "bool",
-          "_Bool"
+          "_Bool",
+          "bool"
         ],
         "size": 1,
         "is_pointer": false,
@@ -138,7 +138,28 @@
   },
   "usage": {
     "address": "0x403ee0",
-    "variables": []
+    "variables": [
+      {
+        "name": "infomap",
+        "RBP offset": -144,
+        "type": [
+          "infomap[7]"
+        ],
+        "size": 112,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": true,
+        "is_struct": true,
+        "is_union": false,
+        "is_enum": false,
+        "array_length": 7,
+        "element_type": [
+          "infomap"
+        ],
+        "element_size": 16,
+        "elements": []
+      }
+    ]
   },
   "blake2b_compress": {
     "address": "0x404360",
@@ -147,10 +168,10 @@
         "name": "m",
         "RBP offset": -320,
         "type": [
-          "long unsigned int[16]",
           "__uint64_t[16]",
-          "uint64_t[16]",
-          "long long[16]"
+          "long long[16]",
+          "long unsigned int[16]",
+          "uint64_t[16]"
         ],
         "size": 128,
         "is_pointer": false,
@@ -172,10 +193,10 @@
         "name": "v",
         "RBP offset": -192,
         "type": [
-          "long unsigned int[16]",
           "__uint64_t[16]",
-          "uint64_t[16]",
-          "long long[16]"
+          "long long[16]",
+          "long unsigned int[16]",
+          "uint64_t[16]"
         ],
         "size": 128,
         "is_pointer": false,
@@ -206,8 +227,8 @@
         "name": "P",
         "RBP offset": -80,
         "type": [
-          "blake2b_param__[1]",
-          "blake2b_param[1]"
+          "blake2b_param[1]",
+          "blake2b_param__[1]"
         ],
         "size": 64,
         "is_pointer": false,
@@ -233,8 +254,8 @@
         "name": "P",
         "RBP offset": -224,
         "type": [
-          "blake2b_param__[1]",
-          "blake2b_param[1]"
+          "blake2b_param[1]",
+          "blake2b_param__[1]"
         ],
         "size": 64,
         "is_pointer": false,
@@ -255,9 +276,9 @@
         "name": "block",
         "RBP offset": -160,
         "type": [
-          "uint8_t[128]",
-          "unsigned char[128]",
           "char[128]",
+          "unsigned char[128]",
+          "uint8_t[128]",
           "__uint8_t[128]"
         ],
         "size": 128,
@@ -286,8 +307,8 @@
         "RBP offset": -96,
         "type": [
           "uint8_t[64]",
-          "unsigned char[64]",
           "char[64]",
+          "unsigned char[64]",
           "__uint8_t[64]"
         ],
         "size": 64,
@@ -485,10 +506,10 @@
         "name": "authors",
         "RBP offset": -168,
         "type": [
-          "__builtin_va_list",
           "__gnuc_va_list",
           "va_list",
-          "__va_list_tag[1]"
+          "__va_list_tag[1]",
+          "__builtin_va_list"
         ],
         "size": 24,
         "is_pointer": false,
@@ -503,6 +524,25 @@
         ],
         "element_size": 24,
         "elements": []
+      },
+      {
+        "name": "authtab",
+        "RBP offset": -144,
+        "type": [
+          "char*[10]"
+        ],
+        "size": 80,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": true,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false,
+        "array_length": 10,
+        "element_type": [
+          "char*"
+        ],
+        "element_size": 8
       }
     ]
   },
@@ -571,8 +611,8 @@
         "type": [
           "long unsigned int",
           "uintmax_t",
-          "__uintmax_t",
-          "long long"
+          "long long",
+          "__uintmax_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -674,10 +714,10 @@
         "name": "arg",
         "RBP offset": -96,
         "type": [
-          "__builtin_va_list",
           "__gnuc_va_list",
           "va_list",
-          "__va_list_tag[1]"
+          "__va_list_tag[1]",
+          "__builtin_va_list"
         ],
         "size": 24,
         "is_pointer": false,

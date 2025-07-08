@@ -3,6 +3,48 @@
     "address": "0x402280",
     "variables": [
       {
+        "name": "option_index",
+        "RBP offset": -684,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "endptr",
+        "RBP offset": -680,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "errcode",
+        "RBP offset": -680,
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
         "name": "arg_list",
         "RBP offset": -672,
         "type": [
@@ -35,9 +77,9 @@
                 "name": "arg_list.optmask.ptr",
                 "RBP offset": -672,
                 "type": [
-                  "unsigned char*",
                   "char*",
-                  "byte_t*"
+                  "byte_t*",
+                  "unsigned char*"
                 ],
                 "size": 8,
                 "is_pointer": true,
@@ -51,9 +93,9 @@
                 "name": "arg_list.optmask.sz",
                 "RBP offset": -664,
                 "type": [
-                  "size_t",
+                  "long long",
                   "long unsigned int",
-                  "long long"
+                  "size_t"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -69,8 +111,8 @@
             "name": "arg_list.begin_line",
             "RBP offset": -656,
             "type": [
-              "long unsigned int",
-              "long long"
+              "long long",
+              "long unsigned int"
             ],
             "size": 8,
             "is_pointer": false,
@@ -84,8 +126,8 @@
             "name": "arg_list.end_line",
             "RBP offset": -648,
             "type": [
-              "long unsigned int",
-              "long long"
+              "long long",
+              "long unsigned int"
             ],
             "size": 8,
             "is_pointer": false,
@@ -99,8 +141,8 @@
             "name": "arg_list.step",
             "RBP offset": -640,
             "type": [
-              "long unsigned int",
-              "long long"
+              "long long",
+              "long unsigned int"
             ],
             "size": 8,
             "is_pointer": false,
@@ -114,8 +156,8 @@
             "name": "arg_list.first_field",
             "RBP offset": -632,
             "type": [
-              "long unsigned int",
-              "long long"
+              "long long",
+              "long unsigned int"
             ],
             "size": 8,
             "is_pointer": false,
@@ -129,8 +171,8 @@
             "name": "arg_list.last_field",
             "RBP offset": -624,
             "type": [
-              "long unsigned int",
-              "long long"
+              "long long",
+              "long unsigned int"
             ],
             "size": 8,
             "is_pointer": false,
@@ -144,8 +186,8 @@
             "name": "arg_list.increment",
             "RBP offset": -616,
             "type": [
-              "long unsigned int",
-              "long long"
+              "long long",
+              "long unsigned int"
             ],
             "size": 8,
             "is_pointer": false,
@@ -198,6 +240,26 @@
             "is_enum": false
           }
         ]
+      },
+      {
+        "name": "long_options",
+        "RBP offset": -576,
+        "type": [
+          "option[16]"
+        ],
+        "size": 512,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": true,
+        "is_struct": true,
+        "is_union": false,
+        "is_enum": false,
+        "array_length": 16,
+        "element_type": [
+          "option"
+        ],
+        "element_size": 32,
+        "elements": []
       }
     ]
   },
@@ -279,7 +341,36 @@
   },
   "ssplit": {
     "address": "0x404bb0",
-    "variables": []
+    "variables": [
+      {
+        "name": "ptr",
+        "RBP offset": -64,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "ptr",
+        "RBP offset": -64,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      }
+    ]
   },
   "ssplit_former_way": {
     "address": "0x404e50",
@@ -302,7 +393,22 @@
   },
   "get_separating_string": {
     "address": "0x404f40",
-    "variables": []
+    "variables": [
+      {
+        "name": "ptr",
+        "RBP offset": -48,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      }
+    ]
   },
   "print_string_vector": {
     "address": "0x404fe0",

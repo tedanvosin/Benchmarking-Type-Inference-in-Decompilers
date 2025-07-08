@@ -38,10 +38,10 @@
         "name": "ap",
         "RBP offset": -208,
         "type": [
-          "__va_list_tag[1]",
-          "__gnuc_va_list",
+          "va_list",
           "__builtin_va_list",
-          "va_list"
+          "__va_list_tag[1]",
+          "__gnuc_va_list"
         ],
         "size": 24,
         "is_pointer": false,
@@ -70,10 +70,10 @@
         "name": "ap",
         "RBP offset": -208,
         "type": [
-          "__va_list_tag[1]",
-          "__gnuc_va_list",
+          "va_list",
           "__builtin_va_list",
-          "va_list"
+          "__va_list_tag[1]",
+          "__gnuc_va_list"
         ],
         "size": 24,
         "is_pointer": false,
@@ -187,10 +187,10 @@
         "name": "n_users",
         "RBP offset": -240,
         "type": [
-          "long int",
-          "idx_t",
           "long long",
-          "ptrdiff_t"
+          "long int",
+          "ptrdiff_t",
+          "idx_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -218,7 +218,28 @@
   },
   "usage": {
     "address": "0x403d40",
-    "variables": []
+    "variables": [
+      {
+        "name": "infomap",
+        "RBP offset": -144,
+        "type": [
+          "infomap[7]"
+        ],
+        "size": 112,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": true,
+        "is_struct": true,
+        "is_union": false,
+        "is_enum": false,
+        "array_length": 7,
+        "element_type": [
+          "infomap"
+        ],
+        "element_size": 16,
+        "elements": []
+      }
+    ]
   },
   "canon_host_r": {
     "address": "0x404110",
@@ -390,10 +411,10 @@
             "name": "a.filled",
             "RBP offset": 24,
             "type": [
-              "long int",
-              "idx_t",
               "long long",
-              "ptrdiff_t"
+              "long int",
+              "ptrdiff_t",
+              "idx_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -407,10 +428,10 @@
             "name": "a.string_bytes",
             "RBP offset": 32,
             "type": [
-              "long int",
-              "idx_t",
               "long long",
-              "ptrdiff_t"
+              "long int",
+              "ptrdiff_t",
+              "idx_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -424,10 +445,10 @@
             "name": "a.alloc_bytes",
             "RBP offset": 40,
             "type": [
-              "long int",
-              "idx_t",
               "long long",
-              "ptrdiff_t"
+              "long int",
+              "ptrdiff_t",
+              "idx_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -457,10 +478,10 @@
         "name": "line_len",
         "RBP offset": 56,
         "type": [
-          "long int",
-          "idx_t",
           "long long",
-          "ptrdiff_t"
+          "long int",
+          "ptrdiff_t",
+          "idx_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -488,10 +509,10 @@
         "name": "host_len",
         "RBP offset": 72,
         "type": [
-          "long int",
-          "idx_t",
           "long long",
-          "ptrdiff_t"
+          "long int",
+          "ptrdiff_t",
+          "idx_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -505,9 +526,9 @@
         "name": "pid",
         "RBP offset": 80,
         "type": [
-          "__pid_t",
           "int",
-          "pid_t"
+          "pid_t",
+          "__pid_t"
         ],
         "size": 4,
         "is_pointer": false,
@@ -535,8 +556,8 @@
         "name": "session",
         "RBP offset": 112,
         "type": [
-          "long int",
-          "long long"
+          "long long",
+          "long int"
         ],
         "size": 8,
         "is_pointer": false,
@@ -615,10 +636,10 @@
         "name": "authors",
         "RBP offset": -168,
         "type": [
-          "__va_list_tag[1]",
-          "__gnuc_va_list",
+          "va_list",
           "__builtin_va_list",
-          "va_list"
+          "__va_list_tag[1]",
+          "__gnuc_va_list"
         ],
         "size": 24,
         "is_pointer": false,
@@ -633,6 +654,25 @@
         ],
         "element_size": 24,
         "elements": []
+      },
+      {
+        "name": "authtab",
+        "RBP offset": -144,
+        "type": [
+          "char*[10]"
+        ],
+        "size": 80,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": true,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false,
+        "array_length": 10,
+        "element_type": [
+          "char*"
+        ],
+        "element_size": 8
       }
     ]
   },

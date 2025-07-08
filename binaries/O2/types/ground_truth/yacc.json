@@ -278,10 +278,10 @@
         "name": "args",
         "RBP offset": -240,
         "type": [
-          "__va_list_tag[1]",
-          "__builtin_va_list",
+          "va_list",
           "__gnuc_va_list",
-          "va_list"
+          "__builtin_va_list",
+          "__va_list_tag[1]"
         ],
         "size": 24,
         "is_pointer": false,
@@ -361,7 +361,27 @@
   },
   "output": {
     "address": "0x40a030",
-    "variables": []
+    "variables": [
+      {
+        "name": "line_state",
+        "RBP offset": -80,
+        "type": [
+          "char[20]"
+        ],
+        "size": 20,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": true,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false,
+        "array_length": 20,
+        "element_type": [
+          "char"
+        ],
+        "element_size": 1
+      }
+    ]
   },
   "dup_line": {
     "address": "0x40cf40",
@@ -385,7 +405,66 @@
   },
   "next_inline": {
     "address": "0x40d740",
-    "variables": []
+    "variables": [
+      {
+        "name": "a",
+        "RBP offset": -32,
+        "type": [
+          "ainfo"
+        ],
+        "size": 24,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": true,
+        "is_union": false,
+        "is_enum": false,
+        "elements": [
+          {
+            "name": "a.a_lineno",
+            "RBP offset": -32,
+            "type": [
+              "int"
+            ],
+            "size": 4,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "a.a_line",
+            "RBP offset": -24,
+            "type": [
+              "char*"
+            ],
+            "size": 8,
+            "is_pointer": true,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "a.a_cptr",
+            "RBP offset": -16,
+            "type": [
+              "char*"
+            ],
+            "size": 8,
+            "is_pointer": true,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          }
+        ]
+      }
+    ]
   },
   "nextc": {
     "address": "0x40d8a0",

@@ -87,6 +87,10 @@ def parse_struct(die, var_data, dwarfinfo):
         if child.tag == 'DW_TAG_member':
             member_data = {}
             member_data['name'] = var_data['name']+'.'+child.attributes.get('DW_AT_name').value.decode('utf-8', 'replace') if 'DW_AT_name' in child.attributes else ''
+
+            if 'DW_AT_data_member_location' not in child.attributes:
+                continue
+
             member_data['RBP offset'] = base_offset + child.attributes.get('DW_AT_data_member_location').value
             member_data['type'] = []
             member_data['size'] = 0
@@ -113,15 +117,18 @@ def parse_struct(die, var_data, dwarfinfo):
     
     return
 
+def get_DIE_by_reference(die, attr_name: str, dwarfinfo):
+    attr = die.attributes[attr_name]
+    assert attr.form == "DW_FORM_ref4"
+    return dwarfinfo.get_DIE_from_refaddr(attr.value + die.cu.cu_offset)
+
 
 def parse_type_die(die,var_data,dwarfinfo):
     if 'DW_AT_type' not in die.attributes:  
         var_data['type'].append('void')
         return
     
-    type_attr = die.attributes.get('DW_AT_type')
-    type_offset = type_attr.value + die.cu.cu_offset
-    type_die = dwarfinfo.get_DIE_from_refaddr(type_offset)
+    type_die = get_DIE_by_reference(die, "DW_AT_type", dwarfinfo)
     tag = type_die.tag
     
     # Base types (e.g., int, char)
@@ -238,16 +245,19 @@ def parse_variable_die(child_die, dwarfinfo):
     var_data['is_struct'] = False
     var_data['is_union'] = False
     var_data['is_enum'] = False
-    
-    var_name = child_die.attributes.get('DW_AT_name').value.decode('utf-8','replace') if 'DW_AT_name' in child_die.attributes else ''
-    var_data['name'] = var_name
 
     var_data['RBP offset'] = get_location(child_die,dwarfinfo)
     
     #Not a Stack Variable
     if var_data['RBP offset'] == -1:
         return None
+
+    if 'DW_AT_abstract_origin' in child_die.attributes:
+        child_die = get_DIE_by_reference(child_die, "DW_AT_abstract_origin", dwarfinfo)
     
+    var_name = child_die.attributes.get('DW_AT_name').value.decode('utf-8','replace') if 'DW_AT_name' in child_die.attributes else ''
+    var_data['name'] = var_name
+
     parse_type_die(child_die, var_data, dwarfinfo)
     var_data['type'] = get_normalized_types(var_data['type'])
 
@@ -303,7 +313,7 @@ def parse_function_die(die,dwarfinfo):
     func_data['variables'] = []
     for child in die.iter_children():
         
-        if child.tag == 'DW_TAG_lexical_block':
+        if child.tag in ('DW_TAG_lexical_block', 'DW_TAG_inlined_subroutine'):
             func_data['variables'].extend(parse_lexical_block(child, dwarfinfo))
         
         elif child.tag in ('DW_TAG_formal_parameter', 'DW_TAG_variable'):

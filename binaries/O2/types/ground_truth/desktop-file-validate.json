@@ -6,8 +6,8 @@
         "name": "error",
         "RBP offset": -32,
         "type": [
-          "_GError*",
-          "GError*"
+          "GError*",
+          "_GError*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -30,8 +30,8 @@
         "name": "args",
         "RBP offset": -224,
         "type": [
-          "__builtin_va_list",
           "__va_list_tag[1]",
+          "__builtin_va_list",
           "__gnuc_va_list",
           "va_list"
         ],
@@ -82,8 +82,8 @@
         "name": "args",
         "RBP offset": -224,
         "type": [
-          "__builtin_va_list",
           "__va_list_tag[1]",
+          "__builtin_va_list",
           "__gnuc_va_list",
           "va_list"
         ],
@@ -114,8 +114,8 @@
         "name": "args",
         "RBP offset": -224,
         "type": [
-          "__builtin_va_list",
           "__va_list_tag[1]",
+          "__builtin_va_list",
           "__gnuc_va_list",
           "va_list"
         ],
@@ -142,8 +142,8 @@
         "name": "args",
         "RBP offset": -224,
         "type": [
-          "__builtin_va_list",
           "__va_list_tag[1]",
+          "__builtin_va_list",
           "__gnuc_va_list",
           "va_list"
         ],
@@ -314,8 +314,8 @@
             "name": "kf.parse_buffer",
             "RBP offset": -216,
             "type": [
-              "_GString*",
-              "GString*"
+              "GString*",
+              "_GString*"
             ],
             "size": 8,
             "is_pointer": true,
@@ -329,10 +329,10 @@
             "name": "kf.utf8_warning",
             "RBP offset": -208,
             "type": [
-              "gboolean",
-              "int",
+              "gint",
               "gbool",
-              "gint"
+              "int",
+              "gboolean"
             ],
             "size": 4,
             "is_pointer": false,
@@ -346,10 +346,10 @@
             "name": "kf.cr_error",
             "RBP offset": -204,
             "type": [
-              "gboolean",
-              "int",
+              "gint",
               "gbool",
-              "gint"
+              "int",
+              "gboolean"
             ],
             "size": 4,
             "is_pointer": false,
@@ -407,10 +407,10 @@
             "name": "kf.kde_reserved_warnings",
             "RBP offset": -176,
             "type": [
-              "gboolean",
-              "int",
+              "gint",
               "gbool",
-              "gint"
+              "int",
+              "gboolean"
             ],
             "size": 4,
             "is_pointer": false,
@@ -424,10 +424,10 @@
             "name": "kf.no_deprecated_warnings",
             "RBP offset": -172,
             "type": [
-              "gboolean",
-              "int",
+              "gint",
               "gbool",
-              "gint"
+              "int",
+              "gboolean"
             ],
             "size": 4,
             "is_pointer": false,
@@ -441,10 +441,10 @@
             "name": "kf.no_hints",
             "RBP offset": -168,
             "type": [
-              "gboolean",
-              "int",
+              "gint",
               "gbool",
-              "gint"
+              "int",
+              "gboolean"
             ],
             "size": 4,
             "is_pointer": false,
@@ -472,8 +472,8 @@
             "name": "kf.type",
             "RBP offset": -152,
             "type": [
-              "int",
-              "DesktopType"
+              "DesktopType",
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -501,10 +501,10 @@
             "name": "kf.show_in",
             "RBP offset": -136,
             "type": [
-              "gboolean",
-              "int",
+              "gint",
               "gbool",
-              "gint"
+              "int",
+              "gboolean"
             ],
             "size": 4,
             "is_pointer": false,
@@ -623,10 +623,10 @@
             "name": "kf.fatal_error",
             "RBP offset": -72,
             "type": [
-              "gboolean",
-              "int",
+              "gint",
               "gbool",
-              "gint"
+              "int",
+              "gboolean"
             ],
             "size": 4,
             "is_pointer": false,
@@ -640,10 +640,10 @@
             "name": "kf.use_colors",
             "RBP offset": -68,
             "type": [
-              "gboolean",
-              "int",
+              "gint",
               "gbool",
-              "gint"
+              "int",
+              "gboolean"
             ],
             "size": 4,
             "is_pointer": false,
@@ -672,9 +672,9 @@
         "name": "len",
         "RBP offset": -48,
         "type": [
+          "long unsigned int",
           "gsize",
-          "long long",
-          "long unsigned int"
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -693,9 +693,9 @@
         "name": "len",
         "RBP offset": -64,
         "type": [
+          "long unsigned int",
           "gsize",
-          "long long",
-          "long unsigned int"
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -722,8 +722,8 @@
         "name": "write_error",
         "RBP offset": -56,
         "type": [
-          "_GError*",
-          "GError*"
+          "GError*",
+          "_GError*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -737,9 +737,9 @@
         "name": "length",
         "RBP offset": -48,
         "type": [
+          "long unsigned int",
           "gsize",
-          "long long",
-          "long unsigned int"
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -753,6 +753,26 @@
   },
   "mu_mime_type_is_valid": {
     "address": "0x408800",
-    "variables": []
+    "variables": [
+      {
+        "name": "invalid_chars",
+        "RBP offset": -80,
+        "type": [
+          "char[16]"
+        ],
+        "size": 16,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": true,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false,
+        "array_length": 16,
+        "element_type": [
+          "char"
+        ],
+        "element_size": 1
+      }
+    ]
   }
 }

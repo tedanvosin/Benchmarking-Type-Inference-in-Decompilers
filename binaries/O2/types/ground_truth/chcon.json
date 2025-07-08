@@ -38,10 +38,10 @@
         "name": "ap",
         "RBP offset": -208,
         "type": [
-          "va_list",
           "__gnuc_va_list",
           "__builtin_va_list",
-          "__va_list_tag[1]"
+          "__va_list_tag[1]",
+          "va_list"
         ],
         "size": 24,
         "is_pointer": false,
@@ -70,10 +70,10 @@
         "name": "ap",
         "RBP offset": -208,
         "type": [
-          "va_list",
           "__gnuc_va_list",
           "__builtin_va_list",
-          "__va_list_tag[1]"
+          "__va_list_tag[1]",
+          "va_list"
         ],
         "size": 24,
         "is_pointer": false,
@@ -97,7 +97,28 @@
   },
   "usage": {
     "address": "0x4033b0",
-    "variables": []
+    "variables": [
+      {
+        "name": "infomap",
+        "RBP offset": -144,
+        "type": [
+          "infomap[7]"
+        ],
+        "size": 112,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": true,
+        "is_struct": true,
+        "is_union": false,
+        "is_enum": false,
+        "array_length": 7,
+        "element_type": [
+          "infomap"
+        ],
+        "element_size": 16,
+        "elements": []
+      }
+    ]
   },
   "close_stdout_set_file_name": {
     "address": "0x4037c0",
@@ -180,9 +201,9 @@
             "name": "sb.st_dev",
             "RBP offset": -208,
             "type": [
-              "long long",
+              "__dev_t",
               "long unsigned int",
-              "__dev_t"
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -196,9 +217,9 @@
             "name": "sb.st_ino",
             "RBP offset": -200,
             "type": [
-              "long long",
               "long unsigned int",
-              "__ino_t"
+              "__ino_t",
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -212,9 +233,9 @@
             "name": "sb.st_nlink",
             "RBP offset": -192,
             "type": [
-              "long long",
               "__nlink_t",
-              "long unsigned int"
+              "long unsigned int",
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -229,8 +250,8 @@
             "RBP offset": -184,
             "type": [
               "unsigned int",
-              "__mode_t",
-              "int"
+              "int",
+              "__mode_t"
             ],
             "size": 4,
             "is_pointer": false,
@@ -260,8 +281,8 @@
             "name": "sb.st_gid",
             "RBP offset": -176,
             "type": [
-              "__gid_t",
               "unsigned int",
+              "__gid_t",
               "int"
             ],
             "size": 4,
@@ -290,9 +311,9 @@
             "name": "sb.st_rdev",
             "RBP offset": -168,
             "type": [
-              "long long",
+              "__dev_t",
               "long unsigned int",
-              "__dev_t"
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -306,9 +327,9 @@
             "name": "sb.st_size",
             "RBP offset": -160,
             "type": [
-              "long long",
               "long int",
-              "__off_t"
+              "__off_t",
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -322,9 +343,9 @@
             "name": "sb.st_blksize",
             "RBP offset": -152,
             "type": [
-              "long long",
+              "long int",
               "__blksize_t",
-              "long int"
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -338,9 +359,9 @@
             "name": "sb.st_blocks",
             "RBP offset": -144,
             "type": [
-              "long long",
               "__blkcnt_t",
-              "long int"
+              "long int",
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -368,9 +389,9 @@
                 "name": "sb.st_atim.tv_sec",
                 "RBP offset": -136,
                 "type": [
-                  "__time_t",
+                  "long int",
                   "long long",
-                  "long int"
+                  "__time_t"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -384,9 +405,9 @@
                 "name": "sb.st_atim.tv_nsec",
                 "RBP offset": -128,
                 "type": [
-                  "long long",
                   "long int",
-                  "__syscall_slong_t"
+                  "__syscall_slong_t",
+                  "long long"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -416,9 +437,9 @@
                 "name": "sb.st_mtim.tv_sec",
                 "RBP offset": -120,
                 "type": [
-                  "__time_t",
+                  "long int",
                   "long long",
-                  "long int"
+                  "__time_t"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -432,9 +453,9 @@
                 "name": "sb.st_mtim.tv_nsec",
                 "RBP offset": -112,
                 "type": [
-                  "long long",
                   "long int",
-                  "__syscall_slong_t"
+                  "__syscall_slong_t",
+                  "long long"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -464,9 +485,9 @@
                 "name": "sb.st_ctim.tv_sec",
                 "RBP offset": -104,
                 "type": [
-                  "__time_t",
+                  "long int",
                   "long long",
-                  "long int"
+                  "__time_t"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -480,9 +501,9 @@
                 "name": "sb.st_ctim.tv_nsec",
                 "RBP offset": -96,
                 "type": [
-                  "long long",
                   "long int",
-                  "__syscall_slong_t"
+                  "__syscall_slong_t",
+                  "long long"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -498,9 +519,9 @@
             "name": "sb.__glibc_reserved",
             "RBP offset": -88,
             "type": [
-              "long int[3]",
               "__syscall_slong_t[3]",
-              "long long[3]"
+              "long long[3]",
+              "long int[3]"
             ],
             "size": 24,
             "is_pointer": false,
@@ -646,10 +667,10 @@
         "name": "ap",
         "RBP offset": -80,
         "type": [
-          "va_list",
           "__gnuc_va_list",
           "__builtin_va_list",
-          "__va_list_tag[1]"
+          "__va_list_tag[1]",
+          "va_list"
         ],
         "size": 24,
         "is_pointer": false,
@@ -756,9 +777,9 @@
             "name": "statbuf.st_dev",
             "RBP offset": -160,
             "type": [
-              "long long",
+              "__dev_t",
               "long unsigned int",
-              "__dev_t"
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -772,9 +793,9 @@
             "name": "statbuf.st_ino",
             "RBP offset": -152,
             "type": [
-              "long long",
               "long unsigned int",
-              "__ino_t"
+              "__ino_t",
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -788,9 +809,9 @@
             "name": "statbuf.st_nlink",
             "RBP offset": -144,
             "type": [
-              "long long",
               "__nlink_t",
-              "long unsigned int"
+              "long unsigned int",
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -805,8 +826,8 @@
             "RBP offset": -136,
             "type": [
               "unsigned int",
-              "__mode_t",
-              "int"
+              "int",
+              "__mode_t"
             ],
             "size": 4,
             "is_pointer": false,
@@ -836,8 +857,8 @@
             "name": "statbuf.st_gid",
             "RBP offset": -128,
             "type": [
-              "__gid_t",
               "unsigned int",
+              "__gid_t",
               "int"
             ],
             "size": 4,
@@ -866,9 +887,9 @@
             "name": "statbuf.st_rdev",
             "RBP offset": -120,
             "type": [
-              "long long",
+              "__dev_t",
               "long unsigned int",
-              "__dev_t"
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -882,9 +903,9 @@
             "name": "statbuf.st_size",
             "RBP offset": -112,
             "type": [
-              "long long",
               "long int",
-              "__off_t"
+              "__off_t",
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -898,9 +919,9 @@
             "name": "statbuf.st_blksize",
             "RBP offset": -104,
             "type": [
-              "long long",
+              "long int",
               "__blksize_t",
-              "long int"
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -914,9 +935,9 @@
             "name": "statbuf.st_blocks",
             "RBP offset": -96,
             "type": [
-              "long long",
               "__blkcnt_t",
-              "long int"
+              "long int",
+              "long long"
             ],
             "size": 8,
             "is_pointer": false,
@@ -944,9 +965,9 @@
                 "name": "statbuf.st_atim.tv_sec",
                 "RBP offset": -88,
                 "type": [
-                  "__time_t",
+                  "long int",
                   "long long",
-                  "long int"
+                  "__time_t"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -960,9 +981,9 @@
                 "name": "statbuf.st_atim.tv_nsec",
                 "RBP offset": -80,
                 "type": [
-                  "long long",
                   "long int",
-                  "__syscall_slong_t"
+                  "__syscall_slong_t",
+                  "long long"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -992,9 +1013,9 @@
                 "name": "statbuf.st_mtim.tv_sec",
                 "RBP offset": -72,
                 "type": [
-                  "__time_t",
+                  "long int",
                   "long long",
-                  "long int"
+                  "__time_t"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -1008,9 +1029,9 @@
                 "name": "statbuf.st_mtim.tv_nsec",
                 "RBP offset": -64,
                 "type": [
-                  "long long",
                   "long int",
-                  "__syscall_slong_t"
+                  "__syscall_slong_t",
+                  "long long"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -1040,9 +1061,9 @@
                 "name": "statbuf.st_ctim.tv_sec",
                 "RBP offset": -56,
                 "type": [
-                  "__time_t",
+                  "long int",
                   "long long",
-                  "long int"
+                  "__time_t"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -1056,9 +1077,9 @@
                 "name": "statbuf.st_ctim.tv_nsec",
                 "RBP offset": -48,
                 "type": [
-                  "long long",
                   "long int",
-                  "__syscall_slong_t"
+                  "__syscall_slong_t",
+                  "long long"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -1074,9 +1095,9 @@
             "name": "statbuf.__glibc_reserved",
             "RBP offset": -40,
             "type": [
-              "long int[3]",
               "__syscall_slong_t[3]",
-              "long long[3]"
+              "long long[3]",
+              "long int[3]"
             ],
             "size": 24,
             "is_pointer": false,
@@ -1184,10 +1205,10 @@
         "name": "authors",
         "RBP offset": -168,
         "type": [
-          "va_list",
           "__gnuc_va_list",
           "__builtin_va_list",
-          "__va_list_tag[1]"
+          "__va_list_tag[1]",
+          "va_list"
         ],
         "size": 24,
         "is_pointer": false,
@@ -1202,6 +1223,25 @@
         ],
         "element_size": 24,
         "elements": []
+      },
+      {
+        "name": "authtab",
+        "RBP offset": -144,
+        "type": [
+          "char*[10]"
+        ],
+        "size": 80,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": true,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false,
+        "array_length": 10,
+        "element_type": [
+          "char*"
+        ],
+        "element_size": 8
       }
     ]
   },
@@ -1320,10 +1360,10 @@
         "name": "arg",
         "RBP offset": -96,
         "type": [
-          "va_list",
           "__gnuc_va_list",
           "__builtin_va_list",
-          "__va_list_tag[1]"
+          "__va_list_tag[1]",
+          "va_list"
         ],
         "size": 24,
         "is_pointer": false,
@@ -1348,10 +1388,10 @@
         "name": "ap",
         "RBP offset": -80,
         "type": [
-          "va_list",
           "__gnuc_va_list",
           "__builtin_va_list",
-          "__va_list_tag[1]"
+          "__va_list_tag[1]",
+          "va_list"
         ],
         "size": 24,
         "is_pointer": false,

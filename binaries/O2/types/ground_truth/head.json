@@ -38,8 +38,8 @@
         "name": "ap",
         "RBP offset": -208,
         "type": [
-          "__va_list_tag[1]",
           "__gnuc_va_list",
+          "__va_list_tag[1]",
           "va_list",
           "__builtin_va_list"
         ],
@@ -70,8 +70,8 @@
         "name": "ap",
         "RBP offset": -208,
         "type": [
-          "__va_list_tag[1]",
           "__gnuc_va_list",
+          "__va_list_tag[1]",
           "va_list",
           "__builtin_va_list"
         ],
@@ -173,8 +173,8 @@
             "RBP offset": -8400,
             "type": [
               "long unsigned int",
-              "__dev_t",
-              "long long"
+              "long long",
+              "__dev_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -188,8 +188,8 @@
             "name": "st.st_ino",
             "RBP offset": -8392,
             "type": [
-              "long unsigned int",
               "__ino_t",
+              "long unsigned int",
               "long long"
             ],
             "size": 8,
@@ -204,8 +204,8 @@
             "name": "st.st_nlink",
             "RBP offset": -8384,
             "type": [
-              "long unsigned int",
               "__nlink_t",
+              "long unsigned int",
               "long long"
             ],
             "size": 8,
@@ -221,8 +221,8 @@
             "RBP offset": -8376,
             "type": [
               "__mode_t",
-              "int",
-              "unsigned int"
+              "unsigned int",
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -236,9 +236,9 @@
             "name": "st.st_uid",
             "RBP offset": -8372,
             "type": [
-              "int",
+              "__uid_t",
               "unsigned int",
-              "__uid_t"
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -253,8 +253,8 @@
             "RBP offset": -8368,
             "type": [
               "__gid_t",
-              "int",
-              "unsigned int"
+              "unsigned int",
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -283,8 +283,8 @@
             "RBP offset": -8360,
             "type": [
               "long unsigned int",
-              "__dev_t",
-              "long long"
+              "long long",
+              "__dev_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -299,8 +299,8 @@
             "RBP offset": -8352,
             "type": [
               "long int",
-              "__off_t",
-              "long long"
+              "long long",
+              "__off_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -314,8 +314,8 @@
             "name": "st.st_blksize",
             "RBP offset": -8344,
             "type": [
-              "long int",
               "__blksize_t",
+              "long int",
               "long long"
             ],
             "size": 8,
@@ -330,9 +330,9 @@
             "name": "st.st_blocks",
             "RBP offset": -8336,
             "type": [
+              "long long",
               "long int",
-              "__blkcnt_t",
-              "long long"
+              "__blkcnt_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -490,9 +490,9 @@
             "name": "st.__glibc_reserved",
             "RBP offset": -8280,
             "type": [
-              "__syscall_slong_t[3]",
+              "long long[3]",
               "long int[3]",
-              "long long[3]"
+              "__syscall_slong_t[3]"
             ],
             "size": 24,
             "is_pointer": false,
@@ -558,7 +558,28 @@
   },
   "usage": {
     "address": "0x404230",
-    "variables": []
+    "variables": [
+      {
+        "name": "infomap",
+        "RBP offset": -144,
+        "type": [
+          "infomap[7]"
+        ],
+        "size": 112,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": true,
+        "is_struct": true,
+        "is_union": false,
+        "is_enum": false,
+        "array_length": 7,
+        "element_type": [
+          "infomap"
+        ],
+        "element_size": 16,
+        "elements": []
+      }
+    ]
   },
   "close_stdout_set_file_name": {
     "address": "0x404600",
@@ -667,8 +688,8 @@
         "name": "authors",
         "RBP offset": -168,
         "type": [
-          "__va_list_tag[1]",
           "__gnuc_va_list",
+          "__va_list_tag[1]",
           "va_list",
           "__builtin_va_list"
         ],
@@ -685,6 +706,25 @@
         ],
         "element_size": 24,
         "elements": []
+      },
+      {
+        "name": "authtab",
+        "RBP offset": -144,
+        "type": [
+          "char*[10]"
+        ],
+        "size": 80,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": true,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false,
+        "array_length": 10,
+        "element_type": [
+          "char*"
+        ],
+        "element_size": 8
       }
     ]
   },

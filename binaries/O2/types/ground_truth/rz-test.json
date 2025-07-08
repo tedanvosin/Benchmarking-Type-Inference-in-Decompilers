@@ -117,9 +117,9 @@
             "name": "buf.len",
             "RBP offset": -80,
             "type": [
-              "size_t",
               "long long",
-              "long unsigned int"
+              "long unsigned int",
+              "size_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -147,9 +147,9 @@
             "name": "buf.ptrlen",
             "RBP offset": -64,
             "type": [
-              "size_t",
               "long long",
-              "long unsigned int"
+              "long unsigned int",
+              "size_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -360,8 +360,8 @@
         "name": "workers",
         "RBP offset": -464,
         "type": [
-          "RzPVector",
-          "rz_pvector_t"
+          "rz_pvector_t",
+          "RzPVector"
         ],
         "size": 48,
         "is_pointer": false,
@@ -375,8 +375,8 @@
             "name": "workers.v",
             "RBP offset": -464,
             "type": [
-              "rz_vector_t",
-              "RzVector"
+              "RzVector",
+              "rz_vector_t"
             ],
             "size": 48,
             "is_pointer": false,
@@ -404,9 +404,9 @@
                 "name": "workers.v.len",
                 "RBP offset": -456,
                 "type": [
-                  "size_t",
                   "long long",
-                  "long unsigned int"
+                  "long unsigned int",
+                  "size_t"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -420,9 +420,9 @@
                 "name": "workers.v.capacity",
                 "RBP offset": -448,
                 "type": [
-                  "size_t",
                   "long long",
-                  "long unsigned int"
+                  "long unsigned int",
+                  "size_t"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -436,9 +436,9 @@
                 "name": "workers.v.elem_size",
                 "RBP offset": -440,
                 "type": [
-                  "size_t",
                   "long long",
-                  "long unsigned int"
+                  "long unsigned int",
+                  "size_t"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -452,8 +452,8 @@
                 "name": "workers.v.free",
                 "RBP offset": -432,
                 "type": [
-                  "FUNCTION*",
-                  "RzVectorFree"
+                  "RzVectorFree",
+                  "FUNCTION*"
                 ],
                 "size": 8,
                 "is_pointer": true,
@@ -466,6 +466,131 @@
               {
                 "name": "workers.v.free_user",
                 "RBP offset": -424,
+                "type": [
+                  "void*"
+                ],
+                "size": 8,
+                "is_pointer": true,
+                "is_typedef": false,
+                "is_array": false,
+                "is_struct": false,
+                "is_union": false,
+                "is_enum": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "failed_results",
+        "RBP offset": -416,
+        "type": [
+          "rz_pvector_t",
+          "RzPVector"
+        ],
+        "size": 48,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": true,
+        "is_union": false,
+        "is_enum": false,
+        "elements": [
+          {
+            "name": "failed_results.v",
+            "RBP offset": -416,
+            "type": [
+              "RzVector",
+              "rz_vector_t"
+            ],
+            "size": 48,
+            "is_pointer": false,
+            "is_typedef": true,
+            "is_array": false,
+            "is_struct": true,
+            "is_union": false,
+            "is_enum": false,
+            "elements": [
+              {
+                "name": "failed_results.v.a",
+                "RBP offset": -416,
+                "type": [
+                  "void*"
+                ],
+                "size": 8,
+                "is_pointer": true,
+                "is_typedef": false,
+                "is_array": false,
+                "is_struct": false,
+                "is_union": false,
+                "is_enum": false
+              },
+              {
+                "name": "failed_results.v.len",
+                "RBP offset": -408,
+                "type": [
+                  "long long",
+                  "long unsigned int",
+                  "size_t"
+                ],
+                "size": 8,
+                "is_pointer": false,
+                "is_typedef": true,
+                "is_array": false,
+                "is_struct": false,
+                "is_union": false,
+                "is_enum": false
+              },
+              {
+                "name": "failed_results.v.capacity",
+                "RBP offset": -400,
+                "type": [
+                  "long long",
+                  "long unsigned int",
+                  "size_t"
+                ],
+                "size": 8,
+                "is_pointer": false,
+                "is_typedef": true,
+                "is_array": false,
+                "is_struct": false,
+                "is_union": false,
+                "is_enum": false
+              },
+              {
+                "name": "failed_results.v.elem_size",
+                "RBP offset": -392,
+                "type": [
+                  "long long",
+                  "long unsigned int",
+                  "size_t"
+                ],
+                "size": 8,
+                "is_pointer": false,
+                "is_typedef": true,
+                "is_array": false,
+                "is_struct": false,
+                "is_union": false,
+                "is_enum": false
+              },
+              {
+                "name": "failed_results.v.free",
+                "RBP offset": -384,
+                "type": [
+                  "RzVectorFree",
+                  "FUNCTION*"
+                ],
+                "size": 8,
+                "is_pointer": true,
+                "is_typedef": true,
+                "is_array": false,
+                "is_struct": false,
+                "is_union": false,
+                "is_enum": false
+              },
+              {
+                "name": "failed_results.v.free_user",
+                "RBP offset": -376,
                 "type": [
                   "void*"
                 ],
@@ -574,8 +699,8 @@
             "name": "state.verbose",
             "RBP offset": -336,
             "type": [
-              "_Bool",
-              "bool"
+              "bool",
+              "_Bool"
             ],
             "size": 1,
             "is_pointer": false,
@@ -604,8 +729,8 @@
             "name": "state.test_results",
             "RBP offset": -320,
             "type": [
-              "pj_t*",
-              "PJ*"
+              "PJ*",
+              "pj_t*"
             ],
             "size": 8,
             "is_pointer": true,
@@ -664,8 +789,8 @@
             "name": "state.completed_paths",
             "RBP offset": -288,
             "type": [
-              "RzPVector",
-              "rz_pvector_t"
+              "rz_pvector_t",
+              "RzPVector"
             ],
             "size": 48,
             "is_pointer": false,
@@ -679,8 +804,8 @@
                 "name": "state.completed_paths.v",
                 "RBP offset": -288,
                 "type": [
-                  "rz_vector_t",
-                  "RzVector"
+                  "RzVector",
+                  "rz_vector_t"
                 ],
                 "size": 48,
                 "is_pointer": false,
@@ -708,9 +833,9 @@
                     "name": "state.completed_paths.v.len",
                     "RBP offset": -280,
                     "type": [
-                      "size_t",
                       "long long",
-                      "long unsigned int"
+                      "long unsigned int",
+                      "size_t"
                     ],
                     "size": 8,
                     "is_pointer": false,
@@ -724,9 +849,9 @@
                     "name": "state.completed_paths.v.capacity",
                     "RBP offset": -272,
                     "type": [
-                      "size_t",
                       "long long",
-                      "long unsigned int"
+                      "long unsigned int",
+                      "size_t"
                     ],
                     "size": 8,
                     "is_pointer": false,
@@ -740,9 +865,9 @@
                     "name": "state.completed_paths.v.elem_size",
                     "RBP offset": -264,
                     "type": [
-                      "size_t",
                       "long long",
-                      "long unsigned int"
+                      "long unsigned int",
+                      "size_t"
                     ],
                     "size": 8,
                     "is_pointer": false,
@@ -756,8 +881,8 @@
                     "name": "state.completed_paths.v.free",
                     "RBP offset": -256,
                     "type": [
-                      "FUNCTION*",
-                      "RzVectorFree"
+                      "RzVectorFree",
+                      "FUNCTION*"
                     ],
                     "size": 8,
                     "is_pointer": true,
@@ -849,8 +974,8 @@
             "name": "state.queue",
             "RBP offset": -208,
             "type": [
-              "RzPVector",
-              "rz_pvector_t"
+              "rz_pvector_t",
+              "RzPVector"
             ],
             "size": 48,
             "is_pointer": false,
@@ -864,8 +989,8 @@
                 "name": "state.queue.v",
                 "RBP offset": -208,
                 "type": [
-                  "rz_vector_t",
-                  "RzVector"
+                  "RzVector",
+                  "rz_vector_t"
                 ],
                 "size": 48,
                 "is_pointer": false,
@@ -893,9 +1018,9 @@
                     "name": "state.queue.v.len",
                     "RBP offset": -200,
                     "type": [
-                      "size_t",
                       "long long",
-                      "long unsigned int"
+                      "long unsigned int",
+                      "size_t"
                     ],
                     "size": 8,
                     "is_pointer": false,
@@ -909,9 +1034,9 @@
                     "name": "state.queue.v.capacity",
                     "RBP offset": -192,
                     "type": [
-                      "size_t",
                       "long long",
-                      "long unsigned int"
+                      "long unsigned int",
+                      "size_t"
                     ],
                     "size": 8,
                     "is_pointer": false,
@@ -925,9 +1050,9 @@
                     "name": "state.queue.v.elem_size",
                     "RBP offset": -184,
                     "type": [
-                      "size_t",
                       "long long",
-                      "long unsigned int"
+                      "long unsigned int",
+                      "size_t"
                     ],
                     "size": 8,
                     "is_pointer": false,
@@ -941,8 +1066,8 @@
                     "name": "state.queue.v.free",
                     "RBP offset": -176,
                     "type": [
-                      "FUNCTION*",
-                      "RzVectorFree"
+                      "RzVectorFree",
+                      "FUNCTION*"
                     ],
                     "size": 8,
                     "is_pointer": true,
@@ -974,8 +1099,8 @@
             "name": "state.results",
             "RBP offset": -160,
             "type": [
-              "RzPVector",
-              "rz_pvector_t"
+              "rz_pvector_t",
+              "RzPVector"
             ],
             "size": 48,
             "is_pointer": false,
@@ -989,8 +1114,8 @@
                 "name": "state.results.v",
                 "RBP offset": -160,
                 "type": [
-                  "rz_vector_t",
-                  "RzVector"
+                  "RzVector",
+                  "rz_vector_t"
                 ],
                 "size": 48,
                 "is_pointer": false,
@@ -1018,9 +1143,9 @@
                     "name": "state.results.v.len",
                     "RBP offset": -152,
                     "type": [
-                      "size_t",
                       "long long",
-                      "long unsigned int"
+                      "long unsigned int",
+                      "size_t"
                     ],
                     "size": 8,
                     "is_pointer": false,
@@ -1034,9 +1159,9 @@
                     "name": "state.results.v.capacity",
                     "RBP offset": -144,
                     "type": [
-                      "size_t",
                       "long long",
-                      "long unsigned int"
+                      "long unsigned int",
+                      "size_t"
                     ],
                     "size": 8,
                     "is_pointer": false,
@@ -1050,9 +1175,9 @@
                     "name": "state.results.v.elem_size",
                     "RBP offset": -136,
                     "type": [
-                      "size_t",
                       "long long",
-                      "long unsigned int"
+                      "long unsigned int",
+                      "size_t"
                     ],
                     "size": 8,
                     "is_pointer": false,
@@ -1066,8 +1191,8 @@
                     "name": "state.results.v.free",
                     "RBP offset": -128,
                     "type": [
-                      "FUNCTION*",
-                      "RzVectorFree"
+                      "RzVectorFree",
+                      "FUNCTION*"
                     ],
                     "size": 8,
                     "is_pointer": true,
@@ -1096,6 +1221,25 @@
             ]
           }
         ]
+      },
+      {
+        "name": "buf",
+        "RBP offset": -112,
+        "type": [
+          "char[48]"
+        ],
+        "size": 48,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": true,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false,
+        "array_length": 48,
+        "element_type": [
+          "char"
+        ],
+        "element_size": 1
       }
     ]
   },
@@ -1110,9 +1254,9 @@
         "name": "linesz",
         "RBP offset": -64,
         "type": [
-          "size_t",
           "long long",
-          "long unsigned int"
+          "long unsigned int",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1154,9 +1298,9 @@
         "name": "linesz",
         "RBP offset": -80,
         "type": [
-          "size_t",
           "long long",
-          "long unsigned int"
+          "long unsigned int",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1203,9 +1347,9 @@
         "name": "linesz",
         "RBP offset": -80,
         "type": [
-          "size_t",
           "long long",
-          "long unsigned int"
+          "long unsigned int",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1238,9 +1382,9 @@
         "name": "linesz",
         "RBP offset": -72,
         "type": [
-          "size_t",
           "long long",
-          "long unsigned int"
+          "long unsigned int",
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -1292,9 +1436,9 @@
             "name": "subpath.len",
             "RBP offset": -80,
             "type": [
-              "size_t",
               "long long",
-              "long unsigned int"
+              "long unsigned int",
+              "size_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -1322,9 +1466,9 @@
             "name": "subpath.ptrlen",
             "RBP offset": -64,
             "type": [
-              "size_t",
               "long long",
-              "long unsigned int"
+              "long unsigned int",
+              "size_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -1390,9 +1534,9 @@
             "name": "subpath.len",
             "RBP offset": -80,
             "type": [
-              "size_t",
               "long long",
-              "long unsigned int"
+              "long unsigned int",
+              "size_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -1420,9 +1564,9 @@
             "name": "subpath.ptrlen",
             "RBP offset": -64,
             "type": [
-              "size_t",
               "long long",
-              "long unsigned int"
+              "long unsigned int",
+              "size_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -1443,8 +1587,8 @@
         "name": "args",
         "RBP offset": -128,
         "type": [
-          "RzPVector",
-          "rz_pvector_t"
+          "rz_pvector_t",
+          "RzPVector"
         ],
         "size": 48,
         "is_pointer": false,
@@ -1458,8 +1602,8 @@
             "name": "args.v",
             "RBP offset": -128,
             "type": [
-              "rz_vector_t",
-              "RzVector"
+              "RzVector",
+              "rz_vector_t"
             ],
             "size": 48,
             "is_pointer": false,
@@ -1487,9 +1631,9 @@
                 "name": "args.v.len",
                 "RBP offset": -120,
                 "type": [
-                  "size_t",
                   "long long",
-                  "long unsigned int"
+                  "long unsigned int",
+                  "size_t"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -1503,9 +1647,9 @@
                 "name": "args.v.capacity",
                 "RBP offset": -112,
                 "type": [
-                  "size_t",
                   "long long",
-                  "long unsigned int"
+                  "long unsigned int",
+                  "size_t"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -1519,9 +1663,9 @@
                 "name": "args.v.elem_size",
                 "RBP offset": -104,
                 "type": [
-                  "size_t",
                   "long long",
-                  "long unsigned int"
+                  "long unsigned int",
+                  "size_t"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -1535,8 +1679,8 @@
                 "name": "args.v.free",
                 "RBP offset": -96,
                 "type": [
-                  "FUNCTION*",
-                  "RzVectorFree"
+                  "RzVectorFree",
+                  "FUNCTION*"
                 ],
                 "size": 8,
                 "is_pointer": true,
@@ -1606,8 +1750,8 @@
         "name": "runner",
         "RBP offset": 16,
         "type": [
-          "FUNCTION*",
-          "RzTestCmdRunner"
+          "RzTestCmdRunner",
+          "FUNCTION*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -1706,8 +1850,8 @@
         "name": "args",
         "RBP offset": -176,
         "type": [
-          "RzPVector",
-          "rz_pvector_t"
+          "rz_pvector_t",
+          "RzPVector"
         ],
         "size": 48,
         "is_pointer": false,
@@ -1721,8 +1865,8 @@
             "name": "args.v",
             "RBP offset": -176,
             "type": [
-              "rz_vector_t",
-              "RzVector"
+              "RzVector",
+              "rz_vector_t"
             ],
             "size": 48,
             "is_pointer": false,
@@ -1750,9 +1894,9 @@
                 "name": "args.v.len",
                 "RBP offset": -168,
                 "type": [
-                  "size_t",
                   "long long",
-                  "long unsigned int"
+                  "long unsigned int",
+                  "size_t"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -1766,9 +1910,9 @@
                 "name": "args.v.capacity",
                 "RBP offset": -160,
                 "type": [
-                  "size_t",
                   "long long",
-                  "long unsigned int"
+                  "long unsigned int",
+                  "size_t"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -1782,9 +1926,9 @@
                 "name": "args.v.elem_size",
                 "RBP offset": -152,
                 "type": [
-                  "size_t",
                   "long long",
-                  "long unsigned int"
+                  "long unsigned int",
+                  "size_t"
                 ],
                 "size": 8,
                 "is_pointer": false,
@@ -1798,8 +1942,8 @@
                 "name": "args.v.free",
                 "RBP offset": -144,
                 "type": [
-                  "FUNCTION*",
-                  "RzVectorFree"
+                  "RzVectorFree",
+                  "FUNCTION*"
                 ],
                 "size": 8,
                 "is_pointer": true,

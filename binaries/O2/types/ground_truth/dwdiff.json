@@ -18,10 +18,10 @@
         "name": "highSurrogate",
         "RBP offset": -64,
         "type": [
-          "int",
           "UChar32",
+          "int32_t",
           "__int32_t",
-          "int32_t"
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -83,10 +83,10 @@
         "name": "range",
         "RBP offset": -192,
         "type": [
-          "long long[4]",
+          "ptrdiff_t[4]",
           "lin[4]",
           "long int[4]",
-          "ptrdiff_t[4]"
+          "long long[4]"
         ],
         "size": 32,
         "is_pointer": false,
@@ -185,9 +185,9 @@
             "name": "ctxt.xvec",
             "RBP offset": -128,
             "type": [
-              "long long*",
               "long int*",
               "lin*",
+              "long long*",
               "ptrdiff_t*"
             ],
             "size": 8,
@@ -202,9 +202,9 @@
             "name": "ctxt.yvec",
             "RBP offset": -120,
             "type": [
-              "long long*",
               "long int*",
               "lin*",
+              "long long*",
               "ptrdiff_t*"
             ],
             "size": 8,
@@ -219,9 +219,9 @@
             "name": "ctxt.fdiag",
             "RBP offset": -112,
             "type": [
-              "long long*",
               "long int*",
               "lin*",
+              "long long*",
               "ptrdiff_t*"
             ],
             "size": 8,
@@ -236,9 +236,9 @@
             "name": "ctxt.bdiag",
             "RBP offset": -104,
             "type": [
-              "long long*",
               "long int*",
               "lin*",
+              "long long*",
               "ptrdiff_t*"
             ],
             "size": 8,
@@ -268,9 +268,9 @@
             "name": "ctxt.too_expensive",
             "RBP offset": -88,
             "type": [
-              "long long",
-              "ptrdiff_t",
               "lin",
+              "ptrdiff_t",
+              "long long",
               "long int"
             ],
             "size": 8,
@@ -282,6 +282,25 @@
             "is_enum": false
           }
         ]
+      },
+      {
+        "name": "discarded",
+        "RBP offset": -80,
+        "type": [
+          "char*[2]"
+        ],
+        "size": 16,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": true,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false,
+        "array_length": 2,
+        "element_type": [
+          "char*"
+        ],
+        "element_size": 8
       }
     ]
   },
@@ -376,8 +395,8 @@
         "name": "error",
         "RBP offset": -64,
         "type": [
-          "int",
-          "UErrorCode"
+          "UErrorCode",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -514,11 +533,11 @@
                     "name": "cluster.UTF8Char.original.data",
                     "RBP offset": -136,
                     "type": [
-                      "char16_t*",
-                      "__uint16_t*",
-                      "UChar*",
                       "short unsigned int*",
                       "short int*",
+                      "__uint16_t*",
+                      "char16_t*",
+                      "UChar*",
                       "__uint_least16_t*"
                     ],
                     "size": 8,
@@ -533,9 +552,9 @@
                     "name": "cluster.UTF8Char.original.allocated",
                     "RBP offset": -128,
                     "type": [
-                      "size_t",
+                      "long unsigned int",
                       "long long",
-                      "long unsigned int"
+                      "size_t"
                     ],
                     "size": 8,
                     "is_pointer": false,
@@ -549,9 +568,9 @@
                     "name": "cluster.UTF8Char.original.used",
                     "RBP offset": -120,
                     "type": [
-                      "size_t",
+                      "long unsigned int",
                       "long long",
-                      "long unsigned int"
+                      "size_t"
                     ],
                     "size": 8,
                     "is_pointer": false,
@@ -581,11 +600,11 @@
                     "name": "cluster.UTF8Char.converted.data",
                     "RBP offset": -112,
                     "type": [
-                      "char16_t*",
-                      "__uint16_t*",
-                      "UChar*",
                       "short unsigned int*",
                       "short int*",
+                      "__uint16_t*",
+                      "char16_t*",
+                      "UChar*",
                       "__uint_least16_t*"
                     ],
                     "size": 8,
@@ -600,9 +619,9 @@
                     "name": "cluster.UTF8Char.converted.allocated",
                     "RBP offset": -104,
                     "type": [
-                      "size_t",
+                      "long unsigned int",
                       "long long",
-                      "long unsigned int"
+                      "size_t"
                     ],
                     "size": 8,
                     "is_pointer": false,
@@ -616,9 +635,9 @@
                     "name": "cluster.UTF8Char.converted.used",
                     "RBP offset": -96,
                     "type": [
-                      "size_t",
+                      "long unsigned int",
                       "long long",
-                      "long unsigned int"
+                      "size_t"
                     ],
                     "size": 8,
                     "is_pointer": false,
@@ -648,11 +667,11 @@
                     "name": "cluster.UTF8Char.casefolded.data",
                     "RBP offset": -88,
                     "type": [
-                      "char16_t*",
-                      "__uint16_t*",
-                      "UChar*",
                       "short unsigned int*",
                       "short int*",
+                      "__uint16_t*",
+                      "char16_t*",
+                      "UChar*",
                       "__uint_least16_t*"
                     ],
                     "size": 8,
@@ -667,9 +686,9 @@
                     "name": "cluster.UTF8Char.casefolded.allocated",
                     "RBP offset": -80,
                     "type": [
-                      "size_t",
+                      "long unsigned int",
                       "long long",
-                      "long unsigned int"
+                      "size_t"
                     ],
                     "size": 8,
                     "is_pointer": false,
@@ -683,9 +702,9 @@
                     "name": "cluster.UTF8Char.casefolded.used",
                     "RBP offset": -72,
                     "type": [
-                      "size_t",
+                      "long unsigned int",
                       "long long",
-                      "long unsigned int"
+                      "size_t"
                     ],
                     "size": 8,
                     "is_pointer": false,
@@ -721,7 +740,23 @@
   },
   "parseCmdLine": {
     "address": "0x408dc0",
-    "variables": []
+    "variables": [
+      {
+        "name": "error",
+        "RBP offset": -60,
+        "type": [
+          "UErrorCode",
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": true
+      }
+    ]
   },
   "getuc": {
     "address": "0x40a5a0",
@@ -774,8 +809,8 @@
         "name": "error",
         "RBP offset": -12,
         "type": [
-          "int",
-          "UErrorCode"
+          "UErrorCode",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -794,8 +829,8 @@
         "name": "error",
         "RBP offset": -28,
         "type": [
-          "int",
-          "UErrorCode"
+          "UErrorCode",
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -886,9 +921,9 @@
         "name": "n",
         "RBP offset": -4232,
         "type": [
-          "size_t",
+          "long unsigned int",
           "long long",
-          "long unsigned int"
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -916,9 +951,9 @@
         "name": "len",
         "RBP offset": -4216,
         "type": [
-          "size_t",
+          "long unsigned int",
           "long long",
-          "long unsigned int"
+          "size_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -975,8 +1010,8 @@
             "RBP offset": -4192,
             "type": [
               "unsigned int",
-              "int",
-              "__uid_t"
+              "__uid_t",
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -990,9 +1025,9 @@
             "name": "pwEntry.pw_gid",
             "RBP offset": -4188,
             "type": [
+              "__gid_t",
               "unsigned int",
-              "int",
-              "__gid_t"
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -1126,10 +1161,10 @@
         "name": "highSurrogate",
         "RBP offset": -48,
         "type": [
-          "int",
           "UChar32",
+          "int32_t",
           "__int32_t",
-          "int32_t"
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -1167,10 +1202,10 @@
         "name": "highSurrogate",
         "RBP offset": -64,
         "type": [
-          "int",
           "UChar32",
+          "int32_t",
           "__int32_t",
-          "int32_t"
+          "int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -1232,8 +1267,8 @@
         "name": "args",
         "RBP offset": -208,
         "type": [
-          "va_list",
           "__gnuc_va_list",
+          "va_list",
           "__va_list_tag[1]",
           "__builtin_va_list"
         ],

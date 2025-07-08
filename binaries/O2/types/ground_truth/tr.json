@@ -38,10 +38,10 @@
         "name": "ap",
         "RBP offset": -208,
         "type": [
-          "va_list",
-          "__gnuc_va_list",
+          "__va_list_tag[1]",
           "__builtin_va_list",
-          "__va_list_tag[1]"
+          "va_list",
+          "__gnuc_va_list"
         ],
         "size": 24,
         "is_pointer": false,
@@ -70,10 +70,10 @@
         "name": "ap",
         "RBP offset": -208,
         "type": [
-          "va_list",
-          "__gnuc_va_list",
+          "__va_list_tag[1]",
           "__builtin_va_list",
-          "__va_list_tag[1]"
+          "va_list",
+          "__gnuc_va_list"
         ],
         "size": 24,
         "is_pointer": false,
@@ -170,11 +170,11 @@
             "name": "buf1.state",
             "RBP offset": -432,
             "type": [
+              "long long",
               "count",
-              "__uintmax_t",
-              "uintmax_t",
               "long unsigned int",
-              "long long"
+              "__uintmax_t",
+              "uintmax_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -188,11 +188,11 @@
             "name": "buf1.length",
             "RBP offset": -424,
             "type": [
+              "long long",
               "count",
-              "__uintmax_t",
-              "uintmax_t",
               "long unsigned int",
-              "long long"
+              "__uintmax_t",
+              "uintmax_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -206,9 +206,9 @@
             "name": "buf1.n_indefinite_repeats",
             "RBP offset": -416,
             "type": [
-              "size_t",
               "long unsigned int",
-              "long long"
+              "long long",
+              "size_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -325,11 +325,11 @@
             "name": "buf2.state",
             "RBP offset": -368,
             "type": [
+              "long long",
               "count",
-              "__uintmax_t",
-              "uintmax_t",
               "long unsigned int",
-              "long long"
+              "__uintmax_t",
+              "uintmax_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -343,11 +343,11 @@
             "name": "buf2.length",
             "RBP offset": -360,
             "type": [
+              "long long",
               "count",
-              "__uintmax_t",
-              "uintmax_t",
               "long unsigned int",
-              "long long"
+              "__uintmax_t",
+              "uintmax_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -361,9 +361,9 @@
             "name": "buf2.n_indefinite_repeats",
             "RBP offset": -352,
             "type": [
-              "size_t",
               "long unsigned int",
-              "long long"
+              "long long",
+              "size_t"
             ],
             "size": 8,
             "is_pointer": false,
@@ -486,7 +486,26 @@
   },
   "parse_str": {
     "address": "0x404560",
-    "variables": []
+    "variables": [
+      {
+        "name": "repeat_count",
+        "RBP offset": -96,
+        "type": [
+          "long long",
+          "count",
+          "long unsigned int",
+          "__uintmax_t",
+          "uintmax_t"
+        ],
+        "size": 8,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      }
+    ]
   },
   "read_and_xlate": {
     "address": "0x404ea0",
@@ -498,7 +517,28 @@
   },
   "usage": {
     "address": "0x404fd0",
-    "variables": []
+    "variables": [
+      {
+        "name": "infomap",
+        "RBP offset": -144,
+        "type": [
+          "infomap[7]"
+        ],
+        "size": 112,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": true,
+        "is_struct": true,
+        "is_union": false,
+        "is_enum": false,
+        "array_length": 7,
+        "element_type": [
+          "infomap"
+        ],
+        "element_size": 16,
+        "elements": []
+      }
+    ]
   },
   "close_stdout_set_file_name": {
     "address": "0x405370",
@@ -607,10 +647,10 @@
         "name": "authors",
         "RBP offset": -168,
         "type": [
-          "va_list",
-          "__gnuc_va_list",
+          "__va_list_tag[1]",
           "__builtin_va_list",
-          "__va_list_tag[1]"
+          "va_list",
+          "__gnuc_va_list"
         ],
         "size": 24,
         "is_pointer": false,
@@ -625,6 +665,25 @@
         ],
         "element_size": 24,
         "elements": []
+      },
+      {
+        "name": "authtab",
+        "RBP offset": -144,
+        "type": [
+          "char*[10]"
+        ],
+        "size": 80,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": true,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false,
+        "array_length": 10,
+        "element_type": [
+          "char*"
+        ],
+        "element_size": 8
       }
     ]
   },

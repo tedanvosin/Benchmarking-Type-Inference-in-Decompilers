@@ -116,10 +116,10 @@
             "name": "ai.ai_addrlen",
             "RBP offset": -48,
             "type": [
-              "__socklen_t",
-              "int",
+              "socklen_t",
               "unsigned int",
-              "socklen_t"
+              "__socklen_t",
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -182,8 +182,8 @@
         "name": "request",
         "RBP offset": -16,
         "type": [
-          "unsigned char[8]",
-          "char[8]"
+          "char[8]",
+          "unsigned char[8]"
         ],
         "size": 8,
         "is_pointer": false,
@@ -208,8 +208,8 @@
         "name": "request",
         "RBP offset": -12,
         "type": [
-          "unsigned char[4]",
-          "char[4]"
+          "char[4]",
+          "unsigned char[4]"
         ],
         "size": 4,
         "is_pointer": false,
@@ -234,8 +234,8 @@
         "name": "request",
         "RBP offset": -16,
         "type": [
-          "unsigned char[8]",
-          "char[8]"
+          "char[8]",
+          "unsigned char[8]"
         ],
         "size": 8,
         "is_pointer": false,
@@ -264,8 +264,8 @@
         "name": "msg",
         "RBP offset": -128,
         "type": [
-          "unsigned char[64]",
-          "char[64]"
+          "char[64]",
+          "unsigned char[64]"
         ],
         "size": 64,
         "is_pointer": false,
@@ -290,8 +290,8 @@
         "name": "request",
         "RBP offset": -24,
         "type": [
-          "char[13]",
-          "unsigned char[13]"
+          "unsigned char[13]",
+          "char[13]"
         ],
         "size": 13,
         "is_pointer": false,
@@ -316,8 +316,8 @@
         "name": "request",
         "RBP offset": -16,
         "type": [
-          "unsigned char[8]",
-          "char[8]"
+          "char[8]",
+          "unsigned char[8]"
         ],
         "size": 8,
         "is_pointer": false,
@@ -337,7 +337,71 @@
   },
   "redir_data": {
     "address": "0x403c90",
-    "variables": []
+    "variables": [
+      {
+        "name": "request",
+        "RBP offset": -80,
+        "type": [
+          "char[8]",
+          "unsigned char[8]"
+        ],
+        "size": 8,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": true,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false,
+        "array_length": 8,
+        "element_type": [
+          "unsigned char",
+          "char"
+        ],
+        "element_size": 1
+      },
+      {
+        "name": "request",
+        "RBP offset": -80,
+        "type": [
+          "char[18]",
+          "unsigned char[18]"
+        ],
+        "size": 18,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": true,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false,
+        "array_length": 18,
+        "element_type": [
+          "unsigned char",
+          "char"
+        ],
+        "element_size": 1
+      },
+      {
+        "name": "request",
+        "RBP offset": -80,
+        "type": [
+          "char[24]",
+          "unsigned char[24]"
+        ],
+        "size": 24,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": true,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false,
+        "array_length": 24,
+        "element_type": [
+          "unsigned char",
+          "char"
+        ],
+        "element_size": 1
+      }
+    ]
   },
   "tcp_connect": {
     "address": "0x4047d0",
@@ -458,10 +522,10 @@
             "name": "ask.ai_addrlen",
             "RBP offset": -288,
             "type": [
-              "__socklen_t",
-              "int",
+              "socklen_t",
               "unsigned int",
-              "socklen_t"
+              "__socklen_t",
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -697,10 +761,10 @@
             "name": "ctx.md5",
             "RBP offset": -976,
             "type": [
-              "__uint32_t[4]",
-              "int[4]",
               "unsigned int[4]",
-              "uint32_t[4]"
+              "int[4]",
+              "uint32_t[4]",
+              "__uint32_t[4]"
             ],
             "size": 16,
             "is_pointer": false,
@@ -722,9 +786,9 @@
             "name": "ctx.total",
             "RBP offset": -960,
             "type": [
-              "__uint32_t",
-              "uint32_t",
               "unsigned int",
+              "uint32_t",
+              "__uint32_t",
               "int"
             ],
             "size": 4,
@@ -739,10 +803,10 @@
             "name": "ctx.bfr",
             "RBP offset": -956,
             "type": [
-              "unsigned char[64]",
-              "__uint8_t[64]",
+              "uint8_t[64]",
               "char[64]",
-              "uint8_t[64]"
+              "unsigned char[64]",
+              "__uint8_t[64]"
             ],
             "size": 64,
             "is_pointer": false,
@@ -764,10 +828,10 @@
             "name": "ctx.size",
             "RBP offset": -892,
             "type": [
-              "__uint8_t",
-              "unsigned char",
+              "char",
               "uint8_t",
-              "char"
+              "__uint8_t",
+              "unsigned char"
             ],
             "size": 1,
             "is_pointer": false,
@@ -803,9 +867,9 @@
         "RBP offset": -864,
         "type": [
           "char[16]",
-          "__uint8_t[16]",
           "uint8_t[16]",
-          "unsigned char[16]"
+          "unsigned char[16]",
+          "__uint8_t[16]"
         ],
         "size": 16,
         "is_pointer": false,
@@ -964,6 +1028,2004 @@
   "ider_handle_command": {
     "address": "0x406970",
     "variables": [
+      {
+        "name": "msg",
+        "RBP offset": -608,
+        "type": [
+          "ider_command_response_message"
+        ],
+        "size": 31,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": true,
+        "is_union": false,
+        "is_enum": false,
+        "elements": [
+          {
+            "name": "msg.type",
+            "RBP offset": -608,
+            "type": [
+              "char",
+              "unsigned char"
+            ],
+            "size": 1,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "msg.reserved",
+            "RBP offset": -607,
+            "type": [
+              "unsigned char[2]",
+              "char[2]"
+            ],
+            "size": 2,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": true,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false,
+            "array_length": 2,
+            "element_type": [
+              "unsigned char",
+              "char"
+            ],
+            "element_size": 1
+          },
+          {
+            "name": "msg.attributes",
+            "RBP offset": -605,
+            "type": [
+              "char",
+              "unsigned char"
+            ],
+            "size": 1,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "msg.sequence_number",
+            "RBP offset": -604,
+            "type": [
+              "unsigned int",
+              "uint32_t",
+              "__uint32_t",
+              "int"
+            ],
+            "size": 4,
+            "is_pointer": false,
+            "is_typedef": true,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "msg.cable_sel",
+            "RBP offset": -600,
+            "type": [
+              "char",
+              "unsigned char"
+            ],
+            "size": 1,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "msg.transfer_bytes",
+            "RBP offset": -599,
+            "type": [
+              "short int",
+              "short unsigned int",
+              "__uint16_t",
+              "uint16_t"
+            ],
+            "size": 2,
+            "is_pointer": false,
+            "is_typedef": true,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "msg.packet_num",
+            "RBP offset": -597,
+            "type": [
+              "char",
+              "unsigned char"
+            ],
+            "size": 1,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "msg.input_regs",
+            "RBP offset": -596,
+            "type": [
+              "char[8]",
+              "unsigned char[8]"
+            ],
+            "size": 8,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": true,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false,
+            "array_length": 8,
+            "element_type": [
+              "unsigned char",
+              "char"
+            ],
+            "element_size": 1
+          },
+          {
+            "name": "msg.output",
+            "RBP offset": -588,
+            "type": [
+              "ider_data_regs"
+            ],
+            "size": 8,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": true,
+            "is_union": false,
+            "is_enum": false,
+            "elements": [
+              {
+                "name": "msg.output.mask",
+                "RBP offset": -588,
+                "type": [
+                  "char",
+                  "unsigned char"
+                ],
+                "size": 1,
+                "is_pointer": false,
+                "is_typedef": false,
+                "is_array": false,
+                "is_struct": false,
+                "is_union": false,
+                "is_enum": false
+              },
+              {
+                "name": "msg.output.error",
+                "RBP offset": -587,
+                "type": [
+                  "char",
+                  "unsigned char"
+                ],
+                "size": 1,
+                "is_pointer": false,
+                "is_typedef": false,
+                "is_array": false,
+                "is_struct": false,
+                "is_union": false,
+                "is_enum": false
+              },
+              {
+                "name": "msg.output.sector_count",
+                "RBP offset": -586,
+                "type": [
+                  "char",
+                  "unsigned char"
+                ],
+                "size": 1,
+                "is_pointer": false,
+                "is_typedef": false,
+                "is_array": false,
+                "is_struct": false,
+                "is_union": false,
+                "is_enum": false
+              },
+              {
+                "name": "msg.output.sector_num",
+                "RBP offset": -585,
+                "type": [
+                  "char",
+                  "unsigned char"
+                ],
+                "size": 1,
+                "is_pointer": false,
+                "is_typedef": false,
+                "is_array": false,
+                "is_struct": false,
+                "is_union": false,
+                "is_enum": false
+              },
+              {
+                "name": "msg.output.byte_count_lsb",
+                "RBP offset": -584,
+                "type": [
+                  "char",
+                  "unsigned char"
+                ],
+                "size": 1,
+                "is_pointer": false,
+                "is_typedef": false,
+                "is_array": false,
+                "is_struct": false,
+                "is_union": false,
+                "is_enum": false
+              },
+              {
+                "name": "msg.output.byte_count_msb",
+                "RBP offset": -583,
+                "type": [
+                  "char",
+                  "unsigned char"
+                ],
+                "size": 1,
+                "is_pointer": false,
+                "is_typedef": false,
+                "is_array": false,
+                "is_struct": false,
+                "is_union": false,
+                "is_enum": false
+              },
+              {
+                "name": "msg.output.drive_select",
+                "RBP offset": -582,
+                "type": [
+                  "char",
+                  "unsigned char"
+                ],
+                "size": 1,
+                "is_pointer": false,
+                "is_typedef": false,
+                "is_array": false,
+                "is_struct": false,
+                "is_union": false,
+                "is_enum": false
+              },
+              {
+                "name": "msg.output.status",
+                "RBP offset": -581,
+                "type": [
+                  "char",
+                  "unsigned char"
+                ],
+                "size": 1,
+                "is_pointer": false,
+                "is_typedef": false,
+                "is_array": false,
+                "is_struct": false,
+                "is_union": false,
+                "is_enum": false
+              }
+            ]
+          },
+          {
+            "name": "msg.sense",
+            "RBP offset": -580,
+            "type": [
+              "char",
+              "unsigned char"
+            ],
+            "size": 1,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "msg.asc",
+            "RBP offset": -579,
+            "type": [
+              "char",
+              "unsigned char"
+            ],
+            "size": 1,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "msg.asq",
+            "RBP offset": -578,
+            "type": [
+              "char",
+              "unsigned char"
+            ],
+            "size": 1,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          }
+        ]
+      },
+      {
+        "name": "msg",
+        "RBP offset": -608,
+        "type": [
+          "ider_command_response_message"
+        ],
+        "size": 31,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": true,
+        "is_union": false,
+        "is_enum": false,
+        "elements": [
+          {
+            "name": "msg.type",
+            "RBP offset": -608,
+            "type": [
+              "char",
+              "unsigned char"
+            ],
+            "size": 1,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "msg.reserved",
+            "RBP offset": -607,
+            "type": [
+              "unsigned char[2]",
+              "char[2]"
+            ],
+            "size": 2,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": true,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false,
+            "array_length": 2,
+            "element_type": [
+              "unsigned char",
+              "char"
+            ],
+            "element_size": 1
+          },
+          {
+            "name": "msg.attributes",
+            "RBP offset": -605,
+            "type": [
+              "char",
+              "unsigned char"
+            ],
+            "size": 1,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "msg.sequence_number",
+            "RBP offset": -604,
+            "type": [
+              "unsigned int",
+              "uint32_t",
+              "__uint32_t",
+              "int"
+            ],
+            "size": 4,
+            "is_pointer": false,
+            "is_typedef": true,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "msg.cable_sel",
+            "RBP offset": -600,
+            "type": [
+              "char",
+              "unsigned char"
+            ],
+            "size": 1,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "msg.transfer_bytes",
+            "RBP offset": -599,
+            "type": [
+              "short int",
+              "short unsigned int",
+              "__uint16_t",
+              "uint16_t"
+            ],
+            "size": 2,
+            "is_pointer": false,
+            "is_typedef": true,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "msg.packet_num",
+            "RBP offset": -597,
+            "type": [
+              "char",
+              "unsigned char"
+            ],
+            "size": 1,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "msg.input_regs",
+            "RBP offset": -596,
+            "type": [
+              "char[8]",
+              "unsigned char[8]"
+            ],
+            "size": 8,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": true,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false,
+            "array_length": 8,
+            "element_type": [
+              "unsigned char",
+              "char"
+            ],
+            "element_size": 1
+          },
+          {
+            "name": "msg.output",
+            "RBP offset": -588,
+            "type": [
+              "ider_data_regs"
+            ],
+            "size": 8,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": true,
+            "is_union": false,
+            "is_enum": false,
+            "elements": [
+              {
+                "name": "msg.output.mask",
+                "RBP offset": -588,
+                "type": [
+                  "char",
+                  "unsigned char"
+                ],
+                "size": 1,
+                "is_pointer": false,
+                "is_typedef": false,
+                "is_array": false,
+                "is_struct": false,
+                "is_union": false,
+                "is_enum": false
+              },
+              {
+                "name": "msg.output.error",
+                "RBP offset": -587,
+                "type": [
+                  "char",
+                  "unsigned char"
+                ],
+                "size": 1,
+                "is_pointer": false,
+                "is_typedef": false,
+                "is_array": false,
+                "is_struct": false,
+                "is_union": false,
+                "is_enum": false
+              },
+              {
+                "name": "msg.output.sector_count",
+                "RBP offset": -586,
+                "type": [
+                  "char",
+                  "unsigned char"
+                ],
+                "size": 1,
+                "is_pointer": false,
+                "is_typedef": false,
+                "is_array": false,
+                "is_struct": false,
+                "is_union": false,
+                "is_enum": false
+              },
+              {
+                "name": "msg.output.sector_num",
+                "RBP offset": -585,
+                "type": [
+                  "char",
+                  "unsigned char"
+                ],
+                "size": 1,
+                "is_pointer": false,
+                "is_typedef": false,
+                "is_array": false,
+                "is_struct": false,
+                "is_union": false,
+                "is_enum": false
+              },
+              {
+                "name": "msg.output.byte_count_lsb",
+                "RBP offset": -584,
+                "type": [
+                  "char",
+                  "unsigned char"
+                ],
+                "size": 1,
+                "is_pointer": false,
+                "is_typedef": false,
+                "is_array": false,
+                "is_struct": false,
+                "is_union": false,
+                "is_enum": false
+              },
+              {
+                "name": "msg.output.byte_count_msb",
+                "RBP offset": -583,
+                "type": [
+                  "char",
+                  "unsigned char"
+                ],
+                "size": 1,
+                "is_pointer": false,
+                "is_typedef": false,
+                "is_array": false,
+                "is_struct": false,
+                "is_union": false,
+                "is_enum": false
+              },
+              {
+                "name": "msg.output.drive_select",
+                "RBP offset": -582,
+                "type": [
+                  "char",
+                  "unsigned char"
+                ],
+                "size": 1,
+                "is_pointer": false,
+                "is_typedef": false,
+                "is_array": false,
+                "is_struct": false,
+                "is_union": false,
+                "is_enum": false
+              },
+              {
+                "name": "msg.output.status",
+                "RBP offset": -581,
+                "type": [
+                  "char",
+                  "unsigned char"
+                ],
+                "size": 1,
+                "is_pointer": false,
+                "is_typedef": false,
+                "is_array": false,
+                "is_struct": false,
+                "is_union": false,
+                "is_enum": false
+              }
+            ]
+          },
+          {
+            "name": "msg.sense",
+            "RBP offset": -580,
+            "type": [
+              "char",
+              "unsigned char"
+            ],
+            "size": 1,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "msg.asc",
+            "RBP offset": -579,
+            "type": [
+              "char",
+              "unsigned char"
+            ],
+            "size": 1,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "msg.asq",
+            "RBP offset": -578,
+            "type": [
+              "char",
+              "unsigned char"
+            ],
+            "size": 1,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          }
+        ]
+      },
+      {
+        "name": "msg",
+        "RBP offset": -608,
+        "type": [
+          "ider_command_response_message"
+        ],
+        "size": 31,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": true,
+        "is_union": false,
+        "is_enum": false,
+        "elements": [
+          {
+            "name": "msg.type",
+            "RBP offset": -608,
+            "type": [
+              "char",
+              "unsigned char"
+            ],
+            "size": 1,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "msg.reserved",
+            "RBP offset": -607,
+            "type": [
+              "unsigned char[2]",
+              "char[2]"
+            ],
+            "size": 2,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": true,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false,
+            "array_length": 2,
+            "element_type": [
+              "unsigned char",
+              "char"
+            ],
+            "element_size": 1
+          },
+          {
+            "name": "msg.attributes",
+            "RBP offset": -605,
+            "type": [
+              "char",
+              "unsigned char"
+            ],
+            "size": 1,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "msg.sequence_number",
+            "RBP offset": -604,
+            "type": [
+              "unsigned int",
+              "uint32_t",
+              "__uint32_t",
+              "int"
+            ],
+            "size": 4,
+            "is_pointer": false,
+            "is_typedef": true,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "msg.cable_sel",
+            "RBP offset": -600,
+            "type": [
+              "char",
+              "unsigned char"
+            ],
+            "size": 1,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "msg.transfer_bytes",
+            "RBP offset": -599,
+            "type": [
+              "short int",
+              "short unsigned int",
+              "__uint16_t",
+              "uint16_t"
+            ],
+            "size": 2,
+            "is_pointer": false,
+            "is_typedef": true,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "msg.packet_num",
+            "RBP offset": -597,
+            "type": [
+              "char",
+              "unsigned char"
+            ],
+            "size": 1,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "msg.input_regs",
+            "RBP offset": -596,
+            "type": [
+              "char[8]",
+              "unsigned char[8]"
+            ],
+            "size": 8,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": true,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false,
+            "array_length": 8,
+            "element_type": [
+              "unsigned char",
+              "char"
+            ],
+            "element_size": 1
+          },
+          {
+            "name": "msg.output",
+            "RBP offset": -588,
+            "type": [
+              "ider_data_regs"
+            ],
+            "size": 8,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": true,
+            "is_union": false,
+            "is_enum": false,
+            "elements": [
+              {
+                "name": "msg.output.mask",
+                "RBP offset": -588,
+                "type": [
+                  "char",
+                  "unsigned char"
+                ],
+                "size": 1,
+                "is_pointer": false,
+                "is_typedef": false,
+                "is_array": false,
+                "is_struct": false,
+                "is_union": false,
+                "is_enum": false
+              },
+              {
+                "name": "msg.output.error",
+                "RBP offset": -587,
+                "type": [
+                  "char",
+                  "unsigned char"
+                ],
+                "size": 1,
+                "is_pointer": false,
+                "is_typedef": false,
+                "is_array": false,
+                "is_struct": false,
+                "is_union": false,
+                "is_enum": false
+              },
+              {
+                "name": "msg.output.sector_count",
+                "RBP offset": -586,
+                "type": [
+                  "char",
+                  "unsigned char"
+                ],
+                "size": 1,
+                "is_pointer": false,
+                "is_typedef": false,
+                "is_array": false,
+                "is_struct": false,
+                "is_union": false,
+                "is_enum": false
+              },
+              {
+                "name": "msg.output.sector_num",
+                "RBP offset": -585,
+                "type": [
+                  "char",
+                  "unsigned char"
+                ],
+                "size": 1,
+                "is_pointer": false,
+                "is_typedef": false,
+                "is_array": false,
+                "is_struct": false,
+                "is_union": false,
+                "is_enum": false
+              },
+              {
+                "name": "msg.output.byte_count_lsb",
+                "RBP offset": -584,
+                "type": [
+                  "char",
+                  "unsigned char"
+                ],
+                "size": 1,
+                "is_pointer": false,
+                "is_typedef": false,
+                "is_array": false,
+                "is_struct": false,
+                "is_union": false,
+                "is_enum": false
+              },
+              {
+                "name": "msg.output.byte_count_msb",
+                "RBP offset": -583,
+                "type": [
+                  "char",
+                  "unsigned char"
+                ],
+                "size": 1,
+                "is_pointer": false,
+                "is_typedef": false,
+                "is_array": false,
+                "is_struct": false,
+                "is_union": false,
+                "is_enum": false
+              },
+              {
+                "name": "msg.output.drive_select",
+                "RBP offset": -582,
+                "type": [
+                  "char",
+                  "unsigned char"
+                ],
+                "size": 1,
+                "is_pointer": false,
+                "is_typedef": false,
+                "is_array": false,
+                "is_struct": false,
+                "is_union": false,
+                "is_enum": false
+              },
+              {
+                "name": "msg.output.status",
+                "RBP offset": -581,
+                "type": [
+                  "char",
+                  "unsigned char"
+                ],
+                "size": 1,
+                "is_pointer": false,
+                "is_typedef": false,
+                "is_array": false,
+                "is_struct": false,
+                "is_union": false,
+                "is_enum": false
+              }
+            ]
+          },
+          {
+            "name": "msg.sense",
+            "RBP offset": -580,
+            "type": [
+              "char",
+              "unsigned char"
+            ],
+            "size": 1,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "msg.asc",
+            "RBP offset": -579,
+            "type": [
+              "char",
+              "unsigned char"
+            ],
+            "size": 1,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "msg.asq",
+            "RBP offset": -578,
+            "type": [
+              "char",
+              "unsigned char"
+            ],
+            "size": 1,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          }
+        ]
+      },
+      {
+        "name": "msg",
+        "RBP offset": -608,
+        "type": [
+          "ider_command_response_message"
+        ],
+        "size": 31,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": true,
+        "is_union": false,
+        "is_enum": false,
+        "elements": [
+          {
+            "name": "msg.type",
+            "RBP offset": -608,
+            "type": [
+              "char",
+              "unsigned char"
+            ],
+            "size": 1,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "msg.reserved",
+            "RBP offset": -607,
+            "type": [
+              "unsigned char[2]",
+              "char[2]"
+            ],
+            "size": 2,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": true,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false,
+            "array_length": 2,
+            "element_type": [
+              "unsigned char",
+              "char"
+            ],
+            "element_size": 1
+          },
+          {
+            "name": "msg.attributes",
+            "RBP offset": -605,
+            "type": [
+              "char",
+              "unsigned char"
+            ],
+            "size": 1,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "msg.sequence_number",
+            "RBP offset": -604,
+            "type": [
+              "unsigned int",
+              "uint32_t",
+              "__uint32_t",
+              "int"
+            ],
+            "size": 4,
+            "is_pointer": false,
+            "is_typedef": true,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "msg.cable_sel",
+            "RBP offset": -600,
+            "type": [
+              "char",
+              "unsigned char"
+            ],
+            "size": 1,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "msg.transfer_bytes",
+            "RBP offset": -599,
+            "type": [
+              "short int",
+              "short unsigned int",
+              "__uint16_t",
+              "uint16_t"
+            ],
+            "size": 2,
+            "is_pointer": false,
+            "is_typedef": true,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "msg.packet_num",
+            "RBP offset": -597,
+            "type": [
+              "char",
+              "unsigned char"
+            ],
+            "size": 1,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "msg.input_regs",
+            "RBP offset": -596,
+            "type": [
+              "char[8]",
+              "unsigned char[8]"
+            ],
+            "size": 8,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": true,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false,
+            "array_length": 8,
+            "element_type": [
+              "unsigned char",
+              "char"
+            ],
+            "element_size": 1
+          },
+          {
+            "name": "msg.output",
+            "RBP offset": -588,
+            "type": [
+              "ider_data_regs"
+            ],
+            "size": 8,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": true,
+            "is_union": false,
+            "is_enum": false,
+            "elements": [
+              {
+                "name": "msg.output.mask",
+                "RBP offset": -588,
+                "type": [
+                  "char",
+                  "unsigned char"
+                ],
+                "size": 1,
+                "is_pointer": false,
+                "is_typedef": false,
+                "is_array": false,
+                "is_struct": false,
+                "is_union": false,
+                "is_enum": false
+              },
+              {
+                "name": "msg.output.error",
+                "RBP offset": -587,
+                "type": [
+                  "char",
+                  "unsigned char"
+                ],
+                "size": 1,
+                "is_pointer": false,
+                "is_typedef": false,
+                "is_array": false,
+                "is_struct": false,
+                "is_union": false,
+                "is_enum": false
+              },
+              {
+                "name": "msg.output.sector_count",
+                "RBP offset": -586,
+                "type": [
+                  "char",
+                  "unsigned char"
+                ],
+                "size": 1,
+                "is_pointer": false,
+                "is_typedef": false,
+                "is_array": false,
+                "is_struct": false,
+                "is_union": false,
+                "is_enum": false
+              },
+              {
+                "name": "msg.output.sector_num",
+                "RBP offset": -585,
+                "type": [
+                  "char",
+                  "unsigned char"
+                ],
+                "size": 1,
+                "is_pointer": false,
+                "is_typedef": false,
+                "is_array": false,
+                "is_struct": false,
+                "is_union": false,
+                "is_enum": false
+              },
+              {
+                "name": "msg.output.byte_count_lsb",
+                "RBP offset": -584,
+                "type": [
+                  "char",
+                  "unsigned char"
+                ],
+                "size": 1,
+                "is_pointer": false,
+                "is_typedef": false,
+                "is_array": false,
+                "is_struct": false,
+                "is_union": false,
+                "is_enum": false
+              },
+              {
+                "name": "msg.output.byte_count_msb",
+                "RBP offset": -583,
+                "type": [
+                  "char",
+                  "unsigned char"
+                ],
+                "size": 1,
+                "is_pointer": false,
+                "is_typedef": false,
+                "is_array": false,
+                "is_struct": false,
+                "is_union": false,
+                "is_enum": false
+              },
+              {
+                "name": "msg.output.drive_select",
+                "RBP offset": -582,
+                "type": [
+                  "char",
+                  "unsigned char"
+                ],
+                "size": 1,
+                "is_pointer": false,
+                "is_typedef": false,
+                "is_array": false,
+                "is_struct": false,
+                "is_union": false,
+                "is_enum": false
+              },
+              {
+                "name": "msg.output.status",
+                "RBP offset": -581,
+                "type": [
+                  "char",
+                  "unsigned char"
+                ],
+                "size": 1,
+                "is_pointer": false,
+                "is_typedef": false,
+                "is_array": false,
+                "is_struct": false,
+                "is_union": false,
+                "is_enum": false
+              }
+            ]
+          },
+          {
+            "name": "msg.sense",
+            "RBP offset": -580,
+            "type": [
+              "char",
+              "unsigned char"
+            ],
+            "size": 1,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "msg.asc",
+            "RBP offset": -579,
+            "type": [
+              "char",
+              "unsigned char"
+            ],
+            "size": 1,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "msg.asq",
+            "RBP offset": -578,
+            "type": [
+              "char",
+              "unsigned char"
+            ],
+            "size": 1,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          }
+        ]
+      },
+      {
+        "name": "msg",
+        "RBP offset": -608,
+        "type": [
+          "ider_command_response_message"
+        ],
+        "size": 31,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": true,
+        "is_union": false,
+        "is_enum": false,
+        "elements": [
+          {
+            "name": "msg.type",
+            "RBP offset": -608,
+            "type": [
+              "char",
+              "unsigned char"
+            ],
+            "size": 1,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "msg.reserved",
+            "RBP offset": -607,
+            "type": [
+              "unsigned char[2]",
+              "char[2]"
+            ],
+            "size": 2,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": true,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false,
+            "array_length": 2,
+            "element_type": [
+              "unsigned char",
+              "char"
+            ],
+            "element_size": 1
+          },
+          {
+            "name": "msg.attributes",
+            "RBP offset": -605,
+            "type": [
+              "char",
+              "unsigned char"
+            ],
+            "size": 1,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "msg.sequence_number",
+            "RBP offset": -604,
+            "type": [
+              "unsigned int",
+              "uint32_t",
+              "__uint32_t",
+              "int"
+            ],
+            "size": 4,
+            "is_pointer": false,
+            "is_typedef": true,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "msg.cable_sel",
+            "RBP offset": -600,
+            "type": [
+              "char",
+              "unsigned char"
+            ],
+            "size": 1,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "msg.transfer_bytes",
+            "RBP offset": -599,
+            "type": [
+              "short int",
+              "short unsigned int",
+              "__uint16_t",
+              "uint16_t"
+            ],
+            "size": 2,
+            "is_pointer": false,
+            "is_typedef": true,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "msg.packet_num",
+            "RBP offset": -597,
+            "type": [
+              "char",
+              "unsigned char"
+            ],
+            "size": 1,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "msg.input_regs",
+            "RBP offset": -596,
+            "type": [
+              "char[8]",
+              "unsigned char[8]"
+            ],
+            "size": 8,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": true,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false,
+            "array_length": 8,
+            "element_type": [
+              "unsigned char",
+              "char"
+            ],
+            "element_size": 1
+          },
+          {
+            "name": "msg.output",
+            "RBP offset": -588,
+            "type": [
+              "ider_data_regs"
+            ],
+            "size": 8,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": true,
+            "is_union": false,
+            "is_enum": false,
+            "elements": [
+              {
+                "name": "msg.output.mask",
+                "RBP offset": -588,
+                "type": [
+                  "char",
+                  "unsigned char"
+                ],
+                "size": 1,
+                "is_pointer": false,
+                "is_typedef": false,
+                "is_array": false,
+                "is_struct": false,
+                "is_union": false,
+                "is_enum": false
+              },
+              {
+                "name": "msg.output.error",
+                "RBP offset": -587,
+                "type": [
+                  "char",
+                  "unsigned char"
+                ],
+                "size": 1,
+                "is_pointer": false,
+                "is_typedef": false,
+                "is_array": false,
+                "is_struct": false,
+                "is_union": false,
+                "is_enum": false
+              },
+              {
+                "name": "msg.output.sector_count",
+                "RBP offset": -586,
+                "type": [
+                  "char",
+                  "unsigned char"
+                ],
+                "size": 1,
+                "is_pointer": false,
+                "is_typedef": false,
+                "is_array": false,
+                "is_struct": false,
+                "is_union": false,
+                "is_enum": false
+              },
+              {
+                "name": "msg.output.sector_num",
+                "RBP offset": -585,
+                "type": [
+                  "char",
+                  "unsigned char"
+                ],
+                "size": 1,
+                "is_pointer": false,
+                "is_typedef": false,
+                "is_array": false,
+                "is_struct": false,
+                "is_union": false,
+                "is_enum": false
+              },
+              {
+                "name": "msg.output.byte_count_lsb",
+                "RBP offset": -584,
+                "type": [
+                  "char",
+                  "unsigned char"
+                ],
+                "size": 1,
+                "is_pointer": false,
+                "is_typedef": false,
+                "is_array": false,
+                "is_struct": false,
+                "is_union": false,
+                "is_enum": false
+              },
+              {
+                "name": "msg.output.byte_count_msb",
+                "RBP offset": -583,
+                "type": [
+                  "char",
+                  "unsigned char"
+                ],
+                "size": 1,
+                "is_pointer": false,
+                "is_typedef": false,
+                "is_array": false,
+                "is_struct": false,
+                "is_union": false,
+                "is_enum": false
+              },
+              {
+                "name": "msg.output.drive_select",
+                "RBP offset": -582,
+                "type": [
+                  "char",
+                  "unsigned char"
+                ],
+                "size": 1,
+                "is_pointer": false,
+                "is_typedef": false,
+                "is_array": false,
+                "is_struct": false,
+                "is_union": false,
+                "is_enum": false
+              },
+              {
+                "name": "msg.output.status",
+                "RBP offset": -581,
+                "type": [
+                  "char",
+                  "unsigned char"
+                ],
+                "size": 1,
+                "is_pointer": false,
+                "is_typedef": false,
+                "is_array": false,
+                "is_struct": false,
+                "is_union": false,
+                "is_enum": false
+              }
+            ]
+          },
+          {
+            "name": "msg.sense",
+            "RBP offset": -580,
+            "type": [
+              "char",
+              "unsigned char"
+            ],
+            "size": 1,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "msg.asc",
+            "RBP offset": -579,
+            "type": [
+              "char",
+              "unsigned char"
+            ],
+            "size": 1,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "msg.asq",
+            "RBP offset": -578,
+            "type": [
+              "char",
+              "unsigned char"
+            ],
+            "size": 1,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          }
+        ]
+      },
+      {
+        "name": "msg",
+        "RBP offset": -608,
+        "type": [
+          "ider_command_response_message"
+        ],
+        "size": 31,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": true,
+        "is_union": false,
+        "is_enum": false,
+        "elements": [
+          {
+            "name": "msg.type",
+            "RBP offset": -608,
+            "type": [
+              "char",
+              "unsigned char"
+            ],
+            "size": 1,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "msg.reserved",
+            "RBP offset": -607,
+            "type": [
+              "unsigned char[2]",
+              "char[2]"
+            ],
+            "size": 2,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": true,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false,
+            "array_length": 2,
+            "element_type": [
+              "unsigned char",
+              "char"
+            ],
+            "element_size": 1
+          },
+          {
+            "name": "msg.attributes",
+            "RBP offset": -605,
+            "type": [
+              "char",
+              "unsigned char"
+            ],
+            "size": 1,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "msg.sequence_number",
+            "RBP offset": -604,
+            "type": [
+              "unsigned int",
+              "uint32_t",
+              "__uint32_t",
+              "int"
+            ],
+            "size": 4,
+            "is_pointer": false,
+            "is_typedef": true,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "msg.cable_sel",
+            "RBP offset": -600,
+            "type": [
+              "char",
+              "unsigned char"
+            ],
+            "size": 1,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "msg.transfer_bytes",
+            "RBP offset": -599,
+            "type": [
+              "short int",
+              "short unsigned int",
+              "__uint16_t",
+              "uint16_t"
+            ],
+            "size": 2,
+            "is_pointer": false,
+            "is_typedef": true,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "msg.packet_num",
+            "RBP offset": -597,
+            "type": [
+              "char",
+              "unsigned char"
+            ],
+            "size": 1,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "msg.input_regs",
+            "RBP offset": -596,
+            "type": [
+              "char[8]",
+              "unsigned char[8]"
+            ],
+            "size": 8,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": true,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false,
+            "array_length": 8,
+            "element_type": [
+              "unsigned char",
+              "char"
+            ],
+            "element_size": 1
+          },
+          {
+            "name": "msg.output",
+            "RBP offset": -588,
+            "type": [
+              "ider_data_regs"
+            ],
+            "size": 8,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": true,
+            "is_union": false,
+            "is_enum": false,
+            "elements": [
+              {
+                "name": "msg.output.mask",
+                "RBP offset": -588,
+                "type": [
+                  "char",
+                  "unsigned char"
+                ],
+                "size": 1,
+                "is_pointer": false,
+                "is_typedef": false,
+                "is_array": false,
+                "is_struct": false,
+                "is_union": false,
+                "is_enum": false
+              },
+              {
+                "name": "msg.output.error",
+                "RBP offset": -587,
+                "type": [
+                  "char",
+                  "unsigned char"
+                ],
+                "size": 1,
+                "is_pointer": false,
+                "is_typedef": false,
+                "is_array": false,
+                "is_struct": false,
+                "is_union": false,
+                "is_enum": false
+              },
+              {
+                "name": "msg.output.sector_count",
+                "RBP offset": -586,
+                "type": [
+                  "char",
+                  "unsigned char"
+                ],
+                "size": 1,
+                "is_pointer": false,
+                "is_typedef": false,
+                "is_array": false,
+                "is_struct": false,
+                "is_union": false,
+                "is_enum": false
+              },
+              {
+                "name": "msg.output.sector_num",
+                "RBP offset": -585,
+                "type": [
+                  "char",
+                  "unsigned char"
+                ],
+                "size": 1,
+                "is_pointer": false,
+                "is_typedef": false,
+                "is_array": false,
+                "is_struct": false,
+                "is_union": false,
+                "is_enum": false
+              },
+              {
+                "name": "msg.output.byte_count_lsb",
+                "RBP offset": -584,
+                "type": [
+                  "char",
+                  "unsigned char"
+                ],
+                "size": 1,
+                "is_pointer": false,
+                "is_typedef": false,
+                "is_array": false,
+                "is_struct": false,
+                "is_union": false,
+                "is_enum": false
+              },
+              {
+                "name": "msg.output.byte_count_msb",
+                "RBP offset": -583,
+                "type": [
+                  "char",
+                  "unsigned char"
+                ],
+                "size": 1,
+                "is_pointer": false,
+                "is_typedef": false,
+                "is_array": false,
+                "is_struct": false,
+                "is_union": false,
+                "is_enum": false
+              },
+              {
+                "name": "msg.output.drive_select",
+                "RBP offset": -582,
+                "type": [
+                  "char",
+                  "unsigned char"
+                ],
+                "size": 1,
+                "is_pointer": false,
+                "is_typedef": false,
+                "is_array": false,
+                "is_struct": false,
+                "is_union": false,
+                "is_enum": false
+              },
+              {
+                "name": "msg.output.status",
+                "RBP offset": -581,
+                "type": [
+                  "char",
+                  "unsigned char"
+                ],
+                "size": 1,
+                "is_pointer": false,
+                "is_typedef": false,
+                "is_array": false,
+                "is_struct": false,
+                "is_union": false,
+                "is_enum": false
+              }
+            ]
+          },
+          {
+            "name": "msg.sense",
+            "RBP offset": -580,
+            "type": [
+              "char",
+              "unsigned char"
+            ],
+            "size": 1,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "msg.asc",
+            "RBP offset": -579,
+            "type": [
+              "char",
+              "unsigned char"
+            ],
+            "size": 1,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "msg.asq",
+            "RBP offset": -578,
+            "type": [
+              "char",
+              "unsigned char"
+            ],
+            "size": 1,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          }
+        ]
+      },
       {
         "name": "resp",
         "RBP offset": -576,

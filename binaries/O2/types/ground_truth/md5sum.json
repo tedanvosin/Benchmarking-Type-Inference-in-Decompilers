@@ -39,9 +39,9 @@
         "RBP offset": -208,
         "type": [
           "__gnuc_va_list",
-          "__builtin_va_list",
           "__va_list_tag[1]",
-          "va_list"
+          "va_list",
+          "__builtin_va_list"
         ],
         "size": 24,
         "is_pointer": false,
@@ -71,9 +71,9 @@
         "RBP offset": -208,
         "type": [
           "__gnuc_va_list",
-          "__builtin_va_list",
           "__va_list_tag[1]",
-          "va_list"
+          "va_list",
+          "__builtin_va_list"
         ],
         "size": 24,
         "is_pointer": false,
@@ -98,8 +98,8 @@
         "name": "missing",
         "RBP offset": -88,
         "type": [
-          "bool",
-          "_Bool"
+          "_Bool",
+          "bool"
         ],
         "size": 1,
         "is_pointer": false,
@@ -113,8 +113,8 @@
         "name": "bin_buffer_unaligned",
         "RBP offset": -80,
         "type": [
-          "unsigned char[20]",
-          "char[20]"
+          "char[20]",
+          "unsigned char[20]"
         ],
         "size": 20,
         "is_pointer": false,
@@ -138,7 +138,28 @@
   },
   "usage": {
     "address": "0x403c40",
-    "variables": []
+    "variables": [
+      {
+        "name": "infomap",
+        "RBP offset": -144,
+        "type": [
+          "infomap[7]"
+        ],
+        "size": 112,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": true,
+        "is_struct": true,
+        "is_union": false,
+        "is_enum": false,
+        "array_length": 7,
+        "element_type": [
+          "infomap"
+        ],
+        "element_size": 16,
+        "elements": []
+      }
+    ]
   },
   "close_stdout_set_file_name": {
     "address": "0x404080",
@@ -174,9 +195,9 @@
             "RBP offset": -224,
             "type": [
               "unsigned int",
+              "uint32_t",
               "__uint32_t",
-              "int",
-              "uint32_t"
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -191,9 +212,9 @@
             "RBP offset": -220,
             "type": [
               "unsigned int",
+              "uint32_t",
               "__uint32_t",
-              "int",
-              "uint32_t"
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -208,9 +229,9 @@
             "RBP offset": -216,
             "type": [
               "unsigned int",
+              "uint32_t",
               "__uint32_t",
-              "int",
-              "uint32_t"
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -225,9 +246,9 @@
             "RBP offset": -212,
             "type": [
               "unsigned int",
+              "uint32_t",
               "__uint32_t",
-              "int",
-              "uint32_t"
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -241,10 +262,10 @@
             "name": "ctx.total",
             "RBP offset": -208,
             "type": [
-              "__uint32_t[2]",
-              "uint32_t[2]",
+              "unsigned int[2]",
               "int[2]",
-              "unsigned int[2]"
+              "uint32_t[2]",
+              "__uint32_t[2]"
             ],
             "size": 8,
             "is_pointer": false,
@@ -267,9 +288,9 @@
             "RBP offset": -200,
             "type": [
               "unsigned int",
+              "uint32_t",
               "__uint32_t",
-              "int",
-              "uint32_t"
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -283,8 +304,8 @@
             "name": "ctx.buffer",
             "RBP offset": -196,
             "type": [
-              "unsigned int[32]",
               "int[32]",
+              "unsigned int[32]",
               "uint32_t[32]",
               "__uint32_t[32]"
             ],
@@ -342,9 +363,9 @@
             "RBP offset": -192,
             "type": [
               "unsigned int",
+              "uint32_t",
               "__uint32_t",
-              "int",
-              "uint32_t"
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -359,9 +380,9 @@
             "RBP offset": -188,
             "type": [
               "unsigned int",
+              "uint32_t",
               "__uint32_t",
-              "int",
-              "uint32_t"
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -376,9 +397,9 @@
             "RBP offset": -184,
             "type": [
               "unsigned int",
+              "uint32_t",
               "__uint32_t",
-              "int",
-              "uint32_t"
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -393,9 +414,9 @@
             "RBP offset": -180,
             "type": [
               "unsigned int",
+              "uint32_t",
               "__uint32_t",
-              "int",
-              "uint32_t"
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -409,10 +430,10 @@
             "name": "ctx.total",
             "RBP offset": -176,
             "type": [
-              "__uint32_t[2]",
-              "uint32_t[2]",
+              "unsigned int[2]",
               "int[2]",
-              "unsigned int[2]"
+              "uint32_t[2]",
+              "__uint32_t[2]"
             ],
             "size": 8,
             "is_pointer": false,
@@ -435,9 +456,9 @@
             "RBP offset": -168,
             "type": [
               "unsigned int",
+              "uint32_t",
               "__uint32_t",
-              "int",
-              "uint32_t"
+              "int"
             ],
             "size": 4,
             "is_pointer": false,
@@ -451,8 +472,8 @@
             "name": "ctx.buffer",
             "RBP offset": -164,
             "type": [
-              "unsigned int[32]",
               "int[32]",
+              "unsigned int[32]",
               "uint32_t[32]",
               "__uint32_t[32]"
             ],
@@ -584,9 +605,9 @@
         "RBP offset": -168,
         "type": [
           "__gnuc_va_list",
-          "__builtin_va_list",
           "__va_list_tag[1]",
-          "va_list"
+          "va_list",
+          "__builtin_va_list"
         ],
         "size": 24,
         "is_pointer": false,
@@ -601,6 +622,25 @@
         ],
         "element_size": 24,
         "elements": []
+      },
+      {
+        "name": "authtab",
+        "RBP offset": -144,
+        "type": [
+          "char*[10]"
+        ],
+        "size": 80,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": true,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false,
+        "array_length": 10,
+        "element_type": [
+          "char*"
+        ],
+        "element_size": 8
       }
     ]
   },
@@ -700,9 +740,9 @@
         "RBP offset": -96,
         "type": [
           "__gnuc_va_list",
-          "__builtin_va_list",
           "__va_list_tag[1]",
-          "va_list"
+          "va_list",
+          "__builtin_va_list"
         ],
         "size": 24,
         "is_pointer": false,

@@ -39,9 +39,9 @@
         "RBP offset": -208,
         "type": [
           "__va_list_tag[1]",
-          "va_list",
+          "__builtin_va_list",
           "__gnuc_va_list",
-          "__builtin_va_list"
+          "va_list"
         ],
         "size": 24,
         "is_pointer": false,
@@ -71,9 +71,9 @@
         "RBP offset": -208,
         "type": [
           "__va_list_tag[1]",
-          "va_list",
+          "__builtin_va_list",
           "__gnuc_va_list",
-          "__builtin_va_list"
+          "va_list"
         ],
         "size": 24,
         "is_pointer": false,
@@ -98,10 +98,10 @@
         "name": "w",
         "RBP offset": -104,
         "type": [
-          "intmax_t",
-          "long int",
           "long long",
-          "__intmax_t"
+          "__intmax_t",
+          "long int",
+          "intmax_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -110,6 +110,117 @@
         "is_struct": false,
         "is_union": false,
         "is_enum": false
+      },
+      {
+        "name": "n",
+        "RBP offset": -104,
+        "type": [
+          "long long",
+          "long int",
+          "idx_t",
+          "ptrdiff_t"
+        ],
+        "size": 8,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "ctx",
+        "RBP offset": -96,
+        "type": [
+          "base_decode_context"
+        ],
+        "size": 32,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": true,
+        "is_union": false,
+        "is_enum": false,
+        "elements": [
+          {
+            "name": "ctx.i",
+            "RBP offset": -96,
+            "type": [
+              "int"
+            ],
+            "size": 4,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "ctx.ctx",
+            "RBP offset": -92,
+            "type": [
+              "struct"
+            ],
+            "size": 12,
+            "is_pointer": false,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": true,
+            "is_enum": false
+          },
+          {
+            "name": "ctx.inbuf",
+            "RBP offset": -80,
+            "type": [
+              "char*"
+            ],
+            "size": 8,
+            "is_pointer": true,
+            "is_typedef": false,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          },
+          {
+            "name": "ctx.bufsize",
+            "RBP offset": -72,
+            "type": [
+              "long long",
+              "long int",
+              "idx_t",
+              "ptrdiff_t"
+            ],
+            "size": 8,
+            "is_pointer": false,
+            "is_typedef": true,
+            "is_array": false,
+            "is_struct": false,
+            "is_union": false,
+            "is_enum": false
+          }
+        ]
+      },
+      {
+        "name": "padbuf",
+        "RBP offset": -64,
+        "type": [
+          "char[8]"
+        ],
+        "size": 8,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": true,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false,
+        "array_length": 8,
+        "element_type": [
+          "char"
+        ],
+        "element_size": 1
       }
     ]
   },
@@ -261,7 +372,28 @@
   },
   "usage": {
     "address": "0x403f10",
-    "variables": []
+    "variables": [
+      {
+        "name": "infomap",
+        "RBP offset": -144,
+        "type": [
+          "infomap[7]"
+        ],
+        "size": 112,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": true,
+        "is_struct": true,
+        "is_union": false,
+        "is_enum": false,
+        "array_length": 7,
+        "element_type": [
+          "infomap"
+        ],
+        "element_size": 16,
+        "elements": []
+      }
+    ]
   },
   "decode_8": {
     "address": "0x4043b0",
@@ -286,10 +418,10 @@
         "name": "outleft",
         "RBP offset": -64,
         "type": [
-          "ptrdiff_t",
-          "long int",
           "long long",
-          "idx_t"
+          "long int",
+          "idx_t",
+          "ptrdiff_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -308,10 +440,10 @@
         "name": "needlen",
         "RBP offset": -48,
         "type": [
-          "ptrdiff_t",
-          "long int",
           "long long",
-          "idx_t"
+          "long int",
+          "idx_t",
+          "ptrdiff_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -346,10 +478,10 @@
         "name": "outleft",
         "RBP offset": -64,
         "type": [
-          "ptrdiff_t",
-          "long int",
           "long long",
-          "idx_t"
+          "long int",
+          "idx_t",
+          "ptrdiff_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -368,10 +500,10 @@
         "name": "needlen",
         "RBP offset": -48,
         "type": [
-          "ptrdiff_t",
-          "long int",
           "long long",
-          "idx_t"
+          "long int",
+          "idx_t",
+          "ptrdiff_t"
         ],
         "size": 8,
         "is_pointer": false,
@@ -499,9 +631,9 @@
         "RBP offset": -168,
         "type": [
           "__va_list_tag[1]",
-          "va_list",
+          "__builtin_va_list",
           "__gnuc_va_list",
-          "__builtin_va_list"
+          "va_list"
         ],
         "size": 24,
         "is_pointer": false,
@@ -516,6 +648,25 @@
         ],
         "element_size": 24,
         "elements": []
+      },
+      {
+        "name": "authtab",
+        "RBP offset": -144,
+        "type": [
+          "char*[10]"
+        ],
+        "size": 80,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": true,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false,
+        "array_length": 10,
+        "element_type": [
+          "char*"
+        ],
+        "element_size": 8
       }
     ]
   },
