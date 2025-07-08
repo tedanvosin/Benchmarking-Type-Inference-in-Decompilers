@@ -88,6 +88,7 @@ def main():
         # Get frame size
         frame_size = ida_frame.get_frame_size(func_ea)
         frame_lvar_size = idc.get_frame_lvar_size(func_ea)
+        frame_offset = 0 if flags & ida_funcs.FUNC_FRAME else 8
         # Decompile
         cfunc = ida_hexrays.decompile(func_ea)
         if not cfunc:
@@ -117,7 +118,7 @@ def main():
                 var_size = lvar.width
                 
                 var_data['name'] = var_name
-                var_data['RBP offset'] = var_location
+                var_data['RBP offset'] = var_location + frame_offset
                 var_data['type'] = var_type
                 var_data['size'] = var_size
 
