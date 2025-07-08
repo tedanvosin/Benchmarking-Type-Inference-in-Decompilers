@@ -412,7 +412,7 @@ def func_level_evaluate(allow_complex=True, allow_primitives=True):
     print("\n")
 
 def load_list(base_dir):
-    file_list = open(base_dir/'file_list.txt','r').readlines()
+    file_list = open('file_list.txt','r').readlines()
     file_list = [file.strip() for file in file_list]
     
     files_evaluated = []
