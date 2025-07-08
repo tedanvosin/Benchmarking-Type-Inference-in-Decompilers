@@ -45,7 +45,7 @@ process_files() {
         fi
         echo "Processing: $bin_path"
         
-        while (( $(jobs -rp | wc -l) >= 10 )); do
+        while (( $(jobs -rp | wc -l) >= 7 )); do
             wait -n
         done
 
