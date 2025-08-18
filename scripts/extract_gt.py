@@ -11,7 +11,7 @@ def sort_json(data):
     ordered = OrderedDict(
         sorted(
             data.items(),
-            key=lambda item: int(item[1]['address'], 16)
+            # key=lambda item: int(item[1]['address'], 16)
         )
     )
     for func, info in ordered.items():
@@ -41,19 +41,37 @@ def get_normalized_types(var_data):
     return norm_types
 
 def get_location(die,dwarfinfo):
-    offset = -1
-    try:
-        expr_parser = DWARFExprParser(dwarfinfo.structs)
-        loc_attr = die.attributes.get('DW_AT_location')
-        if not loc_attr:
-            return -1
+    offset = []
+    
+    if 'DW_AT_location' not in die.attributes:
+        return offset
+
+    loc_attr = die.attributes.get('DW_AT_location')
+    expr_parser = DWARFExprParser(dwarfinfo.structs)
+    loclists = dwarfinfo.location_lists()
+
+    if loc_attr.form == 'DW_FORM_exprloc':
         ops = expr_parser.parse_expr(loc_attr.value)
-        
         for op in ops:
             if op.op_name == 'DW_OP_fbreg':
-                offset = op.args[0]+16
-    except:
-        return offset
+                offset.append(op.args[0]+16)
+    
+    elif loc_attr.form == 'DW_FORM_sec_offset':
+        loclist = loclists.get_location_list_at_offset(loc_attr.value,die=die)
+
+        for entry in loclist:
+            expr = getattr(entry, 'loc_expr', None) or getattr(entry, 'location_expr', None)
+            if expr is None:
+                continue
+            ops = expr_parser.parse_expr(expr)
+            
+            if len(ops)!=1:
+                continue
+            
+            for op in ops:
+                if op.op_name == 'DW_OP_fbreg':
+                    offset.append(op.args[0]+16)
+
     return offset
 
 def get_array_dims(die, dwarfinfo):
@@ -247,9 +265,10 @@ def parse_variable_die(child_die, dwarfinfo):
     var_data['is_enum'] = False
 
     var_data['RBP offset'] = get_location(child_die,dwarfinfo)
+    var_data['RBP offset'] = list(set(var_data['RBP offset']))  # Remove duplicates
     
     #Not a Stack Variable
-    if var_data['RBP offset'] == -1:
+    if var_data['RBP offset'] == []:
         return None
 
     if 'DW_AT_abstract_origin' in child_die.attributes:
@@ -261,15 +280,14 @@ def parse_variable_die(child_die, dwarfinfo):
     parse_type_die(child_die, var_data, dwarfinfo)
     var_data['type'] = get_normalized_types(var_data['type'])
 
-    var_data['type'] = set(var_data['type'])  # Remove duplicates
-    var_data['type'] = list(var_data['type'])  # Convert back to list
-    
+    var_data['type'] = list(set(var_data['type']))  # Remove duplicates
+
     if var_data['is_array']:
         var_data['element_type'] = get_normalized_types(var_data['element_type'])
     
-    if var_data['is_struct']:
-        var_data['elements'] = []
-        parse_struct(child_die, var_data, dwarfinfo)
+    # if var_data['is_struct']:
+    #     var_data['elements'] = []
+    #     parse_struct(child_die, var_data, dwarfinfo)
     
 
     return var_data
@@ -299,18 +317,20 @@ def parse_function_die(die,dwarfinfo):
         return None, None
     
     func_name = die.attributes.get('DW_AT_name').value.decode('utf-8', 'replace')
+    # print(f"Processing function: {func_name}")
     address = 0
     
-    if 'DW_AT_low_pc' in die.attributes:
-        address = die.attributes.get('DW_AT_low_pc').value
-    else:
-        address = die.attributes.get('DW_AT_entry_pc').value if 'DW_AT_entry_pc' in die.attributes else 0
+    # if 'DW_AT_low_pc' in die.attributes:
+    #     address = die.attributes.get('DW_AT_low_pc').value
+    # else:
+    #     address = die.attributes.get('DW_AT_entry_pc').value if 'DW_AT_entry_pc' in die.attributes else 0
 
-    if address == 0:
-        return None, None
-    
-    func_data['address'] = hex(address)
+    # if address == 0:
+    #     return None, None
+
+    # func_data['address'] = hex(address)
     func_data['variables'] = []
+    
     for child in die.iter_children():
         
         if child.tag in ('DW_TAG_lexical_block', 'DW_TAG_inlined_subroutine'):
@@ -343,7 +363,7 @@ def parse_debug(filename):
             if DIE.tag != 'DW_TAG_subprogram':
                 continue
             func_name,func_data = parse_function_die(DIE, dwarfinfo)
-            if func_name:
+            if func_name and func_data["variables"]:
                 functions[func_name] = func_data
     
     return functions
