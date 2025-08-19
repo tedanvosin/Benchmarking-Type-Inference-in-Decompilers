@@ -1,10 +1,46 @@
 {
-  "main": {
-    "address": "0x4048e0",
+  "broadway_buffer_create": {
     "variables": [
       {
-        "name": "http_port",
-        "RBP offset": -380,
+        "name": "data",
+        "RBP offset": [
+          -64
+        ],
+        "type": [
+          "unsigned char*",
+          "char*",
+          "guint8*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "buffer",
+        "RBP offset": [
+          -56
+        ],
+        "type": [
+          "BroadwayBuffer*",
+          "_BroadwayBuffer*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "y",
+        "RBP offset": [
+          -56
+        ],
         "type": [
           "int"
         ],
@@ -17,11 +53,13 @@
         "is_enum": false
       },
       {
-        "name": "error",
-        "RBP offset": -376,
+        "name": "__p",
+        "RBP offset": [
+          -56
+        ],
         "type": [
-          "_GError*",
-          "GError*"
+          "gpointer",
+          "void*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -30,226 +68,120 @@
         "is_struct": false,
         "is_union": false,
         "is_enum": false
-      },
-      {
-        "name": "http_address",
-        "RBP offset": -368,
-        "type": [
-          "char*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "unixsocket_address",
-        "RBP offset": -360,
-        "type": [
-          "char*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "ssl_cert",
-        "RBP offset": -352,
-        "type": [
-          "char*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "ssl_key",
-        "RBP offset": -344,
-        "type": [
-          "char*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "entries",
-        "RBP offset": -336,
-        "type": [
-          "GOptionEntry[6]",
-          "_GOptionEntry[6]"
-        ],
-        "size": 288,
-        "is_pointer": false,
-        "is_typedef": true,
-        "is_array": true,
-        "is_struct": true,
-        "is_union": false,
-        "is_enum": false,
-        "array_length": 6,
-        "element_type": [
-          "GOptionEntry",
-          "_GOptionEntry"
-        ],
-        "element_size": 48,
-        "elements": []
       }
     ]
   },
-  "add_client_serial_mapping": {
-    "address": "0x404e80",
-    "variables": []
-  },
-  "client_disconnected": {
-    "address": "0x404ee0",
-    "variables": []
-  },
-  "disconnect_idle_cb": {
-    "address": "0x404fe0",
-    "variables": []
-  },
-  "broadway_events_got_input": {
-    "address": "0x405490",
+  "broadway_buffer_encode": {
     "variables": [
       {
-        "name": "reply_event",
-        "RBP offset": -128,
-        "type": [
-          "BroadwayReplyEvent"
+        "name": "entry",
+        "RBP offset": [
+          -280
         ],
-        "size": 72,
-        "is_pointer": false,
-        "is_typedef": true,
+        "type": [
+          "entry*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
         "is_array": false,
-        "is_struct": true,
+        "is_struct": false,
         "is_union": false,
-        "is_enum": false,
-        "elements": [
-          {
-            "name": "reply_event.base",
-            "RBP offset": -128,
-            "type": [
-              "BroadwayReplyBase"
-            ],
-            "size": 12,
-            "is_pointer": false,
-            "is_typedef": true,
-            "is_array": false,
-            "is_struct": true,
-            "is_union": false,
-            "is_enum": false,
-            "elements": [
-              {
-                "name": "reply_event.base.size",
-                "RBP offset": -128,
-                "type": [
-                  "int",
-                  "guint32",
-                  "unsigned int"
-                ],
-                "size": 4,
-                "is_pointer": false,
-                "is_typedef": true,
-                "is_array": false,
-                "is_struct": false,
-                "is_union": false,
-                "is_enum": false
-              },
-              {
-                "name": "reply_event.base.in_reply_to",
-                "RBP offset": -124,
-                "type": [
-                  "int",
-                  "guint32",
-                  "unsigned int"
-                ],
-                "size": 4,
-                "is_pointer": false,
-                "is_typedef": true,
-                "is_array": false,
-                "is_struct": false,
-                "is_union": false,
-                "is_enum": false
-              },
-              {
-                "name": "reply_event.base.type",
-                "RBP offset": -120,
-                "type": [
-                  "int",
-                  "guint32",
-                  "unsigned int"
-                ],
-                "size": 4,
-                "is_pointer": false,
-                "is_typedef": true,
-                "is_array": false,
-                "is_struct": false,
-                "is_union": false,
-                "is_enum": false
-              }
-            ]
-          },
-          {
-            "name": "reply_event.msg",
-            "RBP offset": -112,
-            "type": [
-              "BroadwayInputMsg"
-            ],
-            "size": 56,
-            "is_pointer": false,
-            "is_typedef": true,
-            "is_array": false,
-            "is_struct": false,
-            "is_union": true,
-            "is_enum": false
-          }
-        ]
-      }
-    ]
-  },
-  "incoming_client": {
-    "address": "0x4056d0",
-    "variables": [
+        "is_enum": false
+      },
       {
-        "name": "ev",
-        "RBP offset": -80,
-        "type": [
-          "BroadwayInputMsg"
+        "name": "entry",
+        "RBP offset": [
+          -280
         ],
-        "size": 56,
+        "type": [
+          "entry*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "hash",
+        "RBP offset": [
+          -260
+        ],
+        "type": [
+          "guint32",
+          "unsigned int",
+          "int"
+        ],
+        "size": 4,
         "is_pointer": false,
         "is_typedef": true,
         "is_array": false,
         "is_struct": false,
-        "is_union": true,
+        "is_union": false,
         "is_enum": false
-      }
-    ]
-  },
-  "handle_incoming_connection": {
-    "address": "0x405800",
-    "variables": [
+      },
       {
-        "name": "error",
-        "RBP offset": -32,
+        "name": "bottom_hash",
+        "RBP offset": [
+          -240
+        ],
         "type": [
-          "_GError*",
-          "GError*"
+          "guint32",
+          "unsigned int",
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "y",
+        "RBP offset": [
+          -232
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "y",
+        "RBP offset": [
+          -208
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "prev_line",
+        "RBP offset": [
+          -192
+        ],
+        "type": [
+          "guint32*",
+          "unsigned int*",
+          "int*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -258,50 +190,65 @@
         "is_struct": false,
         "is_union": false,
         "is_enum": false
-      }
-    ]
-  },
-  "broadway_server_finalize": {
-    "address": "0x4059f0",
-    "variables": []
-  },
-  "broadway_server_get_type_once": {
-    "address": "0x405a20",
-    "variables": []
-  },
-  "broadway_server_get_type": {
-    "address": "0x405a70",
-    "variables": []
-  },
-  "broadway_server_init": {
-    "address": "0x405ae0",
-    "variables": []
-  },
-  "broadway_server_class_intern_init": {
-    "address": "0x405b60",
-    "variables": []
-  },
-  "shm_data_unmap": {
-    "address": "0x405bb0",
-    "variables": []
-  },
-  "send_error": {
-    "address": "0x405bd0",
-    "variables": []
-  },
-  "send_data": {
-    "address": "0x405c60",
-    "variables": []
-  },
-  "broadway_server_read_all_input_nonblocking": {
-    "address": "0x406180",
-    "variables": [
+      },
       {
-        "name": "error",
-        "RBP offset": -1064,
+        "name": "bottom",
+        "RBP offset": [
+          -184
+        ],
         "type": [
-          "_GError*",
-          "GError*"
+          "guint32*",
+          "unsigned int*",
+          "int*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "encoder",
+        "RBP offset": [
+          -168
+        ],
+        "type": [
+          "encoder*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "encoder",
+        "RBP offset": [
+          -168
+        ],
+        "type": [
+          "encoder*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "buffer",
+        "RBP offset": [
+          -160
+        ],
+        "type": [
+          "BroadwayBuffer*",
+          "_BroadwayBuffer*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -313,11 +260,1008 @@
       },
       {
         "name": "buffer",
-        "RBP offset": -1056,
+        "RBP offset": [
+          -160
+        ],
         "type": [
-          "guint8[1024]",
+          "BroadwayBuffer*",
+          "_BroadwayBuffer*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "buffer",
+        "RBP offset": [
+          -160
+        ],
+        "type": [
+          "BroadwayBuffer*",
+          "_BroadwayBuffer*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "h1",
+        "RBP offset": [
+          -152
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "y1",
+        "RBP offset": [
+          -140
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "height",
+        "RBP offset": [
+          -140
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "prev",
+        "RBP offset": [
+          -136
+        ],
+        "type": [
+          "BroadwayBuffer*",
+          "_BroadwayBuffer*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "prev",
+        "RBP offset": [
+          -136
+        ],
+        "type": [
+          "BroadwayBuffer*",
+          "_BroadwayBuffer*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "prev",
+        "RBP offset": [
+          -136
+        ],
+        "type": [
+          "BroadwayBuffer*",
+          "_BroadwayBuffer*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "skyline_pixels",
+        "RBP offset": [
+          -128
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "block_hashes",
+        "RBP offset": [
+          -120
+        ],
+        "type": [
+          "guint32*",
+          "unsigned int*",
+          "int*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "j",
+        "RBP offset": [
+          -112
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "skyline",
+        "RBP offset": [
+          -112
+        ],
+        "type": [
+          "int*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "x",
+        "RBP offset": [
+          -112
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "x",
+        "RBP offset": [
+          -112
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "x",
+        "RBP offset": [
+          -112
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "x1",
+        "RBP offset": [
+          -104
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "line",
+        "RBP offset": [
+          -104
+        ],
+        "type": [
+          "guint32*",
+          "unsigned int*",
+          "int*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "width",
+        "RBP offset": [
+          -104
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "encoder",
+        "RBP offset": [
+          -96
+        ],
+        "type": [
+          "encoder"
+        ],
+        "size": 32,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": true,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "dest",
+        "RBP offset": [
+          -80
+        ],
+        "type": [
+          "_GString*",
+          "GString*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      }
+    ]
+  },
+  "broadway_events_got_input": {
+    "variables": [
+      {
+        "name": "size",
+        "RBP offset": [
+          -144
+        ],
+        "type": [
+          "long long",
+          "gsize",
+          "long unsigned int"
+        ],
+        "size": 8,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "client_id",
+        "RBP offset": [
+          -132
+        ],
+        "type": [
+          "gint32",
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "reply_event",
+        "RBP offset": [
+          -128
+        ],
+        "type": [
+          "BroadwayReplyEvent"
+        ],
+        "size": 72,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": true,
+        "is_union": false,
+        "is_enum": false
+      }
+    ]
+  },
+  "broadway_output_flush": {
+    "variables": [
+      {
+        "name": "header",
+        "RBP offset": [
+          -64
+        ],
+        "type": [
+          "guchar[16]",
+          "char[16]",
+          "unsigned char[16]"
+        ],
+        "size": 16,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": true,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false,
+        "array_length": 16,
+        "element_type": [
+          "guchar",
+          "unsigned char",
+          "char"
+        ],
+        "element_size": 1
+      }
+    ]
+  },
+  "broadway_output_move_resize_surface": {
+    "variables": [
+      {
+        "name": "val",
+        "RBP offset": [
+          -60
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "val",
+        "RBP offset": [
+          -60
+        ],
+        "type": [
+          "guint32",
+          "unsigned int",
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "y",
+        "RBP offset": [
+          -56
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "v",
+        "RBP offset": [
+          -56
+        ],
+        "type": [
+          "guint32",
+          "unsigned int",
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "id",
+        "RBP offset": [
+          -52
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "v",
+        "RBP offset": [
+          -52
+        ],
+        "type": [
+          "guint32",
+          "unsigned int",
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "w",
+        "RBP offset": [
+          16
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "v",
+        "RBP offset": [
+          16
+        ],
+        "type": [
+          "guint32",
+          "unsigned int",
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "h",
+        "RBP offset": [
+          24
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "v",
+        "RBP offset": [
+          24
+        ],
+        "type": [
+          "guint32",
+          "unsigned int",
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      }
+    ]
+  },
+  "broadway_output_new_surface": {
+    "variables": [
+      {
+        "name": "id",
+        "RBP offset": [
+          -60
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "v",
+        "RBP offset": [
+          -60
+        ],
+        "type": [
+          "guint32",
+          "unsigned int",
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "x",
+        "RBP offset": [
+          -56
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "v",
+        "RBP offset": [
+          -56
+        ],
+        "type": [
+          "guint32",
+          "unsigned int",
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "is_temp",
+        "RBP offset": [
+          16
+        ],
+        "type": [
+          "gboolean",
+          "gint",
+          "int",
+          "gbool"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      }
+    ]
+  },
+  "broadway_output_pong": {
+    "variables": [
+      {
+        "name": "header",
+        "RBP offset": [
+          -48
+        ],
+        "type": [
+          "guchar[16]",
+          "char[16]",
+          "unsigned char[16]"
+        ],
+        "size": 16,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": true,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false,
+        "array_length": 16,
+        "element_type": [
+          "guchar",
+          "unsigned char",
+          "char"
+        ],
+        "element_size": 1
+      }
+    ]
+  },
+  "broadway_output_put_buffer": {
+    "variables": [
+      {
+        "name": "id",
+        "RBP offset": [
+          -64
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "v",
+        "RBP offset": [
+          -64
+        ],
+        "type": [
+          "guint32",
+          "unsigned int",
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "val",
+        "RBP offset": [
+          -64
+        ],
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "prev_buffer",
+        "RBP offset": [
+          -56
+        ],
+        "type": [
+          "BroadwayBuffer*",
+          "_BroadwayBuffer*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "out",
+        "RBP offset": [
+          -56
+        ],
+        "type": [
+          "_GOutputStream*",
+          "GOutputStream*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      }
+    ]
+  },
+  "broadway_server_new": {
+    "variables": [
+      {
+        "name": "ssl_key",
+        "RBP offset": [
+          -56
+        ],
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "str",
+        "RBP offset": [
+          -56
+        ],
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      }
+    ]
+  },
+  "broadway_server_new_window": {
+    "variables": [
+      {
+        "name": "width",
+        "RBP offset": [
+          -56
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "height",
+        "RBP offset": [
+          -52
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      }
+    ]
+  },
+  "broadway_server_open_surface": {
+    "variables": [
+      {
+        "name": "filename",
+        "RBP offset": [
+          -64
+        ],
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "fd",
+        "RBP offset": [
+          -64,
+          -68
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "data",
+        "RBP offset": [
+          -56
+        ],
+        "type": [
+          "ShmSurfaceData*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "size",
+        "RBP offset": [
+          -56
+        ],
+        "type": [
+          "long long",
+          "gsize",
+          "long unsigned int"
+        ],
+        "size": 8,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__p",
+        "RBP offset": [
+          -56
+        ],
+        "type": [
+          "gpointer",
+          "void*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "size",
+        "RBP offset": [
+          -56
+        ],
+        "type": [
+          "long long",
+          "gsize",
+          "long unsigned int"
+        ],
+        "size": 8,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      }
+    ]
+  },
+  "broadway_server_read_all_input_nonblocking": {
+    "variables": [
+      {
+        "name": "error",
+        "RBP offset": [
+          -1064
+        ],
+        "type": [
+          "GError*",
+          "_GError*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "buffer",
+        "RBP offset": [
+          -1056
+        ],
+        "type": [
+          "unsigned char[1024]",
           "char[1024]",
-          "unsigned char[1024]"
+          "guint8[1024]"
         ],
         "size": 1024,
         "is_pointer": false,
@@ -336,72 +1280,33 @@
       }
     ]
   },
-  "broadway_server_lookahead_event": {
-    "address": "0x4063d0",
-    "variables": []
-  },
-  "broadway_server_get_next_serial": {
-    "address": "0x406420",
-    "variables": []
-  },
-  "broadway_server_get_screen_size": {
-    "address": "0x406440",
-    "variables": []
-  },
-  "broadway_server_new": {
-    "address": "0x4064b0",
-    "variables": []
-  },
-  "broadway_server_on_unix_socket_new": {
-    "address": "0x406640",
-    "variables": []
-  },
-  "broadway_server_query_mouse": {
-    "address": "0x4067f0",
-    "variables": []
-  },
-  "broadway_server_destroy_window": {
-    "address": "0x4068e0",
-    "variables": []
-  },
-  "broadway_server_window_show": {
-    "address": "0x406a40",
-    "variables": []
-  },
-  "broadway_server_window_hide": {
-    "address": "0x406a90",
-    "variables": []
-  },
-  "broadway_server_window_raise": {
-    "address": "0x406b10",
-    "variables": []
-  },
-  "process_input_message": {
-    "address": "0x406b80",
-    "variables": []
-  },
-  "process_input_messages": {
-    "address": "0x406f10",
-    "variables": []
-  },
-  "input_data_cb": {
-    "address": "0x406f80",
-    "variables": []
-  },
-  "got_http_request_line": {
-    "address": "0x406fd0",
-    "variables": []
-  },
-  "process_input_idle_cb": {
-    "address": "0x4078f0",
-    "variables": []
+  "broadway_server_window_move_resize": {
+    "variables": [
+      {
+        "name": "height",
+        "RBP offset": [
+          16
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      }
+    ]
   },
   "fake_configure_notify": {
-    "address": "0x407910",
     "variables": [
       {
         "name": "ev",
-        "RBP offset": -64,
+        "RBP offset": [
+          -64
+        ],
         "type": [
           "BroadwayInputMsg"
         ],
@@ -415,41 +1320,18 @@
       }
     ]
   },
-  "broadway_server_set_show_keyboard": {
-    "address": "0x407990",
-    "variables": []
-  },
-  "broadway_server_window_lower": {
-    "address": "0x4079f0",
-    "variables": []
-  },
-  "broadway_server_window_set_transient_for": {
-    "address": "0x407a60",
-    "variables": []
-  },
-  "broadway_server_window_set_modal_hint": {
-    "address": "0x407ae0",
-    "variables": []
-  },
-  "broadway_server_has_client": {
-    "address": "0x407b10",
-    "variables": []
-  },
-  "broadway_server_window_update": {
-    "address": "0x407b20",
-    "variables": []
-  },
-  "broadway_server_window_move_resize": {
-    "address": "0x407c40",
+  "got_http_request_line": {
     "variables": [
       {
-        "name": "height",
-        "RBP offset": 16,
-        "type": [
-          "int"
+        "name": "version",
+        "RBP offset": [
+          -104
         ],
-        "size": 4,
-        "is_pointer": false,
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
         "is_typedef": false,
         "is_array": false,
         "is_struct": false,
@@ -458,258 +1340,19 @@
       }
     ]
   },
-  "broadway_server_grab_pointer": {
-    "address": "0x407d30",
-    "variables": []
-  },
-  "broadway_server_ungrab_pointer": {
-    "address": "0x407e00",
-    "variables": []
-  },
-  "broadway_server_new_window": {
-    "address": "0x4080b0",
-    "variables": []
-  },
-  "emit": {
-    "address": "0x4081c0",
-    "variables": []
-  },
-  "encode_run": {
-    "address": "0x408260",
-    "variables": []
-  },
-  "encode_pixel": {
-    "address": "0x4082f0",
-    "variables": []
-  },
-  "broadway_buffer_destroy": {
-    "address": "0x408450",
-    "variables": []
-  },
-  "broadway_buffer_get_width": {
-    "address": "0x408470",
-    "variables": []
-  },
-  "broadway_buffer_get_height": {
-    "address": "0x408480",
-    "variables": []
-  },
-  "broadway_buffer_create": {
-    "address": "0x408490",
-    "variables": []
-  },
-  "broadway_buffer_encode": {
-    "address": "0x4086a0",
+  "handle_incoming_connection": {
     "variables": [
       {
-        "name": "encoder",
-        "RBP offset": -96,
+        "name": "error",
+        "RBP offset": [
+          -48
+        ],
         "type": [
-          "encoder"
+          "GError*",
+          "_GError*"
         ],
-        "size": 32,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": true,
-        "is_union": false,
-        "is_enum": false,
-        "elements": [
-          {
-            "name": "encoder.color",
-            "RBP offset": -96,
-            "type": [
-              "int",
-              "guint32",
-              "unsigned int"
-            ],
-            "size": 4,
-            "is_pointer": false,
-            "is_typedef": true,
-            "is_array": false,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false
-          },
-          {
-            "name": "encoder.color_run",
-            "RBP offset": -92,
-            "type": [
-              "int",
-              "guint32",
-              "unsigned int"
-            ],
-            "size": 4,
-            "is_pointer": false,
-            "is_typedef": true,
-            "is_array": false,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false
-          },
-          {
-            "name": "encoder.delta",
-            "RBP offset": -88,
-            "type": [
-              "int",
-              "guint32",
-              "unsigned int"
-            ],
-            "size": 4,
-            "is_pointer": false,
-            "is_typedef": true,
-            "is_array": false,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false
-          },
-          {
-            "name": "encoder.delta_run",
-            "RBP offset": -84,
-            "type": [
-              "int",
-              "guint32",
-              "unsigned int"
-            ],
-            "size": 4,
-            "is_pointer": false,
-            "is_typedef": true,
-            "is_array": false,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false
-          },
-          {
-            "name": "encoder.dest",
-            "RBP offset": -80,
-            "type": [
-              "GString*",
-              "_GString*"
-            ],
-            "size": 8,
-            "is_pointer": true,
-            "is_typedef": true,
-            "is_array": false,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false
-          },
-          {
-            "name": "encoder.bytes",
-            "RBP offset": -72,
-            "type": [
-              "int"
-            ],
-            "size": 4,
-            "is_pointer": false,
-            "is_typedef": false,
-            "is_array": false,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false
-          }
-        ]
-      }
-    ]
-  },
-  "write_header": {
-    "address": "0x4090e0",
-    "variables": []
-  },
-  "broadway_output_pong": {
-    "address": "0x409160",
-    "variables": [
-      {
-        "name": "header",
-        "RBP offset": -32,
-        "type": [
-          "char[16]",
-          "unsigned char[16]",
-          "guchar[16]"
-        ],
-        "size": 16,
-        "is_pointer": false,
-        "is_typedef": true,
-        "is_array": true,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false,
-        "array_length": 16,
-        "element_type": [
-          "guchar",
-          "unsigned char",
-          "char"
-        ],
-        "element_size": 1
-      }
-    ]
-  },
-  "broadway_output_flush": {
-    "address": "0x4091e0",
-    "variables": [
-      {
-        "name": "header",
-        "RBP offset": -48,
-        "type": [
-          "char[16]",
-          "unsigned char[16]",
-          "guchar[16]"
-        ],
-        "size": 16,
-        "is_pointer": false,
-        "is_typedef": true,
-        "is_array": true,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false,
-        "array_length": 16,
-        "element_type": [
-          "guchar",
-          "unsigned char",
-          "char"
-        ],
-        "element_size": 1
-      }
-    ]
-  },
-  "broadway_output_new": {
-    "address": "0x4092f0",
-    "variables": []
-  },
-  "broadway_output_free": {
-    "address": "0x409330",
-    "variables": []
-  },
-  "broadway_output_get_next_serial": {
-    "address": "0x409350",
-    "variables": []
-  },
-  "broadway_output_set_next_serial": {
-    "address": "0x409360",
-    "variables": []
-  },
-  "broadway_output_grab_pointer": {
-    "address": "0x409370",
-    "variables": []
-  },
-  "broadway_output_ungrab_pointer": {
-    "address": "0x4093c0",
-    "variables": []
-  },
-  "broadway_output_new_surface": {
-    "address": "0x4093e0",
-    "variables": [
-      {
-        "name": "is_temp",
-        "RBP offset": 16,
-        "type": [
-          "int",
-          "gboolean",
-          "gbool",
-          "gint"
-        ],
-        "size": 4,
-        "is_pointer": false,
+        "size": 8,
+        "is_pointer": true,
         "is_typedef": true,
         "is_array": false,
         "is_struct": false,
@@ -718,40 +1361,49 @@
       }
     ]
   },
-  "broadway_output_disconnected": {
-    "address": "0x4094d0",
-    "variables": []
-  },
-  "broadway_output_show_surface": {
-    "address": "0x4094e0",
-    "variables": []
-  },
-  "broadway_output_hide_surface": {
-    "address": "0x409520",
-    "variables": []
-  },
-  "broadway_output_raise_surface": {
-    "address": "0x409560",
-    "variables": []
-  },
-  "broadway_output_lower_surface": {
-    "address": "0x4095a0",
-    "variables": []
-  },
-  "broadway_output_destroy_surface": {
-    "address": "0x4095e0",
-    "variables": []
-  },
-  "broadway_output_set_show_keyboard": {
-    "address": "0x409620",
-    "variables": []
-  },
-  "broadway_output_move_resize_surface": {
-    "address": "0x409660",
+  "incoming_client": {
     "variables": [
       {
-        "name": "w",
-        "RBP offset": 16,
+        "name": "ev",
+        "RBP offset": [
+          -80
+        ],
+        "type": [
+          "BroadwayInputMsg"
+        ],
+        "size": 56,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": true,
+        "is_enum": false
+      }
+    ]
+  },
+  "main": {
+    "variables": [
+      {
+        "name": "argv",
+        "RBP offset": [
+          -416
+        ],
+        "type": [
+          "char**"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "argc",
+        "RBP offset": [
+          -404
+        ],
         "type": [
           "int"
         ],
@@ -764,8 +1416,10 @@
         "is_enum": false
       },
       {
-        "name": "h",
-        "RBP offset": 24,
+        "name": "http_port",
+        "RBP offset": [
+          -396
+        ],
         "type": [
           "int"
         ],
@@ -776,15 +1430,111 @@
         "is_struct": false,
         "is_union": false,
         "is_enum": false
+      },
+      {
+        "name": "error",
+        "RBP offset": [
+          -392
+        ],
+        "type": [
+          "GError*",
+          "_GError*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "http_address",
+        "RBP offset": [
+          -384
+        ],
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "unixsocket_address",
+        "RBP offset": [
+          -376
+        ],
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "ssl_cert",
+        "RBP offset": [
+          -368
+        ],
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "ssl_key",
+        "RBP offset": [
+          -360
+        ],
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "entries",
+        "RBP offset": [
+          -352
+        ],
+        "type": [
+          "GOptionEntry[6]",
+          "_GOptionEntry[6]"
+        ],
+        "size": 288,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": true,
+        "is_struct": true,
+        "is_union": false,
+        "is_enum": false,
+        "array_length": 6,
+        "element_type": [
+          "GOptionEntry",
+          "_GOptionEntry"
+        ],
+        "element_size": 48
       }
     ]
-  },
-  "broadway_output_set_transient_for": {
-    "address": "0x409810",
-    "variables": []
-  },
-  "broadway_output_put_buffer": {
-    "address": "0x409880",
-    "variables": []
   }
 }

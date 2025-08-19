@@ -125,11 +125,12 @@ def main():
                 # Add variable to our temporary list
                 stack_vars.append(var_data)
             
-        # Function has stack variables, add it to our results
-        all_functions[func_name] = {
-            "address": f"{func_ea:#x}",
-            "variables": stack_vars
-        }
+        # If Function has stack variables, add it to our results
+        if stack_vars:
+            all_functions[func_name] = {
+                "address": f"{func_ea:#x}",
+                "variables": stack_vars
+            }
     
     # Write the JSON output to file
     with open(output_file, 'w') as outfile:

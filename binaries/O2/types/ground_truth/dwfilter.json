@@ -1,18 +1,11 @@
 {
-  "main": {
-    "address": "0x401200",
-    "variables": []
-  },
-  "cleanup": {
-    "address": "0x401e90",
-    "variables": []
-  },
   "execute": {
-    "address": "0x401ea0",
     "variables": [
       {
         "name": "status",
-        "RBP offset": -28,
+        "RBP offset": [
+          -28
+        ],
         "type": [
           "int"
         ],
@@ -27,16 +20,17 @@
     ]
   },
   "fatal": {
-    "address": "0x401f70",
     "variables": [
       {
         "name": "args",
-        "RBP offset": -208,
+        "RBP offset": [
+          -208
+        ],
         "type": [
+          "__va_list_tag[1]",
           "__gnuc_va_list",
           "__builtin_va_list",
-          "va_list",
-          "__va_list_tag[1]"
+          "va_list"
         ],
         "size": 24,
         "is_pointer": false,
@@ -49,33 +43,66 @@
         "element_type": [
           "__va_list_tag"
         ],
-        "element_size": 24,
-        "elements": []
+        "element_size": 24
       }
     ]
   },
-  "outOfMemory": {
-    "address": "0x402020",
-    "variables": []
-  },
-  "ASCIItolower": {
-    "address": "0x402050",
-    "variables": []
-  },
-  "safe_strdup": {
-    "address": "0x402070",
-    "variables": []
-  },
-  "safe_malloc": {
-    "address": "0x402090",
-    "variables": []
-  },
-  "safe_calloc": {
-    "address": "0x4020b0",
-    "variables": []
-  },
-  "safe_realloc": {
-    "address": "0x4020e0",
-    "variables": []
+  "main": {
+    "variables": [
+      {
+        "name": "optArg",
+        "RBP offset": [
+          -96,
+          -64,
+          -88,
+          -80,
+          -104
+        ],
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "optptr",
+        "RBP offset": [
+          -72
+        ],
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "optlength",
+        "RBP offset": [
+          -56
+        ],
+        "type": [
+          "long unsigned int",
+          "size_t",
+          "long long"
+        ],
+        "size": 8,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      }
+    ]
   }
 }

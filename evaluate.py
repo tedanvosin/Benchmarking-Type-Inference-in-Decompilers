@@ -378,9 +378,10 @@ def func_level_evaluate(allow_complex=True, allow_primitives=True):
                         decomp_funcs[func][var['RBP offset']].append(var['type'].strip().replace(' ', ''))
                 
                 for var in ground_truth_json[func]['variables']:
-                    gt_funcs[func][var['RBP offset']] = []
-                    for type in var['type']:
-                        gt_funcs[func][var['RBP offset']].append(type.replace(' ',''))  
+                    for offset in var['RBP offset']:
+                        gt_funcs[func][offset] = []
+                        for type in var['type']:
+                            gt_funcs[func][offset].append(type.replace(' ',''))  
 
             for func in gt_funcs:
                 if func not in decomp_funcs:
@@ -412,7 +413,7 @@ def func_level_evaluate(allow_complex=True, allow_primitives=True):
     print("\n")
 
 def load_list(base_dir):
-    file_list = open('file_list.txt','r').readlines()
+    file_list = open(base_dir/'file_list.txt','r').readlines()
     file_list = [file.strip() for file in file_list]
     
     files_evaluated = []
@@ -436,10 +437,6 @@ def load_list(base_dir):
             DECOMPS[decomp].append(decomp_files[decomp])
         
         files_evaluated.append(file)
-    
-    with open(f"{base_dir.stem}_file_list","w") as f:
-        for file in files_evaluated:
-            f.write(file+"\n")
 
     return
 
@@ -465,28 +462,28 @@ def main():
 
     print("="*135)
     
-    print("Type Level Evaluations\n")
+    # print("Type Level Evaluations\n")
     
-    print("[*] Bool\n")
-    var_level_evaluate('bool',1)
+    # print("[*] Bool\n")
+    # var_level_evaluate('bool',1)
     
-    print("[*] Char\n")
-    var_level_evaluate('char',1)
+    # print("[*] Char\n")
+    # var_level_evaluate('char',1)
 
-    print("[*] Int\n")
-    var_level_evaluate('int',4)
+    # print("[*] Int\n")
+    # var_level_evaluate('int',4)
 
-    print("[*] Long Long\n")
-    var_level_evaluate('longlong',8)
+    # print("[*] Long Long\n")
+    # var_level_evaluate('longlong',8)
     
-    print("[*] Pointers\n")
-    eval_pointers()
+    # print("[*] Pointers\n")
+    # eval_pointers()
 
-    print("[*] Arrays\n")
-    eval_array()
+    # print("[*] Arrays\n")
+    # eval_array()
     
-    print("[*] Structs\n")
-    eval_structs()
+    # print("[*] Structs\n")
+    # eval_structs()
     
 
 if __name__ == "__main__":

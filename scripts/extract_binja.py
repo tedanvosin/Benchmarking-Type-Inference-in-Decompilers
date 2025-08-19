@@ -97,10 +97,11 @@ def extract_stack_variables(bv=None,output_file=None):
 
                 stack_vars.append(var_data)
             
-        all_functions[name] = {
-            "address": hex(function.start),
-            "variables": stack_vars
-        }
+        if stack_vars:
+            all_functions[name] = {
+                "address": hex(function.start),
+                "variables": stack_vars
+            }
     
     with open(output_file, 'w') as f:
         json.dump(all_functions, f, indent=2)

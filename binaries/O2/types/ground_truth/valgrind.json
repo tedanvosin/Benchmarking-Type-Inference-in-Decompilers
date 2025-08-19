@@ -1,19 +1,16 @@
 {
-  "main": {
-    "address": "0x401200",
-    "variables": []
-  },
   "barf": {
-    "address": "0x401880",
     "variables": [
       {
         "name": "vargs",
-        "RBP offset": -200,
+        "RBP offset": [
+          -216
+        ],
         "type": [
-          "__va_list_tag[1]",
-          "__gnuc_va_list",
+          "__builtin_va_list",
           "va_list",
-          "__builtin_va_list"
+          "__gnuc_va_list",
+          "__va_list_tag[1]"
         ],
         "size": 24,
         "is_pointer": false,
@@ -26,17 +23,179 @@
         "element_type": [
           "__va_list_tag"
         ],
-        "element_size": 24,
-        "elements": []
+        "element_size": 24
+      }
+    ]
+  },
+  "main": {
+    "variables": [
+      {
+        "name": "argc",
+        "RBP offset": [
+          -72
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "new_env",
+        "RBP offset": [
+          -64
+        ],
+        "type": [
+          "char**"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "bufsiz",
+        "RBP offset": [
+          -64
+        ],
+        "type": [
+          "unsigned int",
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "argv",
+        "RBP offset": [
+          -56
+        ],
+        "type": [
+          "char**"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      }
+    ]
+  },
+  "myvprintf_str": {
+    "variables": [
+      {
+        "name": "width",
+        "RBP offset": [
+          -64
+        ],
+        "type": [
+          "Int",
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "ret",
+        "RBP offset": [
+          -64
+        ],
+        "type": [
+          "unsigned int",
+          "UInt",
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "send_arg2",
+        "RBP offset": [
+          -56
+        ],
+        "type": [
+          "void*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      }
+    ]
+  },
+  "myvprintf_str_XML_simplistic": {
+    "variables": [
+      {
+        "name": "ret",
+        "RBP offset": [
+          -52
+        ],
+        "type": [
+          "unsigned int",
+          "UInt",
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
       }
     ]
   },
   "select_platform": {
-    "address": "0x401950",
     "variables": [
       {
+        "name": "client",
+        "RBP offset": [
+          -4152
+        ],
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
         "name": "header",
-        "RBP offset": -4144,
+        "RBP offset": [
+          -4144
+        ],
         "type": [
           "struct"
         ],
@@ -50,35 +209,86 @@
       }
     ]
   },
-  "myvprintf_str": {
-    "address": "0x401f00",
-    "variables": []
-  },
-  "myvprintf_str_XML_simplistic": {
-    "address": "0x402150",
-    "variables": []
-  },
-  "vgPlain_debugLog_setXml": {
-    "address": "0x402740",
-    "variables": []
-  },
-  "vgPlain_debugLog_vprintf": {
-    "address": "0x402750",
-    "variables": []
-  },
-  "vgPlain_debugLog_getLevel": {
-    "address": "0x403500",
-    "variables": []
-  },
   "vgPlain_debugLog": {
-    "address": "0x403510",
     "variables": [
       {
-        "name": "_zzq_result",
-        "RBP offset": -416,
+        "name": "pid",
+        "RBP offset": [
+          -436
+        ],
         "type": [
-          "long unsigned int",
-          "long long"
+          "unsigned int",
+          "UInt",
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__res",
+        "RBP offset": [
+          -436
+        ],
+        "type": [
+          "unsigned int",
+          "UInt",
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "format",
+        "RBP offset": [
+          -432
+        ],
+        "type": [
+          "HChar*",
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "modulename",
+        "RBP offset": [
+          -424
+        ],
+        "type": [
+          "HChar*",
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "_zzq_result",
+        "RBP offset": [
+          -416
+        ],
+        "type": [
+          "long long",
+          "long unsigned int"
         ],
         "size": 8,
         "is_pointer": false,
@@ -90,12 +300,14 @@
       },
       {
         "name": "vargs",
-        "RBP offset": -408,
+        "RBP offset": [
+          -408
+        ],
         "type": [
-          "__va_list_tag[1]",
-          "__gnuc_va_list",
+          "__builtin_va_list",
           "va_list",
-          "__builtin_va_list"
+          "__gnuc_va_list",
+          "__va_list_tag[1]"
         ],
         "size": 24,
         "is_pointer": false,
@@ -108,15 +320,16 @@
         "element_type": [
           "__va_list_tag"
         ],
-        "element_size": 24,
-        "elements": []
+        "element_size": 24
       },
       {
         "name": "_zzq_args",
-        "RBP offset": -384,
+        "RBP offset": [
+          -384
+        ],
         "type": [
-          "long unsigned int[6]",
-          "long long[6]"
+          "long long[6]",
+          "long unsigned int[6]"
         ],
         "size": 48,
         "is_pointer": false,
@@ -134,7 +347,9 @@
       },
       {
         "name": "buf",
-        "RBP offset": -336,
+        "RBP offset": [
+          -336
+        ],
         "type": [
           "printf_buf"
         ],
@@ -144,50 +359,209 @@
         "is_array": false,
         "is_struct": true,
         "is_union": false,
-        "is_enum": false,
-        "elements": [
-          {
-            "name": "buf.buf",
-            "RBP offset": -336,
-            "type": [
-              "char[100]",
-              "HChar[100]"
-            ],
-            "size": 100,
-            "is_pointer": false,
-            "is_typedef": true,
-            "is_array": true,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false,
-            "array_length": 100,
-            "element_type": [
-              "HChar",
-              "char"
-            ],
-            "element_size": 1
-          },
-          {
-            "name": "buf.n",
-            "RBP offset": -236,
-            "type": [
-              "int",
-              "Int"
-            ],
-            "size": 4,
-            "is_pointer": false,
-            "is_typedef": true,
-            "is_array": false,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false
-          }
-        ]
+        "is_enum": false
       }
     ]
   },
-  "vgPlain_debugLog_startup": {
-    "address": "0x403b10",
-    "variables": []
+  "vgPlain_debugLog_vprintf": {
+    "variables": [
+      {
+        "name": "ipval",
+        "RBP offset": [
+          -120
+        ],
+        "type": [
+          "long long",
+          "ULong",
+          "long long unsigned int"
+        ],
+        "size": 8,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "is_negative",
+        "RBP offset": [
+          -112
+        ],
+        "type": [
+          "char",
+          "unsigned char",
+          "bool",
+          "Bool"
+        ],
+        "size": 1,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "flags",
+        "RBP offset": [
+          -104
+        ],
+        "type": [
+          "Int",
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "ret",
+        "RBP offset": [
+          -96
+        ],
+        "type": [
+          "unsigned int",
+          "UInt",
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "cnt",
+        "RBP offset": [
+          -96
+        ],
+        "type": [
+          "Int",
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "width",
+        "RBP offset": [
+          -96,
+          -124,
+          -72
+        ],
+        "type": [
+          "Int",
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "is_long",
+        "RBP offset": [
+          -88
+        ],
+        "type": [
+          "char",
+          "unsigned char",
+          "bool",
+          "Bool"
+        ],
+        "size": 1,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "ipwidth",
+        "RBP offset": [
+          -88
+        ],
+        "type": [
+          "unsigned int",
+          "UInt",
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "num_digit",
+        "RBP offset": [
+          -88
+        ],
+        "type": [
+          "unsigned int",
+          "UInt",
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "vargs",
+        "RBP offset": [
+          -80
+        ],
+        "type": [
+          "__va_list_tag*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "frval",
+        "RBP offset": [
+          -72
+        ],
+        "type": [
+          "long long",
+          "ULong",
+          "long long unsigned int"
+        ],
+        "size": 8,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      }
+    ]
   }
 }

@@ -1,27 +1,16 @@
 {
-  "panic": {
-    "address": "0x4011a0",
-    "variables": []
-  },
-  "atoi_with_bound": {
-    "address": "0x401940",
-    "variables": []
-  },
-  "usage": {
-    "address": "0x401990",
-    "variables": []
-  },
   "banner": {
-    "address": "0x4019d0",
     "variables": [
       {
         "name": "t",
-        "RBP offset": -8,
+        "RBP offset": [
+          -24
+        ],
         "type": [
           "__time_t",
           "time_t",
-          "long int",
-          "long long"
+          "long long",
+          "long int"
         ],
         "size": 8,
         "is_pointer": false,
@@ -33,12 +22,144 @@
       }
     ]
   },
-  "sigint_handler": {
-    "address": "0x401a20",
-    "variables": []
-  },
-  "copyout": {
-    "address": "0x401a40",
-    "variables": []
+  "main": {
+    "variables": [
+      {
+        "name": "sd",
+        "RBP offset": [
+          -216
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "one",
+        "RBP offset": [
+          -200
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "client_len",
+        "RBP offset": [
+          -196
+        ],
+        "type": [
+          "unsigned int",
+          "int",
+          "__socklen_t",
+          "socklen_t"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "client_addr",
+        "RBP offset": [
+          -192
+        ],
+        "type": [
+          "sockaddr_in"
+        ],
+        "size": 16,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": true,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "server_addr",
+        "RBP offset": [
+          -176
+        ],
+        "type": [
+          "sockaddr_in"
+        ],
+        "size": 16,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": true,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "ufd",
+        "RBP offset": [
+          -160
+        ],
+        "type": [
+          "pollfd"
+        ],
+        "size": 8,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": true,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "req",
+        "RBP offset": [
+          -160
+        ],
+        "type": [
+          "timespec"
+        ],
+        "size": 16,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": true,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "buf",
+        "RBP offset": [
+          -160
+        ],
+        "type": [
+          "char[100]"
+        ],
+        "size": 100,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": true,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false,
+        "array_length": 100,
+        "element_type": [
+          "char"
+        ],
+        "element_size": 1
+      }
+    ]
   }
 }

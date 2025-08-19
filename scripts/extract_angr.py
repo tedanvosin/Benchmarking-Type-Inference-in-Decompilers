@@ -107,10 +107,11 @@ def analyze_binary(binary_path):
                     stack_vars.append(var_data)
 
             # Function has stack variables, add it to our results
-            all_functions[func.name] = {
-                "address": f"{func_addr:#x}",
-                "variables": stack_vars
-            }
+            if stack_vars:
+                all_functions[func.name] = {
+                    "address": f"{func_addr:#x}",
+                    "variables": stack_vars
+                }
     
     all_functions = sort_json(all_functions)
     # Write the JSON output to file

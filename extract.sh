@@ -10,13 +10,13 @@ fi
 
 TOOL=$1
 
-THESIS_DIR="$PWD"
-BASE_DIR="$THESIS_DIR/binaries/$2"
+PROJ_DIR="$PWD"
+BASE_DIR="$PROJ_DIR/binaries/$2"
 N=$3
 FILE_LIST="$BASE_DIR/file_list.txt"
 
-source "$HOME/anaconda3/etc/profile.d/conda.sh"
-conda activate base
+# source "$HOME/anaconda3/etc/profile.d/conda.sh"
+# conda activate base
 
 if [ ! -f "$FILE_LIST" ]; then
     echo "Error: file_list.txt not found in $BASE_DIR"
@@ -45,7 +45,7 @@ process_files() {
         fi
         echo "Processing: $bin_path"
         
-        while (( $(jobs -rp | wc -l) >= 7 )); do
+        while (( $(jobs -rp | wc -l) >= 5 )); do
             wait -n
         done
 
@@ -62,7 +62,6 @@ process_files() {
 
 
 run_retypd() {
-    conda activate retypd
     GHIDRA="$GHIDRA_INSTALL_DIR/support/analyzeHeadless"
     process_files "binaries_stripped" \
         "$GHIDRA /tmp \$tmp_proj \
@@ -70,7 +69,7 @@ run_retypd() {
         -overwrite \
         -preScript Retypd.java \
         -postScript extract_retypd.py \
-        -scriptPath '$THESIS_DIR/scripts;$THESIS_DIR/Decompilers/retypd/GhidraRetypd/ghidra_scripts' \
+        -scriptPath '$PROJ_DIR/scripts;$GHIDRA_INSTALL_DIR/Ghidra/Extensions/GhidraRetypd/ghidra_scripts' \
         -deleteProject \
         -log /dev/null > /dev/null 2>&1"
     conda deactivate
@@ -91,7 +90,7 @@ run_ghidra() {
         -import \$bin_path \
         -overwrite \
         -postScript extract_ghidra.py \
-        -scriptPath $THESIS_DIR/scripts \
+        -scriptPath $PROJ_DIR/scripts \
         -deleteProject \
         -log /dev/null > /dev/null 2>&1"
 }

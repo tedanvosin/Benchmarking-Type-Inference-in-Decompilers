@@ -139,10 +139,11 @@ def get_stack_variables():
                 stack_vars.append(var_data)
         
         # Add function to results
-        all_functions[function_name] = {
-            "address": hex(function_addr)[:-1],  # Remove the 'L' suffix
-            "variables": stack_vars
-        }
+        if stack_vars:
+            all_functions[function_name] = {
+                "address": hex(function_addr)[:-1],  # Remove the 'L' suffix
+                "variables": stack_vars
+            }
     
     
     all_functions = sort_json(all_functions)

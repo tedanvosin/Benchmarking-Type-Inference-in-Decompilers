@@ -1,127 +1,11 @@
 {
-  "dwdump_handler": {
-    "address": "0x402e80",
-    "variables": []
-  },
-  "dwdump_usage": {
-    "address": "0x402e90",
-    "variables": []
-  },
-  "dwdump_pcap_write": {
-    "address": "0x402fa0",
-    "variables": [
-      {
-        "name": "hdr",
-        "RBP offset": -48,
-        "type": [
-          "pcap_pkthdr"
-        ],
-        "size": 24,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": true,
-        "is_union": false,
-        "is_enum": false,
-        "elements": [
-          {
-            "name": "hdr.ts",
-            "RBP offset": -48,
-            "type": [
-              "timeval"
-            ],
-            "size": 16,
-            "is_pointer": false,
-            "is_typedef": false,
-            "is_array": false,
-            "is_struct": true,
-            "is_union": false,
-            "is_enum": false,
-            "elements": [
-              {
-                "name": "hdr.ts.tv_sec",
-                "RBP offset": -48,
-                "type": [
-                  "long long",
-                  "__time_t",
-                  "long int"
-                ],
-                "size": 8,
-                "is_pointer": false,
-                "is_typedef": true,
-                "is_array": false,
-                "is_struct": false,
-                "is_union": false,
-                "is_enum": false
-              },
-              {
-                "name": "hdr.ts.tv_usec",
-                "RBP offset": -40,
-                "type": [
-                  "__suseconds_t",
-                  "long int",
-                  "long long"
-                ],
-                "size": 8,
-                "is_pointer": false,
-                "is_typedef": true,
-                "is_array": false,
-                "is_struct": false,
-                "is_union": false,
-                "is_enum": false
-              }
-            ]
-          },
-          {
-            "name": "hdr.caplen",
-            "RBP offset": -32,
-            "type": [
-              "u_int",
-              "__u_int",
-              "bpf_u_int32",
-              "unsigned int",
-              "int"
-            ],
-            "size": 4,
-            "is_pointer": false,
-            "is_typedef": true,
-            "is_array": false,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false
-          },
-          {
-            "name": "hdr.len",
-            "RBP offset": -28,
-            "type": [
-              "u_int",
-              "__u_int",
-              "bpf_u_int32",
-              "unsigned int",
-              "int"
-            ],
-            "size": 4,
-            "is_pointer": false,
-            "is_typedef": true,
-            "is_array": false,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false
-          }
-        ]
-      }
-    ]
-  },
-  "dwdump_data_fini": {
-    "address": "0x403040",
-    "variables": []
-  },
   "dwdump_nested_stats_print": {
-    "address": "0x403070",
     "variables": [
       {
         "name": "attrs",
-        "RBP offset": -16,
+        "RBP offset": [
+          -16
+        ],
         "type": [
           "nlattr*[1]"
         ],
@@ -140,8 +24,60 @@
       }
     ]
   },
-  "dwdump_monitor": {
-    "address": "0x4030e0",
-    "variables": []
+  "dwdump_pcap_write": {
+    "variables": [
+      {
+        "name": "hdr",
+        "RBP offset": [
+          -48
+        ],
+        "type": [
+          "pcap_pkthdr"
+        ],
+        "size": 24,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": true,
+        "is_union": false,
+        "is_enum": false
+      }
+    ]
+  },
+  "main": {
+    "variables": [
+      {
+        "name": "dwdump",
+        "RBP offset": [
+          -328
+        ],
+        "type": [
+          "dwdump*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "dwdump",
+        "RBP offset": [
+          -328
+        ],
+        "type": [
+          "dwdump*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      }
+    ]
   }
 }

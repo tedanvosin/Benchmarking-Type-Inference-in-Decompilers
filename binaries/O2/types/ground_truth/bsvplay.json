@@ -1,14 +1,44 @@
 {
-  "main": {
-    "address": "0x401140",
-    "variables": []
-  },
   "parse_pianoman": {
-    "address": "0x401300",
     "variables": [
       {
+        "name": "ticks",
+        "RBP offset": [
+          -24568
+        ],
+        "type": [
+          "unsigned int",
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "frequency",
+        "RBP offset": [
+          -24564
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
         "name": "tone",
-        "RBP offset": -24549,
+        "RBP offset": [
+          -24549
+        ],
         "type": [
           "pianoman_insn"
         ],
@@ -18,81 +48,13 @@
         "is_array": false,
         "is_struct": true,
         "is_union": false,
-        "is_enum": false,
-        "elements": [
-          {
-            "name": "tone.octave",
-            "RBP offset": -24549,
-            "type": [
-              "char",
-              "__uint8_t",
-              "unsigned char",
-              "uint8_t"
-            ],
-            "size": 1,
-            "is_pointer": false,
-            "is_typedef": true,
-            "is_array": false,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false
-          },
-          {
-            "name": "tone.note",
-            "RBP offset": -24548,
-            "type": [
-              "char",
-              "__uint8_t",
-              "unsigned char",
-              "uint8_t"
-            ],
-            "size": 1,
-            "is_pointer": false,
-            "is_typedef": true,
-            "is_array": false,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false
-          },
-          {
-            "name": "tone.staccato",
-            "RBP offset": -24547,
-            "type": [
-              "char",
-              "__uint8_t",
-              "unsigned char",
-              "uint8_t"
-            ],
-            "size": 1,
-            "is_pointer": false,
-            "is_typedef": true,
-            "is_array": false,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false
-          },
-          {
-            "name": "tone.len",
-            "RBP offset": -24546,
-            "type": [
-              "__uint16_t",
-              "short int",
-              "uint16_t",
-              "short unsigned int"
-            ],
-            "size": 2,
-            "is_pointer": false,
-            "is_typedef": true,
-            "is_array": false,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false
-          }
-        ]
+        "is_enum": false
       },
       {
         "name": "notemap",
-        "RBP offset": -24544,
+        "RBP offset": [
+          -24544
+        ],
         "type": [
           "double[3060]"
         ],
@@ -112,15 +74,16 @@
     ]
   },
   "pcspkr_output": {
-    "address": "0x4017b0",
     "variables": [
       {
         "name": "value",
-        "RBP offset": -42,
+        "RBP offset": [
+          -58
+        ],
         "type": [
-          "int16_t",
           "short int",
-          "__int16_t"
+          "__int16_t",
+          "int16_t"
         ],
         "size": 2,
         "is_pointer": false,
@@ -131,9 +94,5 @@
         "is_enum": false
       }
     ]
-  },
-  "pcspkr_silence": {
-    "address": "0x401920",
-    "variables": []
   }
 }

@@ -1,10 +1,48 @@
 {
-  "main": {
-    "address": "0x4022d0",
+  "create_worker": {
     "variables": [
       {
+        "name": "attr",
+        "RBP offset": [
+          -96
+        ],
+        "type": [
+          "pthread_attr_t"
+        ],
+        "size": 56,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": true,
+        "is_enum": false
+      }
+    ]
+  },
+  "main": {
+    "variables": [
+      {
+        "name": "i",
+        "RBP offset": [
+          -156
+        ],
+        "type": [
+          "int",
+          "unsigned int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
         "name": "dummy",
-        "RBP offset": -121,
+        "RBP offset": [
+          -121
+        ],
         "type": [
           "char"
         ],
@@ -18,7 +56,9 @@
       },
       {
         "name": "timer_started",
-        "RBP offset": -120,
+        "RBP offset": [
+          -120
+        ],
         "type": [
           "int"
         ],
@@ -32,7 +72,9 @@
       },
       {
         "name": "sp",
-        "RBP offset": -116,
+        "RBP offset": [
+          -116
+        ],
         "type": [
           "sched_param"
         ],
@@ -42,27 +84,13 @@
         "is_array": false,
         "is_struct": true,
         "is_union": false,
-        "is_enum": false,
-        "elements": [
-          {
-            "name": "sp.sched_priority",
-            "RBP offset": -116,
-            "type": [
-              "int"
-            ],
-            "size": 4,
-            "is_pointer": false,
-            "is_typedef": false,
-            "is_array": false,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false
-          }
-        ]
+        "is_enum": false
       },
       {
         "name": "start",
-        "RBP offset": -112,
+        "RBP offset": [
+          -112
+        ],
         "type": [
           "timeval"
         ],
@@ -72,45 +100,13 @@
         "is_array": false,
         "is_struct": true,
         "is_union": false,
-        "is_enum": false,
-        "elements": [
-          {
-            "name": "start.tv_sec",
-            "RBP offset": -112,
-            "type": [
-              "__time_t",
-              "long long",
-              "long int"
-            ],
-            "size": 8,
-            "is_pointer": false,
-            "is_typedef": true,
-            "is_array": false,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false
-          },
-          {
-            "name": "start.tv_usec",
-            "RBP offset": -104,
-            "type": [
-              "__suseconds_t",
-              "long long",
-              "long int"
-            ],
-            "size": 8,
-            "is_pointer": false,
-            "is_typedef": true,
-            "is_array": false,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false
-          }
-        ]
+        "is_enum": false
       },
       {
         "name": "stop",
-        "RBP offset": -96,
+        "RBP offset": [
+          -96
+        ],
         "type": [
           "timeval"
         ],
@@ -120,45 +116,13 @@
         "is_array": false,
         "is_struct": true,
         "is_union": false,
-        "is_enum": false,
-        "elements": [
-          {
-            "name": "stop.tv_sec",
-            "RBP offset": -96,
-            "type": [
-              "__time_t",
-              "long long",
-              "long int"
-            ],
-            "size": 8,
-            "is_pointer": false,
-            "is_typedef": true,
-            "is_array": false,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false
-          },
-          {
-            "name": "stop.tv_usec",
-            "RBP offset": -88,
-            "type": [
-              "__suseconds_t",
-              "long long",
-              "long int"
-            ],
-            "size": 8,
-            "is_pointer": false,
-            "is_typedef": true,
-            "is_array": false,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false
-          }
-        ]
+        "is_enum": false
       },
       {
         "name": "readyfds",
-        "RBP offset": -80,
+        "RBP offset": [
+          -80
+        ],
         "type": [
           "int[2]"
         ],
@@ -177,7 +141,9 @@
       },
       {
         "name": "wakefds",
-        "RBP offset": -72,
+        "RBP offset": [
+          -72
+        ],
         "type": [
           "int[2]"
         ],
@@ -196,51 +162,13 @@
       }
     ]
   },
-  "sigcatcher": {
-    "address": "0x402b40",
-    "variables": []
-  },
-  "print_usage_exit": {
-    "address": "0x402b80",
-    "variables": []
-  },
-  "barf": {
-    "address": "0x402be0",
-    "variables": []
-  },
-  "receiver": {
-    "address": "0x402ca0",
-    "variables": []
-  },
-  "sender": {
-    "address": "0x403040",
-    "variables": []
-  },
-  "create_worker": {
-    "address": "0x4031a0",
-    "variables": [
-      {
-        "name": "attr",
-        "RBP offset": -96,
-        "type": [
-          "pthread_attr_t"
-        ],
-        "size": 56,
-        "is_pointer": false,
-        "is_typedef": true,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": true,
-        "is_enum": false
-      }
-    ]
-  },
   "reap_workers": {
-    "address": "0x4033c0",
     "variables": [
       {
         "name": "status",
-        "RBP offset": -52,
+        "RBP offset": [
+          -52
+        ],
         "type": [
           "int"
         ],
@@ -254,12 +182,52 @@
       },
       {
         "name": "thr_status",
-        "RBP offset": -48,
+        "RBP offset": [
+          -48
+        ],
         "type": [
           "void*"
         ],
         "size": 8,
         "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      }
+    ]
+  },
+  "sender": {
+    "variables": [
+      {
+        "name": "i",
+        "RBP offset": [
+          -72
+        ],
+        "type": [
+          "int",
+          "unsigned int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "j",
+        "RBP offset": [
+          -68
+        ],
+        "type": [
+          "int",
+          "unsigned int"
+        ],
+        "size": 4,
+        "is_pointer": false,
         "is_typedef": false,
         "is_array": false,
         "is_struct": false,
