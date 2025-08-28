@@ -1,4 +1,34 @@
 {
+  "__bswap_32": {
+    "variables": []
+  },
+  "__builtin_memcmp": {
+    "variables": []
+  },
+  "__builtin_memcpy": {
+    "variables": []
+  },
+  "__stack_chk_fail": {
+    "variables": []
+  },
+  "add_client_serial_mapping": {
+    "variables": []
+  },
+  "append_bool": {
+    "variables": []
+  },
+  "append_char": {
+    "variables": []
+  },
+  "append_flags": {
+    "variables": []
+  },
+  "append_uint16": {
+    "variables": []
+  },
+  "append_uint32": {
+    "variables": []
+  },
   "broadway_buffer_create": {
     "variables": [
       {
@@ -7,9 +37,9 @@
           -64
         ],
         "type": [
-          "char*",
           "guint8*",
-          "unsigned char*"
+          "unsigned char*",
+          "char*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -25,8 +55,8 @@
           -56
         ],
         "type": [
-          "_BroadwayBuffer*",
-          "BroadwayBuffer*"
+          "BroadwayBuffer*",
+          "_BroadwayBuffer*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -58,8 +88,8 @@
           -56
         ],
         "type": [
-          "void*",
-          "gpointer"
+          "gpointer",
+          "void*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -70,580 +100,30 @@
         "is_enum": false
       }
     ]
+  },
+  "broadway_buffer_destroy": {
+    "variables": []
   },
   "broadway_buffer_encode": {
-    "variables": [
-      {
-        "name": "entry",
-        "RBP offset": [
-          -280
-        ],
-        "type": [
-          "entry*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "entry",
-        "RBP offset": [
-          -280
-        ],
-        "type": [
-          "entry*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "hash",
-        "RBP offset": [
-          -260
-        ],
-        "type": [
-          "int",
-          "guint32",
-          "unsigned int"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": true,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "bottom_hash",
-        "RBP offset": [
-          -240
-        ],
-        "type": [
-          "int",
-          "guint32",
-          "unsigned int"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": true,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "y",
-        "RBP offset": [
-          -232
-        ],
-        "type": [
-          "int"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "y",
-        "RBP offset": [
-          -208
-        ],
-        "type": [
-          "int"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "prev_line",
-        "RBP offset": [
-          -192
-        ],
-        "type": [
-          "unsigned int*",
-          "int*",
-          "guint32*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": true,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "bottom",
-        "RBP offset": [
-          -184
-        ],
-        "type": [
-          "unsigned int*",
-          "int*",
-          "guint32*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": true,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "encoder",
-        "RBP offset": [
-          -168
-        ],
-        "type": [
-          "encoder*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "encoder",
-        "RBP offset": [
-          -168
-        ],
-        "type": [
-          "encoder*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "buffer",
-        "RBP offset": [
-          -160
-        ],
-        "type": [
-          "_BroadwayBuffer*",
-          "BroadwayBuffer*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": true,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "buffer",
-        "RBP offset": [
-          -160
-        ],
-        "type": [
-          "_BroadwayBuffer*",
-          "BroadwayBuffer*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": true,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "buffer",
-        "RBP offset": [
-          -160
-        ],
-        "type": [
-          "_BroadwayBuffer*",
-          "BroadwayBuffer*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": true,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "h1",
-        "RBP offset": [
-          -152
-        ],
-        "type": [
-          "int"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "y1",
-        "RBP offset": [
-          -140
-        ],
-        "type": [
-          "int"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "height",
-        "RBP offset": [
-          -140
-        ],
-        "type": [
-          "int"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "prev",
-        "RBP offset": [
-          -136
-        ],
-        "type": [
-          "_BroadwayBuffer*",
-          "BroadwayBuffer*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": true,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "prev",
-        "RBP offset": [
-          -136
-        ],
-        "type": [
-          "_BroadwayBuffer*",
-          "BroadwayBuffer*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": true,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "prev",
-        "RBP offset": [
-          -136
-        ],
-        "type": [
-          "_BroadwayBuffer*",
-          "BroadwayBuffer*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": true,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "skyline_pixels",
-        "RBP offset": [
-          -128
-        ],
-        "type": [
-          "int"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "block_hashes",
-        "RBP offset": [
-          -120
-        ],
-        "type": [
-          "unsigned int*",
-          "int*",
-          "guint32*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": true,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "j",
-        "RBP offset": [
-          -112
-        ],
-        "type": [
-          "int"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "skyline",
-        "RBP offset": [
-          -112
-        ],
-        "type": [
-          "int*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "x",
-        "RBP offset": [
-          -112
-        ],
-        "type": [
-          "int"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "x",
-        "RBP offset": [
-          -112
-        ],
-        "type": [
-          "int"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "x",
-        "RBP offset": [
-          -112
-        ],
-        "type": [
-          "int"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "x1",
-        "RBP offset": [
-          -104
-        ],
-        "type": [
-          "int"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "line",
-        "RBP offset": [
-          -104
-        ],
-        "type": [
-          "unsigned int*",
-          "int*",
-          "guint32*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": true,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "width",
-        "RBP offset": [
-          -104
-        ],
-        "type": [
-          "int"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "encoder",
-        "RBP offset": [
-          -96
-        ],
-        "type": [
-          "encoder"
-        ],
-        "size": 32,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": true,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "dest",
-        "RBP offset": [
-          -80
-        ],
-        "type": [
-          "GString*",
-          "_GString*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": true,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      }
-    ]
+    "variables": []
+  },
+  "broadway_buffer_get_height": {
+    "variables": []
+  },
+  "broadway_buffer_get_width": {
+    "variables": []
   },
   "broadway_events_got_input": {
-    "variables": [
-      {
-        "name": "size",
-        "RBP offset": [
-          -144
-        ],
-        "type": [
-          "long long",
-          "gsize",
-          "long unsigned int"
-        ],
-        "size": 8,
-        "is_pointer": false,
-        "is_typedef": true,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "client_id",
-        "RBP offset": [
-          -132
-        ],
-        "type": [
-          "gint32",
-          "int"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": true,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "reply_event",
-        "RBP offset": [
-          -128
-        ],
-        "type": [
-          "BroadwayReplyEvent"
-        ],
-        "size": 72,
-        "is_pointer": false,
-        "is_typedef": true,
-        "is_array": false,
-        "is_struct": true,
-        "is_union": false,
-        "is_enum": false
-      }
-    ]
+    "variables": []
+  },
+  "broadway_input_free": {
+    "variables": []
+  },
+  "broadway_output_destroy_surface": {
+    "variables": []
+  },
+  "broadway_output_disconnected": {
+    "variables": []
   },
   "broadway_output_flush": {
     "variables": [
@@ -653,8 +133,8 @@
           -64
         ],
         "type": [
-          "unsigned char[16]",
           "char[16]",
+          "unsigned char[16]",
           "guchar[16]"
         ],
         "size": 16,
@@ -673,6 +153,21 @@
         "element_size": 1
       }
     ]
+  },
+  "broadway_output_free": {
+    "variables": []
+  },
+  "broadway_output_get_next_serial": {
+    "variables": []
+  },
+  "broadway_output_grab_pointer": {
+    "variables": []
+  },
+  "broadway_output_hide_surface": {
+    "variables": []
+  },
+  "broadway_output_lower_surface": {
+    "variables": []
   },
   "broadway_output_move_resize_surface": {
     "variables": [
@@ -699,8 +194,8 @@
         ],
         "type": [
           "int",
-          "guint32",
-          "unsigned int"
+          "unsigned int",
+          "guint32"
         ],
         "size": 4,
         "is_pointer": false,
@@ -733,8 +228,8 @@
         ],
         "type": [
           "int",
-          "guint32",
-          "unsigned int"
+          "unsigned int",
+          "guint32"
         ],
         "size": 4,
         "is_pointer": false,
@@ -767,8 +262,8 @@
         ],
         "type": [
           "int",
-          "guint32",
-          "unsigned int"
+          "unsigned int",
+          "guint32"
         ],
         "size": 4,
         "is_pointer": false,
@@ -801,8 +296,8 @@
         ],
         "type": [
           "int",
-          "guint32",
-          "unsigned int"
+          "unsigned int",
+          "guint32"
         ],
         "size": 4,
         "is_pointer": false,
@@ -835,8 +330,8 @@
         ],
         "type": [
           "int",
-          "guint32",
-          "unsigned int"
+          "unsigned int",
+          "guint32"
         ],
         "size": 4,
         "is_pointer": false,
@@ -847,6 +342,9 @@
         "is_enum": false
       }
     ]
+  },
+  "broadway_output_new": {
+    "variables": []
   },
   "broadway_output_new_surface": {
     "variables": [
@@ -873,8 +371,8 @@
         ],
         "type": [
           "int",
-          "guint32",
-          "unsigned int"
+          "unsigned int",
+          "guint32"
         ],
         "size": 4,
         "is_pointer": false,
@@ -907,8 +405,8 @@
         ],
         "type": [
           "int",
-          "guint32",
-          "unsigned int"
+          "unsigned int",
+          "guint32"
         ],
         "size": 4,
         "is_pointer": false,
@@ -924,10 +422,10 @@
           16
         ],
         "type": [
-          "gbool",
           "gboolean",
-          "gint",
-          "int"
+          "int",
+          "gbool",
+          "gint"
         ],
         "size": 4,
         "is_pointer": false,
@@ -947,8 +445,8 @@
           -48
         ],
         "type": [
-          "unsigned char[16]",
           "char[16]",
+          "unsigned char[16]",
           "guchar[16]"
         ],
         "size": 16,
@@ -993,8 +491,8 @@
         ],
         "type": [
           "int",
-          "guint32",
-          "unsigned int"
+          "unsigned int",
+          "guint32"
         ],
         "size": 4,
         "is_pointer": false,
@@ -1026,8 +524,8 @@
           -56
         ],
         "type": [
-          "_BroadwayBuffer*",
-          "BroadwayBuffer*"
+          "BroadwayBuffer*",
+          "_BroadwayBuffer*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -1055,6 +553,75 @@
         "is_enum": false
       }
     ]
+  },
+  "broadway_output_raise_surface": {
+    "variables": []
+  },
+  "broadway_output_send_cmd": {
+    "variables": []
+  },
+  "broadway_output_set_next_serial": {
+    "variables": []
+  },
+  "broadway_output_set_show_keyboard": {
+    "variables": []
+  },
+  "broadway_output_set_transient_for": {
+    "variables": []
+  },
+  "broadway_output_show_surface": {
+    "variables": []
+  },
+  "broadway_output_ungrab_pointer": {
+    "variables": []
+  },
+  "broadway_server_class_init": {
+    "variables": []
+  },
+  "broadway_server_class_intern_init": {
+    "variables": []
+  },
+  "broadway_server_consume_all_input": {
+    "variables": []
+  },
+  "broadway_server_destroy_window": {
+    "variables": []
+  },
+  "broadway_server_finalize": {
+    "variables": []
+  },
+  "broadway_server_flush": {
+    "variables": []
+  },
+  "broadway_server_focus_window": {
+    "variables": []
+  },
+  "broadway_server_get_last_seen_time": {
+    "variables": []
+  },
+  "broadway_server_get_next_serial": {
+    "variables": []
+  },
+  "broadway_server_get_screen_size": {
+    "variables": []
+  },
+  "broadway_server_get_type": {
+    "variables": []
+  },
+  "broadway_server_get_type_once": {
+    "variables": []
+  },
+  "broadway_server_grab_pointer": {
+    "variables": []
+  },
+  "broadway_server_has_client": {
+    "variables": []
+  },
+  "broadway_server_init": {
+    "variables": []
+  },
+  "broadway_server_lookahead_event": {
+    "variables": []
   },
   "broadway_server_new": {
     "variables": [
@@ -1128,6 +695,9 @@
       }
     ]
   },
+  "broadway_server_on_unix_socket_new": {
+    "variables": []
+  },
   "broadway_server_open_surface": {
     "variables": [
       {
@@ -1185,8 +755,8 @@
           -56
         ],
         "type": [
-          "long long",
           "gsize",
+          "long long",
           "long unsigned int"
         ],
         "size": 8,
@@ -1203,8 +773,8 @@
           -56
         ],
         "type": [
-          "void*",
-          "gpointer"
+          "gpointer",
+          "void*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -1220,8 +790,8 @@
           -56
         ],
         "type": [
-          "long long",
           "gsize",
+          "long long",
           "long unsigned int"
         ],
         "size": 8,
@@ -1234,6 +804,9 @@
       }
     ]
   },
+  "broadway_server_query_mouse": {
+    "variables": []
+  },
   "broadway_server_read_all_input_nonblocking": {
     "variables": [
       {
@@ -1242,8 +815,8 @@
           -1064
         ],
         "type": [
-          "GError*",
-          "_GError*"
+          "_GError*",
+          "GError*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -1280,6 +853,21 @@
       }
     ]
   },
+  "broadway_server_resync_windows": {
+    "variables": []
+  },
+  "broadway_server_set_show_keyboard": {
+    "variables": []
+  },
+  "broadway_server_ungrab_pointer": {
+    "variables": []
+  },
+  "broadway_server_window_hide": {
+    "variables": []
+  },
+  "broadway_server_window_lower": {
+    "variables": []
+  },
   "broadway_server_window_move_resize": {
     "variables": [
       {
@@ -1299,6 +887,84 @@
         "is_enum": false
       }
     ]
+  },
+  "broadway_server_window_raise": {
+    "variables": []
+  },
+  "broadway_server_window_set_modal_hint": {
+    "variables": []
+  },
+  "broadway_server_window_set_transient_for": {
+    "variables": []
+  },
+  "broadway_server_window_show": {
+    "variables": []
+  },
+  "broadway_server_window_update": {
+    "variables": []
+  },
+  "cairo_image_surface_create_for_data": {
+    "variables": []
+  },
+  "cairo_image_surface_get_data": {
+    "variables": []
+  },
+  "cairo_image_surface_get_height": {
+    "variables": []
+  },
+  "cairo_image_surface_get_stride": {
+    "variables": []
+  },
+  "cairo_image_surface_get_width": {
+    "variables": []
+  },
+  "cairo_surface_destroy": {
+    "variables": []
+  },
+  "cairo_surface_reference": {
+    "variables": []
+  },
+  "cairo_surface_set_user_data": {
+    "variables": []
+  },
+  "client_disconnect_in_idle": {
+    "variables": []
+  },
+  "client_disconnected": {
+    "variables": []
+  },
+  "client_fill_cb": {
+    "variables": []
+  },
+  "client_free": {
+    "variables": []
+  },
+  "client_handle_request": {
+    "variables": []
+  },
+  "close": {
+    "variables": []
+  },
+  "disconnect_idle_cb": {
+    "variables": []
+  },
+  "emit": {
+    "variables": []
+  },
+  "encode_block": {
+    "variables": []
+  },
+  "encode_pixel": {
+    "variables": []
+  },
+  "encode_run": {
+    "variables": []
+  },
+  "encoder_flush": {
+    "variables": []
+  },
+  "exit": {
+    "variables": []
   },
   "fake_configure_notify": {
     "variables": [
@@ -1320,6 +986,351 @@
       }
     ]
   },
+  "free": {
+    "variables": []
+  },
+  "g_assertion_message_expr": {
+    "variables": []
+  },
+  "g_base64_encode": {
+    "variables": []
+  },
+  "g_bit_storage_impl": {
+    "variables": []
+  },
+  "g_buffered_input_stream_fill_async": {
+    "variables": []
+  },
+  "g_buffered_input_stream_fill_finish": {
+    "variables": []
+  },
+  "g_buffered_input_stream_new": {
+    "variables": []
+  },
+  "g_buffered_input_stream_peek_buffer": {
+    "variables": []
+  },
+  "g_build_filename": {
+    "variables": []
+  },
+  "g_byte_array_append": {
+    "variables": []
+  },
+  "g_byte_array_free": {
+    "variables": []
+  },
+  "g_byte_array_remove_range": {
+    "variables": []
+  },
+  "g_byte_array_sized_new": {
+    "variables": []
+  },
+  "g_checksum_free": {
+    "variables": []
+  },
+  "g_checksum_get_digest": {
+    "variables": []
+  },
+  "g_checksum_new": {
+    "variables": []
+  },
+  "g_checksum_update": {
+    "variables": []
+  },
+  "g_converter_output_stream_new": {
+    "variables": []
+  },
+  "g_data_input_stream_new": {
+    "variables": []
+  },
+  "g_data_input_stream_read_line_async": {
+    "variables": []
+  },
+  "g_data_input_stream_read_line_finish": {
+    "variables": []
+  },
+  "g_data_input_stream_set_newline_type": {
+    "variables": []
+  },
+  "g_error_free": {
+    "variables": []
+  },
+  "g_error_matches": {
+    "variables": []
+  },
+  "g_filter_input_stream_set_close_base_stream": {
+    "variables": []
+  },
+  "g_free": {
+    "variables": []
+  },
+  "g_get_tmp_dir": {
+    "variables": []
+  },
+  "g_get_user_runtime_dir": {
+    "variables": []
+  },
+  "g_hash_table_insert": {
+    "variables": []
+  },
+  "g_hash_table_lookup": {
+    "variables": []
+  },
+  "g_hash_table_new": {
+    "variables": []
+  },
+  "g_hash_table_remove": {
+    "variables": []
+  },
+  "g_idle_add_full": {
+    "variables": []
+  },
+  "g_inet_address_new_from_string": {
+    "variables": []
+  },
+  "g_inet_socket_address_new": {
+    "variables": []
+  },
+  "g_input_stream_skip": {
+    "variables": []
+  },
+  "g_intern_static_string": {
+    "variables": []
+  },
+  "g_io_error_quark": {
+    "variables": []
+  },
+  "g_io_stream_get_input_stream": {
+    "variables": []
+  },
+  "g_io_stream_get_output_stream": {
+    "variables": []
+  },
+  "g_list_append": {
+    "variables": []
+  },
+  "g_list_delete_link": {
+    "variables": []
+  },
+  "g_list_free": {
+    "variables": []
+  },
+  "g_list_prepend": {
+    "variables": []
+  },
+  "g_list_remove": {
+    "variables": []
+  },
+  "g_log_structured_standard": {
+    "variables": []
+  },
+  "g_main_loop_new": {
+    "variables": []
+  },
+  "g_main_loop_run": {
+    "variables": []
+  },
+  "g_malloc": {
+    "variables": []
+  },
+  "g_malloc0": {
+    "variables": []
+  },
+  "g_malloc0_n": {
+    "variables": []
+  },
+  "g_memdup": {
+    "variables": []
+  },
+  "g_memory_output_stream_get_data": {
+    "variables": []
+  },
+  "g_memory_output_stream_get_data_size": {
+    "variables": []
+  },
+  "g_memory_output_stream_new_resizable": {
+    "variables": []
+  },
+  "g_object_new": {
+    "variables": []
+  },
+  "g_object_ref": {
+    "variables": []
+  },
+  "g_object_unref": {
+    "variables": []
+  },
+  "g_once_init_enter": {
+    "variables": []
+  },
+  "g_once_init_leave": {
+    "variables": []
+  },
+  "g_option_context_add_main_entries": {
+    "variables": []
+  },
+  "g_option_context_new": {
+    "variables": []
+  },
+  "g_option_context_parse": {
+    "variables": []
+  },
+  "g_output_stream_close": {
+    "variables": []
+  },
+  "g_output_stream_write_all": {
+    "variables": []
+  },
+  "g_pollable_input_stream_create_source": {
+    "variables": []
+  },
+  "g_pollable_input_stream_read_nonblocking": {
+    "variables": []
+  },
+  "g_prefix_error": {
+    "variables": []
+  },
+  "g_print": {
+    "variables": []
+  },
+  "g_printerr": {
+    "variables": []
+  },
+  "g_set_error": {
+    "variables": []
+  },
+  "g_signal_connect_data": {
+    "variables": []
+  },
+  "g_slist_append": {
+    "variables": []
+  },
+  "g_slist_delete_link": {
+    "variables": []
+  },
+  "g_slist_free_full": {
+    "variables": []
+  },
+  "g_slist_last": {
+    "variables": []
+  },
+  "g_socket_connection_get_socket": {
+    "variables": []
+  },
+  "g_socket_get_fd": {
+    "variables": []
+  },
+  "g_socket_listener_add_address": {
+    "variables": []
+  },
+  "g_socket_listener_add_inet_port": {
+    "variables": []
+  },
+  "g_socket_service_new": {
+    "variables": []
+  },
+  "g_socket_service_start": {
+    "variables": []
+  },
+  "g_source_attach": {
+    "variables": []
+  },
+  "g_source_destroy": {
+    "variables": []
+  },
+  "g_source_remove": {
+    "variables": []
+  },
+  "g_source_set_callback": {
+    "variables": []
+  },
+  "g_str_has_prefix": {
+    "variables": []
+  },
+  "g_strdup": {
+    "variables": []
+  },
+  "g_strdup_inline": {
+    "variables": []
+  },
+  "g_strdup_printf": {
+    "variables": []
+  },
+  "g_strfreev": {
+    "variables": []
+  },
+  "g_string_append_c_inline": {
+    "variables": []
+  },
+  "g_string_append_len": {
+    "variables": []
+  },
+  "g_string_append_len_inline": {
+    "variables": []
+  },
+  "g_string_append_printf": {
+    "variables": []
+  },
+  "g_string_free": {
+    "variables": []
+  },
+  "g_string_insert_c": {
+    "variables": []
+  },
+  "g_string_insert_len": {
+    "variables": []
+  },
+  "g_string_new": {
+    "variables": []
+  },
+  "g_string_set_size": {
+    "variables": []
+  },
+  "g_strndup": {
+    "variables": []
+  },
+  "g_strsplit": {
+    "variables": []
+  },
+  "g_tls_certificate_new_from_files": {
+    "variables": []
+  },
+  "g_tls_connection_handshake": {
+    "variables": []
+  },
+  "g_tls_server_connection_new": {
+    "variables": []
+  },
+  "g_type_class_adjust_private_offset": {
+    "variables": []
+  },
+  "g_type_class_peek_parent": {
+    "variables": []
+  },
+  "g_type_register_static_simple": {
+    "variables": []
+  },
+  "g_unix_socket_address_abstract_names_supported": {
+    "variables": []
+  },
+  "g_unix_socket_address_new": {
+    "variables": []
+  },
+  "g_unix_socket_address_new_with_type": {
+    "variables": []
+  },
+  "g_zlib_compressor_new": {
+    "variables": []
+  },
+  "generate_handshake_response_wsietf_v7": {
+    "variables": []
+  },
+  "get_client_serial": {
+    "variables": []
+  },
+  "get_event_size": {
+    "variables": []
+  },
   "got_http_request_line": {
     "variables": [
       {
@@ -1340,6 +1351,9 @@
       }
     ]
   },
+  "got_request": {
+    "variables": []
+  },
   "handle_incoming_connection": {
     "variables": [
       {
@@ -1348,8 +1362,8 @@
           -48
         ],
         "type": [
-          "GError*",
-          "_GError*"
+          "_GError*",
+          "GError*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -1360,6 +1374,12 @@
         "is_enum": false
       }
     ]
+  },
+  "hex_dump": {
+    "variables": []
+  },
+  "http_request_free": {
+    "variables": []
   },
   "incoming_client": {
     "variables": [
@@ -1380,6 +1400,18 @@
         "is_enum": false
       }
     ]
+  },
+  "input_data_cb": {
+    "variables": []
+  },
+  "insert_block": {
+    "variables": []
+  },
+  "is_pointer_event": {
+    "variables": []
+  },
+  "lookup_block": {
+    "variables": []
   },
   "main": {
     "variables": [
@@ -1437,8 +1469,8 @@
           -392
         ],
         "type": [
-          "GError*",
-          "_GError*"
+          "_GError*",
+          "GError*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -1536,5 +1568,119 @@
         "element_size": 48
       }
     ]
+  },
+  "map_named_shm": {
+    "variables": []
+  },
+  "memcmp": {
+    "variables": []
+  },
+  "memcpy": {
+    "variables": []
+  },
+  "memmove": {
+    "variables": []
+  },
+  "memset": {
+    "variables": []
+  },
+  "mmap": {
+    "variables": []
+  },
+  "munmap": {
+    "variables": []
+  },
+  "open": {
+    "variables": []
+  },
+  "parse_input": {
+    "variables": []
+  },
+  "parse_input_message": {
+    "variables": []
+  },
+  "parse_line": {
+    "variables": []
+  },
+  "parse_pointer_data": {
+    "variables": []
+  },
+  "parse_touch_data": {
+    "variables": []
+  },
+  "perror": {
+    "variables": []
+  },
+  "process_input_idle_cb": {
+    "variables": []
+  },
+  "process_input_message": {
+    "variables": []
+  },
+  "process_input_messages": {
+    "variables": []
+  },
+  "queue_process_input_at_idle": {
+    "variables": []
+  },
+  "send_data": {
+    "variables": []
+  },
+  "send_error": {
+    "variables": []
+  },
+  "send_reply": {
+    "variables": []
+  },
+  "setlocale": {
+    "variables": []
+  },
+  "setsockopt": {
+    "variables": []
+  },
+  "shm_data_unmap": {
+    "variables": []
+  },
+  "shm_open": {
+    "variables": []
+  },
+  "shm_unlink": {
+    "variables": []
+  },
+  "start": {
+    "variables": []
+  },
+  "start_input": {
+    "variables": []
+  },
+  "strchr": {
+    "variables": []
+  },
+  "strcmp": {
+    "variables": []
+  },
+  "strlen": {
+    "variables": []
+  },
+  "strtol": {
+    "variables": []
+  },
+  "unlink": {
+    "variables": []
+  },
+  "unpremultiply_line": {
+    "variables": []
+  },
+  "update_event_state": {
+    "variables": []
+  },
+  "update_future_pointer_info": {
+    "variables": []
+  },
+  "verify_block_match": {
+    "variables": []
+  },
+  "write_header": {
+    "variables": []
   }
 }

@@ -363,7 +363,7 @@ def parse_debug(filename):
             if DIE.tag != 'DW_TAG_subprogram':
                 continue
             func_name,func_data = parse_function_die(DIE, dwarfinfo)
-            if func_name and func_data["variables"]:
+            if func_name:
                 functions[func_name] = func_data
     
     return functions
