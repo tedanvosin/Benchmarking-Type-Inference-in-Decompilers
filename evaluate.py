@@ -438,6 +438,9 @@ def load_list(base_dir):
         
         files_evaluated.append(file)
 
+    # with open('file_eval_2','w') as f:
+    #     for file in files_evaluated:
+    #         f.write(file+'\n')
     return
 
 def main():
