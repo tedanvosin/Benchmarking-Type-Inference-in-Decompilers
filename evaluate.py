@@ -67,14 +67,15 @@ def eval_array():
                     if not var['is_array']:
                         continue 
                     else:
-                        gt_funcs[func][var['RBP offset']] = {}
-                        gt_funcs[func][var['RBP offset']]['type'] = []
-                        gt_funcs[func][var['RBP offset']]['size'] = var['size']
-                        gt_funcs[func][var['RBP offset']]['base'] = var['element_type']
-                        gt_funcs[func][var['RBP offset']]['length'] = var['array_length']
-                        for type in var['type']:
-                            gt_funcs[func][var['RBP offset']]['type'].append(type.replace(' ',''))
-              
+                        for offset in var['RBP offset']:
+                            gt_funcs[func][offset] = {}
+                            gt_funcs[func][offset]['type'] = []
+                            gt_funcs[func][offset]['size'] = var['size']
+                            gt_funcs[func][offset]['base'] = var['element_type']
+                            gt_funcs[func][offset]['length'] = var['array_length']
+                            for type in var['type']:
+                                gt_funcs[func][offset]['type'].append(type.replace(' ', ''))
+
             for func in gt_funcs:
                 if func not in decomp_funcs:
                     for offset,_type in gt_funcs[func].items():
@@ -141,11 +142,12 @@ def eval_structs():
                         continue 
                     
                     ##overlapping struct
-                    if var['RBP offset'] not in gt_funcs[func]:
-                        gt_funcs[func][var['RBP offset']] = []    
-                    
-                    for type in var['type']:
-                        gt_funcs[func][var['RBP offset']].append(type.replace(' ',''))
+                    for offset in var['RBP offset']:
+                        if offset not in gt_funcs[func]:
+                            gt_funcs[func][offset] = []
+
+                        for type in var['type']:
+                            gt_funcs[func][offset].append(type.replace(' ', ''))
               
             for func in gt_funcs:
                 if func not in decomp_funcs:
@@ -220,12 +222,14 @@ def eval_pointers():
                 for var in ground_truth_json[func]['variables']:
                     if not var['is_pointer']:
                         continue
-                    if var['RBP offset'] not in gt_funcs[func]:
-                        gt_funcs[func][var['RBP offset']] = {}
-                        gt_funcs[func][var['RBP offset']]['type'] = []
-                    
-                    for type in var['type']:
-                        gt_funcs[func][var['RBP offset']]['type'].append(type.replace(' ',''))  
+
+                    for offset in var['RBP offset']:
+                        if offset not in gt_funcs[func]:
+                            gt_funcs[func][offset] = {}
+                            gt_funcs[func][offset]['type'] = []
+
+                        for type in var['type']:
+                            gt_funcs[func][offset]['type'].append(type.replace(' ',''))  
 
 
             for func in gt_funcs:
@@ -296,14 +300,15 @@ def var_level_evaluate(var_type_str,exp_size):
                         decomp_funcs[func][var['RBP offset']]['size'].append(var['size'])
 
                 for var in ground_truth_json[func]['variables']:
-                    if var['RBP offset'] not in gt_funcs[func]:
-                        gt_funcs[func][var['RBP offset']] = {}
-                        gt_funcs[func][var['RBP offset']]['type'] = []
-                        gt_funcs[func][var['RBP offset']]['size'] = []
-                    
-                    gt_funcs[func][var['RBP offset']]['size'].append(var['size'])
-                    for type in var['type']:
-                        gt_funcs[func][var['RBP offset']]['type'].append(type.replace(' ',''))  
+                    for offset in var['RBP offset']:
+                        if offset not in gt_funcs[func]:
+                            gt_funcs[func][offset] = {}
+                            gt_funcs[func][offset]['type'] = []
+                            gt_funcs[func][offset]['size'] = []
+
+                        gt_funcs[func][offset]['size'].append(var['size'])
+                        for type in var['type']:
+                            gt_funcs[func][offset]['type'].append(type.replace(' ',''))  
 
 
             for func in gt_funcs:
@@ -465,28 +470,28 @@ def main():
 
     print("="*135)
     
-    # print("Type Level Evaluations\n")
+    print("Type Level Evaluations\n")
     
-    # print("[*] Bool\n")
-    # var_level_evaluate('bool',1)
+    print("[*] Bool\n")
+    var_level_evaluate('bool',1)
     
-    # print("[*] Char\n")
-    # var_level_evaluate('char',1)
+    print("[*] Char\n")
+    var_level_evaluate('char',1)
 
-    # print("[*] Int\n")
-    # var_level_evaluate('int',4)
+    print("[*] Int\n")
+    var_level_evaluate('int',4)
 
-    # print("[*] Long Long\n")
-    # var_level_evaluate('longlong',8)
+    print("[*] Long Long\n")
+    var_level_evaluate('longlong',8)
     
-    # print("[*] Pointers\n")
-    # eval_pointers()
+    print("[*] Pointers\n")
+    eval_pointers()
 
-    # print("[*] Arrays\n")
-    # eval_array()
+    print("[*] Arrays\n")
+    eval_array()
     
-    # print("[*] Structs\n")
-    # eval_structs()
+    print("[*] Structs\n")
+    eval_structs()
     
 
 if __name__ == "__main__":

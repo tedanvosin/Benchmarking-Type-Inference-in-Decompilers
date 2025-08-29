@@ -1,277 +1,23 @@
 {
-  "frc": {
-    "address": "0x402536",
-    "variables": [
-      {
-        "name": "pval",
-        "RBP offset": -24,
-        "type": [
-          "long unsigned int*",
-          "uint64_t*",
-          "long long*",
-          "__uint64_t*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": true,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "low",
-        "RBP offset": -8,
-        "type": [
-          "unsigned int",
-          "uint32_t",
-          "__uint32_t",
-          "int"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": true,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "high",
-        "RBP offset": -4,
-        "type": [
-          "unsigned int",
-          "uint32_t",
-          "__uint32_t",
-          "int"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": true,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      }
-    ]
+  "__assert_fail": {
+    "variables": []
   },
-  "workload_nop": {
-    "address": "0x402569",
-    "variables": [
-      {
-        "name": "size",
-        "RBP offset": -24,
-        "type": [
-          "size_t",
-          "long unsigned int",
-          "long long"
-        ],
-        "size": 8,
-        "is_pointer": false,
-        "is_typedef": true,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "src",
-        "RBP offset": -16,
-        "type": [
-          "char*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "dst",
-        "RBP offset": -8,
-        "type": [
-          "char*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      }
-    ]
-  },
-  "workload_memmove": {
-    "address": "0x402582",
-    "variables": [
-      {
-        "name": "size",
-        "RBP offset": -24,
-        "type": [
-          "size_t",
-          "long unsigned int",
-          "long long"
-        ],
-        "size": 8,
-        "is_pointer": false,
-        "is_typedef": true,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "src",
-        "RBP offset": -16,
-        "type": [
-          "char*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "dst",
-        "RBP offset": -8,
-        "type": [
-          "char*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      }
-    ]
-  },
-  "test_fail": {
-    "address": "0x4025ba",
-    "variables": [
-      {
-        "name": "line",
-        "RBP offset": -28,
-        "type": [
-          "int"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "what",
-        "RBP offset": -24,
-        "type": [
-          "char*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      }
-    ]
-  },
-  "move_to_core": {
-    "address": "0x40267d",
-    "variables": [
-      {
-        "name": "core_i",
-        "RBP offset": -164,
-        "type": [
-          "int"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "__cpu",
-        "RBP offset": -152,
-        "type": [
-          "size_t",
-          "long unsigned int",
-          "long long"
-        ],
-        "size": 8,
-        "is_pointer": false,
-        "is_typedef": true,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "cpus",
-        "RBP offset": -144,
-        "type": [
-          "cpu_set_t"
-        ],
-        "size": 128,
-        "is_pointer": false,
-        "is_typedef": true,
-        "is_array": false,
-        "is_struct": true,
-        "is_union": false,
-        "is_enum": false,
-        "elements": [
-          {
-            "name": "cpus.__bits",
-            "RBP offset": -144,
-            "type": [
-              "__cpu_mask[16]",
-              "long long[16]",
-              "long unsigned int[16]"
-            ],
-            "size": 128,
-            "is_pointer": false,
-            "is_typedef": true,
-            "is_array": true,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false,
-            "array_length": 16,
-            "element_type": [
-              "__cpu_mask",
-              "long unsigned int",
-              "long long"
-            ],
-            "element_size": 8
-          }
-        ]
-      }
-    ]
+  "__errno_location": {
+    "variables": []
   },
   "__measure_counter_hz": {
-    "address": "0x40275a",
     "variables": [
       {
         "name": "s",
-        "RBP offset": -72,
+        "RBP offset": [
+          -72
+        ],
         "type": [
           "__uint64_t",
+          "stamp_t",
           "uint64_t",
           "long unsigned int",
-          "long long",
-          "stamp_t"
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -283,13 +29,15 @@
       },
       {
         "name": "e",
-        "RBP offset": -64,
+        "RBP offset": [
+          -64
+        ],
         "type": [
           "__uint64_t",
+          "stamp_t",
           "uint64_t",
           "long unsigned int",
-          "long long",
-          "stamp_t"
+          "long long"
         ],
         "size": 8,
         "is_pointer": false,
@@ -301,7 +49,9 @@
       },
       {
         "name": "sec",
-        "RBP offset": -56,
+        "RBP offset": [
+          -56
+        ],
         "type": [
           "double"
         ],
@@ -315,7 +65,9 @@
       },
       {
         "name": "tvs",
-        "RBP offset": -48,
+        "RBP offset": [
+          -48
+        ],
         "type": [
           "timeval"
         ],
@@ -325,45 +77,13 @@
         "is_array": false,
         "is_struct": true,
         "is_union": false,
-        "is_enum": false,
-        "elements": [
-          {
-            "name": "tvs.tv_sec",
-            "RBP offset": -48,
-            "type": [
-              "long int",
-              "__time_t",
-              "long long"
-            ],
-            "size": 8,
-            "is_pointer": false,
-            "is_typedef": true,
-            "is_array": false,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false
-          },
-          {
-            "name": "tvs.tv_usec",
-            "RBP offset": -40,
-            "type": [
-              "__suseconds_t",
-              "long int",
-              "long long"
-            ],
-            "size": 8,
-            "is_pointer": false,
-            "is_typedef": true,
-            "is_array": false,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false
-          }
-        ]
+        "is_enum": false
       },
       {
         "name": "tve",
-        "RBP offset": -32,
+        "RBP offset": [
+          -32
+        ],
         "type": [
           "timeval"
         ],
@@ -373,427 +93,20 @@
         "is_array": false,
         "is_struct": true,
         "is_union": false,
-        "is_enum": false,
-        "elements": [
-          {
-            "name": "tve.tv_sec",
-            "RBP offset": -32,
-            "type": [
-              "long int",
-              "__time_t",
-              "long long"
-            ],
-            "size": 8,
-            "is_pointer": false,
-            "is_typedef": true,
-            "is_array": false,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false
-          },
-          {
-            "name": "tve.tv_usec",
-            "RBP offset": -24,
-            "type": [
-              "__suseconds_t",
-              "long int",
-              "long long"
-            ],
-            "size": 8,
-            "is_pointer": false,
-            "is_typedef": true,
-            "is_array": false,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false
-          }
-        ]
-      }
-    ]
-  },
-  "measure_counter_mhz": {
-    "address": "0x40288a",
-    "variables": [
-      {
-        "name": "mprev",
-        "RBP offset": -24,
-        "type": [
-          "__uint64_t",
-          "uint64_t",
-          "long unsigned int",
-          "long long",
-          "cycles_t"
-        ],
-        "size": 8,
-        "is_pointer": false,
-        "is_typedef": true,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "d",
-        "RBP offset": -16,
-        "type": [
-          "__uint64_t",
-          "uint64_t",
-          "long unsigned int",
-          "long long",
-          "cycles_t"
-        ],
-        "size": 8,
-        "is_pointer": false,
-        "is_typedef": true,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "m",
-        "RBP offset": -8,
-        "type": [
-          "__uint64_t",
-          "uint64_t",
-          "long unsigned int",
-          "long long",
-          "cycles_t"
-        ],
-        "size": 8,
-        "is_pointer": false,
-        "is_typedef": true,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
         "is_enum": false
       }
     ]
   },
-  "thread_init": {
-    "address": "0x40290e",
-    "variables": [
-      {
-        "name": "t",
-        "RBP offset": -24,
-        "type": [
-          "thread*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      }
-    ]
-  },
-  "cycles_to_sec": {
-    "address": "0x402a9a",
-    "variables": [
-      {
-        "name": "cycles",
-        "RBP offset": -16,
-        "type": [
-          "long long",
-          "uint64_t",
-          "long unsigned int",
-          "__uint64_t"
-        ],
-        "size": 8,
-        "is_pointer": false,
-        "is_typedef": true,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "t",
-        "RBP offset": -8,
-        "type": [
-          "thread*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      }
-    ]
-  },
-  "insert_bucket": {
-    "address": "0x402b23",
-    "variables": [
-      {
-        "name": "value",
-        "RBP offset": -48,
-        "type": [
-          "__uint64_t",
-          "uint64_t",
-          "long unsigned int",
-          "long long",
-          "stamp_t"
-        ],
-        "size": 8,
-        "is_pointer": false,
-        "is_typedef": true,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "t",
-        "RBP offset": -40,
-        "type": [
-          "thread*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "index",
-        "RBP offset": -32,
-        "type": [
-          "int"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "lat",
-        "RBP offset": -28,
-        "type": [
-          "unsigned int",
-          "int"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "us",
-        "RBP offset": -24,
-        "type": [
-          "double"
-        ],
-        "size": 8,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "line",
-        "RBP offset": -16,
-        "type": [
-          "char*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "extra",
-        "RBP offset": -8,
-        "type": [
-          "long long",
-          "uint64_t",
-          "long unsigned int",
-          "__uint64_t"
-        ],
-        "size": 8,
-        "is_pointer": false,
-        "is_typedef": true,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      }
-    ]
-  },
-  "doit": {
-    "address": "0x402da7",
-    "variables": [
-      {
-        "name": "t",
-        "RBP offset": -40,
-        "type": [
-          "thread*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "ts1",
-        "RBP offset": -32,
-        "type": [
-          "__uint64_t",
-          "uint64_t",
-          "long unsigned int",
-          "long long",
-          "stamp_t"
-        ],
-        "size": 8,
-        "is_pointer": false,
-        "is_typedef": true,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "ts2",
-        "RBP offset": -24,
-        "type": [
-          "__uint64_t",
-          "uint64_t",
-          "long unsigned int",
-          "long long",
-          "stamp_t"
-        ],
-        "size": 8,
-        "is_pointer": false,
-        "is_typedef": true,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "workload_fn",
-        "RBP offset": -16,
-        "type": [
-          "FUNCTION*",
-          "workload_fn"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": true,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      }
-    ]
-  },
-  "set_fifo_prio": {
-    "address": "0x402e5e",
-    "variables": [
-      {
-        "name": "prio",
-        "RBP offset": -20,
-        "type": [
-          "int"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "param",
-        "RBP offset": -12,
-        "type": [
-          "sched_param"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": true,
-        "is_union": false,
-        "is_enum": false,
-        "elements": [
-          {
-            "name": "param.sched_priority",
-            "RBP offset": -12,
-            "type": [
-              "int"
-            ],
-            "size": 4,
-            "is_pointer": false,
-            "is_typedef": false,
-            "is_array": false,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false
-          }
-        ]
-      }
-    ]
-  },
-  "thread_main": {
-    "address": "0x402ec6",
-    "variables": [
-      {
-        "name": "arg",
-        "RBP offset": -24,
-        "type": [
-          "void*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "t",
-        "RBP offset": -8,
-        "type": [
-          "thread*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      }
-    ]
+  "alarm": {
+    "variables": []
   },
   "bucket_to_lat": {
-    "address": "0x402fda",
     "variables": [
       {
         "name": "bucket",
-        "RBP offset": -4,
+        "RBP offset": [
+          -4
+        ],
         "type": [
           "int"
         ],
@@ -808,11 +121,12 @@
     ]
   },
   "calculate": {
-    "address": "0x40304f",
     "variables": [
       {
         "name": "t",
-        "RBP offset": -40,
+        "RBP offset": [
+          -40
+        ],
         "type": [
           "thread*"
         ],
@@ -826,7 +140,9 @@
       },
       {
         "name": "j",
-        "RBP offset": -24,
+        "RBP offset": [
+          -24
+        ],
         "type": [
           "int"
         ],
@@ -840,10 +156,12 @@
       },
       {
         "name": "i",
-        "RBP offset": -20,
+        "RBP offset": [
+          -20
+        ],
         "type": [
-          "unsigned int",
-          "int"
+          "int",
+          "unsigned int"
         ],
         "size": 4,
         "is_pointer": false,
@@ -855,7 +173,9 @@
       },
       {
         "name": "sum",
-        "RBP offset": -16,
+        "RBP offset": [
+          -16
+        ],
         "type": [
           "double"
         ],
@@ -869,12 +189,14 @@
       },
       {
         "name": "count",
-        "RBP offset": -8,
+        "RBP offset": [
+          -8
+        ],
         "type": [
           "long long",
           "uint64_t",
-          "long unsigned int",
-          "__uint64_t"
+          "__uint64_t",
+          "long unsigned int"
         ],
         "size": 8,
         "is_pointer": false,
@@ -886,26 +208,48 @@
       }
     ]
   },
-  "write_summary": {
-    "address": "0x403207",
+  "calloc": {
+    "variables": []
+  },
+  "check_privs": {
     "variables": [
       {
-        "name": "t",
-        "RBP offset": -120,
-        "type": [
-          "thread*"
+        "name": "param",
+        "RBP offset": [
+          -20
         ],
-        "size": 8,
-        "is_pointer": true,
+        "type": [
+          "sched_param"
+        ],
+        "size": 4,
+        "is_pointer": false,
         "is_typedef": false,
         "is_array": false,
-        "is_struct": false,
+        "is_struct": true,
         "is_union": false,
         "is_enum": false
       },
       {
-        "name": "j",
-        "RBP offset": -104,
+        "name": "old_param",
+        "RBP offset": [
+          -16
+        ],
+        "type": [
+          "sched_param"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": true,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "policy",
+        "RBP offset": [
+          -12
+        ],
         "type": [
           "int"
         ],
@@ -916,98 +260,30 @@
         "is_struct": false,
         "is_union": false,
         "is_enum": false
-      },
-      {
-        "name": "print_dotdotdot",
-        "RBP offset": -100,
-        "type": [
-          "int"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "i",
-        "RBP offset": -96,
-        "type": [
-          "long unsigned int",
-          "long long"
-        ],
-        "size": 8,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "k",
-        "RBP offset": -88,
-        "type": [
-          "long unsigned int",
-          "long long"
-        ],
-        "size": 8,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "bucket_name",
-        "RBP offset": -80,
-        "type": [
-          "char[64]"
-        ],
-        "size": 64,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": true,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false,
-        "array_length": 64,
-        "element_type": [
-          "char"
-        ],
-        "element_size": 1
       }
     ]
   },
-  "write_summary_json": {
-    "address": "0x40382f",
+  "close": {
+    "variables": []
+  },
+  "close_tracemark_fd": {
+    "variables": []
+  },
+  "cycles_to_sec": {
     "variables": [
       {
-        "name": "data",
-        "RBP offset": -64,
+        "name": "cycles",
+        "RBP offset": [
+          -16
+        ],
         "type": [
-          "void*"
+          "long long",
+          "uint64_t",
+          "__uint64_t",
+          "long unsigned int"
         ],
         "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "f",
-        "RBP offset": -56,
-        "type": [
-          "_IO_FILE*",
-          "FILE*"
-        ],
-        "size": 8,
-        "is_pointer": true,
+        "is_pointer": false,
         "is_typedef": true,
         "is_array": false,
         "is_struct": false,
@@ -1015,51 +291,10 @@
         "is_enum": false
       },
       {
-        "name": "j",
-        "RBP offset": -40,
-        "type": [
-          "int"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "comma",
-        "RBP offset": -36,
-        "type": [
-          "int"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "i",
-        "RBP offset": -32,
-        "type": [
-          "long unsigned int",
-          "long long"
-        ],
-        "size": 8,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
         "name": "t",
-        "RBP offset": -24,
+        "RBP offset": [
+          -8
+        ],
         "type": [
           "thread*"
         ],
@@ -1073,113 +308,13 @@
       }
     ]
   },
-  "run_expt": {
-    "address": "0x403bd2",
+  "debug": {
     "variables": [
       {
-        "name": "preheat",
-        "RBP offset": -32,
-        "type": [
-          "_Bool",
-          "bool"
+        "name": "fmt",
+        "RBP offset": [
+          -224
         ],
-        "size": 1,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "runtime_secs",
-        "RBP offset": -28,
-        "type": [
-          "int"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "threads",
-        "RBP offset": -24,
-        "type": [
-          "thread*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "i",
-        "RBP offset": -8,
-        "type": [
-          "long unsigned int",
-          "long long"
-        ],
-        "size": 8,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      }
-    ]
-  },
-  "handle_alarm": {
-    "address": "0x403d37",
-    "variables": [
-      {
-        "name": "code",
-        "RBP offset": -4,
-        "type": [
-          "int"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      }
-    ]
-  },
-  "usage": {
-    "address": "0x403d4d",
-    "variables": [
-      {
-        "name": "error",
-        "RBP offset": -4,
-        "type": [
-          "int"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      }
-    ]
-  },
-  "workload_select": {
-    "address": "0x403d6c",
-    "variables": [
-      {
-        "name": "name",
-        "RBP offset": -24,
         "type": [
           "char*"
         ],
@@ -1192,8 +327,10 @@
         "is_enum": false
       },
       {
-        "name": "i",
-        "RBP offset": -4,
+        "name": "enable",
+        "RBP offset": [
+          -212
+        ],
         "type": [
           "int"
         ],
@@ -1204,17 +341,48 @@
         "is_struct": false,
         "is_union": false,
         "is_enum": false
+      },
+      {
+        "name": "ap",
+        "RBP offset": [
+          -208
+        ],
+        "type": [
+          "__gnuc_va_list",
+          "va_list",
+          "__builtin_va_list",
+          "__va_list_tag[1]"
+        ],
+        "size": 24,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": true,
+        "is_struct": true,
+        "is_union": false,
+        "is_enum": false,
+        "array_length": 1,
+        "element_type": [
+          "__va_list_tag"
+        ],
+        "element_size": 24
       }
     ]
   },
-  "parse_options": {
-    "address": "0x403df5",
+  "debugfs_prepare": {
+    "variables": []
+  },
+  "disable_trace_mark": {
+    "variables": []
+  },
+  "doit": {
     "variables": [
       {
-        "name": "argv",
-        "RBP offset": -48,
+        "name": "t",
+        "RBP offset": [
+          -40
+        ],
         "type": [
-          "char**"
+          "thread*"
         ],
         "size": 8,
         "is_pointer": true,
@@ -1225,71 +393,57 @@
         "is_enum": false
       },
       {
-        "name": "argc",
-        "RBP offset": -36,
-        "type": [
-          "int"
+        "name": "ts1",
+        "RBP offset": [
+          -32
         ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "option_index",
-        "RBP offset": -28,
         "type": [
-          "int"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "i",
-        "RBP offset": -24,
-        "type": [
-          "int"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "c",
-        "RBP offset": -20,
-        "type": [
-          "int"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "ncores",
-        "RBP offset": -16,
-        "type": [
-          "long int",
+          "__uint64_t",
+          "stamp_t",
+          "uint64_t",
+          "long unsigned int",
           "long long"
         ],
         "size": 8,
         "is_pointer": false,
-        "is_typedef": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "ts2",
+        "RBP offset": [
+          -24
+        ],
+        "type": [
+          "__uint64_t",
+          "stamp_t",
+          "uint64_t",
+          "long unsigned int",
+          "long long"
+        ],
+        "size": 8,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "workload_fn",
+        "RBP offset": [
+          -16
+        ],
+        "type": [
+          "workload_fn",
+          "FUNCTION*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": true,
         "is_array": false,
         "is_struct": false,
         "is_union": false,
@@ -1298,548 +452,18 @@
     ]
   },
   "dump_globals": {
-    "address": "0x4042d4",
     "variables": []
   },
-  "record_bias": {
-    "address": "0x4043f3",
-    "variables": [
-      {
-        "name": "t",
-        "RBP offset": -24,
-        "type": [
-          "thread*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "i",
-        "RBP offset": -16,
-        "type": [
-          "long unsigned int",
-          "long long"
-        ],
-        "size": 8,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "bias",
-        "RBP offset": -8,
-        "type": [
-          "long long",
-          "uint64_t",
-          "long unsigned int",
-          "__uint64_t"
-        ],
-        "size": 8,
-        "is_pointer": false,
-        "is_typedef": true,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      }
-    ]
-  },
-  "main": {
-    "address": "0x4044f4",
-    "variables": [
-      {
-        "name": "argv",
-        "RBP offset": -48,
-        "type": [
-          "char**"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "argc",
-        "RBP offset": -36,
-        "type": [
-          "int"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "n_cores",
-        "RBP offset": -28,
-        "type": [
-          "int"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "i",
-        "RBP offset": -24,
-        "type": [
-          "long unsigned int",
-          "long long"
-        ],
-        "size": 8,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "cpu_set",
-        "RBP offset": -16,
-        "type": [
-          "bitmask*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "threads",
-        "RBP offset": -8,
-        "type": [
-          "thread*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      }
-    ]
-  },
-  "err_exit": {
-    "address": "0x40488a",
-    "variables": [
-      {
-        "name": "fmt",
-        "RBP offset": -224,
-        "type": [
-          "char*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "err",
-        "RBP offset": -212,
-        "type": [
-          "int"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "ap",
-        "RBP offset": -208,
-        "type": [
-          "va_list",
-          "__va_list_tag[1]",
-          "__gnuc_va_list",
-          "__builtin_va_list"
-        ],
-        "size": 24,
-        "is_pointer": false,
-        "is_typedef": true,
-        "is_array": true,
-        "is_struct": true,
-        "is_union": false,
-        "is_enum": false,
-        "array_length": 1,
-        "element_type": [
-          "__va_list_tag"
-        ],
-        "element_size": 24,
-        "elements": []
-      }
-    ]
-  },
-  "err_msg": {
-    "address": "0x40494c",
-    "variables": [
-      {
-        "name": "fmt",
-        "RBP offset": -216,
-        "type": [
-          "char*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "ap",
-        "RBP offset": -208,
-        "type": [
-          "va_list",
-          "__va_list_tag[1]",
-          "__gnuc_va_list",
-          "__builtin_va_list"
-        ],
-        "size": 24,
-        "is_pointer": false,
-        "is_typedef": true,
-        "is_array": true,
-        "is_struct": true,
-        "is_union": false,
-        "is_enum": false,
-        "array_length": 1,
-        "element_type": [
-          "__va_list_tag"
-        ],
-        "element_size": 24,
-        "elements": []
-      }
-    ]
-  },
-  "err_msg_n": {
-    "address": "0x404a29",
-    "variables": [
-      {
-        "name": "fmt",
-        "RBP offset": -224,
-        "type": [
-          "char*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "err",
-        "RBP offset": -212,
-        "type": [
-          "int"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "ap",
-        "RBP offset": -208,
-        "type": [
-          "va_list",
-          "__va_list_tag[1]",
-          "__gnuc_va_list",
-          "__builtin_va_list"
-        ],
-        "size": 24,
-        "is_pointer": false,
-        "is_typedef": true,
-        "is_array": true,
-        "is_struct": true,
-        "is_union": false,
-        "is_enum": false,
-        "array_length": 1,
-        "element_type": [
-          "__va_list_tag"
-        ],
-        "element_size": 24,
-        "elements": []
-      }
-    ]
-  },
-  "err_quit": {
-    "address": "0x404b08",
-    "variables": [
-      {
-        "name": "fmt",
-        "RBP offset": -216,
-        "type": [
-          "char*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "ap",
-        "RBP offset": -208,
-        "type": [
-          "va_list",
-          "__va_list_tag[1]",
-          "__gnuc_va_list",
-          "__builtin_va_list"
-        ],
-        "size": 24,
-        "is_pointer": false,
-        "is_typedef": true,
-        "is_array": true,
-        "is_struct": true,
-        "is_union": false,
-        "is_enum": false,
-        "array_length": 1,
-        "element_type": [
-          "__va_list_tag"
-        ],
-        "element_size": 24,
-        "elements": []
-      }
-    ]
-  },
-  "debug": {
-    "address": "0x404bc5",
-    "variables": [
-      {
-        "name": "fmt",
-        "RBP offset": -224,
-        "type": [
-          "char*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "enable",
-        "RBP offset": -212,
-        "type": [
-          "int"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "ap",
-        "RBP offset": -208,
-        "type": [
-          "va_list",
-          "__va_list_tag[1]",
-          "__gnuc_va_list",
-          "__builtin_va_list"
-        ],
-        "size": 24,
-        "is_pointer": false,
-        "is_typedef": true,
-        "is_array": true,
-        "is_struct": true,
-        "is_union": false,
-        "is_enum": false,
-        "array_length": 1,
-        "element_type": [
-          "__va_list_tag"
-        ],
-        "element_size": 24,
-        "elements": []
-      }
-    ]
-  },
-  "info": {
-    "address": "0x404cc8",
-    "variables": [
-      {
-        "name": "fmt",
-        "RBP offset": -224,
-        "type": [
-          "char*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "enable",
-        "RBP offset": -212,
-        "type": [
-          "int"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "ap",
-        "RBP offset": -208,
-        "type": [
-          "va_list",
-          "__va_list_tag[1]",
-          "__gnuc_va_list",
-          "__builtin_va_list"
-        ],
-        "size": 24,
-        "is_pointer": false,
-        "is_typedef": true,
-        "is_array": true,
-        "is_struct": true,
-        "is_union": false,
-        "is_enum": false,
-        "array_length": 1,
-        "element_type": [
-          "__va_list_tag"
-        ],
-        "element_size": 24,
-        "elements": []
-      }
-    ]
-  },
-  "warn": {
-    "address": "0x404dcb",
-    "variables": [
-      {
-        "name": "fmt",
-        "RBP offset": -216,
-        "type": [
-          "char*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "ap",
-        "RBP offset": -208,
-        "type": [
-          "va_list",
-          "__va_list_tag[1]",
-          "__gnuc_va_list",
-          "__builtin_va_list"
-        ],
-        "size": 24,
-        "is_pointer": false,
-        "is_typedef": true,
-        "is_array": true,
-        "is_struct": true,
-        "is_union": false,
-        "is_enum": false,
-        "array_length": 1,
-        "element_type": [
-          "__va_list_tag"
-        ],
-        "element_size": 24,
-        "elements": []
-      }
-    ]
-  },
-  "fatal": {
-    "address": "0x404ec6",
-    "variables": [
-      {
-        "name": "fmt",
-        "RBP offset": -216,
-        "type": [
-          "char*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "ap",
-        "RBP offset": -208,
-        "type": [
-          "va_list",
-          "__va_list_tag[1]",
-          "__gnuc_va_list",
-          "__builtin_va_list"
-        ],
-        "size": 24,
-        "is_pointer": false,
-        "is_typedef": true,
-        "is_array": true,
-        "is_struct": true,
-        "is_union": false,
-        "is_enum": false,
-        "array_length": 1,
-        "element_type": [
-          "__va_list_tag"
-        ],
-        "element_size": 24,
-        "elements": []
-      }
-    ]
+  "enable_trace_mark": {
+    "variables": []
   },
   "err_doit": {
-    "address": "0x404fa1",
     "variables": [
       {
         "name": "ap",
-        "RBP offset": -24,
+        "RBP offset": [
+          -24
+        ],
         "type": [
           "__va_list_tag*"
         ],
@@ -1853,7 +477,9 @@
       },
       {
         "name": "fmt",
-        "RBP offset": -16,
+        "RBP offset": [
+          -16
+        ],
         "type": [
           "char*"
         ],
@@ -1867,7 +493,9 @@
       },
       {
         "name": "err",
-        "RBP offset": -4,
+        "RBP offset": [
+          -4
+        ],
         "type": [
           "int"
         ],
@@ -1881,436 +509,60 @@
       }
     ]
   },
-  "get_debugfileprefix": {
-    "address": "0x405008",
+  "err_exit": {
+    "variables": []
+  },
+  "err_msg": {
     "variables": [
       {
-        "name": "found",
-        "RBP offset": -272,
-        "type": [
-          "int"
+        "name": "fmt",
+        "RBP offset": [
+          -216
         ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "size",
-        "RBP offset": -268,
         "type": [
-          "int"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "fp",
-        "RBP offset": -264,
-        "type": [
-          "_IO_FILE*",
-          "FILE*"
+          "char*"
         ],
         "size": 8,
         "is_pointer": true,
-        "is_typedef": true,
+        "is_typedef": false,
         "is_array": false,
         "is_struct": false,
         "is_union": false,
         "is_enum": false
       },
       {
-        "name": "s",
-        "RBP offset": -256,
-        "type": [
-          "stat"
+        "name": "ap",
+        "RBP offset": [
+          -208
         ],
-        "size": 144,
+        "type": [
+          "__gnuc_va_list",
+          "va_list",
+          "__builtin_va_list",
+          "__va_list_tag[1]"
+        ],
+        "size": 24,
         "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
+        "is_typedef": true,
+        "is_array": true,
         "is_struct": true,
         "is_union": false,
         "is_enum": false,
-        "elements": [
-          {
-            "name": "s.st_dev",
-            "RBP offset": -256,
-            "type": [
-              "__dev_t",
-              "long unsigned int",
-              "long long"
-            ],
-            "size": 8,
-            "is_pointer": false,
-            "is_typedef": true,
-            "is_array": false,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false
-          },
-          {
-            "name": "s.st_ino",
-            "RBP offset": -248,
-            "type": [
-              "__ino_t",
-              "long unsigned int",
-              "long long"
-            ],
-            "size": 8,
-            "is_pointer": false,
-            "is_typedef": true,
-            "is_array": false,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false
-          },
-          {
-            "name": "s.st_nlink",
-            "RBP offset": -240,
-            "type": [
-              "__nlink_t",
-              "long unsigned int",
-              "long long"
-            ],
-            "size": 8,
-            "is_pointer": false,
-            "is_typedef": true,
-            "is_array": false,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false
-          },
-          {
-            "name": "s.st_mode",
-            "RBP offset": -232,
-            "type": [
-              "unsigned int",
-              "__mode_t",
-              "int"
-            ],
-            "size": 4,
-            "is_pointer": false,
-            "is_typedef": true,
-            "is_array": false,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false
-          },
-          {
-            "name": "s.st_uid",
-            "RBP offset": -228,
-            "type": [
-              "unsigned int",
-              "__uid_t",
-              "int"
-            ],
-            "size": 4,
-            "is_pointer": false,
-            "is_typedef": true,
-            "is_array": false,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false
-          },
-          {
-            "name": "s.st_gid",
-            "RBP offset": -224,
-            "type": [
-              "int",
-              "unsigned int",
-              "__gid_t"
-            ],
-            "size": 4,
-            "is_pointer": false,
-            "is_typedef": true,
-            "is_array": false,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false
-          },
-          {
-            "name": "s.__pad0",
-            "RBP offset": -220,
-            "type": [
-              "int"
-            ],
-            "size": 4,
-            "is_pointer": false,
-            "is_typedef": false,
-            "is_array": false,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false
-          },
-          {
-            "name": "s.st_rdev",
-            "RBP offset": -216,
-            "type": [
-              "__dev_t",
-              "long unsigned int",
-              "long long"
-            ],
-            "size": 8,
-            "is_pointer": false,
-            "is_typedef": true,
-            "is_array": false,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false
-          },
-          {
-            "name": "s.st_size",
-            "RBP offset": -208,
-            "type": [
-              "long int",
-              "__off_t",
-              "long long"
-            ],
-            "size": 8,
-            "is_pointer": false,
-            "is_typedef": true,
-            "is_array": false,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false
-          },
-          {
-            "name": "s.st_blksize",
-            "RBP offset": -200,
-            "type": [
-              "long int",
-              "__blksize_t",
-              "long long"
-            ],
-            "size": 8,
-            "is_pointer": false,
-            "is_typedef": true,
-            "is_array": false,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false
-          },
-          {
-            "name": "s.st_blocks",
-            "RBP offset": -192,
-            "type": [
-              "long int",
-              "__blkcnt_t",
-              "long long"
-            ],
-            "size": 8,
-            "is_pointer": false,
-            "is_typedef": true,
-            "is_array": false,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false
-          },
-          {
-            "name": "s.st_atim",
-            "RBP offset": -184,
-            "type": [
-              "timespec"
-            ],
-            "size": 16,
-            "is_pointer": false,
-            "is_typedef": false,
-            "is_array": false,
-            "is_struct": true,
-            "is_union": false,
-            "is_enum": false,
-            "elements": [
-              {
-                "name": "s.st_atim.tv_sec",
-                "RBP offset": -184,
-                "type": [
-                  "long int",
-                  "__time_t",
-                  "long long"
-                ],
-                "size": 8,
-                "is_pointer": false,
-                "is_typedef": true,
-                "is_array": false,
-                "is_struct": false,
-                "is_union": false,
-                "is_enum": false
-              },
-              {
-                "name": "s.st_atim.tv_nsec",
-                "RBP offset": -176,
-                "type": [
-                  "__syscall_slong_t",
-                  "long int",
-                  "long long"
-                ],
-                "size": 8,
-                "is_pointer": false,
-                "is_typedef": true,
-                "is_array": false,
-                "is_struct": false,
-                "is_union": false,
-                "is_enum": false
-              }
-            ]
-          },
-          {
-            "name": "s.st_mtim",
-            "RBP offset": -168,
-            "type": [
-              "timespec"
-            ],
-            "size": 16,
-            "is_pointer": false,
-            "is_typedef": false,
-            "is_array": false,
-            "is_struct": true,
-            "is_union": false,
-            "is_enum": false,
-            "elements": [
-              {
-                "name": "s.st_mtim.tv_sec",
-                "RBP offset": -168,
-                "type": [
-                  "long int",
-                  "__time_t",
-                  "long long"
-                ],
-                "size": 8,
-                "is_pointer": false,
-                "is_typedef": true,
-                "is_array": false,
-                "is_struct": false,
-                "is_union": false,
-                "is_enum": false
-              },
-              {
-                "name": "s.st_mtim.tv_nsec",
-                "RBP offset": -160,
-                "type": [
-                  "__syscall_slong_t",
-                  "long int",
-                  "long long"
-                ],
-                "size": 8,
-                "is_pointer": false,
-                "is_typedef": true,
-                "is_array": false,
-                "is_struct": false,
-                "is_union": false,
-                "is_enum": false
-              }
-            ]
-          },
-          {
-            "name": "s.st_ctim",
-            "RBP offset": -152,
-            "type": [
-              "timespec"
-            ],
-            "size": 16,
-            "is_pointer": false,
-            "is_typedef": false,
-            "is_array": false,
-            "is_struct": true,
-            "is_union": false,
-            "is_enum": false,
-            "elements": [
-              {
-                "name": "s.st_ctim.tv_sec",
-                "RBP offset": -152,
-                "type": [
-                  "long int",
-                  "__time_t",
-                  "long long"
-                ],
-                "size": 8,
-                "is_pointer": false,
-                "is_typedef": true,
-                "is_array": false,
-                "is_struct": false,
-                "is_union": false,
-                "is_enum": false
-              },
-              {
-                "name": "s.st_ctim.tv_nsec",
-                "RBP offset": -144,
-                "type": [
-                  "__syscall_slong_t",
-                  "long int",
-                  "long long"
-                ],
-                "size": 8,
-                "is_pointer": false,
-                "is_typedef": true,
-                "is_array": false,
-                "is_struct": false,
-                "is_union": false,
-                "is_enum": false
-              }
-            ]
-          },
-          {
-            "name": "s.__glibc_reserved",
-            "RBP offset": -136,
-            "type": [
-              "__syscall_slong_t[3]",
-              "long long[3]",
-              "long int[3]"
-            ],
-            "size": 24,
-            "is_pointer": false,
-            "is_typedef": true,
-            "is_array": true,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false,
-            "array_length": 3,
-            "element_type": [
-              "__syscall_slong_t",
-              "long int",
-              "long long"
-            ],
-            "element_size": 8
-          }
-        ]
-      },
-      {
-        "name": "type",
-        "RBP offset": -112,
-        "type": [
-          "char[100]"
-        ],
-        "size": 100,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": true,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false,
-        "array_length": 100,
+        "array_length": 1,
         "element_type": [
-          "char"
+          "__va_list_tag"
         ],
-        "element_size": 1
+        "element_size": 24
       }
     ]
   },
-  "mount_debugfs": {
-    "address": "0x405221",
+  "err_msg_n": {
     "variables": [
       {
-        "name": "path",
-        "RBP offset": -312,
+        "name": "fmt",
+        "RBP offset": [
+          -224
+        ],
         "type": [
           "char*"
         ],
@@ -2323,8 +575,10 @@
         "is_enum": false
       },
       {
-        "name": "ret",
-        "RBP offset": -292,
+        "name": "err",
+        "RBP offset": [
+          -212
+        ],
         "type": [
           "int"
         ],
@@ -2337,8 +591,38 @@
         "is_enum": false
       },
       {
-        "name": "mountpoint",
-        "RBP offset": -288,
+        "name": "ap",
+        "RBP offset": [
+          -208
+        ],
+        "type": [
+          "__gnuc_va_list",
+          "va_list",
+          "__builtin_va_list",
+          "__va_list_tag[1]"
+        ],
+        "size": 24,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": true,
+        "is_struct": true,
+        "is_union": false,
+        "is_enum": false,
+        "array_length": 1,
+        "element_type": [
+          "__va_list_tag"
+        ],
+        "element_size": 24
+      }
+    ]
+  },
+  "err_quit": {
+    "variables": [
+      {
+        "name": "fmt",
+        "RBP offset": [
+          -216
+        ],
         "type": [
           "char*"
         ],
@@ -2351,8 +635,38 @@
         "is_enum": false
       },
       {
-        "name": "prefix",
-        "RBP offset": -280,
+        "name": "ap",
+        "RBP offset": [
+          -208
+        ],
+        "type": [
+          "__gnuc_va_list",
+          "va_list",
+          "__builtin_va_list",
+          "__va_list_tag[1]"
+        ],
+        "size": 24,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": true,
+        "is_struct": true,
+        "is_union": false,
+        "is_enum": false,
+        "array_length": 1,
+        "element_type": [
+          "__va_list_tag"
+        ],
+        "element_size": 24
+      }
+    ]
+  },
+  "event_disable": {
+    "variables": [
+      {
+        "name": "event",
+        "RBP offset": [
+          -280
+        ],
         "type": [
           "char*"
         ],
@@ -2365,8 +679,10 @@
         "is_enum": false
       },
       {
-        "name": "cmd",
-        "RBP offset": -272,
+        "name": "path",
+        "RBP offset": [
+          -272
+        ],
         "type": [
           "char[256]"
         ],
@@ -2385,210 +701,16 @@
       }
     ]
   },
-  "get_tracers": {
-    "address": "0x405340",
-    "variables": [
-      {
-        "name": "list",
-        "RBP offset": -1096,
-        "type": [
-          "char***"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "tmpsz",
-        "RBP offset": -1080,
-        "type": [
-          "int"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "ret",
-        "RBP offset": -1076,
-        "type": [
-          "int"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "tmpbuf",
-        "RBP offset": -1072,
-        "type": [
-          "char*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "ptr",
-        "RBP offset": -1064,
-        "type": [
-          "char*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "prefix",
-        "RBP offset": -1056,
-        "type": [
-          "char*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "fp",
-        "RBP offset": -1048,
-        "type": [
-          "_IO_FILE*",
-          "FILE*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": true,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "buffer",
-        "RBP offset": -1040,
-        "type": [
-          "char[1024]"
-        ],
-        "size": 1024,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": true,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false,
-        "array_length": 1024,
-        "element_type": [
-          "char"
-        ],
-        "element_size": 1
-      }
-    ]
+  "event_disable_all": {
+    "variables": []
   },
-  "valid_tracer": {
-    "address": "0x40566c",
+  "event_enable": {
     "variables": [
-      {
-        "name": "tracername",
-        "RBP offset": -40,
-        "type": [
-          "char*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "i",
-        "RBP offset": -24,
-        "type": [
-          "int"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "ntracers",
-        "RBP offset": -20,
-        "type": [
-          "int"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "list",
-        "RBP offset": -16,
-        "type": [
-          "char**"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      }
-    ]
-  },
-  "setevent": {
-    "address": "0x40572f",
-    "variables": [
-      {
-        "name": "val",
-        "RBP offset": -304,
-        "type": [
-          "char*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
       {
         "name": "event",
-        "RBP offset": -296,
+        "RBP offset": [
+          -280
+        ],
         "type": [
           "char*"
         ],
@@ -2601,50 +723,10 @@
         "is_enum": false
       },
       {
-        "name": "fd",
-        "RBP offset": -288,
-        "type": [
-          "int"
+        "name": "path",
+        "RBP offset": [
+          -272
         ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "ret",
-        "RBP offset": -284,
-        "type": [
-          "int"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "prefix",
-        "RBP offset": -280,
-        "type": [
-          "char*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "buffer",
-        "RBP offset": -272,
         "type": [
           "char[256]"
         ],
@@ -2664,267 +746,34 @@
     ]
   },
   "event_enable_all": {
-    "address": "0x40586e",
     "variables": []
   },
-  "event_disable_all": {
-    "address": "0x405887",
+  "exit": {
     "variables": []
   },
-  "event_enable": {
-    "address": "0x4058a0",
-    "variables": [
-      {
-        "name": "event",
-        "RBP offset": -280,
-        "type": [
-          "char*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "path",
-        "RBP offset": -272,
-        "type": [
-          "char[256]"
-        ],
-        "size": 256,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": true,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false,
-        "array_length": 256,
-        "element_type": [
-          "char"
-        ],
-        "element_size": 1
-      }
-    ]
-  },
-  "event_disable": {
-    "address": "0x405911",
-    "variables": [
-      {
-        "name": "event",
-        "RBP offset": -280,
-        "type": [
-          "char*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "path",
-        "RBP offset": -272,
-        "type": [
-          "char[256]"
-        ],
-        "size": 256,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": true,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false,
-        "array_length": 256,
-        "element_type": [
-          "char"
-        ],
-        "element_size": 1
-      }
-    ]
-  },
-  "check_privs": {
-    "address": "0x405982",
-    "variables": [
-      {
-        "name": "param",
-        "RBP offset": -20,
-        "type": [
-          "sched_param"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": true,
-        "is_union": false,
-        "is_enum": false,
-        "elements": [
-          {
-            "name": "param.sched_priority",
-            "RBP offset": -20,
-            "type": [
-              "int"
-            ],
-            "size": 4,
-            "is_pointer": false,
-            "is_typedef": false,
-            "is_array": false,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false
-          }
-        ]
-      },
-      {
-        "name": "old_param",
-        "RBP offset": -16,
-        "type": [
-          "sched_param"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": true,
-        "is_union": false,
-        "is_enum": false,
-        "elements": [
-          {
-            "name": "old_param.sched_priority",
-            "RBP offset": -16,
-            "type": [
-              "int"
-            ],
-            "size": 4,
-            "is_pointer": false,
-            "is_typedef": false,
-            "is_array": false,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false
-          }
-        ]
-      },
-      {
-        "name": "policy",
-        "RBP offset": -12,
-        "type": [
-          "int"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      }
-    ]
-  },
-  "policy_to_string": {
-    "address": "0x405a91",
-    "variables": [
-      {
-        "name": "policy",
-        "RBP offset": -4,
-        "type": [
-          "int"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      }
-    ]
-  },
-  "string_to_policy": {
-    "address": "0x405ade",
-    "variables": [
-      {
-        "name": "str",
-        "RBP offset": -8,
-        "type": [
-          "char*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      }
-    ]
-  },
-  "gettid": {
-    "address": "0x405ba0",
+  "fatal": {
     "variables": []
   },
-  "parse_time_string": {
-    "address": "0x405bb7",
-    "variables": [
-      {
-        "name": "val",
-        "RBP offset": -40,
-        "type": [
-          "char*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "t",
-        "RBP offset": -20,
-        "type": [
-          "int"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "end",
-        "RBP offset": -16,
-        "type": [
-          "char*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      }
-    ]
+  "fclose": {
+    "variables": []
   },
-  "parse_mem_string": {
-    "address": "0x405caa",
+  "fopen": {
+    "variables": []
+  },
+  "fprintf": {
+    "variables": []
+  },
+  "frc": {
     "variables": [
       {
-        "name": "val",
-        "RBP offset": -48,
+        "name": "pval",
+        "RBP offset": [
+          -24
+        ],
         "type": [
+          "long long*",
           "long unsigned int*",
           "uint64_t*",
-          "long long*",
           "__uint64_t*"
         ],
         "size": 8,
@@ -2936,581 +785,17 @@
         "is_enum": false
       },
       {
-        "name": "str",
-        "RBP offset": -40,
-        "type": [
-          "char*"
+        "name": "low",
+        "RBP offset": [
+          -8
         ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "v",
-        "RBP offset": -20,
         "type": [
-          "int"
+          "unsigned int",
+          "uint32_t",
+          "int",
+          "__uint32_t"
         ],
         "size": 4,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "endptr",
-        "RBP offset": -16,
-        "type": [
-          "char*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      }
-    ]
-  },
-  "open_tracemark_fd": {
-    "address": "0x405d58",
-    "variables": [
-      {
-        "name": "path",
-        "RBP offset": -272,
-        "type": [
-          "char[256]"
-        ],
-        "size": 256,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": true,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false,
-        "array_length": 256,
-        "element_type": [
-          "char"
-        ],
-        "element_size": 1
-      }
-    ]
-  },
-  "close_tracemark_fd": {
-    "address": "0x405e76",
-    "variables": []
-  },
-  "trace_file_exists": {
-    "address": "0x405eaf",
-    "variables": [
-      {
-        "name": "name",
-        "RBP offset": -440,
-        "type": [
-          "char*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "tracing_prefix",
-        "RBP offset": -424,
-        "type": [
-          "char*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "sbuf",
-        "RBP offset": -416,
-        "type": [
-          "stat"
-        ],
-        "size": 144,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": true,
-        "is_union": false,
-        "is_enum": false,
-        "elements": [
-          {
-            "name": "sbuf.st_dev",
-            "RBP offset": -416,
-            "type": [
-              "__dev_t",
-              "long unsigned int",
-              "long long"
-            ],
-            "size": 8,
-            "is_pointer": false,
-            "is_typedef": true,
-            "is_array": false,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false
-          },
-          {
-            "name": "sbuf.st_ino",
-            "RBP offset": -408,
-            "type": [
-              "__ino_t",
-              "long unsigned int",
-              "long long"
-            ],
-            "size": 8,
-            "is_pointer": false,
-            "is_typedef": true,
-            "is_array": false,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false
-          },
-          {
-            "name": "sbuf.st_nlink",
-            "RBP offset": -400,
-            "type": [
-              "__nlink_t",
-              "long unsigned int",
-              "long long"
-            ],
-            "size": 8,
-            "is_pointer": false,
-            "is_typedef": true,
-            "is_array": false,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false
-          },
-          {
-            "name": "sbuf.st_mode",
-            "RBP offset": -392,
-            "type": [
-              "unsigned int",
-              "__mode_t",
-              "int"
-            ],
-            "size": 4,
-            "is_pointer": false,
-            "is_typedef": true,
-            "is_array": false,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false
-          },
-          {
-            "name": "sbuf.st_uid",
-            "RBP offset": -388,
-            "type": [
-              "unsigned int",
-              "__uid_t",
-              "int"
-            ],
-            "size": 4,
-            "is_pointer": false,
-            "is_typedef": true,
-            "is_array": false,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false
-          },
-          {
-            "name": "sbuf.st_gid",
-            "RBP offset": -384,
-            "type": [
-              "int",
-              "unsigned int",
-              "__gid_t"
-            ],
-            "size": 4,
-            "is_pointer": false,
-            "is_typedef": true,
-            "is_array": false,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false
-          },
-          {
-            "name": "sbuf.__pad0",
-            "RBP offset": -380,
-            "type": [
-              "int"
-            ],
-            "size": 4,
-            "is_pointer": false,
-            "is_typedef": false,
-            "is_array": false,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false
-          },
-          {
-            "name": "sbuf.st_rdev",
-            "RBP offset": -376,
-            "type": [
-              "__dev_t",
-              "long unsigned int",
-              "long long"
-            ],
-            "size": 8,
-            "is_pointer": false,
-            "is_typedef": true,
-            "is_array": false,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false
-          },
-          {
-            "name": "sbuf.st_size",
-            "RBP offset": -368,
-            "type": [
-              "long int",
-              "__off_t",
-              "long long"
-            ],
-            "size": 8,
-            "is_pointer": false,
-            "is_typedef": true,
-            "is_array": false,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false
-          },
-          {
-            "name": "sbuf.st_blksize",
-            "RBP offset": -360,
-            "type": [
-              "long int",
-              "__blksize_t",
-              "long long"
-            ],
-            "size": 8,
-            "is_pointer": false,
-            "is_typedef": true,
-            "is_array": false,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false
-          },
-          {
-            "name": "sbuf.st_blocks",
-            "RBP offset": -352,
-            "type": [
-              "long int",
-              "__blkcnt_t",
-              "long long"
-            ],
-            "size": 8,
-            "is_pointer": false,
-            "is_typedef": true,
-            "is_array": false,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false
-          },
-          {
-            "name": "sbuf.st_atim",
-            "RBP offset": -344,
-            "type": [
-              "timespec"
-            ],
-            "size": 16,
-            "is_pointer": false,
-            "is_typedef": false,
-            "is_array": false,
-            "is_struct": true,
-            "is_union": false,
-            "is_enum": false,
-            "elements": [
-              {
-                "name": "sbuf.st_atim.tv_sec",
-                "RBP offset": -344,
-                "type": [
-                  "long int",
-                  "__time_t",
-                  "long long"
-                ],
-                "size": 8,
-                "is_pointer": false,
-                "is_typedef": true,
-                "is_array": false,
-                "is_struct": false,
-                "is_union": false,
-                "is_enum": false
-              },
-              {
-                "name": "sbuf.st_atim.tv_nsec",
-                "RBP offset": -336,
-                "type": [
-                  "__syscall_slong_t",
-                  "long int",
-                  "long long"
-                ],
-                "size": 8,
-                "is_pointer": false,
-                "is_typedef": true,
-                "is_array": false,
-                "is_struct": false,
-                "is_union": false,
-                "is_enum": false
-              }
-            ]
-          },
-          {
-            "name": "sbuf.st_mtim",
-            "RBP offset": -328,
-            "type": [
-              "timespec"
-            ],
-            "size": 16,
-            "is_pointer": false,
-            "is_typedef": false,
-            "is_array": false,
-            "is_struct": true,
-            "is_union": false,
-            "is_enum": false,
-            "elements": [
-              {
-                "name": "sbuf.st_mtim.tv_sec",
-                "RBP offset": -328,
-                "type": [
-                  "long int",
-                  "__time_t",
-                  "long long"
-                ],
-                "size": 8,
-                "is_pointer": false,
-                "is_typedef": true,
-                "is_array": false,
-                "is_struct": false,
-                "is_union": false,
-                "is_enum": false
-              },
-              {
-                "name": "sbuf.st_mtim.tv_nsec",
-                "RBP offset": -320,
-                "type": [
-                  "__syscall_slong_t",
-                  "long int",
-                  "long long"
-                ],
-                "size": 8,
-                "is_pointer": false,
-                "is_typedef": true,
-                "is_array": false,
-                "is_struct": false,
-                "is_union": false,
-                "is_enum": false
-              }
-            ]
-          },
-          {
-            "name": "sbuf.st_ctim",
-            "RBP offset": -312,
-            "type": [
-              "timespec"
-            ],
-            "size": 16,
-            "is_pointer": false,
-            "is_typedef": false,
-            "is_array": false,
-            "is_struct": true,
-            "is_union": false,
-            "is_enum": false,
-            "elements": [
-              {
-                "name": "sbuf.st_ctim.tv_sec",
-                "RBP offset": -312,
-                "type": [
-                  "long int",
-                  "__time_t",
-                  "long long"
-                ],
-                "size": 8,
-                "is_pointer": false,
-                "is_typedef": true,
-                "is_array": false,
-                "is_struct": false,
-                "is_union": false,
-                "is_enum": false
-              },
-              {
-                "name": "sbuf.st_ctim.tv_nsec",
-                "RBP offset": -304,
-                "type": [
-                  "__syscall_slong_t",
-                  "long int",
-                  "long long"
-                ],
-                "size": 8,
-                "is_pointer": false,
-                "is_typedef": true,
-                "is_array": false,
-                "is_struct": false,
-                "is_union": false,
-                "is_enum": false
-              }
-            ]
-          },
-          {
-            "name": "sbuf.__glibc_reserved",
-            "RBP offset": -296,
-            "type": [
-              "__syscall_slong_t[3]",
-              "long long[3]",
-              "long int[3]"
-            ],
-            "size": 24,
-            "is_pointer": false,
-            "is_typedef": true,
-            "is_array": true,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false,
-            "array_length": 3,
-            "element_type": [
-              "__syscall_slong_t",
-              "long int",
-              "long long"
-            ],
-            "element_size": 8
-          }
-        ]
-      },
-      {
-        "name": "path",
-        "RBP offset": -272,
-        "type": [
-          "char[256]"
-        ],
-        "size": 256,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": true,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false,
-        "array_length": 256,
-        "element_type": [
-          "char"
-        ],
-        "element_size": 1
-      }
-    ]
-  },
-  "debugfs_prepare": {
-    "address": "0x405f47",
-    "variables": []
-  },
-  "tracemark": {
-    "address": "0x405fa6",
-    "variables": [
-      {
-        "name": "fmt",
-        "RBP offset": -232,
-        "type": [
-          "char*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "len",
-        "RBP offset": -212,
-        "type": [
-          "int"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "ap",
-        "RBP offset": -208,
-        "type": [
-          "va_list",
-          "__va_list_tag[1]",
-          "__gnuc_va_list",
-          "__builtin_va_list"
-        ],
-        "size": 24,
-        "is_pointer": false,
-        "is_typedef": true,
-        "is_array": true,
-        "is_struct": true,
-        "is_union": false,
-        "is_enum": false,
-        "array_length": 1,
-        "element_type": [
-          "__va_list_tag"
-        ],
-        "element_size": 24,
-        "elements": []
-      }
-    ]
-  },
-  "enable_trace_mark": {
-    "address": "0x4060fa",
-    "variables": []
-  },
-  "disable_trace_mark": {
-    "address": "0x40610b",
-    "variables": []
-  },
-  "get_timestamp": {
-    "address": "0x406117",
-    "variables": [
-      {
-        "name": "tsbuf",
-        "RBP offset": -56,
-        "type": [
-          "char*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "t",
-        "RBP offset": -48,
-        "type": [
-          "long int",
-          "time_t",
-          "__time_t",
-          "long long"
-        ],
-        "size": 8,
         "is_pointer": false,
         "is_typedef": true,
         "is_array": false,
@@ -3519,137 +804,19 @@
         "is_enum": false
       },
       {
-        "name": "tm",
-        "RBP offset": -40,
-        "type": [
-          "tm*"
+        "name": "high",
+        "RBP offset": [
+          -4
         ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "tv",
-        "RBP offset": -32,
         "type": [
-          "timeval"
-        ],
-        "size": 16,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": true,
-        "is_union": false,
-        "is_enum": false,
-        "elements": [
-          {
-            "name": "tv.tv_sec",
-            "RBP offset": -32,
-            "type": [
-              "long int",
-              "__time_t",
-              "long long"
-            ],
-            "size": 8,
-            "is_pointer": false,
-            "is_typedef": true,
-            "is_array": false,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false
-          },
-          {
-            "name": "tv.tv_usec",
-            "RBP offset": -24,
-            "type": [
-              "__suseconds_t",
-              "long int",
-              "long long"
-            ],
-            "size": 8,
-            "is_pointer": false,
-            "is_typedef": true,
-            "is_array": false,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false
-          }
-        ]
-      }
-    ]
-  },
-  "rt_init": {
-    "address": "0x406199",
-    "variables": [
-      {
-        "name": "argv",
-        "RBP offset": -32,
-        "type": [
-          "char**"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "argc",
-        "RBP offset": -20,
-        "type": [
-          "int"
+          "unsigned int",
+          "uint32_t",
+          "int",
+          "__uint32_t"
         ],
         "size": 4,
         "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "offset",
-        "RBP offset": -12,
-        "type": [
-          "int"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "i",
-        "RBP offset": -8,
-        "type": [
-          "int"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "len",
-        "RBP offset": -4,
-        "type": [
-          "int"
-        ],
-        "size": 4,
-        "is_pointer": false,
-        "is_typedef": false,
+        "is_typedef": true,
         "is_array": false,
         "is_struct": false,
         "is_union": false,
@@ -3657,40 +824,22 @@
       }
     ]
   },
-  "rt_write_json": {
-    "address": "0x40626d",
+  "fread": {
+    "variables": []
+  },
+  "free": {
+    "variables": []
+  },
+  "fscanf": {
+    "variables": []
+  },
+  "get_debugfileprefix": {
     "variables": [
       {
-        "name": "data",
-        "RBP offset": -544,
-        "type": [
-          "void*"
+        "name": "found",
+        "RBP offset": [
+          -272
         ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "cb",
-        "RBP offset": -536,
-        "type": [
-          "FUNCTION*"
-        ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "return_code",
-        "RBP offset": -524,
         "type": [
           "int"
         ],
@@ -3703,22 +852,10 @@
         "is_enum": false
       },
       {
-        "name": "filename",
-        "RBP offset": -520,
-        "type": [
-          "char*"
+        "name": "size",
+        "RBP offset": [
+          -268
         ],
-        "size": 8,
-        "is_pointer": true,
-        "is_typedef": false,
-        "is_array": false,
-        "is_struct": false,
-        "is_union": false,
-        "is_enum": false
-      },
-      {
-        "name": "rt",
-        "RBP offset": -508,
         "type": [
           "int"
         ],
@@ -3731,8 +868,10 @@
         "is_enum": false
       },
       {
-        "name": "f",
-        "RBP offset": -504,
+        "name": "fp",
+        "RBP offset": [
+          -264
+        ],
         "type": [
           "_IO_FILE*",
           "FILE*"
@@ -3747,7 +886,1280 @@
       },
       {
         "name": "s",
-        "RBP offset": -496,
+        "RBP offset": [
+          -256
+        ],
+        "type": [
+          "stat"
+        ],
+        "size": 144,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": true,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "type",
+        "RBP offset": [
+          -112
+        ],
+        "type": [
+          "char[100]"
+        ],
+        "size": 100,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": true,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false,
+        "array_length": 100,
+        "element_type": [
+          "char"
+        ],
+        "element_size": 1
+      }
+    ]
+  },
+  "get_timestamp": {
+    "variables": [
+      {
+        "name": "tsbuf",
+        "RBP offset": [
+          -56
+        ],
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "t",
+        "RBP offset": [
+          -48
+        ],
+        "type": [
+          "long long",
+          "__time_t",
+          "long int",
+          "time_t"
+        ],
+        "size": 8,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "tm",
+        "RBP offset": [
+          -40
+        ],
+        "type": [
+          "tm*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "tv",
+        "RBP offset": [
+          -32
+        ],
+        "type": [
+          "timeval"
+        ],
+        "size": 16,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": true,
+        "is_union": false,
+        "is_enum": false
+      }
+    ]
+  },
+  "get_tracers": {
+    "variables": [
+      {
+        "name": "list",
+        "RBP offset": [
+          -1096
+        ],
+        "type": [
+          "char***"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "tmpsz",
+        "RBP offset": [
+          -1080
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "ret",
+        "RBP offset": [
+          -1076
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "tmpbuf",
+        "RBP offset": [
+          -1072
+        ],
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "ptr",
+        "RBP offset": [
+          -1064
+        ],
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "prefix",
+        "RBP offset": [
+          -1056
+        ],
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "fp",
+        "RBP offset": [
+          -1048
+        ],
+        "type": [
+          "_IO_FILE*",
+          "FILE*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "buffer",
+        "RBP offset": [
+          -1040
+        ],
+        "type": [
+          "char[1024]"
+        ],
+        "size": 1024,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": true,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false,
+        "array_length": 1024,
+        "element_type": [
+          "char"
+        ],
+        "element_size": 1
+      }
+    ]
+  },
+  "getopt_long": {
+    "variables": []
+  },
+  "getpagesize": {
+    "variables": []
+  },
+  "gettid": {
+    "variables": []
+  },
+  "gettimeofday": {
+    "variables": []
+  },
+  "handle_alarm": {
+    "variables": [
+      {
+        "name": "code",
+        "RBP offset": [
+          -4
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      }
+    ]
+  },
+  "info": {
+    "variables": []
+  },
+  "insert_bucket": {
+    "variables": [
+      {
+        "name": "value",
+        "RBP offset": [
+          -48
+        ],
+        "type": [
+          "__uint64_t",
+          "stamp_t",
+          "uint64_t",
+          "long unsigned int",
+          "long long"
+        ],
+        "size": 8,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "t",
+        "RBP offset": [
+          -40
+        ],
+        "type": [
+          "thread*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "index",
+        "RBP offset": [
+          -32
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "lat",
+        "RBP offset": [
+          -28
+        ],
+        "type": [
+          "int",
+          "unsigned int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "us",
+        "RBP offset": [
+          -24
+        ],
+        "type": [
+          "double"
+        ],
+        "size": 8,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "line",
+        "RBP offset": [
+          -16
+        ],
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "extra",
+        "RBP offset": [
+          -8
+        ],
+        "type": [
+          "long long",
+          "uint64_t",
+          "__uint64_t",
+          "long unsigned int"
+        ],
+        "size": 8,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      }
+    ]
+  },
+  "localtime": {
+    "variables": []
+  },
+  "main": {
+    "variables": [
+      {
+        "name": "argv",
+        "RBP offset": [
+          -48
+        ],
+        "type": [
+          "char**"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "argc",
+        "RBP offset": [
+          -36
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "n_cores",
+        "RBP offset": [
+          -28
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "i",
+        "RBP offset": [
+          -24
+        ],
+        "type": [
+          "long long",
+          "long unsigned int"
+        ],
+        "size": 8,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "cpu_set",
+        "RBP offset": [
+          -16
+        ],
+        "type": [
+          "bitmask*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "threads",
+        "RBP offset": [
+          -8
+        ],
+        "type": [
+          "thread*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      }
+    ]
+  },
+  "malloc": {
+    "variables": []
+  },
+  "measure_counter_mhz": {
+    "variables": [
+      {
+        "name": "mprev",
+        "RBP offset": [
+          -24
+        ],
+        "type": [
+          "cycles_t",
+          "__uint64_t",
+          "uint64_t",
+          "long unsigned int",
+          "long long"
+        ],
+        "size": 8,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "d",
+        "RBP offset": [
+          -16
+        ],
+        "type": [
+          "cycles_t",
+          "__uint64_t",
+          "uint64_t",
+          "long unsigned int",
+          "long long"
+        ],
+        "size": 8,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "m",
+        "RBP offset": [
+          -8
+        ],
+        "type": [
+          "cycles_t",
+          "__uint64_t",
+          "uint64_t",
+          "long unsigned int",
+          "long long"
+        ],
+        "size": 8,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      }
+    ]
+  },
+  "memmove": {
+    "variables": []
+  },
+  "memset": {
+    "variables": []
+  },
+  "mlockall": {
+    "variables": []
+  },
+  "mount_debugfs": {
+    "variables": [
+      {
+        "name": "path",
+        "RBP offset": [
+          -312
+        ],
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "ret",
+        "RBP offset": [
+          -292
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "mountpoint",
+        "RBP offset": [
+          -288
+        ],
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "prefix",
+        "RBP offset": [
+          -280
+        ],
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "cmd",
+        "RBP offset": [
+          -272
+        ],
+        "type": [
+          "char[256]"
+        ],
+        "size": 256,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": true,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false,
+        "array_length": 256,
+        "element_type": [
+          "char"
+        ],
+        "element_size": 1
+      }
+    ]
+  },
+  "move_to_core": {
+    "variables": [
+      {
+        "name": "core_i",
+        "RBP offset": [
+          -164
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "__cpu",
+        "RBP offset": [
+          -152
+        ],
+        "type": [
+          "long long",
+          "size_t",
+          "long unsigned int"
+        ],
+        "size": 8,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "cpus",
+        "RBP offset": [
+          -144
+        ],
+        "type": [
+          "cpu_set_t"
+        ],
+        "size": 128,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": true,
+        "is_union": false,
+        "is_enum": false
+      }
+    ]
+  },
+  "numa_available": {
+    "variables": []
+  },
+  "numa_bitmask_free": {
+    "variables": []
+  },
+  "numa_bitmask_isbitset": {
+    "variables": []
+  },
+  "numa_bitmask_weight": {
+    "variables": []
+  },
+  "numa_parse_cpustring_all": {
+    "variables": []
+  },
+  "open": {
+    "variables": []
+  },
+  "open_tracemark_fd": {
+    "variables": [
+      {
+        "name": "path",
+        "RBP offset": [
+          -272
+        ],
+        "type": [
+          "char[256]"
+        ],
+        "size": 256,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": true,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false,
+        "array_length": 256,
+        "element_type": [
+          "char"
+        ],
+        "element_size": 1
+      }
+    ]
+  },
+  "parse_mem_string": {
+    "variables": [
+      {
+        "name": "val",
+        "RBP offset": [
+          -48
+        ],
+        "type": [
+          "long long*",
+          "long unsigned int*",
+          "uint64_t*",
+          "__uint64_t*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "str",
+        "RBP offset": [
+          -40
+        ],
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "v",
+        "RBP offset": [
+          -20
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "endptr",
+        "RBP offset": [
+          -16
+        ],
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      }
+    ]
+  },
+  "parse_options": {
+    "variables": [
+      {
+        "name": "argv",
+        "RBP offset": [
+          -48
+        ],
+        "type": [
+          "char**"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "argc",
+        "RBP offset": [
+          -36
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "option_index",
+        "RBP offset": [
+          -28
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "i",
+        "RBP offset": [
+          -24
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "c",
+        "RBP offset": [
+          -20
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "ncores",
+        "RBP offset": [
+          -16
+        ],
+        "type": [
+          "long long",
+          "long int"
+        ],
+        "size": 8,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      }
+    ]
+  },
+  "parse_time_string": {
+    "variables": [
+      {
+        "name": "val",
+        "RBP offset": [
+          -40
+        ],
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "t",
+        "RBP offset": [
+          -20
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "end",
+        "RBP offset": [
+          -16
+        ],
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      }
+    ]
+  },
+  "policy_to_string": {
+    "variables": [
+      {
+        "name": "policy",
+        "RBP offset": [
+          -4
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      }
+    ]
+  },
+  "posix_memalign": {
+    "variables": []
+  },
+  "printf": {
+    "variables": []
+  },
+  "pthread_create": {
+    "variables": []
+  },
+  "pthread_join": {
+    "variables": []
+  },
+  "realloc": {
+    "variables": []
+  },
+  "record_bias": {
+    "variables": [
+      {
+        "name": "t",
+        "RBP offset": [
+          -24
+        ],
+        "type": [
+          "thread*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "i",
+        "RBP offset": [
+          -16
+        ],
+        "type": [
+          "long long",
+          "long unsigned int"
+        ],
+        "size": 8,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "bias",
+        "RBP offset": [
+          -8
+        ],
+        "type": [
+          "long long",
+          "uint64_t",
+          "__uint64_t",
+          "long unsigned int"
+        ],
+        "size": 8,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      }
+    ]
+  },
+  "rt_init": {
+    "variables": [
+      {
+        "name": "argv",
+        "RBP offset": [
+          -32
+        ],
+        "type": [
+          "char**"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "argc",
+        "RBP offset": [
+          -20
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "offset",
+        "RBP offset": [
+          -12
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "i",
+        "RBP offset": [
+          -8
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "len",
+        "RBP offset": [
+          -4
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      }
+    ]
+  },
+  "rt_write_json": {
+    "variables": [
+      {
+        "name": "data",
+        "RBP offset": [
+          -544
+        ],
+        "type": [
+          "void*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "cb",
+        "RBP offset": [
+          -536
+        ],
+        "type": [
+          "FUNCTION*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "return_code",
+        "RBP offset": [
+          -524
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "filename",
+        "RBP offset": [
+          -520
+        ],
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "rt",
+        "RBP offset": [
+          -508
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "f",
+        "RBP offset": [
+          -504
+        ],
+        "type": [
+          "_IO_FILE*",
+          "FILE*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "s",
+        "RBP offset": [
+          -496
+        ],
         "type": [
           "_IO_FILE*",
           "FILE*"
@@ -3762,11 +2174,13 @@
       },
       {
         "name": "n",
-        "RBP offset": -488,
+        "RBP offset": [
+          -488
+        ],
         "type": [
+          "long long",
           "size_t",
-          "long unsigned int",
-          "long long"
+          "long unsigned int"
         ],
         "size": 8,
         "is_pointer": false,
@@ -3778,7 +2192,9 @@
       },
       {
         "name": "uts",
-        "RBP offset": -480,
+        "RBP offset": [
+          -480
+        ],
         "type": [
           "utsname"
         ],
@@ -3788,127 +2204,13 @@
         "is_array": false,
         "is_struct": true,
         "is_union": false,
-        "is_enum": false,
-        "elements": [
-          {
-            "name": "uts.sysname",
-            "RBP offset": -480,
-            "type": [
-              "char[65]"
-            ],
-            "size": 65,
-            "is_pointer": false,
-            "is_typedef": false,
-            "is_array": true,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false,
-            "array_length": 65,
-            "element_type": [
-              "char"
-            ],
-            "element_size": 1
-          },
-          {
-            "name": "uts.nodename",
-            "RBP offset": -415,
-            "type": [
-              "char[65]"
-            ],
-            "size": 65,
-            "is_pointer": false,
-            "is_typedef": false,
-            "is_array": true,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false,
-            "array_length": 65,
-            "element_type": [
-              "char"
-            ],
-            "element_size": 1
-          },
-          {
-            "name": "uts.release",
-            "RBP offset": -350,
-            "type": [
-              "char[65]"
-            ],
-            "size": 65,
-            "is_pointer": false,
-            "is_typedef": false,
-            "is_array": true,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false,
-            "array_length": 65,
-            "element_type": [
-              "char"
-            ],
-            "element_size": 1
-          },
-          {
-            "name": "uts.version",
-            "RBP offset": -285,
-            "type": [
-              "char[65]"
-            ],
-            "size": 65,
-            "is_pointer": false,
-            "is_typedef": false,
-            "is_array": true,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false,
-            "array_length": 65,
-            "element_type": [
-              "char"
-            ],
-            "element_size": 1
-          },
-          {
-            "name": "uts.machine",
-            "RBP offset": -220,
-            "type": [
-              "char[65]"
-            ],
-            "size": 65,
-            "is_pointer": false,
-            "is_typedef": false,
-            "is_array": true,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false,
-            "array_length": 65,
-            "element_type": [
-              "char"
-            ],
-            "element_size": 1
-          },
-          {
-            "name": "uts.domainname",
-            "RBP offset": -155,
-            "type": [
-              "char[65]"
-            ],
-            "size": 65,
-            "is_pointer": false,
-            "is_typedef": false,
-            "is_array": true,
-            "is_struct": false,
-            "is_union": false,
-            "is_enum": false,
-            "array_length": 65,
-            "element_type": [
-              "char"
-            ],
-            "element_size": 1
-          }
-        ]
+        "is_enum": false
       },
       {
         "name": "buf",
-        "RBP offset": -81,
+        "RBP offset": [
+          -81
+        ],
         "type": [
           "char[1]",
           "unsigned char[1]"
@@ -3929,7 +2231,9 @@
       },
       {
         "name": "ts_end",
-        "RBP offset": -80,
+        "RBP offset": [
+          -80
+        ],
         "type": [
           "char[64]"
         ],
@@ -3945,6 +2249,993 @@
           "char"
         ],
         "element_size": 1
+      }
+    ]
+  },
+  "run_expt": {
+    "variables": [
+      {
+        "name": "preheat",
+        "RBP offset": [
+          -32
+        ],
+        "type": [
+          "_Bool",
+          "bool"
+        ],
+        "size": 1,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "runtime_secs",
+        "RBP offset": [
+          -28
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "threads",
+        "RBP offset": [
+          -24
+        ],
+        "type": [
+          "thread*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "i",
+        "RBP offset": [
+          -8
+        ],
+        "type": [
+          "long long",
+          "long unsigned int"
+        ],
+        "size": 8,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      }
+    ]
+  },
+  "sched_getparam": {
+    "variables": []
+  },
+  "sched_getscheduler": {
+    "variables": []
+  },
+  "sched_setaffinity": {
+    "variables": []
+  },
+  "sched_setscheduler": {
+    "variables": []
+  },
+  "set_fifo_prio": {
+    "variables": [
+      {
+        "name": "prio",
+        "RBP offset": [
+          -20
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "param",
+        "RBP offset": [
+          -12
+        ],
+        "type": [
+          "sched_param"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": true,
+        "is_union": false,
+        "is_enum": false
+      }
+    ]
+  },
+  "setevent": {
+    "variables": [
+      {
+        "name": "val",
+        "RBP offset": [
+          -304
+        ],
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "event",
+        "RBP offset": [
+          -296
+        ],
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "fd",
+        "RBP offset": [
+          -288
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "ret",
+        "RBP offset": [
+          -284
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "prefix",
+        "RBP offset": [
+          -280
+        ],
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "buffer",
+        "RBP offset": [
+          -272
+        ],
+        "type": [
+          "char[256]"
+        ],
+        "size": 256,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": true,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false,
+        "array_length": 256,
+        "element_type": [
+          "char"
+        ],
+        "element_size": 1
+      }
+    ]
+  },
+  "signal": {
+    "variables": []
+  },
+  "snprintf": {
+    "variables": []
+  },
+  "sprintf": {
+    "variables": []
+  },
+  "stat": {
+    "variables": []
+  },
+  "strcat": {
+    "variables": []
+  },
+  "strcmp": {
+    "variables": []
+  },
+  "strcpy": {
+    "variables": []
+  },
+  "strdup": {
+    "variables": []
+  },
+  "strerror": {
+    "variables": []
+  },
+  "strftime": {
+    "variables": []
+  },
+  "string_to_policy": {
+    "variables": [
+      {
+        "name": "str",
+        "RBP offset": [
+          -8
+        ],
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      }
+    ]
+  },
+  "strlen": {
+    "variables": []
+  },
+  "strncat": {
+    "variables": []
+  },
+  "strncmp": {
+    "variables": []
+  },
+  "strncpy": {
+    "variables": []
+  },
+  "strnlen": {
+    "variables": []
+  },
+  "strtok": {
+    "variables": []
+  },
+  "strtol": {
+    "variables": []
+  },
+  "syscall": {
+    "variables": []
+  },
+  "sysconf": {
+    "variables": []
+  },
+  "system": {
+    "variables": []
+  },
+  "test_fail": {
+    "variables": [
+      {
+        "name": "line",
+        "RBP offset": [
+          -28
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "what",
+        "RBP offset": [
+          -24
+        ],
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      }
+    ]
+  },
+  "thread_init": {
+    "variables": [
+      {
+        "name": "t",
+        "RBP offset": [
+          -24
+        ],
+        "type": [
+          "thread*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      }
+    ]
+  },
+  "thread_main": {
+    "variables": [
+      {
+        "name": "arg",
+        "RBP offset": [
+          -24
+        ],
+        "type": [
+          "void*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "t",
+        "RBP offset": [
+          -8
+        ],
+        "type": [
+          "thread*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      }
+    ]
+  },
+  "trace_file_exists": {
+    "variables": [
+      {
+        "name": "name",
+        "RBP offset": [
+          -440
+        ],
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "tracing_prefix",
+        "RBP offset": [
+          -424
+        ],
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "sbuf",
+        "RBP offset": [
+          -416
+        ],
+        "type": [
+          "stat"
+        ],
+        "size": 144,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": true,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "path",
+        "RBP offset": [
+          -272
+        ],
+        "type": [
+          "char[256]"
+        ],
+        "size": 256,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": true,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false,
+        "array_length": 256,
+        "element_type": [
+          "char"
+        ],
+        "element_size": 1
+      }
+    ]
+  },
+  "tracemark": {
+    "variables": [
+      {
+        "name": "fmt",
+        "RBP offset": [
+          -232
+        ],
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "len",
+        "RBP offset": [
+          -212
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "ap",
+        "RBP offset": [
+          -208
+        ],
+        "type": [
+          "__gnuc_va_list",
+          "va_list",
+          "__builtin_va_list",
+          "__va_list_tag[1]"
+        ],
+        "size": 24,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": true,
+        "is_struct": true,
+        "is_union": false,
+        "is_enum": false,
+        "array_length": 1,
+        "element_type": [
+          "__va_list_tag"
+        ],
+        "element_size": 24
+      }
+    ]
+  },
+  "uname": {
+    "variables": []
+  },
+  "usage": {
+    "variables": [
+      {
+        "name": "error",
+        "RBP offset": [
+          -4
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      }
+    ]
+  },
+  "usleep": {
+    "variables": []
+  },
+  "valid_tracer": {
+    "variables": [
+      {
+        "name": "tracername",
+        "RBP offset": [
+          -40
+        ],
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "i",
+        "RBP offset": [
+          -24
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "ntracers",
+        "RBP offset": [
+          -20
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "list",
+        "RBP offset": [
+          -16
+        ],
+        "type": [
+          "char**"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      }
+    ]
+  },
+  "vfprintf": {
+    "variables": []
+  },
+  "vsnprintf": {
+    "variables": []
+  },
+  "warn": {
+    "variables": []
+  },
+  "workload_memmove": {
+    "variables": [
+      {
+        "name": "size",
+        "RBP offset": [
+          -24
+        ],
+        "type": [
+          "long long",
+          "size_t",
+          "long unsigned int"
+        ],
+        "size": 8,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "src",
+        "RBP offset": [
+          -16
+        ],
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "dst",
+        "RBP offset": [
+          -8
+        ],
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      }
+    ]
+  },
+  "workload_nop": {
+    "variables": [
+      {
+        "name": "size",
+        "RBP offset": [
+          -24
+        ],
+        "type": [
+          "long long",
+          "size_t",
+          "long unsigned int"
+        ],
+        "size": 8,
+        "is_pointer": false,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "src",
+        "RBP offset": [
+          -16
+        ],
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "dst",
+        "RBP offset": [
+          -8
+        ],
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      }
+    ]
+  },
+  "workload_select": {
+    "variables": [
+      {
+        "name": "name",
+        "RBP offset": [
+          -24
+        ],
+        "type": [
+          "char*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "i",
+        "RBP offset": [
+          -4
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      }
+    ]
+  },
+  "write": {
+    "variables": []
+  },
+  "write_summary": {
+    "variables": [
+      {
+        "name": "t",
+        "RBP offset": [
+          -120
+        ],
+        "type": [
+          "thread*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "j",
+        "RBP offset": [
+          -104
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "print_dotdotdot",
+        "RBP offset": [
+          -100
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "i",
+        "RBP offset": [
+          -96
+        ],
+        "type": [
+          "long long",
+          "long unsigned int"
+        ],
+        "size": 8,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "k",
+        "RBP offset": [
+          -88
+        ],
+        "type": [
+          "long long",
+          "long unsigned int"
+        ],
+        "size": 8,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "bucket_name",
+        "RBP offset": [
+          -80
+        ],
+        "type": [
+          "char[64]"
+        ],
+        "size": 64,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": true,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false,
+        "array_length": 64,
+        "element_type": [
+          "char"
+        ],
+        "element_size": 1
+      }
+    ]
+  },
+  "write_summary_json": {
+    "variables": [
+      {
+        "name": "data",
+        "RBP offset": [
+          -64
+        ],
+        "type": [
+          "void*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "f",
+        "RBP offset": [
+          -56
+        ],
+        "type": [
+          "_IO_FILE*",
+          "FILE*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": true,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "j",
+        "RBP offset": [
+          -40
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "comma",
+        "RBP offset": [
+          -36
+        ],
+        "type": [
+          "int"
+        ],
+        "size": 4,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "i",
+        "RBP offset": [
+          -32
+        ],
+        "type": [
+          "long long",
+          "long unsigned int"
+        ],
+        "size": 8,
+        "is_pointer": false,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
+      },
+      {
+        "name": "t",
+        "RBP offset": [
+          -24
+        ],
+        "type": [
+          "thread*"
+        ],
+        "size": 8,
+        "is_pointer": true,
+        "is_typedef": false,
+        "is_array": false,
+        "is_struct": false,
+        "is_union": false,
+        "is_enum": false
       }
     ]
   }

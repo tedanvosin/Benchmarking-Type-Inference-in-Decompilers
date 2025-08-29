@@ -254,7 +254,7 @@ def parse_type_die(die,var_data,dwarfinfo):
 def parse_variable_die(child_die, dwarfinfo):
     var_data = {}
     var_data['name'] = ''
-    var_data['RBP offset'] = 0
+    var_data['RBP offset'] = []
     var_data['type'] = [] #array to take care of typedef chaining
     var_data['size'] = 0
     var_data['is_pointer'] = False

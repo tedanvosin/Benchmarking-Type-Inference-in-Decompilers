@@ -50,7 +50,7 @@ process_files() {
         done
 
         # launch job in background
-        eval "$cmd" &
+        eval "$cmd"
 
         ((count++))
 
